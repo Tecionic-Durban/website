@@ -1,0 +1,620 @@
+/* src/app/globals.css */
+
+/* Import Google Fonts - Load before Tailwind for proper cascading */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+/* Custom CSS Variables for Brand Colors */
+:root {
+  /* Emerald/Green Brand Colors */
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-300: #6ee7b7;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+  
+  /* Professional Grays */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Typography - Industrial Elegance */
+  --font-family-headings: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-brand: 'Playfair Display', 'Garamond', 'Adobe Garamond Pro', 'EB Garamond', serif;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    color: var(--gray-900);
+    background-color: white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  p {
+    line-height: 1.7;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--gray-100);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--emerald-600);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--emerald-700);
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Professional Button Styles */
+  .btn-primary {
+    @apply bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-ghost {
+    @apply text-emerald-600 hover:text-emerald-700 font-semibold py-2 px-4 rounded-lg hover:bg-emerald-50 transition-colors duration-300;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100;
+  }
+  
+  .card-hover {
+    @apply transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  /* Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200 placeholder-gray-400;
+  }
+  
+  .form-input-dark {
+    @apply w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white placeholder-gray-400 transition-colors duration-200;
+  }
+  
+  /* Section Dividers */
+  .section-divider {
+    @apply w-20 h-1 bg-emerald-600 mb-6;
+  }
+  
+  .section-divider-center {
+    @apply w-20 h-1 bg-emerald-600 mx-auto mb-6;
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-brand {
+    @apply bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700;
+  }
+  
+  .bg-gradient-brand-light {
+    @apply bg-gradient-to-r from-emerald-600 to-emerald-700;
+  }
+  
+  /* Text Styles */
+  .text-gradient {
+    @apply bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent;
+  }
+  
+  /* Industrial Theme Elements */
+  .industrial-pattern {
+    background-image: 
+      linear-gradient(45deg, transparent 35%, rgba(16, 185, 129, 0.1) 35%, rgba(16, 185, 129, 0.1) 65%, transparent 65%),
+      linear-gradient(-45deg, transparent 35%, rgba(16, 185, 129, 0.05) 35%, rgba(16, 185, 129, 0.05) 65%, transparent 65%);
+    background-size: 20px 20px;
+  }
+
+  /* Subtle Metal Texture */
+  .metal-texture {
+    background-image: 
+      linear-gradient(90deg, rgba(0,0,0,0.02) 50%, transparent 50%),
+      linear-gradient(rgba(255,255,255,0.02) 50%, transparent 50%);
+    background-size: 2px 2px, 2px 2px;
+  }
+
+  /* Carbon Fiber Pattern */
+  .carbon-fiber {
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(0,0,0,0.1) 2%, transparent 2%),
+      radial-gradient(circle at 75% 25%, rgba(0,0,0,0.1) 2%, transparent 2%),
+      radial-gradient(circle at 25% 75%, rgba(0,0,0,0.1) 2%, transparent 2%),
+      radial-gradient(circle at 75% 75%, rgba(0,0,0,0.1) 2%, transparent 2%),
+      linear-gradient(45deg, rgba(0,0,0,0.02) 50%, transparent 50%);
+    background-size: 16px 16px, 16px 16px, 16px 16px, 16px 16px, 8px 8px;
+  }
+
+  /* Industrial Steel Gradient */
+  .steel-gradient {
+    background: linear-gradient(135deg, 
+      rgba(200,200,200,0.1) 0%, 
+      rgba(220,220,220,0.05) 25%, 
+      rgba(180,180,180,0.1) 50%, 
+      rgba(200,200,200,0.05) 75%, 
+      rgba(160,160,160,0.1) 100%);
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Ball Branding Animations */
+  .animate-float-slow {
+    animation: floatSlow 8s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: floatMedium 6s ease-in-out infinite;
+  }
+
+  .animate-float-fast {
+    animation: floatFast 4s ease-in-out infinite;
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-8px) translateX(4px);
+    }
+    66% {
+      transform: translateY(4px) translateX(-2px);
+    }
+  }
+
+  @keyframes floatMedium {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-12px) translateX(6px);
+    }
+  }
+
+  @keyframes floatFast {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-6px) translateX(-3px);
+    }
+    75% {
+      transform: translateY(6px) translateX(3px);
+    }
+  }
+
+  /* Service Card Hover Ball Animations */
+  .animate-float-up-1 {
+    animation: floatUp1 2s ease-out infinite;
+  }
+
+  .animate-float-up-2 {
+    animation: floatUp2 2.5s ease-out infinite 0.2s;
+  }
+
+  .animate-float-up-3 {
+    animation: floatUp3 3s ease-out infinite 0.4s;
+  }
+
+  @keyframes floatUp1 {
+    0%, 100% {
+      transform: translateY(0px);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-20px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes floatUp2 {
+    0%, 100% {
+      transform: translateY(0px);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-25px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes floatUp3 {
+    0%, 100% {
+      transform: translateY(0px);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(-15px);
+      opacity: 0.9;
+    }
+  }
+
+  
+  /* Pulse Effect for CTA elements */
+  .pulse-emerald {
+    animation: pulse-emerald 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-emerald {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Carousel Animation */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Elegant Navigation Hover Animation - Professional 3-Ball Motif */
+  .group:hover .ball {
+    animation: ballElegantAppear 0.6s ease-out forwards;
+  }
+
+  .group:hover .ball-1 {
+    animation-delay: 0s;
+  }
+
+  .group:hover .ball-2 {
+    animation-delay: 0.1s;
+  }
+
+  .group:hover .ball-3 {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes ballElegantAppear {
+    0% {
+      transform: translateX(-50%) translateY(4px) scale(0);
+      opacity: 0;
+    }
+    60% {
+      transform: translateX(-50%) translateY(-2px) scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(-50%) translateY(0px) scale(1);
+      opacity: 0.9;
+    }
+  }
+
+  /* Backup legacy animation */
+  @keyframes ballFloatUp {
+    0% {
+      transform: translateX(-50%) translateY(8px) scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(-50%) translateY(-2px) scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(-50%) translateY(0px) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Professional shadows */
+  .shadow-professional {
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1), 0 2px 4px -1px rgba(16, 185, 129, 0.06);
+  }
+  
+  .shadow-professional-lg {
+    box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04);
+  }
+
+  /* Micro-Animations */
+  .micro-bounce {
+    animation: microBounce 0.6s ease-out;
+  }
+
+  @keyframes microBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+  }
+
+  .subtle-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .subtle-glow:hover {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+
+  /* Industrial Shimmer Effect */
+  .industrial-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .industrial-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,0.1) 50%,
+      transparent 100%
+    );
+    transition: left 0.8s ease;
+  }
+
+  .industrial-shimmer:hover::before {
+    left: 100%;
+  }
+
+  /* Precision Click Effect */
+  .precision-click {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .precision-click::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+
+  .precision-click:active::after {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Equipment Status Indicators */
+  .status-indicator {
+    position: relative;
+  }
+
+  .status-indicator::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: statusPulse 2s infinite;
+  }
+
+  .status-indicator.operational::after {
+    background: #10b981;
+  }
+
+  .status-indicator.maintenance::after {
+    background: #f59e0b;
+  }
+
+  .status-indicator.critical::after {
+    background: #ef4444;
+  }
+
+  @keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Text truncation for multiple lines */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Professional spacing */
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+  
+  .container-padding {
+    @apply px-4 max-w-7xl mx-auto;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Professional focus styles */
+  .focus-professional {
+    @apply focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-white;
+  }
+  
+  /* Backdrop blur utilities */
+  .backdrop-blur-professional {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* Loading States */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    color: black !important;
+    background: white !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --emerald-600: #047857;
+    --emerald-700: #064e3b;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .float,
+  .pulse-emerald {
+    animation: none;
+  }
+}
+
+/* Carousel Animation */
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 40s linear infinite;
+  transition: animation-duration 1.5s ease-out;
+}
+
+.animate-carousel.decelerating {
+  animation-duration: 120s; /* Much slower, creating deceleration effect */
+}
+
+.animate-carousel.paused {
+  animation-play-state: paused;
+}
+
+/* Technical Corner Cuts - Atlassian-inspired */
+.clip-corner {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+}
+
+.clip-corner-tl {
+  clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px);
+}
+
+.clip-corner-tr {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+}
+
+/* Hover scale animation */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Micro bounce effect */
+.micro-bounce {
+  animation: microBounce 2s ease-in-out infinite;
+}
+
+@keyframes microBounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
