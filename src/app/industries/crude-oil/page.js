@@ -145,14 +145,12 @@ export default function CrudeOilIndustryPage() {
     </div>
   )
 
-  const FloatingElements = () => (
-    <>
-      <div className="fixed top-20 left-10 w-2 h-2 bg-gray-400/20 rounded-full animate-pulse"></div>
-      <div className="fixed top-40 right-20 w-3 h-3 bg-gray-500/30 rounded-full animate-pulse [animation-delay:1s]"></div>
-      <div className="fixed bottom-40 left-1/4 w-1 h-1 bg-gray-600/40 rounded-full animate-pulse [animation-delay:2s]"></div>
-      <div className="fixed bottom-60 right-1/3 w-2 h-2 bg-gray-400/25 rounded-full animate-pulse [animation-delay:0.5s]"></div>
-    </>
-  )
+  // TEMPORARILY DISABLED: Decorative elements per stakeholder request
+  // const FloatingElements = () => (
+  //   <>
+  //     {/* Decorative floating elements */}
+  //   </>
+  // )
 
   const BeforeAfterComparison = ({ before, after, labels }) => (
     <div className="grid grid-cols-3 gap-4 mt-4">
@@ -183,7 +181,8 @@ export default function CrudeOilIndustryPage() {
 
   return (
     <>
-      <FloatingElements />
+      {/* TEMPORARILY DISABLED: Decorative elements per stakeholder request */}
+      {/* <FloatingElements /> */}
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-800">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white py-20 overflow-hidden">
