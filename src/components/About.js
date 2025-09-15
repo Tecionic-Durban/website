@@ -34,21 +34,21 @@ export default function About() {
 
               <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-500 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Respuesta Rápida 24/7
+                  Flexibilidad Operacional Total
                 </h3>
                 <p className="text-gray-600">
-                  Despliegue de equipos en 48-72 horas para emergencias operacionales.
-                  Capacidad de atender múltiples líneas en paralelo con operación continua
-                  y monitoreo remoto de KPIs en tiempo real.
+                  Desde contratos de emergencia con despliegue en 48-72 horas hasta proyectos
+                  de largo plazo de hasta 5 años. Capacidad de atender múltiples líneas en paralelo
+                  con operación continua y monitoreo remoto de KPIs en tiempo real.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-400 shadow-sm">
+              <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-400 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Tecnología Probada Multisectorial
                 </h3>
                 <p className="text-gray-600">
-                  Soluciones aplicadas exitosamente en cobre, zinc, litio, potasio y refinación de petróleo.
+                  Soluciones aplicadas exitosamente en cobre, litio, potasio y refinación de petróleo.
                   Equipos ex.proof certificados para ambientes explosivos y registro SICEP vigente
                   para operaciones en faenas de alta complejidad.
                 </p>
