@@ -18,24 +18,24 @@ export default function About() {
           </p>
         </div>
 
-        {/* Value Propositions in Cards */}
+        {/* Value Propositions - What Clients Get */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-600 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce text-center">
             <Droplets className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Sin Inversión Capital</h3>
-            <p className="text-gray-600 text-sm">Equipos móviles sin requerir modificaciones de infraestructura ni nuevos permisos ambientales</p>
+            <p className="text-gray-600 text-sm">Cero CAPEX requerido, solo costos operacionales según uso real</p>
           </div>
 
           <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-500 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce text-center">
             <RefreshCw className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">ROI Inmediato</h3>
-            <p className="text-gray-600 text-sm">Desde contratos de emergencia (48-72h) hasta proyectos de largo plazo (5 años)</p>
+            <p className="text-gray-600 text-sm">Retorno desde el primer mes de operación</p>
           </div>
 
           <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-400 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce text-center">
             <Zap className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Cero Riesgo Operacional</h3>
-            <p className="text-gray-600 text-sm">Tecnología probada en cobre, litio, potasio y refinación de petróleo</p>
+            <p className="text-gray-600 text-sm">Sin interrupciones de planta ni modificaciones de procesos</p>
           </div>
         </div>
 
