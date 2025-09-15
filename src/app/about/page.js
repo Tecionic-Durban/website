@@ -7,7 +7,7 @@ import { Beaker, Users, Award, Target, CheckCircle, Calendar, TrendingUp, Zap, C
 export default function AboutPage() {
   // Phase 1: Live metrics
   const [liveMetrics, setLiveMetrics] = useState({
-    yearsExperience: 18,
+    yearsExperience: 23,
     clientsSatisfied: 100,
     projectsCompleted: 347,
     efficiencyGain: 22.5
@@ -52,9 +52,9 @@ export default function AboutPage() {
     },
     {
       year: "2003",
-      title: "Primer Contrato de Desborde",
-      description: "Exitoso primer contrato de servicios de desborde, estableciendo nuestra presencia en el mercado.",
-      metric: "1er Contrato",
+      title: "Primer Contacto de Desborre de Celdas EW",
+      description: "Exitoso primer contacto de desborre de celdas EW, estableciendo nuestra especialización en electroobtención.",
+      metric: "1er Contacto EW",
       icon: "handshake",
       color: "from-emerald-500 to-emerald-600"
     },
@@ -154,8 +154,8 @@ export default function AboutPage() {
                 </h1>
                 <div className="w-24 h-1 bg-emerald-400 mb-6"></div>
                 <p className="text-xl text-emerald-100 leading-relaxed mb-8 animate-in slide-in-from-left duration-700">
-                  Con más de 18 años de experiencia, somos la empresa líder en servicios 
-                  especializados de filtrado y tratamiento de borra para procesos de 
+                  Con más de 23 años de experiencia, somos la empresa líder en servicios
+                  especializados de filtrado y tratamiento de borra para procesos de
                   lixiviación, extracción por solventes y electroobtención.
                 </p>
                 
@@ -319,8 +319,6 @@ export default function AboutPage() {
                         <div className={`w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r ${milestone.color} rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:scale-110 transition-all duration-300`}>
                           <IconComponent className="w-4 h-4 md:w-5 md:h-5 text-white" />
                         </div>
-                        {/* Connecting dot */}
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-inner"></div>
                       </div>
 
                       {/* Timeline content card */}
@@ -345,18 +343,6 @@ export default function AboutPage() {
                             {milestone.description}
                           </p>
 
-                          {/* Progress indicator */}
-                          <div className="mt-4 flex items-center">
-                            <div className="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
-                              <div
-                                className={`h-full bg-gradient-to-r ${milestone.color} rounded-full transition-all duration-1000 ease-out`}
-                                style={{ width: `${((index + 1) / milestones.length) * 100}%` }}
-                              ></div>
-                            </div>
-                            <span className="ml-3 text-sm text-gray-500 font-medium">
-                              {index + 1} de {milestones.length}
-                            </span>
-                          </div>
                         </div>
                       </div>
                     </div>
