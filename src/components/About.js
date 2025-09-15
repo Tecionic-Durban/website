@@ -66,8 +66,9 @@ export default function About() {
 
             <div className="space-y-6">
               <div className="relative flex items-start lg:pl-20">
-                <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
-                  01
+                <div className="absolute left-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-emerald-400/20 lg:block hidden">
+                  <span className="relative z-10">1</span>
+                  <div className="absolute inset-0 bg-white/10 rounded-xl"></div>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-4 shadow-sm border-l-4 border-emerald-600 w-full">
                   <h4 className="text-xl font-bold text-gray-900 mb-3">Instalación Plug & Play</h4>
@@ -80,8 +81,9 @@ export default function About() {
               </div>
 
               <div className="relative flex items-start lg:pl-20">
-                <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
-                  02
+                <div className="absolute left-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-emerald-400/20 lg:block hidden">
+                  <span className="relative z-10">2</span>
+                  <div className="absolute inset-0 bg-white/10 rounded-xl"></div>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-4 shadow-sm border-l-4 border-emerald-500 w-full">
                   <h4 className="text-xl font-bold text-gray-900 mb-3">Contratos Flexibles</h4>
@@ -94,8 +96,9 @@ export default function About() {
               </div>
 
               <div className="relative flex items-start lg:pl-20">
-                <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
-                  03
+                <div className="absolute left-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-emerald-400/20 lg:block hidden">
+                  <span className="relative z-10">3</span>
+                  <div className="absolute inset-0 bg-white/10 rounded-xl"></div>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-400 w-full">
                   <h4 className="text-xl font-bold text-gray-900 mb-3">Optimización Continua</h4>
