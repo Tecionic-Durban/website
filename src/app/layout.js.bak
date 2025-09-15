@@ -2,8 +2,7 @@
 import '../styles/globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-// TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request
-// import FloatingElements from "@/components/FloatingElements"
+import FloatingElements from '@/components/FloatingElements'
 
 export const metadata = {
   title: 'Tec-Ionic Durban - Servicios Especializados en LIX/SX/EW',
@@ -28,8 +27,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
-        {/* TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request */}
-        {/* <FloatingElements /> */}
+        <FloatingElements />
       </body>
     </html>
   )
