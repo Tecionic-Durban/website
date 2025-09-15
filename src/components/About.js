@@ -39,7 +39,7 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <RefreshCw className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Performance Verificable</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Rendimiento Verificable</h4>
                 <p className="text-gray-600">Monitoreo 24/7 con dashboard en tiempo real y reportes diarios de eficiencia</p>
               </div>
             </div>
@@ -50,7 +50,7 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Expertise Multisectorial</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Experiencia Multisectorial</h4>
                 <p className="text-gray-600">Experiencia comprobada en cobre, litio, potasio, zinc y refinación de petróleo</p>
               </div>
             </div>
