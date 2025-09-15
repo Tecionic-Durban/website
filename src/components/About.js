@@ -18,9 +18,9 @@ export default function About() {
           </p>
         </div>
 
-        {/* Value Propositions - Benefit Cards with Icons */}
+        {/* Value Propositions - Business Benefits */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Por Qué Nos Eligen</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Beneficios Comerciales</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl opacity-5 group-hover:opacity-10 transition-opacity"></div>
@@ -28,8 +28,8 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Droplets className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Sin Inversión Capital</h4>
-                <p className="text-gray-600">Cero CAPEX requerido, solo costos operacionales según uso real</p>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Modelo de Servicios</h4>
+                <p className="text-gray-600">Cero CAPEX requerido, solo costos operacionales según uso real y resultados obtenidos</p>
               </div>
             </div>
 
@@ -39,8 +39,8 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <RefreshCw className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">ROI Inmediato</h4>
-                <p className="text-gray-600">Retorno desde el primer mes de operación</p>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Retorno Garantizado</h4>
+                <p className="text-gray-600">ROI positivo desde el primer mes con KPIs verificables y reportería en tiempo real</p>
               </div>
             </div>
 
@@ -50,8 +50,8 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Cero Riesgo Operacional</h4>
-                <p className="text-gray-600">Sin interrupciones de planta ni modificaciones de procesos</p>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Escalabilidad Total</h4>
+                <p className="text-gray-600">Desde soluciones de emergencia hasta contratos de 5 años con capacidad multi-línea</p>
               </div>
             </div>
           </div>
