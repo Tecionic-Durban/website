@@ -18,60 +18,95 @@ export default function About() {
           </p>
         </div>
 
-        {/* Value Propositions - What Clients Get */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-600 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce text-center">
-            <Droplets className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Sin Inversión Capital</h3>
-            <p className="text-gray-600 text-sm">Cero CAPEX requerido, solo costos operacionales según uso real</p>
-          </div>
+        {/* Value Propositions - Benefit Cards with Icons */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Por Qué Nos Eligen</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl opacity-5 group-hover:opacity-10 transition-opacity"></div>
+              <div className="relative bg-white rounded-2xl p-8 text-center border border-emerald-100 hover:border-emerald-200 transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Droplets className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Sin Inversión Capital</h4>
+                <p className="text-gray-600">Cero CAPEX requerido, solo costos operacionales según uso real</p>
+              </div>
+            </div>
 
-          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-500 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce text-center">
-            <RefreshCw className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">ROI Inmediato</h3>
-            <p className="text-gray-600 text-sm">Retorno desde el primer mes de operación</p>
-          </div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl opacity-5 group-hover:opacity-10 transition-opacity"></div>
+              <div className="relative bg-white rounded-2xl p-8 text-center border border-emerald-100 hover:border-emerald-200 transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <RefreshCw className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">ROI Inmediato</h4>
+                <p className="text-gray-600">Retorno desde el primer mes de operación</p>
+              </div>
+            </div>
 
-          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-400 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce text-center">
-            <Zap className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Cero Riesgo Operacional</h3>
-            <p className="text-gray-600 text-sm">Sin interrupciones de planta ni modificaciones de procesos</p>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl opacity-5 group-hover:opacity-10 transition-opacity"></div>
+              <div className="relative bg-white rounded-2xl p-8 text-center border border-emerald-100 hover:border-emerald-200 transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Cero Riesgo Operacional</h4>
+                <p className="text-gray-600">Sin interrupciones de planta ni modificaciones de procesos</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Detailed Differentiators */}
-        <div className="space-y-6 mb-12">
-          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-600 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Sin Modificaciones de Planta
-            </h3>
-            <p className="text-gray-600">
-              Equipos móviles que operan sin requerir modificaciones a infraestructura existente
-              ni nuevos permisos ambientales. Instalación rápida y operación inmediata
-              sin interrumpir procesos productivos.
-            </p>
-          </div>
+        {/* How We Deliver - Timeline Style */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">Cómo Lo Logramos</h3>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-200 via-emerald-400 to-emerald-600 hidden lg:block"></div>
 
-          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-500 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Flexibilidad Operacional Total
-            </h3>
-            <p className="text-gray-600">
-              Desde contratos de emergencia con despliegue en 48-72 horas hasta proyectos
-              de largo plazo de hasta 5 años. Capacidad de atender múltiples líneas en paralelo
-              con operación continua y monitoreo remoto de KPIs en tiempo real.
-            </p>
-          </div>
+            <div className="space-y-12">
+              <div className="relative flex items-start lg:pl-20">
+                <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
+                  01
+                </div>
+                <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-600 w-full">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Sin Modificaciones de Planta</h4>
+                  <p className="text-gray-600">
+                    Equipos móviles que operan sin requerir modificaciones a infraestructura existente
+                    ni nuevos permisos ambientales. Instalación rápida y operación inmediata
+                    sin interrumpir procesos productivos.
+                  </p>
+                </div>
+              </div>
 
-          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-400 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Tecnología Probada Multisectorial
-            </h3>
-            <p className="text-gray-600">
-              Soluciones aplicadas exitosamente en cobre, litio, potasio y refinación de petróleo.
-              Equipos ex.proof certificados para ambientes explosivos y registro SICEP vigente
-              para operaciones en faenas de alta complejidad.
-            </p>
+              <div className="relative flex items-start lg:pl-20">
+                <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
+                  02
+                </div>
+                <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-500 w-full">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Flexibilidad Operacional Total</h4>
+                  <p className="text-gray-600">
+                    Desde contratos de emergencia con despliegue en 48-72 horas hasta proyectos
+                    de largo plazo de hasta 5 años. Capacidad de atender múltiples líneas en paralelo
+                    con operación continua y monitoreo remoto de KPIs en tiempo real.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative flex items-start lg:pl-20">
+                <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
+                  03
+                </div>
+                <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-400 w-full">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Tecnología Probada Multisectorial</h4>
+                  <p className="text-gray-600">
+                    Soluciones aplicadas exitosamente en cobre, litio, potasio y refinación de petróleo.
+                    Equipos ex.proof certificados para ambientes explosivos y registro SICEP vigente
+                    para operaciones en faenas de alta complejidad.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
