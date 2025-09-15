@@ -14,43 +14,43 @@ export default function About() {
               </h2>
               <div className="w-20 h-1 bg-emerald-600"></div>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Empresa chilena especializada en optimización de procesos SX/EW con equipos móviles de alta capacidad.
-                Fundada por profesionales con trayectoria comprobada, consolidamos nuestro liderazgo con clientes como
-                BHP, Antofagasta Minerals y Capstone Cooper en operaciones críticas.
+                Empresa chilena especializada en separación sólido-líquido en aplicaciones SX/EW con equipos móviles de alta capacidad.
+                Atendemos a BHP, Codelco, Antofagasta Minerals, entre otras importantes empresas mineras,
+                proporcionando soluciones que optimizan operaciones sin interrumpir procesos existentes.
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-600 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Equipos Móviles
+                  Sin Modificaciones de Planta
                 </h3>
                 <p className="text-gray-600">
-                  Planta y equipos móviles que permiten operar sin necesidad de instalaciones 
-                  definitivas ni modificaciones a permisos ambientales. Flexibilidad operativa 
-                  para atender múltiples líneas de trabajo en paralelo.
+                  Equipos móviles que operan sin requerir modificaciones a infraestructura existente
+                  ni nuevos permisos ambientales. Instalación rápida y operación inmediata
+                  sin interrumpir procesos productivos.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-500 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Experiencia Comprobada
+                  Respuesta Rápida 24/7
                 </h3>
                 <p className="text-gray-600">
-                  Experiencia comprobada en cobre y aplicable a otras industrias: zinc, litio, 
-                  potasio y petróleo crudo. Modelos de servicio escalables desde pilotos 
-                  hasta nuevas adquisiciones de gran capacidad.
+                  Despliegue de equipos en 48-72 horas para emergencias operacionales.
+                  Capacidad de atender múltiples líneas en paralelo con operación continua
+                  y monitoreo remoto de KPIs en tiempo real.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-400 shadow-sm">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Clientes de Prestigio
+                  Tecnología Probada Multisectorial
                 </h3>
                 <p className="text-gray-600">
-                  Actualmente prestamos servicios a clientes como BHP, SQM, Capstone Cooper 
-                  y Antofagasta Minerals. Registro en SICEP y equipos con clasificación 
-                  ex.proof para ambientes explosivos.
+                  Soluciones aplicadas exitosamente en cobre, zinc, litio, potasio y refinación de petróleo.
+                  Equipos ex.proof certificados para ambientes explosivos y registro SICEP vigente
+                  para operaciones en faenas de alta complejidad.
                 </p>
               </div>
 

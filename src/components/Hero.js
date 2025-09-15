@@ -93,9 +93,9 @@ export default function Hero() {
               <div className="w-24 h-1 bg-emerald-400 mb-6"></div>
               
               <p className="text-xl text-emerald-100 leading-relaxed mb-8">
-                Especialistas en optimización de plantas SX/EW con equipos móviles de <span className="font-semibold text-emerald-300">hasta 70 ton/día de capacidad</span>.
-                Reducimos pérdidas de orgánico, maximizamos recuperación de cobre y optimizamos operaciones con
-                <span className="font-semibold text-emerald-300"> más de 23 años de experiencia comprobada</span>.
+                Especialistas en <span className="font-semibold text-emerald-300">separación sólido-líquido móvil</span> para plantas SX/EW.
+                Optimizamos operaciones mineras con equipos móviles de alta capacidad que no requieren modificaciones de planta ni permisos ambientales adicionales.
+                <span className="font-semibold text-emerald-300"> Soluciones rápidas, flexibles y escalables</span>.
               </p>
             </div>
             
