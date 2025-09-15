@@ -4,7 +4,6 @@
 import { useEffect } from 'react'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
-import SwipeableProcessCards from '@/components/SwipeableProcessCards'
 import EfficiencyComparison from '@/components/EfficiencyComparison'
 import About from '@/components/About'
 import Customers from '@/components/Customers'
@@ -21,9 +20,8 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Customers />
-      <SwipeableProcessCards />
       <EfficiencyComparison />
+      <Customers />
       <Contact />
     </main>
   )

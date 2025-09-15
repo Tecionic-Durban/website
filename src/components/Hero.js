@@ -10,22 +10,22 @@ export default function Hero() {
   const router = useRouter()
   const pathname = usePathname()
   
-  // Live metrics state
+  // Live mining-specific metrics state
   const [liveMetrics, setLiveMetrics] = useState({
-    litersProcessed: 2847350,
-    activeProjects: 12,
-    uptime: 99.7,
-    efficiencyGain: 15.3
+    copperRecovery: 96.8,
+    organicLossReduction: 84.2,
+    sxPlantUptime: 99.7,
+    torqueProcessed: 67.3
   })
 
-  // Simulate live updates
+  // Simulate live updates with mining-relevant ranges
   useEffect(() => {
     const interval = setInterval(() => {
       setLiveMetrics(prev => ({
-        litersProcessed: prev.litersProcessed + Math.floor(Math.random() * 500) + 100,
-        activeProjects: Math.floor(Math.random() * 3) + 11, // 11-13 projects
-        uptime: 99.5 + Math.random() * 0.5, // 99.5-100%
-        efficiencyGain: 14.8 + Math.random() * 1, // 14.8-15.8%
+        copperRecovery: 95.5 + Math.random() * 2, // 95.5-97.5%
+        organicLossReduction: 82 + Math.random() * 4, // 82-86%
+        sxPlantUptime: 99.2 + Math.random() * 0.8, // 99.2-100%
+        torqueProcessed: 65 + Math.random() * 5, // 65-70 ton/día
       }))
     }, 3000) // Update every 3 seconds
 
@@ -93,19 +93,23 @@ export default function Hero() {
               <div className="w-24 h-1 bg-emerald-400 mb-6"></div>
               
               <p className="text-xl text-emerald-100 leading-relaxed mb-8">
-                Especialistas en servicios de filtración, deshidratación de sólidos y tratamiento de orgánico 
-                en plantas SX con más de <span className="font-semibold text-emerald-300">dos décadas de experiencia</span>. 
-                Soluciones móviles que aportan valor, sostenibilidad y seguridad operacional.
+                Especialistas en optimización de plantas SX/EW con equipos móviles de <span className="font-semibold text-emerald-300">hasta 70 ton/día de capacidad</span>.
+                Reducimos pérdidas de orgánico, maximizamos recuperación de cobre y optimizamos operaciones con
+                <span className="font-semibold text-emerald-300"> más de 23 años de experiencia comprobada</span>.
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" suppressHydrationWarning>
+              <button
+                onClick={() => router.push('/services')}
+                className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                suppressHydrationWarning
+              >
                 Ver Servicios
               </button>
-              <button 
+              <button
                 onClick={(e) => handleContactClick(e, router, pathname)}
-                className="border-2 border-emerald-300 text-emerald-100 hover:bg-emerald-300 hover:text-emerald-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300" 
+                className="border-2 border-emerald-300 text-emerald-100 hover:bg-emerald-300 hover:text-emerald-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
                 suppressHydrationWarning
               >
                 Contactar
@@ -124,45 +128,45 @@ export default function Hero() {
                 <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
                   <div className="flex items-center justify-between mb-2">
                     <Beaker className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Este Mes</span>
+                    <span className="text-xs text-emerald-300">Recuperación</span>
                   </div>
                   <div className="text-xl font-bold text-white transition-all duration-500">
-                    {(liveMetrics.litersProcessed / 1000000).toFixed(2)}M
+                    {liveMetrics.copperRecovery.toFixed(1)}%
                   </div>
-                  <div className="text-xs text-emerald-200">Litros Procesados</div>
+                  <div className="text-xs text-emerald-200">Cobre SX/EW</div>
                 </div>
 
                 <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
                   <div className="flex items-center justify-between mb-2">
                     <TrendingUp className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Activos</span>
+                    <span className="text-xs text-emerald-300">Reducción</span>
                   </div>
                   <div className="text-xl font-bold text-white transition-all duration-500">
-                    {liveMetrics.activeProjects}
+                    -{liveMetrics.organicLossReduction.toFixed(1)}%
                   </div>
-                  <div className="text-xs text-emerald-200">Proyectos Activos</div>
+                  <div className="text-xs text-emerald-200">Pérdidas Orgánico</div>
                 </div>
 
                 <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
                   <div className="flex items-center justify-between mb-2">
                     <Zap className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Tiempo Real</span>
+                    <span className="text-xs text-emerald-300">Operativo</span>
                   </div>
                   <div className="text-xl font-bold text-white transition-all duration-500">
-                    {liveMetrics.uptime.toFixed(1)}%
+                    {liveMetrics.sxPlantUptime.toFixed(1)}%
                   </div>
-                  <div className="text-xs text-emerald-200">Tiempo Operativo</div>
+                  <div className="text-xs text-emerald-200">Uptime Planta SX</div>
                 </div>
 
                 <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
                   <div className="flex items-center justify-between mb-2">
                     <Activity className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Promedio</span>
+                    <span className="text-xs text-emerald-300">Capacidad</span>
                   </div>
                   <div className="text-xl font-bold text-white transition-all duration-500">
-                    +{liveMetrics.efficiencyGain.toFixed(1)}%
+                    {liveMetrics.torqueProcessed.toFixed(1)}
                   </div>
-                  <div className="text-xs text-emerald-200">Mejora Eficiencia</div>
+                  <div className="text-xs text-emerald-200">Ton/día Procesadas</div>
                 </div>
               </div>
 

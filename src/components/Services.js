@@ -1,7 +1,11 @@
 // src/components/Services.js
+'use client'
+import { useRouter } from 'next/navigation'
 import { Beaker, Waves, Factory, Zap, Microscope, RefreshCw, Droplets } from 'lucide-react'
+import { handleContactClick } from '@/utils/navigation'
 
 export default function Services() {
+  const router = useRouter()
   const services = [
     {
       title: "Filtración y Deshidratación de Borras y Sólidos",
@@ -108,10 +112,18 @@ export default function Services() {
             continua con entrega de KPIs diarios. Flexibilidad operativa sin instalaciones definitivas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-colors" suppressHydrationWarning>
+            <button
+              onClick={(e) => handleContactClick(e, router, '/services')}
+              className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-colors"
+              suppressHydrationWarning
+            >
               Solicitar Consulta
             </button>
-            <button className="border-2 border-emerald-300 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-300 hover:text-emerald-900 transition-colors" suppressHydrationWarning>
+            <button
+              onClick={() => router.push('/casos-de-estudio')}
+              className="border-2 border-emerald-300 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-300 hover:text-emerald-900 transition-colors"
+              suppressHydrationWarning
+            >
               Ver Casos de Éxito
             </button>
           </div>

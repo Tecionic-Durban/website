@@ -1,5 +1,5 @@
 // src/components/About.js
-import { Beaker, Droplets, RefreshCw, Zap } from 'lucide-react'
+import { Beaker, Droplets, RefreshCw, Zap, Shield, Award, CheckCircle } from 'lucide-react'
 
 export default function About() {
   return (
@@ -14,9 +14,9 @@ export default function About() {
               </h2>
               <div className="w-20 h-1 bg-emerald-600"></div>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Tec-Ionic Durban surge de más de dos décadas de experiencia acumulada en servicios 
-                de filtración en faenas mineras de Chile. Fundada por profesionales con trayectoria 
-                en SX y filtración, consolidamos nuestro primer gran contrato en Radomiro Tomic.
+                Empresa chilena especializada en optimización de procesos SX/EW con equipos móviles de alta capacidad.
+                Fundada por profesionales con trayectoria comprobada, consolidamos nuestro liderazgo con clientes como
+                BHP, Antofagasta Minerals y Capstone Cooper en operaciones críticas.
               </p>
             </div>
 
@@ -53,6 +53,40 @@ export default function About() {
                   ex.proof para ambientes explosivos.
                 </p>
               </div>
+
+              {/* Trust Signals Section */}
+              <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl p-6 text-white">
+                <h3 className="text-lg font-semibold mb-4 flex items-center">
+                  <Shield className="w-5 h-5 mr-2" />
+                  Certificaciones y Credenciales
+                </h3>
+                <div className="grid md:grid-cols-3 gap-4 text-sm">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-300" />
+                    <span>Registro SICEP Vigente</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-300" />
+                    <span>Equipos Ex.Proof Certificados</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-300" />
+                    <span>+1,500 días sin Accidentes</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-300" />
+                    <span>ISO 9001:2015 Calidad</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-300" />
+                    <span>ISO 14001:2015 Ambiental</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-300" />
+                    <span>OHSAS 18001 Seguridad</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -86,12 +120,12 @@ export default function About() {
                 <div className="border-t border-emerald-500 pt-6">
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
-                      <div className="text-3xl font-bold text-emerald-300">20+</div>
+                      <div className="text-3xl font-bold text-emerald-300">23+</div>
                       <div className="text-sm text-emerald-100">Años de Experiencia</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-emerald-300">70</div>
-                      <div className="text-sm text-emerald-100">Ton/día Capacidad</div>
+                      <div className="text-3xl font-bold text-emerald-300">96.8%</div>
+                      <div className="text-sm text-emerald-100">Recuperación Cu</div>
                     </div>
                   </div>
                 </div>
