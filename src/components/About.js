@@ -39,6 +39,42 @@ export default function About() {
           </div>
         </div>
 
+        {/* Detailed Differentiators */}
+        <div className="space-y-6 mb-12">
+          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-600 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Sin Modificaciones de Planta
+            </h3>
+            <p className="text-gray-600">
+              Equipos móviles que operan sin requerir modificaciones a infraestructura existente
+              ni nuevos permisos ambientales. Instalación rápida y operación inmediata
+              sin interrumpir procesos productivos.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-500 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Flexibilidad Operacional Total
+            </h3>
+            <p className="text-gray-600">
+              Desde contratos de emergencia con despliegue en 48-72 horas hasta proyectos
+              de largo plazo de hasta 5 años. Capacidad de atender múltiples líneas en paralelo
+              con operación continua y monitoreo remoto de KPIs en tiempo real.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 border-l-4 border-emerald-400 shadow-sm metal-texture industrial-shimmer subtle-glow micro-bounce">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Tecnología Probada Multisectorial
+            </h3>
+            <p className="text-gray-600">
+              Soluciones aplicadas exitosamente en cobre, litio, potasio y refinación de petróleo.
+              Equipos ex.proof certificados para ambientes explosivos y registro SICEP vigente
+              para operaciones en faenas de alta complejidad.
+            </p>
+          </div>
+        </div>
+
         {/* Metrics and Certifications Combined */}
         <div className="bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-8 text-white">
           {/* Key Metrics */}
