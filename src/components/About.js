@@ -98,11 +98,11 @@ export default function About() {
                   03
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-400 w-full">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">Cumplimiento Normativo</h4>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Optimización Continua</h4>
                   <p className="text-gray-600">
-                    Equipos Ex.Proof certificados para ambientes explosivos. Registro SICEP vigente.
-                    Certificaciones ISO 9001, 14001 y OHSAS 18001. Protocolos de seguridad
-                    alineados con estándares de BHP, Codelco y Antofagasta Minerals.
+                    Análisis predictivo de rendimiento mediante machine learning. Optimización
+                    automática de parámetros operacionales. Identificación proactiva de mejoras
+                    de eficiencia y reducción de costos durante operación.
                   </p>
                 </div>
               </div>
