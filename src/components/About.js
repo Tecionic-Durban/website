@@ -28,8 +28,8 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Droplets className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Modelo de Servicios</h4>
-                <p className="text-gray-600">Cero CAPEX requerido, solo costos operacionales según uso real y resultados obtenidos</p>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Modelo OPEX</h4>
+                <p className="text-gray-600">Cero inversión inicial. Pagos basados únicamente en resultados y tonelaje procesado</p>
               </div>
             </div>
 
@@ -39,8 +39,8 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <RefreshCw className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Retorno Garantizado</h4>
-                <p className="text-gray-600">ROI positivo desde el primer mes con KPIs verificables y reportería en tiempo real</p>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Performance Verificable</h4>
+                <p className="text-gray-600">Monitoreo 24/7 con dashboard en tiempo real y reportes diarios de eficiencia</p>
               </div>
             </div>
 
@@ -50,8 +50,8 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Escalabilidad Total</h4>
-                <p className="text-gray-600">Desde soluciones de emergencia hasta contratos de 5 años con capacidad multi-línea</p>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Expertise Multisectorial</h4>
+                <p className="text-gray-600">Experiencia comprobada en cobre, litio, potasio, zinc y refinación de petróleo</p>
               </div>
             </div>
           </div>
@@ -70,11 +70,11 @@ export default function About() {
                   01
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-600 w-full">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">Sin Modificaciones de Planta</h4>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Instalación Plug & Play</h4>
                   <p className="text-gray-600">
-                    Equipos móviles que operan sin requerir modificaciones a infraestructura existente
-                    ni nuevos permisos ambientales. Instalación rápida y operación inmediata
-                    sin interrumpir procesos productivos.
+                    Equipos móviles preconfigurados que se conectan directamente a sus sistemas existentes.
+                    Sin modificaciones de infraestructura, sin permisos adicionales, sin interrupciones.
+                    Operación en 24-48 horas desde llegada a faena.
                   </p>
                 </div>
               </div>
@@ -84,11 +84,11 @@ export default function About() {
                   02
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-500 w-full">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">Flexibilidad Operacional Total</h4>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Contratos Flexibles</h4>
                   <p className="text-gray-600">
-                    Desde contratos de emergencia con despliegue en 48-72 horas hasta proyectos
-                    de largo plazo de hasta 5 años. Capacidad de atender múltiples líneas en paralelo
-                    con operación continua y monitoreo remoto de KPIs en tiempo real.
+                    Desde respuesta de emergencia (48-72 horas) hasta proyectos de largo plazo (5 años).
+                    Escalamiento automático según demanda: una línea o múltiples plantas simultáneas.
+                    Términos comerciales adaptables a ciclos de mercado.
                   </p>
                 </div>
               </div>
@@ -98,11 +98,11 @@ export default function About() {
                   03
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-400 w-full">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">Tecnología Probada Multisectorial</h4>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Cumplimiento Normativo</h4>
                   <p className="text-gray-600">
-                    Soluciones aplicadas exitosamente en cobre, litio, potasio y refinación de petróleo.
-                    Equipos ex.proof certificados para ambientes explosivos y registro SICEP vigente
-                    para operaciones en faenas de alta complejidad.
+                    Equipos Ex.Proof certificados para ambientes explosivos. Registro SICEP vigente.
+                    Certificaciones ISO 9001, 14001 y OHSAS 18001. Protocolos de seguridad
+                    alineados con estándares de BHP, Codelco y Antofagasta Minerals.
                   </p>
                 </div>
               </div>
