@@ -23,8 +23,9 @@ export default function About() {
             <span className="block text-emerald-600">Sólido-Líquido Móvil</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Soluciones de clase mundial para BHP, Codelco y Antofagasta Minerals.
-            Equipos móviles de alta capacidad que optimizan operaciones SX/EW sin interrumpir procesos existentes.
+            Empresa chilena especializada en separación sólido-líquido en aplicaciones SX/EW con equipos móviles de alta capacidad.
+            Atendemos a BHP, Codelco, Antofagasta Minerals, entre otras importantes empresas mineras,
+            proporcionando soluciones que optimizan operaciones sin interrumpir procesos existentes.
           </p>
         </div>
 
