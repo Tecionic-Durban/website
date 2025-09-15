@@ -29,7 +29,7 @@ export default function About() {
                   <Droplets className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-4">Modelo OPEX</h4>
-                <p className="text-gray-600">Cero inversión inicial. Pagos basados únicamente en resultados y tonelaje procesado</p>
+                <p className="text-gray-600">Cero inversión inicial. Pagos basados únicamente en resultados y tonelaje procesado con total transparencia</p>
               </div>
             </div>
 
