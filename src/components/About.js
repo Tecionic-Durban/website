@@ -96,24 +96,24 @@ export default function About() {
               <div className="space-y-8">
                 <div className="text-center">
                   <Beaker className="w-16 h-16 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold">Servicios Especializados</h3>
+                  <h3 className="text-2xl font-bold">Por Qué Nos Eligen</h3>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div className="bg-emerald-700/50 rounded-lg p-4">
                     <Droplets className="w-6 h-6 mx-auto mb-2" />
-                    <div className="text-sm font-semibold">Filtración</div>
-                    <div className="text-xs text-emerald-200">Móvil</div>
+                    <div className="text-sm font-semibold">Sin Inversión</div>
+                    <div className="text-xs text-emerald-200">Capital</div>
                   </div>
                   <div className="bg-emerald-700/50 rounded-lg p-4">
                     <RefreshCw className="w-6 h-6 mx-auto mb-2" />
-                    <div className="text-sm font-semibold">Separación</div>
-                    <div className="text-xs text-emerald-200">Sólido-Líquido</div>
+                    <div className="text-sm font-semibold">ROI Inmediato</div>
+                    <div className="text-xs text-emerald-200">Mes 1</div>
                   </div>
                   <div className="bg-emerald-700/50 rounded-lg p-4">
                     <Zap className="w-6 h-6 mx-auto mb-2" />
-                    <div className="text-sm font-semibold">Tratamiento</div>
-                    <div className="text-xs text-emerald-200">Orgánico</div>
+                    <div className="text-sm font-semibold">Cero Riesgo</div>
+                    <div className="text-xs text-emerald-200">Operacional</div>
                   </div>
                 </div>
 

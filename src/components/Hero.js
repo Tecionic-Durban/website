@@ -187,24 +187,24 @@ export default function Hero() {
               
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-emerald-100">
-                  Servicios Especializados
+                  Lo que Nuestros Clientes Logran
                 </h3>
                 <div className="grid grid-cols-2 gap-3 text-sm text-emerald-200">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span>Filtros Prensa Móviles</span>
+                    <span>Reducen Costos Operacionales</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span>Tratamiento Orgánico</span>
+                    <span>Maximizan Recuperación Cu</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span>Centrífugas</span>
+                    <span>Eliminan Paradas de Planta</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span>Deshidratación Sólidos</span>
+                    <span>Optimizan Flujo de Caja</span>
                   </div>
                 </div>
               </div>
