@@ -19,7 +19,7 @@ export default function About() {
         </div>
 
         {/* Value Propositions - Business Benefits */}
-        <div className="mb-16">
+        <div className="mb-8">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Beneficios Comerciales</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="relative group">
@@ -58,18 +58,18 @@ export default function About() {
         </div>
 
         {/* How We Deliver - Timeline Style */}
-        <div className="mb-16">
+        <div className="mb-8">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">Cómo Lo Logramos</h3>
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-200 via-emerald-400 to-emerald-600 hidden lg:block"></div>
 
-            <div className="space-y-12">
+            <div className="space-y-6">
               <div className="relative flex items-start lg:pl-20">
                 <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
                   01
                 </div>
-                <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-600 w-full">
+                <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-4 shadow-sm border-l-4 border-emerald-600 w-full">
                   <h4 className="text-xl font-bold text-gray-900 mb-3">Instalación Plug & Play</h4>
                   <p className="text-gray-600">
                     Equipos móviles preconfigurados que se conectan directamente a sus sistemas existentes.
@@ -83,7 +83,7 @@ export default function About() {
                 <div className="absolute left-0 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg lg:block hidden">
                   02
                 </div>
-                <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-6 shadow-sm border-l-4 border-emerald-500 w-full">
+                <div className="bg-gradient-to-r from-emerald-50 to-white rounded-xl p-4 shadow-sm border-l-4 border-emerald-500 w-full">
                   <h4 className="text-xl font-bold text-gray-900 mb-3">Contratos Flexibles</h4>
                   <p className="text-gray-600">
                     Desde respuesta de emergencia (48-72 horas) hasta proyectos de largo plazo (5 años).
