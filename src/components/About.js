@@ -113,9 +113,9 @@ export default function About() {
                     },
                     {
                       number: "03",
-                      title: "Soporte Integral 24/7",
-                      description: "Mantenimiento preventivo especializado y cambio de equipos si se requieren detenciones largas. Operación continua bajo turnos 7x7 con entrega de KPIs diarios verificables.",
-                      timeline: "24/7"
+                      title: "Implementación por Fases",
+                      description: "Modelo de riesgo controlado: iniciamos con pilotos, luego equipos existentes y finalmente nuevas adquisiciones de gran capacidad. Resultados verificables en cada etapa antes de escalar.",
+                      timeline: "Piloto → Escala"
                     }
                   ].map((item, index) => (
                     <div key={index} className="group">
