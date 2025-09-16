@@ -113,9 +113,9 @@ export default function About() {
                     },
                     {
                       number: "03",
-                      title: "Optimización Continua",
-                      description: "Análisis predictivo mediante machine learning. Optimización automática de parámetros operacionales e identificación proactiva de mejoras de eficiencia.",
-                      timeline: "Continuo"
+                      title: "Soporte Integral 24/7",
+                      description: "Mantenimiento preventivo especializado y cambio de equipos si se requieren detenciones largas. Operación continua bajo turnos 7x7 con entrega de KPIs diarios verificables.",
+                      timeline: "24/7"
                     }
                   ].map((item, index) => (
                     <div key={index} className="group">
