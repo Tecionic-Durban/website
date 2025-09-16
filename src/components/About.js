@@ -51,14 +51,14 @@ export default function About() {
                   {
                     icon: RefreshCw,
                     title: "Rendimiento Verificable",
-                    description: "Monitoreo en tiempo real con dashboard ejecutivo y reportería diaria de KPIs operacionales.",
+                    description: "Reportería diaria detallada de KPIs operacionales: volumen filtrado, sólidos recuperados y eficiencia de planta.",
                     metric: "24/7 Tracking",
                     color: "blue"
                   },
                   {
                     icon: Zap,
                     title: "Experiencia Multisectorial",
-                    description: "Portfolio diversificado: cobre, litio, potasio, zinc y refinación de petróleo con casos de éxito documentados.",
+                    description: "Portfolio comprobado en cobre, litio, potasio y refinación de petróleo, con expansión planificada hacia zinc.",
                     metric: "5 Sectores",
                     color: "purple"
                   }
