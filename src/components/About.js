@@ -44,7 +44,7 @@ Especialistas en separación sólido-líquido en aplicaciones SX/EW con equipos 
                   {
                     icon: Droplets,
                     title: "Modelo OPEX Avanzado",
-                    description: "Cero inversión inicial. Facturación mensual basada únicamente en resultados verificables según el tipo de servicio prestado.",
+                    description: "Cero inversión inicial. Modelo de servicios con facturación mensual que optimiza el flujo de caja operacional del cliente.",
                     metric: "0% CAPEX",
                     color: "emerald"
                   },
