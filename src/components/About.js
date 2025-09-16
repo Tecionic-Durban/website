@@ -51,7 +51,7 @@ Especialistas en separación sólido-líquido en aplicaciones SX/EW con equipos 
                   {
                     icon: RefreshCw,
                     title: "Rendimiento Verificable",
-                    description: "Reportería diaria de KPIs específicos por servicio: eficiencia de separación, reducción de arrastres, optimización de capacidad.",
+                    description: "Reportería diaria de KPIs operacionales específicos según el tipo de servicio prestado. Parámetros verificables que demuestran mejoras en eficiencia y productividad.",
                     metric: "24/7 Tracking",
                     color: "blue"
                   },
