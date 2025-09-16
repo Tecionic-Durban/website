@@ -23,7 +23,7 @@ export default function About() {
             <span className="block text-emerald-600">Sólido-Líquido Móvil</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Empresa chilena especializada en separación sólido-líquido en aplicaciones SX/EW con equipos móviles de alta capacidad.
+Especialistas en separación sólido-líquido en aplicaciones SX/EW con equipos móviles de alta capacidad.
             Atendemos a BHP, Codelco, Antofagasta Minerals, entre otras importantes empresas mineras,
             proporcionando soluciones que optimizan operaciones sin interrumpir procesos existentes.
           </p>
@@ -44,21 +44,21 @@ export default function About() {
                   {
                     icon: Droplets,
                     title: "Modelo OPEX Avanzado",
-                    description: "Cero inversión inicial. Estructura de pagos basada en resultados verificables y tonelaje procesado.",
+                    description: "Cero inversión inicial. Facturación mensual basada únicamente en resultados verificables según el tipo de servicio prestado.",
                     metric: "0% CAPEX",
                     color: "emerald"
                   },
                   {
                     icon: RefreshCw,
                     title: "Rendimiento Verificable",
-                    description: "Reportería diaria detallada de KPIs operacionales: volumen filtrado, sólidos recuperados y eficiencia de planta.",
+                    description: "Reportería diaria de KPIs específicos por servicio: eficiencia de separación, reducción de arrastres, optimización de capacidad.",
                     metric: "24/7 Tracking",
                     color: "blue"
                   },
                   {
                     icon: Zap,
                     title: "Experiencia Multisectorial",
-                    description: "Portfolio comprobado en cobre, litio, potasio y refinación de petróleo, con expansión planificada hacia zinc.",
+                    description: "Portfolio comprobado en cobre, litio, potasio y refinación de petróleo con casos de éxito documentados.",
                     metric: "5 Sectores",
                     color: "purple"
                   }
@@ -113,9 +113,9 @@ export default function About() {
                     },
                     {
                       number: "03",
-                      title: "Implementación por Fases",
-                      description: "Modelo de riesgo controlado: iniciamos con pilotos, luego equipos existentes y finalmente nuevas adquisiciones de gran capacidad. Resultados verificables en cada etapa antes de escalar.",
-                      timeline: "Piloto → Escala"
+                      title: "Operación Multi-Línea",
+                      description: "Capacidad de atender múltiples líneas de trabajo en paralelo con equipos independientes. Maximiza productividad sin interferir con operaciones simultáneas.",
+                      timeline: "Paralelo"
                     }
                   ].map((item, index) => (
                     <div key={index} className="group">
