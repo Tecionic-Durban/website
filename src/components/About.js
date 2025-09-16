@@ -184,8 +184,7 @@ Especialistas en separación sólido-líquido en aplicaciones SX/EW con equipos 
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  "SICEP Vigente", "ISO 9001:2015", "ISO 14001:2015",
-                  "OHSAS 18001", "Equipos Ex.Proof", "Múltiples Sectores"
+                  "SICEP Vigente", "Equipos Ex.Proof"
                 ].map((cert, index) => (
                   <div key={index} className="flex items-center space-x-3 p-3 rounded-lg bg-emerald-50 border border-emerald-100 hover:bg-emerald-100/50 transition-colors">
                     <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
