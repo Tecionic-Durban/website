@@ -9,39 +9,39 @@ export default function Services() {
   const services = [
     {
       title: "Filtración y Deshidratación de Borras y Sólidos",
-      description: "Filtración móvil de borras y sólidos en refinerías y plantas SX. Capacidad hasta 70 ton/día de torta seca mediante filtros prensa de alta capacidad.",
+      description: "Filtración móvil de borras y sólidos en refinerías y plantas SX. Capacidad hasta 130 ton/día de torta seca mediante filtros prensa (recomendado) o centrífugas según requerimiento del cliente.",
       icon: Beaker,
-      features: ["Hasta 70 ton/día torta seca", "Filtros prensa móviles", "Equipos ex.proof"]
+      features: []
     },
     {
       title: "Tratamiento y Recuperación de Orgánico SX",
       description: "Tratamiento especializado para recuperación de orgánico en procesos de extracción por solventes. Reduce pérdidas y optimiza la eficiencia de planta.",
       icon: RefreshCw,
-      features: ["Reducción pérdidas orgánico", "Optimización eficiencia", "Estabilidad operacional"]
+      features: []
     },
     {
       title: "Deshidratación de Concentrados",
       description: "Deshidratación de concentrados de cobre mediante filtros prensa de alta capacidad. Procesos optimizados para máxima recuperación de valores.",
       icon: Droplets,
-      features: ["Concentrados de cobre", "Filtros prensa alta capacidad", "Máxima recuperación"]
+      features: []
     },
     {
       title: "Tratamiento de Sólidos Finos",
       description: "Procesamiento de sólidos finos provenientes de clarificadores. Capacidad hasta 14 ton/día con centrífugas especializadas.",
       icon: Microscope,
-      features: ["Hasta 14 ton/día sólidos finos", "Centrífugas especializadas", "Sistemas auxiliares"]
+      features: []
     },
     {
       title: "Limpieza de Celdas EW",
       description: "Limpieza especializada de celdas de electroobtención para optimizar la producción de cátodos de cobre y mantener eficiencias operacionales.",
       icon: Zap,
-      features: ["Celdas electroobtención", "Optimización cátodos", "Mantenimiento especializado"]
+      features: []
     },
     {
       title: "Remoción de Sólidos de Aguas Clarificadas",
       description: "Optimización de la recirculación de agua de proceso mediante remoción eficiente de sólidos. Hasta 120 m³/día de agua clarificada.",
       icon: Waves,
-      features: ["Hasta 120 m³/día agua", "Recirculación optimizada", "Bombas especiales pulpas"]
+      features: []
     }
   ]
 
@@ -85,17 +85,6 @@ export default function Services() {
                 
                 <p className="text-gray-600 text-sm mb-4">{service.description}</p>
                 
-                <div className="mb-4">
-
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <div className="w-4 h-4 text-emerald-500 mr-2 micro-bounce">✓</div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
 
             </div>
