@@ -10,27 +10,37 @@ export default function Hero() {
   const router = useRouter()
   const pathname = usePathname()
   
-  // Live mining-specific metrics state
-  const [liveMetrics, setLiveMetrics] = useState({
-    copperRecovery: 96.8,
-    organicLossReduction: 84.2,
-    sxPlantUptime: 99.7,
-    torqueProcessed: 67.3
-  })
-
-  // Simulate live updates with mining-relevant ranges
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLiveMetrics(prev => ({
-        copperRecovery: 95.5 + Math.random() * 2, // 95.5-97.5%
-        organicLossReduction: 82 + Math.random() * 4, // 82-86%
-        sxPlantUptime: 99.2 + Math.random() * 0.8, // 99.2-100%
-        torqueProcessed: 65 + Math.random() * 5, // 65-70 ton/día
-      }))
-    }, 3000) // Update every 3 seconds
-
-    return () => clearInterval(interval)
-  }, [])
+  // Historical performance achievements
+  const achievements = [
+    {
+      value: "80%",
+      label: "Reducción de Lodos",
+      description: "Volúmenes a disponer",
+      icon: TrendingUp,
+      color: "text-emerald-300"
+    },
+    {
+      value: "50%",
+      label: "Aumento Capacidad",
+      description: "Plantas concentradoras",
+      icon: Zap,
+      color: "text-blue-300"
+    },
+    {
+      value: "50%",
+      label: "Reducción Arrastres",
+      description: "Tratamiento orgánico",
+      icon: Beaker,
+      color: "text-purple-300"
+    },
+    {
+      value: "<10ppm",
+      label: "Retención Sólidos",
+      description: "En orgánico SX",
+      icon: Activity,
+      color: "text-green-300"
+    }
+  ]
   return (
     <>
       <section className="relative bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 text-white overflow-hidden">
@@ -116,63 +126,46 @@ export default function Hero() {
               </button>
             </div>
             
-            {/* Live Metrics Dashboard */}
+            {/* Performance Achievements */}
             <div className="pt-8 border-t border-emerald-700">
-              <div className="flex items-center mb-4">
-                <Activity className="w-4 h-4 text-emerald-400 mr-2" />
-                <span className="text-sm text-emerald-200 font-medium">Métricas en Tiempo Real</span>
-                <div className="w-2 h-2 bg-green-400 rounded-full ml-2 animate-pulse"></div>
+              <div className="flex items-center mb-6">
+                <TrendingUp className="w-5 h-5 text-emerald-400 mr-3" />
+                <div>
+                  <span className="text-lg text-emerald-100 font-semibold">Resultados Comprobados</span>
+                  <p className="text-sm text-emerald-300">Mejores casos documentados en operaciones reales</p>
+                </div>
               </div>
-              
+
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
-                  <div className="flex items-center justify-between mb-2">
-                    <Beaker className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Recuperación</span>
-                  </div>
-                  <div className="text-xl font-bold text-white transition-all duration-500">
-                    {liveMetrics.copperRecovery.toFixed(1)}%
-                  </div>
-                  <div className="text-xs text-emerald-200">Cobre SX/EW</div>
-                </div>
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="relative group">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 hover:bg-white/15">
+                      <div className="flex items-center justify-between mb-3">
+                        <achievement.icon className={`w-5 h-5 ${achievement.color}`} />
+                        <span className="text-xs text-emerald-300 bg-emerald-800/40 px-2 py-1 rounded-full">
+                          Máximo
+                        </span>
+                      </div>
+                      <div className={`text-2xl font-bold ${achievement.color} mb-1`}>
+                        {achievement.value}
+                      </div>
+                      <div className="text-sm font-medium text-emerald-100 mb-1">
+                        {achievement.label}
+                      </div>
+                      <div className="text-xs text-emerald-300">
+                        {achievement.description}
+                      </div>
+                    </div>
 
-                <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
-                  <div className="flex items-center justify-between mb-2">
-                    <TrendingUp className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Reducción</span>
+                    {/* Subtle glow effect on hover */}
+                    <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity bg-gradient-to-r from-emerald-400 to-emerald-600 blur-xl -z-10`}></div>
                   </div>
-                  <div className="text-xl font-bold text-white transition-all duration-500">
-                    -{liveMetrics.organicLossReduction.toFixed(1)}%
-                  </div>
-                  <div className="text-xs text-emerald-200">Pérdidas Orgánico</div>
-                </div>
-
-                <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
-                  <div className="flex items-center justify-between mb-2">
-                    <Zap className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Operativo</span>
-                  </div>
-                  <div className="text-xl font-bold text-white transition-all duration-500">
-                    {liveMetrics.sxPlantUptime.toFixed(1)}%
-                  </div>
-                  <div className="text-xs text-emerald-200">Uptime Planta SX</div>
-                </div>
-
-                <div className="bg-emerald-800/30 rounded-lg p-4 backdrop-blur-sm border border-emerald-600/20">
-                  <div className="flex items-center justify-between mb-2">
-                    <Activity className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs text-emerald-300">Capacidad</span>
-                  </div>
-                  <div className="text-xl font-bold text-white transition-all duration-500">
-                    {liveMetrics.torqueProcessed.toFixed(1)}
-                  </div>
-                  <div className="text-xs text-emerald-200">Ton/día Procesadas</div>
-                </div>
+                ))}
               </div>
 
-              <div className="mt-4 text-center">
-                <p className="text-xs text-emerald-300 opacity-75">
-                  Datos actualizados cada 3 segundos • Sistema de monitoreo 24/7
+              <div className="mt-6 text-center">
+                <p className="text-xs text-emerald-300/70">
+                  * Resultados variables según condiciones específicas de cada operación
                 </p>
               </div>
             </div>
