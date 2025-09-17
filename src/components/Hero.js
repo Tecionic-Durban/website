@@ -130,17 +130,19 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Clean Metrics Grid */}
-              <div className="grid grid-cols-2 gap-3">
+              {/* Enhanced Metrics Grid */}
+              <div className="grid grid-cols-2 gap-4">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="bg-white/5 rounded-lg p-3 border border-white/10 hover:bg-white/10 transition-colors">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <achievement.icon className="w-4 h-4 text-emerald-400" />
-                      <div className="text-lg font-bold text-white">
+                  <div key={index} className="bg-white/15 rounded-xl p-4 border border-emerald-400/20 hover:bg-white/20 hover:border-emerald-400/40 transition-all duration-300 backdrop-blur-sm">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="w-6 h-6 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                        <achievement.icon className="w-4 h-4 text-emerald-300" />
+                      </div>
+                      <div className="text-2xl font-bold text-emerald-300">
                         {achievement.value}
                       </div>
                     </div>
-                    <div className="text-xs text-emerald-200 font-medium">
+                    <div className="text-sm text-white font-medium">
                       {achievement.label}
                     </div>
                   </div>
