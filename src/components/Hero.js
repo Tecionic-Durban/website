@@ -80,52 +80,19 @@ export default function Hero() {
         }}></div>
       </div>
 
-      {/* Advanced Floating Background Elements with Three Ball Motif */}
+      {/* Clean Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Primary floating elements with enhanced animations */}
         <div className="absolute top-20 left-[8%] w-40 h-40 bg-gradient-to-br from-emerald-600/15 to-emerald-700/10 rounded-full opacity-20 animate-float-slow blur-sm"></div>
         <div className="absolute top-32 right-[12%] w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-emerald-600/15 rounded-full opacity-25 animate-float-medium blur-sm"></div>
         <div className="absolute bottom-40 left-[3%] w-36 h-36 bg-gradient-to-br from-emerald-400/15 to-emerald-500/10 rounded-full opacity-18 animate-float-slow blur-sm"></div>
 
-        {/* Three Ball Constellations - Strategic Brand Placement */}
-        <div className="absolute top-16 right-[20%]">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-emerald-400/30 rounded-full animate-float-slow"></div>
-            <div className="w-3 h-3 bg-emerald-500/30 rounded-full animate-float-medium"></div>
-            <div className="w-3 h-3 bg-emerald-600/30 rounded-full animate-float-fast"></div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-1/3 left-[15%]">
-          <div className="flex flex-col space-y-2">
-            <div className="w-2 h-2 bg-emerald-400/40 rounded-full enterprise-pulse"></div>
-            <div className="w-2 h-2 bg-emerald-500/40 rounded-full enterprise-pulse" style={{animationDelay: '0.3s'}}></div>
-            <div className="w-2 h-2 bg-emerald-600/40 rounded-full enterprise-pulse" style={{animationDelay: '0.6s'}}></div>
-          </div>
-        </div>
-
-        <div className="absolute top-1/2 right-[8%]">
-          <div className="relative">
-            <div className="w-4 h-4 bg-emerald-400/25 rounded-full animate-ping"></div>
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500/30 rounded-full enterprise-pulse"></div>
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-emerald-600/30 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
-
-        {/* Secondary layer with three ball micro-patterns */}
-        <div className="absolute top-1/4 left-1/3">
-          <div className="flex items-center space-x-1">
-            <div className="w-1 h-1 bg-emerald-400/50 rounded-full animate-ping"></div>
-            <div className="w-1 h-1 bg-emerald-500/50 rounded-full animate-ping" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-1 h-1 bg-emerald-600/50 rounded-full animate-ping" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-1/4 right-1/3">
-          <div className="grid grid-cols-3 gap-1">
-            <div className="w-1 h-1 bg-emerald-400/40 rounded-full enterprise-pulse"></div>
-            <div className="w-1 h-1 bg-emerald-500/40 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-1 h-1 bg-emerald-600/40 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
+        {/* Single Strategic Three Ball Brand Element - Top Right */}
+        <div className="absolute top-20 right-[15%]">
+          <div className="flex items-center space-x-2 opacity-30">
+            <div className="w-3 h-3 bg-emerald-400 rounded-full animate-float-slow"></div>
+            <div className="w-3 h-3 bg-emerald-500 rounded-full animate-float-medium"></div>
+            <div className="w-3 h-3 bg-emerald-600 rounded-full animate-float-fast"></div>
           </div>
         </div>
 
@@ -142,12 +109,7 @@ export default function Hero() {
             <div className="space-y-8">
               {/* Subtle Problem Statement */}
               <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-200 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm enterprise-fade-in sophisticated-hover">
-                {/* Three ball brand indicator */}
-                <div className="flex items-center space-x-1 mr-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                </div>
+                <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
                 Solución sin interrupciones operacionales
               </div>
 
@@ -169,12 +131,6 @@ export default function Hero() {
                   </p>
 
                   <div className="inline-flex items-center px-4 py-2 bg-emerald-400/10 rounded-lg border border-emerald-400/20 sophisticated-hover layered-shadow progressive-reveal">
-                    {/* Three ball cluster as brand reinforcement */}
-                    <div className="flex items-center space-x-1 mr-3">
-                      <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
                     <CheckCircle className="w-4 h-4 text-emerald-400 mr-2 enterprise-pulse" />
                     <span className="text-emerald-200 font-semibold text-sm tracking-wide">CERO CAPEX • CERO MODIFICACIONES • MÁXIMO ROI</span>
                   </div>
@@ -184,17 +140,8 @@ export default function Hero() {
 
             {/* Enhanced Trust Architecture */}
             <div className="mt-12 space-y-6">
-              {/* Client Social Proof with Three Ball Branding */}
+              {/* Client Social Proof */}
               <div className="bg-white/5 rounded-2xl p-6 border border-emerald-400/10 backdrop-blur-sm sophisticated-hover layered-shadow progressive-reveal">
-                {/* Three ball header element */}
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                  </div>
-                  <span className="text-xs text-emerald-300/80 font-semibold tracking-wide">ENTERPRISE TRUST</span>
-                </div>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-6">
@@ -218,11 +165,11 @@ export default function Hero() {
                       </div>
                     </div>
                   </div>
-                  {/* Three ball constellation as accent */}
-                  <div className="flex items-center space-x-1">
-                    <div className="w-1.5 h-1.5 bg-emerald-400/60 rounded-full enterprise-pulse"></div>
-                    <div className="w-1.5 h-1.5 bg-emerald-500/60 rounded-full enterprise-pulse" style={{animationDelay: '0.3s'}}></div>
-                    <div className="w-1.5 h-1.5 bg-emerald-600/60 rounded-full enterprise-pulse" style={{animationDelay: '0.6s'}}></div>
+                  {/* Strategic three ball brand accent */}
+                  <div className="flex items-center space-x-1 opacity-40">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
                   </div>
                 </div>
               </div>
@@ -253,75 +200,42 @@ export default function Hero() {
           <div className="lg:col-span-7 lg:mt-8">
             {/* Visual Dashboard */}
             <div className="space-y-8">
-              {/* Equipment Visual with Three Ball Motif */}
+              {/* Equipment Visual */}
               <div className="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-xl rounded-3xl p-8 border border-emerald-400/15 layered-shadow-hover sophisticated-hover progressive-reveal">
-                {/* Three Ball Brand Header */}
+                {/* Clean Brand Header */}
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h3 className="text-xl font-bold text-white gradient-text-animated">Equipos Móviles TSF</h3>
                     <p className="text-emerald-200/70 text-sm">Tecnología de separación avanzada</p>
                   </div>
-                  {/* Enterprise Three Ball Motif */}
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                    <div className="w-3 h-3 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-3 h-3 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                  </div>
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
                 </div>
 
                 <div className="aspect-[16/10] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-2xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
-                  {/* Sophisticated placeholder with three ball integration */}
+                  {/* Clean sophisticated placeholder */}
                   <div className="text-center z-10">
-                    {/* Central equipment icon with ball constellation */}
-                    <div className="relative w-20 h-20 mx-auto mb-6">
-                      <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
-                        <Beaker className="w-10 h-10 text-emerald-300 enterprise-pulse" />
-                      </div>
-                      {/* Orbiting three balls around equipment */}
-                      <div className="absolute -top-2 -right-2 w-4 h-4 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.3s'}}></div>
-                      <div className="absolute top-1/2 -left-3 w-3 h-3 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.6s'}}></div>
+                    <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
+                      <Beaker className="w-10 h-10 text-emerald-300 enterprise-pulse" />
                     </div>
                     <p className="text-emerald-300/90 text-sm font-medium">Separación sólido-líquido móvil</p>
                   </div>
 
-                  {/* Advanced play button with ball elements */}
+                  {/* Clean play button */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="relative">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300 ripple-effect">
-                        <Play className="w-6 h-6 text-white ml-1" />
-                      </div>
-                      {/* Three balls around play button */}
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-white/60 rounded-full animate-ping"></div>
-                      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white/60 rounded-full animate-ping" style={{animationDelay: '0.2s'}}></div>
-                      <div className="absolute top-1/2 -right-2 w-1.5 h-1.5 bg-white/60 rounded-full animate-ping" style={{animationDelay: '0.4s'}}></div>
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300 ripple-effect">
+                      <Play className="w-6 h-6 text-white ml-1" />
                     </div>
                   </div>
 
-                  {/* Strategic three ball placement in corners */}
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.3s'}}></div>
-                  <div className="absolute top-4 left-4 w-1.5 h-1.5 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.6s'}}></div>
                 </div>
               </div>
 
               {/* Performance Metrics Grid */}
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-emerald-400/20 shadow-2xl progressive-reveal">
-                {/* Header with three ball motif */}
                 <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center space-x-4">
-                    {/* Three ball cluster as brand element */}
-                    <div className="relative">
-                      <div className="flex items-center space-x-1">
-                        <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                        <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">Resultados Comprobados</h3>
-                      <p className="text-emerald-200/70 text-sm">Datos de proyectos reales en operación</p>
-                    </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Resultados Comprobados</h3>
+                    <p className="text-emerald-200/70 text-sm">Datos de proyectos reales en operación</p>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
@@ -335,12 +249,6 @@ export default function Hero() {
                       {/* Subtle background animation */}
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                      {/* Three ball motif in corner */}
-                      <div className="absolute top-3 right-3 flex space-x-1">
-                        <div className="w-1 h-1 bg-emerald-400/40 rounded-full group-hover:bg-emerald-400 transition-colors duration-300"></div>
-                        <div className="w-1 h-1 bg-emerald-500/40 rounded-full group-hover:bg-emerald-500 transition-colors duration-300" style={{transitionDelay: '0.1s'}}></div>
-                        <div className="w-1 h-1 bg-emerald-600/40 rounded-full group-hover:bg-emerald-600 transition-colors duration-300" style={{transitionDelay: '0.2s'}}></div>
-                      </div>
 
                       <div className="relative z-10">
                         <div className="flex items-center space-x-4 mb-4">
@@ -364,11 +272,6 @@ export default function Hero() {
 
                 <div className="mt-8 pt-6 border-t border-emerald-400/20">
                   <div className="flex items-center justify-center space-x-3 progressive-reveal">
-                    <div className="flex items-center space-x-1 mr-2">
-                      <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
                     <CheckCircle className="w-4 h-4 text-emerald-400 enterprise-pulse" />
                     <span className="text-sm text-emerald-300/90 font-medium">Datos verificados por clientes</span>
                   </div>
