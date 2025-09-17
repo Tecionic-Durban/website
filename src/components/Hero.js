@@ -87,32 +87,18 @@ export default function Hero() {
         <div className="absolute top-32 right-[12%] w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-emerald-600/15 rounded-full opacity-25 animate-float-medium blur-sm"></div>
         <div className="absolute bottom-40 left-[3%] w-36 h-36 bg-gradient-to-br from-emerald-400/15 to-emerald-500/10 rounded-full opacity-18 animate-float-slow blur-sm"></div>
 
-        {/* Single Strategic Three Ball Brand Element - Top Right */}
-        <div className="absolute top-20 right-[15%]">
-          <div className="flex items-center space-x-2 opacity-30">
-            <div className="w-3 h-3 bg-emerald-400 rounded-full animate-float-slow"></div>
-            <div className="w-3 h-3 bg-emerald-500 rounded-full animate-float-medium"></div>
-            <div className="w-3 h-3 bg-emerald-600 rounded-full animate-float-fast"></div>
-          </div>
-        </div>
 
         {/* Gradient overlays for depth */}
         <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-emerald-900/10 to-transparent"></div>
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-emerald-800/5 to-transparent"></div>
       </div>
 
-      <div className="relative max-w-8xl mx-auto px-8 py-24 lg:py-36">
+      <div className="relative max-w-8xl mx-auto px-8 py-16 lg:py-24">
         <div className="grid lg:grid-cols-16 gap-8 lg:gap-16 items-start">
           {/* Content - 9 columns */}
           <div className="lg:col-span-9 max-w-4xl">
             {/* Eyebrow + Headline Complex */}
             <div className="space-y-8">
-              {/* Subtle Problem Statement */}
-              <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-200 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm enterprise-fade-in sophisticated-hover">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
-                Solución sin interrupciones operacionales
-              </div>
-
               {/* Layered Headline Structure */}
               <div className="space-y-6">
                 <h1 className="text-6xl lg:text-8xl font-black leading-[0.85] tracking-[-0.02em] enterprise-slide-up stagger-1">
