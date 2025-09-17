@@ -130,18 +130,67 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Achievement Metrics */}
-              <div className="grid grid-cols-2 gap-4">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="text-center p-3 bg-white/5 rounded-xl border border-emerald-600/20">
-                    <div className={`text-lg font-bold ${achievement.color} mb-1`}>
-                      {achievement.value}
+              {/* Achievement Showcase - Major App Style */}
+              <div className="space-y-4">
+                <div className="text-center">
+                  <h4 className="text-emerald-100 font-semibold text-sm mb-3">Resultados Comprobados</h4>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  {achievements.map((achievement, index) => (
+                    <div key={index} className="relative group">
+                      {/* Background glow effect */}
+                      <div className={`absolute inset-0 bg-gradient-to-r ${
+                        index === 0 ? 'from-emerald-500/20 to-emerald-600/20' :
+                        index === 1 ? 'from-blue-500/20 to-blue-600/20' :
+                        index === 2 ? 'from-purple-500/20 to-purple-600/20' :
+                        'from-green-500/20 to-green-600/20'
+                      } rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300`}></div>
+
+                      {/* Main card */}
+                      <div className="relative bg-white/15 backdrop-blur-md rounded-2xl p-4 border border-white/30 hover:border-white/50 transition-all duration-300 group-hover:scale-105 group-hover:bg-white/20">
+                        {/* Icon badge */}
+                        <div className={`w-8 h-8 ${
+                          index === 0 ? 'bg-emerald-500' :
+                          index === 1 ? 'bg-blue-500' :
+                          index === 2 ? 'bg-purple-500' :
+                          'bg-green-500'
+                        } rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                          <achievement.icon className="w-4 h-4 text-white" />
+                        </div>
+
+                        {/* Metric value with emphasis */}
+                        <div className="text-center">
+                          <div className={`text-2xl font-black mb-1 ${
+                            index === 0 ? 'text-emerald-300' :
+                            index === 1 ? 'text-blue-300' :
+                            index === 2 ? 'text-purple-300' :
+                            'text-green-300'
+                          } tracking-tight drop-shadow-lg`}>
+                            {achievement.value}
+                          </div>
+                          <div className="text-xs font-semibold text-white/90 uppercase tracking-wide">
+                            {achievement.label}
+                          </div>
+                          <div className="text-xs text-white/70 mt-1">
+                            {achievement.description}
+                          </div>
+                        </div>
+
+                        {/* Shine effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+                      </div>
                     </div>
-                    <div className="text-xs text-emerald-200 font-medium">
-                      {achievement.label}
-                    </div>
+                  ))}
+                </div>
+
+                {/* Trust badge */}
+                <div className="text-center mt-4">
+                  <div className="inline-flex items-center px-3 py-1 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
+                    <CheckCircle className="w-3 h-3 text-emerald-400 mr-2" />
+                    <span className="text-xs text-emerald-200 font-medium">Verificado en operaciones reales</span>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
 
