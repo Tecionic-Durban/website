@@ -19,9 +19,9 @@ export default function Hero() {
       color: "text-emerald-400"
     },
     {
-      value: "50%",
-      label: "Aumento Capacidad",
-      description: "Plantas concentradoras",
+      value: "+50%",
+      label: "Capacidad Concentrados",
+      description: "Procesamiento concentrados",
       icon: Zap,
       color: "text-blue-400"
     },
