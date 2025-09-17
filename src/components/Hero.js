@@ -58,7 +58,7 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Content - 7 columns */}
           <div className="lg:col-span-7 space-y-8">
             {/* Problem-Focused Headline */}
@@ -111,9 +111,9 @@ export default function Hero() {
           </div>
 
           {/* Visual - 5 columns */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 lg:mt-16">
             {/* Hero Visual Container */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-emerald-500/30 h-full">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-emerald-500/30">
               {/* Main Visual Placeholder */}
               <div className="aspect-[4/3] bg-gradient-to-br from-emerald-800/50 to-emerald-900/50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
                 {/* Placeholder for equipment image */}
