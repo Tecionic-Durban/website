@@ -63,57 +63,52 @@ export default function Hero() {
           <div className="lg:col-span-7 space-y-8">
             {/* Problem-Focused Headline */}
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-emerald-800/50 rounded-full text-emerald-200 text-sm font-medium border border-emerald-600/30">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                Soluciones Móviles Sin Interrupciones
-              </div>
-
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight">
                 Optimiza tus Operaciones
-                <span className="block text-emerald-300">Sin Parar la Planta</span>
+                <span className="block text-emerald-300 font-extrabold">Sin Parar la Planta</span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-emerald-100 leading-relaxed max-w-2xl">
+              <p className="text-lg lg:text-xl text-emerald-100/90 leading-[1.6] max-w-2xl font-medium">
                 Equipos móviles de separación sólido-líquido que eliminan cuellos de botella,
-                reducen costos y aumentan capacidad <span className="font-semibold text-emerald-300">sin CAPEX ni modificaciones</span>.
+                reducen costos y aumentan capacidad <span className="font-bold text-emerald-300">sin CAPEX ni modificaciones</span>.
               </p>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center space-x-6 text-emerald-200">
+            <div className="flex items-center space-x-8 text-emerald-200/80">
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-emerald-400" />
-                <span className="font-medium">BHP • Codelco • Antofagasta</span>
+                <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <span className="text-sm font-medium tracking-wide">BHP • Codelco • Antofagasta</span>
               </div>
-              <div className="w-px h-6 bg-emerald-600"></div>
+              <div className="w-px h-5 bg-emerald-600/40"></div>
               <div className="flex items-center space-x-2">
-                <span className="text-2xl font-bold text-emerald-300">23+</span>
-                <span>años experiencia</span>
+                <span className="text-xl font-bold text-emerald-300">23+</span>
+                <span className="text-sm">años experiencia</span>
               </div>
             </div>
 
             {/* Primary CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button
-                onClick={() => router.push('/services')}
-                className="bg-white text-emerald-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-emerald-50 hover:scale-105 shadow-lg flex items-center justify-center group"
-              >
-                Ver Nuestros Servicios
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <button
                 onClick={(e) => handleContactClick(e, router, pathname)}
-                className="border-2 border-emerald-300 text-emerald-100 hover:bg-emerald-300 hover:text-emerald-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center"
+                className="bg-white text-emerald-900 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-200 hover:bg-emerald-50 hover:shadow-2xl shadow-xl flex items-center justify-center group transform hover:scale-[1.02] active:scale-[0.98]"
               >
-                Solicitar Consulta
+                Contactar Especialista
+                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
+              </button>
+              <button
+                onClick={() => router.push('/services')}
+                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-200 flex items-center justify-center backdrop-blur-sm"
+              >
+                Ver Casos de Éxito
               </button>
             </div>
           </div>
 
           {/* Visual - 5 columns */}
-          <div className="lg:col-span-5 lg:mt-16">
+          <div className="lg:col-span-5 lg:mt-24">
             {/* Hero Visual Container */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-emerald-500/30">
+            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-emerald-500/20 shadow-2xl">
               {/* Main Visual Placeholder */}
               <div className="aspect-[4/3] bg-gradient-to-br from-emerald-800/50 to-emerald-900/50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
                 {/* Placeholder for equipment image */}
@@ -131,18 +126,18 @@ export default function Hero() {
               </div>
 
               {/* Enhanced Metrics Grid */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="bg-white/15 rounded-xl p-4 border border-emerald-400/20 hover:bg-white/20 hover:border-emerald-400/40 transition-all duration-300 backdrop-blur-sm">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-6 h-6 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-                        <achievement.icon className="w-4 h-4 text-emerald-300" />
+                  <div key={index} className="bg-white/10 rounded-2xl p-5 border border-emerald-400/15 hover:bg-white/15 hover:border-emerald-400/30 transition-all duration-300 backdrop-blur-sm group">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="w-5 h-5 bg-emerald-500/25 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                        <achievement.icon className="w-3 h-3 text-emerald-300" />
                       </div>
-                      <div className="text-2xl font-bold text-emerald-300">
+                      <div className="text-xl font-black text-white tracking-tight">
                         {achievement.value}
                       </div>
                     </div>
-                    <div className="text-sm text-white font-medium">
+                    <div className="text-xs text-emerald-100/80 font-semibold tracking-wide uppercase">
                       {achievement.label}
                     </div>
                   </div>
@@ -150,9 +145,9 @@ export default function Hero() {
               </div>
 
               {/* Compact trust indicator */}
-              <div className="mt-4 text-center">
-                <div className="inline-flex items-center text-xs text-emerald-300">
-                  <CheckCircle className="w-3 h-3 mr-1" />
+              <div className="mt-6 text-center">
+                <div className="inline-flex items-center text-xs text-emerald-300/80 font-medium tracking-wide">
+                  <CheckCircle className="w-3 h-3 mr-2" />
                   Resultados verificados
                 </div>
               </div>
