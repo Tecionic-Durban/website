@@ -1,42 +1,99 @@
 // src/components/About.js
+'use client'
+import { useEffect, useRef } from 'react'
 import { Droplets, RefreshCw, Zap, Shield, CheckCircle, ArrowRight, TrendingUp } from 'lucide-react'
 
 export default function About() {
+  const aboutRef = useRef(null)
+
+  // Progressive disclosure on scroll
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressiveElements = entry.target.querySelectorAll('.progressive-reveal')
+          progressiveElements.forEach((element, index) => {
+            setTimeout(() => {
+              element.classList.add('revealed')
+            }, index * 150)
+          })
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
+    <section ref={aboutRef} className="py-24 bg-gradient-to-br from-emerald-50/30 via-white to-gray-50 relative overflow-hidden">
+      {/* Enterprise Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Sophisticated floating elements */}
+        <div className="absolute top-32 left-[5%] w-36 h-36 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-20 animate-float-slow blur-sm"></div>
+        <div className="absolute bottom-24 right-[8%] w-28 h-28 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
+
+        {/* Strategic three ball brand element */}
+        <div className="absolute top-20 right-[12%] opacity-20">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
+            <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
+          </div>
+        </div>
+
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Premium Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-emerald-100/80 rounded-full text-emerald-700 font-medium text-sm mb-6 backdrop-blur-sm">
-            <TrendingUp className="w-4 h-4 mr-2" />
+      <div className="max-w-8xl mx-auto px-8 relative">
+        {/* Enterprise Header */}
+        <div className="text-center mb-24 progressive-reveal">
+          <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
             Líderes en Innovación Industrial
           </div>
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+
+          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
             Especialistas en Separación
-            <span className="block text-emerald-600">Sólido-Líquido Móvil</span>
+            <span className="block text-emerald-600 gradient-text-animated">Sólido-Líquido Móvil</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-Especialistas en separación sólido-líquido en aplicaciones SX/EW con equipos móviles de alta capacidad.
+
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
+            Especialistas en separación sólido-líquido en aplicaciones SX/EW con <span className="font-semibold text-emerald-600">equipos móviles de alta capacidad</span>.
             Atendemos a BHP, Codelco, Antofagasta Minerals, entre otras importantes empresas mineras,
             proporcionando soluciones que optimizan operaciones sin interrumpir procesos existentes.
           </p>
         </div>
 
         {/* Enterprise Grid Layout */}
-        <div className="grid lg:grid-cols-12 gap-8 mb-20">
+        <div className="grid lg:grid-cols-12 gap-12 mb-24">
           {/* Left Panel - Value Propositions */}
-          <div className="lg:col-span-5">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-8 h-full">
-              <div className="flex items-center mb-8">
-                <div className="w-3 h-8 bg-gradient-to-b from-emerald-500 to-emerald-600 rounded-full mr-4"></div>
-                <h3 className="text-2xl font-bold text-gray-900">Valor Empresarial</h3>
+          <div className="lg:col-span-5 progressive-reveal">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl layered-shadow-hover border border-emerald-100/50 p-10 h-full sophisticated-hover overflow-hidden">
+              {/* Sophisticated background animation */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex items-center mb-10 relative z-10">
+                {/* Strategic three ball indicator */}
+                <div className="flex items-center space-x-1 mr-4">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
+                </div>
+                <h3 className="text-3xl font-black text-gray-900 gradient-text-animated">Valor Empresarial</h3>
               </div>
 
               <div className="space-y-6">

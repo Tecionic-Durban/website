@@ -1,12 +1,41 @@
 // src/components/EfficiencyComparison.js
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { TrendingUp, Award, DollarSign, Zap, Gauge, Target } from 'lucide-react'
 
 export default function EfficiencyComparison() {
   const [sliderPosition, setSliderPosition] = useState(50)
   const [animatedMetrics, setAnimatedMetrics] = useState({})
   const [activeCase, setActiveCase] = useState('copper')
+  const comparisonRef = useRef(null)
+
+  // Progressive disclosure on scroll
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressiveElements = entry.target.querySelectorAll('.progressive-reveal')
+          progressiveElements.forEach((element, index) => {
+            setTimeout(() => {
+              element.classList.add('revealed')
+            }, index * 150)
+          })
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    if (comparisonRef.current) {
+      observer.observe(comparisonRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const caseStudies = {
     copper: {
@@ -131,166 +160,206 @@ export default function EfficiencyComparison() {
   }
 
   return (
-    <section className="py-20 bg-gray-100 relative overflow-hidden">
-      {/* Floating industrial elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-10 w-2 h-2 bg-emerald-400/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-emerald-300/30 rounded-full animate-pulse [animation-delay:1s]"></div>
-        <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-emerald-500/40 rounded-full animate-pulse [animation-delay:2s]"></div>
-        <div className="absolute bottom-60 right-1/3 w-2 h-2 bg-emerald-400/25 rounded-full animate-pulse [animation-delay:0.5s]"></div>
+    <section ref={comparisonRef} className="py-24 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
+      {/* Enterprise Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Sophisticated floating elements */}
+        <div className="absolute top-32 left-[10%] w-32 h-32 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
+        <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
+
+        {/* Strategic three ball accent */}
+        <div className="absolute top-24 right-[8%] opacity-20">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
+            <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
+          </div>
+        </div>
+
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 industrial-shimmer">
-            Resultados Comprobados: Antes vs Después
+      <div className="max-w-8xl mx-auto px-8 relative">
+        {/* Enterprise Header */}
+        <div className="text-center mb-20 progressive-reveal">
+          <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
+            Casos de Éxito Interactivos
+          </div>
+
+          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
+            Resultados Comprobados:
+            <span className="block text-emerald-600 gradient-text-animated">Antes vs Después</span>
           </h2>
-          <div className="w-20 h-1 bg-emerald-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubra el impacto real de nuestras optimizaciones en plantas operativas. 
-            Use el deslizador para ver la transformación paso a paso.
+
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
+            Descubra el impacto real de nuestras optimizaciones en plantas operativas.
+            <span className="font-semibold text-emerald-600">Use el deslizador interactivo</span> para ver la transformación paso a paso
+            de indicadores clave de rendimiento.
           </p>
         </div>
 
-        {/* Case Study Selection - Industrial Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {Object.entries(caseStudies).map(([key, study]) => (
+        {/* Enterprise Case Study Selection */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {Object.entries(caseStudies).map(([key, study], index) => (
             <div
               key={key}
-              className={`relative group cursor-pointer transition-all duration-500 ${
-                activeCase === key ? 'scale-105 z-10' : 'hover:scale-102'
+              className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border layered-shadow-hover sophisticated-hover magnetic-hover progressive-reveal cursor-pointer overflow-hidden transition-all duration-500 ${
+                activeCase === key
+                  ? `border-${study.color}-400/50 scale-105 z-10`
+                  : 'border-emerald-100/50 hover:scale-102'
               }`}
               onClick={() => setActiveCase(key)}
             >
-              {/* Industrial Border Shape */}
-              <div className={`relative bg-white rounded-lg border-2 transition-all duration-300 ${
-                activeCase === key
-                  ? `${getColorClass(study.color, 'border')} shadow-lg`
-                  : 'border-gray-200 hover:border-gray-300 shadow-md hover:shadow-lg'
-              }`}>
-                {/* Technical Corner Cut */}
-                <div className={`absolute top-0 right-0 w-6 h-6 ${
-                  activeCase === key ? getColorClass(study.color) : 'bg-gray-100'
-                } clip-corner transition-colors duration-300`}></div>
-                
-                {/* Circuit Pattern */}
-                <div className="absolute top-2 left-2 w-8 h-8 opacity-10">
-                  <div className="w-full h-0.5 bg-gray-400 mb-1"></div>
-                  <div className="w-0.5 h-full bg-gray-400 ml-2"></div>
-                  <div className="absolute top-1 left-1 w-2 h-2 border border-gray-400 rounded-sm"></div>
+              {/* Sophisticated background animation */}
+              <div className={`absolute inset-0 bg-gradient-to-br from-${study.color}-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+
+              {/* Strategic three ball accent */}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+                <div className="flex items-center space-x-1">
+                  <div className="w-1 h-1 bg-emerald-400 rounded-full enterprise-pulse"></div>
+                  <div className="w-1 h-1 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-1 h-1 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
                 </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                      activeCase === key ? getColorClass(study.color) : 'bg-gray-300'
-                    }`}></div>
-                    <h3 className={`font-bold text-lg transition-colors duration-300 ${
-                      activeCase === key ? getColorClass(study.color, 'text') : 'text-gray-700'
-                    }`}>{study.industry}</h3>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                    activeCase === key
+                      ? `${getColorClass(study.color)} enterprise-pulse`
+                      : 'bg-gray-300'
+                  }`}></div>
+                  <h3 className={`font-black text-xl transition-colors duration-300 ${
+                    activeCase === key ? getColorClass(study.color, 'text') : 'text-gray-700'
+                  }`}>{study.industry}</h3>
+                </div>
+
+                <p className="text-gray-600 text-sm mb-6 leading-relaxed">{study.name}</p>
+
+                {/* Enhanced metrics preview */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className={`text-center p-4 rounded-xl transition-all duration-300 ${
+                    activeCase === key
+                      ? `bg-${study.color}-50 border border-${study.color}-200`
+                      : 'bg-gray-50 border border-gray-200'
+                  }`}>
+                    <div className={`text-lg font-black mb-1 ${
+                      activeCase === key ? getColorClass(study.color, 'text') : 'text-gray-800'
+                    }`}>{study.improvements.efficiency}</div>
+                    <div className="text-gray-600 text-xs font-medium">Eficiencia</div>
                   </div>
-                  
-                  <p className="text-gray-600 text-sm mb-4">{study.name}</p>
-                  
-                  {/* Mini metrics preview */}
-                  <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="text-center p-2 bg-gray-50 rounded">
-                      <div className="font-semibold text-gray-800">{study.improvements.efficiency}</div>
-                      <div className="text-gray-500">Eficiencia</div>
-                    </div>
-                    <div className="text-center p-2 bg-gray-50 rounded">
-                      <div className="font-semibold text-gray-800">{study.improvements.production}</div>
-                      <div className="text-gray-500">Producción</div>
-                    </div>
+                  <div className={`text-center p-4 rounded-xl transition-all duration-300 ${
+                    activeCase === key
+                      ? `bg-${study.color}-50 border border-${study.color}-200`
+                      : 'bg-gray-50 border border-gray-200'
+                  }`}>
+                    <div className={`text-lg font-black mb-1 ${
+                      activeCase === key ? getColorClass(study.color, 'text') : 'text-gray-800'
+                    }`}>{study.improvements.production}</div>
+                    <div className="text-gray-600 text-xs font-medium">Producción</div>
                   </div>
                 </div>
-                
+
                 {/* Active indicator */}
                 {activeCase === key && (
-                  <div className={`absolute bottom-0 left-0 right-0 h-1 ${getColorClass(study.color)} rounded-b-lg`}></div>
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 ${getColorClass(study.color)} rounded-b-2xl`}></div>
                 )}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Main Comparison Interface - Industrial Card */}
-        <div className="relative bg-white rounded-xl shadow-xl border-2 border-gray-200 overflow-hidden group">
-          {/* Technical Header with Circuit Pattern */}
-          <div className={`relative ${getColorClass(currentCase.color)} p-6 text-white overflow-hidden`}>
-            {/* Circuit pattern background */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-4 left-4 w-16 h-16">
-                <div className="absolute inset-0">
-                  <div className="w-full h-0.5 bg-white mb-2"></div>
-                  <div className="w-0.5 h-full bg-white mr-2 inline-block"></div>
-                  <div className="w-full h-0.5 bg-white mb-2"></div>
-                  <div className="w-0.5 h-full bg-white inline-block"></div>
+        {/* Enterprise Comparison Interface */}
+        <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl layered-shadow-hover border border-emerald-100/50 overflow-hidden progressive-reveal">
+          {/* Enterprise Header */}
+          <div className={`relative ${getColorClass(currentCase.color)} p-8 text-white overflow-hidden`}>
+            {/* Sophisticated background elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-4 right-8 w-20 h-20 bg-white/10 rounded-full animate-float-slow blur-sm"></div>
+              <div className="absolute bottom-4 left-8 w-16 h-16 bg-white/15 rounded-full animate-float-medium blur-sm"></div>
+
+              {/* Strategic three ball constellation */}
+              <div className="absolute top-4 left-4 opacity-30">
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-white rounded-full enterprise-pulse"></div>
+                  <div className="w-2 h-2 bg-white/80 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-2 h-2 bg-white/60 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
                 </div>
               </div>
-              <div className="absolute top-4 right-4 w-12 h-12">
-                <div className="absolute inset-0 border border-white rounded-full"></div>
-                <div className="absolute inset-2 border border-white rounded-full"></div>
-              </div>
-              <div className="absolute bottom-4 left-8 w-8 h-8 border border-white transform rotate-45"></div>
             </div>
-            
-            {/* Corner cuts */}
-            <div className="absolute top-0 left-0 w-8 h-8 bg-white clip-corner-tl opacity-20"></div>
-            <div className="absolute top-0 right-0 w-8 h-8 bg-white clip-corner-tr opacity-20"></div>
-            
+
             <div className="relative z-10">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 bg-white rounded-full animate-pulse"></div>
-                  <h3 className="text-xl font-bold">{currentCase.name}</h3>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center">
+                    <div className="w-3 h-3 bg-white rounded-full enterprise-pulse"></div>
+                  </div>
+                  <h3 className="text-2xl font-black gradient-text-animated">{currentCase.name}</h3>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs opacity-75">SISTEMA ACTIVO</div>
-                  <div className="text-sm font-mono">TD-{currentCase.industry.toUpperCase()}</div>
+                  <div className="text-xs opacity-75 font-semibold tracking-wide">ANÁLISIS ACTIVO</div>
+                  <div className="text-sm font-mono font-bold">TSF-{currentCase.industry.toUpperCase()}</div>
                 </div>
               </div>
-              <p className="text-white/90">Deslice para ver la transformación paso a paso de los indicadores</p>
+              <p className="text-white/90 text-lg leading-relaxed">
+                Deslice para ver la transformación paso a paso de los indicadores operacionales críticos
+              </p>
             </div>
           </div>
-          
-          <div className="p-8">
 
-          {/* Before/After Slider */}
-          <div className="mb-12">
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-                <span className="text-red-500 font-semibold">ANTES</span>
+          <div className="p-10">
+
+          {/* Enterprise Slider Interface */}
+          <div className="mb-16">
+            <div className="flex justify-between items-center mb-8">
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-red-500/20 rounded-xl flex items-center justify-center">
+                  <div className="w-3 h-3 bg-red-500 rounded-full enterprise-pulse"></div>
+                </div>
+                <span className="text-red-500 font-bold text-lg tracking-wide">ANTES</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-emerald-600 font-semibold">DESPUÉS</span>
-                <div className="w-4 h-4 bg-emerald-500 rounded-full"></div>
+              <div className="flex items-center space-x-3">
+                <span className="text-emerald-600 font-bold text-lg tracking-wide">DESPUÉS</span>
+                <div className="w-6 h-6 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                  <div className="w-3 h-3 bg-emerald-500 rounded-full enterprise-pulse"></div>
+                </div>
               </div>
             </div>
-            
-            <div className="relative">
+
+            <div className="relative bg-gray-100 rounded-2xl p-6 border border-emerald-100/50">
               <input
                 type="range"
                 min="0"
                 max="100"
                 value={sliderPosition}
                 onChange={(e) => setSliderPosition(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-3 bg-gray-300 rounded-xl appearance-none cursor-pointer slider sophisticated-hover"
                 style={{
                   background: `linear-gradient(to right, #ef4444 0%, #ef4444 ${sliderPosition}%, #10b981 ${sliderPosition}%, #10b981 100%)`
                 }}
                 suppressHydrationWarning
               />
-              <div className="flex justify-between text-sm text-gray-500 mt-2">
-                <span>Estado Inicial</span>
-                <span>Optimización Tecionic</span>
+              <div className="flex justify-between text-sm text-gray-600 font-semibold mt-4">
+                <span className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  <span>Estado Inicial</span>
+                </span>
+                <span className="flex items-center space-x-2">
+                  <span>Optimización TSF</span>
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Metrics Grid */}
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+          {/* Enterprise Metrics Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-6 mb-12">
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
                 <Gauge className={`w-6 h-6 mx-auto mb-2 ${getColorClass(currentCase.color, 'text')}`} />
@@ -393,25 +462,49 @@ export default function EfficiencyComparison() {
           </div>
         </div>
 
-        {/* CTA Section - Industrial Card */}
-        <div className="relative bg-white rounded-xl shadow-xl border-2 border-emerald-200 p-8 text-center mt-16 overflow-hidden">
-          {/* Technical accent */}
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-500 to-emerald-600"></div>
-          <div className="absolute top-4 right-4 w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-          
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            ¿Listo para transformar su operación como estos casos de éxito?
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Nuestros especialistas pueden evaluar su proceso actual y diseñar una solución personalizada.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" suppressHydrationWarning>
-              Solicitar Análisis Especializado
-            </button>
-            <button className="border-2 border-emerald-300 text-emerald-700 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-all duration-300 transform hover:scale-105" suppressHydrationWarning>
-              Ver Más Casos de Éxito
-            </button>
+        {/* Enterprise CTA Section */}
+        <div className="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 rounded-3xl p-12 md:p-16 text-white text-center overflow-hidden progressive-reveal mt-20">
+          {/* Sophisticated background elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-8 right-12 w-20 h-20 bg-emerald-500/20 rounded-full animate-float-slow blur-sm"></div>
+            <div className="absolute bottom-8 left-12 w-16 h-16 bg-emerald-400/25 rounded-full animate-float-medium blur-sm"></div>
+
+            {/* Strategic three ball constellation */}
+            <div className="absolute top-6 left-6 opacity-30">
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-emerald-300 rounded-full enterprise-pulse"></div>
+                <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+                <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-10">
+            <h3 className="text-4xl lg:text-5xl font-black mb-6 gradient-text-animated">
+              ¿Listo para Transformar Su Operación?
+            </h3>
+            <p className="text-xl text-emerald-100 mb-10 max-w-4xl mx-auto leading-relaxed">
+              Nuestros especialistas pueden evaluar su proceso actual y diseñar una solución personalizada.
+              <span className="font-semibold text-emerald-300">Resultados comprobados como estos casos de éxito.</span>
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
+              <button
+                className="group relative bg-white text-emerald-900 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover"
+                suppressHydrationWarning
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-emerald-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                <span className="relative z-10">Solicitar Análisis Especializado</span>
+              </button>
+
+              <button
+                className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm relative overflow-hidden sophisticated-hover"
+                suppressHydrationWarning
+              >
+                <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <span className="relative z-10">Ver Más Casos de Éxito</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

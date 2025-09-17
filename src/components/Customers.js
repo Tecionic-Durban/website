@@ -1,12 +1,41 @@
 // src/components/Customers.js
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { TrendingUp, Award, Zap, Target } from 'lucide-react'
+import { TrendingUp, Award, Zap, Target, CheckCircle, ArrowRight } from 'lucide-react'
 
 export default function Customers() {
   const [hoveredCustomer, setHoveredCustomer] = useState(null)
   const [isCarouselPaused, setIsCarouselPaused] = useState(false)
+  const customersRef = useRef(null)
+
+  // Progressive disclosure on scroll
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressiveElements = entry.target.querySelectorAll('.progressive-reveal')
+          progressiveElements.forEach((element, index) => {
+            setTimeout(() => {
+              element.classList.add('revealed')
+            }, index * 200)
+          })
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    if (customersRef.current) {
+      observer.observe(customersRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   // KPI translation map
   const kpiTranslations = {
@@ -136,23 +165,43 @@ export default function Customers() {
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Clientes que Confían en Nosotros
+    <section ref={customersRef} className="py-20 bg-gradient-to-br from-emerald-50/50 via-white to-gray-50 relative overflow-hidden">
+      {/* Enterprise Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
+        <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
+
+        {/* Strategic three ball constellation */}
+        <div className="absolute top-16 left-[8%] opacity-20">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
+            <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-8xl mx-auto px-8 relative">
+        {/* Enterprise Header */}
+        <div className="text-center mb-20 progressive-reveal">
+          <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
+            Casos de Éxito Comprobados
+          </div>
+
+          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
+            Clientes que <span className="text-emerald-600 gradient-text-animated">Confían en Nosotros</span>
           </h2>
-          <div className="w-20 h-1 bg-emerald-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Trabajamos con las principales compañías mineras de Chile y el mundo, 
-            brindando soluciones especializadas que optimizan sus operaciones.
+
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
+            Trabajamos con las principales compañías mineras de <span className="font-semibold text-emerald-600">Chile y el mundo</span>,
+            brindando soluciones especializadas que optimizan sus operaciones con resultados medibles.
           </p>
         </div>
 
-        {/* Moving Carousel with Case Studies */}
-        <div className="relative overflow-hidden mb-16">
-          <div 
+        {/* Enterprise Carousel with Case Studies */}
+        <div className="relative overflow-hidden mb-20 progressive-reveal">
+          <div
             className={`flex animate-carousel ${isCarouselPaused ? 'paused' : ''}`}
             onMouseEnter={() => setIsCarouselPaused(true)}
             onMouseLeave={() => {
@@ -164,7 +213,7 @@ export default function Customers() {
             {customers.map((customer, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-72 mx-4 relative bg-white rounded-xl p-6 shadow-sm transition-all duration-300 cursor-pointer"
+                className="flex-shrink-0 w-80 mx-4 relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 layered-shadow-hover sophisticated-hover magnetic-hover transition-all duration-300 cursor-pointer border border-emerald-100/50 overflow-hidden"
                 onMouseEnter={() => setHoveredCustomer(index)}
                 onMouseLeave={() => setHoveredCustomer(null)}
               >
