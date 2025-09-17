@@ -130,24 +130,18 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Quick Benefits */}
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="flex items-center space-x-2 text-emerald-200">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                  <span>Sin Permisos Nuevos</span>
-                </div>
-                <div className="flex items-center space-x-2 text-emerald-200">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                  <span>Instalación 24-48h</span>
-                </div>
-                <div className="flex items-center space-x-2 text-emerald-200">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                  <span>Operación Continua</span>
-                </div>
-                <div className="flex items-center space-x-2 text-emerald-200">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                  <span>ROI Inmediato</span>
-                </div>
+              {/* Achievement Metrics */}
+              <div className="grid grid-cols-2 gap-4">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="text-center p-3 bg-white/5 rounded-xl border border-emerald-600/20">
+                    <div className={`text-lg font-bold ${achievement.color} mb-1`}>
+                      {achievement.value}
+                    </div>
+                    <div className="text-xs text-emerald-200 font-medium">
+                      {achievement.label}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -157,41 +151,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Achievement Metrics */}
-        <div className="mt-20 pt-12 border-t border-emerald-700/50">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-emerald-100 mb-2">Resultados Comprobados</h3>
-            <p className="text-emerald-300">Mejores casos documentados en operaciones reales</p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="relative group">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-emerald-600/20 hover:border-emerald-500/40 transition-all duration-300 hover:bg-white/10 text-center">
-                  <achievement.icon className={`w-8 h-8 ${achievement.color} mx-auto mb-4`} />
-                  <div className={`text-3xl font-bold ${achievement.color} mb-2`}>
-                    {achievement.value}
-                  </div>
-                  <div className="text-emerald-100 font-medium mb-1">
-                    {achievement.label}
-                  </div>
-                  <div className="text-xs text-emerald-300">
-                    {achievement.description}
-                  </div>
-                </div>
-
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-r from-emerald-400 to-emerald-600 blur-xl -z-10"></div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <p className="text-xs text-emerald-300/60">
-              * Resultados variables según condiciones específicas de cada operación
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Bottom wave transition */}
