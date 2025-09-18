@@ -228,23 +228,145 @@ export default function EWCleaningServicePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Enterprise Background with Advanced Patterns */}
-      <section ref={heroRef} className="relative bg-gradient-to-br from-slate-50 via-white to-amber-50/30 min-h-screen overflow-hidden">
-        {/* Complex Background Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Enterprise-Grade EW Cleaning Hero */}
+      <section ref={heroRef} className="relative bg-white overflow-hidden">
+        {/* TSF Signature Industrial EW Theme */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Base gradient foundation */}
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-        {/* Advanced Floating Elements */}
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-slate-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          {/* SIGNATURE EW MESH PATTERN - Like Stripe's diagonals */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: `
+              linear-gradient(30deg, transparent 48%, rgba(251, 191, 36, 0.4) 49%, rgba(251, 191, 36, 0.4) 51%, transparent 52%),
+              linear-gradient(150deg, transparent 48%, rgba(251, 191, 36, 0.3) 49%, rgba(251, 191, 36, 0.3) 51%, transparent 52%),
+              linear-gradient(90deg, transparent 48%, rgba(251, 191, 36, 0.2) 49%, rgba(251, 191, 36, 0.2) 51%, transparent 52%)
+            `,
+            backgroundSize: '60px 60px, 60px 60px, 120px 120px'
+          }}></div>
 
-        {/* TSF Signature Corner */}
-        <div className="absolute top-6 right-8 opacity-60">
+          {/* HEXAGONAL EW CELL PATTERN */}
+          <div className="absolute inset-0 opacity-[0.04]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d97706' fill-opacity='0.6'%3E%3Cpath d='M20 20l20-11.5L60 20v23L40 54.5 20 43V20z' stroke='%23d97706' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '80px 80px'
+          }}></div>
+
+          {/* ELECTRICAL FLOW LINES - Representing Current Flow Through Cells */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-[0.06]">
+            {/* Horizontal current streams */}
+            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent"></div>
+            <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent"></div>
+
+            {/* Vertical electrode columns */}
+            <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-amber-600/50 to-transparent"></div>
+            <div className="absolute left-3/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-amber-500/40 to-transparent"></div>
+
+            {/* Diagonal electrical connections */}
+            <div className="absolute top-0 left-0 w-full h-full" style={{
+              background: `
+                linear-gradient(45deg, transparent 49%, rgba(251, 191, 36, 0.15) 49.5%, rgba(251, 191, 36, 0.15) 50.5%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(251, 191, 36, 0.1) 49.5%, rgba(251, 191, 36, 0.1) 50.5%, transparent 51%)
+              `,
+              backgroundSize: '200px 200px, 200px 200px'
+            }}></div>
+          </div>
+
+          {/* METAL DEPOSITION INDICATORS */}
+          <div className="absolute inset-0 opacity-[0.08]">
+            {/* Large metal ions (input) */}
+            <div className="absolute top-1/6 left-[15%] w-4 h-4 bg-amber-600/30 rounded-full animate-pulse"></div>
+            <div className="absolute top-1/3 left-[12%] w-3 h-3 bg-amber-500/25 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="absolute top-1/2 left-[18%] w-5 h-5 bg-amber-700/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+
+            {/* Medium metal particles (process) */}
+            <div className="absolute top-2/5 left-1/2 w-2 h-2 bg-amber-500/40 rounded-full animate-ping" style={{animationDelay: '0.3s'}}></div>
+            <div className="absolute top-3/5 left-1/2 w-2.5 h-2.5 bg-amber-600/35 rounded-full animate-ping" style={{animationDelay: '0.8s'}}></div>
+
+            {/* Pure metal deposits (output) */}
+            <div className="absolute top-1/4 right-[15%] w-1.5 h-1.5 bg-amber-400/50 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
+            <div className="absolute top-1/2 right-[12%] w-1 h-1 bg-amber-500/45 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-2/3 right-[18%] w-1.5 h-1.5 bg-amber-600/40 rounded-full animate-ping" style={{animationDelay: '2.5s'}}></div>
+          </div>
+
+          {/* ELECTRICAL CONNECTION NODES */}
+          <div className="absolute inset-0 opacity-[0.05]">
+            {/* Electrode connection points */}
+            <div className="absolute top-1/5 left-1/5 w-6 h-6 border border-amber-500/60 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+            </div>
+            <div className="absolute top-4/5 right-1/5 w-6 h-6 border border-amber-400/60 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            </div>
+            <div className="absolute bottom-1/5 left-1/3 w-6 h-6 border border-amber-600/60 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+            </div>
+
+            {/* Connection lines between electrodes */}
+            <div className="absolute top-1/5 left-1/5 w-32 h-px bg-gradient-to-r from-amber-500/30 to-transparent transform rotate-45 origin-left"></div>
+            <div className="absolute bottom-1/5 left-1/3 w-40 h-px bg-gradient-to-r from-amber-600/30 to-transparent transform -rotate-12 origin-left"></div>
+          </div>
+
+          {/* TSF BRAND MOLECULAR SIGNATURE */}
+          <div className="absolute bottom-1/6 right-1/6 opacity-[0.07]">
+            <div className="relative w-24 h-24">
+              {/* Central brand hub */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-amber-600 rounded-full animate-pulse"></div>
+
+              {/* Orbital brand elements */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-amber-500 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-amber-600 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+
+              {/* Molecular bonds */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-px bg-amber-500/40"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-px bg-amber-500/40 rotate-90"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-px bg-amber-500/30 rotate-45"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-px bg-amber-500/30 -rotate-45"></div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Large EW Icon - Premium Treatment */}
+        <div className="absolute -top-32 -right-40 w-96 h-96 pointer-events-none">
+          <div className="relative w-full h-full">
+            <Zap className="w-full h-full text-amber-500/8 transform rotate-12" />
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent rounded-full blur-3xl"></div>
+          </div>
+        </div>
+
+        {/* TSF Branded Floating Elements */}
+        <div className="absolute top-40 left-20 opacity-30">
+          {/* TSF Three-Ball Signature */}
           <div className="flex items-center space-x-1">
             <div className="w-3 h-3 bg-amber-500 rounded-full animate-pulse"></div>
             <div className="w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
             <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+          </div>
+        </div>
+
+        {/* Industrial Connection Lines */}
+        <div className="absolute bottom-60 right-32 opacity-20">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="w-6 h-0.5 bg-amber-500"></div>
+            <div className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-ping"></div>
+            <div className="w-6 h-0.5 bg-amber-500"></div>
+            <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+          </div>
+        </div>
+
+        {/* TSF Chemical Bond Pattern */}
+        <div className="absolute top-2/3 left-1/3 opacity-25">
+          <div className="relative w-8 h-8">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce" style={{animationDelay: '0.3s'}}></div>
+            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce" style={{animationDelay: '0.6s'}}></div>
+            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce" style={{animationDelay: '0.9s'}}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-amber-600/50"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-amber-600/50 rotate-90"></div>
           </div>
         </div>
 
@@ -255,7 +377,7 @@ export default function EWCleaningServicePage() {
               <nav className="flex items-center space-x-1 text-sm">
                 <span className="text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">Servicios</span>
                 <span className="text-slate-300 mx-2">/</span>
-                <span className="text-amber-600 font-medium">Limpieza y Optimización Celdas EW</span>
+                <span className="text-amber-600 font-medium">Limpieza & Optimización EW</span>
               </nav>
               <div className="flex items-center space-x-6">
                 <div className="flex items-center space-x-2 text-xs text-slate-500">
@@ -271,92 +393,77 @@ export default function EWCleaningServicePage() {
         </div>
 
         {/* Enterprise Hero Content */}
-        <div className="relative z-10 max-w-8xl mx-auto px-8 pt-12 pb-16">
+        <div className="relative z-10 max-w-8xl mx-auto px-8 pt-12 pb-8">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left Column - Premium Content */}
-            <div className="lg:col-span-7 overflow-visible">
+            <div className="lg:col-span-7">
               {/* Main Heading */}
-              <div className="mb-6 relative z-[100] progressive-reveal">
+              <div className="mb-6">
                 <h1 className="text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-black tracking-tight text-slate-900 leading-[0.9] mb-4">
-                  Limpieza y
+                  Limpieza y Optimización
                   <span className="block text-amber-600">
-                    Optimización Celdas EW
+                    Celdas EW
                   </span>
                 </h1>
-                <p className="text-xl lg:text-2xl text-slate-600 font-light leading-relaxed max-w-2xl">
-                  Incremento 15-25% eficiencia corriente con cátodos &gt;99.5% pureza mediante limpieza especializada
-                </p>
-              </div>
-
-              {/* Key Value Props */}
-              <div className="grid md:grid-cols-2 gap-4 mb-8 progressive-reveal">
-                <div className="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                  <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-amber-600" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-900">25%</div>
-                    <div className="text-sm text-slate-500">Incremento máximo</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                  <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-amber-600" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-900">5000A</div>
-                    <div className="text-sm text-slate-500">Capacidad celdas</div>
-                  </div>
+                <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
+                  Para Electroobtención • Móvil • Alta Eficiencia
                 </div>
               </div>
 
-              {/* Primary CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-12 progressive-reveal">
-                <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/25 hover:scale-105 flex items-center justify-center">
-                  Evaluar mi Proceso
-                  <ArrowRight className="w-5 h-5 ml-2" />
+              {/* Description */}
+              <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
+                Sistemas especializados de limpieza electroquímica con incremento hasta
+                <span className="font-bold text-slate-900"> 25% eficiencia corriente</span>.
+                <span className="text-amber-600 font-medium"> Reactivación completa</span> en 24-48 horas
+                sin interrumpir producción.
+              </p>
+
+              {/* Enterprise CTA Section */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="group relative bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 overflow-hidden hover:shadow-xl hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-blue-600/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                  <span className="relative z-10">Evaluación Técnica</span>
+                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg">
-                  Descargar Casos EW
+                <button className="group border-2 border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-white/50 hover:bg-white/80 backdrop-blur-sm">
+                  <span>Descargar Especificaciones</span>
+                  <Settings className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
                 </button>
               </div>
             </div>
 
-            {/* Right Column - Advanced Metrics */}
-            <div className="lg:col-span-5 progressive-reveal">
-              <div className="bg-white/70 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/20">
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">Métricas de Performance</h3>
+            {/* Right Column - Hero Image */}
+            <div className="lg:col-span-5 relative">
+              {/* Enhanced Background Elements */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute -top-4 -right-4 w-32 h-32 bg-gradient-to-br from-amber-600/15 to-amber-700/8 rounded-full opacity-40 animate-float-slow blur-sm"></div>
+                <div className="absolute bottom-8 -left-4 w-24 h-24 bg-gradient-to-br from-amber-500/20 to-amber-600/12 rounded-full opacity-35 animate-float-medium blur-sm"></div>
+                <div className="absolute top-1/3 right-4 w-20 h-20 bg-gradient-to-br from-amber-400/18 to-amber-500/10 rounded-full opacity-30 animate-float-slow blur-md"></div>
 
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Eficiencia Corriente</span>
-                    <span className="font-bold text-2xl text-amber-600">&gt;95%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-amber-500 to-amber-600 h-2 rounded-full" style={{width: '95%'}}></div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Pureza Cátodos</span>
-                    <span className="font-bold text-2xl text-amber-600">99.5%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-amber-500 to-amber-600 h-2 rounded-full" style={{width: '99%'}}></div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-600">Capacidad Celdas</span>
-                    <span className="font-bold text-2xl text-amber-600">5000A</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-amber-500 to-amber-600 h-2 rounded-full" style={{width: '88%'}}></div>
+                <div className="absolute bottom-1/4 right-8 opacity-25">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full enterprise-pulse"></div>
+                    <div className="w-2 h-2 bg-amber-500 rounded-full enterprise-pulse" style={{animationDelay: '0.3s'}}></div>
+                    <div className="w-2 h-2 bg-amber-600 rounded-full enterprise-pulse" style={{animationDelay: '0.6s'}}></div>
                   </div>
                 </div>
+              </div>
 
-                <div className="mt-8 pt-6 border-t border-slate-200">
-                  <div className="text-center">
-                    <div className="text-3xl font-black text-slate-900 mb-1">&lt;6 meses</div>
-                    <div className="text-sm text-slate-500">ROI típico proyectos EW</div>
+              {/* Hero Image Container */}
+              <div className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 h-96 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center text-white shadow-xl">
+                    <Zap className="w-12 h-12" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Sistema EW-Clean Pro</h3>
+                  <p className="text-slate-600 mb-4">Tecnología de reactivación electroquímica para máxima eficiencia corriente</p>
+                  <div className="flex items-center justify-center space-x-4 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-slate-600">Operativo</span>
+                    </div>
+                    <div className="text-slate-400">•</div>
+                    <div className="text-amber-600 font-semibold">5000A Capacidad</div>
                   </div>
                 </div>
               </div>
