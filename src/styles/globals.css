@@ -230,6 +230,119 @@
     }
   }
 
+  /* Accessibility: Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .motion-reduce\:animate-none {
+      animation: none !important;
+    }
+
+    .motion-reduce\:transition-none {
+      transition: none !important;
+    }
+
+    /* Stop all SVG animations for reduced motion users */
+    svg * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    /* Override Bohr model animations */
+    animateMotion, animate, animateTransform {
+      animation: none !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .bohr-model-electron {
+      stroke-width: 4px !important;
+      filter: contrast(2) !important;
+    }
+
+    .bohr-model-nucleus {
+      stroke-width: 6px !important;
+      filter: contrast(2) drop-shadow(0 0 4px currentColor) !important;
+    }
+  }
+
+  /* Focus indicators for keyboard navigation */
+  .bohr-model-container:focus-within {
+    outline: 3px solid #10b981;
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
+  /* Modern text readability for labels - following 2025 best practices */
+  .bohr-model-label {
+    font-weight: 700;
+    /* Subtle outline for better contrast against varying backgrounds */
+    text-shadow:
+      0 0 3px rgba(255,255,255,0.9),
+      0 0 6px rgba(255,255,255,0.6);
+  }
+
+  /* Clean labels without heavy shadows for better readability */
+  .bohr-label-clean {
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  /* High contrast mode - remove all shadows */
+  @media (prefers-contrast: high) {
+    .bohr-model-label,
+    .bohr-label-clean {
+      text-shadow: none !important;
+      font-weight: 800 !important;
+    }
+  }
+
+  /* Modern Bohr Model Enhancements - 2025 UI/UX Best Practices */
+  .bohr-model-electron {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bohr-model-electron:hover {
+    filter: brightness(1.1) saturate(1.2);
+    transform: scale(1.05);
+  }
+
+  .bohr-model-nucleus {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bohr-model-nucleus:hover {
+    filter: brightness(1.1) drop-shadow(0 0 20px rgba(16, 185, 129, 0.4));
+  }
+
+  /* Clean, modern focus states */
+  .bohr-model-container:focus-visible {
+    outline: 3px solid #10b981;
+    outline-offset: 8px;
+    border-radius: 12px;
+  }
+
+  /* Smooth orbital rings with modern gradient */
+  .orbital-ring {
+    stroke: url(#modernOrbitalGrad);
+    stroke-width: 1;
+    stroke-dasharray: 8,4;
+    opacity: 0.15;
+    animation: rotate 60s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Respect motion preferences for orbital rings */
+  @media (prefers-reduced-motion: reduce) {
+    .orbital-ring {
+      animation: none !important;
+    }
+  }
+
   /* Service Card Hover Ball Animations */
   .animate-float-up-1 {
     animation: floatUp1 2s ease-out infinite;
@@ -1402,4 +1515,16 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  /* Hexagon Shape for Chemical/Molecular Theme */
+  .hexagon {
+    position: relative;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hexagon:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
+
 }

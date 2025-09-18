@@ -21,6 +21,26 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Suppress hydration warnings for browser extension attributes
+              if (typeof window !== 'undefined') {
+                const originalConsoleError = console.error;
+                console.error = function(message, ...args) {
+                  if (typeof message === 'string' && (
+                    message.includes('hydrated but some attributes') ||
+                    message.includes('fdprocessedid') ||
+                    message.includes('browser extension')
+                  )) {
+                    return;
+                  }
+                  originalConsoleError.apply(console, [message, ...args]);
+                };
+              }
+            `
+          }}
+        />
       </head>
       <body className="min-h-screen bg-white" style={{fontFamily: 'Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif'}}>
         <Header />

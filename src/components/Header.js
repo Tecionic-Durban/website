@@ -92,8 +92,8 @@ export default function Header() {
                                 </svg>
                               </div>
                               <div>
-                                <div className="font-medium">Filtración y Deshidratación</div>
-                                <div className="text-xs text-gray-500">Hasta 70 ton/día torta seca</div>
+                                <div className="font-medium">Filtración y Deshidratación de Borras</div>
+                                <div className="text-xs text-gray-500">Para plantas SX</div>
                               </div>
                             </a>
                             
