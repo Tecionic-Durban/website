@@ -236,100 +236,115 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* SIGNATURE EW MESH PATTERN - Like Stripe's diagonals */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `
-              linear-gradient(30deg, transparent 48%, rgba(251, 191, 36, 0.4) 49%, rgba(251, 191, 36, 0.4) 51%, transparent 52%),
-              linear-gradient(150deg, transparent 48%, rgba(251, 191, 36, 0.3) 49%, rgba(251, 191, 36, 0.3) 51%, transparent 52%),
-              linear-gradient(90deg, transparent 48%, rgba(251, 191, 36, 0.2) 49%, rgba(251, 191, 36, 0.2) 51%, transparent 52%)
-            `,
-            backgroundSize: '60px 60px, 60px 60px, 120px 120px'
-          }}></div>
-
-          {/* HEXAGONAL EW CELL PATTERN */}
+          {/* CIRCUIT BOARD TRACE PATTERN - Like electronic pathways */}
           <div className="absolute inset-0 opacity-[0.04]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d97706' fill-opacity='0.6'%3E%3Cpath d='M20 20l20-11.5L60 20v23L40 54.5 20 43V20z' stroke='%23d97706' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '80px 80px'
+            backgroundImage: `
+              linear-gradient(0deg, transparent 48%, rgba(251, 191, 36, 0.3) 49%, rgba(251, 191, 36, 0.3) 51%, transparent 52%),
+              linear-gradient(90deg, transparent 48%, rgba(251, 191, 36, 0.25) 49%, rgba(251, 191, 36, 0.25) 51%, transparent 52%),
+              linear-gradient(45deg, transparent 49.5%, rgba(251, 191, 36, 0.2) 50%, transparent 50.5%)
+            `,
+            backgroundSize: '40px 40px, 40px 40px, 80px 80px'
           }}></div>
 
-          {/* ELECTRICAL FLOW LINES - Representing Current Flow Through Cells */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-[0.06]">
-            {/* Horizontal current streams */}
-            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent"></div>
-            <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent"></div>
+          {/* CIRCUIT BOARD PATTERN - Electronic components grid */}
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-width='0.5'%3E%3Cpath d='M10 10h80v80h-80z'/%3E%3Cpath d='M20 20h60v60h-60z'/%3E%3Ccircle cx='30' cy='30' r='2' fill='%23f59e0b'/%3E%3Ccircle cx='70' cy='30' r='2' fill='%23f59e0b'/%3E%3Ccircle cx='30' cy='70' r='2' fill='%23f59e0b'/%3E%3Ccircle cx='70' cy='70' r='2' fill='%23f59e0b'/%3E%3Cpath d='M30 30h40M30 70h40M30 30v40M70 30v40'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '100px 100px'
+          }}></div>
 
-            {/* Vertical electrode columns */}
-            <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-amber-600/50 to-transparent"></div>
-            <div className="absolute left-3/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-amber-500/40 to-transparent"></div>
+          {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-[0.08]">
+            {/* Main circuit traces - horizontal */}
+            <div className="absolute top-1/6 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent"></div>
+            <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-amber-500/30 via-transparent via-amber-500/30 to-transparent"></div>
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber-600/50 to-transparent"></div>
+            <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-amber-400/25 via-transparent via-amber-400/25 to-transparent"></div>
+            <div className="absolute top-5/6 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber-500/35 to-transparent"></div>
 
-            {/* Diagonal electrical connections */}
-            <div className="absolute top-0 left-0 w-full h-full" style={{
-              background: `
-                linear-gradient(45deg, transparent 49%, rgba(251, 191, 36, 0.15) 49.5%, rgba(251, 191, 36, 0.15) 50.5%, transparent 51%),
-                linear-gradient(-45deg, transparent 49%, rgba(251, 191, 36, 0.1) 49.5%, rgba(251, 191, 36, 0.1) 50.5%, transparent 51%)
-              `,
-              backgroundSize: '200px 200px, 200px 200px'
-            }}></div>
+            {/* Main circuit traces - vertical */}
+            <div className="absolute left-1/6 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-amber-500/40 to-transparent"></div>
+            <div className="absolute left-1/3 top-0 w-px h-full bg-gradient-to-b from-amber-500/30 via-transparent via-amber-500/30 to-transparent"></div>
+            <div className="absolute left-1/2 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-amber-600/50 to-transparent"></div>
+            <div className="absolute left-2/3 top-0 w-px h-full bg-gradient-to-b from-amber-400/25 via-transparent via-amber-400/25 to-transparent"></div>
+            <div className="absolute left-5/6 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-amber-500/35 to-transparent"></div>
+
+            {/* Circuit junctions and connection points */}
+            <div className="absolute top-1/6 left-1/6 w-2 h-2 bg-amber-500/40 rounded-full"></div>
+            <div className="absolute top-1/6 left-1/2 w-2 h-2 bg-amber-600/50 rounded-full"></div>
+            <div className="absolute top-1/6 left-5/6 w-2 h-2 bg-amber-500/40 rounded-full"></div>
+            <div className="absolute top-1/2 left-1/6 w-2 h-2 bg-amber-600/50 rounded-full"></div>
+            <div className="absolute top-1/2 left-5/6 w-2 h-2 bg-amber-600/50 rounded-full"></div>
+            <div className="absolute top-5/6 left-1/6 w-2 h-2 bg-amber-500/40 rounded-full"></div>
+            <div className="absolute top-5/6 left-1/2 w-2 h-2 bg-amber-600/50 rounded-full"></div>
+            <div className="absolute top-5/6 left-5/6 w-2 h-2 bg-amber-500/40 rounded-full"></div>
           </div>
 
-          {/* METAL DEPOSITION INDICATORS */}
-          <div className="absolute inset-0 opacity-[0.08]">
-            {/* Large metal ions (input) */}
-            <div className="absolute top-1/6 left-[15%] w-4 h-4 bg-amber-600/30 rounded-full animate-pulse"></div>
-            <div className="absolute top-1/3 left-[12%] w-3 h-3 bg-amber-500/25 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="absolute top-1/2 left-[18%] w-5 h-5 bg-amber-700/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+          {/* ELECTRONIC COMPONENTS - Circuit elements */}
+          <div className="absolute inset-0 opacity-[0.07]">
+            {/* Resistors (input processing) */}
+            <div className="absolute top-1/5 left-[15%] w-6 h-2 bg-amber-600/30 rounded-sm animate-pulse"></div>
+            <div className="absolute top-2/5 left-[12%] w-5 h-1.5 bg-amber-500/25 rounded-sm animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="absolute top-3/5 left-[18%] w-7 h-2.5 bg-amber-700/20 rounded-sm animate-pulse" style={{animationDelay: '1s'}}></div>
 
-            {/* Medium metal particles (process) */}
-            <div className="absolute top-2/5 left-1/2 w-2 h-2 bg-amber-500/40 rounded-full animate-ping" style={{animationDelay: '0.3s'}}></div>
-            <div className="absolute top-3/5 left-1/2 w-2.5 h-2.5 bg-amber-600/35 rounded-full animate-ping" style={{animationDelay: '0.8s'}}></div>
+            {/* Capacitors (charge storage) */}
+            <div className="absolute top-1/4 left-1/2 w-2 h-4 bg-amber-500/40 rounded-sm animate-ping" style={{animationDelay: '0.3s'}}></div>
+            <div className="absolute top-3/4 left-1/2 w-2.5 h-5 bg-amber-600/35 rounded-sm animate-ping" style={{animationDelay: '0.8s'}}></div>
 
-            {/* Pure metal deposits (output) */}
-            <div className="absolute top-1/4 right-[15%] w-1.5 h-1.5 bg-amber-400/50 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
-            <div className="absolute top-1/2 right-[12%] w-1 h-1 bg-amber-500/45 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
-            <div className="absolute top-2/3 right-[18%] w-1.5 h-1.5 bg-amber-600/40 rounded-full animate-ping" style={{animationDelay: '2.5s'}}></div>
+            {/* Transistors (output control) */}
+            <div className="absolute top-1/6 right-[15%] w-3 h-3 bg-amber-400/50 transform rotate-45 animate-ping" style={{animationDelay: '1.5s'}}></div>
+            <div className="absolute top-1/2 right-[12%] w-2 h-2 bg-amber-500/45 transform rotate-45 animate-ping" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-5/6 right-[18%] w-3 h-3 bg-amber-600/40 transform rotate-45 animate-ping" style={{animationDelay: '2.5s'}}></div>
+
+            {/* IC chips (processing units) */}
+            <div className="absolute top-1/3 left-[25%] w-4 h-4 bg-amber-600/25 rounded-sm border border-amber-500/30 animate-pulse" style={{animationDelay: '1.2s'}}></div>
+            <div className="absolute top-2/3 right-[25%] w-5 h-3 bg-amber-500/30 rounded-sm border border-amber-400/35 animate-pulse" style={{animationDelay: '1.8s'}}></div>
           </div>
 
-          {/* ELECTRICAL CONNECTION NODES */}
-          <div className="absolute inset-0 opacity-[0.05]">
-            {/* Electrode connection points */}
-            <div className="absolute top-1/5 left-1/5 w-6 h-6 border border-amber-500/60 rounded-full flex items-center justify-center">
-              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+          {/* CIRCUIT NODES AND JUNCTIONS */}
+          <div className="absolute inset-0 opacity-[0.06]">
+            {/* Main circuit nodes */}
+            <div className="absolute top-1/4 left-1/4 w-3 h-3 border-2 border-amber-500/50 rounded-full flex items-center justify-center bg-white/20">
+              <div className="w-1 h-1 bg-amber-500 rounded-full animate-pulse"></div>
             </div>
-            <div className="absolute top-4/5 right-1/5 w-6 h-6 border border-amber-400/60 rounded-full flex items-center justify-center">
-              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-3/4 right-1/4 w-3 h-3 border-2 border-amber-400/50 rounded-full flex items-center justify-center bg-white/20">
+              <div className="w-1 h-1 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
             </div>
-            <div className="absolute bottom-1/5 left-1/3 w-6 h-6 border border-amber-600/60 rounded-full flex items-center justify-center">
-              <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-1/4 left-1/3 w-3 h-3 border-2 border-amber-600/50 rounded-full flex items-center justify-center bg-white/20">
+              <div className="w-1 h-1 bg-amber-600 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+            </div>
+            <div className="absolute top-1/2 right-1/3 w-3 h-3 border-2 border-amber-500/50 rounded-full flex items-center justify-center bg-white/20">
+              <div className="w-1 h-1 bg-amber-500 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
             </div>
 
-            {/* Connection lines between electrodes */}
-            <div className="absolute top-1/5 left-1/5 w-32 h-px bg-gradient-to-r from-amber-500/30 to-transparent transform rotate-45 origin-left"></div>
-            <div className="absolute bottom-1/5 left-1/3 w-40 h-px bg-gradient-to-r from-amber-600/30 to-transparent transform -rotate-12 origin-left"></div>
+            {/* Circuit traces between nodes */}
+            <div className="absolute top-1/4 left-1/4 w-20 h-0.5 bg-gradient-to-r from-amber-500/30 to-transparent transform rotate-12 origin-left"></div>
+            <div className="absolute bottom-1/4 left-1/3 w-24 h-0.5 bg-gradient-to-r from-amber-600/25 to-transparent transform -rotate-6 origin-left"></div>
+            <div className="absolute top-1/2 right-1/3 w-16 h-0.5 bg-gradient-to-l from-amber-500/35 to-transparent transform rotate-45 origin-right"></div>
           </div>
 
-          {/* TSF BRAND MOLECULAR SIGNATURE */}
-          <div className="absolute bottom-1/6 right-1/6 opacity-[0.07]">
+          {/* TSF CIRCUIT SIGNATURE - Electronic pattern */}
+          <div className="absolute bottom-1/6 right-1/6 opacity-[0.08]">
             <div className="relative w-24 h-24">
-              {/* Central brand hub */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-amber-600 rounded-full animate-pulse"></div>
+              {/* Central processing unit */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-amber-600/30 rounded-sm border border-amber-500/40 animate-pulse"></div>
 
-              {/* Orbital brand elements */}
-              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-amber-500 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-amber-600 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+              {/* Circuit terminals */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-amber-500 rounded-sm animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-amber-400 rounded-sm animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-2 h-2 bg-amber-600 rounded-sm animate-pulse" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-2 h-2 bg-amber-500 rounded-sm animate-pulse" style={{animationDelay: '2s'}}></div>
 
-              {/* Molecular bonds */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-px bg-amber-500/40"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-px bg-amber-500/40 rotate-90"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-px bg-amber-500/30 rotate-45"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-px bg-amber-500/30 -rotate-45"></div>
+              {/* Circuit traces */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-0.5 bg-amber-500/40"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-0.5 bg-amber-500/40 rotate-90"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-0.5 bg-amber-500/30 rotate-45"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-0.5 bg-amber-500/30 -rotate-45"></div>
             </div>
           </div>
 
         </div>
 
-        {/* Large EW Icon - Premium Treatment */}
+        {/* Large Circuit Icon - Premium Treatment */}
         <div className="absolute -top-32 -right-40 w-96 h-96 pointer-events-none">
           <div className="relative w-full h-full">
             <Zap className="w-full h-full text-amber-500/8 transform rotate-12" />
@@ -337,34 +352,34 @@ export default function EWCleaningServicePage() {
           </div>
         </div>
 
-        {/* TSF Branded Floating Elements */}
+        {/* TSF Circuit Elements */}
         <div className="absolute top-40 left-20 opacity-30">
-          {/* TSF Three-Ball Signature */}
-          <div className="flex items-center space-x-1">
-            <div className="w-3 h-3 bg-amber-500 rounded-full animate-pulse"></div>
-            <div className="w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+          {/* Electronic components signature */}
+          <div className="flex items-center space-x-2">
+            <div className="w-3 h-2 bg-amber-500 rounded-sm animate-pulse"></div>
+            <div className="w-2 h-3 bg-amber-400 rounded-sm animate-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-2 h-2 bg-amber-600 transform rotate-45 animate-pulse" style={{animationDelay: '0.4s'}}></div>
           </div>
         </div>
 
-        {/* Industrial Connection Lines */}
+        {/* Circuit Connection Traces */}
         <div className="absolute bottom-60 right-32 opacity-20">
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-amber-500 rounded-sm"></div>
             <div className="w-6 h-0.5 bg-amber-500"></div>
-            <div className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-ping"></div>
+            <div className="w-2 h-2 bg-amber-400 rounded-full animate-ping"></div>
             <div className="w-6 h-0.5 bg-amber-500"></div>
-            <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-amber-500 rounded-sm"></div>
           </div>
         </div>
 
-        {/* TSF Chemical Bond Pattern */}
+        {/* Circuit Board Pattern */}
         <div className="absolute top-2/3 left-1/3 opacity-25">
           <div className="relative w-8 h-8">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce"></div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce" style={{animationDelay: '0.3s'}}></div>
-            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce" style={{animationDelay: '0.6s'}}></div>
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-1 h-1 bg-amber-600 rounded-full animate-bounce" style={{animationDelay: '0.9s'}}></div>
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-amber-600 rounded-sm animate-bounce"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-amber-600 rounded-sm animate-bounce" style={{animationDelay: '0.3s'}}></div>
+            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-2 h-1 bg-amber-600 rounded-sm animate-bounce" style={{animationDelay: '0.6s'}}></div>
+            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-2 h-1 bg-amber-600 rounded-sm animate-bounce" style={{animationDelay: '0.9s'}}></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-amber-600/50"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-amber-600/50 rotate-90"></div>
           </div>
