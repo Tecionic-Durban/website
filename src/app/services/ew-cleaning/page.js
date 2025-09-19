@@ -236,126 +236,13 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* DENSE CIRCUIT TRACE GROUPS WITH ROUTING */}
-          <div className="absolute inset-0 opacity-[0.08]">
-            {/* Circuit Group 1 - Long Horizontal Traces */}
-            <div className="absolute top-[12%] left-[5%]">
-              <div className="absolute w-[200px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[3px] w-[180px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[6px] w-[160px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[9px] w-[190px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[12px] w-[140px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[15px] w-[200px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[18px] w-[120px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[21px] w-[170px] h-[1px] bg-amber-500"></div>
-              {/* Termination dots */}
-              <div className="absolute top-[2px] left-[180px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[5px] left-[160px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[11px] left-[140px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[17px] left-[120px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[20px] left-[170px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-            </div>
-
-            {/* Circuit Group 2 - Diagonal Routing */}
-            <div className="absolute top-[18%] right-[8%] transform rotate-45">
-              <div className="absolute w-[150px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[3px] w-[130px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[6px] w-[140px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[9px] w-[110px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[12px] w-[150px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[15px] w-[100px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[18px] w-[120px] h-[1px] bg-amber-500"></div>
-              {/* Termination dots */}
-              <div className="absolute top-[2px] left-[130px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[8px] left-[110px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[14px] left-[100px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[17px] left-[120px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-            </div>
-
-            {/* Circuit Group 3 - Vertical Routing */}
-            <div className="absolute top-[35%] left-[15%] transform rotate-90">
-              <div className="absolute w-[120px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[3px] w-[100px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[6px] w-[110px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[9px] w-[120px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[12px] w-[90px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[15px] w-[105px] h-[1px] bg-amber-500"></div>
-              {/* Termination dots */}
-              <div className="absolute top-[2px] left-[100px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[5px] left-[110px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[11px] left-[90px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[14px] left-[105px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-            </div>
-
-            {/* Circuit Group 4 - L-Shaped 90-degree routing */}
-            <div className="absolute top-[45%] right-[20%]">
-              {/* Horizontal segments */}
-              <div className="absolute w-[80px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[3px] w-[85px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[6px] w-[70px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[9px] w-[90px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[12px] w-[75px] h-[1px] bg-amber-500"></div>
-              {/* Vertical segments (90-degree turns) */}
-              <div className="absolute left-[80px] top-[0px] w-[1px] h-[60px] bg-amber-500"></div>
-              <div className="absolute left-[85px] top-[3px] w-[1px] h-[45px] bg-amber-500"></div>
-              <div className="absolute left-[70px] top-[6px] w-[1px] h-[50px] bg-amber-500"></div>
-              <div className="absolute left-[90px] top-[9px] w-[1px] h-[40px] bg-amber-500"></div>
-              <div className="absolute left-[75px] top-[12px] w-[1px] h-[55px] bg-amber-500"></div>
-              {/* Termination dots */}
-              <div className="absolute top-[60px] left-[79px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[47px] left-[84px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[55px] left-[69px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[48px] left-[89px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[66px] left-[74px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-            </div>
-
-            {/* Circuit Group 5 - Long Diagonal Group */}
-            <div className="absolute bottom-[30%] left-[25%] transform -rotate-12">
-              <div className="absolute w-[180px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[3px] w-[160px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[6px] w-[170px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[9px] w-[180px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[12px] w-[140px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[15px] w-[165px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[18px] w-[150px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[21px] w-[175px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[24px] w-[130px] h-[1px] bg-amber-500"></div>
-              {/* Termination dots */}
-              <div className="absolute top-[2px] left-[160px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[5px] left-[170px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[11px] left-[140px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[14px] left-[165px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[17px] left-[150px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[23px] left-[130px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-            </div>
-
-            {/* Circuit Group 6 - Complex 90-degree routing */}
-            <div className="absolute bottom-[15%] right-[15%]">
-              {/* Horizontal to vertical routing */}
-              <div className="absolute w-[60px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[3px] w-[65px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[6px] w-[55px] h-[1px] bg-amber-500"></div>
-              <div className="absolute top-[9px] w-[70px] h-[1px] bg-amber-500"></div>
-
-              {/* 90-degree turns upward */}
-              <div className="absolute left-[60px] top-[0px] w-[1px] h-[40px] bg-amber-500"></div>
-              <div className="absolute left-[65px] top-[3px] w-[1px] h-[35px] bg-amber-500"></div>
-              <div className="absolute left-[55px] top-[6px] w-[1px] h-[30px] bg-amber-500"></div>
-              <div className="absolute left-[70px] top-[9px] w-[1px] h-[45px] bg-amber-500"></div>
-
-              {/* Another 90-degree turn horizontal */}
-              <div className="absolute left-[60px] top-[-40px] w-[50px] h-[1px] bg-amber-500"></div>
-              <div className="absolute left-[65px] top-[-35px] w-[40px] h-[1px] bg-amber-500"></div>
-              <div className="absolute left-[55px] top-[-24px] w-[45px] h-[1px] bg-amber-500"></div>
-              <div className="absolute left-[70px] top-[-36px] w-[35px] h-[1px] bg-amber-500"></div>
-
-              {/* Termination dots */}
-              <div className="absolute top-[-40px] left-[109px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[-35px] left-[104px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[-24px] left-[99px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-              <div className="absolute top-[-36px] left-[104px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
-            </div>
-          </div>
+          {/* EXPANDED CIRCUIT BOARD PATTERN */}
+          <div className="absolute inset-0 opacity-[0.08]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='1400' height='800' viewBox='0 0 1400 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='boardGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230a3d2e;stop-opacity:0.1' /%3E%3Cstop offset='50%25' style='stop-color:%230f4d3a;stop-opacity:0.05' /%3E%3Cstop offset='100%25' style='stop-color:%231a5c47;stop-opacity:0.1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1400' height='800' fill='url(%23boardGradient)'/%3E%3Cg stroke='%23f59e0b' stroke-width='2' fill='none' opacity='0.6'%3E%3C!-- Main horizontal traces --%3E%3Cline x1='0' y1='120' x2='300' y2='120'/%3E%3Cline x1='350' y1='120' x2='750' y2='120'/%3E%3Cline x1='800' y1='120' x2='1400' y2='120'/%3E%3Cline x1='0' y1='280' x2='250' y2='280'/%3E%3Cline x1='300' y1='280' x2='650' y2='280'/%3E%3Cline x1='700' y1='280' x2='1400' y2='280'/%3E%3Cline x1='0' y1='440' x2='400' y2='440'/%3E%3Cline x1='450' y1='440' x2='850' y2='440'/%3E%3Cline x1='900' y1='440' x2='1400' y2='440'/%3E%3Cline x1='0' y1='600' x2='350' y2='600'/%3E%3Cline x1='400' y1='600' x2='800' y2='600'/%3E%3Cline x1='850' y1='600' x2='1400' y2='600'/%3E%3C!-- Vertical connections --%3E%3Cline x1='200' y1='120' x2='200' y2='280'/%3E%3Cline x1='500' y1='80' x2='500' y2='200'/%3E%3Cline x1='800' y1='160' x2='800' y2='320'/%3E%3Cline x1='1100' y1='120' x2='1100' y2='240'/%3E%3Cline x1='350' y1='280' x2='350' y2='440'/%3E%3Cline x1='650' y1='240' x2='650' y2='400'/%3E%3Cline x1='950' y1='320' x2='950' y2='480'/%3E%3Cline x1='300' y1='440' x2='300' y2='600'/%3E%3Cline x1='600' y1='480' x2='600' y2='640'/%3E%3C!-- Angled traces --%3E%3Cline x1='300' y1='120' x2='350' y2='160'/%3E%3Cline x1='350' y1='160' x2='400' y2='160'/%3E%3Cline x1='750' y1='120' x2='800' y2='160'/%3E%3Cline x1='800' y1='160' x2='850' y2='200'/%3E%3Cline x1='250' y1='280' x2='300' y2='320'/%3E%3Cline x1='300' y1='320' x2='350' y2='320'/%3E%3Cline x1='650' y1='280' x2='700' y2='320'/%3E%3Cline x1='700' y1='320' x2='750' y2='360'/%3E%3Cline x1='400' y1='440' x2='450' y2='480'/%3E%3Cline x1='450' y1='480' x2='500' y2='480'/%3E%3Cline x1='850' y1='440' x2='900' y2='480'/%3E%3Cline x1='900' y1='480' x2='950' y2='520'/%3E%3C!-- Complex routing --%3E%3Cpath d='M 600 120 L 650 140 L 680 140 L 700 160'/%3E%3Cpath d='M 250 280 L 280 260 L 300 260 L 320 240'/%3E%3Cpath d='M 550 440 L 580 420 L 600 420 L 620 400'/%3E%3Cpath d='M 1000 280 L 1030 300 L 1060 300 L 1100 320'/%3E%3Cpath d='M 150 600 L 180 580 L 200 580 L 220 560'/%3E%3C/g%3E%3C!-- Resistors --%3E%3Cg fill='none' stroke='%23f59e0b' stroke-width='1' opacity='0.5'%3E%3Crect x='195' y='115' width='10' height='10' fill='%23654321'/%3E%3Crect x='495' y='155' width='10' height='10' fill='%23654321'/%3E%3Crect x='795' y='195' width='10' height='10' fill='%23654321'/%3E%3Crect x='345' y='315' width='10' height='10' fill='%23654321'/%3E%3Crect x='645' y='395' width='10' height='10' fill='%23654321'/%3E%3Crect x='945' y='515' width='10' height='10' fill='%23654321'/%3E%3C/g%3E%3C!-- Capacitors --%3E%3Cg fill='%23f59e0b' opacity='0.4'%3E%3Crect x='345' y='155' width='6' height='12'/%3E%3Crect x='745' y='315' width='6' height='12'/%3E%3Crect x='445' y='475' width='6' height='12'/%3E%3Ccircle cx='248' cy='280' r='4'/%3E%3Ccircle cx='598' cy='440' r='4'/%3E%3Ccircle cx='848' cy='600' r='4'/%3E%3C/g%3E%3C!-- ICs (Integrated Circuits) --%3E%3Cg fill='%23333333' stroke='%23666666' stroke-width='1' opacity='0.6'%3E%3Crect x='290' y='110' width='20' height='20' rx='2'/%3E%3Crect x='740' y='110' width='20' height='20' rx='2'/%3E%3Crect x='540' y='270' width='20' height='20' rx='2'/%3E%3Crect x='340' y='430' width='20' height='20' rx='2'/%3E%3Crect x='840' y='430' width='20' height='20' rx='2'/%3E%3Crect x='640' y='590' width='20' height='20' rx='2'/%3E%3C/g%3E%3C!-- Connection pads/vias --%3E%3Cg fill='%23f59e0b' opacity='0.7'%3E%3Ccircle cx='200' cy='120' r='3'/%3E%3Ccircle cx='200' cy='280' r='3'/%3E%3Ccircle cx='500' cy='160' r='3'/%3E%3Ccircle cx='800' cy='200' r='3'/%3E%3Ccircle cx='800' cy='320' r='3'/%3E%3Ccircle cx='1100' cy='120' r='3'/%3E%3Ccircle cx='1100' cy='240' r='3'/%3E%3Ccircle cx='350' cy='280' r='3'/%3E%3Ccircle cx='350' cy='440' r='3'/%3E%3Ccircle cx='650' cy='240' r='3'/%3E%3Ccircle cx='650' cy='400' r='3'/%3E%3Ccircle cx='950' cy='320' r='3'/%3E%3Ccircle cx='950' cy='480' r='3'/%3E%3Ccircle cx='300' cy='440' r='3'/%3E%3Ccircle cx='300' cy='600' r='3'/%3E%3Ccircle cx='600' cy='480' r='3'/%3E%3Ccircle cx='600' cy='640' r='3'/%3E%3C/g%3E%3C!-- Additional smaller traces for detail --%3E%3Cg stroke='%23f59e0b' stroke-width='1' fill='none' opacity='0.4'%3E%3Cline x1='100' y1='120' x2='100' y2='80'/%3E%3Cline x1='100' y1='80' x2='150' y2='80'/%3E%3Cline x1='400' y1='120' x2='400' y2='80'/%3E%3Cline x1='400' y1='80' x2='450' y2='80'/%3E%3Cline x1='900' y1='120' x2='900' y2='80'/%3E%3Cline x1='900' y1='80' x2='950' y2='80'/%3E%3Cline x1='150' y1='280' x2='150' y2='240'/%3E%3Cline x1='150' y1='240' x2='200' y2='240'/%3E%3Cline x1='750' y1='280' x2='750' y2='240'/%3E%3Cline x1='750' y1='240' x2='800' y2='240'/%3E%3Cline x1='450' y1='440' x2='450' y2='400'/%3E%3Cline x1='450' y1='400' x2='500' y2='400'/%3E%3Cline x1='1050' y1='440' x2='1050' y2='400'/%3E%3Cline x1='1050' y1='400' x2='1100' y2='400'/%3E%3Cline x1='250' y1='600' x2='250' y2='560'/%3E%3Cline x1='250' y1='560' x2='300' y2='560'/%3E%3Cline x1='950' y1='600' x2='950' y2='560'/%3E%3Cline x1='950' y1='560' x2='1000' y2='560'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}></div>
 
           {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.08]">
