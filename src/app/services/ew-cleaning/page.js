@@ -236,39 +236,107 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* ELECTRICAL CURRENT FLOW PATTERN */}
+          {/* DENSE CIRCUIT TRACE GROUPS */}
           <div className="absolute inset-0 opacity-[0.08]">
-            {/* Power transmission lines */}
-            <div className="absolute top-[20%] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div>
-            <div className="absolute top-[40%] left-0 w-full h-[1px] bg-gradient-to-r from-amber-500/20 via-transparent via-amber-500/20 to-transparent"></div>
-            <div className="absolute top-[60%] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-amber-500/25 to-transparent"></div>
-            <div className="absolute top-[80%] left-0 w-full h-[1px] bg-gradient-to-r from-amber-500/15 via-transparent via-amber-500/15 to-transparent"></div>
+            {/* Circuit Group 1 - Top Left */}
+            <div className="absolute top-[15%] left-[10%]">
+              <div className="absolute w-[80px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[3px] w-[80px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[6px] w-[65px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[9px] w-[70px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[12px] w-[55px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[15px] w-[75px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[18px] w-[45px] h-[1px] bg-amber-500"></div>
+              {/* Termination dots */}
+              <div className="absolute top-[-1px] left-[80px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[5px] left-[65px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[11px] left-[55px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[17px] left-[45px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+            </div>
 
-            {/* Vertical power distribution */}
-            <div className="absolute left-[25%] top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-amber-500/20 to-transparent"></div>
-            <div className="absolute left-[50%] top-0 w-[2px] h-full bg-gradient-to-b from-amber-500/25 via-transparent via-amber-500/25 to-transparent"></div>
-            <div className="absolute left-[75%] top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-amber-500/20 to-transparent"></div>
+            {/* Circuit Group 2 - Top Right */}
+            <div className="absolute top-[20%] right-[12%]">
+              <div className="absolute w-[90px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[4px] w-[75px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[8px] w-[85px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[12px] w-[60px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[16px] w-[90px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[20px] w-[50px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[24px] w-[70px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[28px] w-[80px] h-[1px] bg-amber-500"></div>
+              {/* Termination dots */}
+              <div className="absolute top-[3px] left-[75px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[11px] left-[60px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[19px] left-[50px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[23px] left-[70px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+            </div>
 
-            {/* Electrical junction points */}
-            <div className="absolute top-[20%] left-[25%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse"></div>
-            <div className="absolute top-[20%] left-[50%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="absolute top-[20%] left-[75%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            {/* Circuit Group 3 - Middle Left */}
+            <div className="absolute top-[45%] left-[8%]">
+              <div className="absolute w-[70px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[3px] w-[70px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[6px] w-[55px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[9px] w-[60px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[12px] w-[70px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[15px] w-[40px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[18px] w-[65px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[21px] w-[50px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[24px] w-[70px] h-[1px] bg-amber-500"></div>
+              {/* Termination dots */}
+              <div className="absolute top-[5px] left-[55px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[8px] left-[60px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[14px] left-[40px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[20px] left-[50px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+            </div>
 
-            <div className="absolute top-[40%] left-[25%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-            <div className="absolute top-[40%] left-[75%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+            {/* Circuit Group 4 - Middle Right */}
+            <div className="absolute top-[52%] right-[15%]">
+              <div className="absolute w-[85px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[3px] w-[60px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[6px] w-[75px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[9px] w-[85px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[12px] w-[50px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[15px] w-[80px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[18px] w-[65px] h-[1px] bg-amber-500"></div>
+              {/* Termination dots */}
+              <div className="absolute top-[2px] left-[60px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[5px] left-[75px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[11px] left-[50px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[17px] left-[65px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+            </div>
 
-            <div className="absolute top-[60%] left-[25%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
-            <div className="absolute top-[60%] left-[50%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
-            <div className="absolute top-[60%] left-[75%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '3.5s'}}></div>
+            {/* Circuit Group 5 - Bottom Center */}
+            <div className="absolute bottom-[25%] left-[35%]">
+              <div className="absolute w-[95px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[4px] w-[70px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[8px] w-[85px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[12px] w-[95px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[16px] w-[55px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[20px] w-[80px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[24px] w-[60px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[28px] w-[90px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[32px] w-[75px] h-[1px] bg-amber-500"></div>
+              {/* Termination dots */}
+              <div className="absolute top-[3px] left-[70px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[7px] left-[85px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[15px] left-[55px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[23px] left-[60px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[31px] left-[75px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+            </div>
 
-            <div className="absolute top-[80%] left-[25%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '4s'}}></div>
-            <div className="absolute top-[80%] left-[75%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
-
-            {/* Electrical flow indicators */}
-            <div className="absolute top-[10%] left-[10%] w-4 h-1 bg-amber-500/50 animate-ping"></div>
-            <div className="absolute top-[30%] right-[10%] w-4 h-1 bg-amber-500/50 animate-ping" style={{animationDelay: '1s'}}></div>
-            <div className="absolute bottom-[30%] left-[15%] w-4 h-1 bg-amber-500/50 animate-ping" style={{animationDelay: '2s'}}></div>
-            <div className="absolute bottom-[10%] right-[15%] w-4 h-1 bg-amber-500/50 animate-ping" style={{animationDelay: '3s'}}></div>
+            {/* Circuit Group 6 - Bottom Left */}
+            <div className="absolute bottom-[15%] left-[15%]">
+              <div className="absolute w-[60px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[3px] w-[75px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[6px] w-[45px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[9px] w-[65px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[12px] w-[75px] h-[1px] bg-amber-500"></div>
+              <div className="absolute top-[15px] w-[50px] h-[1px] bg-amber-500"></div>
+              {/* Termination dots */}
+              <div className="absolute top-[-1px] left-[60px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[5px] left-[45px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+              <div className="absolute top-[14px] left-[50px] w-[2px] h-[2px] bg-amber-500 rounded-full"></div>
+            </div>
           </div>
 
           {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
