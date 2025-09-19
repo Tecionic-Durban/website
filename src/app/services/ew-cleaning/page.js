@@ -236,59 +236,74 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* SIMPLE CSS CIRCUIT BOARD PATTERN */}
-          <div className="absolute inset-0 opacity-[0.12]">
-            {/* Horizontal circuit traces */}
-            <div className="absolute top-[15%] left-0 w-full h-[1px] bg-amber-500"></div>
-            <div className="absolute top-[25%] left-0 w-full h-[1px] bg-amber-500"></div>
-            <div className="absolute top-[35%] left-0 w-full h-[1px] bg-amber-500"></div>
-            <div className="absolute top-[45%] left-0 w-full h-[1px] bg-amber-500"></div>
-            <div className="absolute top-[55%] left-0 w-full h-[1px] bg-amber-500"></div>
-            <div className="absolute top-[65%] left-0 w-full h-[1px] bg-amber-500"></div>
-            <div className="absolute top-[75%] left-0 w-full h-[1px] bg-amber-500"></div>
+          {/* AUTHENTIC PCB CIRCUIT BOARD PATTERN */}
+          <div className="absolute inset-0 opacity-[0.15]">
+            {/* PCB Green Background */}
+            <div className="absolute inset-0 bg-emerald-800/20"></div>
 
-            {/* Vertical circuit traces */}
-            <div className="absolute left-[15%] top-0 h-full w-[1px] bg-amber-500"></div>
-            <div className="absolute left-[25%] top-0 h-full w-[1px] bg-amber-500"></div>
-            <div className="absolute left-[35%] top-0 h-full w-[1px] bg-amber-500"></div>
-            <div className="absolute left-[45%] top-0 h-full w-[1px] bg-amber-500"></div>
-            <div className="absolute left-[55%] top-0 h-full w-[1px] bg-amber-500"></div>
-            <div className="absolute left-[65%] top-0 h-full w-[1px] bg-amber-500"></div>
-            <div className="absolute left-[75%] top-0 h-full w-[1px] bg-amber-500"></div>
-            <div className="absolute left-[85%] top-0 h-full w-[1px] bg-amber-500"></div>
+            {/* Main Power Traces (thick golden traces) */}
+            <div className="absolute top-[20%] left-[10%] w-[80%] h-[3px] bg-amber-400 rounded-full"></div>
+            <div className="absolute top-[60%] left-[15%] w-[70%] h-[2px] bg-amber-400 rounded-full"></div>
 
-            {/* Circuit junction points */}
-            <div className="absolute top-[15%] left-[15%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[15%] left-[35%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[15%] left-[55%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[15%] left-[75%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            {/* Signal Traces (curved routing like real PCBs) */}
+            <div className="absolute top-[25%] left-[20%] w-[30%] h-[1px] bg-amber-500 rounded-full transform rotate-12"></div>
+            <div className="absolute top-[35%] left-[40%] w-[25%] h-[1px] bg-amber-500 rounded-full transform -rotate-6"></div>
+            <div className="absolute top-[45%] left-[30%] w-[35%] h-[1px] bg-amber-500 rounded-full transform rotate-3"></div>
+            <div className="absolute top-[55%] left-[50%] w-[20%] h-[1px] bg-amber-500 rounded-full transform -rotate-12"></div>
+            <div className="absolute top-[70%] left-[25%] w-[40%] h-[1px] bg-amber-500 rounded-full transform rotate-8"></div>
+            <div className="absolute top-[80%] left-[45%] w-[30%] h-[1px] bg-amber-500 rounded-full transform -rotate-4"></div>
 
-            <div className="absolute top-[35%] left-[25%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[35%] left-[45%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[35%] left-[65%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[35%] left-[85%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            {/* Vertical routing traces */}
+            <div className="absolute left-[30%] top-[15%] h-[40%] w-[1px] bg-amber-500 rounded-full"></div>
+            <div className="absolute left-[60%] top-[25%] h-[50%] w-[1px] bg-amber-500 rounded-full"></div>
+            <div className="absolute left-[75%] top-[10%] h-[30%] w-[2px] bg-amber-400 rounded-full"></div>
 
-            <div className="absolute top-[55%] left-[15%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[55%] left-[35%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[55%] left-[55%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[55%] left-[75%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            {/* IC Package Footprints with Pin Arrays */}
+            <div className="absolute top-[15%] left-[40%] w-16 h-12 bg-emerald-900/30 border border-amber-400/50 rounded-sm">
+              {/* IC pins */}
+              <div className="absolute -left-1 top-2 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -left-1 top-4 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -left-1 top-6 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -left-1 top-8 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-2 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-4 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-6 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-8 w-2 h-1 bg-amber-400"></div>
+            </div>
 
-            <div className="absolute top-[75%] left-[25%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[75%] left-[45%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[75%] left-[65%] w-2 h-2 bg-amber-500 rounded-full"></div>
-            <div className="absolute top-[75%] left-[85%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[50%] left-[20%] w-20 h-14 bg-emerald-900/30 border border-amber-400/50 rounded-sm">
+              {/* IC pins */}
+              <div className="absolute -left-1 top-2 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -left-1 top-4 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -left-1 top-6 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -left-1 top-8 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -left-1 top-10 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-2 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-4 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-6 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-8 w-2 h-1 bg-amber-400"></div>
+              <div className="absolute -right-1 top-10 w-2 h-1 bg-amber-400"></div>
+            </div>
 
-            {/* IC chips (rectangular components) */}
-            <div className="absolute top-[10%] left-[20%] w-12 h-8 border border-amber-500 bg-amber-500/20"></div>
-            <div className="absolute top-[30%] left-[40%] w-16 h-10 border border-amber-500 bg-amber-500/20"></div>
-            <div className="absolute top-[50%] left-[60%] w-14 h-9 border border-amber-500 bg-amber-500/20"></div>
-            <div className="absolute top-[70%] left-[30%] w-13 h-8 border border-amber-500 bg-amber-500/20"></div>
+            {/* SMD Resistors/Capacitors (small rectangular components) */}
+            <div className="absolute top-[30%] left-[70%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
+            <div className="absolute top-[40%] left-[25%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
+            <div className="absolute top-[65%] left-[55%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
+            <div className="absolute top-[75%] left-[35%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
 
-            {/* Resistors (small rectangles) */}
-            <div className="absolute top-[20%] left-[50%] w-6 h-2 bg-amber-500"></div>
-            <div className="absolute top-[40%] left-[70%] w-6 h-2 bg-amber-500"></div>
-            <div className="absolute top-[60%] left-[40%] w-6 h-2 bg-amber-500"></div>
-            <div className="absolute top-[80%] left-[60%] w-6 h-2 bg-amber-500"></div>
+            {/* Via Holes (small circles) */}
+            <div className="absolute top-[22%] left-[32%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
+            <div className="absolute top-[28%] left-[62%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
+            <div className="absolute top-[42%] left-[45%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
+            <div className="absolute top-[58%] left-[38%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
+            <div className="absolute top-[68%] left-[58%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
+            <div className="absolute top-[78%] left-[48%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
+
+            {/* Connection Pads (larger circular pads) */}
+            <div className="absolute top-[18%] left-[15%] w-3 h-3 bg-amber-400 rounded-full"></div>
+            <div className="absolute top-[35%] left-[80%] w-3 h-3 bg-amber-400 rounded-full"></div>
+            <div className="absolute top-[55%] left-[12%] w-3 h-3 bg-amber-400 rounded-full"></div>
+            <div className="absolute top-[82%] left-[75%] w-3 h-3 bg-amber-400 rounded-full"></div>
           </div>
 
           {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
