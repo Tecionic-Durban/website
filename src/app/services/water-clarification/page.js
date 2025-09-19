@@ -293,15 +293,6 @@ export default function WaterClarificationServicePage() {
           </div>
         </div>
 
-        {/* TSF Branded Floating Elements */}
-        <div className="absolute top-40 left-20 opacity-30">
-          {/* TSF Three-Ball Signature */}
-          <div className="flex items-center space-x-1">
-            <div className="w-3 h-3 bg-teal-500 rounded-full animate-pulse"></div>
-            <div className="w-2.5 h-2.5 bg-teal-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-teal-600 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
 
         {/* Enterprise Navigation Bar */}
         <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">

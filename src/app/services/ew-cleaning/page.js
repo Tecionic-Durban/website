@@ -365,17 +365,6 @@ export default function EWCleaningServicePage() {
           </div>
         </div>
 
-        {/* Circuit Board Pattern */}
-        <div className="absolute top-2/3 left-1/3 opacity-25">
-          <div className="relative w-8 h-8">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-amber-600 rounded-sm animate-bounce"></div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-amber-600 rounded-sm animate-bounce" style={{animationDelay: '0.3s'}}></div>
-            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-2 h-1 bg-amber-600 rounded-sm animate-bounce" style={{animationDelay: '0.6s'}}></div>
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-2 h-1 bg-amber-600 rounded-sm animate-bounce" style={{animationDelay: '0.9s'}}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-amber-600/50"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-amber-600/50 rotate-90"></div>
-          </div>
-        </div>
 
         {/* Enterprise Navigation Bar */}
         <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">

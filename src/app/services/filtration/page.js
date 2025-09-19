@@ -214,15 +214,6 @@ export default function FiltrationPage() {
           </div>
         </div>
 
-        {/* TSF Branded Floating Elements */}
-        <div className="absolute top-40 left-20 opacity-30">
-          {/* TSF Three-Ball Signature */}
-          <div className="flex items-center space-x-1">
-            <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-            <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
 
         {/* Industrial Connection Lines */}
         <div className="absolute bottom-60 right-32 opacity-20">
@@ -235,17 +226,6 @@ export default function FiltrationPage() {
           </div>
         </div>
 
-        {/* TSF Chemical Bond Pattern */}
-        <div className="absolute top-2/3 left-1/3 opacity-25">
-          <div className="relative w-8 h-8">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-emerald-600 rounded-full animate-bounce"></div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-emerald-600 rounded-full animate-bounce" style={{animationDelay: '0.3s'}}></div>
-            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-1 h-1 bg-emerald-600 rounded-full animate-bounce" style={{animationDelay: '0.6s'}}></div>
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-1 h-1 bg-emerald-600 rounded-full animate-bounce" style={{animationDelay: '0.9s'}}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-emerald-600/50"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-emerald-600/50 rotate-90"></div>
-          </div>
-        </div>
 
         {/* Enterprise Navigation Bar */}
         <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">
