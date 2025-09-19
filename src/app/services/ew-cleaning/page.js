@@ -236,14 +236,40 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* SUBTLE TECH PATTERN */}
-          <div className="absolute inset-0 opacity-[0.05]" style={{
-            backgroundImage: `
-              linear-gradient(90deg, rgba(245, 158, 11, 0.1) 1px, transparent 1px),
-              linear-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '20px 20px'
-          }}></div>
+          {/* ELECTRICAL CURRENT FLOW PATTERN */}
+          <div className="absolute inset-0 opacity-[0.08]">
+            {/* Power transmission lines */}
+            <div className="absolute top-[20%] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div>
+            <div className="absolute top-[40%] left-0 w-full h-[1px] bg-gradient-to-r from-amber-500/20 via-transparent via-amber-500/20 to-transparent"></div>
+            <div className="absolute top-[60%] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-amber-500/25 to-transparent"></div>
+            <div className="absolute top-[80%] left-0 w-full h-[1px] bg-gradient-to-r from-amber-500/15 via-transparent via-amber-500/15 to-transparent"></div>
+
+            {/* Vertical power distribution */}
+            <div className="absolute left-[25%] top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-amber-500/20 to-transparent"></div>
+            <div className="absolute left-[50%] top-0 w-[2px] h-full bg-gradient-to-b from-amber-500/25 via-transparent via-amber-500/25 to-transparent"></div>
+            <div className="absolute left-[75%] top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-amber-500/20 to-transparent"></div>
+
+            {/* Electrical junction points */}
+            <div className="absolute top-[20%] left-[25%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse"></div>
+            <div className="absolute top-[20%] left-[50%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="absolute top-[20%] left-[75%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+
+            <div className="absolute top-[40%] left-[25%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+            <div className="absolute top-[40%] left-[75%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+
+            <div className="absolute top-[60%] left-[25%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
+            <div className="absolute top-[60%] left-[50%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+            <div className="absolute top-[60%] left-[75%] w-3 h-3 bg-amber-500/40 rounded-full animate-pulse" style={{animationDelay: '3.5s'}}></div>
+
+            <div className="absolute top-[80%] left-[25%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '4s'}}></div>
+            <div className="absolute top-[80%] left-[75%] w-2 h-2 bg-amber-400/30 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
+
+            {/* Electrical flow indicators */}
+            <div className="absolute top-[10%] left-[10%] w-4 h-1 bg-amber-500/50 animate-ping"></div>
+            <div className="absolute top-[30%] right-[10%] w-4 h-1 bg-amber-500/50 animate-ping" style={{animationDelay: '1s'}}></div>
+            <div className="absolute bottom-[30%] left-[15%] w-4 h-1 bg-amber-500/50 animate-ping" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-[10%] right-[15%] w-4 h-1 bg-amber-500/50 animate-ping" style={{animationDelay: '3s'}}></div>
+          </div>
 
           {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.08]">
