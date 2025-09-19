@@ -238,7 +238,7 @@ export default function WaterClarificationServicePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-teal-50/30 via-white to-gray-50/50"></div>
 
           {/* SIGNATURE WATER FLOW PATTERN */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
+          <div className="absolute inset-0 opacity-[0.12]" style={{
             backgroundImage: `
               linear-gradient(30deg, transparent 48%, rgba(20, 184, 166, 0.4) 49%, rgba(20, 184, 166, 0.4) 51%, transparent 52%),
               linear-gradient(150deg, transparent 48%, rgba(20, 184, 166, 0.3) 49%, rgba(20, 184, 166, 0.3) 51%, transparent 52%),
@@ -248,13 +248,13 @@ export default function WaterClarificationServicePage() {
           }}></div>
 
           {/* CLARIFICATION CHAMBER PATTERN */}
-          <div className="absolute inset-0 opacity-[0.04]" style={{
+          <div className="absolute inset-0 opacity-[0.12]" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314b8a6' fill-opacity='0.6'%3E%3Crect x='10' y='20' width='60' height='40' rx='5' stroke='%2314b8a6' stroke-width='1' fill='none'/%3E%3Cline x1='20' y1='30' x2='60' y2='30' stroke='%2314b8a6' stroke-width='1'/%3E%3Cline x1='20' y1='40' x2='60' y2='40' stroke='%2314b8a6' stroke-width='1'/%3E%3Cline x1='20' y1='50' x2='60' y2='50' stroke='%2314b8a6' stroke-width='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '80px 80px'
           }}></div>
 
           {/* WATER DROPLET FLOW */}
-          <div className="absolute inset-0 opacity-[0.08]">
+          <div className="absolute inset-0 opacity-[0.12]">
             {/* Large droplets (input) */}
             <div className="absolute top-1/6 left-[15%] w-4 h-4 bg-teal-600/30 rounded-full animate-pulse"></div>
             <div className="absolute top-1/3 left-[12%] w-3 h-3 bg-teal-500/25 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
@@ -271,7 +271,7 @@ export default function WaterClarificationServicePage() {
           </div>
 
           {/* TSF BRAND MOLECULAR SIGNATURE */}
-          <div className="absolute bottom-1/6 right-1/6 opacity-[0.07]">
+          <div className="absolute bottom-1/6 right-1/6 opacity-[0.12]">
             <div className="relative w-24 h-24">
               {/* Central brand hub */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-teal-600 rounded-full animate-pulse"></div>

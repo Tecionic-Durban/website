@@ -114,7 +114,7 @@ export default function FiltrationPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-white to-gray-50/50"></div>
 
           {/* SIGNATURE FILTRATION MESH PATTERN - Like Stripe's diagonals */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
+          <div className="absolute inset-0 opacity-[0.12]" style={{
             backgroundImage: `
               linear-gradient(30deg, transparent 48%, rgba(16, 185, 129, 0.4) 49%, rgba(16, 185, 129, 0.4) 51%, transparent 52%),
               linear-gradient(150deg, transparent 48%, rgba(16, 185, 129, 0.3) 49%, rgba(16, 185, 129, 0.3) 51%, transparent 52%),
@@ -124,13 +124,13 @@ export default function FiltrationPage() {
           }}></div>
 
           {/* HEXAGONAL FILTRATION SCREEN PATTERN */}
-          <div className="absolute inset-0 opacity-[0.04]" style={{
+          <div className="absolute inset-0 opacity-[0.12]" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.6'%3E%3Cpath d='M20 20l20-11.5L60 20v23L40 54.5 20 43V20z' stroke='%23059669' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '80px 80px'
           }}></div>
 
           {/* FLOW LINES - Representing Liquid Flow Through System */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-[0.06]">
+          <div className="absolute top-0 left-0 w-full h-full opacity-[0.12]">
             {/* Horizontal flow streams */}
             <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent"></div>
             <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent"></div>
@@ -150,7 +150,7 @@ export default function FiltrationPage() {
           </div>
 
           {/* PARTICLE SEPARATION INDICATORS */}
-          <div className="absolute inset-0 opacity-[0.08]">
+          <div className="absolute inset-0 opacity-[0.12]">
             {/* Large particles (input) */}
             <div className="absolute top-1/6 left-[15%] w-4 h-4 bg-emerald-600/30 rounded-full animate-pulse"></div>
             <div className="absolute top-1/3 left-[12%] w-3 h-3 bg-emerald-500/25 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
@@ -167,7 +167,7 @@ export default function FiltrationPage() {
           </div>
 
           {/* INDUSTRIAL CONNECTION NODES */}
-          <div className="absolute inset-0 opacity-[0.05]">
+          <div className="absolute inset-0 opacity-[0.12]">
             {/* Process connection points */}
             <div className="absolute top-1/5 left-1/5 w-6 h-6 border border-emerald-500/60 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
@@ -185,7 +185,7 @@ export default function FiltrationPage() {
           </div>
 
           {/* TSF BRAND MOLECULAR SIGNATURE */}
-          <div className="absolute bottom-1/6 right-1/6 opacity-[0.07]">
+          <div className="absolute bottom-1/6 right-1/6 opacity-[0.12]">
             <div className="relative w-24 h-24">
               {/* Central brand hub */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-emerald-600 rounded-full animate-pulse"></div>
