@@ -236,12 +236,13 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* FUNCTIONAL PCB CIRCUIT WITH REAL COMPONENT CONNECTIONS */}
-          <div className="absolute inset-0 opacity-[0.14]" style={{
-            backgroundImage: `url('/src/app/services/ew-cleaning/circuit-board.svg')`,
-            backgroundSize: '100%',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center'
+          {/* SUBTLE TECH PATTERN */}
+          <div className="absolute inset-0 opacity-[0.05]" style={{
+            backgroundImage: `
+              linear-gradient(90deg, rgba(245, 158, 11, 0.1) 1px, transparent 1px),
+              linear-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '20px 20px'
           }}></div>
 
           {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
