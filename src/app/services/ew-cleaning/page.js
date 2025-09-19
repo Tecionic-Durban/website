@@ -236,75 +236,13 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* AUTHENTIC PCB CIRCUIT BOARD PATTERN */}
-          <div className="absolute inset-0 opacity-[0.15]">
-            {/* PCB Green Background */}
-            <div className="absolute inset-0 bg-emerald-800/20"></div>
-
-            {/* Main Power Traces (thick golden traces) */}
-            <div className="absolute top-[20%] left-[10%] w-[80%] h-[3px] bg-amber-400 rounded-full"></div>
-            <div className="absolute top-[60%] left-[15%] w-[70%] h-[2px] bg-amber-400 rounded-full"></div>
-
-            {/* Signal Traces (curved routing like real PCBs) */}
-            <div className="absolute top-[25%] left-[20%] w-[30%] h-[1px] bg-amber-500 rounded-full transform rotate-12"></div>
-            <div className="absolute top-[35%] left-[40%] w-[25%] h-[1px] bg-amber-500 rounded-full transform -rotate-6"></div>
-            <div className="absolute top-[45%] left-[30%] w-[35%] h-[1px] bg-amber-500 rounded-full transform rotate-3"></div>
-            <div className="absolute top-[55%] left-[50%] w-[20%] h-[1px] bg-amber-500 rounded-full transform -rotate-12"></div>
-            <div className="absolute top-[70%] left-[25%] w-[40%] h-[1px] bg-amber-500 rounded-full transform rotate-8"></div>
-            <div className="absolute top-[80%] left-[45%] w-[30%] h-[1px] bg-amber-500 rounded-full transform -rotate-4"></div>
-
-            {/* Vertical routing traces */}
-            <div className="absolute left-[30%] top-[15%] h-[40%] w-[1px] bg-amber-500 rounded-full"></div>
-            <div className="absolute left-[60%] top-[25%] h-[50%] w-[1px] bg-amber-500 rounded-full"></div>
-            <div className="absolute left-[75%] top-[10%] h-[30%] w-[2px] bg-amber-400 rounded-full"></div>
-
-            {/* IC Package Footprints with Pin Arrays */}
-            <div className="absolute top-[15%] left-[40%] w-16 h-12 bg-emerald-900/30 border border-amber-400/50 rounded-sm">
-              {/* IC pins */}
-              <div className="absolute -left-1 top-2 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -left-1 top-4 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -left-1 top-6 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -left-1 top-8 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-2 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-4 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-6 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-8 w-2 h-1 bg-amber-400"></div>
-            </div>
-
-            <div className="absolute top-[50%] left-[20%] w-20 h-14 bg-emerald-900/30 border border-amber-400/50 rounded-sm">
-              {/* IC pins */}
-              <div className="absolute -left-1 top-2 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -left-1 top-4 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -left-1 top-6 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -left-1 top-8 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -left-1 top-10 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-2 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-4 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-6 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-8 w-2 h-1 bg-amber-400"></div>
-              <div className="absolute -right-1 top-10 w-2 h-1 bg-amber-400"></div>
-            </div>
-
-            {/* SMD Resistors/Capacitors (small rectangular components) */}
-            <div className="absolute top-[30%] left-[70%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
-            <div className="absolute top-[40%] left-[25%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
-            <div className="absolute top-[65%] left-[55%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
-            <div className="absolute top-[75%] left-[35%] w-4 h-2 bg-emerald-900/40 border border-amber-400/60 rounded-sm"></div>
-
-            {/* Via Holes (small circles) */}
-            <div className="absolute top-[22%] left-[32%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
-            <div className="absolute top-[28%] left-[62%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
-            <div className="absolute top-[42%] left-[45%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
-            <div className="absolute top-[58%] left-[38%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
-            <div className="absolute top-[68%] left-[58%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
-            <div className="absolute top-[78%] left-[48%] w-1.5 h-1.5 bg-amber-400 rounded-full border border-emerald-800/50"></div>
-
-            {/* Connection Pads (larger circular pads) */}
-            <div className="absolute top-[18%] left-[15%] w-3 h-3 bg-amber-400 rounded-full"></div>
-            <div className="absolute top-[35%] left-[80%] w-3 h-3 bg-amber-400 rounded-full"></div>
-            <div className="absolute top-[55%] left-[12%] w-3 h-3 bg-amber-400 rounded-full"></div>
-            <div className="absolute top-[82%] left-[75%] w-3 h-3 bg-amber-400 rounded-full"></div>
-          </div>
+          {/* REALISTIC PCB WITH CURVED TRACES - SVG */}
+          <div className="absolute inset-0 opacity-[0.12]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='1200' height='800' viewBox='0 0 1200 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cstyle%3E.pcb-bg%7Bfill:%2322543d;opacity:0.15%7D.trace-thick%7Bstroke:%23f59e0b;stroke-width:4;fill:none;stroke-linecap:round%7D.trace-medium%7Bstroke:%23f59e0b;stroke-width:2;fill:none;stroke-linecap:round%7D.trace-thin%7Bstroke:%23f59e0b;stroke-width:1;fill:none;stroke-linecap:round%7D.ic-package%7Bfill:%2322543d;stroke:%23f59e0b;stroke-width:1;opacity:0.7%7D.component%7Bfill:%2322543d;stroke:%23f59e0b;stroke-width:0.5;opacity:0.6%7D.via%7Bfill:%23f59e0b;opacity:0.8%7D.pad%7Bfill:%23f59e0b;opacity:0.9%7D%3C/style%3E%3C/defs%3E%3C!-- PCB Background --%3E%3Crect width='1200' height='800' class='pcb-bg'/%3E%3C!-- Main Power Traces (thick curved routing) --%3E%3Cg class='trace-thick'%3E%3Cpath d='M100,200 Q300,180 500,200 Q700,220 900,200 Q1000,180 1100,200'/%3E%3Cpath d='M150,500 Q350,480 550,500 Q750,520 950,500 Q1050,480 1150,510'/%3E%3C/g%3E%3C!-- Signal Traces (medium width with organic curves) --%3E%3Cg class='trace-medium'%3E%3Cpath d='M200,150 Q400,120 600,180 Q800,240 1000,200 Q1100,160 1150,180'/%3E%3Cpath d='M100,350 Q250,320 400,360 Q600,400 800,350 Q950,300 1100,340'/%3E%3Cpath d='M180,600 Q380,580 580,620 Q780,660 980,620 Q1080,580 1150,600'/%3E%3C/g%3E%3C!-- Fine Signal Traces (thin routing around components) --%3E%3Cg class='trace-thin'%3E%3Cpath d='M250,100 Q350,80 450,120 Q550,160 650,140 Q750,120 850,160'/%3E%3Cpath d='M300,250 Q400,230 500,280 Q600,330 700,300 Q800,270 900,310'/%3E%3Cpath d='M200,400 Q300,380 400,420 Q500,460 600,440 Q700,420 800,460'/%3E%3Cpath d='M350,550 Q450,530 550,570 Q650,610 750,590 Q850,570 950,610'/%3E%3Cpath d='M100,700 Q200,680 300,720 Q400,760 500,740 Q600,720 700,760'/%3E%3C/g%3E%3C!-- Vertical Routing Traces --%3E%3Cg class='trace-medium'%3E%3Cpath d='M300,50 Q280,150 320,250 Q280,350 320,450 Q280,550 320,650 Q280,750'/%3E%3Cpath d='M600,50 Q580,150 620,250 Q580,350 620,450 Q580,550 620,650 Q580,750'/%3E%3Cpath d='M900,50 Q880,150 920,250 Q880,350 920,450 Q880,550 920,650 Q880,750'/%3E%3C/g%3E%3C!-- IC Packages with Pin Arrays --%3E%3Cg class='ic-package'%3E%3Crect x='400' y='120' width='80' height='60' rx='3'/%3E%3Crect x='250' y='300' width='100' height='80' rx='3'/%3E%3Crect x='700' y='180' width='90' height='70' rx='3'/%3E%3Crect x='500' y='450' width='110' height='90' rx='3'/%3E%3C/g%3E%3C!-- IC Pin Traces --%3E%3Cg class='trace-thin'%3E%3C!-- IC1 pins --%3E%3Cline x1='400' y1='130' x2='380' y2='130'/%3E%3Cline x1='400' y1='140' x2='380' y2='140'/%3E%3Cline x1='400' y1='150' x2='380' y2='150'/%3E%3Cline x1='400' y1='160' x2='380' y2='160'/%3E%3Cline x1='400' y1='170' x2='380' y2='170'/%3E%3Cline x1='480' y1='130' x2='500' y2='130'/%3E%3Cline x1='480' y1='140' x2='500' y2='140'/%3E%3Cline x1='480' y1='150' x2='500' y2='150'/%3E%3Cline x1='480' y1='160' x2='500' y2='160'/%3E%3Cline x1='480' y1='170' x2='500' y2='170'/%3E%3C!-- IC2 pins --%3E%3Cline x1='250' y1='310' x2='230' y2='310'/%3E%3Cline x1='250' y1='320' x2='230' y2='320'/%3E%3Cline x1='250' y1='330' x2='230' y2='330'/%3E%3Cline x1='250' y1='340' x2='230' y2='340'/%3E%3Cline x1='250' y1='350' x2='230' y2='350'/%3E%3Cline x1='250' y1='360' x2='230' y2='360'/%3E%3Cline x1='250' y1='370' x2='230' y2='370'/%3E%3Cline x1='350' y1='310' x2='370' y2='310'/%3E%3Cline x1='350' y1='320' x2='370' y2='320'/%3E%3Cline x1='350' y1='330' x2='370' y2='330'/%3E%3Cline x1='350' y1='340' x2='370' y2='340'/%3E%3Cline x1='350' y1='350' x2='370' y2='350'/%3E%3Cline x1='350' y1='360' x2='370' y2='360'/%3E%3Cline x1='350' y1='370' x2='370' y2='370'/%3E%3C/g%3E%3C!-- SMD Components (resistors, capacitors) --%3E%3Cg class='component'%3E%3Crect x='520' y='250' width='20' height='8' rx='1'/%3E%3Crect x='350' y='180' width='20' height='8' rx='1'/%3E%3Crect x='680' y='350' width='20' height='8' rx='1'/%3E%3Crect x='420' y='400' width='20' height='8' rx='1'/%3E%3Crect x='750' y='300' width='20' height='8' rx='1'/%3E%3Crect x='600' y='600' width='20' height='8' rx='1'/%3E%3C/g%3E%3C!-- Via Holes --%3E%3Cg class='via'%3E%3Ccircle cx='320' cy='180' r='3'/%3E%3Ccircle cx='450' cy='250' r='3'/%3E%3Ccircle cx='620' cy='320' r='3'/%3E%3Ccircle cx='380' cy='420' r='3'/%3E%3Ccircle cx='720' cy='280' r='3'/%3E%3Ccircle cx='550' cy='380' r='3'/%3E%3Ccircle cx='820' cy='450' r='3'/%3E%3Ccircle cx='480' cy='520' r='3'/%3E%3Ccircle cx='680' cy='580' r='3'/%3E%3Ccircle cx='420' cy='650' r='3'/%3E%3C/g%3E%3C!-- Connection Pads --%3E%3Cg class='pad'%3E%3Ccircle cx='150' cy='150' r='6'/%3E%3Ccircle cx='950' cy='120' r='6'/%3E%3Ccircle cx='180' cy='380' r='6'/%3E%3Ccircle cx='1000' cy='350' r='6'/%3E%3Ccircle cx='200' cy='650' r='6'/%3E%3Ccircle cx='1050' cy='620' r='6'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}></div>
 
           {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.08]">
