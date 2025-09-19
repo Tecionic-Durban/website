@@ -236,13 +236,60 @@ export default function EWCleaningServicePage() {
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-white to-gray-50/50"></div>
 
-          {/* REALISTIC PCB CIRCUIT BOARD - Authentic PCB Design */}
-          <div className="absolute inset-0 opacity-[0.08]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='1400' height='900' viewBox='0 0 1400 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='pcbGrid' x='0' y='0' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Cpath d='M0 0H20V20' fill='none' stroke='%23f59e0b' stroke-width='0.1' opacity='0.3'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='1400' height='900' fill='%2322543d' opacity='0.1'/%3E%3Crect width='1400' height='900' fill='url(%23pcbGrid)'/%3E%3C!-- Main IC Packages --%3E%3Cg fill='%2322543d' stroke='%23f59e0b' stroke-width='2' opacity='0.7'%3E%3Crect x='150' y='200' width='120' height='80' rx='4' /%3E%3Crect x='400' y='150' width='140' height='100' rx='4' /%3E%3Crect x='700' y='180' width='100' height='70' rx='4' /%3E%3Crect x='950' y='220' width='130' height='90' rx='4' /%3E%3Crect x='250' y='500' width='110' height='85' rx='4' /%3E%3Crect x='600' y='480' width='150' height='95' rx='4' /%3E%3Crect x='950' y='520' width='120' height='80' rx='4' /%3E%3C/g%3E%3C!-- IC Pin Traces --%3E%3Cg stroke='%23f59e0b' stroke-width='1.5' fill='none' opacity='0.6'%3E%3C!-- IC1 pins --%3E%3Cg stroke-width='1'%3E%3Cline x1='150' y1='210' x2='120' y2='210' /%3E%3Cline x1='150' y1='220' x2='120' y2='220' /%3E%3Cline x1='150' y1='230' x2='120' y2='230' /%3E%3Cline x1='150' y1='240' x2='120' y2='240' /%3E%3Cline x1='150' y1='250' x2='120' y2='250' /%3E%3Cline x1='150' y1='260' x2='120' y2='260' /%3E%3Cline x1='150' y1='270' x2='120' y2='270' /%3E%3Cline x1='270' y1='210' x2='300' y2='210' /%3E%3Cline x1='270' y1='220' x2='300' y2='220' /%3E%3Cline x1='270' y1='230' x2='300' y2='230' /%3E%3Cline x1='270' y1='240' x2='300' y2='240' /%3E%3Cline x1='270' y1='250' x2='300' y2='250' /%3E%3Cline x1='270' y1='260' x2='300' y2='260' /%3E%3Cline x1='270' y1='270' x2='300' y2='270' /%3E%3C/g%3E%3C!-- IC2 pins --%3E%3Cg stroke-width='1'%3E%3Cline x1='400' y1='160' x2='370' y2='160' /%3E%3Cline x1='400' y1='170' x2='370' y2='170' /%3E%3Cline x1='400' y1='180' x2='370' y2='180' /%3E%3Cline x1='400' y1='190' x2='370' y2='190' /%3E%3Cline x1='400' y1='200' x2='370' y2='200' /%3E%3Cline x1='400' y1='210' x2='370' y2='210' /%3E%3Cline x1='400' y1='220' x2='370' y2='220' /%3E%3Cline x1='400' y1='230' x2='370' y2='230' /%3E%3Cline x1='400' y1='240' x2='370' y2='240' /%3E%3Cline x1='540' y1='160' x2='570' y2='160' /%3E%3Cline x1='540' y1='170' x2='570' y2='170' /%3E%3Cline x1='540' y1='180' x2='570' y2='180' /%3E%3Cline x1='540' y1='190' x2='570' y2='190' /%3E%3Cline x1='540' y1='200' x2='570' y2='200' /%3E%3Cline x1='540' y1='210' x2='570' y2='210' /%3E%3Cline x1='540' y1='220' x2='570' y2='220' /%3E%3Cline x1='540' y1='230' x2='570' y2='230' /%3E%3Cline x1='540' y1='240' x2='570' y2='240' /%3E%3C/g%3E%3C/g%3E%3C!-- Horizontal Traces --%3E%3Cg stroke='%23f59e0b' stroke-width='2' fill='none' opacity='0.5'%3E%3Cpath d='M120 210 L370 170 L570 180 L670 190 L850 200 L1100 210 L1350 220' /%3E%3Cpath d='M120 240 L350 220 L550 230 L720 240 L900 250 L1150 260 L1350 270' /%3E%3Cpath d='M120 270 L330 250 L530 260 L750 270 L950 280 L1200 290 L1350 300' /%3E%3Cpath d='M120 450 L380 430 L580 440 L780 450 L980 460 L1180 470 L1350 480' /%3E%3Cpath d='M120 520 L360 500 L560 510 L760 520 L960 530 L1160 540 L1350 550' /%3E%3Cpath d='M120 580 L340 560 L540 570 L740 580 L940 590 L1140 600 L1350 610' /%3E%3C/g%3E%3C!-- Vertical Traces --%3E%3Cg stroke='%23f59e0b' stroke-width='2' fill='none' opacity='0.5'%3E%3Cpath d='M300 50 L290 150 L310 250 L290 350 L310 450 L290 550 L310 650 L290 750 L310 850' /%3E%3Cpath d='M500 50 L490 150 L510 250 L490 350 L510 450 L490 550 L510 650 L490 750 L510 850' /%3E%3Cpath d='M700 50 L690 150 L710 250 L690 350 L710 450 L690 550 L710 650 L690 750 L710 850' /%3E%3Cpath d='M900 50 L890 150 L910 250 L890 350 L910 450 L890 550 L910 650 L890 750 L910 850' /%3E%3Cpath d='M1100 50 L1090 150 L1110 250 L1090 350 L1110 450 L1090 550 L1110 650 L1090 750 L1110 850' /%3E%3C/g%3E%3C!-- Resistors --%3E%3Cg fill='%2322543d' stroke='%23f59e0b' stroke-width='1' opacity='0.6'%3E%3Crect x='320' y='205' width='30' height='10' rx='2' /%3E%3Crect x='380' y='235' width='30' height='10' rx='2' /%3E%3Crect x='420' y='265' width='30' height='10' rx='2' /%3E%3Crect x='480' y='295' width='30' height='10' rx='2' /%3E%3Crect x='540' y='325' width='30' height='10' rx='2' /%3E%3Crect x='600' y='355' width='30' height='10' rx='2' /%3E%3Crect x='320' y='425' width='30' height='10' rx='2' /%3E%3Crect x='380' y='455' width='30' height='10' rx='2' /%3E%3Crect x='420' y='485' width='30' height='10' rx='2' /%3E%3Crect x='480' y='515' width='30' height='10' rx='2' /%3E%3C/g%3E%3C!-- Capacitors --%3E%3Cg fill='%2322543d' stroke='%23f59e0b' stroke-width='1' opacity='0.6'%3E%3Ccircle cx='280' cy='180' r='8' /%3E%3Ccircle cx='450' cy='300' r='8' /%3E%3Ccircle cx='650' cy='420' r='8' /%3E%3Ccircle cx='850' cy='340' r='8' /%3E%3Ccircle cx='1050' cy='460' r='8' /%3E%3Ccircle cx='380' cy='600' r='8' /%3E%3Ccircle cx='680' cy='700' r='8' /%3E%3Ccircle cx='980' cy='620' r='8' /%3E%3C/g%3E%3C!-- Via Holes --%3E%3Cg fill='%23f59e0b' opacity='0.8'%3E%3Ccircle cx='300' cy='210' r='2' /%3E%3Ccircle cx='350' cy='240' r='2' /%3E%3Ccircle cx='400' cy='270' r='2' /%3E%3Ccircle cx='450' cy='300' r='2' /%3E%3Ccircle cx='500' cy='330' r='2' /%3E%3Ccircle cx='550' cy='360' r='2' /%3E%3Ccircle cx='600' cy='390' r='2' /%3E%3Ccircle cx='650' cy='420' r='2' /%3E%3Ccircle cx='700' cy='450' r='2' /%3E%3Ccircle cx='750' cy='480' r='2' /%3E%3Ccircle cx='800' cy='510' r='2' /%3E%3Ccircle cx='850' cy='540' r='2' /%3E%3Ccircle cx='900' cy='570' r='2' /%3E%3Ccircle cx='950' cy='600' r='2' /%3E%3Ccircle cx='1000' cy='630' r='2' /%3E%3Ccircle cx='1050' cy='660' r='2' /%3E%3Ccircle cx='1100' cy='690' r='2' /%3E%3C/g%3E%3C!-- Connection Pads --%3E%3Cg fill='%23f59e0b' opacity='0.7'%3E%3Ccircle cx='120' cy='210' r='3' /%3E%3Ccircle cx='120' cy='240' r='3' /%3E%3Ccircle cx='120' cy='270' r='3' /%3E%3Ccircle cx='300' cy='210' r='3' /%3E%3Ccircle cx='300' cy='240' r='3' /%3E%3Ccircle cx='300' cy='270' r='3' /%3E%3Ccircle cx='370' cy='170' r='3' /%3E%3Ccircle cx='370' cy='200' r='3' /%3E%3Ccircle cx='370' cy='230' r='3' /%3E%3Ccircle cx='570' cy='170' r='3' /%3E%3Ccircle cx='570' cy='200' r='3' /%3E%3Ccircle cx='570' cy='230' r='3' /%3E%3C/g%3E%3C!-- Fine Detail Traces --%3E%3Cg stroke='%23f59e0b' stroke-width='1' fill='none' opacity='0.4'%3E%3Cpath d='M280 180 L320 205 L380 235 L420 265' /%3E%3Cpath d='M450 300 L480 295 L540 325 L600 355' /%3E%3Cpath d='M650 420 L680 400 L720 380 L760 360' /%3E%3Cpath d='M850 340 L880 320 L920 300 L960 280' /%3E%3Cpath d='M1050 460 L1020 440 L980 420 L940 400' /%3E%3C/g%3E%3C!-- IC Labels (simplified) --%3E%3Cg fill='%23f59e0b' font-family='monospace' font-size='8' opacity='0.6'%3E%3Ctext x='210' y='245' text-anchor='middle'%3EU1%3C/text%3E%3Ctext x='470' y='205' text-anchor='middle'%3EU2%3C/text%3E%3Ctext x='750' y='225' text-anchor='middle'%3EU3%3C/text%3E%3Ctext x='1015' y='270' text-anchor='middle'%3EU4%3C/text%3E%3Ctext x='305' y='545' text-anchor='middle'%3EU5%3C/text%3E%3Ctext x='675' y='530' text-anchor='middle'%3EU6%3C/text%3E%3Ctext x='1010' y='565' text-anchor='middle'%3EU7%3C/text%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '90%',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center'
-          }}></div>
+          {/* SIMPLE CSS CIRCUIT BOARD PATTERN */}
+          <div className="absolute inset-0 opacity-[0.12]">
+            {/* Horizontal circuit traces */}
+            <div className="absolute top-[15%] left-0 w-full h-[1px] bg-amber-500"></div>
+            <div className="absolute top-[25%] left-0 w-full h-[1px] bg-amber-500"></div>
+            <div className="absolute top-[35%] left-0 w-full h-[1px] bg-amber-500"></div>
+            <div className="absolute top-[45%] left-0 w-full h-[1px] bg-amber-500"></div>
+            <div className="absolute top-[55%] left-0 w-full h-[1px] bg-amber-500"></div>
+            <div className="absolute top-[65%] left-0 w-full h-[1px] bg-amber-500"></div>
+            <div className="absolute top-[75%] left-0 w-full h-[1px] bg-amber-500"></div>
+
+            {/* Vertical circuit traces */}
+            <div className="absolute left-[15%] top-0 h-full w-[1px] bg-amber-500"></div>
+            <div className="absolute left-[25%] top-0 h-full w-[1px] bg-amber-500"></div>
+            <div className="absolute left-[35%] top-0 h-full w-[1px] bg-amber-500"></div>
+            <div className="absolute left-[45%] top-0 h-full w-[1px] bg-amber-500"></div>
+            <div className="absolute left-[55%] top-0 h-full w-[1px] bg-amber-500"></div>
+            <div className="absolute left-[65%] top-0 h-full w-[1px] bg-amber-500"></div>
+            <div className="absolute left-[75%] top-0 h-full w-[1px] bg-amber-500"></div>
+            <div className="absolute left-[85%] top-0 h-full w-[1px] bg-amber-500"></div>
+
+            {/* Circuit junction points */}
+            <div className="absolute top-[15%] left-[15%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[15%] left-[35%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[15%] left-[55%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[15%] left-[75%] w-2 h-2 bg-amber-500 rounded-full"></div>
+
+            <div className="absolute top-[35%] left-[25%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[35%] left-[45%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[35%] left-[65%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[35%] left-[85%] w-2 h-2 bg-amber-500 rounded-full"></div>
+
+            <div className="absolute top-[55%] left-[15%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[55%] left-[35%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[55%] left-[55%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[55%] left-[75%] w-2 h-2 bg-amber-500 rounded-full"></div>
+
+            <div className="absolute top-[75%] left-[25%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[75%] left-[45%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[75%] left-[65%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            <div className="absolute top-[75%] left-[85%] w-2 h-2 bg-amber-500 rounded-full"></div>
+
+            {/* IC chips (rectangular components) */}
+            <div className="absolute top-[10%] left-[20%] w-12 h-8 border border-amber-500 bg-amber-500/20"></div>
+            <div className="absolute top-[30%] left-[40%] w-16 h-10 border border-amber-500 bg-amber-500/20"></div>
+            <div className="absolute top-[50%] left-[60%] w-14 h-9 border border-amber-500 bg-amber-500/20"></div>
+            <div className="absolute top-[70%] left-[30%] w-13 h-8 border border-amber-500 bg-amber-500/20"></div>
+
+            {/* Resistors (small rectangles) */}
+            <div className="absolute top-[20%] left-[50%] w-6 h-2 bg-amber-500"></div>
+            <div className="absolute top-[40%] left-[70%] w-6 h-2 bg-amber-500"></div>
+            <div className="absolute top-[60%] left-[40%] w-6 h-2 bg-amber-500"></div>
+            <div className="absolute top-[80%] left-[60%] w-6 h-2 bg-amber-500"></div>
+          </div>
 
           {/* ELECTRICAL CIRCUIT TRACES - Representing Current Pathways */}
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.08]">
