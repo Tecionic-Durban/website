@@ -113,7 +113,7 @@ export default function ConcentrateDehydrationServicePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-white to-gray-50/50"></div>
 
           {/* SIGNATURE DEHYDRATION PATTERN - Like water removal */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
+          <div className="absolute inset-0 opacity-[0.12]" style={{
             backgroundImage: `
               linear-gradient(30deg, transparent 48%, rgba(8, 145, 178, 0.4) 49%, rgba(8, 145, 178, 0.4) 51%, transparent 52%),
               linear-gradient(150deg, transparent 48%, rgba(8, 145, 178, 0.3) 49%, rgba(8, 145, 178, 0.3) 51%, transparent 52%),
@@ -123,13 +123,13 @@ export default function ConcentrateDehydrationServicePage() {
           }}></div>
 
           {/* CONCENTRATE PARTICLES PATTERN */}
-          <div className="absolute inset-0 opacity-[0.04]" style={{
+          <div className="absolute inset-0 opacity-[0.12]" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230891b2' fill-opacity='0.6'%3E%3Ccircle cx='15' cy='15' r='3'/%3E%3Ccircle cx='45' cy='15' r='4'/%3E%3Ccircle cx='65' cy='15' r='2'/%3E%3Ccircle cx='25' cy='45' r='5'/%3E%3Ccircle cx='55' cy='45' r='3'/%3E%3Ccircle cx='35' cy='65' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '80px 80px'
           }}></div>
 
           {/* DEHYDRATION FLOW LINES */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-[0.06]">
+          <div className="absolute top-0 left-0 w-full h-full opacity-[0.12]">
             {/* Horizontal moisture streams */}
             <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/60 to-transparent"></div>
             <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
@@ -149,7 +149,7 @@ export default function ConcentrateDehydrationServicePage() {
           </div>
 
           {/* MOISTURE DROPLET INDICATORS */}
-          <div className="absolute inset-0 opacity-[0.08]">
+          <div className="absolute inset-0 opacity-[0.12]">
             {/* Large droplets (wet concentrate) */}
             <div className="absolute top-1/6 left-[15%] w-4 h-4 bg-cyan-600/30 rounded-full animate-pulse"></div>
             <div className="absolute top-1/3 left-[12%] w-3 h-3 bg-cyan-500/25 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
@@ -174,15 +174,6 @@ export default function ConcentrateDehydrationServicePage() {
           </div>
         </div>
 
-        {/* TSF Branded Floating Elements */}
-        <div className="absolute top-40 left-20 opacity-30">
-          {/* TSF Three-Ball Signature */}
-          <div className="flex items-center space-x-1">
-            <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
-            <div className="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
 
         {/* Enterprise Navigation Bar */}
         <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">
