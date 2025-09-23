@@ -3,7 +3,6 @@
 import React from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 import { Beaker, Activity, TrendingUp, Zap, CheckCircle, ArrowRight, Play } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 
@@ -197,28 +196,28 @@ export default function Hero() {
 
               {/* Cycling Achievement Metric */}
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl p-4 border border-emerald-400/20 shadow-xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity duration-1000"
-                     style={{opacity: currentMetricIndex >= 0 ? 100 : 0}}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity duration-1000"></div>
 
-                <div className="relative z-10 transition-all duration-1000 transform"
-                     style={{opacity: 1, transform: 'translateY(0)'}}>
-                  <div className="flex items-center space-x-3 mb-2">
-                    <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
-                      {React.createElement(achievements[currentMetricIndex].icon, {
-                        className: "w-4 h-4 text-emerald-300 enterprise-pulse"
-                      })}
+                {achievements.length > 0 && achievements[currentMetricIndex] && (
+                  <div className="relative z-10 transition-all duration-1000 transform">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
+                        {React.createElement(achievements[currentMetricIndex]?.icon || TrendingUp, {
+                          className: "w-4 h-4 text-emerald-300 enterprise-pulse"
+                        })}
+                      </div>
+                      <div className="text-3xl font-black text-white tracking-tight gradient-text-animated">
+                        {achievements[currentMetricIndex]?.value || "50%"}
+                      </div>
                     </div>
-                    <div className="text-3xl font-black text-white tracking-tight gradient-text-animated">
-                      {achievements[currentMetricIndex].value}
+                    <div className="text-sm text-emerald-100 font-semibold mb-1">
+                      {achievements[currentMetricIndex]?.label || "Mejora Productiva"}
+                    </div>
+                    <div className="text-xs text-emerald-200/70">
+                      {achievements[currentMetricIndex]?.description || "Resultados comprobados"}
                     </div>
                   </div>
-                  <div className="text-sm text-emerald-100 font-semibold mb-1">
-                    {achievements[currentMetricIndex].label}
-                  </div>
-                  <div className="text-xs text-emerald-200/70">
-                    {achievements[currentMetricIndex].description}
-                  </div>
-                </div>
+                )}
 
                 {/* Progress indicator */}
                 <div className="flex space-x-1 mt-3">
