@@ -93,27 +93,26 @@ export default function Hero() {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-emerald-800/5 to-transparent"></div>
       </div>
 
-      <div className="relative max-w-8xl mx-auto px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-16 gap-8 lg:gap-16 items-start">
-          {/* Content - 9 columns */}
-          <div className="lg:col-span-9 max-w-4xl">
+      <div className="relative max-w-8xl mx-auto px-8 py-8 lg:py-12">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Content - 8 columns */}
+          <div className="lg:col-span-8 max-w-4xl">
             {/* Eyebrow + Headline Complex */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Layered Headline Structure */}
-              <div className="space-y-6">
-                <h1 className="text-6xl lg:text-8xl font-black leading-[0.85] tracking-[-0.02em] enterprise-slide-up stagger-1">
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-[-0.02em] enterprise-slide-up stagger-1">
                   <span className="gradient-text-animated">Optimiza tus</span>
                   <span className="block text-emerald-300 font-black relative enterprise-slide-up stagger-2">
                     Operaciones
                     <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full opacity-60 enterprise-scale-in stagger-3"></div>
                   </span>
-                  <span className="block text-4xl lg:text-5xl font-bold text-emerald-100/80 mt-4 enterprise-slide-up stagger-4">Sin Parar la Planta</span>
+                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-100/80 mt-2 enterprise-slide-up stagger-4">Sin Parar la Planta</span>
                 </h1>
 
-                <div className="space-y-6 max-w-3xl">
-                  <p className="text-xl lg:text-2xl text-emerald-50/90 leading-[1.5] font-medium progressive-reveal">
-                    Equipos móviles de separación sólido-líquido que <span className="text-white font-semibold gradient-text-animated">eliminan cuellos de botella</span>,
-                    reducen costos operacionales y aumentan capacidad productiva.
+                <div className="space-y-4 max-w-3xl">
+                  <p className="text-lg lg:text-xl text-emerald-50/90 leading-[1.4] font-medium progressive-reveal">
+                    Equipos móviles que <span className="text-white font-semibold gradient-text-animated">eliminan cuellos de botella</span> y aumentan capacidad productiva.
                   </p>
 
                   <div className="inline-flex items-center px-4 py-2 bg-emerald-400/10 rounded-lg border border-emerald-400/20 sophisticated-hover layered-shadow progressive-reveal">
@@ -125,43 +124,22 @@ export default function Hero() {
             </div>
 
             {/* Enhanced Trust Architecture - Compact */}
-            <div className="mt-8 space-y-5">
-              {/* Client Social Proof - Compact */}
-              <div className="bg-white/5 rounded-xl p-5 border border-emerald-400/10 backdrop-blur-sm sophisticated-hover layered-shadow progressive-reveal">
-
+            <div className="mt-6 space-y-4">
+              {/* Client Social Proof - Streamlined */}
+              <div className="bg-white/5 rounded-lg p-3 border border-emerald-400/10 backdrop-blur-sm sophisticated-hover progressive-reveal">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-emerald-500/20 rounded-lg flex items-center justify-center magnetic-hover">
-                        <CheckCircle className="w-3 h-3 text-emerald-400 enterprise-pulse" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-semibold text-emerald-300 tracking-wide">CLIENTES ENTERPRISE</div>
-                        <div className="text-xs text-emerald-200/70">BHP • Codelco • Antofagasta • Anglo American</div>
-                      </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 enterprise-pulse" />
+                    <div>
+                      <div className="text-xs font-semibold text-emerald-300">BHP • Codelco • Antofagasta • Anglo American</div>
+                      <div className="text-xs text-emerald-200/70">23+ años experiencia enterprise</div>
                     </div>
-                    <div className="w-px h-8 bg-emerald-600/30"></div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-emerald-500/20 rounded-lg flex items-center justify-center magnetic-hover">
-                        <TrendingUp className="w-3 h-3 text-emerald-400 enterprise-pulse" />
-                      </div>
-                      <div>
-                        <div className="text-lg font-black text-emerald-300 gradient-text-animated">23+</div>
-                        <div className="text-xs text-emerald-200/70">años experiencia</div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Strategic three ball brand accent */}
-                  <div className="flex items-center space-x-1 opacity-40">
-                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
                   </div>
                 </div>
               </div>
 
               {/* Strategic CTAs - Compact */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={(e) => handleContactClick(e, router, pathname)}
                   className="group relative bg-white text-emerald-900 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover"
@@ -182,78 +160,82 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Visual + Metrics - 7 columns - Optimized */}
-          <div className="lg:col-span-7 lg:mt-0">
-            <div className="grid grid-rows-2 gap-6 h-full">
-              {/* Equipment Visual - Compact */}
-              <div className="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/15 layered-shadow-hover sophisticated-hover progressive-reveal">
-                {/* Compact Brand Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-white gradient-text-animated">Equipos Móviles TSF</h3>
-                    <p className="text-emerald-200/70 text-xs">Tecnología de separación avanzada</p>
+          {/* Visual - 4 columns - Simplified */}
+          <div className="lg:col-span-4 lg:mt-0">
+            {/* Equipment Visual - Compact */}
+            <div className="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-xl rounded-2xl p-4 border border-emerald-400/15 layered-shadow-hover sophisticated-hover progressive-reveal">
+              {/* Compact Brand Header */}
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <h3 className="text-base font-bold text-white gradient-text-animated">Equipos Móviles TSF</h3>
+                  <p className="text-emerald-200/70 text-xs">Separación avanzada</p>
+                </div>
+                <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
+              </div>
+
+              <div className="aspect-[3/2] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
+                {/* Compact sophisticated placeholder */}
+                <div className="text-center z-10">
+                  <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
+                    <Beaker className="w-6 h-6 text-emerald-300 enterprise-pulse" />
                   </div>
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
+                  <p className="text-emerald-300/90 text-xs font-medium">Tecnología móvil</p>
                 </div>
 
-                <div className="aspect-[2/1] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
-                  {/* Compact sophisticated placeholder */}
-                  <div className="text-center z-10">
-                    <div className="w-16 h-16 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
-                      <Beaker className="w-8 h-8 text-emerald-300 enterprise-pulse" />
-                    </div>
-                    <p className="text-emerald-300/90 text-xs font-medium">Separación sólido-líquido móvil</p>
-                  </div>
-
-                  {/* Compact play button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300 ripple-effect">
-                      <Play className="w-5 h-5 text-white ml-0.5" />
-                    </div>
+                {/* Compact play button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300 ripple-effect">
+                    <Play className="w-4 h-4 text-white ml-0.5" />
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              {/* Performance Metrics - Compact */}
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/20 shadow-2xl progressive-reveal">
-                <div className="flex items-center justify-between mb-5">
-                  <div>
-                    <h3 className="text-lg font-bold text-white">Resultados Comprobados</h3>
-                    <p className="text-emerald-200/70 text-xs">Datos históricos verificados</p>
-                  </div>
+        {/* Performance Metrics - Moved Below Fold */}
+        <div className="mt-12 lg:mt-16">
+          <div className="max-w-6xl mx-auto">
+
+            {/* Performance Metrics - Below Fold Section */}
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/20 shadow-2xl progressive-reveal">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Resultados Comprobados</h3>
+                  <p className="text-emerald-200/70 text-sm">Datos históricos verificados por clientes</p>
                 </div>
+              </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  {achievements.map((achievement, index) => (
-                    <div key={index} className={`group relative bg-white/10 rounded-xl p-4 border border-emerald-400/20 hover:bg-white/15 hover:border-emerald-400/40 transition-all duration-500 backdrop-blur-sm overflow-hidden sophisticated-hover layered-shadow progressive-reveal stagger-${index + 1}`}>
-                      {/* Subtle background animation */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className={`group relative bg-white/10 rounded-xl p-4 border border-emerald-400/20 hover:bg-white/15 hover:border-emerald-400/40 transition-all duration-500 backdrop-blur-sm overflow-hidden sophisticated-hover layered-shadow progressive-reveal stagger-${index + 1}`}>
+                    {/* Subtle background animation */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                      <div className="relative z-10">
-                        <div className="flex items-center space-x-3 mb-3">
-                          <div className="w-6 h-6 bg-emerald-500/30 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 magnetic-hover">
-                            <achievement.icon className="w-3 h-3 text-emerald-300 enterprise-pulse" />
-                          </div>
-                          <div className="text-2xl font-black text-white tracking-tight group-hover:scale-105 transition-transform duration-300 gradient-text-animated">
-                            {achievement.value}
-                          </div>
+                    <div className="relative z-10">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-6 h-6 bg-emerald-500/30 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 magnetic-hover">
+                          <achievement.icon className="w-3 h-3 text-emerald-300 enterprise-pulse" />
                         </div>
-                        <div className="text-xs text-emerald-100 font-semibold">
-                          {achievement.label}
-                        </div>
-                        <div className="text-xs text-emerald-200/60 mt-1">
-                          {achievement.description}
+                        <div className="text-2xl font-black text-white tracking-tight group-hover:scale-105 transition-transform duration-300 gradient-text-animated">
+                          {achievement.value}
                         </div>
                       </div>
+                      <div className="text-xs text-emerald-100 font-semibold">
+                        {achievement.label}
+                      </div>
+                      <div className="text-xs text-emerald-200/60 mt-1">
+                        {achievement.description}
+                      </div>
                     </div>
-                  ))}
-                </div>
-
-                <div className="mt-5 pt-4 border-t border-emerald-400/20">
-                  <div className="flex items-center justify-center space-x-2 progressive-reveal">
-                    <CheckCircle className="w-3 h-3 text-emerald-400 enterprise-pulse" />
-                    <span className="text-xs text-emerald-300/90 font-medium">Datos verificados por clientes</span>
                   </div>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-emerald-400/20">
+                <div className="flex items-center justify-center space-x-2 progressive-reveal">
+                  <CheckCircle className="w-3 h-3 text-emerald-400 enterprise-pulse" />
+                  <span className="text-sm text-emerald-300/90 font-medium">Datos verificados por clientes</span>
                 </div>
               </div>
             </div>
