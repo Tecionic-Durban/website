@@ -11,6 +11,7 @@ export default function Hero() {
   const pathname = usePathname()
   const heroRef = useRef(null)
   const [currentMetricIndex, setCurrentMetricIndex] = useState(0)
+  const [isClient, setIsClient] = useState(false)
 
   // Progressive disclosure on scroll/mount
   useEffect(() => {
@@ -40,14 +41,21 @@ export default function Hero() {
     return () => observer.disconnect()
   }, [])
 
-  // Cycle through metrics every 7 seconds
+  // Set client-side flag
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Cycle through metrics every 7 seconds (client-side only)
+  useEffect(() => {
+    if (!isClient) return
+
     const interval = setInterval(() => {
       setCurrentMetricIndex((prev) => (prev + 1) % achievements.length)
     }, 7000)
 
     return () => clearInterval(interval)
-  }, [achievements.length])
+  }, [isClient, achievements.length])
 
   // Historical performance achievements
   const achievements = [
@@ -194,44 +202,42 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Cycling Achievement Metric */}
+              {/* Achievement Metric Display */}
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl p-4 border border-emerald-400/20 shadow-xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity duration-1000"></div>
 
-                {achievements.length > 0 && achievements[currentMetricIndex] && (
-                  <div className="relative z-10 transition-all duration-1000 transform">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
-                        {React.createElement(achievements[currentMetricIndex]?.icon || TrendingUp, {
-                          className: "w-4 h-4 text-emerald-300 enterprise-pulse"
-                        })}
-                      </div>
-                      <div className="text-3xl font-black text-white tracking-tight gradient-text-animated">
-                        {achievements[currentMetricIndex]?.value || "50%"}
-                      </div>
+                <div className="relative z-10 transition-all duration-1000 transform">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
+                      <TrendingUp className="w-4 h-4 text-emerald-300 enterprise-pulse" />
                     </div>
-                    <div className="text-sm text-emerald-100 font-semibold mb-1">
-                      {achievements[currentMetricIndex]?.label || "Mejora Productiva"}
-                    </div>
-                    <div className="text-xs text-emerald-200/70">
-                      {achievements[currentMetricIndex]?.description || "Resultados comprobados"}
+                    <div className="text-3xl font-black text-white tracking-tight gradient-text-animated">
+                      {isClient && achievements[currentMetricIndex] ? achievements[currentMetricIndex].value : "80%"}
                     </div>
                   </div>
-                )}
-
-                {/* Progress indicator */}
-                <div className="flex space-x-1 mt-3">
-                  {achievements.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`h-1 rounded-full transition-all duration-700 ${
-                        index === currentMetricIndex
-                          ? 'w-6 bg-emerald-400'
-                          : 'w-1 bg-emerald-400/30'
-                      }`}
-                    />
-                  ))}
+                  <div className="text-sm text-emerald-100 font-semibold mb-1">
+                    {isClient && achievements[currentMetricIndex] ? achievements[currentMetricIndex].label : "Reducción de Lodos"}
+                  </div>
+                  <div className="text-xs text-emerald-200/70">
+                    {isClient && achievements[currentMetricIndex] ? achievements[currentMetricIndex].description : "Volúmenes a disponer"}
+                  </div>
                 </div>
+
+                {/* Progress indicator - only show on client */}
+                {isClient && (
+                  <div className="flex space-x-1 mt-3">
+                    {achievements.map((_, index) => (
+                      <div
+                        key={index}
+                        className={`h-1 rounded-full transition-all duration-700 ${
+                          index === currentMetricIndex
+                            ? 'w-6 bg-emerald-400'
+                            : 'w-1 bg-emerald-400/30'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
