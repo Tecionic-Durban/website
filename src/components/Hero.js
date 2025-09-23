@@ -3,7 +3,7 @@
 import React from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { Beaker, Activity, TrendingUp, Zap, CheckCircle, ArrowRight, Play } from 'lucide-react'
+import { Beaker, Droplets, Factory, Waves, Target, CheckCircle, ArrowRight, Play } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 
 // Move achievements outside component to avoid SSR dependency issues
@@ -12,28 +12,28 @@ const achievements = [
     value: "80%",
     label: "Reducción de Lodos",
     description: "Volúmenes a disponer",
-    icon: TrendingUp,
+    icon: Droplets,
     color: "text-emerald-400"
   },
   {
     value: "+50%",
     label: "Capacidad Concentrados",
     description: "Procesamiento concentrados",
-    icon: Zap,
+    icon: Factory,
     color: "text-blue-400"
   },
   {
     value: "50%",
     label: "Reducción Arrastres",
     description: "Tratamiento orgánico",
-    icon: Beaker,
+    icon: Waves,
     color: "text-purple-400"
   },
   {
     value: "<10ppm",
     label: "Retención Sólidos",
     description: "En orgánico SX",
-    icon: Activity,
+    icon: Target,
     color: "text-green-400"
   }
 ]
@@ -203,40 +203,41 @@ export default function Hero() {
               </div>
 
               {/* Achievement Metric Display - Cycling */}
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl p-4 border border-emerald-400/20 shadow-xl relative overflow-hidden">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl p-3 border border-emerald-400/20 shadow-xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity duration-1000"></div>
 
                 <div className="relative z-10 transition-all duration-1000 transform">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
-                      {React.createElement(achievements[currentMetricIndex].icon, {
-                        className: "w-4 h-4 text-emerald-300 enterprise-pulse"
-                      })}
+                  <div className="flex items-center space-x-3 mb-1">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-7 h-7 bg-emerald-500/30 rounded-lg flex items-center justify-center">
+                        {React.createElement(achievements[currentMetricIndex].icon, {
+                          className: "w-3.5 h-3.5 text-emerald-300 enterprise-pulse"
+                        })}
+                      </div>
+                      {/* Progress indicators next to icon */}
+                      <div className="flex space-x-1">
+                        {achievements.map((_, index) => (
+                          <div
+                            key={index}
+                            className={`w-1.5 h-1.5 rounded-full transition-all duration-700 ${
+                              index === currentMetricIndex
+                                ? 'bg-emerald-400'
+                                : 'bg-emerald-400/30'
+                            }`}
+                          />
+                        ))}
+                      </div>
                     </div>
-                    <div className="text-3xl font-black text-white tracking-tight gradient-text-animated">
+                    <div className="text-2xl font-black text-white tracking-tight gradient-text-animated">
                       {achievements[currentMetricIndex].value}
                     </div>
                   </div>
-                  <div className="text-sm text-emerald-100 font-semibold mb-1">
+                  <div className="text-sm text-emerald-100 font-semibold">
                     {achievements[currentMetricIndex].label}
                   </div>
-                  <div className="text-xs text-emerald-200/70">
+                  <div className="text-xs text-emerald-200/70 mt-0.5">
                     {achievements[currentMetricIndex].description}
                   </div>
-                </div>
-
-                {/* Progress indicator */}
-                <div className="flex space-x-1 mt-3">
-                  {achievements.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`h-1 rounded-full transition-all duration-700 ${
-                        index === currentMetricIndex
-                          ? 'w-6 bg-emerald-400'
-                          : 'w-1 bg-emerald-400/30'
-                      }`}
-                    />
-                  ))}
                 </div>
               </div>
             </div>
