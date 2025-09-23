@@ -89,16 +89,26 @@ export default function Hero() {
         }}></div>
       </div>
 
-      {/* Clean Floating Background Elements */}
+      {/* Enhanced Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Primary floating elements with enhanced animations */}
         <div className="absolute top-20 left-[8%] w-40 h-40 bg-gradient-to-br from-emerald-600/15 to-emerald-700/10 rounded-full opacity-20 animate-float-slow blur-sm"></div>
         <div className="absolute top-32 right-[12%] w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-emerald-600/15 rounded-full opacity-25 animate-float-medium blur-sm"></div>
         <div className="absolute bottom-40 left-[3%] w-36 h-36 bg-gradient-to-br from-emerald-400/15 to-emerald-500/10 rounded-full opacity-18 animate-float-slow blur-sm"></div>
+        <div className="absolute bottom-32 right-[8%] w-28 h-28 bg-gradient-to-br from-emerald-600/12 to-emerald-700/8 rounded-full opacity-15 animate-float-medium blur-sm"></div>
 
-        {/* Gradient overlays for depth */}
+        {/* Secondary texture elements */}
+        <div className="absolute top-1/4 left-[20%] w-24 h-24 bg-gradient-to-br from-emerald-400/8 to-emerald-500/5 rounded-full opacity-12 animate-float-slow blur-md"></div>
+        <div className="absolute top-3/4 right-[25%] w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-emerald-600/7 rounded-full opacity-10 animate-float-medium blur-md"></div>
+
+        {/* Geometric accent elements */}
+        <div className="absolute top-16 right-[20%] w-16 h-16 bg-emerald-400/5 rotate-45 opacity-8 animate-float-slow blur-sm"></div>
+        <div className="absolute bottom-24 left-[15%] w-12 h-12 bg-emerald-500/6 rotate-12 opacity-6 animate-float-medium blur-sm"></div>
+
+        {/* Enhanced gradient overlays for depth */}
         <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-emerald-900/10 to-transparent"></div>
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-emerald-800/5 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-emerald-900/5 to-transparent"></div>
       </div>
 
       <div className="relative max-w-8xl mx-auto px-8 py-8 lg:py-12">
@@ -171,9 +181,9 @@ export default function Hero() {
           {/* Visual + Cycling Metrics - 6 columns - Expanded */}
           <div className="lg:col-span-6 lg:mt-0">
             <div className="space-y-4">
-              {/* Equipment Visual - Expanded */}
+              {/* Equipment Visual - Compact */}
               <div className="relative">
-                <div className="aspect-[4/3] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
+                <div className="aspect-[3/2] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
                   {/* Enhanced equipment placeholder */}
                   <div className="text-center z-10">
                     <div className="w-16 h-16 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
@@ -233,55 +243,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Performance Metrics - Moved Below Fold */}
-        <div className="mt-12 lg:mt-16">
-          <div className="max-w-6xl mx-auto">
-            {/* Performance Metrics - Below Fold Section */}
-            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/20 shadow-2xl progressive-reveal">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Resultados Comprobados</h3>
-                  <p className="text-emerald-200/70 text-sm">Datos históricos verificados por clientes</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className={`group relative bg-white/10 rounded-xl p-4 border border-emerald-400/20 hover:bg-white/15 hover:border-emerald-400/40 transition-all duration-500 backdrop-blur-sm overflow-hidden sophisticated-hover layered-shadow progressive-reveal stagger-${index + 1}`}>
-                    {/* Subtle background animation */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    <div className="relative z-10">
-                      <div className="flex items-center space-x-3 mb-3">
-                        <div className="w-6 h-6 bg-emerald-500/30 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 magnetic-hover">
-                          {React.createElement(achievement.icon, {
-                            className: "w-3 h-3 text-emerald-300 enterprise-pulse"
-                          })}
-                        </div>
-                        <div className="text-2xl font-black text-white tracking-tight group-hover:scale-105 transition-transform duration-300 gradient-text-animated">
-                          {achievement.value}
-                        </div>
-                      </div>
-                      <div className="text-xs text-emerald-100 font-semibold">
-                        {achievement.label}
-                      </div>
-                      <div className="text-xs text-emerald-200/60 mt-1">
-                        {achievement.description}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-emerald-400/20">
-                <div className="flex items-center justify-center space-x-2 progressive-reveal">
-                  <CheckCircle className="w-3 h-3 text-emerald-400 enterprise-pulse" />
-                  <span className="text-sm text-emerald-300/90 font-medium">Datos verificados por clientes</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Bottom wave transition */}
