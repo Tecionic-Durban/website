@@ -111,7 +111,7 @@ export default function Hero() {
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-emerald-900/5 to-transparent"></div>
       </div>
 
-      <div className="relative max-w-8xl mx-auto px-8 py-8 lg:py-12">
+      <div className="relative max-w-8xl mx-auto px-8 py-8 lg:py-12" style={{paddingBottom: 'calc(3rem + 10px)'}}>
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Content - 6 columns */}
           <div className="lg:col-span-6 max-w-4xl">
