@@ -1,7 +1,8 @@
 // src/components/Hero.js
 'use client'
+import React from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Beaker, Activity, TrendingUp, Zap, CheckCircle, ArrowRight, Play } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
@@ -10,6 +11,7 @@ export default function Hero() {
   const router = useRouter()
   const pathname = usePathname()
   const heroRef = useRef(null)
+  const [currentMetricIndex, setCurrentMetricIndex] = useState(0)
 
   // Progressive disclosure on scroll/mount
   useEffect(() => {
@@ -38,6 +40,15 @@ export default function Hero() {
 
     return () => observer.disconnect()
   }, [])
+
+  // Cycle through metrics every 7 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMetricIndex((prev) => (prev + 1) % achievements.length)
+    }, 7000)
+
+    return () => clearInterval(interval)
+  }, [achievements.length])
 
   // Historical performance achievements
   const achievements = [
@@ -95,8 +106,8 @@ export default function Hero() {
 
       <div className="relative max-w-8xl mx-auto px-8 py-8 lg:py-12">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Content - 8 columns */}
-          <div className="lg:col-span-8 max-w-4xl">
+          {/* Content - 6 columns */}
+          <div className="lg:col-span-6 max-w-4xl">
             {/* Eyebrow + Headline Complex */}
             <div className="space-y-6">
               {/* Layered Headline Structure */}
@@ -112,7 +123,7 @@ export default function Hero() {
 
                 <div className="space-y-4 max-w-3xl">
                   <p className="text-lg lg:text-xl text-emerald-50/90 leading-[1.4] font-medium progressive-reveal">
-                    Equipos móviles que <span className="text-white font-semibold gradient-text-animated">eliminan cuellos de botella</span> y aumentan capacidad productiva.
+                    <span className="text-white font-semibold gradient-text-animated">Maximiza producción</span> mientras resuelves cuellos de botella críticos sin parar operaciones.
                   </p>
 
                   <div className="inline-flex items-center px-4 py-2 bg-emerald-400/10 rounded-lg border border-emerald-400/20 sophisticated-hover layered-shadow progressive-reveal">
@@ -160,33 +171,67 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Visual - 4 columns - Simplified */}
-          <div className="lg:col-span-4 lg:mt-0">
-            {/* Equipment Visual - Compact */}
-            <div className="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-xl rounded-2xl p-4 border border-emerald-400/15 layered-shadow-hover sophisticated-hover progressive-reveal">
-              {/* Compact Brand Header */}
-              <div className="flex items-center justify-between mb-3">
-                <div>
-                  <h3 className="text-base font-bold text-white gradient-text-animated">Equipos Móviles TSF</h3>
-                  <p className="text-emerald-200/70 text-xs">Separación avanzada</p>
+          {/* Visual + Cycling Metrics - 6 columns - Expanded */}
+          <div className="lg:col-span-6 lg:mt-0">
+            <div className="space-y-4">
+              {/* Equipment Visual - Expanded */}
+              <div className="relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
+                  {/* Enhanced equipment placeholder */}
+                  <div className="text-center z-10">
+                    <div className="w-16 h-16 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
+                      <Beaker className="w-8 h-8 text-emerald-300 enterprise-pulse" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">Equipos Móviles TSF</h3>
+                    <p className="text-emerald-300/80 text-sm">Separación sólido-líquido avanzada</p>
+                  </div>
+
+                  {/* Play button */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300 ripple-effect">
+                      <Play className="w-6 h-6 text-white ml-0.5" />
+                    </div>
+                  </div>
                 </div>
-                <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
               </div>
 
-              <div className="aspect-[3/2] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
-                {/* Compact sophisticated placeholder */}
-                <div className="text-center z-10">
-                  <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
-                    <Beaker className="w-6 h-6 text-emerald-300 enterprise-pulse" />
+              {/* Cycling Achievement Metric */}
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl p-4 border border-emerald-400/20 shadow-xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity duration-1000"
+                     style={{opacity: currentMetricIndex >= 0 ? 100 : 0}}></div>
+
+                <div className="relative z-10 transition-all duration-1000 transform"
+                     style={{opacity: 1, transform: 'translateY(0)'}}>
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
+                      {React.createElement(achievements[currentMetricIndex].icon, {
+                        className: "w-4 h-4 text-emerald-300 enterprise-pulse"
+                      })}
+                    </div>
+                    <div className="text-3xl font-black text-white tracking-tight gradient-text-animated">
+                      {achievements[currentMetricIndex].value}
+                    </div>
                   </div>
-                  <p className="text-emerald-300/90 text-xs font-medium">Tecnología móvil</p>
+                  <div className="text-sm text-emerald-100 font-semibold mb-1">
+                    {achievements[currentMetricIndex].label}
+                  </div>
+                  <div className="text-xs text-emerald-200/70">
+                    {achievements[currentMetricIndex].description}
+                  </div>
                 </div>
 
-                {/* Compact play button */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300 ripple-effect">
-                    <Play className="w-4 h-4 text-white ml-0.5" />
-                  </div>
+                {/* Progress indicator */}
+                <div className="flex space-x-1 mt-3">
+                  {achievements.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`h-1 rounded-full transition-all duration-700 ${
+                        index === currentMetricIndex
+                          ? 'w-6 bg-emerald-400'
+                          : 'w-1 bg-emerald-400/30'
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
