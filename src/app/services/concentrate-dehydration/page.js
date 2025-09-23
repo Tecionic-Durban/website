@@ -108,7 +108,24 @@ export default function ConcentrateDehydrationServicePage() {
       {/* Enterprise-Grade Concentrate Dehydration Hero */}
       <section ref={heroRef} className="relative bg-white overflow-visible">
         {/* TSF Signature Dehydration Theme */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden" style={{
+          maskImage: `linear-gradient(to left,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.9) 20%,
+            rgba(0,0,0,0.7) 40%,
+            rgba(0,0,0,0.4) 65%,
+            rgba(0,0,0,0.15) 85%,
+            rgba(0,0,0,0.05) 100%
+          )`,
+          WebkitMaskImage: `linear-gradient(to left,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.9) 20%,
+            rgba(0,0,0,0.7) 40%,
+            rgba(0,0,0,0.4) 65%,
+            rgba(0,0,0,0.15) 85%,
+            rgba(0,0,0,0.05) 100%
+          )`
+        }}>
           {/* Base gradient foundation */}
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-white to-gray-50/50"></div>
 
