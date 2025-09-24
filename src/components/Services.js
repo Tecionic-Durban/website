@@ -51,7 +51,7 @@ export default function Services() {
     },
     {
       title: "Deshidratación de Concentrados",
-      description: "Deshidratación de concentrados de cobre mediante filtros prensa de alta capacidad. Procesos optimizados para máxima recuperación de valores.",
+      description: "Deshidratación de concentrados de cobre en terminales portuarios mediante filtros prensa móviles. Reducción de peso 60-70% para optimización de costos de flete marítimo y preparación de carga para exportación.",
       icon: Droplets,
       features: []
     },
