@@ -63,7 +63,7 @@ export default function Services() {
     },
     {
       title: "Limpieza de Celdas EW",
-      description: "Limpieza especializada de celdas de electroobtención para optimizar la producción de cátodos de cobre y mantener eficiencias operacionales.",
+      description: "Limpieza especializada de celdas de electroobtención para minimizar contaminación catódica y asegurar cátodos de cobre de mayor grado. Servicios programados para mantener estándares de calidad de producto.",
       icon: Zap,
       features: []
     },
