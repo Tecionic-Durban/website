@@ -228,7 +228,7 @@ export default function OrganicTreatmentServicePage() {
                   </span>
                 </h1>
                 <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
-                  Para Plantas SX • Coalescencia • Alta Recuperación
+                  Para Plantas SX • Coalescencia Optimizada • Alta Recuperación
                 </div>
               </div>
 
