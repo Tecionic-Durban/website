@@ -46,7 +46,7 @@ export default function OrganicTreatmentServicePage() {
     {
       step: '1',
       title: 'Diagnóstico',
-      description: 'Análisis entrainment acuoso en orgánico SX',
+      description: 'Análisis orgánico contaminado en orgánico SX',
       additionalInfo: 'Análisis completo de calidad • Evaluación pérdidas actuales',
       icon: FlaskConical
     },
@@ -339,7 +339,7 @@ export default function OrganicTreatmentServicePage() {
             </h2>
 
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
-              Tecnología especializada para la recuperación eficiente del entrainment acuoso y
+              Tecnología especializada para la recuperación eficiente del orgánico contaminado y{' '}
               <span className="font-semibold text-green-600">purificación de extractantes en plantas SX</span>.
               Maximización de recuperación y extensión de vida útil del solvente.
             </p>
@@ -358,7 +358,7 @@ export default function OrganicTreatmentServicePage() {
               {
                 icon: Zap,
                 title: "Reducción 60% Pérdidas",
-                description: "Minimización drástica de pérdidas de solvente mediante separación gravitacional",
+                description: "Minimización drástica de pérdidas de solvente",
                 color: "blue",
                 metric: "60%"
               },
@@ -371,10 +371,10 @@ export default function OrganicTreatmentServicePage() {
               },
               {
                 icon: BarChart3,
-                title: "ROI < 12 Meses",
+                title: "ROI < 1 Mes",
                 description: "Retorno de inversión rápido por ahorro en consumo de extractantes nuevos",
                 color: "slate",
-                metric: "<12m"
+                metric: "<1m"
               }
             ].map((feature, index) => (
               <div key={index} className="group relative bg-white rounded-xl p-6 border border-green-100/50 shadow-sm hover:shadow-lg transition-all duration-300 progressive-reveal overflow-hidden hover:-translate-y-1">
@@ -451,22 +451,13 @@ export default function OrganicTreatmentServicePage() {
                       status: "Operativo"
                     },
                     {
-                      element: "Cyanex",
-                      industry: "Cobalto/Níquel",
-                      application: "Recuperación extractantes especializados",
-                      performance: "92% Eficiencia",
-                      specs: "Alto valor unitario | Separación selectiva",
-                      color: "#0891b2",
-                      status: "Especializado"
-                    },
-                    {
-                      element: "D2EHPA",
-                      industry: "Uranio/REE",
-                      application: "Control orgánico nuclear",
-                      performance: "99% Trazabilidad",
-                      specs: "Cumplimiento regulatorio | Documentación completa",
+                      element: "LIX63",
+                      industry: "Potasio SX",
+                      application: "Recuperación extractantes potásicos",
+                      performance: "93% Eficiencia",
+                      specs: "Separación selectiva | Control calidad",
                       color: "#7c3aed",
-                      status: "Certificado"
+                      status: "Especializado"
                     }
                   ].map((app, index) => (
                     <div key={index} className="group relative bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all duration-300 border border-gray-100">
