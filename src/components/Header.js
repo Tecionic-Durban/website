@@ -2,7 +2,6 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { handleContactClick } from '@/utils/navigation'
 
@@ -24,20 +23,18 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-16 h-16 bg-emerald-600 rounded-lg p-2">
-              <Image 
-                src="/logo.png" 
-                alt="Tec-Ionic Durban"
-                width={64}
-                height={64}
-                className="w-full h-full object-contain filter brightness-0 invert"
-              />
+            <div className="w-16 h-16 bg-emerald-600 rounded-lg flex items-center justify-center">
+              {/* Three balls logo */}
+              <div className="flex items-center space-x-1">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="w-3 h-3 bg-emerald-100 rounded-full"></div>
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+              </div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900" style={{fontFamily: 'Playfair Display, Garamond, Adobe Garamond Pro, EB Garamond, serif'}}>
+              <h1 className="text-2xl font-black text-gray-900">
                 Teci<span className="text-emerald-600">o</span>nic Durban
               </h1>
-              <p className="text-sm text-emerald-600 font-medium">Servicios LIX/SX/EW</p>
             </div>
           </Link>
 
