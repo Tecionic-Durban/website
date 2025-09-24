@@ -41,37 +41,43 @@ export default function Services() {
       title: "Filtración y Deshidratación de Borras y Sólidos",
       description: "Filtración móvil de borras y sólidos en refinerías y plantas SX. Capacidad hasta 130 ton/día de torta seca mediante filtros prensa (recomendado) o centrífugas según requerimiento del cliente.",
       icon: Beaker,
-      features: []
+      features: [],
+      slug: "/services/filtration"
     },
     {
       title: "Tratamiento y Recuperación de Orgánico SX",
       description: "Tratamiento especializado para recuperación de orgánico en procesos de extracción por solventes. Reduce pérdidas y optimiza la eficiencia de planta.",
       icon: RefreshCw,
-      features: []
+      features: [],
+      slug: "/services/organic-treatment"
     },
     {
       title: "Deshidratación de Concentrados",
       description: "Deshidratación de concentrados de cobre en terminales portuarios mediante filtros prensa móviles. Reducción de peso 60-70% para optimización de costos de flete marítimo y preparación de carga para exportación.",
       icon: Droplets,
-      features: []
+      features: [],
+      slug: "/services/concentrate-dehydration"
     },
     {
       title: "Tratamiento de Sólidos Finos",
       description: "Procesamiento de sólidos finos provenientes de clarificadores. Capacidad hasta 14 ton/día con centrífugas especializadas.",
       icon: Microscope,
-      features: []
+      features: [],
+      slug: "/services/fine-solids"
     },
     {
       title: "Limpieza de Celdas EW",
       description: "Limpieza especializada de celdas de electroobtención para minimizar contaminación catódica y asegurar cátodos de cobre de mayor grado. Servicios programados para mantener estándares de calidad de producto.",
       icon: Zap,
-      features: []
+      features: [],
+      slug: "/services/ew-cleaning"
     },
     {
       title: "Remoción de Sólidos de Aguas Clarificadas",
       description: "Optimización de la recirculación de agua de proceso mediante remoción eficiente de sólidos. Hasta 120 m³/día de agua clarificada.",
       icon: Waves,
-      features: []
+      features: [],
+      slug: "/services/water-clarification"
     }
   ]
 
@@ -138,10 +144,13 @@ export default function Services() {
                 <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
 
                 {/* Enterprise CTA */}
-                <div className="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300">
+                <button
+                  onClick={() => router.push(service.slug)}
+                  className="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300 cursor-pointer"
+                >
                   <span className="text-sm">Más información</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
+                </button>
               </div>
             </div>
           ))}
