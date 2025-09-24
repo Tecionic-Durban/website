@@ -104,7 +104,7 @@ export default function ConcentrateDehydrationServicePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Enterprise-Grade Concentrate Dehydration Hero */}
       <section ref={heroRef} className="relative bg-white overflow-visible">
         {/* TSF Signature Dehydration Theme */}
@@ -194,7 +194,7 @@ export default function ConcentrateDehydrationServicePage() {
 
         {/* Enterprise Navigation Bar */}
         <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">
-          <div className="max-w-8xl mx-auto px-8 py-3">
+          <div className="max-w-7xl mx-auto px-8 py-3">
             <div className="flex items-center justify-between">
               <nav className="flex items-center space-x-1 text-sm">
                 <span className="text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">Servicios</span>
@@ -215,7 +215,7 @@ export default function ConcentrateDehydrationServicePage() {
         </div>
 
         {/* Enterprise Hero Content */}
-        <div className="relative z-10 max-w-8xl mx-auto px-8 pt-12 pb-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 pt-12 pb-16">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left Column - Premium Content */}
             <div className="lg:col-span-7 overflow-visible">
@@ -321,7 +321,7 @@ export default function ConcentrateDehydrationServicePage() {
           </div>
         </div>
 
-        <div className="max-w-8xl mx-auto px-8 relative">
+        <div className="max-w-7xl mx-auto px-8 relative">
           {/* Enterprise Header */}
           <div className="text-center mb-20 progressive-reveal">
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-400/5 rounded-full text-cyan-700 text-sm font-semibold border border-cyan-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
@@ -540,7 +540,7 @@ export default function ConcentrateDehydrationServicePage() {
           <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-gradient-to-br from-cyan-500/15 to-cyan-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
         </div>
 
-        <div className="max-w-8xl mx-auto px-8 relative">
+        <div className="max-w-7xl mx-auto px-8 relative">
           {/* Enterprise Header */}
           <div className="text-center mb-20 progressive-reveal">
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-400/5 rounded-full text-cyan-700 text-sm font-semibold border border-cyan-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
@@ -689,7 +689,7 @@ export default function ConcentrateDehydrationServicePage() {
           <div className="absolute bottom-24 right-[8%] w-28 h-28 bg-gradient-to-br from-cyan-500/15 to-cyan-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
         </div>
 
-        <div className="max-w-8xl mx-auto px-8 relative">
+        <div className="max-w-7xl mx-auto px-8 relative">
           <div className="text-center mb-20 progressive-reveal">
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-400/5 rounded-full text-cyan-700 text-sm font-semibold border border-cyan-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
               <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 enterprise-pulse"></div>
@@ -765,7 +765,7 @@ export default function ConcentrateDehydrationServicePage() {
           <div className="absolute bottom-8 left-12 w-16 h-16 bg-cyan-400/25 rounded-full animate-float-medium blur-sm"></div>
         </div>
 
-        <div className="relative max-w-8xl mx-auto px-8 py-24 text-center">
+        <div className="relative max-w-7xl mx-auto px-8 py-24 text-center">
           <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-animated">
             ¿Necesita Optimizar la Humedad de sus Concentrados?
           </h2>

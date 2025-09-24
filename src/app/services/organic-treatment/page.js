@@ -104,7 +104,7 @@ export default function OrganicTreatmentServicePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Enterprise-Grade Organic Treatment Hero */}
       <section ref={heroRef} className="relative bg-white overflow-visible">
         {/* TSF Signature Organic Recovery Theme */}
@@ -194,7 +194,7 @@ export default function OrganicTreatmentServicePage() {
 
         {/* Enterprise Navigation Bar */}
         <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">
-          <div className="max-w-8xl mx-auto px-8 py-3">
+          <div className="max-w-7xl mx-auto px-8 py-3">
             <div className="flex items-center justify-between">
               <nav className="flex items-center space-x-1 text-sm">
                 <span className="text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">Servicios</span>
@@ -215,7 +215,7 @@ export default function OrganicTreatmentServicePage() {
         </div>
 
         {/* Enterprise Hero Content */}
-        <div className="relative z-10 max-w-8xl mx-auto px-8 pt-12 pb-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 pt-12 pb-16">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left Column - Premium Content */}
             <div className="lg:col-span-7 overflow-visible">
@@ -321,7 +321,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
         </div>
 
-        <div className="max-w-8xl mx-auto px-8 relative">
+        <div className="max-w-7xl mx-auto px-8 relative">
           {/* Enterprise Header */}
           <div className="text-center mb-20 progressive-reveal">
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-green-500/10 to-green-400/5 rounded-full text-green-700 text-sm font-semibold border border-green-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
@@ -549,7 +549,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
         </div>
 
-        <div className="max-w-8xl mx-auto px-8 relative">
+        <div className="max-w-7xl mx-auto px-8 relative">
           {/* Enterprise Header */}
           <div className="text-center mb-20 progressive-reveal">
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-green-500/10 to-green-400/5 rounded-full text-green-700 text-sm font-semibold border border-green-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
@@ -719,7 +719,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
         </div>
 
-        <div className="max-w-8xl mx-auto px-8 relative">
+        <div className="max-w-7xl mx-auto px-8 relative">
           {/* Enterprise Header */}
           <div className="text-center mb-20 progressive-reveal">
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-green-500/10 to-green-400/5 rounded-full text-green-700 text-sm font-semibold border border-green-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
@@ -809,7 +809,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
         </div>
 
-        <div className="relative max-w-8xl mx-auto px-8 py-24 text-center">
+        <div className="relative max-w-7xl mx-auto px-8 py-24 text-center">
           <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-animated">
             ¿Problemas con Pérdidas de Orgánico?
           </h2>
