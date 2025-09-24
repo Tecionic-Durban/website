@@ -203,7 +203,7 @@ export default function Hero() {
               </div>
 
               {/* Achievement Metric Display - Cycling */}
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-lg p-2.5 border border-emerald-400/20 shadow-xl relative overflow-hidden">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-lg p-3 border border-emerald-400/20 shadow-xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity duration-1000"></div>
 
                 {/* Progress indicators - top right */}
@@ -221,21 +221,24 @@ export default function Hero() {
                 </div>
 
                 <div className="relative z-10 transition-all duration-1000 transform pr-6">
-                  <div className="flex items-center space-x-2.5 mb-1">
-                    <div className="w-6 h-6 bg-emerald-500/30 rounded-lg flex items-center justify-center">
+                  {/* Horizontal layout: Icon + Big KPI + Label & Description */}
+                  <div className="flex items-center space-x-4">
+                    <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
                       {React.createElement(achievements[currentMetricIndex].icon, {
-                        className: "w-3 h-3 text-emerald-300 enterprise-pulse"
+                        className: "w-4 h-4 text-emerald-300 enterprise-pulse"
                       })}
                     </div>
-                    <div className="text-xl font-black text-white tracking-tight gradient-text-animated">
+                    <div className="text-4xl font-black text-white tracking-tight gradient-text-animated">
                       {achievements[currentMetricIndex].value}
                     </div>
-                  </div>
-                  <div className="text-xs text-emerald-100 font-semibold leading-tight">
-                    {achievements[currentMetricIndex].label}
-                  </div>
-                  <div className="text-xs text-emerald-200/70 leading-tight">
-                    {achievements[currentMetricIndex].description}
+                    <div className="flex-1">
+                      <div className="text-sm text-emerald-100 font-semibold leading-tight">
+                        {achievements[currentMetricIndex].label}
+                      </div>
+                      <div className="text-xs text-emerald-200/70 leading-tight">
+                        {achievements[currentMetricIndex].description}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
