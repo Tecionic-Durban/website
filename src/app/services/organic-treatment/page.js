@@ -52,7 +52,7 @@ export default function OrganicTreatmentServicePage() {
     },
     {
       step: '2',
-      title: 'Coalescencia',
+      title: 'Coalescencia Optimizada',
       description: 'Separación gravitacional asistida de fases',
       additionalInfo: 'Tecnología coalescedores avanzados • Tiempo residencia optimizado',
       icon: RefreshCw
