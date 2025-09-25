@@ -23,12 +23,12 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-16 h-16 bg-emerald-600 rounded-lg flex items-center justify-center">
-              {/* Three balls logo */}
+            <div className="w-16 h-16 flex items-center justify-center">
+              {/* Three balls logo with modern progressive greens */}
               <div className="flex items-center space-x-1">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-                <div className="w-3 h-3 bg-emerald-100 rounded-full"></div>
-                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="w-3 h-3 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full shadow-sm"></div>
+                <div className="w-3 h-3 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full shadow-sm"></div>
+                <div className="w-3 h-3 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full shadow-sm"></div>
               </div>
             </div>
             <div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { Filter, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
 
 export default function FiltrationPage() {
@@ -325,16 +326,13 @@ export default function FiltrationPage() {
 
               {/* Hero Image Container */}
               <div className="relative z-10 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                {/* Placeholder for filtration equipment image */}
-                <div className="w-full h-full bg-gradient-to-br from-emerald-100 via-emerald-50 to-white flex items-center justify-center border border-emerald-200/50">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 bg-emerald-500/10 rounded-full flex items-center justify-center">
-                      <Filter className="w-12 h-12 text-emerald-600" />
-                    </div>
-                    <h3 className="text-lg font-bold text-emerald-800 mb-2">Sistema de Filtración Móvil</h3>
-                    <p className="text-sm text-emerald-600">Equipo especializado para separación sólido-líquido</p>
-                  </div>
-                </div>
+                <Image
+                  src="/filtro_prensa_1200_drone_view.jpg"
+                  alt="Sistema de Filtración Móvil - Vista aérea del filtro prensa 1200"
+                  fill
+                  className="object-cover"
+                  priority
+                />
 
                 {/* Technical overlay indicators */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
