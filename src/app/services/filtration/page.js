@@ -271,7 +271,7 @@ export default function FiltrationPage() {
         <div className="relative z-10 max-w-8xl mx-auto px-8 pt-12 pb-8">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left Column - Premium Content */}
-            <div className="lg:col-span-6">
+            <div className="lg:col-span-7">
               {/* Main Heading */}
               <div className="mb-6">
                 <h1 className="text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-black tracking-tight text-slate-900 leading-[0.9] mb-4">
@@ -308,7 +308,7 @@ export default function FiltrationPage() {
             </div>
 
             {/* Right Column - Hero Image */}
-            <div className="lg:col-span-6 relative">
+            <div className="lg:col-span-5 relative">
               {/* Enhanced Background Elements */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <div className="absolute -top-4 -right-4 w-32 h-32 bg-gradient-to-br from-emerald-600/15 to-emerald-700/8 rounded-full opacity-40 animate-float-slow blur-sm"></div>
@@ -325,7 +325,7 @@ export default function FiltrationPage() {
               </div>
 
               {/* Hero Image Container */}
-              <div className="relative z-10 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative z-10 aspect-[3/2] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/filtro_prensa_1200_drone_view.png"
                   alt="Sistema de Filtración Móvil - Vista aérea del filtro prensa 1200"
