@@ -23,16 +23,16 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-16 h-16 flex items-center justify-center">
+            <div className="w-20 h-20 flex items-center justify-center">
               {/* Three balls logo with modern progressive greens */}
-              <div className="flex items-center space-x-1">
-                <div className="w-3 h-3 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full shadow-sm"></div>
-                <div className="w-3 h-3 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full shadow-sm"></div>
-                <div className="w-3 h-3 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full shadow-sm"></div>
+              <div className="flex items-center space-x-1.5">
+                <div className="w-4 h-4 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full shadow-sm"></div>
+                <div className="w-4 h-4 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full shadow-sm"></div>
+                <div className="w-4 h-4 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full shadow-sm"></div>
               </div>
             </div>
             <div>
-              <h1 className="text-2xl font-black text-gray-900">
+              <h1 className="text-3xl font-black text-gray-900">
                 Teci<span className="text-emerald-600">o</span>nic Durban
               </h1>
             </div>

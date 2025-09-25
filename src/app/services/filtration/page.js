@@ -327,25 +327,18 @@ export default function FiltrationPage() {
               {/* Hero Image Container */}
               <div className="relative z-10 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/filtro_prensa_1200_drone_view.jpg"
+                  src="/filtro_prensa_1200_drone_view.png"
                   alt="Sistema de Filtración Móvil - Vista aérea del filtro prensa 1200"
                   fill
                   className="object-cover"
                   priority
                 />
 
-                {/* Technical overlay indicators */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                  <div className="flex items-center space-x-2 text-xs">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="font-medium text-gray-700">Sistema Activo</span>
-                  </div>
-                </div>
-
+                {/* Equipment specification overlay */}
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
                   <div className="text-xs text-gray-700">
-                    <div className="font-bold">130 T/día</div>
-                    <div className="text-gray-500">Capacidad Max</div>
+                    <div className="font-bold">Filtro de Prensa 1200</div>
+                    <div className="text-gray-500">Capacidad 70 T/día</div>
                   </div>
                 </div>
               </div>
