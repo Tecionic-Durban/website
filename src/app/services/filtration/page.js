@@ -347,6 +347,173 @@ export default function FiltrationPage() {
         </div>
       </section>
 
+      {/* Modular Parallel Filtration - Advanced Scalability */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-emerald-50/20 relative overflow-hidden">
+        {/* Professional Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-16 left-[8%] w-32 h-32 bg-gradient-to-br from-emerald-600/8 to-slate-600/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
+          <div className="absolute bottom-20 right-[10%] w-24 h-24 bg-gradient-to-br from-slate-500/10 to-emerald-500/8 rounded-full opacity-25 animate-float-medium blur-sm"></div>
+
+          {/* Subtle grid pattern for industrial feel */}
+          <div className="absolute inset-0 opacity-[0.02]" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgb(51 65 85) 1px, transparent 0)`,
+            backgroundSize: '32px 32px'
+          }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 relative">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-slate-100 to-emerald-50 rounded-full text-slate-700 text-sm font-medium border border-slate-200/50 mb-6">
+              <div className="flex items-center space-x-1 mr-3">
+                <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-slate-500 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div>
+              </div>
+              Tecnología Modular Avanzada
+            </div>
+
+            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4 leading-tight">
+              Filtración en
+              <span className="block text-emerald-600">Módulos Paralelos</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Escalabilidad inteligente que se adapta a las necesidades de su operación,
+              optimizando espacio y minimizando la interrupción de procesos existentes.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Key Benefits */}
+            <div className="space-y-8">
+              {/* Benefit 1: Modular Installation */}
+              <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-slate-100 transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Settings className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">Instalación Modular</h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      Los filtros se instalan como módulos independientes en paralelo,
+                      permitiendo <span className="font-semibold text-slate-900">escalabilidad progresiva</span>
+                      según las necesidades operacionales.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Benefit 2: Faster Stability */}
+              <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-slate-100 transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">Estabilidad Acelerada</h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      La configuración paralela permite <span className="font-semibold text-slate-900">alcanzar la estabilidad de planta</span>
+                      de manera más rápida, reduciendo tiempos de puesta en marcha y optimización.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Benefit 3: Space Efficiency */}
+              <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-slate-100 transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Factory className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">Eficiencia Espacial</h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      El funcionamiento en paralelo es <span className="font-semibold text-slate-900">económico con el espacio disponible</span>,
+                      maximizando la capacidad de procesamiento por metro cuadrado ocupado.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Benefit 4: External Installation */}
+              <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-slate-100 transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">Instalación Externa</h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      Los filtros pueden instalarse <span className="font-semibold text-slate-900">fuera de la planta</span>,
+                      transportando la solución mediante sistema de bombas,
+                      <span className="font-semibold text-emerald-600"> minimizando la fricción operacional interna</span>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Equipment Image */}
+            <div className="relative">
+              {/* Background decorative elements */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/5 to-slate-500/5 rounded-3xl blur-sm"></div>
+
+              {/* Main image container */}
+              <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                <Image
+                  src="/filtros_acoplados.png"
+                  alt="Filtros Modulares en Paralelo - Sistema de Filtración Acoplado"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+
+                {/* Technical overlay */}
+                <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-3 shadow-lg border border-slate-100">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-1">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs font-medium text-slate-700">Módulos Paralelos Activos</span>
+                    </div>
+                    <div className="w-px h-4 bg-slate-200"></div>
+                    <span className="text-xs font-bold text-slate-900">Capacidad Escalable</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating technical specs */}
+              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-600 to-emerald-700 text-white rounded-xl px-4 py-3 shadow-xl">
+                <div className="text-center">
+                  <div className="text-lg font-bold">2-6</div>
+                  <div className="text-xs opacity-90">Módulos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Technical Summary Bar */}
+          <div className="mt-16 bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-900 rounded-2xl p-8 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+
+            <div className="relative grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-2xl font-bold text-emerald-400 mb-1">130+ T/día</div>
+                <div className="text-sm text-slate-300">Capacidad por módulo</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-white mb-1">24-48h</div>
+                <div className="text-sm text-slate-300">Instalación completa</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-emerald-400 mb-1">60%</div>
+                <div className="text-sm text-slate-300">Reducción fricción interna</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Service Overview Section - Progressive Disclosure */}
       <section ref={overviewRef} className="py-24 bg-gradient-to-br from-emerald-50/30 via-white to-gray-50 relative overflow-hidden">
         {/* Enterprise Background Elements */}
