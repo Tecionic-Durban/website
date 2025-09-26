@@ -325,7 +325,7 @@ export default function FiltrationPage() {
               </div>
 
               {/* Hero Image Container */}
-              <div className="relative z-10 aspect-[3/2] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative z-10 aspect-[5/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/filtro_prensa_1200_drone_view.png"
                   alt="Sistema de Filtración Móvil - Vista aérea del filtro prensa 1200"
