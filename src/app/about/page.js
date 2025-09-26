@@ -102,28 +102,34 @@ export default function AboutPage() {
 
   const values = [
     {
-      icon: Target,
-      title: "Excelencia Técnica",
-      description: "Comprometidos con la máxima calidad técnica en cada servicio que proporcionamos.",
+      icon: Award,
+      title: "Innovación Aplicada",
+      description: "Desarrollamos e implementamos soluciones tecnológicas que generen valor real para nuestros clientes.",
       color: "from-orange-500 to-red-600"
     },
     {
-      icon: Users,
-      title: "Equipo Especializado",
-      description: "Profesionales altamente capacitados con años de experiencia en la industria.",
+      icon: CheckCircle,
+      title: "Seguridad Operacional",
+      description: "Priorizamos la seguridad en todas nuestras operaciones, protegiendo a nuestro equipo y clientes.",
       color: "from-blue-500 to-purple-600"
     },
     {
-      icon: Award,
-      title: "Innovación Continua",
-      description: "Constantemente desarrollamos nuevas soluciones para optimizar procesos mineros.",
+      icon: Globe,
+      title: "Sostenibilidad Ambiental",
+      description: "Comprometidos con soluciones que contribuyan al cuidado del medio ambiente y desarrollo sostenible.",
       color: "from-emerald-500 to-teal-600"
     },
     {
-      icon: CheckCircle,
-      title: "Compromiso Ambiental",
-      description: "Servicios que priorizan la sostenibilidad y el cuidado del medio ambiente.",
+      icon: Zap,
+      title: "Flexibilidad Operativa",
+      description: "Adaptamos nuestros servicios móviles a las necesidades específicas de cada operación.",
       color: "from-green-500 to-emerald-600"
+    },
+    {
+      icon: Users,
+      title: "Compromiso con Clientes y Colaboradores",
+      description: "Construimos relaciones duraderas basadas en confianza, transparencia y resultados.",
+      color: "from-purple-500 to-indigo-600"
     }
   ]
 
@@ -212,20 +218,18 @@ export default function AboutPage() {
                 <Target className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Misión</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Proporcionar servicios especializados de filtrado y tratamiento de borra 
-                  que generen mejoras significativas en las eficiencias de plantas de 
-                  extracción por solventes y electroobtención, contribuyendo al éxito 
-                  operacional de nuestros clientes.
+                  Asegurar la continuidad y eficiencia de las operaciones de nuestros clientes
+                  mediante soluciones móviles de filtración y deshidratado que aporten valor,
+                  sostenibilidad y seguridad.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
                 <Award className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Visión</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Ser reconocidos como la empresa líder en servicios especializados 
-                  para la industria minera, estableciendo nuevos estándares de 
-                  excelencia técnica y contribuyendo al desarrollo sostenible 
-                  del sector en Chile y Latinoamérica.
+                  Convertirse en el socio estratégico líder en Latinoamérica en tecnologías
+                  móviles de separación sólido-líquido, ampliando presencia en cobre, zinc,
+                  litio, potasio y petróleo crudo.
                 </p>
               </div>
             </div>
@@ -265,7 +269,7 @@ export default function AboutPage() {
                 Los principios que guían nuestro trabajo diario
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
               {values.map((value, index) => (
                 <div key={index} className="group">
                   <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
