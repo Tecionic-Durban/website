@@ -108,7 +108,7 @@ export default function About() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-emerald-50/30 via-white to-gray-50 relative overflow-hidden min-h-[300vh]">
+    <section ref={sectionRef} className="relative bg-gradient-to-br from-emerald-50/30 via-white to-gray-50 overflow-hidden">
       {/* Enterprise Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Sophisticated floating elements */}
@@ -132,11 +132,13 @@ export default function About() {
         </div>
       </div>
 
-      <div className="max-w-8xl mx-auto px-8 relative">
-        {/* Split Layout: Left (Sticky Header) + Right (Scroll-Driven Carousel) */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 sticky top-32">
-          {/* Left Side - Sticky Header */}
-          <div className="lg:w-2/5 progressive-reveal">
+      {/* Create tall section for scroll space - 6 cards * 100vh each */}
+      <div className="min-h-[600vh] relative">
+        <div className="max-w-8xl mx-auto px-8 py-24">
+          {/* Split Layout: Left (Sticky Header) + Right (Scroll-Driven Carousel) */}
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 lg:sticky lg:top-32">
+            {/* Left Side - Sticky Header */}
+            <div className="lg:w-2/5 progressive-reveal">
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
               <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
               Líderes en Innovación Industrial
@@ -244,8 +246,10 @@ export default function About() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Compact Performance & Certifications */}
+      {/* Compact Performance & Certifications - Outside scroll container */}
+      <div className="max-w-8xl mx-auto px-8 pb-24">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-6">
           <div className="grid md:grid-cols-3 gap-6 items-center">
             {/* Metrics */}
