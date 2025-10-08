@@ -7,40 +7,48 @@ export default function CasosEstudioPage() {
   const caseStudies = [
     {
       id: 1,
-      title: "Optimización de Planta SX de Cobre - Región de Atacama",
-      client: "Minera del Norte SpA",
+      title: "Tratamiento de Fase Orgánica en Planta SX - USD $3.1M Ahorro Anual",
+      client: "Planta SX - Operación Minera",
       industry: "Cobre",
-      challenge: "Baja recuperación de cobre y alto consumo de orgánicos",
-      solution: "Implementación de housekeeping integral y tratamiento de orgánicos degradados",
+      challenge: "Problemas persistentes en calidad físico-química: TIF bajos (20,4-21,10 dinas/cm), Delta TIF elevados (5,5-6,5 dinas/cm), viscosidad >6,3 cP, TSF hasta 444 seg, arrastres de hasta 65% acuoso",
+      solution: "Filtrado mediante filtro prensa, aplicación de arcilla tratante (5-10 kg/m³) y centrifugado de mezcla con monitoreo continuo",
       results: [
-        "12% incremento en recuperación de cobre",
-        "25% reducción en consumo de orgánicos",
-        "Ahorro anual de $2.3M USD"
+        "52% reducción en arrastre diario (6 → 2,9 m³)",
+        "92,16% eficiencia global alcanzada",
+        "Ahorro anual de USD $3.124M",
+        "TIF aumentado de 20,4 a 23,7 dinas/cm (+16%)",
+        "TSF reducido de 444 a 153 segundos (-66%)"
       ],
-      timeline: "8 meses",
-      image: "/case-study-1.jpg",
+      timeline: "18 meses",
+      image: "/case-study-organicos.jpg",
       category: "Extracción por Solventes",
-      location: "Región de Atacama, Chile",
+      location: "Operación Minera - América Latina",
+      link: "/casos-de-estudio/tratamiento-organico-sx",
       details: {
-        background: "Una operación de cobre con 15 años de funcionamiento experimentaba declive en la eficiencia de extracción y altos costos operacionales debido al deterioro progresivo de los orgánicos y acumulación de impurezas en el circuito SX.",
+        background: "Durante 2023 y 2024, la planta SX enfrentó problemas persistentes en la calidad físico-química del orgánico con TIF bajos, delta TIF elevados, viscosidad sobre umbral, TSF alto, altos arrastres de acuoso (hasta 65%), descarga máxima de cobre hasta 410 ppm y eficiencia global fluctuante entre 77% y 92%.",
         approach: [
-          "Análisis completo del inventario orgánico existente",
-          "Identificación de contaminantes críticos (cloro, hierro, sílice)",
-          "Diseño de protocolo de housekeeping especializado",
-          "Implementación de sistema de tratamiento con tierra activada",
-          "Capacitación del personal operativo"
+          "Filtrado de fase orgánica mediante filtro prensa",
+          "Retiro de sólidos desde el inventario",
+          "Aplicación de arcilla tratante con dosis optimizadas (5-10 kg/m³)",
+          "Centrifugado de mezcla con arcilla",
+          "Monitoreo continuo de TIF, viscosidad, TSF, contenido acuoso y descarga de cobre"
         ],
         technologies: [
-          "Filtración con tierra de diatomea activada",
-          "Sistema de lavado ácido modificado",
-          "Análisis espectroscópico en línea",
-          "Monitoreo continuo de parámetros críticos"
+          "Filtro prensa para fase orgánica",
+          "Tratamiento con arcilla activada",
+          "Sistema de centrifugado industrial",
+          "Monitoreo de parámetros críticos en tiempo real"
         ],
         metrics: {
           beforeAfter: {
-            recovery: { before: 87.2, after: 98.8 },
-            organicConsumption: { before: 2.4, after: 1.8 },
-            availability: { before: 82.5, after: 94.2 }
+            tif: { before: 20.4, after: 23.7 },
+            deltaTIF: { before: 6.5, after: 3 },
+            tsf: { before: 444, after: 153 },
+            viscosity: { before: 7.5, after: 6.35 },
+            efficiency: { before: 77, after: 92.16 },
+            cuDischarge: { before: 410, after: 190 },
+            dailyDrag: { before: 6, after: 2.9 },
+            monthlyCost: { before: 504000, after: 243600 }
           }
         }
       }
@@ -246,9 +254,15 @@ export default function CasosEstudioPage() {
                     <div className="text-sm text-gray-500">
                       <span className="font-semibold">Timeline:</span> {study.timeline}
                     </div>
-                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                      Ver Detalles
-                    </button>
+                    {study.link ? (
+                      <a href={study.link} className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                        Ver Detalles
+                      </a>
+                    ) : (
+                      <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                        Ver Detalles
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
