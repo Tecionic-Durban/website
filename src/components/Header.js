@@ -7,6 +7,7 @@ import { handleContactClick } from '@/utils/navigation'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [openMobileSection, setOpenMobileSection] = useState(null)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -16,6 +17,10 @@ export default function Header() {
     { name: 'Recursos', href: '/resources' },
     { name: 'Acerca', href: '/about' },
   ]
+
+  const toggleMobileSection = (section) => {
+    setOpenMobileSection(openMobileSection === section ? null : section)
+  }
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50 steel-gradient">
@@ -553,30 +558,212 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Accordion Style */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 py-4">
+          <div className="lg:hidden border-t border-gray-200 py-4 max-h-[calc(100vh-80px)] overflow-y-auto">
             <nav className="flex flex-col space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
-                    pathname === item.href
-                      ? 'text-emerald-600 bg-emerald-50'
-                      : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
-                  }`}
+              {/* Servicios Accordion */}
+              <div>
+                <button
+                  onClick={() => toggleMobileSection('servicios')}
+                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                 >
-                  {item.name}
-                </Link>
-              ))}
+                  <span>Servicios</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'servicios' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                {openMobileSection === 'servicios' && (
+                  <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
+                    <Link href="/services/filtration" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Filtración y Deshidratación de Borras
+                    </Link>
+                    <Link href="/services/organic-treatment" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Tratamiento Orgánico
+                    </Link>
+                    <Link href="/services/concentrate-dehydration" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Deshidratación Concentrados
+                    </Link>
+                    <Link href="/services/fine-solids" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Sólidos Finos
+                    </Link>
+                    <Link href="/services/water-clarification" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Clarificación de Aguas
+                    </Link>
+                    <Link href="/services/ew-cleaning" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Limpieza Celdas EW
+                    </Link>
+                    <Link href="/services/maintenance" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Mantención Preventiva
+                    </Link>
+                    <div className="border-t border-gray-200 mt-2 pt-2">
+                      <Link href="/services" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
+                        Ver todos los servicios →
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Industrias Accordion */}
+              <div>
+                <button
+                  onClick={() => toggleMobileSection('industrias')}
+                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                >
+                  <span>Industrias</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'industrias' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                {openMobileSection === 'industrias' && (
+                  <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
+                    <Link href="/industries/copper" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      <span className="font-medium">Cobre</span>
+                      <span className="text-xs text-gray-500 block">Lixiviación y SX/EW</span>
+                    </Link>
+                    <Link href="/industries/zinc" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      <span className="font-medium">Zinc</span>
+                      <span className="text-xs text-gray-500 block">Electroobtención y refinación</span>
+                    </Link>
+                    <Link href="/industries/potassium" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      <span className="font-medium">Potasio</span>
+                      <span className="text-xs text-gray-500 block">Sales minerales</span>
+                    </Link>
+                    <Link href="/industries/lithium" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      <span className="font-medium">Litio</span>
+                      <span className="text-xs text-gray-500 block">Baterías y energía</span>
+                    </Link>
+                    <Link href="/industries/crude-oil" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      <span className="font-medium">Petróleo Crudo</span>
+                      <span className="text-xs text-gray-500 block">Refinación y procesamiento</span>
+                    </Link>
+                    <div className="border-t border-gray-200 mt-2 pt-2">
+                      <Link href="/industries" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
+                        Ver todas las industrias →
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Casos de Uso Accordion */}
+              <div>
+                <button
+                  onClick={() => toggleMobileSection('casos-uso')}
+                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                >
+                  <span>Casos de Uso</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'casos-uso' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                {openMobileSection === 'casos-uso' && (
+                  <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
+                    <Link href="/use-cases/operational-problems" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Problemas Operacionales
+                    </Link>
+                    <Link href="/use-cases/emergency-shutdowns" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Paradas de Emergencia
+                    </Link>
+                    <Link href="/use-cases/continuous-improvement" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Mejora Continua
+                    </Link>
+                    <Link href="/use-cases/environmental-compliance" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Cumplimiento Ambiental
+                    </Link>
+                    <div className="border-t border-gray-200 mt-2 pt-2">
+                      <Link href="/use-cases" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
+                        Ver todos los casos de uso →
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Recursos Accordion */}
+              <div>
+                <button
+                  onClick={() => toggleMobileSection('recursos')}
+                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                >
+                  <span>Recursos</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'recursos' ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                {openMobileSection === 'recursos' && (
+                  <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
+                    <Link href="/casos-de-estudio" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Casos de Estudio
+                    </Link>
+                    <Link href="/historias-de-clientes" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Historias de Clientes
+                    </Link>
+                    <Link href="/tendencias-industria" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Tendencias de la Industria
+                    </Link>
+                    <Link href="/white-papers" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      White Papers
+                    </Link>
+                    <Link href="/especificaciones-tecnicas" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Especificaciones Técnicas
+                    </Link>
+                    <Link href="/cumplimiento" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Cumplimiento
+                    </Link>
+                    <Link href="/calculadora" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
+                      Calculadora de Eficiencia
+                    </Link>
+                    <div className="border-t border-gray-200 mt-2 pt-2">
+                      <Link href="/resources" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
+                        Ver todos los recursos →
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Acerca - Simple link */}
+              <Link
+                href="/about"
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-3 py-3 text-base font-medium rounded-lg transition-colors ${
+                  pathname === '/about'
+                    ? 'text-emerald-600 bg-emerald-50'
+                    : 'text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                Acerca
+              </Link>
+
+              {/* Contact Button */}
               <button
                 onClick={(e) => {
                   handleContactClick(e, router, pathname)
                   setIsMenuOpen(false)
                 }}
-                className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold text-center transition-colors duration-200 w-full"
+                className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors duration-200 w-full"
               >
                 Contactar
               </button>
