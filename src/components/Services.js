@@ -1,42 +1,13 @@
 // src/components/Services.js
 'use client'
 import { useRouter } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Beaker, Waves, Factory, Zap, Microscope, RefreshCw, Droplets, CheckCircle, ArrowRight } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 
 export default function Services() {
   const router = useRouter()
   const servicesRef = useRef(null)
-  const carouselRef = useRef(null)
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  // Track active card on scroll
-  useEffect(() => {
-    const carousel = carouselRef.current
-    if (!carousel) return
-
-    const handleScroll = () => {
-      const cards = carousel.querySelectorAll('.service-card')
-      const carouselRect = carousel.getBoundingClientRect()
-      const centerY = carouselRect.top + carouselRect.height / 2
-
-      cards.forEach((card, index) => {
-        const cardRect = card.getBoundingClientRect()
-        const cardCenter = cardRect.top + cardRect.height / 2
-        const distance = Math.abs(centerY - cardCenter)
-
-        if (distance < cardRect.height / 2) {
-          setActiveIndex(index)
-        }
-      })
-    }
-
-    carousel.addEventListener('scroll', handleScroll)
-    handleScroll() // Initial check
-
-    return () => carousel.removeEventListener('scroll', handleScroll)
-  }, [])
 
   // Progressive disclosure on scroll
   useEffect(() => {
@@ -128,133 +99,61 @@ export default function Services() {
       </div>
 
       <div className="max-w-8xl mx-auto px-8 relative">
-        {/* Split Layout: Left (Sticky Header) + Right (Scrolling Carousel) */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mb-20">
-          {/* Left Side - Sticky Header */}
-          <div className="lg:w-2/5 lg:sticky lg:top-32 lg:self-start progressive-reveal">
-            <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
-              Servicios Especializados en Minería
-            </div>
-
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
-              Especialistas en Separación
-              <span className="block text-emerald-600 gradient-text-animated">Sólido-Líquido</span>
-            </h2>
-
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Servicios de filtración, deshidratación de sólidos y separación sólido-líquido
-              con equipos móviles escalables. <span className="font-semibold text-emerald-600">Más de dos décadas de experiencia</span> en faenas
-              mineras respaldando nuestras soluciones.
-            </p>
-
-            {/* Active Service Indicator */}
-            <div className="hidden lg:block">
-              <div className="text-sm font-semibold text-emerald-600 mb-3">
-                Servicio {activeIndex + 1} de {services.length}
-              </div>
-              <div className="flex gap-2">
-                {services.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                      index === activeIndex ? 'bg-emerald-600 w-8' : 'bg-emerald-200 w-6'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+        {/* Enterprise Header */}
+        <div className="text-center mb-20 progressive-reveal">
+          <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
+            Servicios Especializados en Minería
           </div>
 
-          {/* Right Side - Vertical Scrolling Carousel */}
-          <div className="lg:w-3/5">
-            <div
-              ref={carouselRef}
-              className="hidden lg:block h-[600px] overflow-y-auto snap-y snap-mandatory scrollbar-thin scrollbar-thumb-emerald-300 scrollbar-track-emerald-50 pr-4"
-            >
-              {/* Add padding at top and bottom for centering effect */}
-              <div className="h-[200px]"></div>
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className={`service-card snap-center mb-6 transition-all duration-500 ${
-                    index === activeIndex ? 'scale-100 opacity-100' : 'scale-95 opacity-60'
-                  }`}
-                >
-                  <div className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border ${
-                    index === activeIndex
-                      ? 'border-emerald-400 shadow-2xl shadow-emerald-100'
-                      : 'border-emerald-100/50 shadow-lg'
-                  } overflow-hidden transition-all duration-500`}>
-                    {/* Sophisticated background animation */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
+            Tecnología Móvil
+            <span className="block text-emerald-600 gradient-text-animated">Que Transforma Operaciones</span>
+          </h2>
 
-                    {/* Strategic three ball accent */}
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-60 transition-opacity duration-300">
-                      <div className="flex items-center space-x-1">
-                        <div className="w-1 h-1 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                        <div className="w-1 h-1 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                        <div className="w-1 h-1 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                      </div>
-                    </div>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
+            Servicios de filtración, deshidratación de sólidos y separación sólido-líquido
+            con equipos móviles escalables. <span className="font-semibold text-emerald-600">Más de dos décadas de experiencia</span> en faenas
+            mineras respaldando nuestras soluciones.
+          </p>
+        </div>
 
-                    <div className="relative z-10">
-                      <div className="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <service.icon className="w-7 h-7 text-emerald-600 group-hover:text-emerald-700 enterprise-pulse" />
-                      </div>
+        {/* Enterprise Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {services.map((service, index) => (
+            <div key={index} className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-emerald-100/50 layered-shadow-hover sophisticated-hover magnetic-hover progressive-reveal stagger-${(index % 3) + 1} overflow-hidden`}>
+              {/* Sophisticated background animation */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-emerald-800 transition-colors duration-300">{service.title}</h3>
-
-                      <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-
-                      {/* Enterprise CTA */}
-                      <button
-                        onClick={() => router.push(service.slug)}
-                        className="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300 cursor-pointer"
-                      >
-                        <span className="text-sm">Más información</span>
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                      </button>
-                    </div>
-                  </div>
+              {/* Strategic three ball accent */}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+                <div className="flex items-center space-x-1">
+                  <div className="w-1 h-1 bg-emerald-400 rounded-full enterprise-pulse"></div>
+                  <div className="w-1 h-1 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-1 h-1 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
                 </div>
-              ))}
-              <div className="h-[200px]"></div>
-            </div>
+              </div>
 
-            {/* Mobile: Horizontal Scroll */}
-            <div className="lg:hidden overflow-x-auto snap-x snap-mandatory flex gap-6 pb-4 scrollbar-thin scrollbar-thumb-emerald-300 scrollbar-track-emerald-50">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="snap-center flex-shrink-0 w-[85vw] max-w-md"
-                >
-                  <div className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-emerald-100/50 shadow-lg overflow-hidden h-full">
-                    {/* Sophisticated background animation */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    <div className="relative z-10">
-                      <div className="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-all duration-300">
-                        <service.icon className="w-7 h-7 text-emerald-600 group-hover:text-emerald-700" />
-                      </div>
-
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-
-                      <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-
-                      <button
-                        onClick={() => router.push(service.slug)}
-                        className="flex items-center text-emerald-600 font-semibold"
-                      >
-                        <span className="text-sm">Más información</span>
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </button>
-                    </div>
-                  </div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                  <service.icon className="w-7 h-7 text-emerald-600 group-hover:text-emerald-700 enterprise-pulse" />
                 </div>
-              ))}
+
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-emerald-800 transition-colors duration-300">{service.title}</h3>
+
+                <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
+
+                {/* Enterprise CTA */}
+                <button
+                  onClick={() => router.push(service.slug)}
+                  className="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300 cursor-pointer"
+                >
+                  <span className="text-sm">Más información</span>
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         {/* Enterprise CTA Section */}
