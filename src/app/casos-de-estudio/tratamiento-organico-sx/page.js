@@ -390,18 +390,6 @@ export default function TratamientoOrganicoCase() {
                   <text x="1045" y="422" textAnchor="middle" className="text-sm font-semibold fill-white">USD/mes en pérdidas</text>
                 </g>
 
-                {/* Legend - Floating in top right */}
-                <g>
-                  <rect x="1000" y="20" width="180" height="70" rx="10" fill="white" opacity="0.96" stroke="#cbd5e1" strokeWidth="2" filter="url(#shadow)"/>
-
-                  {/* Critical indicator */}
-                  <rect x="1015" y="33" width="14" height="14" rx="2" fill="#fef2f2" stroke="#dc2626" strokeWidth="2"/>
-                  <text x="1035" y="44" className="text-xs fill-slate-700">Problema crítico</text>
-
-                  {/* Monitored indicator */}
-                  <rect x="1015" y="60" width="14" height="14" rx="2" fill="#ecfdf5" stroke="#059669" strokeWidth="2"/>
-                  <text x="1035" y="71" className="text-xs fill-slate-700">Parámetro monitoreado</text>
-                </g>
               </svg>
 
           </div>
