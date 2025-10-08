@@ -53,8 +53,8 @@ export default function OrganicTreatmentServicePage() {
     {
       step: '2',
       title: 'Coalescencia Optimizada',
-      description: 'Separación gravitacional asistida de fases',
-      additionalInfo: 'Tecnología coalescedores avanzados • Tiempo residencia optimizado',
+      description: 'Tratamiento del orgánico con tierras diatomeas',
+      additionalInfo: 'Tiempo residencia optimizado',
       icon: RefreshCw
     },
     {

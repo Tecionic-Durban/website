@@ -228,7 +228,7 @@ export default function ConcentrateDehydrationServicePage() {
                   </span>
                 </h1>
                 <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
-                  Hasta 50 ton/día • 85-92% Reducción Humedad • Móvil
+                  170 ton/día • 85-92% Reducción Humedad • Sistemas Móviles
                 </div>
               </div>
 
@@ -357,24 +357,24 @@ export default function ConcentrateDehydrationServicePage() {
               },
               {
                 icon: Factory,
-                title: "50 Ton/día Capacidad",
+                title: "170 Ton/día Capacidad",
                 description: "Procesamiento alto volumen de concentrados con equipos móviles especializados",
                 color: "blue",
-                metric: "50t/d"
+                metric: "170t/d"
               },
               {
                 icon: Shield,
                 title: "Cumplimiento 100%",
-                description: "Garantía de cumplimiento especificaciones comerciales y certificaciones",
+                description: "No requiere de nuevos permisos ambientales",
                 color: "emerald",
                 metric: "100%"
               },
               {
                 icon: TrendingUp,
-                title: "ROI <18 Meses",
+                title: "ROI <6 Meses",
                 description: "Retorno rápido por ahorro en costos transporte y bonificaciones calidad",
                 color: "slate",
-                metric: "<18m"
+                metric: "<6m"
               }
             ].map((feature, index) => (
               <div key={index} className="group relative bg-white rounded-xl p-6 border border-cyan-100/50 shadow-sm hover:shadow-lg transition-all duration-300 progressive-reveal overflow-hidden hover:-translate-y-1">
@@ -449,24 +449,6 @@ export default function ConcentrateDehydrationServicePage() {
                       specs: "Reducción 30% costos transporte | Cumplimiento comercial",
                       color: "#ea580c",
                       status: "Operativo"
-                    },
-                    {
-                      element: "Zn",
-                      industry: "Concentrados Zinc",
-                      application: "Control humedad especificaciones",
-                      performance: "6% Humedad Final",
-                      specs: "Requerimientos fundición | Bonificación calidad",
-                      color: "#64748b",
-                      status: "Especializado"
-                    },
-                    {
-                      element: "Au",
-                      industry: "Concentrados Oro",
-                      application: "Recuperación valores deshidratación",
-                      performance: "Cero Pérdidas",
-                      specs: "Sistema cerrado | Recirculación agua",
-                      color: "#eab308",
-                      status: "Premium"
                     }
                   ].map((app, index) => (
                     <div key={index} className="group relative bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all duration-300 border border-gray-100">

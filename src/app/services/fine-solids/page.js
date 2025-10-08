@@ -59,8 +59,8 @@ export default function FineSolidsServicePage() {
     },
     {
       step: '3',
-      title: 'Separación Centrífuga',
-      description: 'Remoción sólidos ultra-finos mediante alta velocidad rotacional',
+      title: 'Separación Centrífuga o Filtración',
+      description: 'Remoción sólidos ultra-finos mediante alta velocidad rotacional o filtración',
       additionalInfo: 'Monitoreo turbidez continuo • Optimización AI • Mantenimiento predictivo',
       icon: Settings
     },
