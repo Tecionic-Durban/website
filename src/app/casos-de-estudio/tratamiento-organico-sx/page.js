@@ -125,46 +125,48 @@ export default function TratamientoOrganicoCase() {
               <div className="space-y-3">
                 <h4 className="font-bold text-slate-800 text-center mb-4">Problemas Identificados</h4>
 
-                {/* Critical Problems */}
-                <div className="bg-gradient-to-r from-red-50 to-red-100 border-l-4 border-red-600 rounded-r-lg p-4">
-                  <div className="font-bold text-red-900 text-sm mb-2">TIF BAJO</div>
-                  <div className="text-2xl font-bold text-slate-900 mb-1">20.4</div>
-                  <div className="text-xs text-slate-600">objetivo &gt;23 dinas/cm</div>
-                </div>
-
-                <div className="bg-gradient-to-r from-red-50 to-red-100 border-l-4 border-red-600 rounded-r-lg p-4">
-                  <div className="font-bold text-red-900 text-sm mb-2">TSF CRÍTICO</div>
+                {/* Most Severe Problems - Darkest emerald */}
+                <div className="bg-gradient-to-r from-emerald-100 to-emerald-200 border-l-4 border-emerald-900 rounded-r-lg p-4">
+                  <div className="font-bold text-emerald-950 text-sm mb-2">TSF CRÍTICO</div>
                   <div className="text-2xl font-bold text-slate-900 mb-1">444 seg</div>
                   <div className="text-xs text-slate-600">objetivo &lt;200s</div>
                 </div>
 
-                <div className="bg-gradient-to-r from-red-50 to-red-100 border-l-4 border-red-600 rounded-r-lg p-4">
-                  <div className="font-bold text-red-900 text-sm mb-2">PÉRDIDA Cu</div>
+                <div className="bg-gradient-to-r from-emerald-100 to-emerald-200 border-l-4 border-emerald-900 rounded-r-lg p-4">
+                  <div className="font-bold text-emerald-950 text-sm mb-2">TIF BAJO</div>
+                  <div className="text-2xl font-bold text-slate-900 mb-1">20.4</div>
+                  <div className="text-xs text-slate-600">objetivo &gt;23 dinas/cm</div>
+                </div>
+
+                {/* Severe Problems - Dark emerald */}
+                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-700 rounded-r-lg p-4">
+                  <div className="font-bold text-emerald-900 text-sm mb-2">PÉRDIDA Cu</div>
                   <div className="text-2xl font-bold text-slate-900 mb-1">410 ppm</div>
                   <div className="text-xs text-slate-600">descarga orgánico</div>
                 </div>
 
-                {/* Monitored Problems */}
-                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-600 rounded-r-lg p-4">
-                  <div className="font-bold text-emerald-900 text-sm mb-2">ΔTIF ALTO</div>
-                  <div className="text-2xl font-bold text-slate-900 mb-1">6.5</div>
-                  <div className="text-xs text-slate-600">objetivo &lt;3</div>
-                </div>
-
-                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-600 rounded-r-lg p-4">
-                  <div className="font-bold text-emerald-900 text-sm mb-2">VISCOSIDAD</div>
-                  <div className="text-2xl font-bold text-slate-900 mb-1">7.5 cP</div>
-                  <div className="text-xs text-slate-600">objetivo &lt;6.3</div>
-                </div>
-
-                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-600 rounded-r-lg p-4">
+                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-700 rounded-r-lg p-4">
                   <div className="font-bold text-emerald-900 text-sm mb-2">ARRASTRE</div>
                   <div className="text-2xl font-bold text-slate-900 mb-1">65%</div>
                   <div className="text-xs text-slate-600">acuoso en orgánico</div>
                 </div>
 
+                {/* Moderate Problems - Medium emerald */}
                 <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-600 rounded-r-lg p-4">
-                  <div className="font-bold text-emerald-900 text-sm mb-2">EFICIENCIA</div>
+                  <div className="font-bold text-emerald-800 text-sm mb-2">VISCOSIDAD</div>
+                  <div className="text-2xl font-bold text-slate-900 mb-1">7.5 cP</div>
+                  <div className="text-xs text-slate-600">objetivo &lt;6.3</div>
+                </div>
+
+                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-600 rounded-r-lg p-4">
+                  <div className="font-bold text-emerald-800 text-sm mb-2">ΔTIF ALTO</div>
+                  <div className="text-2xl font-bold text-slate-900 mb-1">6.5</div>
+                  <div className="text-xs text-slate-600">objetivo &lt;3</div>
+                </div>
+
+                {/* Less Severe - Light emerald */}
+                <div className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-l-4 border-emerald-500 rounded-r-lg p-4">
+                  <div className="font-bold text-emerald-700 text-sm mb-2">EFICIENCIA</div>
                   <div className="text-2xl font-bold text-slate-900 mb-1">77%</div>
                   <div className="text-xs text-slate-600">variable 77-92%</div>
                 </div>
@@ -301,12 +303,24 @@ export default function TratamientoOrganicoCase() {
                       <feMergeNode in="SourceGraphic"/>
                     </feMerge>
                   </filter>
-                  <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style={{stopColor: '#fef2f2', stopOpacity: 0.95}} />
-                    <stop offset="100%" style={{stopColor: '#ffffff', stopOpacity: 0.95}} />
+                  {/* Most Severe - Darkest emerald */}
+                  <linearGradient id="emeraldDarkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style={{stopColor: '#d1fae5', stopOpacity: 0.95}} />
+                    <stop offset="100%" style={{stopColor: '#a7f3d0', stopOpacity: 0.95}} />
                   </linearGradient>
+                  {/* Severe - Dark emerald */}
+                  <linearGradient id="emeraldMedDarkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style={{stopColor: '#ecfdf5', stopOpacity: 0.95}} />
+                    <stop offset="100%" style={{stopColor: '#d1fae5', stopOpacity: 0.95}} />
+                  </linearGradient>
+                  {/* Moderate - Medium emerald */}
                   <linearGradient id="emeraldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" style={{stopColor: '#ecfdf5', stopOpacity: 0.95}} />
+                    <stop offset="100%" style={{stopColor: '#ffffff', stopOpacity: 0.95}} />
+                  </linearGradient>
+                  {/* Less Severe - Light emerald */}
+                  <linearGradient id="emeraldLightGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style={{stopColor: '#f0fdf4', stopOpacity: 0.95}} />
                     <stop offset="100%" style={{stopColor: '#ffffff', stopOpacity: 0.95}} />
                   </linearGradient>
                   <linearGradient id="emeraldBoxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -318,15 +332,15 @@ export default function TratamientoOrganicoCase() {
                 {/* Problem Indicators - Aligned to tank edges */}
                 {/* Mixer problems */}
                 <g>
-                  {/* TIF - On left edge of mixer */}
-                  <circle cx="160" cy="285" r="6" fill="#dc2626" opacity="0.9" stroke="white" strokeWidth="2"/>
-                  <line x1="160" y1="285" x2="200" y2="203" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
-                  <rect x="130" y="125" width="140" height="75" rx="12" fill="url(#redGradient)" stroke="#dc2626" strokeWidth="2.5" filter="url(#shadow)"/>
-                  <text x="200" y="147" textAnchor="middle" className="text-sm font-bold fill-red-700">TIF BAJO</text>
+                  {/* TIF - On left edge of mixer - Most Severe */}
+                  <circle cx="160" cy="285" r="6" fill="#064e3b" opacity="0.9" stroke="white" strokeWidth="2"/>
+                  <line x1="160" y1="285" x2="200" y2="203" stroke="#064e3b" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
+                  <rect x="130" y="125" width="140" height="75" rx="12" fill="url(#emeraldDarkGradient)" stroke="#064e3b" strokeWidth="2.5" filter="url(#shadow)"/>
+                  <text x="200" y="147" textAnchor="middle" className="text-sm font-bold fill-emerald-950">TIF BAJO</text>
                   <text x="200" y="172" textAnchor="middle" className="text-2xl font-bold fill-slate-900">20.4</text>
                   <text x="200" y="192" textAnchor="middle" className="text-xs fill-slate-700">objetivo &gt;23 dinas/cm</text>
 
-                  {/* ΔTIF - On right edge of mixer */}
+                  {/* ΔTIF - On right edge of mixer - Moderate */}
                   <circle cx="400" cy="285" r="6" fill="#059669" opacity="0.9" stroke="white" strokeWidth="2"/>
                   <line x1="400" y1="285" x2="460" y2="203" stroke="#059669" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
                   <rect x="400" y="125" width="120" height="75" rx="12" fill="url(#emeraldGradient)" stroke="#059669" strokeWidth="2.5" filter="url(#shadow)"/>
@@ -334,7 +348,7 @@ export default function TratamientoOrganicoCase() {
                   <text x="460" y="172" textAnchor="middle" className="text-2xl font-bold fill-slate-900">6.5</text>
                   <text x="460" y="192" textAnchor="middle" className="text-xs fill-slate-700">objetivo &lt;3</text>
 
-                  {/* Viscosidad - On left edge of mixer, lower */}
+                  {/* Viscosidad - On left edge of mixer, lower - Moderate */}
                   <circle cx="160" cy="340" r="6" fill="#059669" opacity="0.9" stroke="white" strokeWidth="2"/>
                   <line x1="160" y1="340" x2="80" y2="128" stroke="#059669" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
                   <rect x="20" y="50" width="120" height="75" rx="12" fill="url(#emeraldGradient)" stroke="#059669" strokeWidth="2.5" filter="url(#shadow)"/>
@@ -345,38 +359,38 @@ export default function TratamientoOrganicoCase() {
 
                 {/* Settler problems */}
                 <g>
-                  {/* TSF - On interface line in settler */}
-                  <circle cx="560" cy="370" r="6" fill="#dc2626" opacity="0.9" stroke="white" strokeWidth="2"/>
-                  <line x1="560" y1="370" x2="530" y2="538" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
-                  <rect x="460" y="540" width="140" height="75" rx="12" fill="url(#redGradient)" stroke="#dc2626" strokeWidth="2.5" filter="url(#shadow)"/>
-                  <text x="530" y="562" textAnchor="middle" className="text-sm font-bold fill-red-700">TSF CRÍTICO</text>
+                  {/* TSF - On interface line in settler - Most Severe */}
+                  <circle cx="560" cy="370" r="6" fill="#064e3b" opacity="0.9" stroke="white" strokeWidth="2"/>
+                  <line x1="560" y1="370" x2="530" y2="538" stroke="#064e3b" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
+                  <rect x="460" y="540" width="140" height="75" rx="12" fill="url(#emeraldDarkGradient)" stroke="#064e3b" strokeWidth="2.5" filter="url(#shadow)"/>
+                  <text x="530" y="562" textAnchor="middle" className="text-sm font-bold fill-emerald-950">TSF CRÍTICO</text>
                   <text x="530" y="587" textAnchor="middle" className="text-2xl font-bold fill-slate-900">444 seg</text>
                   <text x="530" y="607" textAnchor="middle" className="text-xs fill-slate-700">objetivo &lt;200s</text>
 
-                  {/* Arrastre - On interface line in settler */}
-                  <circle cx="710" cy="370" r="6" fill="#059669" opacity="0.9" stroke="white" strokeWidth="2"/>
-                  <line x1="710" y1="370" x2="800" y2="538" stroke="#059669" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
-                  <rect x="740" y="540" width="120" height="75" rx="12" fill="url(#emeraldGradient)" stroke="#059669" strokeWidth="2.5" filter="url(#shadow)"/>
-                  <text x="800" y="562" textAnchor="middle" className="text-sm font-bold fill-emerald-800">ARRASTRE</text>
+                  {/* Arrastre - On interface line in settler - Severe */}
+                  <circle cx="710" cy="370" r="6" fill="#047857" opacity="0.9" stroke="white" strokeWidth="2"/>
+                  <line x1="710" y1="370" x2="800" y2="538" stroke="#047857" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
+                  <rect x="740" y="540" width="120" height="75" rx="12" fill="url(#emeraldMedDarkGradient)" stroke="#047857" strokeWidth="2.5" filter="url(#shadow)"/>
+                  <text x="800" y="562" textAnchor="middle" className="text-sm font-bold fill-emerald-900">ARRASTRE</text>
                   <text x="800" y="587" textAnchor="middle" className="text-2xl font-bold fill-slate-900">65%</text>
                   <text x="800" y="607" textAnchor="middle" className="text-xs fill-slate-700">acuoso en orgánico</text>
                 </g>
 
                 {/* Output problems */}
                 <g>
-                  {/* Pérdida Cu - On organic output pipe */}
-                  <circle cx="910" cy="325" r="6" fill="#dc2626" opacity="0.9" stroke="white" strokeWidth="2"/>
-                  <line x1="910" y1="325" x2="990" y2="203" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
-                  <rect x="930" y="125" width="120" height="75" rx="12" fill="url(#redGradient)" stroke="#dc2626" strokeWidth="2.5" filter="url(#shadow)"/>
-                  <text x="990" y="147" textAnchor="middle" className="text-sm font-bold fill-red-700">PÉRDIDA Cu</text>
+                  {/* Pérdida Cu - On organic output pipe - Severe */}
+                  <circle cx="910" cy="325" r="6" fill="#047857" opacity="0.9" stroke="white" strokeWidth="2"/>
+                  <line x1="910" y1="325" x2="990" y2="203" stroke="#047857" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
+                  <rect x="930" y="125" width="120" height="75" rx="12" fill="url(#emeraldMedDarkGradient)" stroke="#047857" strokeWidth="2.5" filter="url(#shadow)"/>
+                  <text x="990" y="147" textAnchor="middle" className="text-sm font-bold fill-emerald-900">PÉRDIDA Cu</text>
                   <text x="990" y="172" textAnchor="middle" className="text-2xl font-bold fill-slate-900">410 ppm</text>
                   <text x="990" y="192" textAnchor="middle" className="text-xs fill-slate-700">descarga orgánico</text>
 
-                  {/* Eficiencia - On aqueous output pipe */}
-                  <circle cx="910" cy="405" r="6" fill="#059669" opacity="0.9" stroke="white" strokeWidth="2"/>
-                  <line x1="910" y1="405" x2="1020" y2="538" stroke="#059669" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
-                  <rect x="960" y="540" width="120" height="75" rx="12" fill="url(#emeraldGradient)" stroke="#059669" strokeWidth="2.5" filter="url(#shadow)"/>
-                  <text x="1020" y="562" textAnchor="middle" className="text-sm font-bold fill-emerald-800">EFICIENCIA</text>
+                  {/* Eficiencia - On aqueous output pipe - Less Severe */}
+                  <circle cx="910" cy="405" r="6" fill="#10b981" opacity="0.9" stroke="white" strokeWidth="2"/>
+                  <line x1="910" y1="405" x2="1020" y2="538" stroke="#10b981" strokeWidth="1.5" strokeDasharray="3,3" opacity="0.5"/>
+                  <rect x="960" y="540" width="120" height="75" rx="12" fill="url(#emeraldLightGradient)" stroke="#10b981" strokeWidth="2.5" filter="url(#shadow)"/>
+                  <text x="1020" y="562" textAnchor="middle" className="text-sm font-bold fill-emerald-700">EFICIENCIA</text>
                   <text x="1020" y="587" textAnchor="middle" className="text-2xl font-bold fill-slate-900">77%</text>
                   <text x="1020" y="607" textAnchor="middle" className="text-xs fill-slate-700">variable 77-92%</text>
                 </g>
@@ -394,48 +408,12 @@ export default function TratamientoOrganicoCase() {
 
           </div>
 
-          {/* Problem Cards */}
+          {/* Problem Cards - All emerald gradient by severity */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* TIF bajos */}
-            <div className="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg">
+            {/* TSF Alto - Most Severe */}
+            <div className="bg-emerald-100 border-l-4 border-emerald-900 p-6 rounded-r-lg">
               <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
-                </svg>
-                <h3 className="text-lg font-bold text-gray-900">TIF Bajos</h3>
-              </div>
-              <p className="text-gray-700">20,4 - 21,10 dinas/cm</p>
-              <p className="text-sm text-gray-600 mt-2">Bajo el rango recomendado (&gt;23)</p>
-            </div>
-
-            {/* Delta TIF elevados */}
-            <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 rounded-r-lg">
-              <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 text-yellow-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-                <h3 className="text-lg font-bold text-gray-900">Delta TIF Elevado</h3>
-              </div>
-              <p className="text-gray-700">5,5 - 6,5 dinas/cm</p>
-              <p className="text-sm text-gray-600 mt-2">Alta carga de tensoactivos</p>
-            </div>
-
-            {/* Alta Viscosidad */}
-            <div className="bg-orange-50 border-l-4 border-orange-600 p-6 rounded-r-lg">
-              <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <h3 className="text-lg font-bold text-gray-900">Alta Viscosidad</h3>
-              </div>
-              <p className="text-gray-700">&gt; 6,3 cP (hasta 7,5 cP)</p>
-              <p className="text-sm text-gray-600 mt-2">Sobre el umbral recomendado</p>
-            </div>
-
-            {/* TSF Alto */}
-            <div className="bg-red-50 border-l-4 border-red-600 p-6 rounded-r-lg">
-              <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-emerald-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <h3 className="text-lg font-bold text-gray-900">TSF Alto</h3>
@@ -444,22 +422,22 @@ export default function TratamientoOrganicoCase() {
               <p className="text-sm text-gray-600 mt-2">Tiempo de separación crítico</p>
             </div>
 
-            {/* Altos Arrastres */}
-            <div className="bg-pink-50 border-l-4 border-pink-600 p-6 rounded-r-lg">
+            {/* TIF bajos - Most Severe */}
+            <div className="bg-emerald-100 border-l-4 border-emerald-900 p-6 rounded-r-lg">
               <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 text-pink-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                <svg className="w-8 h-8 text-emerald-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
                 </svg>
-                <h3 className="text-lg font-bold text-gray-900">Altos Arrastres</h3>
+                <h3 className="text-lg font-bold text-gray-900">TIF Bajos</h3>
               </div>
-              <p className="text-gray-700">Hasta 65% acuoso</p>
-              <p className="text-sm text-gray-600 mt-2">Contaminación de fase orgánica</p>
+              <p className="text-gray-700">20,4 - 21,10 dinas/cm</p>
+              <p className="text-sm text-gray-600 mt-2">Bajo el rango recomendado (&gt;23)</p>
             </div>
 
-            {/* Alta Descarga Cu */}
-            <div className="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-r-lg">
+            {/* Alta Descarga Cu - Severe */}
+            <div className="bg-emerald-50 border-l-4 border-emerald-700 p-6 rounded-r-lg">
               <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-emerald-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
                 <h3 className="text-lg font-bold text-gray-900">Alta Descarga Cu</h3>
@@ -468,10 +446,46 @@ export default function TratamientoOrganicoCase() {
               <p className="text-sm text-gray-600 mt-2">Pérdidas económicas relevantes</p>
             </div>
 
-            {/* Eficiencia Fluctuante */}
-            <div className="bg-indigo-50 border-l-4 border-indigo-600 p-6 rounded-r-lg">
+            {/* Altos Arrastres - Severe */}
+            <div className="bg-emerald-50 border-l-4 border-emerald-700 p-6 rounded-r-lg">
               <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-emerald-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                <h3 className="text-lg font-bold text-gray-900">Altos Arrastres</h3>
+              </div>
+              <p className="text-gray-700">Hasta 65% acuoso</p>
+              <p className="text-sm text-gray-600 mt-2">Contaminación de fase orgánica</p>
+            </div>
+
+            {/* Alta Viscosidad - Moderate */}
+            <div className="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg">
+              <div className="flex items-center mb-3">
+                <svg className="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h3 className="text-lg font-bold text-gray-900">Alta Viscosidad</h3>
+              </div>
+              <p className="text-gray-700">&gt; 6,3 cP (hasta 7,5 cP)</p>
+              <p className="text-sm text-gray-600 mt-2">Sobre el umbral recomendado</p>
+            </div>
+
+            {/* Delta TIF elevados - Moderate */}
+            <div className="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg">
+              <div className="flex items-center mb-3">
+                <svg className="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <h3 className="text-lg font-bold text-gray-900">Delta TIF Elevado</h3>
+              </div>
+              <p className="text-gray-700">5,5 - 6,5 dinas/cm</p>
+              <p className="text-sm text-gray-600 mt-2">Alta carga de tensoactivos</p>
+            </div>
+
+            {/* Eficiencia Fluctuante - Less Severe */}
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="flex items-center mb-3">
+                <svg className="w-8 h-8 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
                 <h3 className="text-lg font-bold text-gray-900">Eficiencia Fluctuante</h3>
