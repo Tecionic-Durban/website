@@ -121,17 +121,15 @@ export default function Services() {
         {/* Enterprise Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => (
-            <div key={index} className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-emerald-100/50 layered-shadow-hover sophisticated-hover magnetic-hover progressive-reveal stagger-${(index % 3) + 1} overflow-hidden`}>
+            <div key={index} className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-emerald-100/50 layered-shadow-hover sophisticated-hover magnetic-hover progressive-reveal stagger-${(index % 3) + 1} overflow-hidden transform hover:scale-105 transition-all duration-500`}>
               {/* Sophisticated background animation */}
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              {/* Strategic three ball accent */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-60 transition-opacity duration-300">
-                <div className="flex items-center space-x-1">
-                  <div className="w-1 h-1 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                  <div className="w-1 h-1 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="w-1 h-1 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                </div>
+              {/* Floating balls on hover - matching copper page */}
+              <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-4 right-4 w-2 h-2 bg-emerald-400 rounded-full animate-float-up-1"></div>
+                <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-emerald-500 rounded-full animate-float-up-2"></div>
+                <div className="absolute top-6 right-12 w-1 h-1 bg-emerald-600 rounded-full animate-float-up-3"></div>
               </div>
 
               <div className="relative z-10">
