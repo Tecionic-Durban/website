@@ -522,11 +522,11 @@ export default function CrudeOilIndustryPage() {
           
           <div className="max-w-4xl mx-auto px-4 text-center text-white relative">
             <h2 className="text-4xl font-bold mb-4">
-              ¿Listo para Optimizar su Operación Petrolera?
+              ¿Listo para Optimizar tu Operación Petrolera?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Nuestros especialistas pueden evaluar su proceso actual y diseñar 
-              una solución personalizada para maximizar su eficiencia de refinación.
+              Nuestros especialistas pueden evaluar tu proceso actual y diseñar
+              una solución personalizada para maximizar tu eficiencia de refinación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 precision-click">

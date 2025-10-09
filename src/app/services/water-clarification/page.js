@@ -831,7 +831,7 @@ export default function WaterClarificationServicePage() {
       <section className="relative bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800 text-white overflow-hidden">
         <div className="relative max-w-8xl mx-auto px-8 py-24 text-center">
           <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-animated">
-            ¿Necesita Optimizar Recuperación de Agua?
+            ¿Necesitas Optimizar Recuperación de Agua?
           </h2>
           <p className="text-xl text-teal-100 mb-12 max-w-4xl mx-auto leading-relaxed">
             Diagnóstico técnico especializado para máxima reutilización y cumplimiento DS90.

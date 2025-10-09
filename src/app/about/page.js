@@ -372,7 +372,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto px-4 text-center text-white relative z-10">
             <h2 className="text-4xl font-bold mb-4">¿Listo para Trabajar Juntos?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Descubra cómo nuestra experiencia puede optimizar sus operaciones mineras.
+              Descubre cómo nuestra experiencia puede optimizar tus operaciones mineras.
             </p>
             
             {/* Phase 1: Three-ball decoration */}

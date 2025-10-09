@@ -626,9 +626,9 @@ export default function ContinuousImprovementPage() {
       {/* CTA Section */}
       <section className="bg-blue-600 py-12">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">¿Listo para Optimizar su Operación?</h2>
+          <h2 className="text-3xl font-bold mb-4">¿Listo para Optimizar tu Operación?</h2>
           <p className="text-xl mb-8">
-            Evaluación de oportunidades sin compromiso - identifique potencial de mejora
+            Evaluación de oportunidades sin compromiso - identifica potencial de mejora
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 flex items-center justify-center">

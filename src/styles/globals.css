@@ -677,26 +677,45 @@
   }
 }
 
-/* Carousel Animation */
+/* Performance-Optimized Carousel Animation - GPU Accelerated */
 @keyframes carousel {
-  0% {
-    transform: translateX(0);
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .animate-carousel {
-  animation: carousel 40s linear infinite;
-  transition: animation-duration 1.5s ease-out;
-}
-
-.animate-carousel.decelerating {
-  animation-duration: 120s; /* Much slower, creating deceleration effect */
+  animation: carousel 25s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .animate-carousel.paused {
+  animation-play-state: paused;
+}
+
+/* Carousel Animation Reverse - GPU Accelerated */
+@keyframes carouselReverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-carousel-reverse {
+  animation: carouselReverse 25s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.animate-carousel-reverse.paused {
   animation-play-state: paused;
 }
 

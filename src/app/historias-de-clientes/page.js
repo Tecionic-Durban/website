@@ -126,7 +126,7 @@ export default function HistoriasClientesPage() {
             <h1 className="text-5xl font-bold mb-6">Historias de Clientes</h1>
             <div className="w-24 h-1 bg-emerald-400 mx-auto mb-6"></div>
             <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
-              Descubra las experiencias de nuestros clientes y cómo hemos contribuido al éxito 
+              Descubre las experiencias de nuestros clientes y cómo hemos contribuido al éxito
               de sus operaciones mineras a través de soluciones innovadoras y especializadas.
             </p>
           </div>
@@ -275,8 +275,8 @@ export default function HistoriasClientesPage() {
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="text-3xl font-bold mb-6">¿Listo para ser Nuestra Próxima Historia de Éxito?</h2>
           <p className="text-xl text-emerald-100 mb-8">
-            Únase a las empresas líderes que han transformado sus operaciones con Tec-Ionic Durban. 
-            Permítanos desarrollar una solución personalizada para sus desafíos únicos.
+            Únete a las empresas líderes que han transformado sus operaciones con Tec-Ionic Durban.
+            Permítenos desarrollar una solución personalizada para tus desafíos únicos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-colors">

@@ -185,7 +185,7 @@ export default function OperationalProblemsPage() {
         <div className="max-w-7xl mx-auto px-4">
           {activeTab === 'overview' && (
             <div className="prose max-w-4xl">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Cuando los Problemas Operacionales Impactan su Productividad</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Cuando los Problemas Operacionales Impactan tu Productividad</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Los problemas operacionales en plantas hidrometalúrgicas pueden surgir repentinamente y generar 
                 pérdidas significativas. Nuestro servicio está diseñado para ofrecer soluciones rápidas y efectivas 
@@ -193,9 +193,9 @@ export default function OperationalProblemsPage() {
               </p>
               
               <div className="bg-red-50 rounded-xl p-8 my-8">
-                <h3 className="text-xl font-semibold text-red-900 mb-4">Cuándo Necesita Nuestros Servicios</h3>
+                <h3 className="text-xl font-semibold text-red-900 mb-4">Cuándo Necesitas Nuestros Servicios</h3>
                 <p className="text-red-800 mb-4">
-                  Identifique si su operación presenta alguno de estos síntomas críticos:
+                  Identifica si tu operación presenta alguno de estos síntomas críticos:
                 </p>
                 <ul className="text-red-800 space-y-2">
                   <li>• <strong>Pérdidas orgánico SX</strong> superiores al 2% mensual</li>
@@ -497,7 +497,7 @@ export default function OperationalProblemsPage() {
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">¿Enfrentando Problemas Operacionales Críticos?</h2>
           <p className="text-xl mb-8">
-            Contacte a nuestros especialistas para diagnóstico rápido y solución efectiva
+            Contacta a nuestros especialistas para diagnóstico rápido y solución efectiva
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-50 transition-all duration-300 flex items-center justify-center">

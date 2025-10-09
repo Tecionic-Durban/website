@@ -749,7 +749,7 @@ export default function ConcentrateDehydrationServicePage() {
 
         <div className="relative max-w-7xl mx-auto px-8 py-24 text-center">
           <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-animated">
-            ¿Necesita Optimizar la Humedad de sus Concentrados?
+            ¿Necesitas Optimizar la Humedad de tus Concentrados?
           </h2>
           <p className="text-xl text-cyan-100 mb-12 max-w-4xl mx-auto leading-relaxed">
             Evaluación técnica especializada para cumplir especificaciones comerciales.

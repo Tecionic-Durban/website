@@ -328,10 +328,10 @@ export default function EspecificacionesTecnicasPage() {
       {/* CTA Section */}
       <section className="py-16 bg-emerald-600">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-6">¿Necesita Especificaciones Personalizadas?</h2>
+          <h2 className="text-3xl font-bold mb-6">¿Necesitas Especificaciones Personalizadas?</h2>
           <p className="text-xl text-emerald-100 mb-8">
-            Nuestro equipo de ingenieros puede desarrollar especificaciones técnicas 
-            adaptadas a sus requerimientos específicos y condiciones operacionales.
+            Nuestro equipo de ingenieros puede desarrollar especificaciones técnicas
+            adaptadas a tus requerimientos específicos y condiciones operacionales.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-colors">

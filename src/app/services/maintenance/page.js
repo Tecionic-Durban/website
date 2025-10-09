@@ -480,7 +480,7 @@ export default function MaintenanceServicePage() {
       {/* CTA Section */}
       <section className="bg-gray-600 py-12">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">¿Necesita Maximizar la Disponibilidad de sus Equipos?</h2>
+          <h2 className="text-3xl font-bold mb-4">¿Necesitas Maximizar la Disponibilidad de tus Equipos?</h2>
           <p className="text-xl mb-8">
             Evaluación integral de mantenimiento con programas personalizados 24/7
           </p>

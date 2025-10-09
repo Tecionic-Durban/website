@@ -805,7 +805,7 @@ export default function OrganicTreatmentServicePage() {
             ¿Problemas con Pérdidas de Orgánico?
           </h2>
           <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Evaluación técnica especializada para optimizar su recuperación de extractantes.
+            Evaluación técnica especializada para optimizar tu recuperación de extractantes.
             <span className="font-semibold text-green-300">Análisis sin costo con nuestros expertos en coalescencia.</span>
           </p>
 

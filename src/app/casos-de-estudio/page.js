@@ -165,7 +165,7 @@ export default function CasosEstudioPage() {
             <h1 className="text-5xl font-bold mb-6">Casos de Estudio</h1>
             <div className="w-24 h-1 bg-emerald-400 mx-auto mb-6"></div>
             <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
-              Descubra cómo hemos ayudado a empresas mineras a optimizar sus procesos LIX/SX/EW, 
+              Descubre cómo hemos ayudado a empresas mineras a optimizar sus procesos LIX/SX/EW, 
               logrando mejoras significativas en eficiencia, costos y sostenibilidad.
             </p>
           </div>

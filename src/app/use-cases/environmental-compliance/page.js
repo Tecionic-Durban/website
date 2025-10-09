@@ -653,7 +653,7 @@ export default function EnvironmentalCompliancePage() {
       {/* CTA Section */}
       <section className="bg-green-600 py-12">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">¿Necesita Cumplir Normativas Ambientales Urgente?</h2>
+          <h2 className="text-3xl font-bold mb-4">¿Necesitas Cumplir Normativas Ambientales Urgente?</h2>
           <p className="text-xl mb-8">
             Evaluación compliance sin compromiso - evite multas con soluciones inmediatas
           </p>

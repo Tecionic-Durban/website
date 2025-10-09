@@ -1,12 +1,11 @@
 // src/components/EfficiencyComparison.js
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { TrendingUp, Award, DollarSign, Zap, Gauge, Target } from 'lucide-react'
+import { TrendingUp, DollarSign, Zap, Gauge, Target } from 'lucide-react'
 
 export default function EfficiencyComparison() {
   const [sliderPosition, setSliderPosition] = useState(50)
   const [animatedMetrics, setAnimatedMetrics] = useState({})
-  const [activeCase, setActiveCase] = useState('copper')
   const comparisonRef = useRef(null)
 
   // Progressive disclosure on scroll
@@ -37,97 +36,34 @@ export default function EfficiencyComparison() {
     return () => observer.disconnect()
   }, [])
 
-  const caseStudies = {
-    copper: {
-      name: 'Proyecto Cobre - Minera Escondida',
-      industry: 'Cobre',
-      color: 'orange',
-      before: {
-        efficiency: 78,
-        production: 85000,
-        downtime: 18,
-        cost: 2.45,
-        recovery: 89.2,
-        energy: 125
-      },
-      after: {
-        efficiency: 94,
-        production: 112000,
-        downtime: 4,
-        cost: 1.89,
-        recovery: 96.8,
-        energy: 98
-      },
-      improvements: {
-        efficiency: '+20.5%',
-        production: '+31.8%',
-        downtime: '-77.8%',
-        cost: '-22.9%',
-        recovery: '+8.5%',
-        energy: '-21.6%'
-      }
+  const caseStudy = {
+    name: 'Proyecto Cobre',
+    industry: 'Cobre',
+    color: 'orange',
+    before: {
+      efficiency: 85,
+      production: 85000,
+      downtime: 14,
+      dragLosses: 6,
+      savings: 0
     },
-    zinc: {
-      name: 'Optimización Zinc - Complejo Minero Sur',
-      industry: 'Zinc',
-      color: 'slate',
-      before: {
-        efficiency: 82,
-        production: 45000,
-        downtime: 22,
-        cost: 1.85,
-        recovery: 91.5,
-        energy: 142
-      },
-      after: {
-        efficiency: 96,
-        production: 58000,
-        downtime: 6,
-        cost: 1.42,
-        recovery: 97.2,
-        energy: 109
-      },
-      improvements: {
-        efficiency: '+17.1%',
-        production: '+28.9%',
-        downtime: '-72.7%',
-        cost: '-23.2%',
-        recovery: '+6.2%',
-        energy: '-23.2%'
-      }
+    after: {
+      efficiency: 95,
+      production: 93500,
+      downtime: 0,
+      dragLosses: 2,
+      savings: 250000
     },
-    lithium: {
-      name: 'Planta Litio - Salar de Atacama',
-      industry: 'Litio',
-      color: 'cyan',
-      before: {
-        efficiency: 68,
-        production: 12000,
-        downtime: 28,
-        cost: 4.20,
-        recovery: 76.8,
-        energy: 189
-      },
-      after: {
-        efficiency: 89,
-        production: 18500,
-        downtime: 8,
-        cost: 3.15,
-        recovery: 92.4,
-        energy: 145
-      },
-      improvements: {
-        efficiency: '+30.9%',
-        production: '+54.2%',
-        downtime: '-71.4%',
-        cost: '-25.0%',
-        recovery: '+20.3%',
-        energy: '-23.3%'
-      }
+    improvements: {
+      efficiency: '+11.8%',
+      production: '+10.0%',
+      downtime: '-100%',
+      dragLosses: '-66.7%',
+      savings: '+$250k'
     }
   }
 
-  const currentCase = caseStudies[activeCase]
+  const currentCase = caseStudy
   
   // Calculate interpolated values based on slider position
   const getInterpolatedValue = (beforeVal, afterVal) => {
@@ -142,13 +78,12 @@ export default function EfficiencyComparison() {
         efficiency: getInterpolatedValue(currentCase.before.efficiency, currentCase.after.efficiency),
         production: getInterpolatedValue(currentCase.before.production, currentCase.after.production),
         downtime: getInterpolatedValue(currentCase.before.downtime, currentCase.after.downtime),
-        cost: (currentCase.before.cost + (currentCase.after.cost - currentCase.before.cost) * (sliderPosition / 100)).toFixed(2),
-        recovery: (currentCase.before.recovery + (currentCase.after.recovery - currentCase.before.recovery) * (sliderPosition / 100)).toFixed(1),
-        energy: getInterpolatedValue(currentCase.before.energy, currentCase.after.energy)
+        dragLosses: (currentCase.before.dragLosses + (currentCase.after.dragLosses - currentCase.before.dragLosses) * (sliderPosition / 100)).toFixed(1),
+        savings: getInterpolatedValue(currentCase.before.savings, currentCase.after.savings)
       })
     }, 100)
     return () => clearTimeout(timer)
-  }, [sliderPosition, activeCase])
+  }, [sliderPosition])
 
   const getColorClass = (color, type = 'bg') => {
     const colors = {
@@ -191,76 +126,9 @@ export default function EfficiencyComparison() {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed progressive-reveal">
-            Descubra el impacto real de nuestras optimizaciones.
-            <span className="font-semibold text-emerald-600">Use el deslizador interactivo</span> para ver la transformación.
+            Descubre el impacto real de nuestras optimizaciones.
+            <span className="font-semibold text-emerald-600">Usa el deslizador interactivo</span> para ver la transformación.
           </p>
-        </div>
-
-        {/* Compact Case Study Selection */}
-        <div className="grid md:grid-cols-3 gap-4 mb-12">
-          {Object.entries(caseStudies).map(([key, study], index) => {
-            const isActive = activeCase === key
-            const borderColorClass = isActive
-              ? `border-${study.color === 'orange' ? 'orange' : study.color === 'slate' ? 'slate' : 'cyan'}-400`
-              : 'border-emerald-100'
-            const textColorClass = isActive
-              ? `text-${study.color === 'orange' ? 'orange' : study.color === 'slate' ? 'slate' : 'cyan'}-600`
-              : 'text-gray-700'
-            const bgColorClass = isActive
-              ? `bg-${study.color === 'orange' ? 'orange' : study.color === 'slate' ? 'slate' : 'cyan'}-50`
-              : 'bg-gray-50'
-
-            return (
-              <div
-                key={key}
-                className={`group relative bg-white/90 backdrop-blur-sm rounded-xl p-5 border-2 layered-shadow sophisticated-hover cursor-pointer overflow-hidden transition-all duration-300 ${borderColorClass} ${
-                  isActive ? 'scale-105 z-10' : 'hover:scale-102'
-                }`}
-                onClick={() => setActiveCase(key)}
-              >
-                {/* Sophisticated background animation */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="relative z-10">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      isActive ? getColorClass(study.color) : 'bg-gray-300'
-                    } ${isActive ? 'enterprise-pulse' : ''}`}></div>
-                    <h3 className={`font-black text-lg transition-colors duration-300 ${textColorClass}`}>
-                      {study.industry}
-                    </h3>
-                  </div>
-
-                  <p className="text-gray-600 text-xs mb-4 leading-relaxed">{study.name}</p>
-
-                  {/* Compact metrics preview */}
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className={`text-center p-2 rounded-lg transition-all duration-300 border ${
-                      isActive ? `${bgColorClass} border-${study.color === 'orange' ? 'orange' : study.color === 'slate' ? 'slate' : 'cyan'}-200` : 'bg-gray-50 border-gray-200'
-                    }`}>
-                      <div className={`text-sm font-black mb-1 ${textColorClass}`}>
-                        {study.improvements.efficiency}
-                      </div>
-                      <div className="text-gray-600 text-xs font-medium">Eficiencia</div>
-                    </div>
-                    <div className={`text-center p-2 rounded-lg transition-all duration-300 border ${
-                      isActive ? `${bgColorClass} border-${study.color === 'orange' ? 'orange' : study.color === 'slate' ? 'slate' : 'cyan'}-200` : 'bg-gray-50 border-gray-200'
-                    }`}>
-                      <div className={`text-sm font-black mb-1 ${textColorClass}`}>
-                        {study.improvements.production}
-                      </div>
-                      <div className="text-gray-600 text-xs font-medium">Producción</div>
-                    </div>
-                  </div>
-
-                  {/* Active indicator */}
-                  {isActive && (
-                    <div className={`absolute bottom-0 left-0 right-0 h-1 ${getColorClass(study.color)} rounded-b-xl`}></div>
-                  )}
-                </div>
-              </div>
-            )
-          })}
         </div>
 
         {/* Compact Comparison Interface */}
@@ -341,7 +209,7 @@ export default function EfficiencyComparison() {
           </div>
 
           {/* Compact Metrics Grid */}
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
                 <Gauge className={`w-6 h-6 mx-auto mb-2 ${getColorClass(currentCase.color, 'text')}`} />
@@ -353,7 +221,7 @@ export default function EfficiencyComparison() {
                   {sliderPosition > 80 ? currentCase.improvements.efficiency : '---'}
                 </div>
               </div>
-              <div 
+              <div
                 className={`absolute bottom-0 left-0 transition-all duration-500 ${getColorClass(currentCase.color)}/10`}
                 style={{ width: '100%', height: `${(animatedMetrics.efficiency || currentCase.before.efficiency)}%` }}
               ></div>
@@ -365,7 +233,7 @@ export default function EfficiencyComparison() {
                 <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
                   {(animatedMetrics.production || currentCase.before.production).toLocaleString()}
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Prod. (t/año)</div>
+                <div className="text-gray-600 text-xs mb-1">Producción (t/año)</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.production : '---'}
                 </div>
@@ -376,9 +244,9 @@ export default function EfficiencyComparison() {
               <div className="relative z-10">
                 <Zap className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
                 <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {animatedMetrics.downtime || currentCase.before.downtime}h
+                  {animatedMetrics.downtime !== undefined ? animatedMetrics.downtime : currentCase.before.downtime} días
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Tiempo Parada/mes</div>
+                <div className="text-gray-600 text-xs mb-1">Tiempo Parada/año</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.downtime : '---'}
                 </div>
@@ -387,60 +255,31 @@ export default function EfficiencyComparison() {
 
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
+                <Target className="w-6 h-6 text-purple-600 mx-auto mb-2" />
+                <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
+                  {animatedMetrics.dragLosses || currentCase.before.dragLosses} m³
+                </div>
+                <div className="text-gray-600 text-xs mb-1">Pérdidas Arrastre/día</div>
+                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                  {sliderPosition > 80 ? currentCase.improvements.dragLosses : '---'}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
+              <div className="relative z-10">
                 <DollarSign className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
-                  ${animatedMetrics.cost || currentCase.before.cost}
+                <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
+                  ${(animatedMetrics.savings || currentCase.before.savings).toLocaleString()}
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Costo por Tonelada</div>
+                <div className="text-gray-600 text-xs mb-1">Ahorro Mensual</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
-                  {sliderPosition > 80 ? currentCase.improvements.cost : '---'}
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
-              <div className="relative z-10">
-                <Award className="w-6 h-6 text-purple-600 mx-auto mb-2" />
-                <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {animatedMetrics.recovery || currentCase.before.recovery}%
-                </div>
-                <div className="text-gray-600 text-xs mb-1">Recuperación Metal</div>
-                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
-                  {sliderPosition > 80 ? currentCase.improvements.recovery : '---'}
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
-              <div className="relative z-10">
-                <Target className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-                <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {animatedMetrics.energy || currentCase.before.energy}
-                </div>
-                <div className="text-gray-600 text-xs mb-1">kWh por Tonelada</div>
-                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
-                  {sliderPosition > 80 ? currentCase.improvements.energy : '---'}
+                  {sliderPosition > 80 ? currentCase.improvements.savings : '---'}
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Results Summary */}
-          {sliderPosition > 80 && (
-            <div className={`${getColorClass(currentCase.color)}/10 border-2 ${getColorClass(currentCase.color, 'border')}/20 rounded-xl p-6 text-center relative overflow-hidden`}>
-              {/* Success pattern */}
-              <div className="absolute top-2 right-2 w-4 h-4 border-2 border-emerald-500 rounded transform rotate-45"></div>
-              <div className="absolute bottom-2 left-2 w-6 h-6 border border-emerald-500 rounded-full"></div>
-              
-              <h4 className={`text-xl font-bold ${getColorClass(currentCase.color, 'text')} mb-3`}>
-                🎯 Optimización Completada - Resultados Sobresalientes
-              </h4>
-              <p className="text-gray-700 text-lg">
-                Mejora promedio del <span className="font-bold text-emerald-600">25-30%</span> en todos los indicadores clave. 
-                <br />ROI típico: <span className="font-bold text-emerald-600">18 meses</span> de recuperación de inversión.
-              </p>
-            </div>
-          )}
           </div>
         </div>
 
@@ -457,10 +296,10 @@ export default function EfficiencyComparison() {
 
           <div className="relative z-10">
             <h3 className="text-2xl lg:text-3xl font-black mb-4">
-              ¿Listo para Transformar Su Operación?
+              ¿Listo para Transformar Tu Operación?
             </h3>
             <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
-              Nuestros especialistas pueden evaluar su proceso actual y diseñar una solución personalizada.
+              Nuestros especialistas pueden evaluar tu proceso actual y diseñar una solución personalizada.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

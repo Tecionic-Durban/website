@@ -391,9 +391,9 @@ export default function CumplimientoPage() {
       {/* CTA Section */}
       <section className="py-16 bg-emerald-600">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-6">¿Necesita Asegurar el Cumplimiento de su Proyecto?</h2>
+          <h2 className="text-3xl font-bold mb-6">¿Necesitas Asegurar el Cumplimiento de tu Proyecto?</h2>
           <p className="text-xl text-emerald-100 mb-8">
-            Nuestro equipo de expertos en cumplimiento puede ayudarle a navegar 
+            Nuestro equipo de expertos en cumplimiento puede ayudarte a navegar
             las complejas regulaciones y asegurar la adherencia total a normativas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

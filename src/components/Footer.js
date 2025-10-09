@@ -130,28 +130,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="border-t border-gray-800 mt-12 pt-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-emerald-400 mb-2">20+</div>
-              <div className="text-gray-300 text-sm">Años de Experiencia</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-emerald-400 mb-2">70</div>
-              <div className="text-gray-300 text-sm">Ton/día Capacidad</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-emerald-400 mb-2">Ex.proof</div>
-              <div className="text-gray-300 text-sm">Certificación Equipos</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-emerald-400 mb-2">SICEP</div>
-              <div className="text-gray-300 text-sm">Registro Oficial</div>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
@@ -164,9 +142,6 @@ export default function Footer() {
             </Link>
             <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors">
               Términos de Servicio
-            </Link>
-            <Link href="/contacto" className="text-gray-400 hover:text-emerald-400 transition-colors">
-              Contacto
             </Link>
           </div>
         </div>

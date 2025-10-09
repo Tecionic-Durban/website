@@ -1,7 +1,7 @@
 // src/components/About.js
 'use client'
 import { useEffect, useRef } from 'react'
-import { Droplets, RefreshCw, Zap, Shield, CheckCircle, TrendingUp } from 'lucide-react'
+import { Droplets, RefreshCw, Zap, Shield, TrendingUp } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -37,16 +37,16 @@ export default function About() {
       metric: "24-48h"
     },
     {
-      icon: CheckCircle,
+      icon: TrendingUp,
       title: "Contratos Flexibles",
       description: "Desde respuesta de emergencia hasta proyectos estratégicos de 5 años. Escalamiento automático según demanda operacional con términos adaptables a ciclos de mercado.",
       metric: "48h-5 años"
     },
     {
-      icon: TrendingUp,
-      title: "Operación Multi-Línea",
-      description: "Capacidad de atender múltiples líneas de trabajo en paralelo con equipos independientes. Maximiza productividad sin interferir con operaciones simultáneas.",
-      metric: "Paralelo"
+      icon: Shield,
+      title: "Trabajos en Ambientes Corrosivos y Explosivos",
+      description: "Equipos de alta tecnología certificados para operar en atmósferas explosivas y ambientes altamente corrosivos. Máxima seguridad con certificación Ex.Proof para las condiciones más exigentes.",
+      metric: "Ex.Proof"
     }
   ]
 

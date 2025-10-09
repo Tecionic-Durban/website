@@ -39,7 +39,7 @@ export default function Services() {
   const services = [
     {
       title: "Filtración y Deshidratación de Borras y Sólidos",
-      description: "Filtración móvil de borras y sólidos en refinerías y plantas SX. Capacidad hasta 130 ton/día de torta seca mediante filtros prensa (recomendado) o centrífugas según requerimiento del cliente.",
+      description: "Filtración móvil de borras y sólidos en refinerías y plantas SX. Capacidad hasta 130 ton/día de torta seca mediante filtros prensa o centrífugas según requerimiento del cliente.",
       icon: Beaker,
       features: [],
       slug: "/services/filtration"
@@ -53,14 +53,14 @@ export default function Services() {
     },
     {
       title: "Deshidratación de Concentrados",
-      description: "Deshidratación de concentrados de cobre en terminales portuarios mediante filtros prensa móviles. Reducción de peso 60-70% para optimización de costos de flete marítimo y preparación de carga para exportación.",
+      description: "Deshidratación de concentrados de cobre mediante filtros prensa móviles. Reducción de peso 60-70% para optimización de plantas concentradoras y preparación de carga para exportación.",
       icon: Droplets,
       features: [],
       slug: "/services/concentrate-dehydration"
     },
     {
       title: "Tratamiento de Sólidos Finos",
-      description: "Procesamiento de sólidos finos provenientes de clarificadores. Capacidad hasta 14 ton/día con centrífugas especializadas.",
+      description: "Procesamiento de sólidos finos provenientes de clarificadores. Capacidad hasta 14 ton/día con equipos especializados.",
       icon: Microscope,
       features: [],
       slug: "/services/fine-solids"

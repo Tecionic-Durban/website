@@ -159,20 +159,12 @@ export default function Hero() {
               {/* Strategic CTAs - Compact */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
-                  onClick={(e) => handleContactClick(e, router, pathname)}
+                  onClick={() => router.push('/services')}
                   className="group relative bg-white text-emerald-900 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-emerald-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Contactar Especialista</span>
-                  <ArrowRight className="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
-
-                <button
-                  onClick={() => router.push('/services')}
-                  className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm relative overflow-hidden sophisticated-hover"
-                >
-                  <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                   <span className="relative z-10">Ver Casos de Éxito</span>
+                  <ArrowRight className="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
                 </button>
               </div>
             </div>

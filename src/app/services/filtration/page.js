@@ -461,58 +461,56 @@ export default function FiltrationPage() {
 
           {/* Modular Configuration - Subtle Enhancement */}
           <div className="max-w-6xl mx-auto mb-20">
-            <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-8">
-              <div className="grid lg:grid-cols-3 gap-8 items-center">
-                {/* Left - Compact Image */}
-                <div className="lg:col-span-1">
-                  <div className="relative bg-gray-50 rounded-lg overflow-hidden border border-gray-100">
-                    <Image
-                      src="/filtros_acoplados.png"
-                      alt="Configuración Modular de Filtros"
-                      width={300}
-                      height={200}
-                      className="w-full h-auto object-cover"
-                    />
-                    <div className="absolute top-2 right-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded">
-                      Modular
-                    </div>
+            <div className="grid lg:grid-cols-3 gap-8 items-center">
+              {/* Left - Compact Image */}
+              <div className="lg:col-span-1">
+                <div className="relative bg-gray-50 rounded-lg overflow-hidden border border-gray-100">
+                  <Image
+                    src="/filtros_acoplados.png"
+                    alt="Configuración Modular de Filtros"
+                    width={300}
+                    height={200}
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute top-2 right-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded">
+                    Modular
+                  </div>
+                </div>
+              </div>
+
+              {/* Center - Benefits */}
+              <div className="lg:col-span-2">
+                <div className="flex items-start space-x-3 mb-4">
+                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <Settings className="w-4 h-4 text-emerald-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Configuración en Módulos Paralelos</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      Los filtros pueden instalarse como módulos independientes en paralelo, permitiendo escalabilidad progresiva
+                      y acelerando la estabilidad de planta. Esta configuración es económica con el espacio disponible y permite
+                      instalación externa para minimizar la fricción operacional interna.
+                    </p>
                   </div>
                 </div>
 
-                {/* Center - Benefits */}
-                <div className="lg:col-span-2">
-                  <div className="flex items-start space-x-3 mb-4">
-                    <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                      <Settings className="w-4 h-4 text-emerald-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">Configuración en Módulos Paralelos</h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        Los filtros pueden instalarse como módulos independientes en paralelo, permitiendo escalabilidad progresiva
-                        y acelerando la estabilidad de planta. Esta configuración es económica con el espacio disponible y permite
-                        instalación externa para minimizar la fricción operacional interna.
-                      </p>
-                    </div>
+                {/* Quick benefits */}
+                <div className="flex flex-wrap gap-4 text-xs">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
+                    <span className="text-gray-600">Escalabilidad progresiva</span>
                   </div>
-
-                  {/* Quick benefits */}
-                  <div className="flex flex-wrap gap-4 text-xs">
-                    <div className="flex items-center space-x-1">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-600">Escalabilidad progresiva</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-600">Eficiencia espacial</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-600">Instalación externa</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-600">2-6 módulos disponibles</span>
-                    </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
+                    <span className="text-gray-600">Eficiencia espacial</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
+                    <span className="text-gray-600">Instalación externa</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
+                    <span className="text-gray-600">2-6 módulos disponibles</span>
                   </div>
                 </div>
               </div>
@@ -934,7 +932,7 @@ export default function FiltrationPage() {
 
         <div className="relative max-w-8xl mx-auto px-8 py-24 text-center">
           <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-animated">
-            ¿Necesita Soluciones de Filtración Móvil?
+            ¿Necesitas Soluciones de Filtración Móvil?
           </h2>
           <p className="text-xl text-emerald-100 mb-12 max-w-4xl mx-auto leading-relaxed">
             Diagnóstico técnico especializado y implementación rápida sin instalaciones permanentes.

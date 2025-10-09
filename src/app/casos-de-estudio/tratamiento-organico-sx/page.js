@@ -970,9 +970,9 @@ export default function TratamientoOrganicoCase() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-emerald-900 to-emerald-700">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-6">¿Enfrenta Problemas Similares en su Planta SX?</h2>
+          <h2 className="text-3xl font-bold mb-6">¿Enfrentas Problemas Similares en tu Planta SX?</h2>
           <p className="text-xl text-emerald-100 mb-8">
-            Nuestros especialistas pueden ayudarle a diagnosticar y resolver problemas de calidad de orgánicos,
+            Nuestros especialistas pueden ayudarte a diagnosticar y resolver problemas de calidad de orgánicos,
             arrastres y eficiencia operacional con soluciones comprobadas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
