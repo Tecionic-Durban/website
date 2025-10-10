@@ -206,9 +206,6 @@ export default function ConcentrateDehydrationServicePage() {
                   <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
                   <span>Disponible 24/7</span>
                 </div>
-                <button className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:scale-105">
-                  Solicitar Cotización
-                </button>
               </div>
             </div>
           </div>
@@ -240,18 +237,6 @@ export default function ConcentrateDehydrationServicePage() {
                 para fundición y transporte optimizado.
               </p>
 
-              {/* Enterprise CTA Section */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group relative bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 overflow-hidden hover:shadow-xl hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-cyan-500/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Análisis de Concentrados</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="group border-2 border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-white/50 hover:bg-white/80 backdrop-blur-sm">
-                  <span>Casos de Éxito</span>
-                  <Settings className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
-                </button>
-              </div>
             </div>
 
             {/* Right Column - Hero Image */}
@@ -305,7 +290,7 @@ export default function ConcentrateDehydrationServicePage() {
       </section>
 
       {/* Service Overview Section - Progressive Disclosure */}
-      <section ref={overviewRef} className="mt-16 pt-32 pb-24 bg-gradient-to-br from-cyan-50/30 via-white to-gray-50 relative overflow-hidden" style={{zIndex: 1}}>
+      <section ref={overviewRef} className="py-24 bg-gradient-to-br from-cyan-50/30 via-white to-gray-50 relative overflow-hidden" style={{zIndex: 1}}>
         {/* Enterprise Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{zIndex: 1}}>
           <div className="absolute top-32 left-[5%] w-36 h-36 bg-gradient-to-br from-cyan-600/10 to-cyan-700/5 rounded-full opacity-20 animate-float-slow blur-sm"></div>

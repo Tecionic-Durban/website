@@ -123,8 +123,8 @@ export default function Customers() {
   // Bottom row - scrolls left to right
   const bottomRowLogos = [
     { name: 'El Teniente', logo: '/client_logos/el_teniente_codelco_logo.png', size: 'h-32 w-auto' },
-    { name: 'ENAMI', logo: '/client_logos/enami_logo.png', size: 'h-16 w-auto' },
-    { name: 'ENAP', logo: '/client_logos/enap_logo.png', size: 'h-[154px] w-auto' },
+    { name: 'ENAMI', logo: '/client_logos/enami_logo.png', size: 'h-[77px] w-auto' },
+    { name: 'ENAP', logo: '/client_logos/enap_logo.png', size: 'h-[185px] w-auto' },
     { name: 'Gaby', logo: '/client_logos/gaby_codelco_logo.png', size: 'h-32 w-auto' },
     { name: 'KGHM', logo: '/client_logos/kghm_logo.png', size: 'h-[54px] w-auto' },
     { name: 'Las Cenizas', logo: '/client_logos/las_cenizas_logo.png', size: 'h-16 w-auto' },

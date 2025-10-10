@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { Filter, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { Filter, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, Layers, Grid, ChevronRight } from 'lucide-react'
 
 export default function FiltrationPage() {
   const router = null // Will be imported when needed
@@ -54,7 +54,7 @@ export default function FiltrationPage() {
     {
       step: '2',
       title: 'Filtración',
-      description: 'Separación de borras SX mediante filtros de prensa o centrífugas móviles',
+      description: 'Separación de borras SX mediante equipos móviles',
       additionalInfo: 'Mecanismos de succión de precisión, mínimamente invasivos',
       icon: Filter
     },
@@ -259,9 +259,6 @@ export default function FiltrationPage() {
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span>Disponible 24/7</span>
                 </div>
-                <button className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:scale-105">
-                  Solicitar Cotización
-                </button>
               </div>
             </div>
           </div>
@@ -293,18 +290,6 @@ export default function FiltrationPage() {
                 sin modificar infraestructura existente.
               </p>
 
-              {/* Enterprise CTA Section */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group relative bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 overflow-hidden hover:shadow-xl hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Evaluación Técnica</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="group border-2 border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-white/50 hover:bg-white/80 backdrop-blur-sm">
-                  <span>Descargar Especificaciones</span>
-                  <Settings className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
-                </button>
-              </div>
             </div>
 
             {/* Right Column - Hero Image */}
@@ -383,20 +368,20 @@ export default function FiltrationPage() {
 
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
               Equipos especializados diseñados para el tratamiento eficiente de borras y sólidos en
-              <span className="font-semibold text-emerald-600">plantas de procesamiento minero y petrolero</span>.
+              <span className="font-semibold text-emerald-600">operaciones de minería, procesamiento mineral y energía</span>.
               Con certificación ex.proof para máxima seguridad en ambientes explosivos.
             </p>
           </div>
 
           {/* Feature Cards from Hero Section */}
-          <div className="grid lg:grid-cols-4 gap-6 mb-20 progressive-reveal">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-4 gap-6 mb-20 progressive-reveal">
             {[
               {
                 icon: Shield,
-                title: "Certificación Ex.Proof",
-                description: "Seguridad certificada para atmósferas explosivas con el más alto nivel de protección industrial",
+                title: "Ambientes Extremos",
+                description: "Equipos diseñados para operar de forma segura en atmósferas explosivas y altamente corrosivas con certificación ex.proof",
                 color: "emerald",
-                metric: "100%"
+                metric: "Ex.Proof"
               },
               {
                 icon: Zap,
@@ -442,15 +427,9 @@ export default function FiltrationPage() {
                     {feature.title}
                   </h3>
 
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors">
+                  <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
                     {feature.description}
                   </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300">
-                    <span className="text-sm font-medium">Más información</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                  </div>
                 </div>
 
                 {/* Hover indicator */}
@@ -459,196 +438,249 @@ export default function FiltrationPage() {
             ))}
           </div>
 
-          {/* Modular Configuration - Subtle Enhancement */}
-          <div className="max-w-6xl mx-auto mb-20">
-            <div className="grid lg:grid-cols-3 gap-8 items-center">
-              {/* Left - Compact Image */}
-              <div className="lg:col-span-1">
-                <div className="relative bg-gray-50 rounded-lg overflow-hidden border border-gray-100">
-                  <Image
-                    src="/filtros_acoplados.png"
-                    alt="Configuración Modular de Filtros"
-                    width={300}
-                    height={200}
-                    className="w-full h-auto object-cover"
-                  />
-                  <div className="absolute top-2 right-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded">
-                    Modular
-                  </div>
-                </div>
+          {/* Modular Configuration - Clean Minimal Design */}
+          <div className="max-w-7xl mx-auto mb-20 py-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-12">Configuración en Módulos Paralelos</h3>
+
+            <div className="grid lg:grid-cols-[55%_45%] gap-12 items-start">
+              {/* Left - Large Image */}
+              <div>
+                <Image
+                  src="/filtros_acoplados.png"
+                  alt="Configuración Modular de Equipos"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                />
               </div>
 
-              {/* Center - Benefits */}
-              <div className="lg:col-span-2">
-                <div className="flex items-start space-x-3 mb-4">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Settings className="w-4 h-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Configuración en Módulos Paralelos</h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
-                      Los filtros pueden instalarse como módulos independientes en paralelo, permitiendo escalabilidad progresiva
-                      y acelerando la estabilidad de planta. Esta configuración es económica con el espacio disponible y permite
-                      instalación externa para minimizar la fricción operacional interna.
-                    </p>
-                  </div>
-                </div>
+              {/* Right - Text Content */}
+              <div className="space-y-8">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Los equipos pueden instalarse como módulos independientes en paralelo, permitiendo escalabilidad progresiva
+                  y acelerando la estabilidad de planta. Esta configuración es económica con el espacio disponible y permite
+                  instalación externa para minimizar la fricción operacional interna.
+                </p>
 
-                {/* Quick benefits */}
-                <div className="flex flex-wrap gap-4 text-xs">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-600">Escalabilidad progresiva</span>
+                {/* Benefits - Icon Bullets */}
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
+                      <Layers className="w-7 h-7 text-emerald-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">Escalabilidad ilimitada</div>
+                      <div className="text-gray-600">Agrega todos los equipos que necesites según tu operación</div>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-600">Eficiencia espacial</span>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
+                      <ExternalLink className="w-7 h-7 text-emerald-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">Instalación externa</div>
+                      <div className="text-gray-600">Sin modificar infraestructura de planta existente</div>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-600">Instalación externa</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-600">2-6 módulos disponibles</span>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
+                      <Grid className="w-7 h-7 text-emerald-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">Eficiencia espacial</div>
+                      <div className="text-gray-600">Optimiza espacio disponible con configuración flexible</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Service Page Applications - Customer-Focused Design */}
+          {/* Molecular Industries Section */}
           <div className="mb-20">
-            <div className="text-center mb-12 progressive-reveal">
-              <h3 className="text-4xl font-black text-gray-900 mb-4">Industrias que Servimos</h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Soluciones móviles de filtración especializadas para cada sector industrial con resultados comprobados
-              </p>
-            </div>
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-[50%_50%] gap-16 items-center">
+                {/* Left - Text Content */}
+                <div className="space-y-6">
+                  <h3 className="text-4xl font-black text-gray-900 leading-tight">
+                    Industrias que <span className="text-emerald-600">Servimos</span>
+                  </h3>
 
-            {/* Industry Applications Matrix - Clean & Focused */}
-            <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 px-8 py-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Aplicaciones Industriales TSF</h3>
-                    <p className="text-slate-300 text-sm">Resultados comprobados por sector mineral y petrolero</p>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Soluciones móviles de filtración especializadas para operaciones de
+                    <span className="font-semibold text-gray-900"> cobre, zinc y petróleo</span>,
+                    con tecnología adaptada a las características únicas de cada proceso industrial.
+                  </p>
+
+                  <div className="space-y-4 pt-4">
+                    {/* Copper */}
+                    <a href="/industries/copper" className="group flex items-center space-x-4 bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all duration-300 cursor-pointer">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#ea580c15'}}>
+                        <div className="text-center">
+                          <div className="text-sm font-black" style={{color: '#ea580c'}}>Cu²⁺</div>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">Cobre SX</h4>
+                        <p className="text-sm text-gray-600">Filtración y deshidratación de borras SX con 98% sólidos capturados</p>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
+                    </a>
+
+                    {/* Zinc */}
+                    <a href="/industries/zinc" className="group flex items-center space-x-4 bg-white rounded-xl p-4 border border-gray-200 hover:border-slate-400 hover:shadow-md transition-all duration-300 cursor-pointer">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#64748b15'}}>
+                        <div className="text-center">
+                          <div className="text-sm font-black" style={{color: '#64748b'}}>Zn²⁺</div>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-gray-900 mb-1 group-hover:text-slate-700 transition-colors">Zinc SX</h4>
+                        <p className="text-sm text-gray-600">Filtración de sólidos abrasivos adaptado a densidades Zn y sensibilidad orgánica</p>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-slate-700 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
+                    </a>
+
+                    {/* Petroleum */}
+                    <a href="/industries/crude-oil" className="group flex items-center space-x-4 bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition-all duration-300 cursor-pointer">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#dc262615'}}>
+                        <div className="text-center">
+                          <div className="text-sm font-black" style={{color: '#dc2626'}}>HC</div>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-gray-900 mb-1 group-hover:text-red-600 transition-colors">Petróleo</h4>
+                        <p className="text-sm text-gray-600">Limpieza de borras desde estanques con 80% reducción de volumen</p>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
+                    </a>
                   </div>
-                  <div className="text-emerald-400 text-sm font-mono">VALIDADO ✓</div>
                 </div>
-              </div>
 
-              {/* Applications Grid */}
-              <div className="p-8">
-                <div className="space-y-4">
-                  {[
-                    {
-                      element: "Cu²⁺",
-                      industry: "Cobre SX/EW",
-                      application: "Separación electrólitos",
-                      performance: "89% Recuperación",
-                      specs: "< 50 NTU turbidez | Retorno directo SX",
-                      color: "#ea580c",
-                      status: "Operativo"
-                    },
-                    {
-                      element: "Li⁺",
-                      industry: "Litio Premium",
-                      application: "Procesamiento salmueras",
-                      performance: "+99% Pureza",
-                      specs: "Concentración selectiva | Calidad batería",
-                      color: "#0891b2",
-                      status: "Optimizado"
-                    },
-                    {
-                      element: "Zn²⁺",
-                      industry: "Zinc SX-EW",
-                      application: "Control sólidos abrasivos",
-                      performance: "En Desarrollo",
-                      specs: "Alta densidad | Sensibilidad orgánica",
-                      color: "#64748b",
-                      status: "Prospección"
-                    },
-                    {
-                      element: "K⁺",
-                      industry: "Potasio KCl",
-                      application: "Refinamiento sales",
-                      performance: "95% Eficiencia",
-                      specs: "Cristalización controlada | Grado fertilizante",
-                      color: "#7c3aed",
-                      status: "Validado"
-                    },
-                    {
-                      element: "H₂S",
-                      industry: "Petróleo",
-                      application: "Desgasificación borras",
-                      performance: "<5ppm H₂S",
-                      specs: "90% recuperación HC | 70% reducción volumen",
-                      color: "#dc2626",
-                      status: "Especializado"
-                    }
-                  ].map((app, index) => (
-                    <div key={index} className="group relative bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all duration-300 border border-gray-100">
-                      <div className="flex items-start space-x-6">
-                        {/* Chemical Element Icon */}
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 rounded-xl flex items-center justify-center" style={{backgroundColor: `${app.color}15`}}>
-                            <div className="text-center">
-                              <div className="text-lg font-black" style={{color: app.color}}>{app.element}</div>
-                              <div className="text-xs font-medium" style={{color: app.color}}>ion</div>
-                            </div>
-                          </div>
-                        </div>
+                {/* Right - Vertical Zigzag Molecule */}
+                <div className="relative h-[600px]">
+                  {/* SVG for molecular bonds */}
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{zIndex: 0}}>
+                    <defs>
+                      {/* 3D Cylindrical gradient for bonds */}
+                      <linearGradient id="cylindricalBond" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#059669" stopOpacity="0.3" />
+                        <stop offset="25%" stopColor="#10b981" stopOpacity="0.8" />
+                        <stop offset="50%" stopColor="#34d399" stopOpacity="1" />
+                        <stop offset="75%" stopColor="#10b981" stopOpacity="0.8" />
+                        <stop offset="100%" stopColor="#059669" stopOpacity="0.3" />
+                      </linearGradient>
 
-                        {/* Industry & Application */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between mb-2">
-                            <div>
-                              <h4 className="text-lg font-bold text-gray-900">{app.industry}</h4>
-                              <p className="text-sm text-gray-600">{app.application}</p>
-                            </div>
-                            <div className="text-right">
-                              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium"
-                                   style={{backgroundColor: `${app.color}15`, color: app.color}}>
-                                {app.status}
-                              </div>
-                            </div>
-                          </div>
+                      {/* Glow filter */}
+                      <filter id="bondGlow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge>
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
 
-                          {/* Performance Metrics */}
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">RENDIMIENTO</div>
-                              <div className="inline-flex items-center px-3 py-2 rounded-lg text-sm font-bold text-white"
-                                   style={{backgroundColor: app.color}}>
-                                {app.performance}
-                              </div>
-                            </div>
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">ESPECIFICACIONES</div>
-                              <div className="text-sm text-gray-700 font-medium">{app.specs}</div>
-                            </div>
-                          </div>
-                        </div>
+                    {/* Bond from Copper to Zinc - Outer glow */}
+                    <line
+                      x1="50%" y1="64"
+                      x2="96" y2="304"
+                      stroke="#10b98140"
+                      strokeWidth="12"
+                      strokeLinecap="round"
+                    />
+                    {/* Bond from Copper to Zinc - Main bond */}
+                    <line
+                      x1="50%" y1="64"
+                      x2="96" y2="304"
+                      stroke="url(#cylindricalBond)"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      filter="url(#bondGlow)"
+                    />
 
-                        {/* Performance Indicator */}
-                        <div className="flex-shrink-0 w-16">
-                          <div className="text-center">
-                            <div className="w-12 h-12 mx-auto rounded-full border-4 flex items-center justify-center"
-                                 style={{borderColor: `${app.color}30`}}>
-                              <div className="w-6 h-6 rounded-full" style={{backgroundColor: app.color}}></div>
-                            </div>
-                            <div className="text-xs font-medium text-gray-500 mt-1">TSF</div>
-                          </div>
+                    {/* Bond from Zinc to Petroleum - Outer glow */}
+                    <line
+                      x1="96" y1="304"
+                      x2="calc(100% - 144px)" y2="536"
+                      stroke="#10b98140"
+                      strokeWidth="12"
+                      strokeLinecap="round"
+                    />
+                    {/* Bond from Zinc to Petroleum - Main bond */}
+                    <line
+                      x1="96" y1="304"
+                      x2="calc(100% - 144px)" y2="536"
+                      stroke="url(#cylindricalBond)"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      filter="url(#bondGlow)"
+                    />
+                  </svg>
+
+                  {/* Copper Node - Top Center */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+                    <div className="relative">
+                      {/* Atom */}
+                      <div className="w-32 h-32 rounded-full flex items-center justify-center border-4 shadow-lg relative z-10"
+                           style={{backgroundColor: '#ea580c', borderColor: '#ea580c40'}}>
+                        <div className="text-center text-white">
+                          <div className="text-3xl font-black">Cu²⁺</div>
+                          <div className="text-xs font-medium opacity-90">Cobre SX</div>
                         </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Zinc Node - Middle Left */}
+                  <div className="absolute top-[240px] left-8">
+                    <div className="relative">
+                      {/* Atom */}
+                      <div className="w-32 h-32 rounded-full flex items-center justify-center border-4 shadow-lg relative z-10"
+                           style={{backgroundColor: '#64748b', borderColor: '#64748b40'}}>
+                        <div className="text-center text-white">
+                          <div className="text-3xl font-black">Zn²⁺</div>
+                          <div className="text-xs font-medium opacity-90">Zinc SX</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Petroleum Node - Bottom Right */}
+                  <div className="absolute bottom-0 right-20">
+                    <div className="relative">
+                      {/* Atom */}
+                      <div className="w-32 h-32 rounded-full flex items-center justify-center border-4 shadow-lg relative z-10"
+                           style={{backgroundColor: '#dc2626', borderColor: '#dc262640'}}>
+                        <div className="text-center text-white">
+                          <div className="text-3xl font-black">HC</div>
+                          <div className="text-xs font-medium opacity-90">Petróleo</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Electron orbits (decorative) */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-32 pointer-events-none">
+                    <div className="absolute inset-0 border border-orange-300/30 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
+                  </div>
+                  <div className="absolute top-[240px] left-8 w-32 h-32 pointer-events-none">
+                    <div className="absolute inset-0 border border-slate-300/30 rounded-full animate-ping" style={{animationDuration: '3s', animationDelay: '1s'}}></div>
+                  </div>
+                  <div className="absolute bottom-0 right-20 w-32 h-32 pointer-events-none">
+                    <div className="absolute inset-0 border border-red-300/30 rounded-full animate-ping" style={{animationDuration: '3s', animationDelay: '2s'}}></div>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -790,36 +822,6 @@ export default function FiltrationPage() {
             </div>
           </div>
 
-          {/* Performance Metrics Summary */}
-          <div className="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 text-white">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2">Métricas de Rendimiento TSF</h3>
-              <p className="text-slate-300">Resultados comprobados en operaciones industriales</p>
-            </div>
-
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-black text-emerald-400 mb-2">130</div>
-                <div className="text-sm text-slate-300">Toneladas/día</div>
-                <div className="text-xs text-slate-400">Capacidad máxima</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-emerald-400 mb-2">24-48h</div>
-                <div className="text-sm text-slate-300">Instalación</div>
-                <div className="text-xs text-slate-400">Sistema operativo</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-emerald-400 mb-2">89%</div>
-                <div className="text-sm text-slate-300">Recuperación</div>
-                <div className="text-xs text-slate-400">Orgánico promedio</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-emerald-400 mb-2">100%</div>
-                <div className="text-sm text-slate-300">Móvil</div>
-                <div className="text-xs text-slate-400">Sin infraestructura</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

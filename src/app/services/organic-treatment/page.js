@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { RefreshCw, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { RefreshCw, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, ChevronRight } from 'lucide-react'
 
 export default function OrganicTreatmentServicePage() {
   const router = null // Will be imported when needed
@@ -52,16 +52,16 @@ export default function OrganicTreatmentServicePage() {
     },
     {
       step: '2',
-      title: 'Coalescencia Optimizada',
-      description: 'Tratamiento del orgánico con tierras diatomeas',
-      additionalInfo: 'Tiempo residencia optimizado',
+      title: 'Eficiencia Optimizada',
+      description: 'Tratamiento del orgánico con tierras activadas',
+      additionalInfo: 'Tiempo residencia optimizado • Dosificación óptima de tierras activadas',
       icon: RefreshCw
     },
     {
       step: '3',
       title: 'Purificación',
-      description: 'Remoción agua arrastrada y contaminantes',
-      additionalInfo: 'Monitoreo continuo de calidad • Control pH y densidad',
+      description: 'Remoción tensoactivos y contaminantes',
+      additionalInfo: 'Monitoreo continuo de calidad • Delta TIF y tiempos de separación de fase',
       icon: Shield
     },
     {
@@ -206,9 +206,6 @@ export default function OrganicTreatmentServicePage() {
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span>Disponible 24/7</span>
                 </div>
-                <button className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:scale-105">
-                  Solicitar Cotización
-                </button>
               </div>
             </div>
           </div>
@@ -228,7 +225,7 @@ export default function OrganicTreatmentServicePage() {
                   </span>
                 </h1>
                 <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
-                  Para Plantas SX • Coalescencia Optimizada • Alta Recuperación
+                  Para Plantas SX • Eficiencia Optimizada • Alta Recuperación
                 </div>
               </div>
 
@@ -236,22 +233,10 @@ export default function OrganicTreatmentServicePage() {
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
                 Sistemas especializados de recuperación de extractantes con
                 <span className="font-bold text-slate-900"> 90-95% de eficiencia</span>.
-                <span className="text-emerald-600 font-medium"> Reducción 60% pérdidas</span> de solvente
-                y extensión 50% vida útil del orgánico.
+                <span className="text-emerald-600 font-medium"> Reducción en 65% de arrastres</span> y
+                <span className="text-emerald-600 font-medium"> +15% eficiencia de planta</span>.
               </p>
 
-              {/* Enterprise CTA Section */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group relative bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 overflow-hidden hover:shadow-xl hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Análisis de Pérdidas</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="group border-2 border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-white/50 hover:bg-white/80 backdrop-blur-sm">
-                  <span>Casos de Éxito</span>
-                  <Settings className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
-                </button>
-              </div>
             </div>
 
             {/* Right Column - Hero Image */}
@@ -305,7 +290,7 @@ export default function OrganicTreatmentServicePage() {
       </section>
 
       {/* Service Overview Section - Progressive Disclosure */}
-      <section ref={overviewRef} className="mt-16 pt-32 pb-24 bg-gradient-to-br from-green-50/30 via-white to-gray-50 relative overflow-hidden" style={{zIndex: 1}}>
+      <section ref={overviewRef} className="py-24 bg-gradient-to-br from-green-50/30 via-white to-gray-50 relative overflow-hidden" style={{zIndex: 1}}>
         {/* Enterprise Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{zIndex: 1}}>
           <div className="absolute top-32 left-[5%] w-36 h-36 bg-gradient-to-br from-green-600/10 to-green-700/5 rounded-full opacity-20 animate-float-slow blur-sm"></div>
@@ -346,7 +331,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
 
           {/* Feature Cards from Hero Section */}
-          <div className="grid lg:grid-cols-4 gap-6 mb-20 progressive-reveal">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-4 gap-6 mb-20 progressive-reveal">
             {[
               {
                 icon: Shield,
@@ -363,18 +348,18 @@ export default function OrganicTreatmentServicePage() {
                 metric: "60%"
               },
               {
-                icon: Truck,
-                title: "Extensión 50% Vida Útil",
-                description: "Prolongación significativa de la vida útil del orgánico mediante purificación",
+                icon: TrendingUp,
+                title: "+15% Eficiencia de Planta",
+                description: "Mejora significativa en la eficiencia operacional de la planta mediante purificación",
                 color: "purple",
-                metric: "50%"
+                metric: "+15%"
               },
               {
                 icon: BarChart3,
-                title: "ROI < 1 Mes",
-                description: "Retorno de inversión rápido por ahorro en consumo de extractantes nuevos",
+                title: "ROI < 4 Días/Mes",
+                description: "Retorno de inversión ultra rápido por ahorro en consumo de extractantes nuevos",
                 color: "slate",
-                metric: "<1m"
+                metric: "<4d"
               }
             ].map((feature, index) => (
               <div key={index} className="group relative bg-white rounded-xl p-6 border border-green-100/50 shadow-sm hover:shadow-lg transition-all duration-300 progressive-reveal overflow-hidden hover:-translate-y-1">
@@ -399,15 +384,9 @@ export default function OrganicTreatmentServicePage() {
                     {feature.title}
                   </h3>
 
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors">
+                  <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
                     {feature.description}
                   </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-green-600 group-hover:text-green-700 transition-colors duration-300">
-                    <span className="text-sm font-medium">Más información</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                  </div>
                 </div>
 
                 {/* Hover indicator */}
@@ -416,104 +395,231 @@ export default function OrganicTreatmentServicePage() {
             ))}
           </div>
 
-          {/* Industry Applications Matrix - Clean & Focused */}
+          {/* Interactive Periodic Table - Industry Applications */}
           <div className="mb-20">
-            <div className="text-center mb-12 progressive-reveal">
-              <h3 className="text-4xl font-black text-gray-900 mb-4">Aplicaciones por Industria</h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Soluciones especializadas de recuperación orgánica para cada tipo de extractante con resultados comprobados
-              </p>
-            </div>
-
-            <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 px-8 py-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Aplicaciones de Recuperación Orgánica TSF</h3>
-                    <p className="text-slate-300 text-sm">Resultados comprobados por tipo de extractante y proceso</p>
+            <div className="max-w-7xl mx-auto">
+              {/* Full Periodic Table Blueprint */}
+              <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl shadow-2xl border border-slate-700 p-8 overflow-visible">
+                {/* Header */}
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center px-4 py-2 bg-green-600 rounded-full text-white text-sm font-bold mb-2">
+                    <div className="w-2 h-2 bg-green-300 rounded-full mr-2 animate-pulse"></div>
+                    APLICACIONES POR INDUSTRIA
                   </div>
-                  <div className="text-green-400 text-sm font-mono">VALIDADO ✓</div>
+                  <p className="text-sm text-slate-400">Haz hover sobre los elementos activos para ver detalles</p>
                 </div>
-              </div>
 
-              {/* Applications Grid */}
-              <div className="p-8">
-                <div className="space-y-4">
-                  {[
-                    {
-                      element: "LIX984N",
-                      industry: "Cobre SX",
-                      application: "Recuperación extractante cobre",
-                      performance: "95% Recuperación",
-                      specs: "Extensión 50% vida útil | Coalescencia optimizada",
-                      color: "#ea580c",
-                      status: "Operativo"
-                    },
-                    {
-                      element: "LIX63",
-                      industry: "Potasio SX",
-                      application: "Recuperación extractantes potásicos",
-                      performance: "93% Eficiencia",
-                      specs: "Separación selectiva | Control calidad",
-                      color: "#7c3aed",
-                      status: "Especializado"
-                    }
-                  ].map((app, index) => (
-                    <div key={index} className="group relative bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all duration-300 border border-gray-100">
-                      <div className="flex items-start space-x-6">
-                        {/* Chemical Element Icon */}
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 rounded-xl flex items-center justify-center" style={{backgroundColor: `${app.color}15`}}>
-                            <div className="text-center">
-                              <div className="text-sm font-black" style={{color: app.color}}>{app.element}</div>
-                              <div className="text-xs font-medium" style={{color: app.color}}>ext.</div>
-                            </div>
-                          </div>
-                        </div>
+                {/* Full Periodic Table Grid - 18 groups, 7 periods */}
+                <div className="grid grid-cols-18 gap-1 text-[8px] sm:text-xs">
+                  {/* Period 1 */}
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">1</div><div>H</div></div>
+                  </div>
+                  <div className="col-span-16"></div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">2</div><div>He</div></div>
+                  </div>
 
-                        {/* Industry & Application */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between mb-2">
-                            <div>
-                              <h4 className="text-lg font-bold text-gray-900">{app.industry}</h4>
-                              <p className="text-sm text-gray-600">{app.application}</p>
-                            </div>
-                            <div className="text-right">
-                              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium"
-                                   style={{backgroundColor: `${app.color}15`, color: app.color}}>
-                                {app.status}
-                              </div>
-                            </div>
-                          </div>
+                  {/* Period 2 */}
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">3</div><div>Li</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">4</div><div>Be</div></div>
+                  </div>
+                  <div className="col-span-10"></div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">5</div><div>B</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">6</div><div>C</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">7</div><div>N</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">8</div><div>O</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">9</div><div>F</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">10</div><div>Ne</div></div>
+                  </div>
 
-                          {/* Performance Metrics */}
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">RENDIMIENTO</div>
-                              <div className="inline-flex items-center px-3 py-2 rounded-lg text-sm font-bold text-white"
-                                   style={{backgroundColor: app.color}}>
-                                {app.performance}
-                              </div>
-                            </div>
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">ESPECIFICACIONES</div>
-                              <div className="text-sm text-gray-700 font-medium">{app.specs}</div>
-                            </div>
-                          </div>
-                        </div>
+                  {/* Period 3 */}
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">11</div><div>Na</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">12</div><div>Mg</div></div>
+                  </div>
+                  <div className="col-span-10"></div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">13</div><div>Al</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">14</div><div>Si</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">15</div><div>P</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">16</div><div>S</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">17</div><div>Cl</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">18</div><div>Ar</div></div>
+                  </div>
 
-                        {/* Performance Indicator */}
-                        <div className="flex-shrink-0 w-16">
+                  {/* Period 4 - THE IMPORTANT ONE */}
+                  {/* K - Potassium - INTERACTIVE */}
+                  <div className="relative group">
+                    <div className="aspect-square bg-gradient-to-br from-purple-500 to-purple-600 border-2 border-purple-400 rounded flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:z-50 shadow-lg">
+                      <div className="text-center"><div className="font-bold">19</div><div className="font-black text-base sm:text-lg">K</div></div>
+                    </div>
+                    {/* Hover Card */}
+                    <a href="/industries/potassium" className="absolute top-full left-0 mt-4 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border-2 border-purple-400 p-6 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50 cursor-pointer hover:shadow-3xl">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                           <div className="text-center">
-                            <div className="w-12 h-12 mx-auto rounded-full border-4 flex items-center justify-center"
-                                 style={{borderColor: `${app.color}30`}}>
-                              <div className="w-6 h-6 rounded-full" style={{backgroundColor: app.color}}></div>
-                            </div>
-                            <div className="text-xs font-medium text-gray-500 mt-1">TSF</div>
+                            <div className="text-2xl font-black text-purple-700">K</div>
+                            <div className="text-xs text-purple-600">19</div>
                           </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-black text-gray-900 mb-1 group-hover:text-purple-700 transition-colors">Potasio</h4>
+                          <p className="text-sm text-gray-600 mb-3">Filtración salmuera potásica con turbidez &lt;50 NTU</p>
+                          <div className="text-xs text-gray-500 mt-2">Recuperación sales | Clarificación salmueras</div>
+                        </div>
+                        <div className="flex-shrink-0">
+                          <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-300" />
                         </div>
                       </div>
+                    </a>
+                  </div>
+
+                  {/* Ca through Ni - inactive */}
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">20</div><div>Ca</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">21</div><div>Sc</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">22</div><div>Ti</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">23</div><div>V</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">24</div><div>Cr</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">25</div><div>Mn</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">26</div><div>Fe</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">27</div><div>Co</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">28</div><div>Ni</div></div>
+                  </div>
+
+                  {/* Cu - Copper - INTERACTIVE */}
+                  <div className="relative group">
+                    <div className="aspect-square bg-gradient-to-br from-orange-500 to-orange-600 border-2 border-orange-400 rounded flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:z-50 shadow-lg">
+                      <div className="text-center"><div className="font-bold">29</div><div className="font-black text-base sm:text-lg">Cu</div></div>
+                    </div>
+                    {/* Hover Card */}
+                    <a href="/industries/copper" className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border-2 border-orange-400 p-6 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50 cursor-pointer hover:shadow-3xl">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <div className="text-center">
+                            <div className="text-2xl font-black text-orange-600">Cu</div>
+                            <div className="text-xs text-orange-600">29</div>
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-black text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">Cobre SX</h4>
+                          <p className="text-sm text-gray-600 mb-3">Recuperación orgánico con reducción 50% arrastre acuoso</p>
+                          <div className="text-xs text-gray-500 mt-2">TSF 153s | Eficiencia hasta 92%</div>
+                        </div>
+                        <div className="flex-shrink-0">
+                          <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300" />
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  {/* Zn - Zinc - INTERACTIVE */}
+                  <div className="relative group">
+                    <div className="aspect-square bg-gradient-to-br from-slate-600 to-slate-700 border-2 border-slate-400 rounded flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:z-50 shadow-lg">
+                      <div className="text-center"><div className="font-bold">30</div><div className="font-black text-base sm:text-lg">Zn</div></div>
+                    </div>
+                    {/* Hover Card */}
+                    <a href="/industries/zinc" className="absolute top-full right-0 mt-4 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border-2 border-slate-400 p-6 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50 cursor-pointer hover:shadow-3xl">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <div className="text-center">
+                            <div className="text-2xl font-black text-slate-700">Zn</div>
+                            <div className="text-xs text-slate-600">30</div>
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-black text-gray-900 mb-1 group-hover:text-slate-700 transition-colors">Zinc SX</h4>
+                          <p className="text-sm text-gray-600 mb-3">Recuperación orgánico con reducción 45% arrastre acuoso</p>
+                          <div className="text-xs text-gray-500 mt-2">Control degradación | Alta resistencia abrasiva</div>
+                        </div>
+                        <div className="flex-shrink-0">
+                          <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-slate-700 group-hover:translate-x-1 transition-all duration-300" />
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  {/* Ga through Kr - inactive */}
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">31</div><div>Ga</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">32</div><div>Ge</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">33</div><div>As</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">34</div><div>Se</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">35</div><div>Br</div></div>
+                  </div>
+                  <div className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                    <div className="text-center"><div className="font-bold">36</div><div>Kr</div></div>
+                  </div>
+
+                  {/* Period 5 - All inactive */}
+                  {['Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe'].map((el, i) => (
+                    <div key={`p5-${i}`} className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                      <div className="text-center"><div className="font-bold">{37 + i}</div><div>{el}</div></div>
+                    </div>
+                  ))}
+
+                  {/* Period 6 - All inactive (without lanthanides) */}
+                  {['Cs', 'Ba', '*', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn'].map((el, i) => (
+                    <div key={`p6-${i}`} className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                      <div className="text-center"><div className="font-bold">{i === 2 ? '57-71' : 55 + i}</div><div>{el}</div></div>
+                    </div>
+                  ))}
+
+                  {/* Period 7 - All inactive (without actinides) */}
+                  {['Fr', 'Ra', '**', 'Rf', 'Db', 'Sg', 'Bh', 'Hs', 'Mt', 'Ds', 'Rg', 'Cn', 'Nh', 'Fl', 'Mc', 'Lv', 'Ts', 'Og'].map((el, i) => (
+                    <div key={`p7-${i}`} className="aspect-square bg-slate-700/30 border border-slate-600/30 rounded flex items-center justify-center text-slate-500">
+                      <div className="text-center"><div className="font-bold">{i === 2 ? '89-103' : 87 + i}</div><div>{el}</div></div>
                     </div>
                   ))}
                 </div>
@@ -656,37 +762,6 @@ export default function OrganicTreatmentServicePage() {
                 <div className="flex justify-center">
                   <div className="w-0.5 h-8 bg-gradient-to-b from-green-500 to-green-400"></div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Performance Metrics Summary */}
-          <div className="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 text-white">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2">Métricas de Rendimiento TSF</h3>
-              <p className="text-slate-300">Resultados comprobados en recuperación orgánica</p>
-            </div>
-
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-black text-green-400 mb-2">95%</div>
-                <div className="text-sm text-slate-300">Recuperación</div>
-                <div className="text-xs text-slate-400">Orgánico purificado</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-green-400 mb-2">60%</div>
-                <div className="text-sm text-slate-300">Reducción pérdidas</div>
-                <div className="text-xs text-slate-400">Solvente ahorrado</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-green-400 mb-2">50%</div>
-                <div className="text-sm text-slate-300">Extensión vida</div>
-                <div className="text-xs text-slate-400">Útil del orgánico</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-green-400 mb-2">&lt;12m</div>
-                <div className="text-sm text-slate-300">ROI</div>
-                <div className="text-xs text-slate-400">Retorno inversión</div>
               </div>
             </div>
           </div>

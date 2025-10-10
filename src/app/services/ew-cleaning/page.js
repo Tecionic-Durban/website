@@ -397,9 +397,6 @@ export default function EWCleaningServicePage() {
                   <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
                   <span>Disponible 24/7</span>
                 </div>
-                <button className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:scale-105">
-                  Solicitar Cotización
-                </button>
               </div>
             </div>
           </div>
