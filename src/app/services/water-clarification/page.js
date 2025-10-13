@@ -350,10 +350,10 @@ export default function WaterClarificationServicePage() {
 
               {/* Description */}
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
-                Recuperación máxima agua proceso con tecnologías DAF y clarificación lamelar
-                <span className="font-bold text-slate-900"> hasta 120 m³/día</span>.
-                <span className="text-teal-600 font-medium"> 95% reutilización</span>
-                con cumplimiento DS90/2000.
+                Recuperación máxima agua proceso con tecnologías DAF y recuperación con filtros prensa
+                <span className="font-bold text-slate-900"> hasta 260 m³/día por filtro</span>.
+                <span className="text-teal-600 font-medium"> 100% reutilización </span>
+                con soporte para alcanzar estándares DS90/2000.
               </p>
 
               {/* Enterprise CTA Section */}
