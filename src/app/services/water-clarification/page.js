@@ -53,7 +53,7 @@ export default function WaterClarificationServicePage() {
     {
       step: '2',
       title: 'Diseño Sistema',
-      description: 'Configuración clarificación: DAF, lamelar o híbrido según aplicación',
+      description: 'Configuración clarificación: DAF, filtración o híbrido según aplicación',
       additionalInfo: 'Dimensionamiento hidráulico • Selección equipos • Control automático',
       icon: Target
     },
@@ -76,9 +76,9 @@ export default function WaterClarificationServicePage() {
   const useCases = [
     {
       industry: 'Cobre SX-EW',
-      application: 'Recuperación agua raffinate para recirculación',
-      challenge: 'Pérdida crítica 40% agua proceso por turbidez >50 NTU en raffinate, imposibilitando recirculación',
-      solution: 'Sistema integrado DAF + clarificadores lamelares de alta tasa con control automático',
+      application: 'Recuperación agua refino para recirculación',
+      challenge: 'Pérdida crítica 40% agua proceso por turbidez >50 NTU en refino, imposibilitando recirculación',
+      solution: 'Sistema integrado DAF + filtros prensa de alta capacidad con control automático',
       result: 'Recuperación agua proceso 95%, calidad <5 NTU constante',
       client: 'Minera Los Pelambres',
       savings: 'Ahorro agua fresca $1.8M/año'
@@ -96,7 +96,7 @@ export default function WaterClarificationServicePage() {
       industry: 'Drenaje Ácido',
       application: 'Remediación AMD con neutralización pasiva',
       challenge: 'Drenaje ácido mina pH 2.8 con metales pesados requería tratamiento costoso $800K/año',
-      solution: 'Sistema pasivo neutralización + clarificación lamelar para tratamiento continuo AMD',
+      solution: 'Sistema pasivo neutralización + filtración para tratamiento continuo AMD',
       result: 'pH estabilizado 7.2, metales pesados <10 mg/L',
       client: 'Operaciones Mineras Norte Chile',
       savings: 'Reducción OPEX 60%'
@@ -115,8 +115,8 @@ export default function WaterClarificationServicePage() {
     },
     {
       element: "Cu²⁺",
-      industry: "Raffinate SX-EW",
-      application: "Reutilización agua raffinate",
+      industry: "Refino SX-EW",
+      application: "Reutilización agua refino",
       performance: "98% Calidad agua fresca",
       specs: "Remoción 99% sólidos suspendidos | Claridad constante",
       color: "#ea580c",
@@ -164,8 +164,8 @@ export default function WaterClarificationServicePage() {
     {
       title: "Recuperación Total Agua SX-EW Cobre",
       client: "Minera Los Pelambres",
-      challenge: "Pérdida crítica 40% agua proceso por turbidez >50 NTU en raffinate, imposibilitando recirculación y aumentando costos agua fresca $2M/año.",
-      solution: "Sistema integrado DAF + clarificadores lamelares de alta tasa con control automático coagulación-floculación para tratamiento agua raffinate.",
+      challenge: "Pérdida crítica 40% agua proceso por turbidez >50 NTU en refino, imposibilitando recirculación y aumentando costos agua fresca $2M/año.",
+      solution: "Sistema integrado DAF + filtros prensa de alta capacidad con control automático coagulación-floculación para tratamiento agua refino.",
       results: [
         "Recuperación agua proceso: 95%",
         "Calidad agua <5 NTU constante",
@@ -201,7 +201,7 @@ export default function WaterClarificationServicePage() {
       title: "Remediación Drenaje Ácido Mina",
       client: "Operaciones Mineras Norte Chile",
       challenge: "Drenaje ácido mina pH 2.8 con Cu 250 mg/L, Zn 180 mg/L requería tratamiento costoso $800K/año para cumplimiento ambiental.",
-      solution: "Sistema pasivo neutralización + clarificación lamelar para tratamiento continuo AMD con minimización reactivos.",
+      solution: "Sistema pasivo neutralización + filtración para tratamiento continuo AMD con minimización reactivos.",
       results: [
         "pH estabilizado: 7.2",
         "Metales pesados: <10 mg/L",
@@ -410,7 +410,7 @@ export default function WaterClarificationServicePage() {
 
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
                   <div className="text-xs text-gray-700">
-                    <div className="font-bold">120 m³/día</div>
+                    <div className="font-bold">260 m³/día</div>
                     <div className="text-gray-500">Capacidad Max</div>
                   </div>
                 </div>
@@ -456,8 +456,8 @@ export default function WaterClarificationServicePage() {
 
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
               Equipos especializados para recuperación y reutilización agua proceso con
-              <span className="font-semibold text-teal-600">tecnologías DAF y clarificación lamelar</span>.
-              Cumplimiento normativo DS90/2000 garantizado.
+              <span className="font-semibold text-teal-600">tecnologías DAF y filtración</span>.
+              Apoyo para alcanzar cumplimiento normativo DS90/2000.
             </p>
           </div>
 
@@ -467,7 +467,7 @@ export default function WaterClarificationServicePage() {
               {
                 icon: Shield,
                 title: "Cumplimiento DS90",
-                description: "Garantía total cumplimiento normativo ambiental con monitoreo continuo calidad efluentes",
+                description: "Ayuda con cumplimiento normativo ambiental con monitoreo continuo calidad efluentes",
                 color: "teal",
                 metric: "100%"
               },
@@ -488,9 +488,9 @@ export default function WaterClarificationServicePage() {
               {
                 icon: BarChart3,
                 title: "Alta Capacidad",
-                description: "Procesamiento hasta 120 m³/día con tecnología clarificación lamelar de alta tasa",
+                description: "Procesamiento hasta 260 m³/día con tecnología de filtración de alta tasa",
                 color: "slate",
-                metric: "120m³"
+                metric: "260m³"
               }
             ].map((feature, index) => (
               <div key={index} className="group relative bg-white rounded-xl p-6 border border-teal-100/50 shadow-sm hover:shadow-lg transition-all duration-300 progressive-reveal overflow-hidden hover:-translate-y-1">
@@ -729,7 +729,7 @@ export default function WaterClarificationServicePage() {
 
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-black text-teal-400 mb-2">120</div>
+                <div className="text-3xl font-black text-teal-400 mb-2">260</div>
                 <div className="text-sm text-slate-300">m³/día</div>
                 <div className="text-xs text-slate-400">Capacidad máxima</div>
               </div>
