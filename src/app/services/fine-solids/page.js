@@ -487,6 +487,138 @@ export default function FineSolidsServicePage() {
         </div>
       </section>
 
+      {/* Key Benefits / KPIs Section */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-white">
+        <div className="max-w-8xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-slate-900 mb-4">
+              Beneficios Clave
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Ventajas técnicas y operacionales de nuestros sistemas de filtración de sólidos
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Reducción Turbidez */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
+                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                  <Droplets className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                </div>
+
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">Reducción Turbidez</h3>
+
+                <div className="mb-4">
+                  <div className="text-3xl font-black text-purple-600 mb-2">&lt;10 NTU</div>
+                  <p className="text-gray-600 text-sm">
+                    Control automático de turbidez para protección de membranas DLE y equipos hidrometalúrgicos
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-purple-100">
+                  <div className="flex items-center text-sm text-purple-600 font-medium">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Monitoreo continuo
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Equipos Móviles */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
+                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                  <Truck className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                </div>
+
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">Equipos Móviles</h3>
+
+                <div className="mb-4">
+                  <div className="text-3xl font-black text-purple-600 mb-2">24-48h</div>
+                  <p className="text-gray-600 text-sm">
+                    Instalación rápida sin modificar infraestructura. Sistema plug-and-play completamente portátil
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-purple-100">
+                  <div className="flex items-center text-sm text-purple-600 font-medium">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Sin instalación permanente
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Reducción PPM */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
+                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                  <Activity className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                </div>
+
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">Reducción PPM</h3>
+
+                <div className="mb-4">
+                  <div className="text-3xl font-black text-purple-600 mb-2">&lt;20 mg/L</div>
+                  <p className="text-gray-600 text-sm">
+                    Remoción efectiva de sólidos suspendidos totales (TSS) para procesos SX/EW
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-purple-100">
+                  <div className="flex items-center text-sm text-purple-600 font-medium">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Calidad garantizada
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Capacidad por Equipo */}
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
+                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                  <BarChart3 className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                </div>
+
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">Capacidad Alto Caudal</h3>
+
+                <div className="mb-4">
+                  <div className="text-3xl font-black text-purple-600 mb-2">260 m³/día</div>
+                  <p className="text-gray-600 text-sm">
+                    Filtros prensa de alta capacidad por equipo. Configuración modular escalable
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-purple-100">
+                  <div className="flex items-center text-sm text-purple-600 font-medium">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Escalabilidad ilimitada
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Steps */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-8xl mx-auto px-8">
