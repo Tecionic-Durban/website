@@ -45,23 +45,23 @@ export default function ConcentrateDehydrationServicePage() {
   const processSteps = [
     {
       step: '1',
-      title: 'Caracterización',
-      description: 'Análisis granulometría y composición mineralógica',
-      additionalInfo: 'Análisis D50, distribución partículas • Determinación densidades específicas',
+      title: 'Análisis Mineralógico',
+      description: 'Composición mineralógica del concentrado',
+      additionalInfo: 'Análisis completo de minerales',
       icon: FlaskConical
     },
     {
       step: '2',
       title: 'Acondicionamiento',
       description: 'Preparación pulpa y ajuste parámetros operacionales',
-      additionalInfo: 'Control pH y conductividad • Optimización concentración sólidos',
+      additionalInfo: 'Optimización concentración sólidos',
       icon: Settings
     },
     {
       step: '3',
       title: 'Deshidratación',
-      description: 'Filtración/centrifugación de alta eficiencia',
-      additionalInfo: 'Monitoreo presión y velocidad • Control humedad tiempo real',
+      description: 'Equipos de alta eficiencia para reducción de humedad',
+      additionalInfo: 'Monitoreo presión y caudal • Control humedad tiempo real',
       icon: Droplets
     },
     {
@@ -430,8 +430,8 @@ export default function ConcentrateDehydrationServicePage() {
                       element: "Cu",
                       industry: "Concentrados Cobre",
                       application: "Deshidratación Cu para fundición",
-                      performance: "8% Humedad Final",
-                      specs: "Reducción 30% costos transporte | Cumplimiento comercial",
+                      performance: "30% Ahorro Transporte",
+                      specs: "Cumplimiento estándares comerciales de humedad",
                       color: "#ea580c",
                       status: "Operativo"
                     }
@@ -734,11 +734,11 @@ export default function ConcentrateDehydrationServicePage() {
 
         <div className="relative max-w-7xl mx-auto px-8 py-24 text-center">
           <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-animated">
-            ¿Necesitas Optimizar la Humedad de tus Concentrados?
+            Evita Cuellos de Botella en tu Producción
           </h2>
           <p className="text-xl text-cyan-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Evaluación técnica especializada para cumplir especificaciones comerciales.
-            <span className="font-semibold text-cyan-300">Análisis sin costo con nuestros expertos en deshidratación.</span>
+            Capacidad adicional móvil para mantener el flujo continuo de tu operación.
+            <span className="font-semibold text-cyan-300"> Flexibilidad cuando más lo necesitas.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

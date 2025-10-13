@@ -53,14 +53,14 @@ export default function FineSolidsServicePage() {
     {
       step: '2',
       title: 'Diseño Sistema',
-      description: 'Configuración centrífugas según aplicación: DLE, SX o EW',
-      additionalInfo: 'Selección G-force óptima • Cálculo velocidades • Control automático',
+      description: 'Configuración filtros prensa según aplicación: DLE, SX o EW',
+      additionalInfo: 'Selección presión óptima • Dimensionamiento • Control automático',
       icon: Target
     },
     {
       step: '3',
-      title: 'Separación Centrífuga o Filtración',
-      description: 'Remoción sólidos ultra-finos mediante alta velocidad rotacional o filtración',
+      title: 'Filtración de Sólidos',
+      description: 'Remoción sólidos ultra-finos mediante filtros prensa',
       additionalInfo: 'Monitoreo turbidez continuo • Optimización AI • Mantenimiento predictivo',
       icon: Settings
     },
@@ -135,7 +135,7 @@ export default function FineSolidsServicePage() {
       industry: 'Litio DLE',
       application: 'Protección membranas extracción directa',
       challenge: 'Sólidos ultra-finos <5μm contaminaban membranas selectivas, reduciendo eficiencia extracción Li+ de 65% a 45%',
-      solution: 'Sistema híbrido centrífugas 12,000 RPM + hidrociclones para remoción partículas coloidales',
+      solution: 'Sistema filtros prensa + hidrociclones para remoción partículas coloidales',
       result: 'Extensión vida útil membranas 400%, eficiencia Li+ 94%',
       client: 'Operaciones Litio Sudamérica',
       savings: 'ROI 280% primer año'
@@ -144,7 +144,7 @@ export default function FineSolidsServicePage() {
       industry: 'Cobre SX',
       application: 'Eliminación crud formación',
       challenge: 'Formación crud estable causaba pérdidas extractante $3M/año y paradas operacionales',
-      solution: 'Centrífugas móviles 14 ton/día con control automático turbidez',
+      solution: 'Filtros prensa móviles 14 ton/día con control automático turbidez',
       result: 'Reducción incidents crud 85%, ahorro $2.8M/año',
       client: 'Plantas SX Región Antofagasta',
       savings: 'Disponibilidad SX 97.5%'
@@ -153,7 +153,7 @@ export default function FineSolidsServicePage() {
       industry: 'Zinc EW',
       application: 'Ultra-purificación electrolito',
       challenge: 'Sólidos suspendidos causaban rugosidad catódica, rechazo 15% producción',
-      solution: 'Clarificación avanzada centrífugas alta G-force + filtración polish',
+      solution: 'Clarificación avanzada filtros prensa + filtración polish',
       result: 'Calidad cátodos 99.995% Zn, reducción rechazo 90%',
       client: 'Refinería Zinc Internacional',
       savings: 'Savings $1.8M/año'
@@ -165,7 +165,7 @@ export default function FineSolidsServicePage() {
       title: "Revolución DLE en Salar de Atacama",
       client: "Operaciones Litio Sudamérica",
       challenge: "Sólidos ultra-finos &lt;5μm contaminaban membranas selectivas, reduciendo eficiencia extracción Li+ de 65% a 45% en 6 meses.",
-      solution: "Implementación sistema híbrido: centrífugas 12,000 RPM + hidrociclones 10mm para remoción partículas coloidales pre-DLE.",
+      solution: "Implementación sistema híbrido: filtros prensa + hidrociclones 10mm para remoción partículas coloidales pre-DLE.",
       results: [
         "Extensión vida útil membranas: 400%",
         "Eficiencia extracción Li+: 94%",
@@ -183,7 +183,7 @@ export default function FineSolidsServicePage() {
       title: "Eliminación Crud en SX Cobre",
       client: "Plantas SX Región Antofagasta",
       challenge: "Formación crud estable en circuitos SX causaba pérdidas extractante $3M/año y paradas operacionales frecuentes.",
-      solution: "Batería centrífugas móviles 14 ton/día con control automático turbidez para remoción continua sólidos coloidales.",
+      solution: "Batería filtros prensa móviles 14 ton/día con control automático turbidez para remoción continua sólidos coloidales.",
       results: [
         "Reducción incidents crud: 85%",
         "Ahorro pérdidas orgánico: $2.8M/año",
@@ -201,7 +201,7 @@ export default function FineSolidsServicePage() {
       title: "Ultra-Purificación EW Zinc",
       client: "Refinería Zinc Internacional",
       challenge: "Sólidos suspendidos en electrolito causaban rugosidad catódica, rechazo 15% producción y pérdidas $1.5M/año.",
-      solution: "Sistema clarificación avanzada: centrífugas alta G-force + filtración polish para soluciones ultra-puras EW.",
+      solution: "Sistema clarificación avanzada: filtros prensa + filtración polish para soluciones ultra-puras EW.",
       results: [
         "Calidad cátodos: 99.995% Zn",
         "Reducción rechazo: 90%",
@@ -339,20 +339,20 @@ export default function FineSolidsServicePage() {
                 <h1 className="text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-black tracking-tight text-slate-900 leading-[0.9] mb-4">
                   Separación de Sólidos
                   <span className="block text-purple-600">
-                    Finos
+                    de Líquidos
                   </span>
                 </h1>
                 <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
-                  Para DLE • SX • EW • Ultra-Selectiva
+                  Filtración Alto Caudal • Desde 6μm • Aplicación Universal
                 </div>
               </div>
 
               {/* Description */}
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
-                Protección avanzada membranas DLE y equipos hidrometalúrgicos mediante remoción
-                <span className="font-bold text-slate-900"> ultra-selectiva partículas &lt;20μm</span>.
-                <span className="text-purple-600 font-medium"> Centrífugas 14 ton/día</span>
-                con control automático turbidez.
+                Protección avanzada de membranas DLE y filtración de líquidos de alto caudal
+                <span className="font-bold text-slate-900"> desde 6 micrones (μm) en adelante</span>.
+                <span className="text-purple-600 font-medium"> Filtros prensa 260 m³/día</span>
+                con control automático de turbidez para cualquier aplicación de separación sólido-líquido.
               </p>
 
               {/* Enterprise CTA Section */}
@@ -388,13 +388,13 @@ export default function FineSolidsServicePage() {
 
               {/* Hero Image Container */}
               <div className="relative z-10 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                {/* Placeholder for centrifuge equipment image */}
+                {/* Placeholder for filter press equipment image */}
                 <div className="w-full h-full bg-gradient-to-br from-purple-100 via-purple-50 to-white flex items-center justify-center border border-purple-200/50">
                   <div className="text-center p-8">
                     <div className="w-24 h-24 mx-auto mb-6 bg-purple-500/10 rounded-full flex items-center justify-center">
                       <Waves className="w-12 h-12 text-purple-600" />
                     </div>
-                    <h3 className="text-lg font-bold text-purple-800 mb-2">Sistema Centrífugas Móviles</h3>
+                    <h3 className="text-lg font-bold text-purple-800 mb-2">Sistema Filtros Prensa Móviles</h3>
                     <p className="text-sm text-purple-600">Separación ultra-selectiva partículas finas</p>
                   </div>
                 </div>
