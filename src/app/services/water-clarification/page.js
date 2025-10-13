@@ -45,24 +45,24 @@ export default function WaterClarificationServicePage() {
   const processSteps = [
     {
       step: '1',
-      title: 'Caracterización Agua',
-      description: 'Análisis completo calidad agua: turbidez, TSS, pH, metales, orgánicos',
-      additionalInfo: 'Testing jar test • Selección reactivos • Optimización dosis',
+      title: 'Análisis Granulométrico',
+      description: 'Caracterización completa distribución tamaños y mineralogía sólidos finos',
+      additionalInfo: 'Análisis laser diffraction • Microscopia electrónica • Química superficial',
       icon: FlaskConical
     },
     {
       step: '2',
-      title: 'Diseño Sistema',
-      description: 'Configuración clarificación: DAF, filtración o híbrido según aplicación',
-      additionalInfo: 'Dimensionamiento hidráulico • Selección equipos • Control automático',
-      icon: Target
+      title: 'Conexión',
+      description: 'Integración móvil con sistemas existentes de planta',
+      additionalInfo: 'No utiliza equipamiento de planta cliente • Sistema 100% autónomo',
+      icon: Truck
     },
     {
       step: '3',
-      title: 'Clarificación Avanzada',
-      description: 'Separación sólidos-líquido mediante coagulación-floculación optimizada',
-      additionalInfo: 'Monitoreo turbidez continuo • Control pH automático • Dosificación proporcional',
-      icon: Droplets
+      title: 'Filtración de Sólidos',
+      description: 'Remoción sólidos ultra-finos mediante filtros prensa',
+      additionalInfo: 'Monitoreo turbidez continuo • Optimización AI • Mantenimiento predictivo',
+      icon: Settings
     },
     {
       step: '4',
