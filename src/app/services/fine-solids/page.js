@@ -52,10 +52,10 @@ export default function FineSolidsServicePage() {
     },
     {
       step: '2',
-      title: 'Diseño Sistema',
-      description: 'Configuración filtros prensa según aplicación: DLE, SX o EW',
-      additionalInfo: 'Selección presión óptima • Dimensionamiento • Control automático',
-      icon: Target
+      title: 'Conexión',
+      description: 'Integración móvil con sistemas existentes de planta',
+      additionalInfo: 'No utiliza equipamiento de planta cliente • Sistema 100% autónomo',
+      icon: Truck
     },
     {
       step: '3',
@@ -120,13 +120,13 @@ export default function FineSolidsServicePage() {
       status: "Especializado"
     },
     {
-      element: "REE",
-      industry: "Tierras Raras",
-      application: "Separación finos lantánidos",
-      performance: "97% Pureza concentrados",
-      specs: "Selectividad molecular | Protección intercambiadores",
-      color: "#10b981",
-      status: "Avanzado"
+      element: "HC",
+      industry: "Petróleo",
+      application: "Deshidratación borras oleosas",
+      performance: "90% Recuperación aceite",
+      specs: "70% reducción volumen | Recuperación hidrocarburos",
+      color: "#dc2626",
+      status: "Activo"
     }
   ]
 
