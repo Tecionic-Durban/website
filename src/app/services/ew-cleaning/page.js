@@ -273,13 +273,6 @@ export default function EWCleaningServicePage() {
       color: "#6366f1"
     },
     {
-      element: "100%",
-      industry: "Eficiencia Remoción",
-      application: "Reducción total de depósitos metálicos en zonas críticas de celdas",
-      specs: "Logra 100% de reducción de depósitos metálicos con trazabilidad completa del proceso",
-      color: "#64748b"
-    },
-    {
       element: "0%",
       industry: "Pérdida Electrolito",
       application: "Pérdida nula de electrolito durante todo el proceso de desborre y filtración",
