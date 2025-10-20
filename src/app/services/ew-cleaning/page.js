@@ -216,8 +216,8 @@ export default function EWCleaningServicePage() {
   const useCases = [
     {
       industry: 'Problema Resuelto',
-      application: 'Prevención de contaminación catódica por acumulación de borras',
-      challenge: 'borras plomadas y orgánicas en fondo de celdas causan contaminación catódica, reduciendo la pureza y calidad del cobre producido.',
+      application: 'Eliminación de borras para prevenir contaminación catódica',
+      challenge: 'Borras plomadas y orgánicas en fondo de celdas causan contaminación catódica, reduciendo la pureza y calidad del cobre producido.',
       solution: 'Nuestro sistema de succión neumática de 6 m³/h con filtración móvil devuelve el electrolito filtrado con menos de 2-3 ppm de sólidos, logrando',
       result: '100% reducción de depósitos metálicos en zonas críticas',
       client: 'Solución TSF',
@@ -354,7 +354,7 @@ export default function EWCleaningServicePage() {
     '100% reducción de depósitos metálicos en zonas críticas',
     'Cero pérdida de electrolito durante proceso',
     'Reducción consumo energético por celda',
-    'Prevención de contaminación catódica por borras',
+    'Eliminación de borras para prevenir contaminación catódica',
     '95% eficiencia de remoción vs operación manual',
     'Continuidad operacional sin detenciones mayores',
     'Calidad cátodos mantenida dentro estándares LME',
