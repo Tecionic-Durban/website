@@ -325,7 +325,7 @@ export default function EWCleaningServicePage() {
                 {/* Pull quote */}
                 <div className="border-l-4 border-white/50 pl-6 mt-8">
                   <p className="text-2xl font-bold leading-tight">
-                    "100% reducción de depósitos metálicos en zonas críticas"
+                    &ldquo;100% reducción de depósitos metálicos en zonas críticas&rdquo;
                   </p>
                 </div>
               </div>
