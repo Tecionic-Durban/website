@@ -234,10 +234,10 @@ export default function EWCleaningServicePage() {
     },
     {
       industry: 'Eficiencia del Sistema',
-      application: 'Desborre continuo sin pérdida de electrolito',
-      challenge: 'Limpieza manual tradicional requiere desconectar la celda del circuito eléctrico, vaciar completamente el electrolito (pérdida total de inventario), extraer la celda para limpieza manual exhaustiva, y reinstalar. Proceso lento, peligroso para operadores, y con altas pérdidas de electrolito costoso.',
+      application: 'Proceso automatizado, seguro y rápido',
+      challenge: 'Limpieza manual tradicional requiere trabajo físico intenso en espacios confinados con exposición a químicos. Operadores deben desconectar celdas, extraerlas manualmente, y limpiarlas bajo riesgo ergonómico y químico. Proceso lento que toma días por celda.',
       solution: 'Equipos móviles de aspirado industrial con filtros prensa y bombas neumáticas certificadas alcanzan',
-      result: 'Remoción eficiente sin detener producción',
+      result: '2-3 celdas por turno sin riesgo para operadores',
       client: 'Tecnología Probada',
       savings: 'con ROI inmediato'
     }
