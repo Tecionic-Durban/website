@@ -234,10 +234,10 @@ export default function EWCleaningServicePage() {
     },
     {
       industry: 'Eficiencia del Sistema',
-      application: 'Alta tasa de remoción de borras vs operación manual',
-      challenge: 'Limpieza manual de celdas es lenta, peligrosa y deja residuos metálicos que reinician problemas.',
+      application: 'Desborre continuo sin pérdida de electrolito',
+      challenge: 'Limpieza manual tradicional requiere desconectar la celda del circuito eléctrico, vaciar completamente el electrolito (pérdida total de inventario), extraer la celda para limpieza manual exhaustiva, y reinstalar. Proceso lento, peligroso para operadores, y con altas pérdidas de electrolito costoso.',
       solution: 'Equipos móviles de aspirado industrial con filtros prensa y bombas neumáticas certificadas alcanzan',
-      result: '95% de eficiencia en remoción versus limpieza manual',
+      result: 'Remoción eficiente sin detener producción',
       client: 'Tecnología Probada',
       savings: 'con ROI inmediato'
     }
@@ -273,9 +273,9 @@ export default function EWCleaningServicePage() {
       color: "#6366f1"
     },
     {
-      element: "95%",
+      element: "100%",
       industry: "Eficiencia Remoción",
-      application: "Tasa de remoción efectiva de borras comparado con limpieza manual tradicional",
+      application: "Reducción total de depósitos metálicos en zonas críticas de celdas",
       specs: "Logra 100% de reducción de depósitos metálicos con trazabilidad completa del proceso",
       color: "#64748b"
     },
@@ -355,7 +355,7 @@ export default function EWCleaningServicePage() {
     'Cero pérdida de electrolito durante proceso',
     'Reducción consumo energético por celda',
     'Eliminación de borras para prevenir contaminación catódica',
-    '95% eficiencia de remoción vs operación manual',
+    'Proceso automatizado sin pérdida de electrolito',
     'Continuidad operacional sin detenciones mayores',
     'Calidad cátodos mantenida dentro estándares LME',
     'Sistema móvil de rápida implementación',
@@ -713,8 +713,8 @@ export default function EWCleaningServicePage() {
             <div className="progressive-reveal">
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-12 flex items-center justify-center min-h-[300px]">
                 <div className="text-center">
-                  <div className="text-8xl font-black text-purple-600 mb-4">95%</div>
-                  <p className="text-lg font-semibold text-slate-700">Eficiencia vs manual</p>
+                  <div className="text-8xl font-black text-purple-600 mb-4">0%</div>
+                  <p className="text-lg font-semibold text-slate-700">Pérdida de electrolito</p>
                   <p className="text-sm text-slate-500 mt-2">{useCases[2].savings}</p>
                 </div>
               </div>
