@@ -216,8 +216,8 @@ export default function EWCleaningServicePage() {
   const useCases = [
     {
       industry: 'Problema Resuelto',
-      application: 'Eliminación cortocircuitos por acumulación de borras',
-      challenge: 'Borras metálicas y orgánicas en fondo de celdas generan cortocircuitos, aumentan consumo eléctrico y reducen calidad del cobre producido.',
+      application: 'Prevención de contaminación catódica por acumulación de borras',
+      challenge: 'Borras metálicas y orgánicas en fondo de celdas causan contaminación catódica, reduciendo la pureza y calidad del cobre producido.',
       solution: 'Nuestro sistema de succión neumática de 6 m³/h con filtración móvil devuelve el electrolito filtrado con menos de 2-3 ppm de sólidos, logrando',
       result: '100% reducción de depósitos metálicos en zonas críticas',
       client: 'Solución TSF',
@@ -292,7 +292,7 @@ export default function EWCleaningServicePage() {
     {
       title: "Desborre de Celdas EW - Minera Caserones",
       client: "SCM Minera Lumina Copper Chile - Caserones",
-      challenge: "Acumulación de borras metálicas y orgánicas en fondo de celdas EW generaba cortocircuitos, aumento consumo eléctrico y reducción calidad cobre. Operación a >4.000 msnm exigía solución móvil de rápida implementación.",
+      challenge: "Acumulación de borras metálicas y orgánicas en fondo de celdas EW causaba contaminación catódica, reduciendo la pureza y calidad del cobre producido. Operación a >4.000 msnm exigía solución móvil de rápida implementación.",
       solution: "Servicio integral de desborre mediante succión neumática + filtración móvil + retorno de electrolito filtrado. Jornada 7x7 diurna. Rendimiento: 1 celda/día. Equipos móviles adaptados a altura con contenedores-bodega autónomos.",
       results: [
         "100% reducción depósitos metálicos en zonas críticas",
@@ -354,7 +354,7 @@ export default function EWCleaningServicePage() {
     '100% reducción de depósitos metálicos en zonas críticas',
     'Cero pérdida de electrolito durante proceso',
     'Reducción consumo energético por celda',
-    'Eliminación total de cortocircuitos por borras',
+    'Prevención de contaminación catódica por borras',
     '95% eficiencia de remoción vs operación manual',
     'Continuidad operacional sin detenciones mayores',
     'Calidad cátodos mantenida dentro estándares LME',
