@@ -186,7 +186,7 @@ export default function EWCleaningServicePage() {
     {
       step: '2',
       title: 'Succión de Borras',
-      description: 'Aspirado neumático de borras metálicas y orgánicas desde fondo de celda',
+      description: 'Aspirado neumático de borras plomadas y orgánicas desde fondo de celda',
       additionalInfo: 'Tasa 6 m³/hora • Bombas neumáticas • Mangueras antiestáticas',
       icon: Activity
     },
@@ -217,7 +217,7 @@ export default function EWCleaningServicePage() {
     {
       industry: 'Problema Resuelto',
       application: 'Prevención de contaminación catódica por acumulación de borras',
-      challenge: 'Borras metálicas y orgánicas en fondo de celdas causan contaminación catódica, reduciendo la pureza y calidad del cobre producido.',
+      challenge: 'borras plomadas y orgánicas en fondo de celdas causan contaminación catódica, reduciendo la pureza y calidad del cobre producido.',
       solution: 'Nuestro sistema de succión neumática de 6 m³/h con filtración móvil devuelve el electrolito filtrado con menos de 2-3 ppm de sólidos, logrando',
       result: '100% reducción de depósitos metálicos en zonas críticas',
       client: 'Solución TSF',
@@ -292,7 +292,7 @@ export default function EWCleaningServicePage() {
     {
       title: "Desborre de Celdas EW - Minera Caserones",
       client: "SCM Minera Lumina Copper Chile - Caserones",
-      challenge: "Acumulación de borras metálicas y orgánicas en fondo de celdas EW causaba contaminación catódica, reduciendo la pureza y calidad del cobre producido. Operación a >4.000 msnm exigía solución móvil de rápida implementación.",
+      challenge: "Acumulación de borras plomadas y orgánicas en fondo de celdas EW causaba contaminación catódica, reduciendo la pureza y calidad del cobre producido. Operación a >4.000 msnm exigía solución móvil de rápida implementación.",
       solution: "Servicio integral de desborre mediante succión neumática + filtración móvil + retorno de electrolito filtrado. Jornada 7x7 diurna. Rendimiento: 1 celda/día. Equipos móviles adaptados a altura con contenedores-bodega autónomos.",
       results: [
         "100% reducción depósitos metálicos en zonas críticas",
@@ -560,7 +560,7 @@ export default function EWCleaningServicePage() {
 
               {/* Description */}
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
-                Sistema especializado de remoción de borras metálicas y orgánicas mediante
+                Sistema especializado de remoción de borras plomadas y orgánicas mediante
                 <span className="font-bold text-slate-900"> succión y filtración móvil</span>.
                 <span className="text-amber-600 font-medium"> Reducción 100% depósitos metálicos</span> sin pérdida de electrolito.
               </p>
