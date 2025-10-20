@@ -151,10 +151,56 @@ export default function CasosEstudioPage() {
           "Automatización robótica para manejo de cátodos"
         ]
       }
+    },
+    {
+      id: 5,
+      title: "Deshidratación de Lodos Petroleros - Refinería ENAP",
+      client: "ENAP Refinería Concón",
+      industry: "Petróleo Crudo",
+      challenge: "4.5+ millones kg/año de lodos petroleros con 70-92% humedad generan altos costos de disposición y logística. Tres corrientes críticas (planta fenólica, fenoles y T-2402) requieren solución de reducción volumétrica sin inversión en infraestructura permanente.",
+      solution: "Validación técnica de laboratorio con tecnología de filtración móvil. Pruebas con filtros equivalentes a sistemas industriales demostraron viabilidad de deshidratación mediante filtro prensa/centrífuga. Se identificaron 5 áreas de aplicación en procesos Delayed Coker, FCC, tratamiento efluentes y separadores API.",
+      results: [
+        "84.23% reducción volumen lodos planta fenólica (92.59% → 53% humedad)",
+        "77.31% reducción volumen lodos planta fenoles (90.02% → 56% humedad)",
+        "32.96% reducción volumen lodos T-2402 (70.37% → 55.8% humedad)",
+        "Validación técnica sin inversión del cliente",
+        "5 oportunidades adicionales identificadas en refinería",
+        "Potencial recuperación de agua para reutilización"
+      ],
+      timeline: "3 meses",
+      image: "/case-study-enap.jpg",
+      category: "Deshidratación de Lodos",
+      location: "Refinería ENAP Concón, Chile",
+      link: "/casos-de-estudio/enap-lodos-petroleros",
+      details: {
+        background: "ENAP Refinería Concón enfrentaba desafíos en la gestión de lodos petroleros generados en múltiples procesos, con alta humedad (70-92%) que incrementaba costos de transporte y disposición final. La refinería requería una solución que permitiera evaluar tecnología de deshidratación sin comprometer recursos de capital antes de validar su efectividad.",
+        approach: [
+          "Caracterización fisicoquímica de tres corrientes de lodos (planta fenólica, fenoles, T-2402)",
+          "Pruebas de laboratorio con filtros equivalentes a escala industrial",
+          "Evaluación de tecnología de filtro prensa y centrífuga",
+          "Análisis de viabilidad técnica y económica",
+          "Identificación de oportunidades adicionales en Delayed Coker, FCC y tratamiento de efluentes"
+        ],
+        technologies: [
+          "Tecnología de filtración móvil bajo vacío",
+          "Filtro prensa industrial",
+          "Sistemas de centrífuga para lodos petroleros",
+          "Caracterización fisicoquímica avanzada",
+          "Modelo predictivo de reducción volumétrica"
+        ],
+        metrics: {
+          beforeAfter: {
+            volume: { before: "4.5M kg/año", after: "↓35-85%" },
+            humidity: { before: "70-92%", after: "53-56%" },
+            disposalCost: { before: "Alto", after: "Optimizado" },
+            transportTrips: { before: "100%", after: "↓40-85%" }
+          }
+        }
+      }
     }
   ]
 
-  const filterCategories = ["Todos", "Extracción por Solventes", "Electroobtención", "Procesamiento de Salmueras"]
+  const filterCategories = ["Todos", "Extracción por Solventes", "Electroobtención", "Procesamiento de Salmueras", "Deshidratación de Lodos"]
   
   return (
     <div className="min-h-screen bg-gray-50">

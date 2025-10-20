@@ -2,6 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { Filter, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function WaterClarificationServicePage() {
   const router = null // Will be imported when needed
@@ -10,6 +14,10 @@ export default function WaterClarificationServicePage() {
   const processRef = useRef(null)
   const benefitsRef = useRef(null)
   const caseStudiesRef = useRef(null)
+  const industriesRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const isScrollingRef = useRef(false)
+  const userScrollingRef = useRef(false)
 
   // Progressive disclosure on scroll
   useEffect(() => {
@@ -41,6 +49,94 @@ export default function WaterClarificationServicePage() {
 
     return () => observer.disconnect()
   }, [])
+
+  // GSAP smooth scroll snap
+  useEffect(() => {
+    if (!industriesRef.current || userScrollingRef.current) return
+
+    const container = industriesRef.current
+    const cards = container.querySelectorAll('.showcase-card')
+
+    if (cards[activeIndex]) {
+      isScrollingRef.current = true
+
+      gsap.to(container, {
+        scrollLeft: cards[activeIndex].offsetLeft - (container.offsetWidth / 2) + (cards[activeIndex].offsetWidth / 2),
+        duration: 0.8,
+        ease: 'power3.out',
+        onComplete: () => {
+          isScrollingRef.current = false
+        }
+      })
+    }
+
+    return () => {
+      gsap.killTweensOf(container)
+    }
+  }, [activeIndex])
+
+  // Detect scroll position and update activeIndex with RAF
+  useEffect(() => {
+    if (!industriesRef.current) return
+
+    const container = industriesRef.current
+    const cards = container.querySelectorAll('.showcase-card')
+    let rafId = null
+    let userScrollTimeout = null
+
+    const updateActiveCard = () => {
+      if (isScrollingRef.current) return // Skip if GSAP is animating
+
+      const containerCenter = container.scrollLeft + container.offsetWidth / 2
+
+      let closestIndex = 0
+      let closestDistance = Infinity
+
+      cards.forEach((card, index) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2
+        const distance = Math.abs(containerCenter - cardCenter)
+
+        if (distance < closestDistance) {
+          closestDistance = distance
+          closestIndex = index
+        }
+      })
+
+      if (closestIndex !== activeIndex) {
+        setActiveIndex(closestIndex)
+      }
+    }
+
+    const handleScroll = () => {
+      userScrollingRef.current = true
+
+      // Clear existing timeout
+      clearTimeout(userScrollTimeout)
+
+      // Cancel existing RAF
+      if (rafId) {
+        cancelAnimationFrame(rafId)
+      }
+
+      // Use RAF for smooth updates
+      rafId = requestAnimationFrame(updateActiveCard)
+
+      // Reset user scrolling flag after scroll ends
+      userScrollTimeout = setTimeout(() => {
+        userScrollingRef.current = false
+      }, 150)
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll)
+      if (rafId) {
+        cancelAnimationFrame(rafId)
+      }
+      clearTimeout(userScrollTimeout)
+    }
+  }, [activeIndex])
 
   const processSteps = [
     {
@@ -104,61 +200,102 @@ export default function WaterClarificationServicePage() {
   ]
 
   const industrialApplications = [
-    {
-      element: "H₂O",
-      industry: "Agua Proceso Minero",
-      application: "Clarificación agua recirculación",
-      performance: "95% Recuperación agua",
-      specs: "Turbidez <5 NTU | TSS <10 mg/L | pH 6.5-8.5",
-      color: "#0891b2",
-      status: "Operativo"
-    },
+    // MINERÍA
     {
       element: "Cu²⁺",
-      industry: "Refino SX-EW",
-      application: "Reutilización agua refino",
+      industry: "Refino SX-EW Cobre",
+      application: "Reutilización agua refino con claridad constante para operación continua",
       performance: "98% Calidad agua fresca",
-      specs: "Remoción 99% sólidos suspendidos | Claridad constante",
+      specs: "Remoción 99% sólidos suspendidos | Turbidez <5 NTU | Sin paradas proceso",
       color: "#ea580c",
-      status: "Continuo"
-    },
-    {
-      element: "Li⁺",
-      industry: "Efluentes DLE",
-      application: "Cumplimiento ambiental DS90",
-      performance: "100% Compliance",
-      specs: "TSS <10 mg/L | Metales <límites DS90",
-      color: "#06b6d4",
-      status: "Regulado"
-    },
-    {
-      element: "AMD",
-      industry: "Drenaje Ácido Mina",
-      application: "Neutralización pasiva AMD",
-      performance: "pH 7.2 estabilizado",
-      specs: "Metales pesados <10 mg/L | Tratamiento continuo",
-      color: "#dc2626",
-      status: "Remediación"
+      category: "mineria"
     },
     {
       element: "Zn²⁺",
-      industry: "Electrolito EW",
-      application: "Ultra-purificación soluciones",
+      industry: "Electrolito EW Zinc",
+      application: "Ultra-purificación soluciones electrolíticas para cátodos premium",
       performance: "99.9% Pureza electrolito",
-      specs: "Partículas <1 μm | Calidad cátodos premium",
+      specs: "Partículas <1 μm | Calidad cátodos grado A | Sin cortocircuitos",
       color: "#64748b",
-      status: "Crítico"
+      category: "mineria"
+    },
+    {
+      element: "Li⁺",
+      industry: "Salmueras Litio DLE",
+      application: "Clarificación efluentes DLE para cumplimiento ambiental estricto",
+      performance: "100% Compliance DS90",
+      specs: "TSS <10 mg/L | Metales <límites regulatorios | Reutilización agua 90%",
+      color: "#06b6d4",
+      category: "mineria"
     },
     {
       element: "K⁺",
-      industry: "Salmueras Concentradas",
-      application: "Pre-cristalización clarificación",
+      industry: "Salmueras Potasio",
+      application: "Pre-cristalización clarificación para cristales ultra-puros",
       performance: "80% Reducción arcillas",
-      specs: "Claridad óptica | Cristales pureza >99%",
+      specs: "Claridad óptica | Cristales pureza >99% | Sin impurezas coloidales",
       color: "#8b5cf6",
-      status: "Optimizado"
+      category: "mineria"
+    },
+    {
+      element: "H₂O",
+      industry: "Agua Proceso Minero",
+      application: "Recuperación agua proceso para reducir consumo agua fresca",
+      performance: "95% Recuperación agua",
+      specs: "Turbidez <5 NTU | TSS <10 mg/L | pH 6.5-8.5 | Ahorro OPEX 60%",
+      color: "#0891b2",
+      category: "mineria"
+    },
+    // INDUSTRIAL
+    {
+      element: "Au",
+      industry: "Oro Cianuro",
+      application: "Clarificación soluciones pre-Merrill Crowe para máxima recuperación oro",
+      performance: "99.5% Claridad solución",
+      specs: "Turbidez <3 NTU | TSS <5 mg/L | Pérdidas oro <0.1%",
+      color: "#f59e0b",
+      category: "industrial"
+    },
+    {
+      element: "H₂SO₄",
+      industry: "Ácido Sulfúrico",
+      application: "Tratamiento aguas proceso planta ácido sulfúrico con recirculación",
+      performance: "95% Remoción impurezas",
+      specs: "pH controlado | Metales pesados <límites | Recirculación agua 85%",
+      color: "#eab308",
+      category: "industrial"
+    },
+    {
+      element: "C₆H₁₀O₅",
+      industry: "Celulosa y Papel",
+      application: "Clarificación efluentes planta celulosa para compliance ambiental",
+      performance: "90% Reducción DBO/DQO",
+      specs: "Turbidez <10 NTU | Sólidos <15 mg/L | Cumplimiento DS90",
+      color: "#84cc16",
+      category: "industrial"
+    },
+    // AMBIENTAL
+    {
+      element: "AMD",
+      industry: "Drenaje Ácido Mina",
+      application: "Neutralización pasiva y tratamiento continuo AMD",
+      performance: "pH 7.2 estabilizado",
+      specs: "Metales pesados <10 mg/L | Tratamiento autónomo | OPEX -60%",
+      color: "#dc2626",
+      category: "ambiental"
+    },
+    {
+      element: "H₂O",
+      industry: "Agua Potable Municipal",
+      application: "Potabilización agua para consumo humano e industrial",
+      performance: "99.9% Calidad potable",
+      specs: "NCh409 compliance | Turbidez <1 NTU | Bacterias <1 UFC/100mL",
+      color: "#3b82f6",
+      category: "ambiental"
     }
   ]
+
+  const activeApp = industrialApplications[activeIndex]
 
   const caseStudies = [
     {
@@ -541,80 +678,105 @@ export default function WaterClarificationServicePage() {
               </p>
             </div>
 
-            {/* Industry Applications Matrix - Clean & Focused */}
-            <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 px-8 py-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Aplicaciones Industriales TSF</h3>
-                    <p className="text-slate-300 text-sm">Resultados comprobados por sector minero y ambiental</p>
+            {/* Visual Index - All Elements */}
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
+              {industrialApplications.map((app, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className="group relative"
+                >
+                  <div
+                    className={`w-20 h-20 rounded-2xl flex items-center justify-center text-xl font-bold transition-all duration-300 ${
+                      activeIndex === index
+                        ? 'scale-110 shadow-xl'
+                        : 'hover:scale-105 shadow-md'
+                    }`}
+                    style={{
+                      backgroundColor: activeIndex === index ? app.color : `${app.color}20`,
+                      color: activeIndex === index ? 'white' : app.color
+                    }}
+                  >
+                    {app.element}
                   </div>
-                  <div className="text-teal-400 text-sm font-mono">VALIDADO ✓</div>
-                </div>
-              </div>
+                  {activeIndex === index && (
+                    <div
+                      className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 rounded-full"
+                      style={{ backgroundColor: app.color }}
+                    ></div>
+                  )}
+                </button>
+              ))}
+            </div>
 
-              {/* Applications Grid */}
-              <div className="p-8">
-                <div className="space-y-4">
-                  {industrialApplications.map((app, index) => (
-                    <div key={index} className="group relative bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all duration-300 border border-gray-100">
-                      <div className="flex items-start space-x-6">
-                        {/* Chemical Element Icon */}
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 rounded-xl flex items-center justify-center" style={{backgroundColor: `${app.color}15`}}>
-                            <div className="text-center">
-                              <div className="text-lg font-black" style={{color: app.color}}>{app.element}</div>
-                              <div className="text-xs font-medium" style={{color: app.color}}>ion</div>
-                            </div>
+            {/* Horizontal Scroll Showcase */}
+            <div className="relative">
+              <div
+                ref={industriesRef}
+                className="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-[calc(50%-400px)]"
+                style={{ scrollBehavior: 'smooth' }}
+              >
+                {industrialApplications.map((app, index) => (
+                  <div
+                    key={index}
+                    className={`showcase-card flex-shrink-0 w-[800px] snap-center transition-all duration-500 ${
+                      index === activeIndex ? 'scale-100 opacity-100' : 'scale-95 opacity-40'
+                    }`}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    <div className="bg-white rounded-2xl p-8 shadow-md relative overflow-hidden cursor-pointer">
+                      {/* Background gradient */}
+                      <div
+                        className="absolute inset-0 opacity-5"
+                        style={{
+                          background: `radial-gradient(circle at top right, ${app.color}, transparent)`
+                        }}
+                      ></div>
+
+                      {/* Content */}
+                      <div className="relative z-10">
+                        {/* Element + Title Row */}
+                        <div className="flex items-center gap-6 mb-6">
+                          <div
+                            className="text-6xl font-black opacity-30"
+                            style={{ color: app.color }}
+                          >
+                            {app.element}
                           </div>
+                          <h3 className="text-2xl font-bold text-gray-900">
+                            {app.industry}
+                          </h3>
                         </div>
 
-                        {/* Industry & Application */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between mb-2">
-                            <div>
-                              <h4 className="text-lg font-bold text-gray-900">{app.industry}</h4>
-                              <p className="text-sm text-gray-600">{app.application}</p>
-                            </div>
-                            <div className="text-right">
-                              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium"
-                                   style={{backgroundColor: `${app.color}15`, color: app.color}}>
-                                {app.status}
-                              </div>
-                            </div>
-                          </div>
+                        {/* Description */}
+                        <p className="text-base text-gray-600 leading-relaxed mb-6">
+                          {app.application}
+                        </p>
 
-                          {/* Performance Metrics */}
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">RENDIMIENTO</div>
-                              <div className="inline-flex items-center px-3 py-2 rounded-lg text-sm font-bold text-white"
-                                   style={{backgroundColor: app.color}}>
-                                {app.performance}
-                              </div>
-                            </div>
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">ESPECIFICACIONES</div>
-                              <div className="text-sm text-gray-700 font-medium">{app.specs}</div>
-                            </div>
+                        {/* Performance + Specs Row */}
+                        <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+                          <div
+                            className="text-xl font-bold px-4 py-2 rounded-lg"
+                            style={{
+                              backgroundColor: `${app.color}15`,
+                              color: app.color
+                            }}
+                          >
+                            {app.performance}
                           </div>
-                        </div>
-
-                        {/* Performance Indicator */}
-                        <div className="flex-shrink-0 w-16">
-                          <div className="text-center">
-                            <div className="w-12 h-12 mx-auto rounded-full border-4 flex items-center justify-center"
-                                 style={{borderColor: `${app.color}30`}}>
-                              <div className="w-6 h-6 rounded-full" style={{backgroundColor: app.color}}></div>
-                            </div>
-                            <div className="text-xs font-medium text-gray-500 mt-1">TSF</div>
-                          </div>
+                          <p className="text-xs text-gray-500 leading-relaxed max-w-md text-right">
+                            {app.specs}
+                          </p>
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Progress Indicator */}
+              <div className="text-center mt-8 text-xs text-gray-400">
+                {activeIndex + 1} / {industrialApplications.length}
               </div>
             </div>
 

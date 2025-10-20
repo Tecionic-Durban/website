@@ -1,140 +1,19 @@
 'use client'
 
-// src/app/industries/zinc/page.js
+// src/app/industries/zinc/page.js - Stripe-level UI
 import { useState, useEffect } from 'react'
-import { Beaker, Zap, Factory, Microscope, CheckCircle, TrendingUp, BarChart3, Clock, Activity, Star, ArrowUp, ArrowDown } from 'lucide-react'
+import { useRouter, usePathname } from 'next/navigation'
+import { Beaker, Zap, Factory, Microscope, CheckCircle, TrendingUp, ArrowRight, Download, Shield, Sparkles, Droplets, Target, Filter } from 'lucide-react'
+import { handleContactClick } from '@/utils/navigation'
 
 export default function ZincIndustryPage() {
+  const router = useRouter()
+  const pathname = usePathname()
   const [isLoading, setIsLoading] = useState(true)
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const [liveMetrics, setLiveMetrics] = useState({
-    zincPrice: 2.67,
-    productionRate: 98.4,
-    purityLevel: 99.97,
-    energyEfficiency: 91.2,
-    impurityControl: 25.8,
-    recoveryRate: 94.1
-  })
 
   useEffect(() => {
-    // Simulate initial loading
-    setTimeout(() => setIsLoading(false), 2000)
-
-    // Update live metrics every 4 seconds
-    const interval = setInterval(() => {
-      setLiveMetrics(prev => ({
-        zincPrice: Math.max(2.2, prev.zincPrice + (Math.random() - 0.5) * 0.04),
-        productionRate: Math.max(85, prev.productionRate + (Math.random() - 0.5) * 1.5),
-        purityLevel: Math.min(99.99, Math.max(99.90, prev.purityLevel + (Math.random() - 0.5) * 0.02)),
-        energyEfficiency: Math.min(95, Math.max(85, prev.energyEfficiency + (Math.random() - 0.5) * 0.8)),
-        impurityControl: Math.max(15, prev.impurityControl + (Math.random() - 0.5) * 2),
-        recoveryRate: Math.min(98, Math.max(90, prev.recoveryRate + (Math.random() - 0.5) * 0.4))
-      }))
-    }, 4000)
-
-    return () => clearInterval(interval)
+    setTimeout(() => setIsLoading(false), 1000)
   }, [])
-
-  // Scroll detection for continuous animation
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      // Start animation much earlier - right after hero content starts scrolling
-      const triggerPoint = 200
-      const animationDistance = 400 // Longer animation distance
-      const progress = Math.max(0, Math.min((scrollY - triggerPoint) / animationDistance, 1))
-      
-      setScrollProgress(progress)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const services = [
-    {
-      title: "Filtros Móviles Circuitos SX-Zn",
-      description: "Aplicación de filtros móviles en circuitos SX de zinc con capacidades similares a cobre pero adaptados a densidades específicas de Zn.",
-      icon: Beaker,
-      benefits: ["Adaptado densidades Zn", "Capacidades similares Cu", "Tecnología móvil"],
-      rating: 4.8,
-      completionTime: "Fase prospección"
-    },
-    {
-      title: "Control Abrasividad",
-      description: "Manejo especializado de mayor abrasividad en procesos zinc y control optimizado del orgánico para prevenir degradación.",
-      icon: Factory,
-      benefits: ["Mayor abrasividad", "Control orgánico", "Prevención degradación"],
-      rating: 4.9,
-      completionTime: "Desarrollo continuo"
-    },
-    {
-      title: "Remoción Orgánico Entrainment",
-      description: "Sistemas avanzados para remoción de orgánico entrainment crítico en electroobtención de zinc debido a sensibilidad extrema.",
-      icon: Zap,
-      benefits: ["Remoción entrainment", "Protección EW zinc", "Prevención sticky zinc"],
-      rating: 4.7,
-      completionTime: "Crítico EW"
-    },
-    {
-      title: "Tratamiento Sólidos Gelatinosos",
-      description: "Manejo especializado de fases gelatinosas por ácido polisílícico que pueden reducir eficiencia de lixiviación y causar problemas de filtración.",
-      icon: Microscope,
-      benefits: ["Control silica coloidal", "Prevención gelificación", "Optimización filtración"],
-      rating: 4.9,
-      completionTime: "Prospección activa"
-    }
-  ]
-
-  const caseStudies = [
-    {
-      client: "Skorpion Zinc (Proyecto Referencia)",
-      challenge: "Primer aplicación comercial SX-EW zinc con condiciones upset por impurezas upstream y acumulación elementos tierras raras",
-      solution: "Desarrollo de tecnología filtros móviles adaptados a SX-Zn con manejo especializado de fase orgánica y control abrasividad",
-      results: ["Tecnología SX-EW zinc comercial", "Control upset conditions", "Manejo REE acumulación"],
-      timeline: "Proyecto referencia mundial",
-      savings: "Modelo comercial establecido",
-      before: { purity: 99.90, impurities: 80, energy: 3.6 },
-      after: { purity: 99.99, impurities: 25, energy: 3.1 }
-    },
-    {
-      client: "Aplicación TSF (En Desarrollo)",
-      challenge: "Adaptación tecnología móvil TSF para circuitos zinc con mayor abrasividad y sensibilidad orgánica extrema",
-      solution: "Desarrollo filtros móviles específicos zinc con sistemas control orgánico y manejo sólidos gelatinosos",
-      results: ["En fase prospección", "Adaptación equipos móviles", "Control abrasividad Zn"],
-      timeline: "Fase desarrollo",
-      savings: "Potencial mercado zinc",
-      before: { abrasivity: 100, organicSensitivity: 100, gelation: 100 },
-      after: { abrasivity: 60, organicSensitivity: 30, gelation: 40 }
-    }
-  ]
-
-  const specifications = [
-    {
-      parameter: "Recuperación de Zinc",
-      standard: "88-92%",
-      withTecionicDurban: "95-98%",
-      improvement: "+6%"
-    },
-    {
-      parameter: "Pureza Cátodo Zn",
-      standard: "99.95-99.97%",
-      withTecionicDurban: "99.99%+",
-      improvement: "+0.02%"
-    },
-    {
-      parameter: "Consumo Energético EW",
-      standard: "3.2-3.6 kWh/kg Zn",
-      withTecionicDurban: "2.8-3.1 kWh/kg Zn", 
-      improvement: "-15%"
-    },
-    {
-      parameter: "Impurezas Electrolito",
-      standard: "50-80 ppm total",
-      withTecionicDurban: "< 30 ppm total",
-      improvement: "-60%"
-    }
-  ]
 
   // Three Ball Loader Component
   const ThreeBallLoader = () => (
@@ -142,28 +21,6 @@ export default function ZincIndustryPage() {
       <div className="w-4 h-4 bg-slate-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
       <div className="w-4 h-4 bg-slate-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
       <div className="w-4 h-4 bg-slate-500 rounded-full animate-bounce"></div>
-    </div>
-  )
-
-  // TEMPORARILY DISABLED: Decorative elements per stakeholder request
-  // const FloatingElements = () => (
-  //   <>
-  //     {/* Decorative floating elements */}
-  //   </>
-  // )
-
-  const BeforeAfterComparison = ({ before, after, labels }) => (
-    <div className="grid grid-cols-3 gap-4 mt-4">
-      {Object.keys(before).map((key, idx) => (
-        <div key={key} className="text-center">
-          <div className="text-xs text-gray-500 mb-1">{labels[key]}</div>
-          <div className="flex items-center justify-center space-x-2">
-            <div className="text-sm text-red-600 font-semibold">{before[key]}</div>
-            <ArrowUp className="w-3 h-3 text-emerald-500" />
-            <div className="text-sm text-emerald-600 font-bold">{after[key]}</div>
-          </div>
-        </div>
-      ))}
     </div>
   )
 
@@ -178,367 +35,699 @@ export default function ZincIndustryPage() {
     )
   }
 
-
   return (
     <>
-      {/* TEMPORARILY DISABLED: Decorative elements per stakeholder request */}
-      {/* <FloatingElements /> */}
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-50">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 text-white py-20 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-full h-full metal-texture"></div>
+      <div className="min-h-screen bg-white">
+
+        {/* Premium Hero Section */}
+        <section className="relative overflow-hidden">
+          {/* Background with slate gradient + subtle grid pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-gray-50"></div>
+          <div className="absolute inset-0 opacity-[0.08]" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgb(100 116 139) 1px, transparent 0)`,
+            backgroundSize: '32px 32px'
+          }}></div>
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] blur-3xl" style={{
+            background: 'radial-gradient(circle, rgba(100, 116, 139, 0.12) 0%, rgba(148, 163, 184, 0.06) 40%, transparent 70%)'
+          }}></div>
+
+          <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-16">
+            {/* Industry badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 mb-8">
+              <div className="w-2 h-2 bg-slate-500 rounded-full"></div>
+              <span className="text-sm font-semibold text-slate-900">Industria del Zinc</span>
+            </div>
+
+            {/* Main headline */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-[1.1]">
+              Separación sólido-líquido
+              <span className="block bg-gradient-to-r from-slate-600 to-slate-500 bg-clip-text text-transparent">
+                para zinc electrolítico
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl text-gray-600 mb-12 max-w-3xl leading-relaxed">
+              Fundiciones centralizadas en Latinoamérica procesan más de 1.5M ton/año.
+              Cada etapa del proceso electrolítico genera desafíos críticos de filtración.
+            </p>
+
+            {/* Key stats */}
+            <div className="grid grid-cols-3 gap-8 mb-12 max-w-2xl">
+              <div>
+                <div className="text-4xl font-black text-gray-900 mb-1">1.47M</div>
+                <div className="text-sm text-gray-600">ton/año Perú</div>
+              </div>
+              <div>
+                <div className="text-4xl font-black text-gray-900 mb-1">344K</div>
+                <div className="text-sm text-gray-600">cap. Cajamarquilla</div>
+              </div>
+              <div>
+                <div className="text-4xl font-black text-gray-900 mb-1">90%+</div>
+                <div className="text-sm text-gray-600">proceso electrolítico</div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <button
+              onClick={() => document.getElementById('process-flow')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow-md">
+              Ver proceso
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
-          
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-slate-500 rounded-xl flex items-center justify-center mr-4 industrial-shimmer">
-                    <span className="text-white text-2xl font-bold">Zn</span>
+        </section>
+
+        {/* Process Flow - Modern Visual Design */}
+        <section id="process-flow" className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+          {/* Background decorative elements */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-50 rounded-full blur-3xl opacity-30"></div>
+
+          <div className="relative max-w-7xl mx-auto px-6">
+            {/* Section Header */}
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 mb-6">
+                <Sparkles className="w-4 h-4 text-indigo-600" />
+                <span className="text-sm font-semibold text-indigo-700">Proceso Electrolítico</span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                Cada etapa genera desafíos{' '}
+                <span className="bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
+                  de separación sólido-líquido
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                El proceso de zinc electrolítico involucra múltiples puntos críticos donde TSF interviene
+              </p>
+            </div>
+
+            {/* Visual Process Flow Grid */}
+            <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              {[
+                {
+                  step: 'Lixiviación',
+                  number: '01',
+                  process: 'Calcinado + H₂SO₄ → ZnSO₄',
+                  challenge: 'Residuo de lixiviación (Pb, Ag, Fe) requiere separación',
+                  tsf: 'Filtros prensa TSF deshidratan residuo',
+                  icon: Droplets,
+                  gradient: 'from-blue-500 to-blue-600',
+                  accentColor: 'blue'
+                },
+                {
+                  step: 'Remoción Hierro',
+                  number: '02',
+                  process: 'Jarosite / Goethite',
+                  challenge: 'Precipitados gelatinosos difíciles de filtrar',
+                  tsf: 'TSF maneja residuos hierro Goethite',
+                  icon: Shield,
+                  gradient: 'from-amber-500 to-orange-600',
+                  accentColor: 'orange'
+                },
+                {
+                  step: 'Electroobtención',
+                  number: '03',
+                  process: 'ZnSO₄ → Zn cátodo (99.99%)',
+                  challenge: 'Sedimento en celdas afecta pureza',
+                  tsf: 'Limpieza neumática TSF sin detención',
+                  icon: Zap,
+                  gradient: 'from-purple-500 to-purple-600',
+                  accentColor: 'purple'
+                }
+              ].map((item, i) => (
+                <div key={i} className="group relative">
+                  {/* Connector arrow */}
+                  {i < 2 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-4 transform translate-x-full -translate-y-1/2 z-10">
+                      <ArrowRight className="w-8 h-8 text-gray-300" />
+                    </div>
+                  )}
+
+                  {/* Card */}
+                  <div className="relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+                    {/* Number badge */}
+                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                      <span className="text-white font-black text-lg">{item.number}</span>
+                    </div>
+
+                    {/* Icon */}
+                    <div className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <item.icon className="w-8 h-8 text-white" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-black text-gray-900 mb-2">{item.step}</h3>
+                    <p className="text-sm font-medium text-gray-500 mb-4">{item.process}</p>
+
+                    {/* Challenge */}
+                    <div className="mb-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Desafío</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{item.challenge}</p>
+                    </div>
+
+                    {/* TSF Solution */}
+                    <div className="p-4 bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl border border-emerald-200">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wider mb-1">Solución TSF</p>
+                          <p className="text-sm font-semibold text-emerald-900 leading-relaxed">{item.tsf}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Summary Card */}
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 p-12 shadow-2xl">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+              <div className="relative text-center max-w-3xl mx-auto">
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <div className="flex -space-x-2">
+                    <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center border-2 border-slate-900">
+                      <Droplets className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center border-2 border-slate-900">
+                      <Shield className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center border-2 border-slate-900">
+                      <Zap className="w-5 h-5 text-white" />
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="text-3xl font-black text-white mb-4">
+                  <span className="text-emerald-400">3 de 5 etapas</span> requieren separación sólido-líquido especializada
+                </h3>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Fundiciones que procesan 300K+ ton/año no pueden permitirse detenciones ni ineficiencias.
+                  TSF ofrece soluciones móviles sin CAPEX que intervienen exactamente donde se necesita.
+                </p>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/10">
+                  <div>
+                    <div className="text-3xl font-black text-emerald-400 mb-1">0%</div>
+                    <div className="text-sm text-gray-400">Detención producción</div>
                   </div>
                   <div>
-                    <h1 className="text-5xl font-bold mb-2">Industria del Zinc</h1>
-                    <p className="text-slate-200 text-lg">Lixiviación, Purificación y Electroobtención</p>
+                    <div className="text-3xl font-black text-emerald-400 mb-1">$0</div>
+                    <div className="text-sm text-gray-400">CAPEX inicial</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-black text-emerald-400 mb-1">100%</div>
+                    <div className="text-sm text-gray-400">Móvil y flexible</div>
                   </div>
                 </div>
-                
-                <div className="w-24 h-1 bg-slate-400 mb-6"></div>
-                
-                <p className="text-xl text-slate-100 leading-relaxed mb-8">
-                  Aplicación de filtros móviles en circuitos SX-Zn con capacidades adaptadas a 
-                  densidades de zinc. Manejo especializado de mayor abrasividad y control de 
-                  orgánico en fase de prospección para plantas zinc.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-white text-slate-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-all duration-300 transform hover:scale-105 precision-click">
-                    Ver Casos de Éxito
-                  </button>
-                  <button className="border-2 border-slate-300 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-300 hover:text-slate-900 transition-all duration-300 transform hover:scale-105 precision-click">
-                    Consulta Técnica
-                  </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TSF Solutions - Premium service cards */}
+        <section className="py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl mb-16">
+              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Soluciones TSF</div>
+              <h2 className="text-4xl font-black text-gray-900 mb-4">
+                Servicios móviles para fundiciones zinc
+              </h2>
+              <p className="text-lg text-gray-600">
+                Filtración especializada en cada punto crítico del proceso electrolítico. Sin inversión CAPEX, sin detenciones.
+              </p>
+            </div>
+
+            {/* Service grid - Compact with subtle visual distinction */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+              {/* Service 1 - Blue accent */}
+              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Subtle corner decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-50 rounded-bl-full opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-500/5 rounded-tr-full"></div>
+
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:shadow-xl group-hover:shadow-blue-500/30 group-hover:scale-105 transition-all">
+                    <Beaker className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Filtración Residuo Lixiviación</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Separación eficiente de residuo leach (Pb, Ag, Fe) con filtros prensa móviles de alta capacidad.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+                      Hasta 70 ton/día torta
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+                      Recuperación Pb/Ag
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+                      Manejo alta abrasión
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <div className="text-xs font-semibold text-gray-500">APLICABLE</div>
+                    <div className="text-sm font-bold text-blue-600">Tecnología validada</div>
+                  </div>
                 </div>
               </div>
-              
+
+              {/* Service 2 - Amber accent, slightly offset down */}
+              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden lg:translate-y-4">
+                {/* Subtle corner decoration */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-amber-100 to-orange-50 rounded-br-full opacity-50"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-amber-500/5 rounded-tl-full"></div>
+
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20 group-hover:shadow-xl group-hover:shadow-amber-500/30 group-hover:scale-105 transition-all">
+                    <Zap className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Desborre Celdas EW Zinc</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Limpieza neumática con filtración inline. Máxima pureza de electrolito zinc.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
+                      Sin pérdida electrolito
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
+                      Pureza {'>'}99.99%
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
+                      Sin paradas
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <div className="text-xs font-semibold text-gray-500">APLICABLE</div>
+                    <div className="text-sm font-bold text-amber-600">Tecnología validada</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Service 3 - Purple accent */}
+              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Subtle corner decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-violet-50 rounded-bl-full opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-500/5 rounded-tr-full"></div>
+
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 group-hover:scale-105 transition-all">
+                    <Factory className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Deshidratación Concentrados</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Filtros prensa móviles adaptados a concentrados zinc con mayor abrasividad.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
+                      Hasta 70 ton/día torta
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
+                      Equipos reforzados
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
+                      Alta abrasividad Zn
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <div className="text-xs font-semibold text-gray-500">APLICABLE</div>
+                    <div className="text-sm font-bold text-purple-600">Tecnología adaptable</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Service 4 - Cyan accent, slightly offset down */}
+              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden lg:translate-y-4">
+                {/* Subtle corner decoration */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-cyan-100 to-blue-50 rounded-br-full opacity-50"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-tl-full"></div>
+
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20 group-hover:shadow-xl group-hover:shadow-cyan-500/30 group-hover:scale-105 transition-all">
+                    <Microscope className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Filtración Residuos Jarosite/Goethite</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Manejo especializado de precipitados gelatinosos de hierro, el mayor desafío de filtración en zinc electrolítico.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
+                      Hasta 50 ton/día residuo Fe
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
+                      Manejo fases gelatinosas
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
+                      Optimización filtración
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <div className="text-xs font-semibold text-gray-500">CRÍTICO</div>
+                    <div className="text-sm font-bold text-cyan-600">Mayor desafío zinc</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Service 5 - Teal accent */}
+              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Subtle corner decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-100 to-emerald-50 rounded-bl-full opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-teal-500/5 rounded-tr-full"></div>
+
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/20 group-hover:shadow-xl group-hover:shadow-teal-500/30 group-hover:scale-105 transition-all">
+                    <Droplets className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Clarificación Aguas</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Remoción sólidos de aguas clarificadas para cumplir normativas ambientales.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-teal-500 rounded-full"></div>
+                      Hasta 120 m³/día
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-teal-500 rounded-full"></div>
+                      Normativa ambiental
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-teal-500 rounded-full"></div>
+                      Movilidad total
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <div className="text-xs font-semibold text-gray-500">APLICABLE</div>
+                    <div className="text-sm font-bold text-teal-600">Multiindustria</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Service 6 - Indigo accent, slightly offset down */}
+              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden lg:translate-y-4">
+                {/* Subtle corner decoration */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-indigo-100 to-slate-50 rounded-br-full opacity-50"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-tl-full"></div>
+
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/20 group-hover:shadow-xl group-hover:shadow-indigo-500/30 group-hover:scale-105 transition-all">
+                    <Filter className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Remoción Sólidos Finos</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Tratamiento sólidos finos de clarificadores con control abrasividad zinc.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-indigo-500 rounded-full"></div>
+                      Hasta 14 ton/día sólidos
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-indigo-500 rounded-full"></div>
+                      Equipos alta abrasión
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1 h-1 bg-indigo-500 rounded-full"></div>
+                      Protección clarificadores
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <div className="text-xs font-semibold text-gray-500">APLICABLE</div>
+                    <div className="text-sm font-bold text-indigo-600">Capacidad probada</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Cajamarquilla Reference - Premium callout */}
+        <section className="py-24 bg-gradient-to-br from-slate-50 to-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="relative overflow-hidden bg-gradient-to-br from-slate-600 to-slate-700 rounded-3xl p-12 shadow-xl">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+
               <div className="relative">
-                <div className="aspect-video bg-slate-800/30 rounded-2xl flex items-center justify-center border border-slate-500/20 carbon-fiber">
-                  <div className="text-6xl">⚡</div>
-                </div>
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-slate-400/20 rounded-full blur-xl"></div>
-                <div className="absolute -top-6 -left-6 w-32 h-32 bg-slate-500/20 rounded-full blur-xl"></div>
-              </div>
-            </div>
-
-            {/* Live Metrics Dashboard with Smooth Header Transformation */}
-            <div 
-              className="mt-16 transition-all duration-700 ease-in-out"
-              style={{
-                position: scrollProgress > 0.8 ? 'fixed' : 'relative',
-                top: scrollProgress > 0.8 ? '50px' : 'auto',
-                left: '0',
-                right: '0',
-                zIndex: scrollProgress > 0.8 ? 40 : 'auto',
-                height: `${Math.max(48, 120 - scrollProgress * 72)}px`,
-                transform: `translateY(${scrollProgress * -20}px)`,
-                background: scrollProgress > 0.8 ? 'rgba(71, 85, 105, 0.95)' : 'transparent',
-                backdropFilter: scrollProgress > 0.8 ? 'blur(8px)' : 'none',
-                willChange: 'transform, height, background'
-              }}
-            >
-              <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-center">
-                <div 
-                  className={`transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'flex items-center space-x-4' : 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4'
-                  }`}
-                  style={{
-                    width: scrollProgress > 0.5 ? 'auto' : '100%',
-                    justifySelf: scrollProgress > 0.5 ? 'flex-start' : 'center',
-                    willChange: 'width, display'
-                  }}
-                >
-                  {/* Icon appears when compressed */}
-                  {scrollProgress > 0.5 && (
-                    <div className="w-7 h-7 bg-slate-500 rounded flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">Zn</span>
+                <div className="max-w-3xl">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                      <Target className="w-6 h-6 text-white" />
                     </div>
-                  )}
-
-                  {/* Main Metrics */}
-                  <div className={`bg-white/10 backdrop-blur-sm transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'rounded px-3 py-1 flex items-center space-x-2' : 'rounded-lg p-3 text-center'
-                  }`} style={{ willChange: 'padding, border-radius' }}>
-                    <div className={`flex items-center ${scrollProgress > 0.5 ? 'space-x-1' : 'justify-center mb-1'}`}>
-                      {scrollProgress <= 0.5 && <BarChart3 className="w-4 h-4 text-slate-300 mr-1" />}
-                      {scrollProgress > 0.5 && <BarChart3 className="w-3 h-3 text-slate-300 transition-all duration-700" />}
-                      <span className={`font-bold text-white transition-all duration-700 ease-in-out ${
-                        scrollProgress > 0.5 ? 'text-sm' : 'text-lg'
-                      }`} style={{ willChange: 'font-size' }}>${liveMetrics.zincPrice.toFixed(2)}</span>
+                    <div>
+                      <div className="text-slate-100 text-sm font-semibold mb-1">OPERACIÓN REFERENCIA</div>
+                      <h3 className="text-3xl font-black text-white">Cajamarquilla: La Escala del Zinc Electrolítico</h3>
                     </div>
-                    {scrollProgress <= 0.5 && <p className="text-slate-200 text-xs transition-opacity duration-700">Precio Zn</p>}
                   </div>
 
-                  {scrollProgress > 0.5 && <span className="text-slate-200/70 text-sm transition-opacity duration-700">•</span>}
-                  
-                  <div className={`bg-white/10 backdrop-blur-sm transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'rounded px-3 py-1 flex items-center space-x-2' : 'rounded-lg p-3 text-center'
-                  }`} style={{ willChange: 'padding, border-radius' }}>
-                    <div className={`flex items-center ${scrollProgress > 0.5 ? 'space-x-1' : 'justify-center mb-1'}`}>
-                      {scrollProgress <= 0.5 && <Activity className="w-4 h-4 text-slate-300 mr-1" />}
-                      {scrollProgress > 0.5 && <Activity className="w-3 h-3 text-slate-300 transition-all duration-700" />}
-                      <span className={`font-bold text-white transition-all duration-700 ease-in-out ${
-                        scrollProgress > 0.5 ? 'text-sm' : 'text-lg'
-                      }`} style={{ willChange: 'font-size' }}>{liveMetrics.productionRate.toFixed(1)}{scrollProgress > 0.5 ? 't' : ''}</span>
+                  <p className="text-slate-100 text-lg mb-8 leading-relaxed">
+                    La refinería Cajamarquilla en Perú es la fundición zinc más grande de las Américas (344K ton/año),
+                    procesando concentrados de múltiples minas. Esta escala centralizada define por qué TSF móvil es estratégico.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                      <div className="text-white font-bold mb-3">Desafíos a Escala</div>
+                      <div className="space-y-2 text-sm text-slate-50">
+                        <div>• Volúmenes masivos residuo hierro (Jarosite/Goethite)</div>
+                        <div>• Múltiples feeds con variabilidad alta</div>
+                        <div>• Costos detención escalados</div>
+                        <div>• Operación continua crítica</div>
+                      </div>
                     </div>
-                    {scrollProgress <= 0.5 && <p className="text-slate-200 text-xs transition-opacity duration-700">Producción</p>}
+
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                      <div className="text-white font-bold mb-3">Ventajas TSF Móvil</div>
+                      <div className="space-y-2 text-sm text-slate-50">
+                        <div>• Capacidad escalable según campaña</div>
+                        <div>• Sin CAPEX $5M+ en filtración fija</div>
+                        <div>• Flexibilidad para feed variable</div>
+                        <div>• Mantención sin afectar producción</div>
+                      </div>
+                    </div>
                   </div>
 
-                  {scrollProgress > 0.5 && <span className="text-slate-200/70 text-sm transition-opacity duration-700">•</span>}
-                  
-                  <div className={`bg-white/10 backdrop-blur-sm transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'rounded px-3 py-1 flex items-center space-x-2' : 'rounded-lg p-3 text-center'
-                  }`} style={{ willChange: 'padding, border-radius' }}>
-                    <div className={`flex items-center ${scrollProgress > 0.5 ? 'space-x-1' : 'justify-center mb-1'}`}>
-                      {scrollProgress <= 0.5 && <Clock className="w-4 h-4 text-slate-300 mr-1" />}
-                      {scrollProgress > 0.5 && <Clock className="w-3 h-3 text-slate-300 transition-all duration-700" />}
-                      <span className={`font-bold text-white transition-all duration-700 ease-in-out ${
-                        scrollProgress > 0.5 ? 'text-sm' : 'text-lg'
-                      }`} style={{ willChange: 'font-size' }}>{liveMetrics.energyEfficiency.toFixed(1)}%</span>
-                    </div>
-                    {scrollProgress <= 0.5 && <p className="text-slate-200 text-xs transition-opacity duration-700">Eficiencia</p>}
+                  <div className="mt-8 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                    <div className="text-xs font-semibold text-slate-200 mb-2">OPORTUNIDAD TSF</div>
+                    <p className="text-slate-100 text-sm">
+                      TSF permite a fundiciones centralizadas optimizar filtración sin inversión CAPEX permanente,
+                      adaptándose a variabilidad de feed y volúmenes de campaña característicos del zinc electrolítico.
+                    </p>
                   </div>
-                  
-                  {/* Additional metrics only shown when not compressed */}
-                  {scrollProgress <= 0.5 && (
-                    <>
-                      <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm text-center">
-                        <div className="flex items-center justify-center mb-1">
-                          <Star className="w-4 h-4 text-slate-300 mr-1" />
-                          <span className="text-lg font-bold text-white">{liveMetrics.purityLevel.toFixed(2)}</span>
-                        </div>
-                        <p className="text-slate-200 text-xs">Pureza</p>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm text-center">
-                        <div className="flex items-center justify-center mb-1">
-                          <Microscope className="w-4 h-4 text-slate-300 mr-1" />
-                          <span className="text-lg font-bold text-white">{liveMetrics.impurityControl.toFixed(1)}</span>
-                        </div>
-                        <p className="text-slate-200 text-xs">Impurezas</p>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm text-center">
-                        <div className="flex items-center justify-center mb-1">
-                          <TrendingUp className="w-4 h-4 text-slate-300 mr-1" />
-                          <span className="text-lg font-bold text-white">{liveMetrics.recoveryRate.toFixed(1)}%</span>
-                        </div>
-                        <p className="text-slate-200 text-xs">Recuperación</p>
-                      </div>
-                    </>
-                  )}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-
-        {/* Services for Zinc */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 industrial-shimmer">
-                Servicios Especializados para Zinc
+        {/* Before/After Comparison */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl mb-16">
+              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Resultados</div>
+              <h2 className="text-4xl font-black text-gray-900 mb-4">
+                Mejoras medibles en proceso electrolítico
               </h2>
-              <div className="w-20 h-1 bg-slate-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Desarrollo de filtros móviles especializados para circuitos SX-Zn. Manejo de 
-                abrasividad superior y control crítico de orgánico para protección electroobtención zinc.
+              <p className="text-lg text-gray-600">
+                Comparativa operación estándar vs. optimización con filtración móvil TSF especializada
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {services.map((service, index) => (
-                <div key={index} className="relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 transform hover:scale-105 group">
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
-                    <div className="w-full h-full steel-gradient"></div>
-                  </div>
-                  
-                  {/* Floating balls on hover - matching home page layout */}
-                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute top-4 right-4 w-2 h-2 bg-slate-400 rounded-full animate-float-up-1"></div>
-                    <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-slate-500 rounded-full animate-float-up-2"></div>
-                    <div className="absolute top-6 right-12 w-1 h-1 bg-slate-600 rounded-full animate-float-up-3"></div>
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-slate-200 transition-colors duration-300">
-                      <service.icon className="w-6 h-6 text-slate-600 group-hover:text-slate-700" />
+            <div className="grid lg:grid-cols-2 gap-16 mb-12">
+              <div>
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-8">Antes</div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Pureza Zn', value: '99.90%', unit: 'cátodos' },
+                    { label: 'Impurezas', value: '80', unit: 'ppm total' },
+                    { label: 'Consumo', value: '3.6', unit: 'kWh/kg Zn' },
+                    { label: 'Recuperación', value: '88%', unit: 'variable' }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-5 rounded-2xl bg-red-50 border border-red-100">
+                      <span className="text-sm font-medium text-gray-700">{item.label}</span>
+                      <div className="text-right">
+                        <div className="text-3xl font-black text-red-600">{item.value}</div>
+                        <div className="text-xs text-gray-500">{item.unit}</div>
+                      </div>
                     </div>
-                    
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
-                    
-                    <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                    
-                    <div className="mb-4">
-                      <div className="text-xs text-gray-500 mb-2">Tiempo estimado: {service.completionTime}</div>
-                      <ul className="space-y-2">
-                        {service.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-slate-500 mr-2 micro-bounce" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Performance Specifications */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Especificaciones de Rendimiento
-              </h2>
-              <div className="w-20 h-1 bg-slate-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600">
-                Comparativa de resultados estándar vs. optimización con Tec-Ionic Durban
-              </p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                <thead className="bg-slate-600 text-white steel-gradient">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold">Parámetro</th>
-                    <th className="px-6 py-4 text-center font-semibold">Estándar Industria</th>
-                    <th className="px-6 py-4 text-center font-semibold">Con Tec-Ionic Durban</th>
-                    <th className="px-6 py-4 text-center font-semibold">Mejora</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {specifications.map((spec, index) => (
-                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200">
-                      <td className="px-6 py-4 font-medium text-gray-900">{spec.parameter}</td>
-                      <td className="px-6 py-4 text-center text-gray-600">{spec.standard}</td>
-                      <td className="px-6 py-4 text-center font-semibold text-slate-600">{spec.withTecionicDurban}</td>
-                      <td className="px-6 py-4 text-center">
-                        <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold micro-bounce">
-                          {spec.improvement}
-                        </span>
-                      </td>
-                    </tr>
                   ))}
-                </tbody>
-              </table>
+                </div>
+              </div>
+
+              <div>
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-8">Después</div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Pureza Zn', value: '99.99%+', unit: 'cátodos' },
+                    { label: 'Impurezas', value: '{'<'} 30', unit: 'ppm total' },
+                    { label: 'Consumo', value: '3.1', unit: 'kWh/kg Zn' },
+                    { label: 'Recuperación', value: '95%+', unit: 'consistente' }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-5 rounded-2xl bg-emerald-50 border border-emerald-100">
+                      <span className="text-sm font-medium text-gray-700">{item.label}</span>
+                      <div className="text-right">
+                        <div className="text-3xl font-black text-emerald-600">{item.value}</div>
+                        <div className="text-xs text-gray-500">{item.unit}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Key improvements */}
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-gray-50 border border-slate-200">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-5xl font-black bg-gradient-to-r from-slate-600 to-slate-500 bg-clip-text text-transparent mb-2">+0.09%</div>
+                  <div className="text-sm text-gray-600 font-medium">pureza adicional</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-5xl font-black bg-gradient-to-r from-slate-600 to-slate-500 bg-clip-text text-transparent mb-2">-60%</div>
+                  <div className="text-sm text-gray-600 font-medium">impurezas totales</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-5xl font-black bg-gradient-to-r from-slate-600 to-slate-500 bg-clip-text text-transparent mb-2">-15%</div>
+                  <div className="text-sm text-gray-600 font-medium">energía EW</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Case Studies with Before/After */}
-        <section className="py-20 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Casos de Éxito en Zinc
-              </h2>
-              <div className="w-20 h-1 bg-slate-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600">
-                Resultados reales en operaciones de zinc de gran escala
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {caseStudies.map((study, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-500 group">
-                  <div className="bg-slate-600 text-white p-6 steel-gradient">
-                    <h3 className="text-xl font-bold mb-2">{study.client}</h3>
-                    <p className="text-slate-200">Proyecto de optimización zinc</p>
+        {/* Why Mobile for Zinc Smelters */}
+        <section className="py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Modelo TSF</div>
+                <h2 className="text-4xl font-black text-gray-900 mb-6">
+                  ¿Por qué móvil a escala fundición?
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-5 h-5 text-slate-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">Volúmenes centralizados masivos</h3>
+                      <p className="text-gray-600 text-sm">
+                        Fundiciones 300K+ ton/año procesan residuos hierro en volúmenes que justifican servicios especializados
+                      </p>
+                    </div>
                   </div>
-                  
-                  <div className="p-6">
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Desafío:</h4>
-                      <p className="text-gray-600 text-sm">{study.challenge}</p>
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-5 h-5 text-slate-600" />
                     </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Solución:</h4>
-                      <p className="text-gray-600 text-sm">{study.solution}</p>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">Feeds múltiples con variabilidad alta</h3>
+                      <p className="text-gray-600 text-sm">
+                        Concentrados de múltiples minas requieren flexibilidad que equipos fijos no proveen
+                      </p>
                     </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-3">Resultados:</h4>
-                      <ul className="space-y-2">
-                        {study.results.map((result, idx) => (
-                          <li key={idx} className="flex items-center text-sm">
-                            <TrendingUp className="w-4 h-4 text-emerald-500 mr-2 micro-bounce" />
-                            <span className="text-gray-700">{result}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-5 h-5 text-slate-600" />
                     </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">Costos detención exponenciales</h3>
+                      <p className="text-gray-600 text-sm">
+                        A escala fundición, cada hora detenida cuesta $50K+. Móvil permite mantención sin parar producción
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                    {/* Before/After Comparison */}
-                    {index === 0 && (
-                      <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                        <h5 className="font-semibold text-gray-900 mb-3 text-center">Antes vs Después</h5>
-                        <BeforeAfterComparison 
-                          before={study.before}
-                          after={study.after}
-                          labels={{
-                            purity: "Pureza %",
-                            impurities: "Impurezas ppm",
-                            energy: "Energía kWh/kg"
-                          }}
-                        />
-                      </div>
-                    )}
-                    
-                    <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-slate-600">{study.timeline}</div>
-                        <div className="text-xs text-gray-500">Implementación</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-emerald-600">{study.savings}</div>
-                        <div className="text-xs text-gray-500">Ahorro anual</div>
+              <div className="relative">
+                <div className="aspect-square rounded-3xl bg-gradient-to-br from-slate-100 to-gray-100 p-12 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl font-black text-gray-900 mb-4">$0</div>
+                    <div className="text-xl font-bold text-gray-700 mb-2">CAPEX inicial</div>
+                    <div className="text-sm text-gray-500">vs $5M-$15M filtración fija escala fundición</div>
+
+                    <div className="mt-8 p-4 bg-white rounded-2xl shadow-sm">
+                      <div className="text-sm font-semibold text-gray-900 mb-2">Modelo TSF a Escala</div>
+                      <div className="text-xs text-gray-600">
+                        Capacidad escalable según campaña, operadores especializados, mantención TSF sin detener fundición
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-slate-600 relative overflow-hidden">
+        {/* Dark Premium CTA */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800"></div>
           <div className="absolute inset-0 opacity-10">
-            <div className="w-full h-full industrial-shimmer"></div>
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '40px 40px'
+            }}></div>
           </div>
-          
-          <div className="max-w-4xl mx-auto px-4 text-center text-white relative">
-            <h2 className="text-4xl font-bold mb-4">
-              ¿Listo para Optimizar tu Operación de Zinc?
+
+          <div className="relative max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+              ¿Operación zinc en Latinoamérica?
             </h2>
-            <p className="text-xl text-slate-100 mb-8">
-              Nuestros especialistas pueden evaluar tu proceso actual y diseñar
-              una solución personalizada para maximizar tu recuperación de zinc de alta pureza.
+
+            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+              Evaluamos tu fundición zinc electrolítico y diseñamos solución móvil adaptada a tu escala y condiciones específicas
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-slate-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-all duration-300 transform hover:scale-105 precision-click">
-                Evaluación Especializada
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <button className="px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+                Evaluación técnica fundición
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-600 transition-all duration-300 transform hover:scale-105 precision-click">
-                Descargar Caso de Éxito
+              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center gap-2">
+                  <Download className="w-5 h-5" />
+                  Casos escala fundición
+                </div>
               </button>
+            </div>
+
+            {/* Contact grid */}
+            <div className="grid md:grid-cols-3 gap-6 text-left">
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="text-sm font-semibold text-gray-400 mb-1">Email</div>
+                <div className="text-white font-medium">contacto@tsf.cl</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="text-sm font-semibold text-gray-400 mb-1">Teléfono</div>
+                <div className="text-white font-medium">+56 9 XXXX XXXX</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="text-sm font-semibold text-gray-400 mb-1">Ubicación</div>
+                <div className="text-white font-medium">Latinoamérica</div>
+              </div>
             </div>
           </div>
         </section>
+
       </div>
     </>
   )

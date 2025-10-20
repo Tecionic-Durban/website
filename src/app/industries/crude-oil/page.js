@@ -2,53 +2,18 @@
 
 // src/app/industries/crude-oil/page.js
 import { useState, useEffect } from 'react'
-import { Beaker, Zap, Factory, Microscope, CheckCircle, TrendingUp, BarChart3, Clock, Activity, Star, ArrowUp, ArrowDown, Droplets } from 'lucide-react'
+import { useRouter, usePathname } from 'next/navigation'
+import { Beaker, Zap, Factory, Microscope, CheckCircle, TrendingUp, ArrowUp, Droplets } from 'lucide-react'
+import { handleContactClick } from '@/utils/navigation'
 
 export default function CrudeOilIndustryPage() {
+  const router = useRouter()
+  const pathname = usePathname()
   const [isLoading, setIsLoading] = useState(true)
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const [liveMetrics, setLiveMetrics] = useState({
-    oilPrice: 78.45,
-    processingRate: 45.2,
-    saltContent: 2.8,
-    waterContent: 1.2,
-    separationEfficiency: 98.4,
-    apiGravity: 32.1
-  })
 
   useEffect(() => {
     // Simulate initial loading
-    setTimeout(() => setIsLoading(false), 2000)
-
-    // Update live metrics every 4 seconds
-    const interval = setInterval(() => {
-      setLiveMetrics(prev => ({
-        oilPrice: Math.max(65, prev.oilPrice + (Math.random() - 0.5) * 2),
-        processingRate: Math.max(35, prev.processingRate + (Math.random() - 0.5) * 1.5),
-        saltContent: Math.max(0.5, prev.saltContent + (Math.random() - 0.5) * 0.3),
-        waterContent: Math.max(0.2, prev.waterContent + (Math.random() - 0.5) * 0.2),
-        separationEfficiency: Math.min(99.8, Math.max(95, prev.separationEfficiency + (Math.random() - 0.5) * 0.5)),
-        apiGravity: Math.min(45, Math.max(25, prev.apiGravity + (Math.random() - 0.5) * 0.8))
-      }))
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [])
-
-  // Scroll detection for continuous animation
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      // Start animation much earlier - right after hero content starts scrolling
-      const triggerPoint = 200
-      const animationDistance = 400 // Longer animation distance
-      const progress = Math.max(0, Math.min((scrollY - triggerPoint) / animationDistance, 1))
-      
-      setScrollProgress(progress)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    setTimeout(() => setIsLoading(false), 1000)
   }, [])
 
   const services = [
@@ -181,167 +146,96 @@ export default function CrudeOilIndustryPage() {
 
   return (
     <>
-      {/* TEMPORARILY DISABLED: Decorative elements per stakeholder request */}
-      {/* <FloatingElements /> */}
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-800">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white py-20 overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        {/* Hero Section - Clean Design */}
+        <section className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white overflow-hidden">
+          {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-full h-full metal-texture"></div>
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
           </div>
-          
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gray-700 rounded-xl flex items-center justify-center mr-4 industrial-shimmer">
-                    <span className="text-white text-lg font-bold">OIL</span>
-                  </div>
-                  <div>
-                    <h1 className="text-5xl font-bold mb-2">Industria del Petróleo</h1>
-                    <p className="text-gray-300 text-lg">Refinación, Separación y Tratamiento</p>
+
+          {/* Floating Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 left-[8%] w-40 h-40 bg-gradient-to-br from-gray-700/15 to-gray-800/10 rounded-full opacity-20 animate-float-slow blur-sm"></div>
+            <div className="absolute top-32 right-[12%] w-32 h-32 bg-gradient-to-br from-gray-600/20 to-gray-700/15 rounded-full opacity-25 animate-float-medium blur-sm"></div>
+            <div className="absolute bottom-40 left-[3%] w-36 h-36 bg-gradient-to-br from-gray-500/15 to-gray-600/10 rounded-full opacity-18 animate-float-slow blur-sm"></div>
+          </div>
+
+          <div className="relative max-w-8xl mx-auto px-8 py-12 lg:py-16">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              {/* Content - 6 columns */}
+              <div className="lg:col-span-6 max-w-4xl">
+                <div className="space-y-6">
+                  {/* Headline */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 bg-gray-600 rounded-xl flex items-center justify-center">
+                        <Droplets className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1]">
+                          <span className="block">Industria</span>
+                          <span className="block text-gray-400">Petróleo Crudo</span>
+                        </h1>
+                      </div>
+                    </div>
+
+                    <p className="text-lg lg:text-xl text-gray-100/90 leading-relaxed font-medium max-w-3xl">
+                      <span className="text-white font-semibold">Deshidratación especializada</span> de lodos petroleros mediante filtros prensa móviles en refinerías.
+                      Manejo de residuos peligrosos con equipos certificados ex.proof.
+                    </p>
+
+                    {/* Key Achievement */}
+                    <div className="inline-flex items-center px-4 py-2 bg-gray-700/10 rounded-lg border border-gray-600/20">
+                      <CheckCircle className="w-4 h-4 text-gray-400 mr-2" />
+                      <span className="text-gray-300 font-semibold text-sm">84% REDUCCIÓN VOLUMEN LODOS • SIN CAPEX CLIENTE</span>
+                    </div>
                   </div>
                 </div>
-                
-                <div className="w-24 h-1 bg-gray-500 mb-6"></div>
-                
-                <p className="text-xl text-gray-200 leading-relaxed mb-8">
-                  Deshidratación especializada de borras oleosas mediante filtros prensa en 
-                  refinerías y estanques de almacenamiento. Manejo de lodos con hidrocarburos 
-                  y residuos peligrosos mediante equipos móviles certificados ex.proof.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 precision-click">
-                    Ver Casos de Éxito
-                  </button>
-                  <button className="border-2 border-gray-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-400 hover:text-gray-900 transition-all duration-300 transform hover:scale-105 precision-click">
-                    Consulta Técnica
-                  </button>
+
+                {/* Trust + CTAs */}
+                <div className="mt-8 space-y-4">
+                  {/* Client Trust */}
+                  <div className="bg-white/5 rounded-lg p-3 border border-gray-600/10 backdrop-blur-sm">
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="w-4 h-4 text-gray-400" />
+                      <div>
+                        <div className="text-xs font-semibold text-gray-300">ENAP Refinería • Lodos Petroleros</div>
+                        <div className="text-xs text-gray-400/70">Validación técnica comprobada</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTAs */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <button className="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300">
+                      Ver Casos de Éxito
+                    </button>
+                  </div>
                 </div>
               </div>
-              
-              <div className="relative">
-                <div className="aspect-video bg-gray-800/50 rounded-2xl flex items-center justify-center border border-gray-600/20 carbon-fiber">
-                  <div className="text-6xl">🛢️</div>
-                </div>
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gray-600/20 rounded-full blur-xl"></div>
-                <div className="absolute -top-6 -left-6 w-32 h-32 bg-gray-500/20 rounded-full blur-xl"></div>
-              </div>
-            </div>
 
-            {/* Live Metrics Dashboard with Smooth Header Transformation */}
-            <div 
-              className="mt-16 transition-all duration-700 ease-in-out"
-              style={{
-                position: scrollProgress > 0.8 ? 'fixed' : 'relative',
-                top: scrollProgress > 0.8 ? '50px' : 'auto',
-                left: '0',
-                right: '0',
-                zIndex: scrollProgress > 0.8 ? 40 : 'auto',
-                height: `${Math.max(48, 120 - scrollProgress * 72)}px`,
-                transform: `translateY(${scrollProgress * -20}px)`,
-                background: scrollProgress > 0.8 ? 'rgba(55, 65, 81, 0.95)' : 'transparent',
-                backdropFilter: scrollProgress > 0.8 ? 'blur(8px)' : 'none',
-                willChange: 'transform, height, background'
-              }}
-            >
-              <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-center">
-                <div 
-                  className={`transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'flex items-center space-x-4' : 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4'
-                  }`}
-                  style={{
-                    width: scrollProgress > 0.5 ? 'auto' : '100%',
-                    justifySelf: scrollProgress > 0.5 ? 'flex-start' : 'center',
-                    willChange: 'width, display'
-                  }}
-                >
-                  {/* Icon appears when compressed */}
-                  {scrollProgress > 0.5 && (
-                    <div className="w-7 h-7 bg-gray-700 rounded flex items-center justify-center">
-                      <span className="text-white text-xs font-bold" style={{ fontSize: '9px' }}>OIL</span>
+              {/* Visual - 6 columns */}
+              <div className="lg:col-span-6">
+                <div className="aspect-[3/2] bg-gradient-to-br from-gray-800/40 to-gray-900/60 rounded-xl flex items-center justify-center relative overflow-hidden">
+                  <div className="text-center z-10">
+                    <div className="w-16 h-16 bg-gray-700/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Beaker className="w-8 h-8 text-gray-400" />
                     </div>
-                  )}
-
-                  {/* Main Metrics */}
-                  <div className={`bg-white/10 backdrop-blur-sm transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'rounded px-3 py-1 flex items-center space-x-2' : 'rounded-lg p-3 text-center'
-                  }`} style={{ willChange: 'padding, border-radius' }}>
-                    <div className={`flex items-center ${scrollProgress > 0.5 ? 'space-x-1' : 'justify-center mb-1'}`}>
-                      {scrollProgress <= 0.5 && <BarChart3 className="w-4 h-4 text-gray-300 mr-1" />}
-                      {scrollProgress > 0.5 && <BarChart3 className="w-3 h-3 text-gray-300 transition-all duration-700" />}
-                      <span className={`font-bold text-white transition-all duration-700 ease-in-out ${
-                        scrollProgress > 0.5 ? 'text-sm' : 'text-lg'
-                      }`} style={{ willChange: 'font-size' }}>${liveMetrics.oilPrice.toFixed(2)}</span>
-                    </div>
-                    {scrollProgress <= 0.5 && <p className="text-gray-300 text-xs transition-opacity duration-700">Precio WTI</p>}
+                    <h3 className="text-lg font-bold text-white mb-1">Equipos Móviles TSF</h3>
+                    <p className="text-gray-400/80 text-sm">Deshidratación Lodos Petroleros</p>
                   </div>
-
-                  {scrollProgress > 0.5 && <span className="text-gray-300/70 text-sm transition-opacity duration-700">•</span>}
-                  
-                  <div className={`bg-white/10 backdrop-blur-sm transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'rounded px-3 py-1 flex items-center space-x-2' : 'rounded-lg p-3 text-center'
-                  }`} style={{ willChange: 'padding, border-radius' }}>
-                    <div className={`flex items-center ${scrollProgress > 0.5 ? 'space-x-1' : 'justify-center mb-1'}`}>
-                      {scrollProgress <= 0.5 && <Activity className="w-4 h-4 text-gray-300 mr-1" />}
-                      {scrollProgress > 0.5 && <Activity className="w-3 h-3 text-gray-300 transition-all duration-700" />}
-                      <span className={`font-bold text-white transition-all duration-700 ease-in-out ${
-                        scrollProgress > 0.5 ? 'text-sm' : 'text-lg'
-                      }`} style={{ willChange: 'font-size' }}>{liveMetrics.processingRate.toFixed(1)}{scrollProgress > 0.5 ? 'M' : ''}</span>
-                    </div>
-                    {scrollProgress <= 0.5 && <p className="text-gray-300 text-xs transition-opacity duration-700">Procesamiento</p>}
-                  </div>
-
-                  {scrollProgress > 0.5 && <span className="text-gray-300/70 text-sm transition-opacity duration-700">•</span>}
-                  
-                  <div className={`bg-white/10 backdrop-blur-sm transition-all duration-700 ease-in-out ${
-                    scrollProgress > 0.5 ? 'rounded px-3 py-1 flex items-center space-x-2' : 'rounded-lg p-3 text-center'
-                  }`} style={{ willChange: 'padding, border-radius' }}>
-                    <div className={`flex items-center ${scrollProgress > 0.5 ? 'space-x-1' : 'justify-center mb-1'}`}>
-                      {scrollProgress <= 0.5 && <Factory className="w-4 h-4 text-gray-300 mr-1" />}
-                      {scrollProgress > 0.5 && <Factory className="w-3 h-3 text-gray-300 transition-all duration-700" />}
-                      <span className={`font-bold text-white transition-all duration-700 ease-in-out ${
-                        scrollProgress > 0.5 ? 'text-sm' : 'text-lg'
-                      }`} style={{ willChange: 'font-size' }}>{liveMetrics.separationEfficiency.toFixed(1)}%</span>
-                    </div>
-                    {scrollProgress <= 0.5 && <p className="text-gray-300 text-xs transition-opacity duration-700">Separación</p>}
-                  </div>
-                  
-                  {/* Additional metrics only shown when not compressed */}
-                  {scrollProgress <= 0.5 && (
-                    <>
-                      <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm text-center">
-                        <div className="flex items-center justify-center mb-1">
-                          <Beaker className="w-4 h-4 text-gray-300 mr-1" />
-                          <span className="text-lg font-bold text-white">{liveMetrics.saltContent.toFixed(1)}</span>
-                        </div>
-                        <p className="text-gray-300 text-xs">Sal</p>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm text-center">
-                        <div className="flex items-center justify-center mb-1">
-                          <Droplets className="w-4 h-4 text-gray-300 mr-1" />
-                          <span className="text-lg font-bold text-white">{liveMetrics.waterContent.toFixed(1)}%</span>
-                        </div>
-                        <p className="text-gray-300 text-xs">Agua</p>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm text-center">
-                        <div className="flex items-center justify-center mb-1">
-                          <TrendingUp className="w-4 h-4 text-gray-300 mr-1" />
-                          <span className="text-lg font-bold text-white">{liveMetrics.apiGravity.toFixed(1)}°</span>
-                        </div>
-                        <p className="text-gray-300 text-xs">API Gravity</p>
-                      </div>
-                    </>
-                  )}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+
         {/* Services for Crude Oil */}
-        <section className="py-20 relative bg-gray-50">
+        <section className="py-20 relative">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4 industrial-shimmer">

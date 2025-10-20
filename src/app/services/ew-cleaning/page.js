@@ -1,12 +1,145 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Filter, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import Image from 'next/image'
+import { Filter, CheckCircle, Truck, Shield, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+// Vertical Timeline Component with GSAP Animations
+function VerticalTimeline({ steps }) {
+  const timelineRef = useRef(null)
+  const stepRefs = useRef([])
+  const lineRefs = useRef([])
+
+  useEffect(() => {
+    // Animate each step as it comes into view
+    stepRefs.current.forEach((step, idx) => {
+      if (!step) return
+
+      // Animate the number circle
+      const circle = step.querySelector('.timeline-circle')
+      const card = step.querySelector('.timeline-card')
+      const line = lineRefs.current[idx]
+
+      gsap.fromTo(circle,
+        { scale: 0, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: step,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      )
+
+      // Animate the card sliding in from right
+      gsap.fromTo(card,
+        { x: 50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: step,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      )
+
+      // Animate the timeline line drawing down
+      if (line) {
+        gsap.fromTo(line,
+          { scaleY: 0, transformOrigin: 'top' },
+          {
+            scaleY: 1,
+            duration: 0.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: step,
+              start: 'top 70%',
+              toggleActions: 'play none none none'
+            }
+          }
+        )
+      }
+    })
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    }
+  }, [])
+
+  return (
+    <div ref={timelineRef} className="max-w-4xl mx-auto">
+      {steps.map((step, idx) => {
+        const Icon = step.icon
+        return (
+          <div
+            key={idx}
+            ref={el => stepRefs.current[idx] = el}
+            className="relative flex gap-8 pb-12 last:pb-0 group"
+          >
+            {/* Timeline line and number */}
+            <div className="flex flex-col items-center shrink-0">
+              {/* Step number circle */}
+              <div className="timeline-circle w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-2xl shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
+                {step.step}
+              </div>
+
+              {/* Vertical line (not on last item) */}
+              {idx < steps.length - 1 && (
+                <div
+                  ref={el => lineRefs.current[idx] = el}
+                  className="w-0.5 h-full bg-gradient-to-b from-amber-200 to-slate-200 mt-2"
+                ></div>
+              )}
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 pb-8">
+              <div className="timeline-card bg-white rounded-2xl p-8 shadow-md border border-slate-200 hover:shadow-xl hover:border-amber-200 transition-all duration-300">
+                {/* Icon and title */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+                    <Icon className="w-7 h-7 text-amber-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900">{step.title}</h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  {step.description}
+                </p>
+
+                {/* Additional info */}
+                <div className="pt-4 border-t border-slate-200">
+                  <p className="text-sm text-slate-500">
+                    {step.additionalInfo}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 export default function EWCleaningServicePage() {
   const router = null // Will be imported when needed
   const heroRef = useRef(null)
   const overviewRef = useRef(null)
+  const specsRef = useRef(null)
   const processRef = useRef(null)
   const benefitsRef = useRef(null)
   const caseStudiesRef = useRef(null)
@@ -32,7 +165,7 @@ export default function EWCleaningServicePage() {
       })
     }, observerOptions)
 
-    const refs = [heroRef, overviewRef, processRef, benefitsRef, caseStudiesRef]
+    const refs = [heroRef, overviewRef, specsRef, processRef, benefitsRef, caseStudiesRef]
     refs.forEach(ref => {
       if (ref.current) {
         observer.observe(ref.current)
@@ -45,186 +178,191 @@ export default function EWCleaningServicePage() {
   const processSteps = [
     {
       step: '1',
-      title: 'Diagnóstico Integral',
-      description: 'Evaluación estado celdas: eficiencia corriente, calidad cátodos, voltajes',
-      additionalInfo: 'Medición parámetros eléctricos • Análisis impurezas • Inspección visual',
-      icon: FlaskConical
+      title: 'Retiro de Electrodo',
+      description: 'Remoción controlada de un electrodo de la celda para habilitar acceso al fondo',
+      additionalInfo: 'Bloqueo y desenergización • Retiro 1 electrodo • Acceso seguro',
+      icon: Cog
     },
     {
       step: '2',
-      title: 'Stripping Especializado',
-      description: 'Remoción selectiva depósitos según tipo metal y contaminación',
-      additionalInfo: 'Stripping ácido controlado • Recuperación metal • Protección substrato',
-      icon: Target
+      title: 'Succión de Borras',
+      description: 'Aspirado neumático de borras metálicas y orgánicas desde fondo de celda',
+      additionalInfo: 'Tasa 6 m³/hora • Bombas neumáticas • Mangueras antiestáticas',
+      icon: Activity
     },
     {
       step: '3',
-      title: 'Limpieza Avanzada',
-      description: 'Tratamiento electroquímico y químico para reactivación superficies',
-      additionalInfo: 'Limpieza electrolítica • Pasivación controlada • Preparación contactos',
-      icon: Zap
+      title: 'Filtración Móvil',
+      description: 'Separación sólido-líquido mediante filtros prensa móviles de alta capacidad',
+      additionalInfo: 'Filtros prensa • Retorno <2-3 ppm sólidos • Borra deshidratada',
+      icon: Filter
     },
     {
       step: '4',
-      title: 'Optimización Performance',
-      description: 'Reajuste parámetros operacionales para máxima eficiencia',
-      additionalInfo: 'Calibración densidad corriente • Control voltaje • Monitoreo continuo',
-      icon: TrendingUp
+      title: 'Retorno de Electrolito',
+      description: 'Devolución de electrolito filtrado al rebose de celda sin variación de nivel',
+      additionalInfo: 'Cero pérdida electrolito • 100-200 L fuera celda • Sin interrupciones',
+      icon: RefreshCw
+    },
+    {
+      step: '5',
+      title: 'Verificación y Entrega',
+      description: 'Inspección final, reinstalación de electrodo y entrega de borra pesada',
+      additionalInfo: 'Borra pesada • Registro fotográfico • Trazabilidad completa',
+      icon: CheckCircle
     }
   ]
 
   const useCases = [
     {
-      industry: 'Cobre SX-EW',
-      application: 'Recuperación celdas contaminadas orgánico',
-      challenge: 'Acumulación orgánico arrastrado causaba cortocircuitos masivos, eficiencia corriente caída 78%',
-      solution: 'Stripping completo + limpieza ácida especializada + reoptimización parámetros',
-      result: 'Eficiencia corriente recuperada 94%, cátodos 99.99% Cu',
-      client: 'Codelco Radomiro Tomic',
-      savings: 'ROI 4 meses'
+      industry: 'Problema Resuelto',
+      application: 'Eliminación cortocircuitos por acumulación de borras',
+      challenge: 'Borras metálicas y orgánicas en fondo de celdas generan cortocircuitos, aumentan consumo eléctrico y reducen calidad del cobre producido.',
+      solution: 'Nuestro sistema de succión neumática de 6 m³/h con filtración móvil devuelve el electrolito filtrado con menos de 2-3 ppm de sólidos, logrando',
+      result: '100% reducción de depósitos metálicos en zonas críticas',
+      client: 'Solución TSF',
+      savings: 'sin pérdida de electrolito'
     },
     {
-      industry: 'Zinc EW',
-      application: 'Calidad SHG premium para laminación',
-      challenge: 'Deposición rugosa Zn por trazas Co/Ni imposibilitaba laminación directa',
-      solution: 'Limpieza ultra-pura electrodos Al + control estricto &lt;0.001% impurezas',
-      result: 'Pureza zinc 99.995% SHG, superficie lisa',
-      client: 'Korea Zinc Smelter',
-      savings: 'Premium +$200/t'
+      industry: 'Ventaja Operacional',
+      application: 'Sin interrupciones de producción durante limpieza',
+      challenge: 'Métodos tradicionales requieren vaciado completo de celdas con pérdida masiva de electrolito y detención de producción.',
+      solution: 'El sistema mantiene solo 100-200 litros de electrolito fuera de la celda con retorno inmediato filtrado y sin variación de nivel, manteniendo',
+      result: 'continuidad operacional completa',
+      client: 'Sistema Móvil',
+      savings: '2-3 celdas/turno 12h'
     },
     {
-      industry: 'Níquel EW',
-      application: 'Reactivación celdas degradadas alta corriente',
-      challenge: 'Pasivación crítica ánodos Ni causaba voltaje excesivo +40% consumo energético',
-      solution: 'Reactivación electroquímica ánodos DSA + optimización densidad corriente',
-      result: 'Reducción consumo energético 30%, cátodos grado LME',
-      client: 'Pacific Metals Ni Refinery',
-      savings: 'Ahorro $2.8M/año'
+      industry: 'Eficiencia del Sistema',
+      application: 'Alta tasa de remoción de borras vs operación manual',
+      challenge: 'Limpieza manual de celdas es lenta, peligrosa y deja residuos metálicos que reinician problemas.',
+      solution: 'Equipos móviles de aspirado industrial con filtros prensa y bombas neumáticas certificadas alcanzan',
+      result: '95% de eficiencia en remoción versus limpieza manual',
+      client: 'Tecnología Probada',
+      savings: 'con ROI inmediato'
     }
   ]
 
   const industrialApplications = [
     {
-      element: "Cu",
-      industry: "Electroobtención Cobre",
-      application: "Optimización celdas EW contaminadas",
-      performance: "95% Eficiencia corriente",
-      specs: "Incremento 25% productividad | Cátodos 99.99% Cu",
-      color: "#ea580c",
-      status: "Operativo"
+      element: "6 m³/h",
+      industry: "Tasa de Succión",
+      application: "Capacidad de aspirado neumático de borras desde fondo de celdas EW",
+      specs: "Bombas neumáticas de alta capacidad con mangueras antiestáticas de 2-3 pulgadas",
+      color: "#ea580c"
     },
     {
-      element: "Zn",
-      industry: "Electroobtención Zinc",
-      application: "Purificación ultra-alta cátodos",
-      performance: "99.995% Pureza Zn",
-      specs: "Calidad SHG LME | Superficie lisa laminación",
-      color: "#64748b",
-      status: "Especializado"
+      element: "<2-3 ppm",
+      industry: "Calidad Retorno",
+      application: "Nivel de sólidos en suspensión del electrolito filtrado devuelto a la celda",
+      specs: "Filtros prensa móviles garantizan retorno ultra limpio sin pérdida de electrolito",
+      color: "#10b981"
     },
     {
-      element: "Ni",
-      industry: "Electroobtención Níquel",
-      application: "Recuperación celdas degradadas",
-      performance: "30% Reducción OPEX",
-      specs: "Reactivación ánodos | Cátodos grado LME",
-      color: "#10b981",
-      status: "Recuperación"
+      element: "2-3 celdas",
+      industry: "Rendimiento",
+      application: "Número de celdas completas desborrradas por turno de 12 horas",
+      specs: "Productividad variable según cantidad de borra acumulada, mínimo contractual 1 celda/día",
+      color: "#f59e0b"
     },
     {
-      element: "Co",
-      industry: "Electroobtención Cobalto",
-      application: "Control impurezas trazas",
-      performance: "99.8% Pureza Co",
-      specs: "Eliminación Ni/Fe | Cátodos premium",
-      color: "#6366f1",
-      status: "Premium"
+      element: "100-200 L",
+      industry: "Electrolito Fuera",
+      application: "Volumen mínimo de electrolito que permanece fuera de celda durante operación",
+      specs: "Sin variación de nivel gracias al retorno continuo filtrado durante el desborre",
+      color: "#6366f1"
     },
     {
-      element: "Au",
-      industry: "Electroafinación Oro",
-      application: "Limpieza cátodos Au contaminados",
-      performance: "99.99% Pureza Au",
-      specs: "Eliminación Ag/Cu | Estándar LBMA",
-      color: "#f59e0b",
-      status: "Afinación"
+      element: "95%",
+      industry: "Eficiencia Remoción",
+      application: "Tasa de remoción efectiva de borras comparado con limpieza manual tradicional",
+      specs: "Logra 100% de reducción de depósitos metálicos con trazabilidad completa del proceso",
+      color: "#64748b"
     },
     {
-      element: "Ag",
-      industry: "Electroafinación Plata",
-      application: "Recuperación plata electrolítica",
-      performance: "99.9% Pureza Ag",
-      specs: "Stripping selectivo | Calidad comercial",
-      color: "#94a3b8",
-      status: "Precioso"
+      element: "0%",
+      industry: "Pérdida Electrolito",
+      application: "Pérdida nula de electrolito durante todo el proceso de desborre y filtración",
+      specs: "Sistema cerrado con retorno total filtrado y borra deshidratada para disposición",
+      color: "#059669"
     }
   ]
 
   const caseStudies = [
     {
-      title: "Recuperación Total Celdas EW Cobre",
-      client: "Codelco Radomiro Tomic",
-      challenge: "Acumulación orgánico arrastrado causaba cortocircuitos masivos, eficiencia corriente caída 78% y rechazo 15% cátodos por contaminación.",
-      solution: "Stripping completo 120 celdas + limpieza ácida especializada electrodos + pasivación superficies + reoptimización parámetros.",
+      title: "Desborre de Celdas EW - Minera Caserones",
+      client: "SCM Minera Lumina Copper Chile - Caserones",
+      challenge: "Acumulación de borras metálicas y orgánicas en fondo de celdas EW generaba cortocircuitos, aumento consumo eléctrico y reducción calidad cobre. Operación a >4.000 msnm exigía solución móvil de rápida implementación.",
+      solution: "Servicio integral de desborre mediante succión neumática + filtración móvil + retorno de electrolito filtrado. Jornada 7x7 diurna. Rendimiento: 1 celda/día. Equipos móviles adaptados a altura con contenedores-bodega autónomos.",
       results: [
-        "Eficiencia corriente: 94%",
-        "Cátodos 99.99% Cu sin rechazos",
-        "Incremento producción: 18%",
-        "ROI: 4 meses"
+        "100% reducción depósitos metálicos en zonas críticas",
+        "Cero incidentes de seguridad durante ejecución",
+        "Conductividad eléctrica restaurada en todas las celdas",
+        "Reducción consumo energético por celda",
+        "Calidad cátodos mantenida dentro de estándares LME",
+        "Continuidad productiva sin detenciones mayores"
       ],
       metrics: {
-        before: { efficiency: "78%", purity: "99.8%", rejection: "15%" },
-        after: { efficiency: "94%", purity: "99.99%", rejection: "&lt;1%" }
+        before: { deposits: "Alto", incidents: "Riesgo", quality: "Variable" },
+        after: { deposits: "0%", incidents: "0", quality: "LME" }
       },
       industry: "Cobre",
       color: "#ea580c"
     },
     {
-      title: "Optimización Premium Zinc SHG",
-      client: "Korea Zinc Smelter",
-      challenge: "Deposición rugosa Zn por trazas Co/Ni imposibilitaba laminación directa, pérdida premium $200/t por calidad inferior.",
-      solution: "Limpieza ultra-pura electrodos Al + control estricto &lt;0.001% impurezas + optimización densidad corriente para superficie lisa.",
+      title: "Servicio Continuo Planta SX - CODELCO DGM",
+      client: "División Gabriela Mistral - CODELCO",
+      challenge: "Mantener calidad de orgánico y eficiencia de planta SX durante casi 8 años de operación continua. Requerimiento de control constante de borras, diálisis de orgánico y tratamiento programado.",
+      solution: "Administración eficiente y constante de retiro de borras desde etapas SX + diálisis continua del orgánico + campañas programadas de tratamiento con tierra activada. Mayor flota de filtros prensa móviles del mercado.",
       results: [
-        "Pureza zinc: 99.995% SHG",
-        "Superficie lisa laminación",
-        "Premium calidad: +$200/t",
-        "Certificación LME mantenida"
+        "Tensión interfacial 29.5 dinas/cm (PLS planta)",
+        "Tiempos separación: 70s orgánica, 92s acuosa vs 120s máx",
+        "Recuperación global SX >96% promedio mensual",
+        "Tasa reposición orgánico: 2.6% mes",
+        "8 años operación continua sin interrupciones"
       ],
       metrics: {
-        before: { purity: "99.9%", surface: "rugosa", premium: "$0/t" },
-        after: { purity: "99.995%", surface: "lisa", premium: "+$200/t" }
+        before: { tsf: "Variable", recovery: "<96%", replacement: "Alto" },
+        after: { tsf: "70-92s", recovery: ">96%", replacement: "2.6%" }
       },
-      industry: "Zinc",
-      color: "#64748b"
+      industry: "SX Plant",
+      color: "#10b981"
     },
     {
-      title: "Reactivación Celdas Níquel Degradadas",
-      client: "Pacific Metals Ni Refinery",
-      challenge: "Pasivación crítica ánodos Ni causaba voltaje excesivo +40% consumo energético, amenazando viabilidad operación.",
-      solution: "Reactivación electroquímica ánodos DSA + optimización densidad corriente + control automático parámetros.",
+      title: "Deshidratación de Lodos Petroleros - Refinería ENAP",
+      client: "ENAP Refinería Concón",
+      challenge: "4.5+ millones kg/año de lodos petroleros con 70-92% humedad generan altos costos de disposición y logística. Tres corrientes críticas (planta fenólica, fenoles y T-2402) requieren solución de reducción volumétrica sin inversión en infraestructura permanente.",
+      solution: "Validación técnica de laboratorio con tecnología de filtración móvil. Pruebas con filtros equivalentes a sistemas industriales demostraron viabilidad de deshidratación mediante filtro prensa/centrífuga. Se identificaron 5 áreas de aplicación en procesos Delayed Coker, FCC, tratamiento efluentes y separadores API.",
       results: [
-        "Reducción consumo energético: 30%",
-        "Cátodos grado LME recuperados",
-        "Ahorro energía: $2.8M/año",
-        "Extensión vida útil ánodos: 50%"
+        "84.23% reducción volumen lodos planta fenólica (92.59% → 53% humedad)",
+        "77.31% reducción volumen lodos planta fenoles (90.02% → 56% humedad)",
+        "32.96% reducción volumen lodos T-2402 (70.37% → 55.8% humedad)",
+        "Validación técnica sin inversión del cliente",
+        "5 oportunidades adicionales identificadas en refinería",
+        "Potencial recuperación de agua para reutilización"
       ],
       metrics: {
-        before: { voltage: "3.8V", efficiency: "65%", cost: "$4.2M/año" },
-        after: { voltage: "2.6V", efficiency: "91%", cost: "$1.4M/año" }
+        before: { volume: "4.5M kg/año", humidity: "70-92%", disposal: "Alto costo" },
+        after: { volume: "↓35-85%", humidity: "53-56%", disposal: "Optimizado" }
       },
-      industry: "Níquel",
-      color: "#10b981"
+      industry: "Petróleo Crudo",
+      color: "#1e293b"
     }
   ]
 
   const benefits = [
-    'Incremento eficiencia corriente 15-25%',
-    'Cátodos &gt;99.5% pureza sin rechazos',
-    'Reducción 30% consumo energético',
-    'Extensión 50% vida útil electrodos',
-    'Eliminación cortocircuitos y dendritas',
-    'ROI &lt;6 meses en operaciones continuas',
-    'Cumplimiento estándares LME/LBMA'
+    '100% reducción de depósitos metálicos en zonas críticas',
+    'Cero pérdida de electrolito durante proceso',
+    'Reducción consumo energético por celda',
+    'Eliminación total de cortocircuitos por borras',
+    '95% eficiencia de remoción vs operación manual',
+    'Continuidad operacional sin detenciones mayores',
+    'Calidad cátodos mantenida dentro estándares LME',
+    'Sistema móvil de rápida implementación',
+    'Solo 100-200 L electrolito fuera de celda',
+    'Retorno filtrado <2-3 ppm sólidos',
+    'Borra deshidratada con bajo contenido humedad',
+    'Trazabilidad completa con registro fotográfico'
   ]
 
   return (
@@ -390,12 +528,12 @@ export default function EWCleaningServicePage() {
               <nav className="flex items-center space-x-1 text-sm">
                 <span className="text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">Servicios</span>
                 <span className="text-slate-300 mx-2">/</span>
-                <span className="text-amber-600 font-medium">Limpieza & Optimización EW</span>
+                <span className="text-amber-600 font-medium">Desborre de Celdas EW</span>
               </nav>
               <div className="flex items-center space-x-6">
                 <div className="flex items-center space-x-2 text-xs text-slate-500">
                   <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-                  <span>Disponible 24/7</span>
+                  <span>Sistema Móvil 24/7</span>
                 </div>
               </div>
             </div>
@@ -410,36 +548,23 @@ export default function EWCleaningServicePage() {
               {/* Main Heading */}
               <div className="mb-6">
                 <h1 className="text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-black tracking-tight text-slate-900 leading-[0.9] mb-4">
-                  Limpieza y Optimización
+                  Desborre de
                   <span className="block text-amber-600">
                     Celdas EW
                   </span>
                 </h1>
                 <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
-                  Para Electroobtención • Móvil • Alta Eficiencia
+                  Succión • Filtración Móvil • Cero Pérdida Electrolito
                 </div>
               </div>
 
               {/* Description */}
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
-                Sistemas especializados de limpieza electroquímica con incremento hasta
-                <span className="font-bold text-slate-900"> 25% eficiencia corriente</span>.
-                <span className="text-amber-600 font-medium"> Reactivación completa</span> en 24-48 horas
-                sin interrumpir producción.
+                Sistema especializado de remoción de borras metálicas y orgánicas mediante
+                <span className="font-bold text-slate-900"> succión y filtración móvil</span>.
+                <span className="text-amber-600 font-medium"> Reducción 100% depósitos metálicos</span> sin pérdida de electrolito.
               </p>
 
-              {/* Enterprise CTA Section */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group relative bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 overflow-hidden hover:shadow-xl hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-blue-600/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Evaluación Técnica</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="group border-2 border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-white/50 hover:bg-white/80 backdrop-blur-sm">
-                  <span>Descargar Especificaciones</span>
-                  <Settings className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
-                </button>
-              </div>
             </div>
 
             {/* Right Column - Hero Image */}
@@ -460,20 +585,24 @@ export default function EWCleaningServicePage() {
               </div>
 
               {/* Hero Image Container */}
-              <div className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center text-white shadow-xl">
-                    <Zap className="w-12 h-12" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Sistema EW-Clean Pro</h3>
-                  <p className="text-slate-600 mb-4">Tecnología de reactivación electroquímica para máxima eficiencia corriente</p>
-                  <div className="flex items-center justify-center space-x-4 text-sm">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 h-[320px] group">
+                <Image
+                  src="/EW Photos/20251009_141008.jpg"
+                  alt="Instalación de celdas de electroobtención de cobre"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center space-x-4 text-sm text-white">
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-slate-600">Operativo</span>
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="font-medium">Operativo 24/7</span>
                     </div>
-                    <div className="text-slate-400">•</div>
-                    <div className="text-amber-600 font-semibold">5000A Capacidad</div>
+                    <div className="text-white/60">•</div>
+                    <div className="text-amber-400 font-semibold">6 m³/hora capacidad</div>
                   </div>
                 </div>
               </div>
@@ -482,147 +611,201 @@ export default function EWCleaningServicePage() {
         </div>
       </section>
 
-      {/* Service Overview */}
+      {/* Service Advantages Overview - Stripe Pattern */}
       <section ref={overviewRef} className="py-20 bg-white">
-        <div className="max-w-8xl mx-auto px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {useCases.map((useCase, index) => (
-              <div key={index} className="bg-slate-50 rounded-2xl p-8 progressive-reveal">
-                <div className="mb-6">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-3 h-3 bg-amber-500 rounded-full"></div>
-                    <h3 className="text-xl font-bold text-slate-900">{useCase.industry}</h3>
-                  </div>
-                  <h4 className="text-lg font-semibold text-amber-600 mb-2">{useCase.application}</h4>
-                  <p className="text-slate-600 text-sm mb-4">{useCase.challenge}</p>
-                </div>
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-slate-900 mb-4">¿Por qué Desborre Móvil TSF?</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">Ventajas clave del sistema versus métodos tradicionales de limpieza</p>
+          </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Solución TSF</span>
-                    <p className="text-slate-700 font-medium">{useCase.solution}</p>
-                  </div>
-                  <div>
-                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Resultado</span>
-                    <p className="text-slate-900 font-bold">{useCase.result}</p>
-                  </div>
-                  <div className="pt-4 border-t border-slate-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-500">{useCase.client}</span>
-                      <span className="text-sm font-semibold text-green-600">{useCase.savings}</span>
-                    </div>
-                  </div>
+          {/* Advantage 1: Content LEFT, Stat RIGHT */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="progressive-reveal">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
+                  <Target className="w-6 h-6 text-red-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">{useCases[0].industry}</h3>
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-4">{useCases[0].application}</h4>
+
+              <div className="prose prose-slate max-w-none">
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  {useCases[0].challenge}
+                </p>
+                <p className="text-slate-900 leading-relaxed font-medium">
+                  {useCases[0].solution} <span className="text-green-600 font-bold">{useCases[0].result}</span>, {useCases[0].savings.toLowerCase()}.
+                </p>
+              </div>
+            </div>
+
+            <div className="progressive-reveal">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-12 flex items-center justify-center min-h-[300px]">
+                <div className="text-center">
+                  <div className="text-8xl font-black text-green-600 mb-4">100%</div>
+                  <p className="text-lg font-semibold text-slate-700">Reducción depósitos metálicos</p>
+                  <p className="text-sm text-slate-500 mt-2">{useCases[0].savings}</p>
                 </div>
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* Advantage 2: Photo LEFT, Content RIGHT */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20 bg-slate-50 -mx-8 px-8 py-16 rounded-3xl">
+            <div className="progressive-reveal order-2 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200/50 group h-[380px]">
+                <Image
+                  src="/EW Photos/20251009_141022.jpg"
+                  alt="Depósitos metálicos y orgánicos en cátodos de cobre - antes del desborre móvil TSF"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+
+            <div className="progressive-reveal order-1 lg:order-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">{useCases[1].industry}</h3>
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-4">{useCases[1].application}</h4>
+
+              <div className="prose prose-slate max-w-none">
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  {useCases[1].challenge}
+                </p>
+                <p className="text-slate-900 leading-relaxed font-medium mb-4">
+                  {useCases[1].solution} <span className="text-blue-600 font-bold">{useCases[1].result}</span>.
+                </p>
+                <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
+                  <Clock className="w-4 h-4 text-blue-600" />
+                  <span className="text-sm font-semibold text-blue-700">{useCases[1].savings}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Advantage 3: Content LEFT, Stat RIGHT */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="progressive-reveal">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
+                  <Award className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">{useCases[2].industry}</h3>
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-4">{useCases[2].application}</h4>
+
+              <div className="prose prose-slate max-w-none">
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  {useCases[2].challenge}
+                </p>
+                <p className="text-slate-900 leading-relaxed font-medium">
+                  {useCases[2].solution} <span className="text-purple-600 font-bold">{useCases[2].result}</span>, {useCases[2].savings.toLowerCase()}.
+                </p>
+              </div>
+            </div>
+
+            <div className="progressive-reveal">
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-12 flex items-center justify-center min-h-[300px]">
+                <div className="text-center">
+                  <div className="text-8xl font-black text-purple-600 mb-4">95%</div>
+                  <p className="text-lg font-semibold text-slate-700">Eficiencia vs manual</p>
+                  <p className="text-sm text-slate-500 mt-2">{useCases[2].savings}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Industry Applications Matrix */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-8xl mx-auto px-8">
-          <div className="text-center mb-16 progressive-reveal">
+      {/* Technical Specifications - Horizontal Carousel */}
+      <section ref={specsRef} className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-12 progressive-reveal">
             <h2 className="text-4xl font-black text-slate-900 mb-4">
-              Aplicaciones por Metal
+              Especificaciones Técnicas
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Servicios especializados optimización electroobtención para cada metal con estándares internacionales
+              Parámetros operacionales del sistema de desborre móvil
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {industrialApplications.map((app, index) => (
-              <div
-                key={index}
-                className="group bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:shadow-slate-500/10 transition-all duration-500 hover:-translate-y-2 progressive-reveal"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg"
-                      style={{ backgroundColor: app.color }}
-                    >
-                      {app.element}
+          {/* Horizontal scrolling carousel */}
+          <div className="relative">
+            <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+              {industrialApplications.map((app, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-80 snap-start progressive-reveal"
+                >
+                  <div
+                    className="rounded-xl p-6 h-full hover:shadow-lg transition-all duration-200 border border-slate-200/50"
+                    style={{
+                      background: `linear-gradient(135deg, ${app.color}08 0%, ${app.color}03 100%)`
+                    }}
+                  >
+                    {/* Header with color accent */}
+                    <div className="mb-6">
+                      <div className="mb-3">
+                        <span
+                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold text-white"
+                          style={{ backgroundColor: app.color }}
+                        >
+                          {app.element}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900">{app.industry}</h3>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-slate-900">{app.industry}</h3>
-                      <div className="flex items-center space-x-2">
-                        <div className="flex items-center space-x-1">
-                          <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
-                          <div className="w-1 h-1 bg-amber-600 rounded-full"></div>
-                        </div>
-                        <span className="text-xs font-medium text-slate-500">{app.status}</span>
+
+                    {/* Content */}
+                    <div className="space-y-4">
+                      <p className="text-slate-700 leading-relaxed">
+                        {app.application}
+                      </p>
+                      <div className="pt-3 border-t border-slate-200/50">
+                        <p className="text-sm text-slate-600 leading-relaxed">{app.specs}</p>
                       </div>
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
 
-                <div className="space-y-3">
-                  <div>
-                    <span className="text-sm font-medium text-slate-500">Aplicación</span>
-                    <p className="text-slate-900 font-medium">{app.application}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-sm font-medium text-slate-500">Performance</span>
-                    <p className="text-lg font-bold" style={{ color: app.color }}>{app.performance}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-sm font-medium text-slate-500">Especificaciones Técnicas</span>
-                    <p className="text-sm text-slate-600 leading-relaxed">{app.specs}</p>
-                  </div>
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <button className="w-full bg-slate-50 hover:bg-slate-100 text-slate-700 py-2 px-4 rounded-lg font-medium transition-colors duration-200 group-hover:bg-slate-900 group-hover:text-white">
-                    Ver Especificaciones
-                  </button>
-                </div>
-              </div>
-            ))}
+            {/* Scroll indicator */}
+            <div className="flex justify-center gap-2 mt-4">
+              {industrialApplications.map((_, index) => (
+                <div key={index} className="w-2 h-2 rounded-full bg-slate-300"></div>
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* Hide scrollbar CSS */}
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
       </section>
 
-      {/* Process Steps */}
-      <section ref={processRef} className="py-20 bg-white">
-        <div className="max-w-8xl mx-auto px-8">
+      {/* Process Steps - Animated Bento Grid */}
+      <section ref={processRef} className="py-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16 progressive-reveal">
             <h2 className="text-4xl font-black text-slate-900 mb-4">
-              Proceso de Optimización EW
+              Metodología de Desborre
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Metodología especializada para máxima eficiencia corriente y calidad cátodos
+              Proceso sistemático de 5 pasos para remoción completa de borras con cero pérdida de electrolito
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="bg-slate-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-96 flex flex-col progressive-reveal">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-amber-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">
-                    {step.step}
-                  </div>
-                  <step.icon className="w-8 h-8 text-amber-600" />
-                </div>
-
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                <p className="text-slate-600 leading-relaxed flex-grow">{step.description}</p>
-
-                <div className="pt-4 mt-4 border-t border-slate-200">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
-                    <div className="w-1 h-1 bg-amber-600 rounded-full"></div>
-                  </div>
-                  <p className="text-sm text-slate-500">{step.additionalInfo}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <VerticalTimeline steps={processSteps} />
         </div>
       </section>
 
@@ -649,10 +832,10 @@ export default function EWCleaningServicePage() {
                   <div className="lg:col-span-1">
                     <div className="flex items-center space-x-3 mb-4">
                       <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
+                        className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-sm"
                         style={{ backgroundColor: study.color }}
                       >
-                        {study.industry === 'Cobre' ? 'Cu' : study.industry === 'Zinc' ? 'Zn' : 'Ni'}
+                        {study.industry === 'Cobre' ? 'Cu' : study.industry === 'SX Plant' ? 'SX' : study.industry === 'Zinc' ? 'Zn' : 'EW'}
                       </div>
                       <div>
                         <span className="text-sm font-medium text-slate-500">{study.industry}</span>
@@ -723,10 +906,10 @@ export default function EWCleaningServicePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="progressive-reveal">
               <h2 className="text-4xl font-black text-white mb-6">
-                Beneficios Clave
+                Beneficios del Servicio
               </h2>
               <p className="text-xl text-slate-300 mb-8">
-                Ventajas competitivas de nuestros servicios de optimización electroobtención
+                Ventajas operacionales del sistema de desborre móvil con filtración industrial
               </p>
 
               <div className="space-y-4">
@@ -744,27 +927,27 @@ export default function EWCleaningServicePage() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 progressive-reveal">
-              <h3 className="text-2xl font-bold text-white mb-6">Contacto Especializado</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Solicitar Servicio de Desborre</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Tipo de Metal</label>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">Tipo de Servicio</label>
                   <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white">
-                    <option>Cobre - EW Cu</option>
-                    <option>Zinc - EW Zn SHG</option>
-                    <option>Níquel - EW Ni</option>
-                    <option>Metales Preciosos</option>
+                    <option>Desborre de Celdas EW</option>
+                    <option>Tratamiento de Borras SX</option>
+                    <option>Filtración de Orgánico</option>
+                    <option>Apoyo Integral Planta</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Capacidad Celdas</label>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">Número de Celdas</label>
                   <input
                     type="text"
-                    placeholder="ej: 5000A"
+                    placeholder="ej: 50 celdas"
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-slate-400"
                   />
                 </div>
                 <button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-lg font-semibold transition-colors duration-200">
-                  Solicitar Evaluación Técnica
+                  Solicitar Cotización
                 </button>
               </div>
             </div>
