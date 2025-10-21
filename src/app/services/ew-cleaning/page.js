@@ -5,221 +5,340 @@ import Image from 'next/image'
 import { Filter, CheckCircle, Truck, Shield, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, ArrowRight, ArrowDown, RotateCw } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
 
-// Circular Cycle Workflow Component with Exit Branch
+// Rounded Rectangle Cycle Visualization
 function CycleWorkflow({ steps }) {
+  const [activeStep, setActiveStep] = useState(0) // Which line is drawing
+  const [highlightedStep, setHighlightedStep] = useState(0) // Which card is highlighted
+  const [showExit, setShowExit] = useState(false)
+  const arrowRef = useRef(null)
+
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: -1 })
+
+    // Cycle through steps 0-3 once (4 transitions)
+    for (let i = 0; i < 4; i++) {
+      tl.call(() => setActiveStep(i))
+        .to({}, { duration: 2.5 })
+    }
+
+    // Wait for step 5 display, then hide it
+    tl.to({}, { duration: 3 })
+    .call(() => {
+      setShowExit(false)
+      setActiveStep(-1)
+    })
+
+    return () => tl.kill()
+  }, [])
+
+  // Animate arrow drawing when active step changes
+  useEffect(() => {
+    if (arrowRef.current && activeStep >= 0 && activeStep <= 3) {
+      const path = arrowRef.current.querySelector(`#arrow-path-${activeStep}`)
+      if (path) {
+        const length = path.getTotalLength()
+        const tl = gsap.timeline()
+
+        // First: Draw the line (head moves forward)
+        tl.fromTo(path,
+          { strokeDasharray: length, strokeDashoffset: length },
+          {
+            strokeDashoffset: 0,
+            duration: 1.2,
+            ease: 'power2.out',
+            onComplete: () => {
+              // Special case: step 3 (line from step 4→1) triggers step 5 instead
+              if (activeStep === 3) {
+                setShowExit(true)
+                setHighlightedStep(-1)
+              } else {
+                // Highlight next card when line head reaches it
+                const nextStep = activeStep + 1
+                setHighlightedStep(nextStep)
+              }
+            }
+          }
+        )
+        // Second: Compress the line (tail follows head into destination)
+        .to(path, {
+          strokeDashoffset: -length,
+          duration: 0.8,
+          ease: 'power2.in'
+        })
+      }
+    }
+  }, [activeStep])
+
   return (
-    <div className="max-w-7xl mx-auto">
-      {/* Main container with cycle on left and step 5 on right */}
-      <div className="relative">
-        {/* Compact Circular Cycle Container (70% width, positioned left) */}
-        <div className="relative h-[500px] md:h-[550px]">
-          {/* Center Circle with Label */}
-          <div className="absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="bg-gradient-to-br from-amber-400 to-amber-600 rounded-full w-28 h-28 md:w-32 md:h-32 flex flex-col items-center justify-center shadow-2xl border-4 border-white">
-              <RotateCw className="w-8 h-8 text-white mb-1 animate-spin" style={{animationDuration: '4s'}} />
-              <div className="text-white text-center px-2">
-                <div className="font-black text-xs md:text-sm">CICLO</div>
-                <div className="text-[10px] md:text-xs font-semibold mt-0.5">Repetir</div>
+    <div className="relative w-full bg-gradient-to-b from-slate-50 to-white py-24">
+      <div className="max-w-7xl mx-auto px-8">
+
+        {/* Desktop & Tablet: Rounded Rectangle Cycle */}
+        <div className="hidden md:block">
+          <div className="flex items-center justify-center gap-16">
+            {/* Cycle Container */}
+            <div className="relative" style={{ width: '700px', height: '560px' }}>
+              {/* SVG Lines Layer - Behind cards */}
+              <svg ref={arrowRef} className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+                {/* Animated lines - only show active one */}
+                {/* Top: Step 1 → Step 2 (centered vertically) */}
+                {activeStep === 0 && (
+                  <line
+                    id="arrow-path-0"
+                    x1="260" y1="100" x2="440" y2="100"
+                    stroke="#f59e0b"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                )}
+
+                {/* Right: Step 2 → Step 3 (centered horizontally) */}
+                {activeStep === 1 && (
+                  <line
+                    id="arrow-path-1"
+                    x1="570" y1="140" x2="570" y2="420"
+                    stroke="#f59e0b"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                )}
+
+                {/* Bottom: Step 3 → Step 4 (centered vertically) */}
+                {activeStep === 2 && (
+                  <line
+                    id="arrow-path-2"
+                    x1="440" y1="460" x2="260" y2="460"
+                    stroke="#f59e0b"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                )}
+
+                {/* Left: Step 4 → Step 1 (centered horizontally) */}
+                {activeStep === 3 && (
+                  <line
+                    id="arrow-path-3"
+                    x1="130" y1="420" x2="130" y2="140"
+                    stroke="#f59e0b"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                )}
+              </svg>
+
+              {/* Step Cards Positioned at Corners */}
+              {/* Step 1 - Top Left */}
+              <div className="absolute top-0 left-0" style={{ width: '260px' }}>
+                {[0].map(idx => {
+                  const step = steps[idx]
+                  const isActive = highlightedStep === idx
+                  return (
+                    <div key={idx} className={`relative rounded-2xl transition-all duration-700 ${isActive ? 'scale-105 z-10' : 'scale-100 z-0'}`}>
+                      {isActive && (
+                        <div className="absolute -inset-4 bg-gradient-to-br from-amber-400/30 via-orange-400/20 to-amber-500/30 rounded-3xl blur-2xl" />
+                      )}
+                      <div className={`relative bg-white rounded-2xl p-5 shadow-lg border-2 transition-all duration-700 ${isActive ? 'border-amber-400 shadow-amber-200/50 shadow-2xl' : 'border-slate-200 shadow-slate-200/50'}`}>
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className={`w-14 h-14 rounded-xl flex items-center justify-center font-bold text-xl transition-all duration-700 shadow-lg ${isActive ? 'bg-gradient-to-br from-amber-400 to-amber-600 text-white scale-110' : 'bg-slate-100 text-slate-500'}`}>
+                            {idx + 1}
+                          </div>
+                          <h3 className={`text-base font-bold transition-colors duration-700 ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>{step.title}</h3>
+                        </div>
+                        <div className="mt-3">
+                          <p className="text-xs text-slate-600 leading-relaxed mb-2">{step.description}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed">{step.additionalInfo}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Step 2 - Top Right */}
+              <div className="absolute top-0 right-0" style={{ width: '260px' }}>
+                {[1].map(idx => {
+                  const step = steps[idx]
+                  const isActive = highlightedStep === idx
+                  return (
+                    <div key={idx} className={`relative rounded-2xl transition-all duration-700 ${isActive ? 'scale-105 z-10' : 'scale-100 z-0'}`}>
+                      {isActive && (
+                        <div className="absolute -inset-4 bg-gradient-to-br from-amber-400/30 via-orange-400/20 to-amber-500/30 rounded-3xl blur-2xl" />
+                      )}
+                      <div className={`relative bg-white rounded-2xl p-5 shadow-lg border-2 transition-all duration-700 ${isActive ? 'border-amber-400 shadow-amber-200/50 shadow-2xl' : 'border-slate-200 shadow-slate-200/50'}`}>
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className={`w-14 h-14 rounded-xl flex items-center justify-center font-bold text-xl transition-all duration-700 shadow-lg ${isActive ? 'bg-gradient-to-br from-amber-400 to-amber-600 text-white scale-110' : 'bg-slate-100 text-slate-500'}`}>
+                            {idx + 1}
+                          </div>
+                          <h3 className={`text-base font-bold transition-colors duration-700 ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>{step.title}</h3>
+                        </div>
+                        <div className="mt-3">
+                          <p className="text-xs text-slate-600 leading-relaxed mb-2">{step.description}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed">{step.additionalInfo}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Step 3 - Bottom Right */}
+              <div className="absolute bottom-0 right-0" style={{ width: '260px' }}>
+                {[2].map(idx => {
+                  const step = steps[idx]
+                  const isActive = highlightedStep === idx
+                  return (
+                    <div key={idx} className={`relative rounded-2xl transition-all duration-700 ${isActive ? 'scale-105 z-10' : 'scale-100 z-0'}`}>
+                      {isActive && (
+                        <div className="absolute -inset-4 bg-gradient-to-br from-amber-400/30 via-orange-400/20 to-amber-500/30 rounded-3xl blur-2xl" />
+                      )}
+                      <div className={`relative bg-white rounded-2xl p-5 shadow-lg border-2 transition-all duration-700 ${isActive ? 'border-amber-400 shadow-amber-200/50 shadow-2xl' : 'border-slate-200 shadow-slate-200/50'}`}>
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className={`w-14 h-14 rounded-xl flex items-center justify-center font-bold text-xl transition-all duration-700 shadow-lg ${isActive ? 'bg-gradient-to-br from-amber-400 to-amber-600 text-white scale-110' : 'bg-slate-100 text-slate-500'}`}>
+                            {idx + 1}
+                          </div>
+                          <h3 className={`text-base font-bold transition-colors duration-700 ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>{step.title}</h3>
+                        </div>
+                        <div className="mt-3">
+                          <p className="text-xs text-slate-600 leading-relaxed mb-2">{step.description}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed">{step.additionalInfo}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Step 4 - Bottom Left */}
+              <div className="absolute bottom-0 left-0" style={{ width: '260px' }}>
+                {[3].map(idx => {
+                  const step = steps[idx]
+                  const isActive = highlightedStep === idx
+                  return (
+                    <div key={idx} className={`relative rounded-2xl transition-all duration-700 ${isActive ? 'scale-105 z-10' : 'scale-100 z-0'}`}>
+                      {isActive && (
+                        <div className="absolute -inset-4 bg-gradient-to-br from-amber-400/30 via-orange-400/20 to-amber-500/30 rounded-3xl blur-2xl" />
+                      )}
+                      <div className={`relative bg-white rounded-2xl p-5 shadow-lg border-2 transition-all duration-700 ${isActive ? 'border-amber-400 shadow-amber-200/50 shadow-2xl' : 'border-slate-200 shadow-slate-200/50'}`}>
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className={`w-14 h-14 rounded-xl flex items-center justify-center font-bold text-xl transition-all duration-700 shadow-lg ${isActive ? 'bg-gradient-to-br from-amber-400 to-amber-600 text-white scale-110' : 'bg-slate-100 text-slate-500'}`}>
+                            {idx + 1}
+                          </div>
+                          <h3 className={`text-base font-bold transition-colors duration-700 ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>{step.title}</h3>
+                        </div>
+                        <div className="mt-3">
+                          <p className="text-xs text-slate-600 leading-relaxed mb-2">{step.description}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed">{step.additionalInfo}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Exit Arrow to Step 5 */}
+            <div className="flex flex-col items-center gap-4">
+              <ArrowRight className={`w-10 h-10 transition-all duration-1000 ${showExit ? 'text-emerald-500 animate-pulse' : 'text-slate-300'}`} />
+              {showExit && (
+                <span className="text-xs font-medium text-emerald-600 animate-pulse">Salida</span>
+              )}
+            </div>
+
+            {/* Step 5 - Exit */}
+            <div className={`transition-all duration-1000 ${showExit ? 'scale-100 opacity-100' : 'scale-95 opacity-40'}`} style={{ width: '300px' }}>
+              <div className="relative">
+                {showExit && (
+                  <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400/30 via-teal-400/20 to-emerald-500/30 rounded-3xl blur-2xl" />
+                )}
+                <div className={`relative bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-6 shadow-lg border-2 transition-all duration-1000 ${showExit ? 'border-emerald-300 shadow-emerald-200/50' : 'border-slate-200 shadow-slate-200/50'}`}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center font-bold text-2xl transition-all duration-1000 shadow-lg ${showExit ? 'bg-gradient-to-br from-emerald-400 to-emerald-600 text-white scale-110' : 'bg-slate-100 text-slate-400'}`}>
+                      {showExit ? <CheckCircle className="w-8 h-8" /> : '5'}
+                    </div>
+                    <h3 className={`text-lg font-bold transition-colors duration-1000 ${showExit ? 'text-emerald-900' : 'text-slate-600'}`}>{steps[4].title}</h3>
+                  </div>
+                  <p className={`text-sm leading-relaxed mb-3 transition-colors duration-1000 ${showExit ? 'text-emerald-800' : 'text-slate-500'}`}>{steps[4].description}</p>
+                  <div className={`pt-3 border-t transition-colors duration-1000 ${showExit ? 'border-emerald-200' : 'border-slate-200'}`}>
+                    <p className={`text-xs leading-relaxed transition-colors duration-1000 ${showExit ? 'text-emerald-600' : 'text-slate-400'}`}>{steps[4].additionalInfo}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Circular Path (visual guide) - 70% size */}
-          <div className="absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[420px] md:h-[420px] border-4 border-dashed border-amber-300 rounded-full opacity-40"></div>
-
-          {/* Steps arranged in compact circle */}
-          <div className="relative h-full">
-            {/* Step 1 - Top */}
-            {steps[0] && (() => {
-              const Icon = steps[0].icon
-              return (
-                <div className="absolute top-0 left-[35%] transform -translate-x-1/2 w-56">
-                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
-                        1
-                      </div>
-                      <h3 className="text-base font-bold text-slate-900">{steps[0].title}</h3>
-                    </div>
-                    <p className="text-xs text-slate-600 mb-1">{steps[0].description}</p>
-                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[0].additionalInfo}</p>
-                  </div>
-                  {/* Arrow to Step 2 */}
-                  <div className="absolute -right-16 top-1/2 hidden md:block">
-                    <ArrowRight className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(45deg)'}} />
-                  </div>
-                </div>
-              )
-            })()}
-
-            {/* Step 2 - Right */}
-            {steps[1] && (() => {
-              const Icon = steps[1].icon
-              return (
-                <div className="absolute right-[25%] top-1/2 transform -translate-y-1/2 w-56">
-                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
-                        2
-                      </div>
-                      <h3 className="text-base font-bold text-slate-900">{steps[1].title}</h3>
-                    </div>
-                    <p className="text-xs text-slate-600 mb-1">{steps[1].description}</p>
-                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[1].additionalInfo}</p>
-                  </div>
-                  {/* Arrow to Step 3 */}
-                  <div className="absolute left-1/2 -bottom-16 hidden md:block">
-                    <ArrowDown className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(-45deg)'}} />
-                  </div>
-                </div>
-              )
-            })()}
-
-            {/* Step 3 - Bottom */}
-            {steps[2] && (() => {
-              const Icon = steps[2].icon
-              return (
-                <div className="absolute bottom-0 left-[35%] transform -translate-x-1/2 w-56">
-                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
-                        3
-                      </div>
-                      <h3 className="text-base font-bold text-slate-900">{steps[2].title}</h3>
-                    </div>
-                    <p className="text-xs text-slate-600 mb-1">{steps[2].description}</p>
-                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[2].additionalInfo}</p>
-                  </div>
-                  {/* Arrow to Step 4 */}
-                  <div className="absolute -left-16 top-1/2 hidden md:block">
-                    <ArrowRight className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
-                  </div>
-                </div>
-              )
-            })()}
-
-            {/* Step 4 - Left */}
-            {steps[3] && (() => {
-              const Icon = steps[3].icon
-              return (
-                <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-56">
-                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
-                        4
-                      </div>
-                      <h3 className="text-base font-bold text-slate-900">{steps[3].title}</h3>
-                    </div>
-                    <p className="text-xs text-slate-600 mb-1">{steps[3].description}</p>
-                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[3].additionalInfo}</p>
-                  </div>
-
-                  {/* BRANCHING DECISION POINT: Two diverging arrows from Step 4 */}
-
-                  {/* Arrow 1: Loop back to Step 1 (continue cycle) */}
-                  <div className="absolute left-1/2 -top-16 hidden md:block">
-                    <ArrowDown className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
-                    <div className="absolute -left-12 -top-8 bg-amber-50 px-2 py-1 rounded border border-amber-300 shadow-sm whitespace-nowrap">
-                      <span className="text-[9px] font-bold text-amber-700">Repetir</span>
-                    </div>
-                  </div>
-
-                  {/* Arrow 2: Branch out to Step 5 (exit cycle) */}
-                  <div className="absolute right-0 top-1/2 transform translate-x-full -translate-y-1/2 hidden md:block">
-                    {/* Horizontal line from Step 4 going right */}
-                    <div className="w-24 h-0.5 bg-gradient-to-r from-amber-400 to-emerald-400"></div>
-
-                    {/* Label on exit branch */}
-                    <div className="absolute left-6 -top-7 bg-emerald-50 px-2 py-1 rounded border border-emerald-300 shadow-sm whitespace-nowrap">
-                      <span className="text-[9px] font-bold text-emerald-700">Todas las celdas ✓</span>
-                    </div>
-
-                    {/* Arrow at end pointing to Step 5 */}
-                    <div className="absolute right-0 top-0 transform -translate-y-1/2">
-                      <ArrowRight className="w-5 h-5 text-emerald-500" />
-                    </div>
-                  </div>
-                </div>
-              )
-            })()}
-          </div>
-
-          {/* Step 5 - Outside cycle, connected by branch */}
-          {steps[4] && (() => {
-            const Icon = steps[4].icon
-            return (
-              <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-80">
-                <div className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50 rounded-2xl p-6 shadow-2xl border-4 border-emerald-400">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center font-black text-2xl shadow-2xl shrink-0">
-                      5
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
-                        <Icon className="w-6 h-6 text-emerald-600" />
-                      </div>
-                      <h3 className="text-xl font-black text-slate-900">{steps[4].title}</h3>
-                    </div>
-                  </div>
-                  <p className="text-sm text-slate-700 leading-relaxed mb-4">
-                    {steps[4].description}
-                  </p>
-                  <div className="pt-3 border-t-2 border-emerald-200">
-                    <p className="text-xs text-slate-600 font-semibold">
-                      {steps[4].additionalInfo}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )
-          })()}
         </div>
 
-        {/* Mobile: Vertical list for small screens */}
-        <div className="md:hidden space-y-4 mt-8">
-          {steps.map((step, idx) => {
-            const Icon = step.icon
-            const isLastCycle = idx === 3
-            const isFinal = idx === 4
-            return (
-              <div key={idx}>
-                <div className={`rounded-2xl p-6 shadow-lg border-2 ${isFinal ? 'bg-gradient-to-br from-emerald-50 to-white border-emerald-400' : 'bg-white border-amber-400'}`}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${isFinal ? 'from-emerald-500 to-emerald-600' : 'from-amber-500 to-amber-600'} text-white flex items-center justify-center font-black text-xl shadow-lg`}>
-                      {step.step}
+        {/* Mobile: Vertical Cycle Flow */}
+        <div className="md:hidden">
+          {/* Cycle Steps 1-4 */}
+          <div className="relative">
+            {steps.slice(0, 4).map((step, idx) => {
+              const isActive = highlightedStep === idx
+              return (
+                <div key={idx}>
+                  {/* Step Card */}
+                  <div className={`rounded-2xl p-5 shadow-lg border-2 transition-all duration-700 ${isActive ? 'bg-white border-amber-400 shadow-amber-200/50' : 'bg-white border-slate-200'}`}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shrink-0 transition-all duration-700 ${isActive ? 'bg-gradient-to-br from-amber-400 to-amber-600 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                        {idx + 1}
+                      </div>
+                      <h3 className={`text-base font-bold ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>{step.title}</h3>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-2">{step.description}</p>
+                    <p className="text-xs text-slate-500 leading-relaxed">{step.additionalInfo}</p>
                   </div>
-                  <p className="text-sm text-slate-600 mb-2">{step.description}</p>
-                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{step.additionalInfo}</p>
+
+                  {/* Arrow to next step */}
+                  {idx < 3 && (
+                    <div className="flex justify-center py-3">
+                      <ArrowDown className={`w-6 h-6 transition-all duration-700 ${isActive ? 'text-amber-500' : 'text-slate-300'}`} />
+                    </div>
+                  )}
+
+                  {/* Return arrow after Step 4 */}
+                  {idx === 3 && (
+                    <div className="flex items-center justify-center py-4 gap-2">
+                      <div className={`flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all duration-700 ${isActive ? 'border-amber-400 bg-amber-50' : 'border-slate-200 bg-slate-50'}`}>
+                        <RotateCw className={`w-5 h-5 ${isActive ? 'text-amber-500' : 'text-slate-400'}`} />
+                        <span className={`text-xs font-medium ${isActive ? 'text-amber-700' : 'text-slate-500'}`}>Ciclo se repite</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
-                {!isFinal && (
-                  <div className="flex justify-center my-2">
-                    <ArrowDown className={`w-6 h-6 ${isFinal ? 'text-emerald-500' : 'text-amber-500'}`} />
-                  </div>
-                )}
-                {isLastCycle && (
-                  <div className="flex flex-col items-center my-3">
-                    <div className="text-sm font-semibold text-amber-700 bg-amber-50 px-4 py-2 rounded-full border-2 border-amber-300 flex items-center gap-2 mb-2">
-                      <RotateCw className="w-4 h-4" />
-                      Repetir ciclo
-                    </div>
-                    <div className="text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full border border-slate-300">
-                      Todas las celdas completadas ↓
-                    </div>
-                  </div>
-                )}
+              )
+            })}
+          </div>
+
+          {/* Exit Arrow and Step 5 */}
+          <div className="mt-6 pt-6 border-t-2 border-dashed border-slate-300">
+            <div className="flex justify-center mb-4">
+              <div className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-1000 ${showExit ? 'bg-emerald-500' : 'bg-slate-300'}`}>
+                <ArrowDown className="w-5 h-5 text-white" />
+                <span className="text-xs font-medium text-white">Salida del ciclo</span>
               </div>
-            )
-          })}
+            </div>
+
+            {/* Step 5 Card */}
+            <div className={`rounded-2xl p-5 shadow-lg border-2 transition-all duration-1000 ${showExit ? 'bg-gradient-to-br from-emerald-50 to-white border-emerald-300' : 'bg-white border-slate-200'}`}>
+              <div className="flex items-center gap-3 mb-3">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shrink-0 transition-all duration-1000 ${showExit ? 'bg-gradient-to-br from-emerald-400 to-emerald-600 text-white' : 'bg-slate-100 text-slate-400'}`}>
+                  {showExit ? <CheckCircle className="w-6 h-6" /> : '5'}
+                </div>
+                <h3 className={`text-base font-bold ${showExit ? 'text-emerald-900' : 'text-slate-600'}`}>{steps[4].title}</h3>
+              </div>
+              <p className={`text-sm leading-relaxed mb-2 ${showExit ? 'text-emerald-800' : 'text-slate-600'}`}>{steps[4].description}</p>
+              <p className={`text-xs leading-relaxed ${showExit ? 'text-emerald-600' : 'text-slate-500'}`}>{steps[4].additionalInfo}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   )
 }
+
 export default function EWCleaningServicePage() {
   const router = null // Will be imported when needed
   const heroRef = useRef(null)
@@ -305,7 +424,7 @@ export default function EWCleaningServicePage() {
       challenge: 'Borras plomadas y orgánicas en fondo de celdas causan contaminación catódica, reduciendo la pureza y calidad del cobre producido.',
       solution: 'Nuestro sistema de succión neumática de 6 m³/h con filtración móvil devuelve el electrolito filtrado con menos de 2-3 ppm de sólidos, logrando',
       result: '100% reducción de depósitos metálicos en zonas críticas',
-      client: 'Solución TSF',
+      client: 'Solución Tecionic',
       savings: 'sin pérdida de electrolito'
     },
     {
@@ -368,14 +487,13 @@ export default function EWCleaningServicePage() {
 
   const caseStudies = [
     {
-      title: "Desborre de Celdas EW - Minera Caserones",
-      client: "SCM Minera Lumina Copper Chile - Caserones",
-      challenge: "Acumulación de borras plomadas y orgánicas en fondo de celdas EW causaba contaminación catódica, reduciendo la pureza y calidad del cobre producido. Operación a >4.000 msnm exigía solución móvil de rápida implementación.",
+      title: "Desborre de Celdas EW - Minera en Región de Tarapacá",
+      client: "Operación minera región de Tarapacá",
+      challenge: "Acumulación de borras plomadas en fondo de celdas EW causaba contaminación catódica, reduciendo la pureza y calidad del cobre producido. Operación a >4.000 msnm exigía solución móvil de rápida implementación.",
       solution: "Servicio integral de desborre mediante succión neumática + filtración móvil + retorno de electrolito filtrado. Jornada 7x7 diurna. Rendimiento: 1 celda/día. Equipos móviles adaptados a altura con contenedores-bodega autónomos.",
       results: [
-        "100% reducción depósitos metálicos en zonas críticas",
+        "100% reducción borras plomadas en zonas críticas",
         "Cero incidentes de seguridad durante ejecución",
-        "Conductividad eléctrica restaurada en todas las celdas",
         "Reducción consumo energético por celda",
         "Calidad cátodos mantenida dentro de estándares LME",
         "Continuidad productiva sin detenciones mayores"
@@ -386,45 +504,6 @@ export default function EWCleaningServicePage() {
       },
       industry: "Cobre",
       color: "#ea580c"
-    },
-    {
-      title: "Servicio Continuo Planta SX - CODELCO DGM",
-      client: "División Gabriela Mistral - CODELCO",
-      challenge: "Mantener calidad de orgánico y eficiencia de planta SX durante casi 8 años de operación continua. Requerimiento de control constante de borras, diálisis de orgánico y tratamiento programado.",
-      solution: "Administración eficiente y constante de retiro de borras desde etapas SX + diálisis continua del orgánico + campañas programadas de tratamiento con tierra activada. Mayor flota de filtros prensa móviles del mercado.",
-      results: [
-        "Tensión interfacial 29.5 dinas/cm (PLS planta)",
-        "Tiempos separación: 70s orgánica, 92s acuosa vs 120s máx",
-        "Recuperación global SX >96% promedio mensual",
-        "Tasa reposición orgánico: 2.6% mes",
-        "8 años operación continua sin interrupciones"
-      ],
-      metrics: {
-        before: { tsf: "Variable", recovery: "<96%", replacement: "Alto" },
-        after: { tsf: "70-92s", recovery: ">96%", replacement: "2.6%" }
-      },
-      industry: "SX Plant",
-      color: "#10b981"
-    },
-    {
-      title: "Deshidratación de Lodos Petroleros - Refinería ENAP",
-      client: "ENAP Refinería Concón",
-      challenge: "4.5+ millones kg/año de lodos petroleros con 70-92% humedad generan altos costos de disposición y logística. Tres corrientes críticas (planta fenólica, fenoles y T-2402) requieren solución de reducción volumétrica sin inversión en infraestructura permanente.",
-      solution: "Validación técnica de laboratorio con tecnología de filtración móvil. Pruebas con filtros equivalentes a sistemas industriales demostraron viabilidad de deshidratación mediante filtro prensa/centrífuga. Se identificaron 5 áreas de aplicación en procesos Delayed Coker, FCC, tratamiento efluentes y separadores API.",
-      results: [
-        "84.23% reducción volumen lodos planta fenólica (92.59% → 53% humedad)",
-        "77.31% reducción volumen lodos planta fenoles (90.02% → 56% humedad)",
-        "32.96% reducción volumen lodos T-2402 (70.37% → 55.8% humedad)",
-        "Validación técnica sin inversión del cliente",
-        "5 oportunidades adicionales identificadas en refinería",
-        "Potencial recuperación de agua para reutilización"
-      ],
-      metrics: {
-        before: { volume: "4.5M kg/año", humidity: "70-92%", disposal: "Alto costo" },
-        after: { volume: "↓35-85%", humidity: "53-56%", disposal: "Optimizado" }
-      },
-      industry: "Petróleo Crudo",
-      color: "#1e293b"
     }
   ]
 
@@ -693,7 +772,7 @@ export default function EWCleaningServicePage() {
       <section ref={overviewRef} className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-4">¿Por qué Desborre Móvil TSF?</h2>
+            <h2 className="text-4xl font-black text-slate-900 mb-4">¿Por qué Desborre Móvil Tecionic?</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">Ventajas clave del sistema versus métodos tradicionales de limpieza</p>
           </div>
 
@@ -735,7 +814,7 @@ export default function EWCleaningServicePage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200/50 group h-[380px]">
                 <Image
                   src="/EW Photos/20251009_141022.jpg"
-                  alt="Depósitos metálicos y orgánicos en cátodos de cobre - antes del desborre móvil TSF"
+                  alt="Depósitos metálicos y orgánicos en cátodos de cobre - antes del desborre móvil Tecionic"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -759,10 +838,6 @@ export default function EWCleaningServicePage() {
                 <p className="text-slate-900 leading-relaxed font-medium mb-4">
                   {useCases[1].solution} <span className="text-blue-600 font-bold">{useCases[1].result}</span>.
                 </p>
-                <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
-                  <Clock className="w-4 h-4 text-blue-600" />
-                  <span className="text-sm font-semibold text-blue-700">{useCases[1].savings}</span>
-                </div>
               </div>
             </div>
           </div>
@@ -936,7 +1011,7 @@ export default function EWCleaningServicePage() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2 flex items-center">
                         <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-                        Solución TSF
+                        Solución Tecionic
                       </h4>
                       <p className="text-slate-600 text-sm leading-relaxed">{study.solution}</p>
                     </div>

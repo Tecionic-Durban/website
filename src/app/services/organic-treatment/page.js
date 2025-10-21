@@ -81,7 +81,25 @@ export default function OrganicTreatmentServicePage() {
       solution: 'Recuperación y purificación continua con coalescedor',
       result: 'Extensión vida útil orgánico 50% y mejora selectividad',
       client: 'BHP Operaciones Chile',
-      savings: 'Cliente actual TSF'
+      savings: 'Cliente actual Tecionic'
+    },
+    {
+      industry: 'Cobre - SX',
+      application: 'Servicio Continuo Planta SX',
+      challenge: 'Mantener calidad de orgánico y eficiencia de planta SX durante casi 8 años de operación continua. Requerimiento de control constante de borras, diálisis de orgánico y tratamiento programado.',
+      solution: 'Administración eficiente y constante de retiro de borras desde etapas SX + diálisis continua del orgánico + campañas programadas de tratamiento con tierra activada. Mayor flota de filtros prensa móviles del mercado.',
+      result: 'Tensión interfacial 29.5 dinas/cm, Tiempos separación 70-92s, Recuperación >96%, 8 años operación continua',
+      client: 'División Gabriela Mistral - CODELCO',
+      savings: 'Tasa reposición orgánico: 2.6% mes'
+    },
+    {
+      industry: 'Petróleo Crudo',
+      application: 'Deshidratación de Lodos Petroleros',
+      challenge: '4.500+ ton/año de lodos petroleros con 70-92% humedad generan altos costos de disposición y logística. Tres corrientes críticas (planta fenólica, fenoles y T-2402) requieren solución de reducción volumétrica sin inversión en infraestructura permanente.',
+      solution: 'Validación técnica de laboratorio con tecnología de filtración móvil. Pruebas con filtros equivalentes a sistemas industriales demostraron viabilidad de deshidratación mediante filtro prensa/centrífuga. Se identificaron 5 áreas de aplicación en procesos Delayed Coker, FCC, tratamiento efluentes y separadores API.',
+      result: '84.23% reducción volumen lodos fenólica, 77.31% fenoles, 32.96% T-2402',
+      client: 'Refinería región de Valparaíso',
+      savings: 'De 4.500 a 675 ton/año'
     },
     {
       industry: 'Cobalto/Níquel',

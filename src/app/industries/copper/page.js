@@ -92,11 +92,11 @@ export default function CopperIndustryPage() {
                 </h1>
 
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Filtración, deshidratación, tratamiento—todo lo que necesitas para tu circuito SX/EW, sin inversión permanente.
+                  Filtración, deshidratación, tratamiento—todo lo que necesitas para tu planta hidrometalúrgica o concentradora, sin inversión permanente.
                 </p>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-2 gap-6 mb-8">
                   <div>
                     <div className="text-3xl font-bold text-gray-900">20+</div>
                     <div className="text-sm text-gray-600">años</div>
@@ -105,26 +105,14 @@ export default function CopperIndustryPage() {
                     <div className="text-3xl font-bold text-gray-900">$0</div>
                     <div className="text-sm text-gray-600">CAPEX</div>
                   </div>
-                  <div>
-                    <div className="text-3xl font-bold text-gray-900">8+</div>
-                    <div className="text-sm text-gray-600">años RT</div>
-                  </div>
                 </div>
-
-                <button
-                  onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
-                >
-                  Explorar servicios
-                  <ArrowRight className="w-5 h-5" />
-                </button>
               </div>
 
               {/* Right - Large equipment photo */}
               <div className="relative lg:h-[450px] h-[300px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/filtro_prensa_movil.png"
-                  alt="Filtro prensa móvil TSF"
+                  alt="Filtro prensa móvil Tecionic"
                   fill
                   className="object-cover"
                   priority
@@ -150,7 +138,7 @@ export default function CopperIndustryPage() {
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Tradicionalmente cada problema requiere equipos fijos propios—millones en CAPEX, años de implementación.
-                  TSF cambia este modelo completamente.
+                  Tecionic cambia este modelo completamente.
                 </p>
               </div>
 
@@ -174,7 +162,7 @@ export default function CopperIndustryPage() {
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">12-18 meses</div>
+                        <div className="text-3xl font-bold text-gray-900">24-48 meses</div>
                       </div>
                       <div className="col-span-2">
                         <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Implementación</div>
@@ -184,19 +172,29 @@ export default function CopperIndustryPage() {
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">Obsolescencia</div>
+                        <div className="text-3xl font-bold text-gray-900">Complejo</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Tecnología fija</div>
-                        <p className="text-gray-600">Equipos quedan obsoletos. Nuevas inversiones para actualizar.</p>
+                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Mantención</div>
+                        <p className="text-gray-600">Mantenimiento especializado costoso. Paradas programadas afectan continuidad operacional.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
+                      <div className="col-span-1">
+                        <div className="text-3xl font-bold text-gray-900">Rígido</div>
+                      </div>
+                      <div className="col-span-2">
+                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Dimensionamiento fijo</div>
+                        <p className="text-gray-600">Equipos mal dimensionados según evolución de leyes. Insuficientes para colas finales o sobredimensionados en cierre.</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* TSF model - appears as you scroll */}
+                {/* Tecionic model - appears as you scroll */}
                 <div className="pt-16">
-                  <div className="text-lg font-bold text-emerald-900 uppercase tracking-wider mb-8">Modelo TSF móvil</div>
+                  <div className="text-lg font-bold text-emerald-900 uppercase tracking-wider mb-8">Modelo Tecionic móvil</div>
 
                   <div className="space-y-12">
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
@@ -211,11 +209,21 @@ export default function CopperIndustryPage() {
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">2-4 semanas</div>
+                        <div className="text-3xl font-bold text-gray-900">0-2 semanas</div>
                       </div>
                       <div className="col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Movilización</div>
                         <p className="text-gray-700">Equipos llegan listos. Sin obra civil. Sin modificación de permisos RCA.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
+                      <div className="col-span-1">
+                        <div className="text-3xl font-bold text-gray-900">Incluida</div>
+                      </div>
+                      <div className="col-span-2">
+                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Mantención</div>
+                        <p className="text-gray-700">Mantenimiento preventivo y correctivo incluido en tarifa. Cero paradas no programadas.</p>
                       </div>
                     </div>
 
@@ -245,7 +253,7 @@ export default function CopperIndustryPage() {
                       </div>
                       <div className="col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Servicio completo</div>
-                        <p className="text-gray-700">Personal TSF 7x7, KPIs diarios, mantención incluida. Swap garantizado.</p>
+                        <p className="text-gray-700">Operación continua con personal especializado Tecionic, KPIs diarios, mantención incluida. Swap garantizado.</p>
                       </div>
                     </div>
                   </div>
@@ -261,7 +269,7 @@ export default function CopperIndustryPage() {
           <div className="max-w-[1400px] mx-auto px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-emerald-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-                Por qué TSF
+                Por qué Tecionic
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Socio estratégico, no proveedor transaccional
@@ -287,14 +295,14 @@ export default function CopperIndustryPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   Equipos móviles llegan listos. Sin obra civil, sin modificación de permisos ambientales.
                 </p>
-                <div className="text-sm text-gray-500">2-4 semanas movilización</div>
+                <div className="text-sm text-gray-500">0-2 semanas movilización</div>
               </div>
 
               <div>
                 <div className="text-6xl font-bold text-emerald-600 mb-4">3</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Operación continua</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Turnos 7x7, KPIs diarios, mantención preventiva incluida. Swap de equipos si se requiere mantención.
+                  Personal especializado Tecionic con mantención y KPIs diarios incluidos. Swap garantizado de equipos.
                 </p>
                 <div className="text-sm text-gray-500">Garantía de continuidad</div>
               </div>
@@ -312,7 +320,7 @@ export default function CopperIndustryPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">Operadores TSF dedicados 7x7</span>
+                    <span className="text-gray-700">Operadores Tecionic especializados</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
@@ -320,7 +328,7 @@ export default function CopperIndustryPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">Equipos certificados SICEP, ex.proof</span>
+                    <span className="text-gray-700">Equipos certificados para ambientes explosivos y corrosivos</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
@@ -340,10 +348,10 @@ export default function CopperIndustryPage() {
                 Servicios
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Todo lo que necesitas para tu circuito SX/EW
+                Todo lo que necesitas para tu planta hidrometalúrgica o concentradora
               </h2>
               <p className="text-xl text-gray-600">
-                Flota móvil completa. Sin instalaciones permanentes, sin modificaciones a permisos.
+                Flota móvil completa. Sin instalaciones permanentes, sin modificaciones a permisos ambientales.
               </p>
             </div>
 
@@ -362,7 +370,7 @@ export default function CopperIndustryPage() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Tratamiento Orgánico SX</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Filtración, arcilla activada, centrifugación. Restaura TIF, reduce TSF, elimina entrainment.
+                    Filtración, arcilla activada, centrifugación. Restaura TIF, reduce TSF, reduce arrastre.
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2 text-gray-700">
@@ -375,12 +383,12 @@ export default function CopperIndustryPage() {
                     </div>
                     <div className="flex items-center gap-2 text-gray-700">
                       <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
-                      Reducción entrainment 50%
+                      Reducción arrastre 50%
                     </div>
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <div className="text-xs font-semibold text-gray-500">VALIDADO</div>
-                    <div className="text-sm font-bold text-blue-600">Radomiro Tomic • 8+ años</div>
+                    <div className="text-sm font-bold text-blue-600">CODELCO Norte • 20+ años</div>
                   </div>
                 </div>
               </div>
@@ -415,7 +423,7 @@ export default function CopperIndustryPage() {
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <div className="text-xs font-semibold text-gray-500">VALIDADO</div>
-                    <div className="text-sm font-bold text-amber-600">Caserones • 4,200 msnm</div>
+                    <div className="text-sm font-bold text-amber-600">Minera Región de Atacama • 4,200 msnm</div>
                   </div>
                 </div>
               </div>
@@ -437,7 +445,7 @@ export default function CopperIndustryPage() {
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2 text-gray-700">
                       <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                      Hasta 70 ton/día torta
+                      Hasta 130 ton/día torta
                     </div>
                     <div className="flex items-center gap-2 text-gray-700">
                       <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
@@ -450,7 +458,7 @@ export default function CopperIndustryPage() {
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <div className="text-xs font-semibold text-gray-500">CAPACIDAD</div>
-                    <div className="text-sm font-bold text-purple-600">Mayor flota móvil Chile</div>
+                    <div className="text-sm font-bold text-purple-600">Mayor flota móvil Latinoamérica</div>
                   </div>
                 </div>
               </div>
@@ -537,37 +545,36 @@ export default function CopperIndustryPage() {
               </div>
             </div>
 
-            {/* Housekeeping callout */}
+            {/* Backup for planned maintenance callout */}
             <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-12 text-white">
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                    <Wrench className="w-6 h-6 text-white" />
+                    <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-emerald-100 text-sm font-semibold mb-1">SERVICIO INTEGRAL</div>
-                    <h3 className="text-3xl font-bold">Housekeeping Completo SX</h3>
+                    <div className="text-emerald-100 text-sm font-semibold mb-1">CONTINUIDAD PRODUCTIVA</div>
+                    <h3 className="text-3xl font-bold">Respaldo en Mantenciones Programadas</h3>
                   </div>
                 </div>
                 <p className="text-xl text-emerald-50 mb-8 leading-relaxed">
-                  Apoyo continuo: filtración programada, retiro de borras, limpieza, trasvasije.
-                  Mantén eficiencia operacional óptima con un solo partner.
+                  Mantén producción durante paradas planificadas de tus equipos. Equipos móviles operan mientras realizas mantenciones mayores—cero pérdida de producción.
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="font-bold mb-3">Resultados DGM</div>
+                    <div className="font-bold mb-3">Beneficios clave</div>
                     <div className="space-y-2 text-sm text-emerald-50">
-                      <div>• 8 años operación continua</div>
-                      <div>• Recuperación {'>'}96% mes</div>
-                      <div>• Reposición orgánico 2.6%</div>
+                      <div>• Elimina pérdidas de producción</div>
+                      <div>• Des-riesga calendarios mantención</div>
+                      <div>• Sin comprometer salud de equipos</div>
                     </div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="font-bold mb-3">Servicios incluidos</div>
+                    <div className="font-bold mb-3">Movilización rápida</div>
                     <div className="space-y-2 text-sm text-emerald-50">
-                      <div>• Diálisis continua</div>
-                      <div>• Campañas arcilla</div>
-                      <div>• Retiro borras programado</div>
+                      <div>• 0-2 semanas despliegue</div>
+                      <div>• Operación inmediata</div>
+                      <div>• Retiro al término de mantención</div>
                     </div>
                   </div>
                 </div>
@@ -623,10 +630,19 @@ export default function CopperIndustryPage() {
                     <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" />
                     <div>
                       <div className="font-semibold text-gray-900">Validado 4,200 msnm</div>
-                      <div className="text-gray-600">Caserones - condiciones extremas</div>
+                      <div className="text-gray-600">Minera Región de Atacama - condiciones extremas</div>
                     </div>
                   </div>
                 </div>
+
+                {/* CTA to EW cleaning service page */}
+                <button
+                  onClick={() => handleContactClick('/services/ew-cleaning', { router, currentPath: pathname })}
+                  className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:gap-3 shadow-lg shadow-amber-600/20"
+                >
+                  Ver servicio completo
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>
@@ -640,7 +656,7 @@ export default function CopperIndustryPage() {
                 Caso validado
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Radomiro Tomic: 8 años de validación continua
+                CODELCO Norte: 20+ años de validación continua
               </h2>
               <p className="text-xl text-gray-600">
                 Tratamiento de orgánico SX. Renovación anual por licitación competitiva desde 2016.
@@ -655,7 +671,7 @@ export default function CopperIndustryPage() {
                   {[
                     { label: 'TIF', value: '20.4', unit: 'dinas/cm', bad: true },
                     { label: 'TSF', value: '444', unit: 'segundos', bad: true },
-                    { label: 'Entrainment', value: '6', unit: 'm³/día', bad: true },
+                    { label: 'Arrastre', value: '6', unit: 'm³/día', bad: true },
                     { label: 'Eficiencia', value: '77-92%', unit: 'variable', bad: true }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center justify-between p-5 rounded-xl bg-red-50">
@@ -675,7 +691,7 @@ export default function CopperIndustryPage() {
                   {[
                     { label: 'TIF', value: '23.7', unit: 'dinas/cm' },
                     { label: 'TSF', value: '153', unit: '-65%' },
-                    { label: 'Entrainment', value: '2.9', unit: '-52%' },
+                    { label: 'Arrastre', value: '2.9', unit: '-52%' },
                     { label: 'Eficiencia', value: '92%+', unit: 'estable' }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center justify-between p-5 rounded-xl bg-emerald-50">
@@ -694,7 +710,6 @@ export default function CopperIndustryPage() {
             <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-12 border border-emerald-100">
               <div className="text-center mb-8">
                 <div className="text-sm font-semibold text-emerald-900 mb-2 uppercase tracking-wider">Impacto económico</div>
-                <div className="text-gray-700">Validado durante 8 años de operación continua</div>
               </div>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
@@ -709,11 +724,6 @@ export default function CopperIndustryPage() {
                   <div className="text-5xl font-bold text-emerald-600 mb-2">$12M+</div>
                   <div className="text-sm text-gray-600 font-medium">reemplazo evitado</div>
                 </div>
-              </div>
-
-              <div className="mt-8 flex items-center justify-center gap-3 p-4 rounded-xl bg-emerald-100">
-                <CheckCircle className="w-5 h-5 text-emerald-600" />
-                <span className="font-semibold text-emerald-900">8 renovaciones consecutivas por licitación</span>
               </div>
             </div>
           </div>
