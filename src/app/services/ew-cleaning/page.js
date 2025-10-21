@@ -8,115 +8,164 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Circular Cycle Workflow Component
+// Circular Cycle Workflow Component with Exit Branch
 function CycleWorkflow({ steps }) {
   return (
     <div className="max-w-7xl mx-auto">
-      {/* Circular Cycle Container */}
-      <div className="relative mb-20">
-        {/* Center Circle with Label */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-          <div className="bg-gradient-to-br from-amber-400 to-amber-600 rounded-full w-40 h-40 flex flex-col items-center justify-center shadow-2xl border-4 border-white">
-            <RotateCw className="w-10 h-10 text-white mb-2 animate-spin" style={{animationDuration: '4s'}} />
-            <div className="text-white text-center px-4">
-              <div className="font-black text-sm">CICLO</div>
-              <div className="text-xs font-semibold mt-1">Repetir por cada celda</div>
+      {/* Main container with cycle on left and step 5 on right */}
+      <div className="relative">
+        {/* Compact Circular Cycle Container (70% width, positioned left) */}
+        <div className="relative h-[500px] md:h-[550px]">
+          {/* Center Circle with Label */}
+          <div className="absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="bg-gradient-to-br from-amber-400 to-amber-600 rounded-full w-28 h-28 md:w-32 md:h-32 flex flex-col items-center justify-center shadow-2xl border-4 border-white">
+              <RotateCw className="w-8 h-8 text-white mb-1 animate-spin" style={{animationDuration: '4s'}} />
+              <div className="text-white text-center px-2">
+                <div className="font-black text-xs md:text-sm">CICLO</div>
+                <div className="text-[10px] md:text-xs font-semibold mt-0.5">Repetir</div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Circular Path (visual guide) */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] border-4 border-dashed border-amber-300 rounded-full opacity-40"></div>
+          {/* Circular Path (visual guide) - 70% size */}
+          <div className="absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[420px] md:h-[420px] border-4 border-dashed border-amber-300 rounded-full opacity-40"></div>
 
-        {/* Steps arranged in circle */}
-        <div className="relative h-[600px] md:h-[700px]">
-          {/* Step 1 - Top */}
-          {steps[0] && (() => {
-            const Icon = steps[0].icon
-            return (
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-64">
-                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
-                      1
+          {/* Steps arranged in compact circle */}
+          <div className="relative h-full">
+            {/* Step 1 - Top */}
+            {steps[0] && (() => {
+              const Icon = steps[0].icon
+              return (
+                <div className="absolute top-0 left-[35%] transform -translate-x-1/2 w-56">
+                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
+                        1
+                      </div>
+                      <h3 className="text-base font-bold text-slate-900">{steps[0].title}</h3>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900">{steps[0].title}</h3>
+                    <p className="text-xs text-slate-600 mb-1">{steps[0].description}</p>
+                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[0].additionalInfo}</p>
                   </div>
-                  <p className="text-sm text-slate-600 mb-2">{steps[0].description}</p>
-                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[0].additionalInfo}</p>
+                  {/* Arrow to Step 2 */}
+                  <div className="absolute -right-16 top-1/2 hidden md:block">
+                    <ArrowRight className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(45deg)'}} />
+                  </div>
                 </div>
-                {/* Arrow to Step 2 */}
-                <div className="absolute -right-20 top-1/2 hidden md:block">
-                  <ArrowRight className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(45deg)'}} />
+              )
+            })()}
+
+            {/* Step 2 - Right */}
+            {steps[1] && (() => {
+              const Icon = steps[1].icon
+              return (
+                <div className="absolute right-[10%] top-1/2 transform -translate-y-1/2 w-56">
+                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
+                        2
+                      </div>
+                      <h3 className="text-base font-bold text-slate-900">{steps[1].title}</h3>
+                    </div>
+                    <p className="text-xs text-slate-600 mb-1">{steps[1].description}</p>
+                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[1].additionalInfo}</p>
+                  </div>
+                  {/* Arrow to Step 3 */}
+                  <div className="absolute left-1/2 -bottom-16 hidden md:block">
+                    <ArrowDown className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(-45deg)'}} />
+                  </div>
                 </div>
+              )
+            })()}
+
+            {/* Step 3 - Bottom */}
+            {steps[2] && (() => {
+              const Icon = steps[2].icon
+              return (
+                <div className="absolute bottom-0 left-[35%] transform -translate-x-1/2 w-56">
+                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
+                        3
+                      </div>
+                      <h3 className="text-base font-bold text-slate-900">{steps[2].title}</h3>
+                    </div>
+                    <p className="text-xs text-slate-600 mb-1">{steps[2].description}</p>
+                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[2].additionalInfo}</p>
+                  </div>
+                  {/* Arrow to Step 4 */}
+                  <div className="absolute -left-16 top-1/2 hidden md:block">
+                    <ArrowRight className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
+                  </div>
+                </div>
+              )
+            })()}
+
+            {/* Step 4 - Left */}
+            {steps[3] && (() => {
+              const Icon = steps[3].icon
+              return (
+                <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-56">
+                  <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
+                        4
+                      </div>
+                      <h3 className="text-base font-bold text-slate-900">{steps[3].title}</h3>
+                    </div>
+                    <p className="text-xs text-slate-600 mb-1">{steps[3].description}</p>
+                    <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[3].additionalInfo}</p>
+                  </div>
+                  {/* Arrow back to Step 1 */}
+                  <div className="absolute left-1/2 -top-16 hidden md:block">
+                    <ArrowDown className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
+                  </div>
+                </div>
+              )
+            })()}
+
+            {/* DIVERGING BRANCH: Exit path from cycle to Step 5 */}
+            <div className="hidden md:block absolute right-[10%] top-1/2 transform -translate-y-1/2">
+              {/* Horizontal branch line going right */}
+              <div className="absolute left-0 top-0 w-32 h-0.5 bg-gradient-to-r from-amber-300 via-slate-300 to-emerald-300"></div>
+
+              {/* Label on branch */}
+              <div className="absolute left-8 -top-6 bg-white px-2 py-1 rounded border border-slate-300 shadow-sm">
+                <span className="text-[10px] font-semibold text-slate-600 whitespace-nowrap">Todas las celdas</span>
               </div>
-            )
-          })()}
 
-          {/* Step 2 - Right */}
-          {steps[1] && (() => {
-            const Icon = steps[1].icon
-            return (
-              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-64">
-                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
-                      2
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900">{steps[1].title}</h3>
-                  </div>
-                  <p className="text-sm text-slate-600 mb-2">{steps[1].description}</p>
-                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[1].additionalInfo}</p>
-                </div>
-                {/* Arrow to Step 3 */}
-                <div className="absolute left-1/2 -bottom-20 hidden md:block">
-                  <ArrowDown className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(-45deg)'}} />
-                </div>
+              {/* Arrow at end of branch */}
+              <div className="absolute left-[120px] -top-2">
+                <ArrowRight className="w-6 h-6 text-emerald-500" />
               </div>
-            )
-          })()}
+            </div>
+          </div>
 
-          {/* Step 3 - Bottom */}
-          {steps[2] && (() => {
-            const Icon = steps[2].icon
+          {/* Step 5 - Outside cycle, connected by branch */}
+          {steps[4] && (() => {
+            const Icon = steps[4].icon
             return (
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64">
-                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
-                      3
+              <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 w-80">
+                <div className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50 rounded-2xl p-6 shadow-2xl border-4 border-emerald-400">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center font-black text-2xl shadow-2xl shrink-0">
+                      5
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900">{steps[2].title}</h3>
-                  </div>
-                  <p className="text-sm text-slate-600 mb-2">{steps[2].description}</p>
-                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[2].additionalInfo}</p>
-                </div>
-                {/* Arrow to Step 4 */}
-                <div className="absolute -left-20 top-1/2 hidden md:block">
-                  <ArrowRight className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
-                </div>
-              </div>
-            )
-          })()}
-
-          {/* Step 4 - Left */}
-          {steps[3] && (() => {
-            const Icon = steps[3].icon
-            return (
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-64">
-                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
-                      4
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                        <Icon className="w-6 h-6 text-emerald-600" />
+                      </div>
+                      <h3 className="text-xl font-black text-slate-900">{steps[4].title}</h3>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900">{steps[3].title}</h3>
                   </div>
-                  <p className="text-sm text-slate-600 mb-2">{steps[3].description}</p>
-                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[3].additionalInfo}</p>
-                </div>
-                {/* Arrow back to Step 1 */}
-                <div className="absolute left-1/2 -top-20 hidden md:block">
-                  <ArrowDown className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
+                  <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                    {steps[4].description}
+                  </p>
+                  <div className="pt-3 border-t-2 border-emerald-200">
+                    <p className="text-xs text-slate-600 font-semibold">
+                      {steps[4].additionalInfo}
+                    </p>
+                  </div>
                 </div>
               </div>
             )
@@ -124,14 +173,16 @@ function CycleWorkflow({ steps }) {
         </div>
 
         {/* Mobile: Vertical list for small screens */}
-        <div className="md:hidden space-y-4">
-          {steps.slice(0, 4).map((step, idx) => {
+        <div className="md:hidden space-y-4 mt-8">
+          {steps.map((step, idx) => {
             const Icon = step.icon
+            const isLastCycle = idx === 3
+            const isFinal = idx === 4
             return (
               <div key={idx}>
-                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-amber-400">
+                <div className={`rounded-2xl p-6 shadow-lg border-2 ${isFinal ? 'bg-gradient-to-br from-emerald-50 to-white border-emerald-400' : 'bg-white border-amber-400'}`}>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg">
+                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${isFinal ? 'from-emerald-500 to-emerald-600' : 'from-amber-500 to-amber-600'} text-white flex items-center justify-center font-black text-xl shadow-lg`}>
                       {step.step}
                     </div>
                     <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
@@ -139,16 +190,19 @@ function CycleWorkflow({ steps }) {
                   <p className="text-sm text-slate-600 mb-2">{step.description}</p>
                   <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{step.additionalInfo}</p>
                 </div>
-                {idx < 3 && (
+                {!isFinal && (
                   <div className="flex justify-center my-2">
-                    <ArrowDown className="w-6 h-6 text-amber-500" />
+                    <ArrowDown className={`w-6 h-6 ${isFinal ? 'text-emerald-500' : 'text-amber-500'}`} />
                   </div>
                 )}
-                {idx === 3 && (
+                {isLastCycle && (
                   <div className="flex flex-col items-center my-3">
-                    <div className="text-sm font-semibold text-amber-700 bg-amber-50 px-4 py-2 rounded-full border-2 border-amber-300 flex items-center gap-2">
+                    <div className="text-sm font-semibold text-amber-700 bg-amber-50 px-4 py-2 rounded-full border-2 border-amber-300 flex items-center gap-2 mb-2">
                       <RotateCw className="w-4 h-4" />
                       Repetir ciclo
+                    </div>
+                    <div className="text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full border border-slate-300">
+                      Todas las celdas completadas ↓
                     </div>
                   </div>
                 )}
@@ -157,46 +211,6 @@ function CycleWorkflow({ steps }) {
           })}
         </div>
       </div>
-
-      {/* Separator: Exit from Cycle */}
-      <div className="flex flex-col items-center my-12">
-        <div className="h-16 w-0.5 bg-gradient-to-b from-amber-300 to-slate-300"></div>
-        <div className="my-4 px-6 py-3 bg-slate-100 rounded-full border-2 border-slate-300 text-slate-700 font-bold text-sm shadow-lg">
-          Una vez completadas todas las celdas
-        </div>
-        <div className="h-16 w-0.5 bg-gradient-to-b from-slate-300 to-emerald-300"></div>
-        <ArrowDown className="w-10 h-10 text-emerald-500 -mt-2" />
-      </div>
-
-      {/* Step 5 - Final Step Outside Cycle */}
-      {steps[4] && (() => {
-        const Icon = steps[4].icon
-        return (
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50 rounded-3xl p-10 shadow-2xl border-4 border-emerald-400">
-              <div className="flex flex-col items-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center font-black text-3xl shadow-2xl mb-4">
-                  5
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-emerald-600" />
-                  </div>
-                  <h3 className="text-3xl font-black text-slate-900">{steps[4].title}</h3>
-                </div>
-              </div>
-              <p className="text-lg text-slate-700 leading-relaxed mb-6 text-center">
-                {steps[4].description}
-              </p>
-              <div className="pt-6 border-t-2 border-emerald-200">
-                <p className="text-sm text-slate-600 text-center font-semibold">
-                  {steps[4].additionalInfo}
-                </p>
-              </div>
-            </div>
-          </div>
-        )
-      })()}
     </div>
   )
 }
