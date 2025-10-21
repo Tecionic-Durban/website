@@ -2,135 +2,140 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { Filter, CheckCircle, Truck, Shield, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { Filter, CheckCircle, Truck, Shield, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, ArrowRight, ArrowDown, RotateCw } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Vertical Timeline Component with GSAP Animations
-function VerticalTimeline({ steps }) {
-  const timelineRef = useRef(null)
-  const stepRefs = useRef([])
-  const lineRefs = useRef([])
-
-  useEffect(() => {
-    // Animate each step as it comes into view
-    stepRefs.current.forEach((step, idx) => {
-      if (!step) return
-
-      // Animate the number circle
-      const circle = step.querySelector('.timeline-circle')
-      const card = step.querySelector('.timeline-card')
-      const line = lineRefs.current[idx]
-
-      gsap.fromTo(circle,
-        { scale: 0, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.5,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: step,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      )
-
-      // Animate the card sliding in from right
-      gsap.fromTo(card,
-        { x: 50, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: step,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      )
-
-      // Animate the timeline line drawing down
-      if (line) {
-        gsap.fromTo(line,
-          { scaleY: 0, transformOrigin: 'top' },
-          {
-            scaleY: 1,
-            duration: 0.5,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: step,
-              start: 'top 70%',
-              toggleActions: 'play none none none'
-            }
-          }
-        )
-      }
-    })
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-    }
-  }, [])
-
+// Cycle Workflow Component - Shows steps 1-4 as a cycle, then step 5
+function CycleWorkflow({ steps }) {
   return (
-    <div ref={timelineRef} className="max-w-4xl mx-auto">
-      {steps.map((step, idx) => {
-        const Icon = step.icon
+    <div className="max-w-6xl mx-auto">
+      {/* Cycle Steps (1-4) */}
+      <div className="relative mb-16">
+        {/* Cycle Border */}
+        <div className="absolute inset-0 border-4 border-dashed border-amber-300 rounded-3xl -z-10"></div>
+
+        <div className="p-8 md:p-12">
+          {/* Cycle Label */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <RotateCw className="w-6 h-6 text-amber-600 animate-spin" style={{animationDuration: '3s'}} />
+            <span className="text-lg font-bold text-amber-700 bg-amber-50 px-4 py-2 rounded-full border-2 border-amber-200">
+              Repetir por cada celda/panel
+            </span>
+            <RotateCw className="w-6 h-6 text-amber-600 animate-spin" style={{animationDuration: '3s'}} />
+          </div>
+
+          {/* 2x2 Grid for Steps 1-4 */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {steps.slice(0, 4).map((step, idx) => {
+              const Icon = step.icon
+              return (
+                <div key={idx} className="relative">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-amber-200 hover:shadow-xl hover:border-amber-400 transition-all duration-300">
+                    {/* Step number */}
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg mb-4">
+                      {step.step}
+                    </div>
+
+                    {/* Icon and Title */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center shrink-0">
+                        <Icon className="w-6 h-6 text-amber-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900">{step.title}</h3>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-slate-600 leading-relaxed mb-3 text-sm">
+                      {step.description}
+                    </p>
+
+                    {/* Additional info */}
+                    <div className="pt-3 border-t border-slate-200">
+                      <p className="text-xs text-slate-500">
+                        {step.additionalInfo}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Arrows between steps */}
+                  {idx === 0 && (
+                    <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                      <ArrowRight className="w-6 h-6 text-amber-500" />
+                    </div>
+                  )}
+                  {idx === 1 && (
+                    <div className="hidden md:block absolute -bottom-3 left-1/2 transform -translate-x-1/2 z-10">
+                      <ArrowDown className="w-6 h-6 text-amber-500" />
+                    </div>
+                  )}
+                  {idx === 3 && (
+                    <div className="hidden md:block absolute top-1/2 -left-3 transform -translate-y-1/2 rotate-180 z-10">
+                      <ArrowRight className="w-6 h-6 text-amber-500" />
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Return arrow from step 4 to step 1 */}
+          <div className="hidden md:flex items-center justify-center mt-6">
+            <div className="flex items-center gap-2 text-amber-600">
+              <ArrowDown className="w-5 h-5 rotate-180" />
+              <span className="text-sm font-semibold">Continuar con siguiente celda</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Arrow pointing to Step 5 */}
+      <div className="flex items-center justify-center mb-8">
+        <div className="flex flex-col items-center gap-2">
+          <ArrowDown className="w-8 h-8 text-slate-400" />
+          <span className="text-sm font-semibold text-slate-600 bg-slate-100 px-4 py-2 rounded-full">
+            Una vez completadas todas las celdas
+          </span>
+          <ArrowDown className="w-8 h-8 text-slate-400" />
+        </div>
+      </div>
+
+      {/* Step 5 - Outside the Cycle */}
+      {steps[4] && (() => {
+        const Icon = steps[4].icon
         return (
-          <div
-            key={idx}
-            ref={el => stepRefs.current[idx] = el}
-            className="relative flex gap-8 pb-12 last:pb-0 group"
-          >
-            {/* Timeline line and number */}
-            <div className="flex flex-col items-center shrink-0">
-              {/* Step number circle */}
-              <div className="timeline-circle w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-2xl shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
-                {step.step}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 shadow-xl border-2 border-emerald-300">
+              {/* Step number */}
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center font-black text-2xl shadow-lg mb-4 mx-auto">
+                {steps[4].step}
               </div>
 
-              {/* Vertical line (not on last item) */}
-              {idx < steps.length - 1 && (
-                <div
-                  ref={el => lineRefs.current[idx] = el}
-                  className="w-0.5 h-full bg-gradient-to-b from-amber-200 to-slate-200 mt-2"
-                ></div>
-              )}
-            </div>
-
-            {/* Content */}
-            <div className="flex-1 pb-8">
-              <div className="timeline-card bg-white rounded-2xl p-8 shadow-md border border-slate-200 hover:shadow-xl hover:border-amber-200 transition-all duration-300">
-                {/* Icon and title */}
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
-                    <Icon className="w-7 h-7 text-amber-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900">{step.title}</h3>
+              {/* Icon and Title */}
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                  <Icon className="w-7 h-7 text-emerald-600" />
                 </div>
+                <h3 className="text-2xl font-bold text-slate-900">{steps[4].title}</h3>
+              </div>
 
-                {/* Description */}
-                <p className="text-slate-600 leading-relaxed mb-4">
-                  {step.description}
+              {/* Description */}
+              <p className="text-slate-600 leading-relaxed mb-4 text-center">
+                {steps[4].description}
+              </p>
+
+              {/* Additional info */}
+              <div className="pt-4 border-t border-emerald-200">
+                <p className="text-sm text-slate-500 text-center">
+                  {steps[4].additionalInfo}
                 </p>
-
-                {/* Additional info */}
-                <div className="pt-4 border-t border-slate-200">
-                  <p className="text-sm text-slate-500">
-                    {step.additionalInfo}
-                  </p>
-                </div>
               </div>
             </div>
           </div>
         )
-      })}
+      })()}
     </div>
   )
 }
@@ -180,7 +185,7 @@ export default function EWCleaningServicePage() {
       step: '1',
       title: 'Retiro de Electrodo',
       description: 'Remoción controlada de un electrodo de la celda para habilitar acceso al fondo',
-      additionalInfo: 'Bloqueo y desenergización • Retiro 1 electrodo • Acceso seguro',
+      additionalInfo: 'Retiro 1 electrodo • Acceso seguro',
       icon: Cog
     },
     {
@@ -798,7 +803,7 @@ export default function EWCleaningServicePage() {
             </p>
           </div>
 
-          <VerticalTimeline steps={processSteps} />
+          <CycleWorkflow steps={processSteps} />
         </div>
       </section>
 
