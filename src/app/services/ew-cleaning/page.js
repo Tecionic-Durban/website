@@ -116,29 +116,35 @@ function CycleWorkflow({ steps }) {
                     <p className="text-xs text-slate-600 mb-1">{steps[3].description}</p>
                     <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-200">{steps[3].additionalInfo}</p>
                   </div>
-                  {/* Arrow back to Step 1 */}
+
+                  {/* BRANCHING DECISION POINT: Two diverging arrows from Step 4 */}
+
+                  {/* Arrow 1: Loop back to Step 1 (continue cycle) */}
                   <div className="absolute left-1/2 -top-16 hidden md:block">
                     <ArrowDown className="w-6 h-6 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
+                    <div className="absolute -left-12 -top-8 bg-amber-50 px-2 py-1 rounded border border-amber-300 shadow-sm whitespace-nowrap">
+                      <span className="text-[9px] font-bold text-amber-700">Repetir</span>
+                    </div>
+                  </div>
+
+                  {/* Arrow 2: Branch out to Step 5 (exit cycle) */}
+                  <div className="absolute right-0 top-1/2 transform translate-x-full -translate-y-1/2 hidden md:block">
+                    {/* Horizontal line from Step 4 going right */}
+                    <div className="w-24 h-0.5 bg-gradient-to-r from-amber-400 to-emerald-400"></div>
+
+                    {/* Label on exit branch */}
+                    <div className="absolute left-6 -top-7 bg-emerald-50 px-2 py-1 rounded border border-emerald-300 shadow-sm whitespace-nowrap">
+                      <span className="text-[9px] font-bold text-emerald-700">Todas las celdas ✓</span>
+                    </div>
+
+                    {/* Arrow at end pointing to Step 5 */}
+                    <div className="absolute right-0 top-0 transform -translate-y-1/2">
+                      <ArrowRight className="w-5 h-5 text-emerald-500" />
+                    </div>
                   </div>
                 </div>
               )
             })()}
-
-            {/* DIVERGING BRANCH: Exit path from cycle to Step 5 */}
-            <div className="hidden md:block absolute right-[10%] top-1/2 transform -translate-y-1/2">
-              {/* Horizontal branch line going right */}
-              <div className="absolute left-0 top-0 w-32 h-0.5 bg-gradient-to-r from-amber-300 via-slate-300 to-emerald-300"></div>
-
-              {/* Label on branch */}
-              <div className="absolute left-8 -top-6 bg-white px-2 py-1 rounded border border-slate-300 shadow-sm">
-                <span className="text-[10px] font-semibold text-slate-600 whitespace-nowrap">Todas las celdas</span>
-              </div>
-
-              {/* Arrow at end of branch */}
-              <div className="absolute left-[120px] -top-2">
-                <ArrowRight className="w-6 h-6 text-emerald-500" />
-              </div>
-            </div>
           </div>
 
           {/* Step 5 - Outside cycle, connected by branch */}
