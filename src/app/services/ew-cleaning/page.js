@@ -59,7 +59,7 @@ function CycleWorkflow({ steps }) {
             {steps[1] && (() => {
               const Icon = steps[1].icon
               return (
-                <div className="absolute right-[10%] top-1/2 transform -translate-y-1/2 w-56">
+                <div className="absolute right-[25%] top-1/2 transform -translate-y-1/2 w-56">
                   <div className="bg-white rounded-xl p-4 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-lg shadow-lg shrink-0">
