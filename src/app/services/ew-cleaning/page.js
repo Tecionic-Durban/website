@@ -8,127 +8,188 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Cycle Workflow Component - Shows steps 1-4 as a cycle, then step 5
+// Circular Cycle Workflow Component
 function CycleWorkflow({ steps }) {
   return (
-    <div className="max-w-6xl mx-auto">
-      {/* Cycle Steps (1-4) */}
-      <div className="relative mb-16">
-        {/* Cycle Border */}
-        <div className="absolute inset-0 border-4 border-dashed border-amber-300 rounded-3xl -z-10"></div>
-
-        <div className="p-8 md:p-12">
-          {/* Cycle Label */}
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <RotateCw className="w-6 h-6 text-amber-600 animate-spin" style={{animationDuration: '3s'}} />
-            <span className="text-lg font-bold text-amber-700 bg-amber-50 px-4 py-2 rounded-full border-2 border-amber-200">
-              Repetir por cada celda/panel
-            </span>
-            <RotateCw className="w-6 h-6 text-amber-600 animate-spin" style={{animationDuration: '3s'}} />
-          </div>
-
-          {/* 2x2 Grid for Steps 1-4 */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {steps.slice(0, 4).map((step, idx) => {
-              const Icon = step.icon
-              return (
-                <div key={idx} className="relative">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-amber-200 hover:shadow-xl hover:border-amber-400 transition-all duration-300">
-                    {/* Step number */}
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg mb-4">
-                      {step.step}
-                    </div>
-
-                    {/* Icon and Title */}
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center shrink-0">
-                        <Icon className="w-6 h-6 text-amber-600" />
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900">{step.title}</h3>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-slate-600 leading-relaxed mb-3 text-sm">
-                      {step.description}
-                    </p>
-
-                    {/* Additional info */}
-                    <div className="pt-3 border-t border-slate-200">
-                      <p className="text-xs text-slate-500">
-                        {step.additionalInfo}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Arrows between steps */}
-                  {idx === 0 && (
-                    <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="w-6 h-6 text-amber-500" />
-                    </div>
-                  )}
-                  {idx === 1 && (
-                    <div className="hidden md:block absolute -bottom-3 left-1/2 transform -translate-x-1/2 z-10">
-                      <ArrowDown className="w-6 h-6 text-amber-500" />
-                    </div>
-                  )}
-                  {idx === 3 && (
-                    <div className="hidden md:block absolute top-1/2 -left-3 transform -translate-y-1/2 rotate-180 z-10">
-                      <ArrowRight className="w-6 h-6 text-amber-500" />
-                    </div>
-                  )}
-                </div>
-              )
-            })}
-          </div>
-
-          {/* Return arrow from step 4 to step 1 */}
-          <div className="hidden md:flex items-center justify-center mt-6">
-            <div className="flex items-center gap-2 text-amber-600">
-              <ArrowDown className="w-5 h-5 rotate-180" />
-              <span className="text-sm font-semibold">Continuar con siguiente celda</span>
+    <div className="max-w-7xl mx-auto">
+      {/* Circular Cycle Container */}
+      <div className="relative mb-20">
+        {/* Center Circle with Label */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+          <div className="bg-gradient-to-br from-amber-400 to-amber-600 rounded-full w-40 h-40 flex flex-col items-center justify-center shadow-2xl border-4 border-white">
+            <RotateCw className="w-10 h-10 text-white mb-2 animate-spin" style={{animationDuration: '4s'}} />
+            <div className="text-white text-center px-4">
+              <div className="font-black text-sm">CICLO</div>
+              <div className="text-xs font-semibold mt-1">Repetir por cada celda</div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Arrow pointing to Step 5 */}
-      <div className="flex items-center justify-center mb-8">
-        <div className="flex flex-col items-center gap-2">
-          <ArrowDown className="w-8 h-8 text-slate-400" />
-          <span className="text-sm font-semibold text-slate-600 bg-slate-100 px-4 py-2 rounded-full">
-            Una vez completadas todas las celdas
-          </span>
-          <ArrowDown className="w-8 h-8 text-slate-400" />
+        {/* Circular Path (visual guide) */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] border-4 border-dashed border-amber-300 rounded-full opacity-40"></div>
+
+        {/* Steps arranged in circle */}
+        <div className="relative h-[600px] md:h-[700px]">
+          {/* Step 1 - Top */}
+          {steps[0] && (() => {
+            const Icon = steps[0].icon
+            return (
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-64">
+                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                      1
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900">{steps[0].title}</h3>
+                  </div>
+                  <p className="text-sm text-slate-600 mb-2">{steps[0].description}</p>
+                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[0].additionalInfo}</p>
+                </div>
+                {/* Arrow to Step 2 */}
+                <div className="absolute -right-20 top-1/2 hidden md:block">
+                  <ArrowRight className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(45deg)'}} />
+                </div>
+              </div>
+            )
+          })()}
+
+          {/* Step 2 - Right */}
+          {steps[1] && (() => {
+            const Icon = steps[1].icon
+            return (
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-64">
+                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                      2
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900">{steps[1].title}</h3>
+                  </div>
+                  <p className="text-sm text-slate-600 mb-2">{steps[1].description}</p>
+                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[1].additionalInfo}</p>
+                </div>
+                {/* Arrow to Step 3 */}
+                <div className="absolute left-1/2 -bottom-20 hidden md:block">
+                  <ArrowDown className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(-45deg)'}} />
+                </div>
+              </div>
+            )
+          })()}
+
+          {/* Step 3 - Bottom */}
+          {steps[2] && (() => {
+            const Icon = steps[2].icon
+            return (
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64">
+                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                      3
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900">{steps[2].title}</h3>
+                  </div>
+                  <p className="text-sm text-slate-600 mb-2">{steps[2].description}</p>
+                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[2].additionalInfo}</p>
+                </div>
+                {/* Arrow to Step 4 */}
+                <div className="absolute -left-20 top-1/2 hidden md:block">
+                  <ArrowRight className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
+                </div>
+              </div>
+            )
+          })()}
+
+          {/* Step 4 - Left */}
+          {steps[3] && (() => {
+            const Icon = steps[3].icon
+            return (
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-64">
+                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-amber-400 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                      4
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900">{steps[3].title}</h3>
+                  </div>
+                  <p className="text-sm text-slate-600 mb-2">{steps[3].description}</p>
+                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{steps[3].additionalInfo}</p>
+                </div>
+                {/* Arrow back to Step 1 */}
+                <div className="absolute left-1/2 -top-20 hidden md:block">
+                  <ArrowDown className="w-8 h-8 text-amber-500 animate-pulse" style={{transform: 'rotate(135deg)'}} />
+                </div>
+              </div>
+            )
+          })()}
+        </div>
+
+        {/* Mobile: Vertical list for small screens */}
+        <div className="md:hidden space-y-4">
+          {steps.slice(0, 4).map((step, idx) => {
+            const Icon = step.icon
+            return (
+              <div key={idx}>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-amber-400">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center font-black text-xl shadow-lg">
+                      {step.step}
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
+                  </div>
+                  <p className="text-sm text-slate-600 mb-2">{step.description}</p>
+                  <p className="text-xs text-slate-500 pt-2 border-t border-slate-200">{step.additionalInfo}</p>
+                </div>
+                {idx < 3 && (
+                  <div className="flex justify-center my-2">
+                    <ArrowDown className="w-6 h-6 text-amber-500" />
+                  </div>
+                )}
+                {idx === 3 && (
+                  <div className="flex flex-col items-center my-3">
+                    <div className="text-sm font-semibold text-amber-700 bg-amber-50 px-4 py-2 rounded-full border-2 border-amber-300 flex items-center gap-2">
+                      <RotateCw className="w-4 h-4" />
+                      Repetir ciclo
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
 
-      {/* Step 5 - Outside the Cycle */}
+      {/* Separator: Exit from Cycle */}
+      <div className="flex flex-col items-center my-12">
+        <div className="h-16 w-0.5 bg-gradient-to-b from-amber-300 to-slate-300"></div>
+        <div className="my-4 px-6 py-3 bg-slate-100 rounded-full border-2 border-slate-300 text-slate-700 font-bold text-sm shadow-lg">
+          Una vez completadas todas las celdas
+        </div>
+        <div className="h-16 w-0.5 bg-gradient-to-b from-slate-300 to-emerald-300"></div>
+        <ArrowDown className="w-10 h-10 text-emerald-500 -mt-2" />
+      </div>
+
+      {/* Step 5 - Final Step Outside Cycle */}
       {steps[4] && (() => {
         const Icon = steps[4].icon
         return (
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 shadow-xl border-2 border-emerald-300">
-              {/* Step number */}
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center font-black text-2xl shadow-lg mb-4 mx-auto">
-                {steps[4].step}
-              </div>
-
-              {/* Icon and Title */}
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
-                  <Icon className="w-7 h-7 text-emerald-600" />
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50 rounded-3xl p-10 shadow-2xl border-4 border-emerald-400">
+              <div className="flex flex-col items-center mb-6">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center font-black text-3xl shadow-2xl mb-4">
+                  5
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">{steps[4].title}</h3>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-emerald-600" />
+                  </div>
+                  <h3 className="text-3xl font-black text-slate-900">{steps[4].title}</h3>
+                </div>
               </div>
-
-              {/* Description */}
-              <p className="text-slate-600 leading-relaxed mb-4 text-center">
+              <p className="text-lg text-slate-700 leading-relaxed mb-6 text-center">
                 {steps[4].description}
               </p>
-
-              {/* Additional info */}
-              <div className="pt-4 border-t border-emerald-200">
-                <p className="text-sm text-slate-500 text-center">
+              <div className="pt-6 border-t-2 border-emerald-200">
+                <p className="text-sm text-slate-600 text-center font-semibold">
                   {steps[4].additionalInfo}
                 </p>
               </div>
@@ -139,7 +200,6 @@ function CycleWorkflow({ steps }) {
     </div>
   )
 }
-
 export default function EWCleaningServicePage() {
   const router = null // Will be imported when needed
   const heroRef = useRef(null)
