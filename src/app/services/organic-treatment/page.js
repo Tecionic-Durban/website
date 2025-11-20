@@ -191,10 +191,10 @@ export default function OrganicTreatmentServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Por qué equipos móviles, no infraestructura permanente
+              Capacidad en 48 horas sin esperar proyectos
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Flexibilidad operacional y financiera sin comprometer capacidad técnica
+              Flota móvil lista para desplegar. Arriendo mensual, no inversión permanente. Swap de equipos sin costo adicional.
             </p>
           </div>
 
@@ -768,10 +768,10 @@ export default function OrganicTreatmentServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Modalidades de servicio
+              Piloto sin riesgo, escala según resultados
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              De prevención continua a respuesta de emergencia, con escalabilidad según resultados
+              Prueba con equipos de flota compartida. Valida ROI. Escala a capacidad dedicada cuando tengas confianza.
             </p>
           </div>
 
