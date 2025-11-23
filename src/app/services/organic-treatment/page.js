@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Chemistry, Renew, Filter, CheckmarkFilled, Collaborate, Security, Time, FlashFilled, WarningAltFilled } from '@carbon/icons-react'
-import { ArrowRight, ChevronDown, ChevronUp, DollarSign, Clock, Shield, Zap, TrendingUp } from 'lucide-react'
+import { ArrowRight, DollarSign, TrendingUp } from 'lucide-react'
 
 export default function OrganicTreatmentServicePage() {
   const [activeTreatment, setActiveTreatment] = useState('arcilla')
@@ -110,7 +110,7 @@ export default function OrganicTreatmentServicePage() {
                 <div className="flex-1">
                   <div className="font-bold text-gray-900 mb-2">Toma desde settler overflow (orgánico cargado)</div>
                   <p className="text-gray-700 mb-3">
-                    Conexión con brida Victaulic 2" en línea overflow settler extracción → stripping. By-pass mediante válvula bola,
+                    Conexión con brida Victaulic 2&quot; en línea overflow settler extracción → stripping. By-pass mediante válvula bola,
                     no requiere soldar ni modificar línea principal. Caudal tratamiento típico 2-5 m³/h (10-25% flujo total).
                   </p>
                   <div className="text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
@@ -748,7 +748,7 @@ export default function OrganicTreatmentServicePage() {
           {/* Testimonial */}
           <div className="bg-white rounded-xl border border-gray-200 p-8">
             <blockquote className="text-xl font-medium text-gray-900 mb-6 leading-relaxed">
-              "El modelo móvil nos permitió resolver el problema crítico de orgánico degradado sin inversión en infraestructura permanente. En 18 meses recuperamos estabilidad operacional completa."
+              &ldquo;El modelo móvil nos permitió resolver el problema crítico de orgánico degradado sin inversión en infraestructura permanente. En 18 meses recuperamos estabilidad operacional completa.&rdquo;
             </blockquote>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center">
