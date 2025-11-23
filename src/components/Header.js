@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { handleContactClick } from '@/utils/navigation'
+import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging } from '@carbon/icons-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -75,7 +76,7 @@ export default function Header() {
                 
                 {/* Services Dropdown */}
                 {item.name === 'Servicios' && (
-                  <div className="absolute top-full left-0 mt-1 w-[42rem] bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+                  <div className="absolute top-full left-0 -translate-x-[10%] mt-1 w-[48rem] bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="p-6">
                       <div className="flex gap-8">
@@ -85,106 +86,62 @@ export default function Header() {
                           </div>
                           <div className="space-y-2">
                             <a href="/services/filtration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <rect x="2" y="3" width="20" height="18" rx="2" strokeWidth="2"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 7h12M6 11h8M6 15h6"/>
-                                  <rect x="16" y="13" width="4" height="6" fill="currentColor" opacity="0.3"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 15v2m0 0v2m0-2h-1m1 0h1"/>
-                                </svg>
+                              <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                <Filter className="w-6 h-6 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                               </div>
                               <div>
                                 <div className="font-medium">Filtración y Deshidratación de Borras</div>
-                                <div className="text-xs text-gray-500">Para plantas SX</div>
+                                <div className="text-xs text-gray-500">Sistemas móviles SX</div>
                               </div>
                             </a>
-                            
+
                             <a href="/services/organic-treatment" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <circle cx="8" cy="12" r="6" strokeWidth="2" opacity="0.6"/>
-                                  <circle cx="16" cy="12" r="6" strokeWidth="2" opacity="0.6"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v12"/>
-                                  <circle cx="12" cy="9" r="2" fill="currentColor" opacity="0.8"/>
-                                  <circle cx="12" cy="15" r="2" fill="currentColor" opacity="0.8"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 8l12 8M18 8L6 16"/>
-                                </svg>
+                              <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                <Chemistry className="w-6 h-6 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                               </div>
                               <div>
                                 <div className="font-medium">Tratamiento Orgánico</div>
-                                <div className="text-xs text-gray-500">90-95% recuperación</div>
+                                <div className="text-xs text-gray-500">Purificación de extractantes</div>
                               </div>
                             </a>
-                            
+
                             <a href="/services/concentrate-dehydration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <rect x="4" y="8" width="16" height="12" rx="2" strokeWidth="2"/>
-                                  <rect x="6" y="10" width="12" height="8" fill="currentColor" opacity="0.3"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 6V4a2 2 0 014 0v2m4 0V4a2 2 0 014 0v2"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 14h2m4 0h2M9 16h6"/>
-                                  <circle cx="12" cy="3" r="1" fill="currentColor"/>
-                                  <circle cx="8" cy="3" r="0.5" fill="currentColor" opacity="0.6"/>
-                                  <circle cx="16" cy="3" r="0.5" fill="currentColor" opacity="0.6"/>
-                                </svg>
+                              <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                <Layers className="w-6 h-6 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                               </div>
                               <div>
                                 <div className="font-medium">Deshidratación Concentrados</div>
-                                <div className="text-xs text-gray-500">Alta capacidad continua</div>
+                                <div className="text-xs text-gray-500">Reducción de humedad</div>
                               </div>
                             </a>
-                            
+
                             <a href="/services/fine-solids" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <circle cx="12" cy="12" r="9" strokeWidth="2"/>
-                                  <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.2"/>
-                                  <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v2m0 14v2m9-9h-2M4 12H2"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.5 6.5L16 8M8 16l-1.5 1.5M6.5 6.5L8 8M16 16l1.5 1.5"/>
-                                </svg>
+                              <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                <CirclePacking className="w-6 h-6 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                               </div>
                               <div>
                                 <div className="font-medium">Sólidos Finos</div>
-                                <div className="text-xs text-gray-500">Hasta 14 ton/día centrífugas</div>
+                                <div className="text-xs text-gray-500">Separación de finos</div>
                               </div>
                             </a>
-                            
+
                             <a href="/services/water-clarification" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <rect x="2" y="16" width="20" height="6" rx="1" strokeWidth="2" fill="currentColor" opacity="0.3"/>
-                                  <circle cx="6" cy="14" r="2" strokeWidth="2"/>
-                                  <circle cx="12" cy="12" r="1.5" strokeWidth="2"/>
-                                  <circle cx="18" cy="14" r="2" strokeWidth="2"/>
-                                  <circle cx="9" cy="9" r="1" strokeWidth="2"/>
-                                  <circle cx="15" cy="9" r="1" strokeWidth="2"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6c2 0 4 1 8 1s6-1 8-1"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 5v1m5-1v1m5-1v1"/>
-                                </svg>
+                              <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                <RainDrop className="w-6 h-6 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                               </div>
                               <div>
                                 <div className="font-medium">Clarificación de Aguas</div>
-                                <div className="text-xs text-gray-500">Hasta 120 m³/día</div>
+                                <div className="text-xs text-gray-500">Recuperación de agua</div>
                               </div>
                             </a>
-                            
+
                             <a href="/services/ew-cleaning" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <rect x="3" y="8" width="18" height="10" rx="2" strokeWidth="2" fill="currentColor" opacity="0.2"/>
-                                  <rect x="5" y="6" width="3" height="4" rx="0.5" strokeWidth="2"/>
-                                  <rect x="10" y="6" width="3" height="4" rx="0.5" strokeWidth="2"/>
-                                  <rect x="16" y="6" width="3" height="4" rx="0.5" strokeWidth="2"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6.5 14v1.5M11.5 14v1.5M17.5 14v1.5"/>
-                                  <circle cx="8" cy="4" r="1" fill="currentColor"/>
-                                  <circle cx="12" cy="3" r="1" fill="currentColor"/>
-                                  <circle cx="16" cy="4" r="1" fill="currentColor"/>
-                                </svg>
+                              <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                <BatteryCharging className="w-6 h-6 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                               </div>
                               <div>
                                 <div className="font-medium">Limpieza Celdas EW</div>
-                                <div className="text-xs text-gray-500">Optimización cátodos</div>
+                                <div className="text-xs text-gray-500">Desborre de celdas</div>
                               </div>
                             </a>
                           </div>
@@ -246,23 +203,6 @@ export default function Header() {
                           </div>
                         </div>
                       </div>
-                      
-                      <div className="border-t border-gray-100 mt-6 pt-4">
-                        <div className="flex justify-between">
-                          <a href="/services" className="flex items-center px-3 py-2 text-sm text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-all duration-200 font-medium">
-                            Ver todos los servicios
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                          </a>
-                          <a href="/use-cases" className="flex items-center px-3 py-2 text-sm text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-all duration-200 font-medium">
-                            Ver todos los casos de uso
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 )}
@@ -270,7 +210,7 @@ export default function Header() {
 
                 {/* Professional Industrial Dropdown for Industries */}
                 {item.name === 'Industrias' && (
-                  <div className="absolute top-full left-0 mt-1 w-[42rem] bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+                  <div className="absolute top-full left-0 -translate-x-[10%] mt-1 w-[42rem] bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="p-6">
                       <div className="flex gap-8">
@@ -382,22 +322,13 @@ export default function Header() {
                           </div>
                         </div>
                       </div>
-                      
-                      <div className="border-t border-gray-100 mt-6 pt-4">
-                        <a href="/industries" className="flex items-center justify-between px-3 py-2 text-sm text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-all duration-200 font-medium">
-                          Ver todas las industrias
-                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                          </svg>
-                        </a>
-                      </div>
                     </div>
                   </div>
                 )}
 
                 {/* Professional Resources Dropdown */}
                 {item.name === 'Recursos' && (
-                  <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+                  <div className="absolute top-full left-0 -translate-x-[10%] mt-1 w-80 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="p-4">
                       <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-2">
@@ -487,15 +418,6 @@ export default function Header() {
                             <div className="font-medium">Calculadora de Eficiencia</div>
                             <div className="text-xs text-gray-500">Herramienta de cálculo interactiva</div>
                           </div>
-                        </a>
-                      </div>
-                      
-                      <div className="border-t border-gray-100 mt-4 pt-3">
-                        <a href="/resources" className="flex items-center justify-between px-3 py-2 text-sm text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-all duration-200 font-medium">
-                          Ver todos los recursos
-                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                          </svg>
                         </a>
                       </div>
                     </div>
@@ -601,11 +523,6 @@ export default function Header() {
                     <Link href="/services/maintenance" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       Mantención Preventiva
                     </Link>
-                    <div className="border-t border-gray-200 mt-2 pt-2">
-                      <Link href="/services" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
-                        Ver todos los servicios →
-                      </Link>
-                    </div>
                   </div>
                 )}
               </div>
@@ -648,11 +565,6 @@ export default function Header() {
                       <span className="font-medium">Petróleo Crudo</span>
                       <span className="text-xs text-gray-500 block">Refinación y procesamiento</span>
                     </Link>
-                    <div className="border-t border-gray-200 mt-2 pt-2">
-                      <Link href="/industries" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
-                        Ver todas las industrias →
-                      </Link>
-                    </div>
                   </div>
                 )}
               </div>
@@ -687,11 +599,6 @@ export default function Header() {
                     <Link href="/use-cases/environmental-compliance" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       Cumplimiento Ambiental
                     </Link>
-                    <div className="border-t border-gray-200 mt-2 pt-2">
-                      <Link href="/use-cases" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
-                        Ver todos los casos de uso →
-                      </Link>
-                    </div>
                   </div>
                 )}
               </div>
@@ -735,11 +642,6 @@ export default function Header() {
                     <Link href="/calculadora" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       Calculadora de Eficiencia
                     </Link>
-                    <div className="border-t border-gray-200 mt-2 pt-2">
-                      <Link href="/resources" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-emerald-600 hover:bg-white rounded transition-colors">
-                        Ver todos los recursos →
-                      </Link>
-                    </div>
                   </div>
                 )}
               </div>

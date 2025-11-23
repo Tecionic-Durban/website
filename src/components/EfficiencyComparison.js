@@ -1,10 +1,10 @@
 // src/components/EfficiencyComparison.js
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { TrendingUp, DollarSign, Zap, Gauge, Target } from 'lucide-react'
+import { Dashboard, Growth, Time, ArrowDown, Currency } from '@carbon/icons-react'
 
 export default function EfficiencyComparison() {
-  const [sliderPosition, setSliderPosition] = useState(50)
+  const [sliderPosition, setSliderPosition] = useState(0)
   const [animatedMetrics, setAnimatedMetrics] = useState({})
   const comparisonRef = useRef(null)
 
@@ -37,7 +37,8 @@ export default function EfficiencyComparison() {
   }, [])
 
   const caseStudy = {
-    name: 'Proyecto Cobre',
+    name: 'Cobre',
+    location: 'Proyecto en Segunda Región',
     industry: 'Cobre',
     color: 'orange',
     before: {
@@ -145,21 +146,10 @@ export default function EfficiencyComparison() {
             </div>
 
             <div className="relative z-10">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 bg-white/20 rounded-lg flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full enterprise-pulse"></div>
-                  </div>
-                  <h3 className="text-lg font-black">{currentCase.name}</h3>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs opacity-75 font-semibold">ACTIVO</div>
-                  <div className="text-xs font-mono font-bold">TSF-{currentCase.industry.toUpperCase()}</div>
-                </div>
+              <div>
+                <h3 className="text-2xl font-black">{currentCase.name}</h3>
+                <p className="text-white/75 text-sm font-medium">{currentCase.location}</p>
               </div>
-              <p className="text-white/90 text-sm">
-                Deslice para ver la transformación de indicadores
-              </p>
             </div>
           </div>
 
@@ -169,10 +159,10 @@ export default function EfficiencyComparison() {
           <div className="mb-8">
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-red-500/20 rounded-lg flex items-center justify-center">
-                  <div className="w-2 h-2 bg-red-500 rounded-full enterprise-pulse"></div>
+                <div className="w-4 h-4 bg-gray-400/20 rounded-lg flex items-center justify-center">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full enterprise-pulse"></div>
                 </div>
-                <span className="text-red-500 font-bold text-sm tracking-wide">ANTES</span>
+                <span className="text-gray-500 font-bold text-sm tracking-wide">ANTES</span>
               </div>
               <div className="flex items-center space-x-2">
                 <span className="text-emerald-600 font-bold text-sm tracking-wide">DESPUÉS</span>
@@ -182,29 +172,19 @@ export default function EfficiencyComparison() {
               </div>
             </div>
 
-            <div className="relative bg-gray-100 rounded-xl p-4 border border-emerald-100/50">
+            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-6 border border-emerald-200/30 backdrop-blur-sm shadow-inner">
               <input
                 type="range"
                 min="0"
                 max="100"
                 value={sliderPosition}
                 onChange={(e) => setSliderPosition(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer slider sophisticated-hover"
+                className="w-full h-3 bg-transparent rounded-full appearance-none cursor-pointer slider-modern"
                 style={{
-                  background: `linear-gradient(to right, #ef4444 0%, #ef4444 ${sliderPosition}%, #10b981 ${sliderPosition}%, #10b981 100%)`
+                  background: `linear-gradient(to right, #10b981 0%, #10b981 ${sliderPosition}%, #d1d5db ${sliderPosition}%, #d1d5db 100%)`,
                 }}
                 suppressHydrationWarning
               />
-              <div className="flex justify-between text-xs text-gray-600 font-semibold mt-2">
-                <span className="flex items-center space-x-1">
-                  <div className="w-1 h-1 bg-red-500 rounded-full"></div>
-                  <span>Estado Inicial</span>
-                </span>
-                <span className="flex items-center space-x-1">
-                  <span>Optimización TSF</span>
-                  <div className="w-1 h-1 bg-emerald-500 rounded-full"></div>
-                </span>
-              </div>
             </div>
           </div>
 
@@ -212,11 +192,11 @@ export default function EfficiencyComparison() {
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
-                <Gauge className={`w-6 h-6 mx-auto mb-2 ${getColorClass(currentCase.color, 'text')}`} />
+                <Dashboard className={`w-6 h-6 mx-auto mb-2 ${getColorClass(currentCase.color, 'text')}`} />
                 <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
                   {animatedMetrics.efficiency || currentCase.before.efficiency}%
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Eficiencia</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">Eficiencia</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.efficiency : '---'}
                 </div>
@@ -229,11 +209,11 @@ export default function EfficiencyComparison() {
 
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
-                <TrendingUp className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                <Growth className="w-6 h-6 text-blue-600 mx-auto mb-2" />
                 <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
                   {(animatedMetrics.production || currentCase.before.production).toLocaleString()}
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Producción (t/año)</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">Producción (t/año)</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.production : '---'}
                 </div>
@@ -242,11 +222,11 @@ export default function EfficiencyComparison() {
 
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
-                <Zap className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
+                <Time className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
                 <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
                   {animatedMetrics.downtime !== undefined ? animatedMetrics.downtime : currentCase.before.downtime} días
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Tiempo Parada/año</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">Tiempo Parada/año</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.downtime : '---'}
                 </div>
@@ -255,11 +235,11 @@ export default function EfficiencyComparison() {
 
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
-                <Target className="w-6 h-6 text-purple-600 mx-auto mb-2" />
+                <ArrowDown className="w-6 h-6 text-purple-600 mx-auto mb-2" />
                 <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
                   {animatedMetrics.dragLosses || currentCase.before.dragLosses} m³
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Pérdidas Arrastre/día</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">Pérdidas Arrastre/día</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.dragLosses : '---'}
                 </div>
@@ -268,11 +248,11 @@ export default function EfficiencyComparison() {
 
             <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="relative z-10">
-                <DollarSign className="w-6 h-6 text-green-600 mx-auto mb-2" />
+                <Currency className="w-6 h-6 text-green-600 mx-auto mb-2" />
                 <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
                   ${(animatedMetrics.savings || currentCase.before.savings).toLocaleString()}
                 </div>
-                <div className="text-gray-600 text-xs mb-1">Ahorro Mensual</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">Ahorro Mensual</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.savings : '---'}
                 </div>

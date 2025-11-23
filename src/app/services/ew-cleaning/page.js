@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { Filter, CheckCircle, Truck, Shield, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, ArrowRight, ArrowDown, RotateCw } from 'lucide-react'
+import { Settings, ArrowDown, Filter, Renew } from '@carbon/icons-react'
+import { CheckCircle, Truck, Shield, BarChart3, Clock, Zap, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, ArrowRight, RotateCw } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
@@ -385,14 +386,14 @@ export default function EWCleaningServicePage() {
       title: 'Retiro de Electrodo',
       description: 'Remoción controlada de un electrodo de la celda para habilitar acceso al fondo',
       additionalInfo: 'Retiro 1 electrodo • Acceso seguro',
-      icon: Cog
+      icon: Settings
     },
     {
       step: '2',
       title: 'Succión de Borras',
       description: 'Aspirado neumático de borras plomadas y orgánicas desde fondo de celda',
       additionalInfo: 'Tasa 6 m³/hora • Bombas neumáticas • Mangueras antiestáticas',
-      icon: Activity
+      icon: ArrowDown
     },
     {
       step: '3',
@@ -406,7 +407,7 @@ export default function EWCleaningServicePage() {
       title: 'Retorno de Electrolito',
       description: 'Devolución de electrolito filtrado al rebose de celda sin variación de nivel',
       additionalInfo: 'Cero pérdida electrolito • 100-200 L fuera celda • Sin interrupciones',
-      icon: RefreshCw
+      icon: Renew
     },
     {
       step: '5',

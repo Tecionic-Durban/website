@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Filter, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { Chemistry, Connect, Filter, Renew, Security, Flash, DeliveryTruck, Dashboard } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight, Truck, Settings, Clock, Activity, Award, Target, Users, Globe, Play, Droplets, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -144,28 +145,28 @@ export default function WaterClarificationServicePage() {
       title: 'Análisis Granulométrico',
       description: 'Caracterización completa distribución tamaños y mineralogía sólidos finos',
       additionalInfo: 'Análisis laser diffraction • Microscopia electrónica • Química superficial',
-      icon: FlaskConical
+      icon: Chemistry
     },
     {
       step: '2',
       title: 'Conexión',
       description: 'Integración móvil con sistemas existentes de planta',
       additionalInfo: 'No utiliza equipamiento de planta cliente • Sistema 100% autónomo',
-      icon: Truck
+      icon: Connect
     },
     {
       step: '3',
       title: 'Filtración de Sólidos',
       description: 'Remoción sólidos ultra-finos mediante filtros prensa',
       additionalInfo: 'Monitoreo turbidez continuo • Optimización AI • Mantenimiento predictivo',
-      icon: Settings
+      icon: Filter
     },
     {
       step: '4',
       title: 'Reutilización Agua',
       description: 'Agua clarificada <5 NTU lista para recirculación proceso',
       additionalInfo: 'Verificación calidad • Sistema distribución • Monitoreo performance',
-      icon: TrendingUp
+      icon: Renew
     }
   ]
 
@@ -602,28 +603,28 @@ export default function WaterClarificationServicePage() {
           <div className="grid lg:grid-cols-4 gap-6 mb-20 progressive-reveal">
             {[
               {
-                icon: Shield,
+                icon: Security,
                 title: "Cumplimiento DS90",
                 description: "Ayuda con cumplimiento normativo ambiental con monitoreo continuo calidad efluentes",
                 color: "teal",
                 metric: "100%"
               },
               {
-                icon: Zap,
+                icon: Flash,
                 title: "Instalación Rápida",
                 description: "Sistema modular operativo en 48-72 horas sin modificaciones infraestructura existente",
                 color: "blue",
                 metric: "48h"
               },
               {
-                icon: Truck,
+                icon: DeliveryTruck,
                 title: "100% Móvil",
                 description: "Equipos completamente portátiles con autonomía total sin requerir instalaciones fijas",
                 color: "purple",
                 metric: "Móvil"
               },
               {
-                icon: BarChart3,
+                icon: Dashboard,
                 title: "Alta Capacidad",
                 description: "Procesamiento hasta 260 m³/día con tecnología de filtración de alta tasa",
                 color: "slate",
@@ -639,7 +640,7 @@ export default function WaterClarificationServicePage() {
                   {/* Icon and metric */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="relative p-3 bg-teal-100 rounded-lg group-hover:bg-teal-200 transition-colors duration-300">
-                      <feature.icon className="w-5 h-5 text-teal-600" />
+                      <feature.icon className="w-7 h-7 text-teal-600" />
                     </div>
 
                     <div className="px-3 py-1 rounded-full text-xs font-semibold bg-teal-100 text-teal-700 border border-teal-200">

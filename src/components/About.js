@@ -1,7 +1,7 @@
 // src/components/About.js
 'use client'
 import { useEffect, useRef } from 'react'
-import { Droplets, RefreshCw, Zap, Shield, TrendingUp } from 'lucide-react'
+import { Finance, Dashboard, Portfolio, Flash, Time, Security } from '@carbon/icons-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -13,37 +13,37 @@ export default function About() {
 
   const cards = [
     {
-      icon: Droplets,
+      icon: Finance,
       title: "Modelo OPEX Avanzado",
       description: "Cero inversión inicial. Modelo de servicios con facturación mensual que optimiza el flujo de caja operacional del cliente.",
       metric: "0% CAPEX"
     },
     {
-      icon: RefreshCw,
+      icon: Dashboard,
       title: "Rendimiento Verificable",
       description: "Reportería diaria de KPIs operacionales específicos según el tipo de servicio prestado. Parámetros verificables que demuestran mejoras en eficiencia y productividad.",
       metric: "24/7 Tracking"
     },
     {
-      icon: Zap,
+      icon: Portfolio,
       title: "Experiencia Multisectorial",
       description: "Portfolio comprobado en cobre, litio, potasio y refinación de petróleo con casos de éxito documentados.",
       metric: "5 Sectores"
     },
     {
-      icon: Shield,
+      icon: Flash,
       title: "Instalación Plug & Play",
       description: "Equipos móviles preconfigurados que se integran directamente con sistemas existentes. Sin modificaciones de infraestructura, sin permisos adicionales. Operativo en 24-48 horas.",
       metric: "24-48h"
     },
     {
-      icon: TrendingUp,
+      icon: Time,
       title: "Contratos Flexibles",
       description: "Desde respuesta de emergencia hasta proyectos estratégicos de 5 años. Escalamiento automático según demanda operacional con términos adaptables a ciclos de mercado.",
       metric: "48h-5 años"
     },
     {
-      icon: Shield,
+      icon: Security,
       title: "Trabajos en Ambientes Corrosivos y Explosivos",
       description: "Equipos de alta tecnología certificados para operar en atmósferas explosivas y ambientes altamente corrosivos. Máxima seguridad con certificación Ex.Proof para las condiciones más exigentes.",
       metric: "Ex.Proof"
@@ -163,7 +163,7 @@ export default function About() {
             </p>
 
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm">
-              <Shield className="w-4 h-4 text-emerald-600 mr-2" />
+              <Security className="w-4 h-4 text-emerald-600 mr-2" />
               Equipos Ex.Proof Certificados
             </div>
           </div>

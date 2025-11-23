@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Droplets, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Waves, FlaskConical, Factory, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { Chemistry, Settings, Humidity, CheckmarkFilled, Industry, Security, Growth } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight, Truck, BarChart3, Clock, Zap, Activity, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
 
 export default function ConcentrateDehydrationServicePage() {
   const router = null // Will be imported when needed
@@ -48,7 +49,7 @@ export default function ConcentrateDehydrationServicePage() {
       title: 'Análisis Mineralógico',
       description: 'Composición mineralógica del concentrado',
       additionalInfo: 'Análisis completo de minerales',
-      icon: FlaskConical
+      icon: Chemistry
     },
     {
       step: '2',
@@ -62,14 +63,14 @@ export default function ConcentrateDehydrationServicePage() {
       title: 'Deshidratación',
       description: 'Equipos de alta eficiencia para reducción de humedad',
       additionalInfo: 'Monitoreo presión y caudal • Control humedad tiempo real',
-      icon: Droplets
+      icon: Humidity
     },
     {
       step: '4',
       title: 'Control Calidad',
       description: 'Verificación especificaciones finales y certificación',
       additionalInfo: '',
-      icon: TrendingUp
+      icon: CheckmarkFilled
     }
   ]
 
@@ -186,7 +187,7 @@ export default function ConcentrateDehydrationServicePage() {
         {/* Large Dehydration Icon - Premium Processing */}
         <div className="absolute -top-32 -right-40 w-96 h-96 pointer-events-none">
           <div className="relative w-full h-full">
-            <Droplets className="w-full h-full text-cyan-500/8 transform rotate-12" />
+            <Humidity className="w-full h-full text-cyan-500/8 transform rotate-12" />
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-full blur-3xl"></div>
           </div>
         </div>
@@ -262,7 +263,7 @@ export default function ConcentrateDehydrationServicePage() {
                 <div className="w-full h-full bg-gradient-to-br from-cyan-100 via-cyan-50 to-white flex items-center justify-center border border-cyan-200/50">
                   <div className="text-center p-8">
                     <div className="w-24 h-24 mx-auto mb-6 bg-cyan-500/10 rounded-full flex items-center justify-center">
-                      <Droplets className="w-12 h-12 text-cyan-600" />
+                      <Humidity className="w-12 h-12 text-cyan-600" />
                     </div>
                     <h3 className="text-lg font-bold text-cyan-800 mb-2">Sistema de Deshidratación</h3>
                     <p className="text-sm text-cyan-600">Filtros prensa y centrífugas móviles</p>
@@ -334,28 +335,28 @@ export default function ConcentrateDehydrationServicePage() {
           <div className="grid lg:grid-cols-4 gap-6 mb-20 progressive-reveal">
             {[
               {
-                icon: Droplets,
+                icon: Humidity,
                 title: "92% Reducción Humedad",
                 description: "Eficiencia máxima en eliminación de humedad para cumplir especificaciones comerciales",
                 color: "cyan",
                 metric: "92%"
               },
               {
-                icon: Factory,
+                icon: Industry,
                 title: "170 Ton/día Capacidad",
                 description: "Procesamiento alto volumen de concentrados con equipos móviles especializados",
                 color: "blue",
                 metric: "170t/d"
               },
               {
-                icon: Shield,
+                icon: Security,
                 title: "Cumplimiento 100%",
                 description: "No requiere de nuevos permisos ambientales",
                 color: "emerald",
                 metric: "100%"
               },
               {
-                icon: TrendingUp,
+                icon: Growth,
                 title: "ROI <6 Meses",
                 description: "Retorno rápido por ahorro en costos transporte y bonificaciones calidad",
                 color: "slate",
@@ -371,7 +372,7 @@ export default function ConcentrateDehydrationServicePage() {
                   {/* Icon and metric */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="relative p-3 bg-cyan-100 rounded-lg group-hover:bg-cyan-200 transition-colors duration-300">
-                      <feature.icon className="w-5 h-5 text-cyan-600" />
+                      <feature.icon className="w-7 h-7 text-cyan-600" />
                     </div>
 
                     <div className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-100 text-cyan-700 border border-cyan-200">

@@ -2,7 +2,7 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Mail, MapPin, Phone, Clock, Shield, TrendingUp } from 'lucide-react'
+import { Location, Email, Edit, ChevronRight } from '@carbon/icons-react'
 
 export default function Contact() {
   const contactRef = useRef(null)
@@ -72,23 +72,40 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Methods - Horizontal Layout */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-12 progressive-reveal">
+        {/* Contact Pathways */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12 progressive-reveal">
           <a
             href="mailto:contacto@tsf.cl"
-            className="group flex items-center space-x-3 text-emerald-300 hover:text-emerald-200 transition-all duration-300"
+            className="group flex items-center justify-between w-full md:w-auto min-w-[280px] px-6 py-4 bg-emerald-500/10 hover:bg-emerald-500/20 rounded-xl transition-all duration-300 border border-emerald-400/20 hover:border-emerald-400/40"
           >
-            <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center group-hover:bg-emerald-500/20 transition-all duration-300">
-              <Mail className="w-6 h-6" />
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Email className="w-5 h-5 text-emerald-300" />
+              </div>
+              <span className="text-lg font-semibold text-emerald-200">contacto@tsf.cl</span>
             </div>
-            <span className="text-lg font-semibold">contacto@tsf.cl</span>
+            <ChevronRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
 
-          <div className="hidden md:block w-px h-12 bg-emerald-400/20"></div>
+          <Link
+            href="/contacto"
+            className="group flex items-center justify-between w-full md:w-auto min-w-[280px] px-6 py-4 bg-emerald-500/10 hover:bg-emerald-500/20 rounded-xl transition-all duration-300 border border-emerald-400/20 hover:border-emerald-400/40"
+          >
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Edit className="w-5 h-5 text-emerald-300" />
+              </div>
+              <span className="text-lg font-semibold text-emerald-200">Formulario de Contacto</span>
+            </div>
+            <ChevronRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
 
-          <div className="flex items-center space-x-3 text-emerald-300">
-            <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center">
-              <MapPin className="w-6 h-6" />
+        {/* Location Info */}
+        <div className="text-center mb-12 progressive-reveal">
+          <div className="inline-flex items-center space-x-3 text-emerald-300">
+            <div className="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center">
+              <Location className="w-5 h-5" />
             </div>
             <div className="text-lg">
               <span className="font-semibold">Santiago</span>
@@ -96,29 +113,6 @@ export default function Contact() {
               <span className="font-semibold">Calama</span>
             </div>
           </div>
-
-          <div className="hidden md:block w-px h-12 bg-emerald-400/20"></div>
-
-          <Link
-            href="/contacto"
-            className="group flex items-center space-x-3 text-emerald-300 hover:text-emerald-200 transition-all duration-300"
-          >
-            <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center group-hover:bg-emerald-500/20 transition-all duration-300">
-              <ArrowRight className="w-6 h-6" />
-            </div>
-            <span className="text-lg font-semibold">Formulario de Contacto</span>
-          </Link>
-        </div>
-
-        {/* Optional CTA Button */}
-        <div className="text-center mb-12 progressive-reveal">
-          <Link
-            href="/contacto"
-            className="inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-semibold text-lg transition-all duration-300 layered-shadow-hover"
-          >
-            Contactar Equipo Técnico
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Link>
         </div>
 
         {/* Trust Line */}

@@ -2,7 +2,8 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import { Beaker, Waves, Factory, Zap, Microscope, RefreshCw, Droplets, CheckCircle, ArrowRight } from 'lucide-react'
+import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 
 export default function Services() {
@@ -40,42 +41,42 @@ export default function Services() {
     {
       title: "Filtración y Deshidratación de Borras y Sólidos",
       description: "Filtración móvil de borras y sólidos en refinerías y plantas SX. Capacidad hasta 130 ton/día de torta seca mediante filtros prensa o centrífugas según requerimiento del cliente.",
-      icon: Beaker,
+      icon: Filter,
       features: [],
       slug: "/services/filtration"
     },
     {
       title: "Tratamiento y Recuperación de Orgánico SX",
       description: "Tratamiento especializado para recuperación de orgánico en procesos de extracción por solventes. Reduce pérdidas y optimiza la eficiencia de planta.",
-      icon: RefreshCw,
+      icon: Chemistry,
       features: [],
       slug: "/services/organic-treatment"
     },
     {
       title: "Deshidratación de Concentrados",
       description: "Deshidratación de concentrados de cobre mediante filtros prensa móviles. Reducción de peso 60-70% para optimización de plantas concentradoras y preparación de carga para exportación.",
-      icon: Droplets,
+      icon: Layers,
       features: [],
       slug: "/services/concentrate-dehydration"
     },
     {
       title: "Tratamiento de Sólidos Finos",
       description: "Procesamiento de sólidos finos provenientes de clarificadores. Capacidad hasta 14 ton/día con equipos especializados.",
-      icon: Microscope,
+      icon: CirclePacking,
       features: [],
       slug: "/services/fine-solids"
     },
     {
       title: "Limpieza de Celdas EW",
       description: "Limpieza especializada de celdas de electroobtención para minimizar contaminación catódica y asegurar cátodos de cobre de mayor grado. Servicios programados para mantener estándares de calidad de producto.",
-      icon: Zap,
+      icon: BatteryCharging,
       features: [],
       slug: "/services/ew-cleaning"
     },
     {
       title: "Remoción de Sólidos de Aguas Clarificadas",
       description: "Optimización de la recirculación de agua de proceso mediante remoción eficiente de sólidos. Hasta 120 m³/día de agua clarificada.",
-      icon: Waves,
+      icon: RainDrop,
       features: [],
       slug: "/services/water-clarification"
     }

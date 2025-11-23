@@ -40,7 +40,6 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold">Tec-Ionic Durban</h3>
-                <p className="text-emerald-400">Servicios LIX/SX/EW</p>
               </div>
             </div>
             

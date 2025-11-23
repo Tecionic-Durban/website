@@ -1,27 +1,24 @@
 'use client'
 import { useState } from 'react'
-import { MapPin, Phone, Mail, Clock, ChevronDown, ChevronUp, AlertCircle, CheckCircle } from 'lucide-react'
+import { Location, Email, Time } from '@carbon/icons-react'
+import { AlertCircle, CheckCircle } from 'lucide-react'
 
 export default function ContactPage() {
   const [selectedService, setSelectedService] = useState('')
-  const [showAdvanced, setShowAdvanced] = useState(false)
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     company: '',
     email: '',
     phone: '',
     service: '',
-    industry: '',
-    plantCapacity: '',
-    currentChallenges: '',
-    urgency: '',
-    budget: '',
+    serviceSpecificAnswer: '',
     message: ''
   })
 
   const services = [
     'Filtración y deshidratación de borras y sólidos',
-    'Tratamiento y recuperación de orgánico en procesos SX', 
+    'Tratamiento y recuperación de orgánico en procesos SX',
     'Deshidratación de concentrados de cobre',
     'Tratamiento de sólidos finos (centrífugas)',
     'Remoción de sólidos de aguas clarificadas',
@@ -29,25 +26,28 @@ export default function ContactPage() {
     'Consulta general'
   ]
 
-  const industries = [
-    'Cobre', 'Zinc', 'Litio', 'Potasio', 
-    'Petróleo Crudo', 'Otro'
-  ]
-
   const handleServiceChange = (service) => {
     setSelectedService(service)
     setFormData({...formData, service})
-    
-    // Auto-show advanced fields for specific services
-    if (['Tratamiento de borras de plantas SX', 'Apoyo completo planta de SX, housekeeping'].includes(service)) {
-      setShowAdvanced(true)
-    }
   }
 
   const getFormProgress = () => {
-    const requiredFields = ['name', 'company', 'email', 'service']
+    const requiredFields = ['firstName', 'lastName', 'company', 'email', 'service']
     const filledFields = requiredFields.filter(field => formData[field].trim() !== '').length
     return (filledFields / requiredFields.length) * 100
+  }
+
+  // Service-specific questions
+  const getServiceQuestion = () => {
+    const questions = {
+      'Filtración y deshidratación de borras y sólidos': '¿Cuál es el volumen aproximado de borras que necesita procesar? (ton/día)',
+      'Tratamiento y recuperación de orgánico en procesos SX': '¿Qué tipo de contaminación presenta su orgánico?',
+      'Deshidratación de concentrados de cobre': '¿Cuál es la capacidad de producción de concentrados? (ton/día)',
+      'Tratamiento de sólidos finos (centrífugas)': '¿Cuál es el caudal de sólidos finos a tratar? (m³/h)',
+      'Remoción de sólidos de aguas clarificadas': '¿Cuál es el caudal de agua a clarificar? (m³/h)',
+      'Limpieza de celdas EW': '¿Cuántas celdas EW requieren limpieza?'
+    }
+    return questions[selectedService] || null
   }
 
   return (
@@ -73,35 +73,51 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Solicite una Consulta</h2>
-              
-              {/* Form Progress Indicator */}
-              <div className="mb-8">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-500">Progreso del formulario</span>
-                  <span className="text-sm text-emerald-600">{Math.round(getFormProgress())}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="h-2 bg-emerald-600 rounded-full transition-all duration-500"
-                    style={{ width: `${getFormProgress()}%` }}
-                  ></div>
-                </div>
-              </div>
 
               <form className="space-y-6">
-                {/* Basic Information */}
+                {/* Name Fields */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                      <span>Nombre Completo</span>
+                      <span>Nombre</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
-                    <input 
+                    <input
                       type="text"
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Su nombre"
+                      placeholder="Juan"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                      <span>Apellido</span>
+                      <span className="text-red-500 ml-1">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+                      placeholder="Pérez"
+                    />
+                  </div>
+                </div>
+
+                {/* Email and Company */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                      <span>Email de Trabajo</span>
+                      <span className="text-red-500 ml-1">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+                      placeholder="juan.perez@empresa.com"
                     />
                   </div>
                   <div>
@@ -109,7 +125,7 @@ export default function ContactPage() {
                       <span>Empresa</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
-                    <input 
+                    <input
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData({...formData, company: e.target.value})}
@@ -119,32 +135,18 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                      <span>Email</span>
-                      <span className="text-red-500 ml-1">*</span>
-                    </label>
-                    <input 
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="su@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Teléfono
-                    </label>
-                    <input 
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="+56 9 xxxx xxxx"
-                    />
-                  </div>
+                {/* Phone (optional) */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Teléfono <span className="text-gray-400 font-normal">(opcional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+                    placeholder="+56 9 xxxx xxxx"
+                  />
                 </div>
 
                 {/* Service Selection */}
@@ -165,113 +167,28 @@ export default function ContactPage() {
                   </select>
                 </div>
 
-                {/* Progressive Disclosure - Advanced Fields */}
-                {selectedService && (
-                  <div className="border-t border-gray-200 pt-6">
-                    <button
-                      type="button"
-                      onClick={() => setShowAdvanced(!showAdvanced)}
-                      className="flex items-center text-emerald-600 hover:text-emerald-700 mb-4 transition-colors duration-300"
-                    >
-                      <span className="font-semibold">Información Técnica Adicional</span>
-                      <span className="text-xs ml-2">(opcional - ayuda con cotización precisa)</span>
-                      {showAdvanced ? <ChevronUp className="w-4 h-4 ml-2" /> : <ChevronDown className="w-4 h-4 ml-2" />}
-                    </button>
-
-                    {showAdvanced && (
-                      <div className="space-y-4 bg-gray-50 rounded-lg p-6 animate-in slide-in-from-top duration-300">
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                              Industria Principal
-                            </label>
-                            <select 
-                              value={formData.industry}
-                              onChange={(e) => setFormData({...formData, industry: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm"
-                            >
-                              <option value="">Seleccione industria</option>
-                              {industries.map((industry, index) => (
-                                <option key={index} value={industry}>{industry}</option>
-                              ))}
-                            </select>
-                          </div>
-                          <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                              Capacidad de Planta
-                            </label>
-                            <select 
-                              value={formData.plantCapacity}
-                              onChange={(e) => setFormData({...formData, plantCapacity: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm"
-                            >
-                              <option value="">Seleccione capacidad</option>
-                              <option value="< 10k tpa">Menos de 10K tpa</option>
-                              <option value="10-50k tpa">10K - 50K tpa</option>
-                              <option value="50-100k tpa">50K - 100K tpa</option>
-                              <option value="> 100k tpa">Más de 100K tpa</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                              Urgencia del Proyecto
-                            </label>
-                            <select 
-                              value={formData.urgency}
-                              onChange={(e) => setFormData({...formData, urgency: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm"
-                            >
-                              <option value="">Seleccione urgencia</option>
-                              <option value="immediate">Inmediato (1-2 semanas)</option>
-                              <option value="short">Corto plazo (1-3 meses)</option>
-                              <option value="medium">Mediano plazo (3-6 meses)</option>
-                              <option value="long">Largo plazo (6+ meses)</option>
-                            </select>
-                          </div>
-                          <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                              Rango de Presupuesto
-                            </label>
-                            <select 
-                              value={formData.budget}
-                              onChange={(e) => setFormData({...formData, budget: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm"
-                            >
-                              <option value="">Seleccione rango</option>
-                              <option value="< 50k">Menos de $50K USD</option>
-                              <option value="50-200k">$50K - $200K USD</option>
-                              <option value="200-500k">$200K - $500K USD</option>
-                              <option value="> 500k">Más de $500K USD</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            Desafíos Actuales
-                          </label>
-                          <textarea 
-                            value={formData.currentChallenges}
-                            onChange={(e) => setFormData({...formData, currentChallenges: e.target.value})}
-                            rows={2}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 placeholder-gray-500 text-sm resize-none"
-                            placeholder="Describa los principales desafíos operacionales que enfrenta..."
-                          />
-                        </div>
-                      </div>
-                    )}
+                {/* Service-Specific Question */}
+                {selectedService && getServiceQuestion() && (
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      {getServiceQuestion()}
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.serviceSpecificAnswer}
+                      onChange={(e) => setFormData({...formData, serviceSpecificAnswer: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+                      placeholder="Ingrese su respuesta"
+                    />
                   </div>
                 )}
 
-                {/* Main Message */}
+                {/* Additional Comments */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Mensaje Adicional
+                    Comentarios Adicionales
                   </label>
-                  <textarea 
+                  <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     rows={4}
@@ -317,11 +234,11 @@ export default function ContactPage() {
             <div className="space-y-8">
               <div className="bg-white rounded-xl shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Información de Contacto</h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-white" />
+                      <Location className="w-5 h-5 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg text-gray-900">Ubicaciones</h4>
@@ -335,7 +252,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start space-x-4">
                     <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-white" />
+                      <Email className="w-5 h-5 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg text-gray-900">Email</h4>
@@ -347,7 +264,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start space-x-4">
                     <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-white" />
+                      <Time className="w-5 h-5 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg text-gray-900">Horarios de Atención</h4>
@@ -360,41 +277,14 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Why Choose Us */}
-              <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">¿Por qué elegir Tec-Ionic Durban?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span className="text-gray-700">20+ años de experiencia especializada</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span className="text-gray-700">Equipos móviles certificados ex.proof</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span className="text-gray-700">Hasta 70 ton/día capacidad torta seca</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span className="text-gray-700">Registro SICEP - Operación certificada</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span className="text-gray-700">Clientes como BHP, SQM, Capstone, Antofagasta Minerals</span>
-                  </div>
-                </div>
-              </div>
-
               {/* Response Time Guarantee */}
               <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
                 <div className="flex items-center mb-3">
-                  <Clock className="w-5 h-5 text-yellow-600 mr-2" />
+                  <Time className="w-5 h-5 text-yellow-600 mr-2" />
                   <h4 className="font-semibold text-yellow-900">Garantía de Respuesta</h4>
                 </div>
                 <p className="text-yellow-800 text-sm">
-                  Respondemos todas las consultas técnicas dentro de <strong>24 horas hábiles</strong>. 
+                  Respondemos todas las consultas técnicas dentro de <strong>24 horas hábiles</strong>.
                   Para emergencias operacionales, contamos con soporte prioritario.
                 </p>
               </div>

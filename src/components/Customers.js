@@ -2,7 +2,7 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { TrendingUp, Award, Zap, Target } from 'lucide-react'
+import { Growth, Currency, Security, Time } from '@carbon/icons-react'
 
 export default function Customers() {
   const [isCarouselPaused, setIsCarouselPaused] = useState(false)
@@ -276,22 +276,22 @@ export default function Customers() {
           <h3 className="text-2xl font-bold mb-6">Resultados Comprobados en la Industria</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="flex flex-col items-center">
-              <TrendingUp className="w-8 h-8 mb-3 text-emerald-200" />
+              <Growth className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">+22%</div>
               <div className="text-emerald-100 text-sm">Promedio Mejora Eficiencia</div>
             </div>
             <div className="flex flex-col items-center">
-              <Target className="w-8 h-8 mb-3 text-emerald-200" />
+              <Time className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">95%</div>
               <div className="text-emerald-100 text-sm">Reducción Tiempo Parada</div>
             </div>
             <div className="flex flex-col items-center">
-              <Award className="w-8 h-8 mb-3 text-emerald-200" />
+              <Currency className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">$500M+</div>
               <div className="text-emerald-100 text-sm">Ahorros Acumulados USD</div>
             </div>
             <div className="flex flex-col items-center">
-              <Zap className="w-8 h-8 mb-3 text-emerald-200" />
+              <Security className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">23+</div>
               <div className="text-emerald-100 text-sm">Años de Confianzas</div>
             </div>

@@ -3,7 +3,8 @@
 // src/app/industries/copper/page.js - Stripe-inspired visual design
 import { useState, useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { Beaker, Zap, Filter, Droplets, Waves, Settings, Wrench, ArrowRight, Download, CheckCircle, TrendingUp, Factory, Shield } from 'lucide-react'
+import { Chemistry, Flash, Filter as FilterCarbon, Humidity, Settings as SettingsCarbon, Security } from '@carbon/icons-react'
+import { Wrench, ArrowRight, Download, CheckCircle, TrendingUp, Factory } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 import Image from 'next/image'
 import gsap from 'gsap'
@@ -366,7 +367,7 @@ export default function CopperIndustryPage() {
 
                 <div className="relative">
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:shadow-xl group-hover:shadow-blue-500/30 group-hover:scale-105 transition-all">
-                    <Beaker className="w-7 h-7 text-white" />
+                    <Chemistry className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Tratamiento Orgánico SX</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
@@ -401,7 +402,7 @@ export default function CopperIndustryPage() {
 
                 <div className="relative">
                   <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20 group-hover:shadow-xl group-hover:shadow-amber-500/30 group-hover:scale-105 transition-all">
-                    <Zap className="w-7 h-7 text-white" />
+                    <Flash className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Desborre Celdas EW</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
@@ -436,7 +437,7 @@ export default function CopperIndustryPage() {
 
                 <div className="relative">
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 group-hover:scale-105 transition-all">
-                    <Filter className="w-7 h-7 text-white" />
+                    <FilterCarbon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Deshidratación Concentrados</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
@@ -471,7 +472,7 @@ export default function CopperIndustryPage() {
 
                 <div className="relative">
                   <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/20 group-hover:shadow-xl group-hover:shadow-teal-500/30 group-hover:scale-105 transition-all">
-                    <Droplets className="w-7 h-7 text-white" />
+                    <Humidity className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Tratamiento Borras SX</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
@@ -498,7 +499,7 @@ export default function CopperIndustryPage() {
 
                 <div className="relative">
                   <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20 group-hover:shadow-xl group-hover:shadow-cyan-500/30 group-hover:scale-105 transition-all">
-                    <Waves className="w-7 h-7 text-white" />
+                    <Humidity className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Clarificación Aguas</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
@@ -525,7 +526,7 @@ export default function CopperIndustryPage() {
 
                 <div className="relative">
                   <div className="w-14 h-14 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-slate-500/20 group-hover:shadow-xl group-hover:shadow-slate-500/30 group-hover:scale-105 transition-all">
-                    <Settings className="w-7 h-7 text-white" />
+                    <SettingsCarbon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Sólidos Finos</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
@@ -550,7 +551,7 @@ export default function CopperIndustryPage() {
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-white" />
+                    <Security className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="text-emerald-100 text-sm font-semibold mb-1">CONTINUIDAD PRODUCTIVA</div>
@@ -748,16 +749,16 @@ export default function CopperIndustryPage() {
                 <div className="space-y-4">
                   {[
                     { metric: '$500K-$2M+', label: 'Inversión CAPEX inicial' },
-                    { metric: '12-18 meses', label: 'Tiempo instalación' },
+                    { metric: '24-48 meses', label: 'Tiempo instalación' },
                     { metric: 'RCA modificada', label: 'Permisos ambientales' },
-                    { metric: 'Obsolescencia', label: 'Tecnología queda fija' }
+                    { metric: 'Dimensionamiento fijo', label: 'Equipos quedan mal dimensionados' }
                   ].map((item, i) => (
                     <div key={i} className="group relative flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
                       {/* Subtle corner decoration */}
                       <div className="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full opacity-40"></div>
 
                       <div className="relative w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                        <Shield className="w-5 h-5 text-red-600" />
+                        <Security className="w-5 h-5 text-red-600" />
                       </div>
                       <div className="relative">
                         <div className="font-bold text-gray-900 text-lg mb-1">{item.metric}</div>
@@ -768,14 +769,14 @@ export default function CopperIndustryPage() {
                 </div>
               </div>
 
-              {/* TSF Model */}
+              {/* Tecionic Model */}
               <div>
-                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Modelo TSF</div>
+                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Modelo Tecionic</div>
                 <div className="space-y-4">
                   {[
                     { metric: '$0', label: 'Sin inversión inicial' },
-                    { metric: '2-4 semanas', label: 'Movilización rápida' },
-                    { metric: 'Sin modificación', label: 'Permisos intactos' },
+                    { metric: '0-2 semanas', label: 'Movilización rápida' },
+                    { metric: 'Sin modificación', label: 'Permisos ambientales intactos' },
                     { metric: 'Siempre actualizado', label: 'Flota renovada' }
                   ].map((item, i) => (
                     <div key={i} className="group relative flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
@@ -836,8 +837,8 @@ export default function CopperIndustryPage() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-500 mb-2">Clientes</div>
-                  <div className="text-white font-medium">Radomiro Tomic, BHP</div>
-                  <div className="text-gray-400 text-sm">SQM, Capstone, Antofagasta</div>
+                  <div className="text-white font-medium">CODELCO Norte, BHP</div>
+                  <div className="text-gray-400 text-sm">Anglo American, Capstone, Antofagasta</div>
                 </div>
               </div>
             </div>

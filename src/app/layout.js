@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="min-h-screen bg-white" style={{fontFamily: 'Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif'}}>
+      <body className="min-h-screen bg-white" style={{fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'}}>
         <Header />
         <main>
           {children}

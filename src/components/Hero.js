@@ -3,7 +3,8 @@
 import React from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { Beaker, Droplets, Factory, Waves, Target, CheckCircle, ArrowRight, Play } from 'lucide-react'
+import { Chemistry, RainDrop, Industry, Flow, Location } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight, Play } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 
 // Move achievements outside component to avoid SSR dependency issues
@@ -12,28 +13,28 @@ const achievements = [
     value: "80%",
     label: "Reducción de Lodos",
     description: "Volúmenes a disponer",
-    icon: Droplets,
+    icon: RainDrop,
     color: "text-emerald-400"
   },
   {
     value: "+50%",
     label: "Capacidad Concentrados",
     description: "Procesamiento concentrados",
-    icon: Factory,
+    icon: Industry,
     color: "text-blue-400"
   },
   {
     value: "50%",
     label: "Reducción Arrastres",
     description: "Tratamiento orgánico",
-    icon: Waves,
+    icon: Flow,
     color: "text-purple-400"
   },
   {
     value: "<10ppm",
     label: "Retención Sólidos",
     description: "En orgánico SX",
-    icon: Target,
+    icon: Location,
     color: "text-green-400"
   }
 ]
@@ -179,7 +180,7 @@ export default function Hero() {
                   {/* Enhanced equipment placeholder */}
                   <div className="text-center z-10">
                     <div className="w-16 h-16 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
-                      <Beaker className="w-8 h-8 text-emerald-300 enterprise-pulse" />
+                      <Chemistry className="w-8 h-8 text-emerald-300 enterprise-pulse" />
                     </div>
                     <h3 className="text-lg font-bold text-white mb-1">Equipos Móviles TSF</h3>
                     <p className="text-emerald-300/80 text-sm">Separación sólido-líquido avanzada</p>

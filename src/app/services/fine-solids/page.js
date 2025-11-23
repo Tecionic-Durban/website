@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Filter, CheckCircle, ArrowRight, Truck, Shield, Settings, BarChart3, Clock, Zap, Activity, TrendingUp, Award, Target, Users, Globe, Play, Droplets, Waves, FlaskConical, Factory, RefreshCw, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { Chemistry, Connect, Filter, CheckmarkFilled, WaterDrop, DeliveryTruck, ArrowDown, Dashboard } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
 
 export default function FineSolidsServicePage() {
   const router = null // Will be imported when needed
@@ -48,28 +49,28 @@ export default function FineSolidsServicePage() {
       title: 'Análisis Granulométrico',
       description: 'Caracterización completa distribución tamaños y mineralogía sólidos finos',
       additionalInfo: 'Análisis laser diffraction • Microscopia electrónica • Química superficial',
-      icon: FlaskConical
+      icon: Chemistry
     },
     {
       step: '2',
       title: 'Conexión',
       description: 'Integración móvil con sistemas existentes de planta',
       additionalInfo: 'No utiliza equipamiento de planta cliente • Sistema 100% autónomo',
-      icon: Truck
+      icon: Connect
     },
     {
       step: '3',
       title: 'Filtración de Sólidos',
       description: 'Remoción sólidos ultra-finos mediante filtros prensa',
       additionalInfo: 'Monitoreo turbidez continuo • Optimización AI • Mantenimiento predictivo',
-      icon: Settings
+      icon: Filter
     },
     {
       step: '4',
       title: 'Verificación Calidad',
       description: 'Validación especificaciones: DLE <10 NTU, SX <20 mg/L TSS',
       additionalInfo: 'Control calidad multi-parámetro • Certificación procesos • Reporting automático',
-      icon: TrendingUp
+      icon: CheckmarkFilled
     }
   ]
 
@@ -508,7 +509,7 @@ export default function FineSolidsServicePage() {
 
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <Droplets className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                  <WaterDrop className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mb-3">Reducción Turbidez</h3>
@@ -537,7 +538,7 @@ export default function FineSolidsServicePage() {
 
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <Truck className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                  <DeliveryTruck className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mb-3">Equipos Móviles</h3>
@@ -566,7 +567,7 @@ export default function FineSolidsServicePage() {
 
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <Activity className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                  <ArrowDown className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mb-3">Reducción PPM</h3>
@@ -595,7 +596,7 @@ export default function FineSolidsServicePage() {
 
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <BarChart3 className="w-6 h-6 text-purple-600 group-hover:text-purple-700" />
+                  <Dashboard className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mb-3">Capacidad Alto Caudal</h3>
