@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Chemistry, Connect, Filter, CheckmarkFilled, WaterDrop, DeliveryTruck, ArrowDown, Dashboard } from '@carbon/icons-react'
+import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard } from '@carbon/icons-react'
 import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
 
 export default function FineSolidsServicePage() {
@@ -509,7 +509,7 @@ export default function FineSolidsServicePage() {
 
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <WaterDrop className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
+                  <Humidity className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mb-3">Reducción Turbidez</h3>
