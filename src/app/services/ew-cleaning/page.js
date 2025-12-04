@@ -743,45 +743,184 @@ export default function EWCleaningServicePage() {
               </div>
             </div>
 
-            {/* Feature 3: Productivity - Stats focus */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12">
+            {/* Feature 3: Productivity - Stats focus - Emerald theme */}
+            <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl p-8 lg:p-12">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
                     Rendimiento comprobado en altura
                   </h3>
-                  <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                    En Caserones, a más de 4.000 msnm, nuestro equipo completó el desborre de toda la nave con jornada 7x7, logrando mínimo 1 celda por día con cero incidentes.
+                  <p className="text-lg text-emerald-100 leading-relaxed mb-6">
+                    A más de 4.000 msnm, nuestro equipo completó el desborre de toda la nave con jornada 7x7, logrando mínimo 1 celda por día con cero incidentes.
                   </p>
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3 text-emerald-400 font-medium">
+                    <div className="flex items-center gap-3 text-white font-medium">
                       <CheckCircle className="w-5 h-5" />
                       <span>Operación comprobada sobre 4.000 msnm</span>
                     </div>
-                    <div className="flex items-center gap-3 text-emerald-400 font-medium">
+                    <div className="flex items-center gap-3 text-white font-medium">
                       <CheckCircle className="w-5 h-5" />
                       <span>Cero incidentes de seguridad</span>
                     </div>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-white/10 rounded-xl p-6 text-center">
+                  <div className="bg-white/20 rounded-xl p-6 text-center">
                     <div className="text-4xl font-black text-white mb-2">2-3</div>
-                    <div className="text-gray-400 text-sm">Celdas por turno de 12h</div>
+                    <div className="text-emerald-100 text-sm">Celdas por turno de 12h</div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-6 text-center">
+                  <div className="bg-white/20 rounded-xl p-6 text-center">
                     <div className="text-4xl font-black text-white mb-2">100%</div>
-                    <div className="text-gray-400 text-sm">Remoción de depósitos</div>
+                    <div className="text-emerald-100 text-sm">Remoción de depósitos</div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-6 text-center">
-                    <div className="text-4xl font-black text-emerald-400 mb-2">LME</div>
-                    <div className="text-gray-400 text-sm">Calidad mantenida</div>
+                  <div className="bg-white/20 rounded-xl p-6 text-center">
+                    <div className="text-4xl font-black text-white mb-2">LME</div>
+                    <div className="text-emerald-100 text-sm">Calidad mantenida</div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-6 text-center">
+                  <div className="bg-white/20 rounded-xl p-6 text-center">
                     <div className="text-4xl font-black text-white mb-2">18+</div>
-                    <div className="text-gray-400 text-sm">Años de experiencia</div>
+                    <div className="text-emerald-100 text-sm">Años de experiencia</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3.5: RISK REDUCTION & OPERATIONAL SIMPLICITY - Dark section like organic treatment */}
+      <section className="border-b border-gray-800 bg-gray-900 relative overflow-hidden">
+        {/* Columns of circles at top - transitioning from previous section (white) */}
+        <div className="absolute top-0 left-0 right-0 w-full flex justify-around z-0">
+          {[...Array(96)].map((_, col) => (
+            <div key={col} className="flex flex-col items-center gap-1">
+              <div className="w-3.5 h-3.5 rounded-full bg-gray-100"></div>
+              <div className="w-3 h-3 rounded-full bg-gray-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-gray-500"></div>
+              <div className="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+          {/* Risk Reduction Section */}
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
+              Seguridad sin compromisos
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Eliminamos los riesgos inherentes a la limpieza tradicional de celdas EW.
+            </p>
+          </div>
+
+          {/* Risk reduction cards - 2 columns like organic treatment */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-24">
+            {/* Card 1: No confined space */}
+            <div className="rounded-2xl border border-gray-700 bg-gray-800/50">
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-emerald-500/20">
+                    <Shield className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Sin ingreso a espacios confinados</h3>
+                    <p className="text-sm text-gray-400">Operación 100% externa</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Nuestro sistema de succión neumática opera desde fuera de la celda. Los operadores nunca necesitan ingresar a espacios confinados para realizar la limpieza.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300 text-sm">Elimina riesgos de asfixia</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300 text-sm">Sin necesidad de permisos especiales de trabajo</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300 text-sm">Cumple &quot;Reglas que Salvan Vidas&quot;</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: No acid exposure */}
+            <div className="rounded-2xl border border-gray-700 bg-gray-800/50">
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-emerald-500/20">
+                    <FlaskConical className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Sin exposición a ácidos</h3>
+                    <p className="text-sm text-gray-400">Sistema cerrado de aspiración</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  El electrolito ácido nunca queda expuesto al ambiente. El sistema cerrado de succión y filtración elimina el contacto directo con soluciones corrosivas.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300 text-sm">Cero riesgo de quemaduras químicas</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300 text-sm">Cumplimiento DS-43 MINSAL</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300 text-sm">Protocolo SG-SSSC certificado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Simplicidad Operacional - stats */}
+          <div className="pt-16 border-t border-gray-700">
+            <div className="max-w-3xl mb-12">
+              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+                Simplicidad Operacional
+              </h3>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Implementación rápida sin complejidad. Equipos móviles que llegan operativos a tu faena.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
+              {/* 24/7 Tecionic specialists */}
+              <div className="text-center lg:text-left">
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">24/7</div>
+                <div className="text-lg font-semibold text-white mb-2">Especialistas Tecionic</div>
+                <p className="text-gray-400 leading-relaxed">
+                  Personal certificado opera y mantiene los equipos en tu faena
+                </p>
+              </div>
+
+              {/* Fast deployment */}
+              <div className="text-center lg:text-left">
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">48h</div>
+                <div className="text-lg font-semibold text-white mb-2">Despliegue rápido</div>
+                <p className="text-gray-400 leading-relaxed">
+                  Flota regional lista para movilizar sin esperar fabricación
+                </p>
+              </div>
+
+              {/* Zero CAPEX */}
+              <div className="text-center lg:text-left">
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">$0</div>
+                <div className="text-lg font-semibold text-white mb-2">Inversión en capital</div>
+                <p className="text-gray-400 leading-relaxed">
+                  Servicio mensual todo incluido. Opex, no Capex.
+                </p>
               </div>
             </div>
           </div>
