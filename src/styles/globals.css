@@ -130,7 +130,18 @@
   
   /* Text Styles */
   .text-gradient {
-    @apply bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent;
+    background: linear-gradient(
+      45deg,
+      #10b981,
+      #34d399,
+      #6ee7b7,
+      #10b981
+    );
+    background-size: 300% 300%;
+    background-position: 50% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   /* Industrial Theme Elements */
@@ -696,6 +707,16 @@
 
 .animate-carousel.paused {
   animation-play-state: paused;
+}
+
+/* Progress fill animation for carousel indicators */
+@keyframes fillProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* Carousel Animation Reverse - GPU Accelerated */
@@ -1638,4 +1659,322 @@
     0 4px 12px rgba(16, 185, 129, 0.5),
     0 0 0 6px rgba(16, 185, 129, 0.2),
     inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   ORGANIC TREATMENT - INTERFACE LINE MOTIF
+   Represents clean phase separation in SX
+   ======================================== */
+
+/* Interface line breathing animation - subtle pulse */
+.interface-line-breathing {
+  animation: interfaceBreathing var(--cycle-duration, 8s) ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes interfaceBreathing {
+  0%, 100% {
+    d: path("M 0,50 Q 100,35 200,55 T 400,45 T 600,52 T 800,49 L 1000,50");
+    opacity: 0.8;
+  }
+  25% {
+    d: path("M 0,50 Q 100,42 200,52 T 400,48 T 600,51 T 800,50 L 1000,50");
+    opacity: 1;
+  }
+  50% {
+    d: path("M 0,50 Q 100,48 200,51 T 400,50 T 600,50 T 800,50 L 1000,50");
+    opacity: 1;
+  }
+  75% {
+    d: path("M 0,50 Q 100,45 200,53 T 400,47 T 600,51 T 800,50 L 1000,50");
+    opacity: 0.9;
+  }
+}
+
+/* Upper fill animation - follows the wave */
+.interface-fill-upper {
+  animation: interfaceFillUpper var(--cycle-duration, 8s) ease-in-out infinite;
+}
+
+@keyframes interfaceFillUpper {
+  0%, 100% {
+    d: path("M 0,50 Q 100,35 200,55 T 400,45 T 600,52 T 800,49 L 1000,50 L 1000,0 L 0,0 Z");
+  }
+  25% {
+    d: path("M 0,50 Q 100,42 200,52 T 400,48 T 600,51 T 800,50 L 1000,50 L 1000,0 L 0,0 Z");
+  }
+  50% {
+    d: path("M 0,50 Q 100,48 200,51 T 400,50 T 600,50 T 800,50 L 1000,50 L 1000,0 L 0,0 Z");
+  }
+  75% {
+    d: path("M 0,50 Q 100,45 200,53 T 400,47 T 600,51 T 800,50 L 1000,50 L 1000,0 L 0,0 Z");
+  }
+}
+
+/* Lower fill animation - follows the wave */
+.interface-fill-lower {
+  animation: interfaceFillLower var(--cycle-duration, 8s) ease-in-out infinite;
+}
+
+@keyframes interfaceFillLower {
+  0%, 100% {
+    d: path("M 0,50 Q 100,35 200,55 T 400,45 T 600,52 T 800,49 L 1000,50 L 1000,100 L 0,100 Z");
+  }
+  25% {
+    d: path("M 0,50 Q 100,42 200,52 T 400,48 T 600,51 T 800,50 L 1000,50 L 1000,100 L 0,100 Z");
+  }
+  50% {
+    d: path("M 0,50 Q 100,48 200,51 T 400,50 T 600,50 T 800,50 L 1000,50 L 1000,100 L 0,100 Z");
+  }
+  75% {
+    d: path("M 0,50 Q 100,45 200,53 T 400,47 T 600,51 T 800,50 L 1000,50 L 1000,100 L 0,100 Z");
+  }
+}
+
+/* Interface line glow pulse */
+.interface-line-glow {
+  animation: interfaceGlow 4s ease-in-out infinite;
+}
+
+@keyframes interfaceGlow {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(3px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(4px);
+  }
+}
+
+/* Interface line main stroke */
+.interface-line-main {
+  animation: interfaceMain 4s ease-in-out infinite;
+}
+
+@keyframes interfaceMain {
+  0%, 100% {
+    opacity: 0.8;
+    stroke-width: 1.5;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 2;
+  }
+}
+
+/* Phase separation zones - subtle gradient shift */
+.phase-organic {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(16, 185, 129, 0.012) 60%,
+    rgba(16, 185, 129, 0.025) 100%
+  );
+}
+
+.phase-aqueous {
+  background: linear-gradient(
+    180deg,
+    rgba(16, 185, 129, 0.03) 0%,
+    rgba(16, 185, 129, 0.045) 100%
+  );
+}
+
+/* Dark variant phases */
+.phase-organic-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0) 0%,
+    rgba(16, 185, 129, 0.02) 60%,
+    rgba(16, 185, 129, 0.04) 100%
+  );
+}
+
+.phase-aqueous-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    rgba(16, 185, 129, 0.07) 100%
+  );
+}
+
+/* Interface divider line */
+.interface-divider {
+  position: relative;
+}
+
+.interface-divider::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(16, 185, 129, 0.2) 20%,
+    rgba(16, 185, 129, 0.25) 50%,
+    rgba(16, 185, 129, 0.2) 80%,
+    transparent 100%
+  );
+}
+
+.interface-divider-top::after {
+  top: 0;
+}
+
+.interface-divider-bottom::after {
+  bottom: 0;
+}
+
+/* Settler cross-section effect */
+.settler-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.settler-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 185, 129, 0.01) 0%,
+    rgba(16, 185, 129, 0.02) 45%,
+    rgba(16, 185, 129, 0.025) 50%,
+    rgba(16, 185, 129, 0.035) 55%,
+    rgba(16, 185, 129, 0.04) 100%
+  );
+  pointer-events: none;
+}
+
+/* Spec band indicator - the target zone */
+.spec-band {
+  position: relative;
+}
+
+.spec-band::before,
+.spec-band::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(16, 185, 129, 0.1),
+    transparent
+  );
+}
+
+.spec-band::before {
+  top: 45%;
+}
+
+.spec-band::after {
+  top: 55%;
+}
+
+/* Return to spec animation - for metrics */
+.return-to-spec {
+  animation: returnToSpec 3s ease-out forwards;
+}
+
+@keyframes returnToSpec {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Reduced motion support for interface animations */
+@media (prefers-reduced-motion: reduce) {
+  .interface-line-breathing,
+  .interface-line-glow,
+  .interface-line-main,
+  .interface-fill-upper,
+  .interface-fill-lower {
+    animation: none !important;
+  }
+
+  .return-to-spec {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   EW CELL CLEANING - CURRENT FLOW MOTIF
+   Represents electrical current flowing through cells
+   ======================================== */
+
+/* Base current lines - subtle glow */
+.current-line-base {
+  opacity: 1;
+}
+
+/* Electric pulse animation - flows left to right */
+.electric-pulse {
+  animation: electricPulseFlow 4s ease-in-out infinite;
+}
+
+@keyframes electricPulseFlow {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1200px);
+    opacity: 0;
+  }
+}
+
+/* Faster secondary pulses */
+.electric-pulse-fast {
+  animation: electricPulseFlowFast 2.5s ease-in-out infinite;
+}
+
+@keyframes electricPulseFlowFast {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(1200px);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion support for current flow animations */
+@media (prefers-reduced-motion: reduce) {
+  .electric-pulse,
+  .electric-pulse-fast {
+    animation: none !important;
+  }
 }
