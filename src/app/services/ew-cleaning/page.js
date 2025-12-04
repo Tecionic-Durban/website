@@ -947,7 +947,7 @@ export default function EWCleaningServicePage() {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Seguridad certificada</h4>
                     <p className="text-gray-600 text-sm">
-                      Todo el proceso cumple con protocolos SG-SSSC, DS-43 MINSAL y "Reglas que Salvan Vidas". Cero incidentes en Caserones.
+                      Todo el proceso cumple con protocolos SG-SSSC, DS-43 MINSAL y &quot;Reglas que Salvan Vidas&quot;. Cero incidentes en Caserones.
                     </p>
                   </div>
                 </div>
