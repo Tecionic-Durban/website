@@ -20,7 +20,7 @@ export default function CasosExitoPage() {
         "TSF reducido de 444 a 153 segundos (-66%)"
       ],
       timeline: "18 meses",
-      image: "/case-study-organicos.jpg",
+      image: "/sx_plant_stock_photo.jpg",
       category: "Extracción por Solventes",
       location: "Operación Minera - América Latina",
       link: "/casos-de-exito/tratamiento-organico-sx",
@@ -66,7 +66,7 @@ export default function CasosExitoPage() {
         "Reducción 40% en mantenimiento correctivo"
       ],
       timeline: "6 meses",
-      image: "/case-study-2.jpg",
+      image: "/copper_concentrate_plant.jpg",
       category: "Electroobtención",
       location: "Norte de Chile",
       details: {
@@ -99,7 +99,7 @@ export default function CasosExitoPage() {
         "Disminución 50% en huella de agua"
       ],
       timeline: "12 meses",
-      image: "/case-study-3.jpg",
+      image: "/lithium_mine.jpg",
       category: "Procesamiento de Salmueras",
       location: "Salar de Atacama, Chile",
       details: {
@@ -132,7 +132,7 @@ export default function CasosExitoPage() {
         "Incremento 28% en capacidad de producción"
       ],
       timeline: "10 meses",
-      image: "/case-study-4.jpg",
+      image: "/zinc_processing_plant.jpg",
       category: "Electroobtención",
       location: "Valparaíso, Chile",
       details: {
@@ -168,7 +168,7 @@ export default function CasosExitoPage() {
         "Potencial recuperación de agua para reutilización"
       ],
       timeline: "3 meses",
-      image: "/case-study-enap.jpg",
+      image: "/oil_refinery.jpg",
       category: "Deshidratación de Lodos",
       location: "Refinería ENAP Concón, Chile",
       link: "/casos-de-exito/enap-lodos-petroleros",
