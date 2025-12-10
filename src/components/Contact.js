@@ -111,6 +111,8 @@ export default function Contact() {
               <span className="font-semibold">Santiago</span>
               <span className="text-emerald-400/60 mx-2">•</span>
               <span className="font-semibold">Calama</span>
+              <span className="text-emerald-400/60 mx-2">•</span>
+              <span className="font-semibold">Lima</span>
             </div>
           </div>
         </div>

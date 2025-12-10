@@ -193,7 +193,7 @@ export default function Services() {
               </button>
 
               <button
-                onClick={() => router.push('/casos-de-estudio')}
+                onClick={() => router.push('/casos-de-exito')}
                 className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm relative overflow-hidden sophisticated-hover"
                 suppressHydrationWarning
               >

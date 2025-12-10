@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { handleContactClick } from '@/utils/navigation'
-import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, Analytics, ChartLineData } from '@carbon/icons-react'
+import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, Analytics, ChartLineData, Meter, CertificateCheck, GasStation } from '@carbon/icons-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -51,9 +51,17 @@ export default function Header() {
               <div key={item.name} className="group relative">
                 {/* Dropdown triggers for Servicios, Industrias and Recursos */}
                 {(item.name === 'Servicios' || item.name === 'Industrias' || item.name === 'Recursos') ? (
-                  <div className="relative px-3 py-2 text-sm font-medium transition-colors duration-200 block text-gray-700 hover:text-emerald-600 cursor-pointer z-10">
+                  <div className="relative px-3 py-2 text-sm font-medium transition-colors duration-200 block text-gray-700 hover:text-emerald-600 cursor-default z-10">
                     <span className="flex items-center relative z-10">
-                      {item.name}
+                      <span className="relative">
+                        {item.name}
+                        {/* Balls positioned under text only */}
+                        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 flex items-center space-x-1.5 opacity-0 group-hover:opacity-100">
+                          <div className="ball ball-1 w-3 h-3 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full opacity-0 shadow-sm"></div>
+                          <div className="ball ball-2 w-3 h-3 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full opacity-0 shadow-sm"></div>
+                          <div className="ball ball-3 w-3 h-3 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full opacity-0 shadow-sm"></div>
+                        </div>
+                      </span>
                       <svg className="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
                       </svg>
@@ -68,7 +76,17 @@ export default function Header() {
                         : 'text-gray-700 hover:text-emerald-600'
                     }`}
                   >
-                    <span className="relative z-10">{item.name}</span>
+                    <span className="relative z-10">
+                      {item.name}
+                      {/* Balls positioned under text only */}
+                      {pathname !== item.href && (
+                        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 flex items-center space-x-1.5 opacity-0 group-hover:opacity-100">
+                          <div className="ball ball-1 w-3 h-3 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full opacity-0 shadow-sm"></div>
+                          <div className="ball ball-2 w-3 h-3 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full opacity-0 shadow-sm"></div>
+                          <div className="ball ball-3 w-3 h-3 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full opacity-0 shadow-sm"></div>
+                        </div>
+                      )}
+                    </span>
                     {pathname === item.href && (
                       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600"></div>
                     )}
@@ -102,6 +120,16 @@ export default function Header() {
                         >
                           Analítica de Datos
                         </button>
+                        <button
+                          onMouseEnter={() => setActiveServiceTab('calidad')}
+                          className={`w-full text-left px-6 py-3 text-sm font-medium transition-colors ${
+                            activeServiceTab === 'calidad'
+                              ? 'text-emerald-600 bg-emerald-50 border-l-2 border-emerald-600'
+                              : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50 border-l-2 border-transparent'
+                          }`}
+                        >
+                          Control de Calidad
+                        </button>
                       </div>
 
                       {/* Right Content - Services Grid */}
@@ -115,8 +143,8 @@ export default function Header() {
                                   <Filter className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Filtración de Borras</div>
-                                  <div className="text-xs text-gray-500">Sistemas móviles SX</div>
+                                  <div className="font-medium">Filtración y Deshidratación</div>
+                                  <div className="text-xs text-gray-500">De borras</div>
                                 </div>
                               </a>
 
@@ -196,12 +224,46 @@ export default function Header() {
                                   <div className="text-xs text-gray-500">Control de calidad borra</div>
                                 </div>
                               </a>
+
+                              <a href="/services/tif-measurement" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                                <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-purple-50 to-purple-100 group-hover/item:from-purple-500 group-hover/item:to-purple-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                  <Meter className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
+                                </div>
+                                <div>
+                                  <div className="font-medium">Medición TIF</div>
+                                  <div className="text-xs text-gray-500">Interfase orgánico/acuoso</div>
+                                </div>
+                              </a>
                             </div>
 
                             {/* Coming soon indicator */}
                             <div className="mt-6 pt-4 border-t border-gray-100">
                               <p className="text-xs text-gray-400">
                                 Nuevos servicios de analítica en desarrollo. Contáctenos para más información.
+                              </p>
+                            </div>
+                          </>
+                        )}
+
+                        {/* Control de Calidad Tab Content */}
+                        {activeServiceTab === 'calidad' && (
+                          <>
+                            <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                              <a href="/services/humidity-certification" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                                <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-blue-50 to-blue-100 group-hover/item:from-blue-500 group-hover/item:to-blue-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
+                                  <CertificateCheck className="w-5 h-5 text-blue-600 group-hover/item:text-white transition-colors duration-200" />
+                                </div>
+                                <div>
+                                  <div className="font-medium">Certificación de Humedad</div>
+                                  <div className="text-xs text-gray-500">TML y normas IMSBC</div>
+                                </div>
+                              </a>
+                            </div>
+
+                            {/* Coming soon indicator */}
+                            <div className="mt-6 pt-4 border-t border-gray-100">
+                              <p className="text-xs text-gray-400">
+                                Laboratorio móvil para certificación en faena. Próximamente más servicios de control de calidad.
                               </p>
                             </div>
                           </>
@@ -264,13 +326,8 @@ export default function Header() {
                             </a>
                             
                             <a href="/industries/crude-oil" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                  <ellipse cx="12" cy="6" rx="7" ry="2.5"/>
-                                  <path d="M5 6v12c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5V6"/>
-                                  <path d="M5 11c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5"/>
-                                  <path d="M5 16c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5"/>
-                                </svg>
+                              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-amber-700 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
+                                <RainDrop className="w-5 h-5 text-white" />
                               </div>
                               <div>
                                 <div className="font-medium">Petróleo Crudo</div>
@@ -400,41 +457,11 @@ export default function Header() {
                           </div>
                         </a>
                         
-                        <a href="/calculadora" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                          <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <div className="font-medium">Calculadora de Eficiencia</div>
-                            <div className="text-xs text-gray-500">Herramienta de cálculo interactiva</div>
-                          </div>
-                        </a>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {/* Hover Animation - 3 Balls Floating Left to Right (show on dropdown triggers and inactive regular links) */}
-                {((item.name === 'Servicios' || item.name === 'Industrias' || item.name === 'Recursos') || pathname !== item.href) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-0 w-full flex justify-center">
-                    <div className="relative">
-                      <div 
-                        className="ball ball-1 w-3 h-3 bg-emerald-800 rounded-full absolute opacity-0 shadow-sm"
-                        style={{left: '-15px', bottom: '-6px'}}
-                      ></div>
-                      <div 
-                        className="ball ball-2 w-3 h-3 bg-emerald-600 rounded-full absolute opacity-0 shadow-md"
-                        style={{left: '-1.5px', bottom: '-6px'}}
-                      ></div>
-                      <div 
-                        className="ball ball-3 w-3 h-3 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-full absolute opacity-0 shadow-sm"
-                        style={{left: '12px', bottom: '-6px'}}
-                      ></div>
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </nav>
@@ -499,7 +526,7 @@ export default function Header() {
                       Servicios Operacionales
                     </div>
                     <Link href="/services/filtration" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Filtración de Borras
+                      Filtración y Deshidratación
                     </Link>
                     <Link href="/services/organic-treatment" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       Tratamiento Orgánico
@@ -526,6 +553,9 @@ export default function Header() {
                     </Link>
                     <Link href="/services/tsf-monitoring" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
                       Monitoreo TSF
+                    </Link>
+                    <Link href="/services/tif-measurement" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
+                      Medición TIF
                     </Link>
                   </div>
                 )}
@@ -605,9 +635,6 @@ export default function Header() {
                     </Link>
                     <Link href="/cumplimiento" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       Cumplimiento
-                    </Link>
-                    <Link href="/calculadora" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Calculadora de Eficiencia
                     </Link>
                   </div>
                 )}

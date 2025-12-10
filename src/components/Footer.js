@@ -56,7 +56,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
                 <div>
-                  <p className="text-gray-300">Oficinas en Santiago y Calama</p>
+                  <p className="text-gray-300">Oficinas en Santiago, Calama y Lima</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

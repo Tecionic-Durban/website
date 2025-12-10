@@ -1,16 +1,149 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { Chemistry, Settings, Humidity, CheckmarkFilled, Industry, Security, Growth } from '@carbon/icons-react'
-import { CheckCircle, ArrowRight, Truck, BarChart3, Clock, Zap, Activity, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Humidity, CheckmarkFilled, Delivery, Mountain, DeliveryTruck, Certificate, CertificateCheck, Security, ChartLine, Enterprise, ArrowRight as ArrowRightCarbon, ChevronLeft, ChevronRight, Phone, Currency, AppConnectivity, Minimize, License, WorkflowAutomation } from '@carbon/icons-react'
+import { CheckCircle, DollarSign, TrendingUp, Clock, ArrowRight } from 'lucide-react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import CompressionAnimation from '@/components/CompressionAnimation'
+
+gsap.registerPlugin(ScrollTrigger)
+
+// SSR-safe useLayoutEffect
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
+
+// Expandable Equipment Benefits Component
+function EquipmentBenefits() {
+  const [expandedIndex, setExpandedIndex] = useState(0)
+
+  const benefits = [
+    {
+      title: 'Móvil y compacto',
+      description: 'Solo 35 m² de huella operativa. Sin obras civiles, sin permisos de construcción. Se instala donde tienes espacio y se reubica cuando cambia la operación.',
+      icon: Delivery,
+      image: '/filtro_prensa_1200_drone_view.png'
+    },
+    {
+      title: 'Equipamiento completo integrado',
+      description: 'Bomba peristáltica, bombas de diafragma, flujómetro calibrado, placas, telas y repuestos críticos incluidos. Sin coordinar proveedores ni órdenes de compra separadas.',
+      icon: AppConnectivity,
+      image: '/filtro_prensa_movil.png'
+    },
+    {
+      title: 'Instalación temporal sin permisos',
+      description: 'Sin obras civiles, sin modificaciones permanentes a tu planta, sin riesgo regulatorio. Se instala, opera el tiempo necesario, y se retira cuando termina el servicio.',
+      icon: License,
+      image: '/filtros_acoplados.png'
+    }
+  ]
+
+  return (
+    <div className="grid lg:grid-cols-2 gap-12">
+      {/* Left: Expandable list */}
+      <div>
+        {benefits.map((benefit, index) => {
+          const isExpanded = expandedIndex === index
+          const Icon = benefit.icon
+
+          return (
+            <div key={index}>
+              {/* Top border line */}
+              <div className="border-t border-gray-200"></div>
+
+              {/* Header - Icon + Title + Plus/Minus */}
+              <button
+                onClick={() => setExpandedIndex(index)}
+                className="w-full flex items-center justify-between py-6 text-left group cursor-pointer"
+              >
+                <div className="flex items-center gap-4">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
+                    isExpanded ? 'bg-emerald-100' : 'bg-gray-100 group-hover:bg-emerald-50'
+                  }`}>
+                    <Icon className={`w-5 h-5 transition-colors ${
+                      isExpanded ? 'text-emerald-600' : 'text-gray-500 group-hover:text-emerald-600'
+                    }`} />
+                  </div>
+                  <span className={`font-semibold text-lg transition-colors ${
+                    isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
+                  }`}>
+                    {benefit.title}
+                  </span>
+                </div>
+                <span className={`text-2xl font-light transition-colors ${
+                  isExpanded ? 'text-emerald-600' : 'text-gray-400 group-hover:text-emerald-600'
+                }`}>
+                  {isExpanded ? '−' : '+'}
+                </span>
+              </button>
+
+              {/* Expanded Content */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="pb-8">
+                  <p className="text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+        {/* Bottom border line */}
+        <div className="border-t border-gray-200"></div>
+      </div>
+
+      {/* Right: Image - changes based on selected item */}
+      <div className="lg:sticky lg:top-24 lg:self-start">
+        <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
+          <Image
+            src={benefits[expandedIndex].image}
+            alt={benefits[expandedIndex].title}
+            width={600}
+            height={450}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function ConcentrateDehydrationServicePage() {
-  const router = null // Will be imported when needed
   const heroRef = useRef(null)
+  const heroImageRef = useRef(null)
   const overviewRef = useRef(null)
+  const specsRef = useRef(null)
   const processRef = useRef(null)
-  const benefitsRef = useRef(null)
   const caseStudiesRef = useRef(null)
+  const statsRef = useRef(null)
+
+  // Refs for scrollytelling
+  const scrollyContainerRef = useRef(null)
+  const scrollyLeftRef = useRef(null)
+  const statRefs = useRef([])
+  const [activeTheme, setActiveTheme] = useState(0)
+
+  // Theme content for left column
+  const themeContent = [
+    {
+      label: 'Costos',
+      title: 'Transporte más eficiente, sin pérdidas evitables',
+      description: 'Concentrado deshidratado es concentrado más liviano. Menos agua significa menos peso muerto en cada camión y cada embarque, reduciendo el costo por tonelada de metal transportado.'
+    },
+    {
+      label: 'Cumplimiento',
+      title: 'Especificaciones cumplidas, riesgos mitigados',
+      description: 'Alcanzar la humedad correcta no es solo cumplir un número. Es evitar que el buque rechace tu carga, que el espesador se sature durante una mantención, o que un cliente renegocie un contrato. Filtración confiable es la línea entre operación normal y crisis evitable.'
+    }
+  ]
+
+
+
 
   // Progressive disclosure on scroll
   useEffect(() => {
@@ -33,7 +166,7 @@ export default function ConcentrateDehydrationServicePage() {
       })
     }, observerOptions)
 
-    const refs = [heroRef, overviewRef, processRef, benefitsRef, caseStudiesRef]
+    const refs = [heroRef, overviewRef, specsRef, processRef, caseStudiesRef]
     refs.forEach(ref => {
       if (ref.current) {
         observer.observe(ref.current)
@@ -43,717 +176,880 @@ export default function ConcentrateDehydrationServicePage() {
     return () => observer.disconnect()
   }, [])
 
-  const processSteps = [
-    {
-      step: '1',
-      title: 'Análisis Mineralógico',
-      description: 'Composición mineralógica del concentrado',
-      additionalInfo: 'Análisis completo de minerales',
-      icon: Chemistry
-    },
-    {
-      step: '2',
-      title: 'Acondicionamiento',
-      description: 'Preparación pulpa y ajuste parámetros operacionales',
-      additionalInfo: 'Optimización concentración sólidos',
-      icon: Settings
-    },
-    {
-      step: '3',
-      title: 'Deshidratación',
-      description: 'Equipos de alta eficiencia para reducción de humedad',
-      additionalInfo: 'Monitoreo presión y caudal • Control humedad tiempo real',
-      icon: Humidity
-    },
-    {
-      step: '4',
-      title: 'Control Calidad',
-      description: 'Verificación especificaciones finales y certificación',
-      additionalInfo: '',
-      icon: CheckmarkFilled
-    }
-  ]
+  // Hero image entrance animation
+  useIsomorphicLayoutEffect(() => {
+    if (!heroImageRef.current) return
 
-  const useCases = [
-    {
-      industry: 'Concentrados Cobre',
-      application: 'Deshidratación Cu concentrados para fundición',
-      challenge: 'Humedad >12% genera penalizaciones comerciales y aumenta costos transporte',
-      solution: 'Filtros prensa alta presión reduciendo humedad hasta 8% final',
-      result: 'Reducción 30% costos transporte y cumplimiento especificaciones comerciales',
-      client: 'Codelco - División El Teniente',
-      savings: 'Ahorros 25% logística'
-    },
-    {
-      industry: 'Concentrados Zinc',
-      application: 'Control humedad Zn concentrados',
-      challenge: 'Requerimientos estrictos fundición (<10% humedad) y calidad granulométrica',
-      solution: 'Centrífugas alta velocidad con control automático humedad',
-      result: 'Cumplimiento 100% especificaciones comerciales',
-      client: 'Nexa Resources',
-      savings: 'Bonificación calidad'
-    },
-    {
-      industry: 'Concentrados Oro',
-      application: 'Recuperación valores en deshidratación',
-      challenge: 'Pérdidas metálicas en agua filtrada y riesgo contaminación',
-      solution: 'Sistemas cerrados con recuperación agua y recirculación',
-      result: 'Máxima recuperación valores y cero pérdidas',
-      client: 'Yamana Gold',
-      savings: 'Recuperación total'
-    }
-  ]
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        heroImageRef.current,
+        { opacity: 0, y: 30, scale: 0.98 },
+        { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power2.out', delay: 0.2 }
+      )
+    }, heroImageRef)
+
+    return () => ctx.revert()
+  }, [])
+
+  // Simplicidad Operacional stats animation on scroll
+  useIsomorphicLayoutEffect(() => {
+    if (!statsRef.current) return
+
+    const ctx = gsap.context(() => {
+      const fadeElements = statsRef.current.querySelectorAll('.stat-fade')
+      fadeElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              once: true
+            }
+          }
+        )
+      })
+
+      const countElement = statsRef.current.querySelector('.stat-count')
+      if (countElement) {
+        const target = parseInt(countElement.dataset.target, 10)
+
+        ScrollTrigger.create({
+          trigger: countElement,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            const counter = { val: 0 }
+            gsap.to(counter, {
+              val: target,
+              duration: 1.5,
+              ease: 'power2.out',
+              onUpdate: () => {
+                countElement.textContent = Math.round(counter.val) + 'h'
+              }
+            })
+          }
+        })
+      }
+    }, statsRef)
+
+    return () => ctx.revert()
+  }, [])
+
+  // GSAP ScrollTrigger for scrollytelling - pin left, update theme on scroll
+  useIsomorphicLayoutEffect(() => {
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 1024px)', () => {
+      // Pin left column while scrolling through all stats
+      if (scrollyContainerRef.current && scrollyLeftRef.current) {
+        ScrollTrigger.create({
+          trigger: scrollyContainerRef.current,
+          start: 'top top+=88',
+          end: 'bottom bottom-=300',
+          pin: scrollyLeftRef.current,
+          pinSpacing: false
+        })
+      }
+
+      // Create triggers for each theme section (stats 0-3, 4-7, 8-11)
+      statRefs.current.forEach((ref, index) => {
+        if (!ref) return
+        const themeIndex = Math.floor(index / 4)
+
+        ScrollTrigger.create({
+          trigger: ref,
+          start: 'top center',
+          end: 'bottom center',
+          onEnter: () => setActiveTheme(themeIndex),
+          onEnterBack: () => setActiveTheme(themeIndex)
+        })
+      })
+    })
+
+    return () => mm.revert()
+  }, [])
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Enterprise-Grade Concentrate Dehydration Hero */}
-      <section ref={heroRef} className="relative bg-white overflow-visible">
-        {/* TSF Signature Dehydration Theme */}
-        <div className="absolute inset-0 overflow-hidden" style={{
-          maskImage: `linear-gradient(to left,
-            rgba(0,0,0,1) 0%,
-            rgba(0,0,0,0.9) 20%,
-            rgba(0,0,0,0.7) 40%,
-            rgba(0,0,0,0.4) 65%,
-            rgba(0,0,0,0.15) 85%,
-            rgba(0,0,0,0.05) 100%
-          )`,
-          WebkitMaskImage: `linear-gradient(to left,
-            rgba(0,0,0,1) 0%,
-            rgba(0,0,0,0.9) 20%,
-            rgba(0,0,0,0.7) 40%,
-            rgba(0,0,0,0.4) 65%,
-            rgba(0,0,0,0.15) 85%,
-            rgba(0,0,0,0.05) 100%
-          )`
-        }}>
-          {/* Base gradient foundation */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-white to-gray-50/50"></div>
+    <div className="min-h-screen bg-white">
+      {/* HERO SECTION */}
+      <section ref={heroRef} className="relative overflow-hidden bg-white">
+        {/* Compression Animation Background - The signature motif */}
+        <CompressionAnimation variant="hero" cycleDuration={10} className="opacity-60" />
 
-          {/* SIGNATURE DEHYDRATION PATTERN - Like water removal */}
-          <div className="absolute inset-0 opacity-[0.12]" style={{
-            backgroundImage: `
-              linear-gradient(30deg, transparent 48%, rgba(8, 145, 178, 0.4) 49%, rgba(8, 145, 178, 0.4) 51%, transparent 52%),
-              linear-gradient(150deg, transparent 48%, rgba(8, 145, 178, 0.3) 49%, rgba(8, 145, 178, 0.3) 51%, transparent 52%),
-              linear-gradient(90deg, transparent 48%, rgba(8, 145, 178, 0.2) 49%, rgba(8, 145, 178, 0.2) 51%, transparent 52%)
-            `,
-            backgroundSize: '60px 60px, 60px 60px, 120px 120px'
-          }}></div>
+        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            {/* Left Column - Hero Content */}
+            <div className="lg:col-span-6">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
+                Recupera valor con <span className="text-gradient">deshidratación de alta presión</span>
+              </h1>
 
-          {/* CONCENTRATE PARTICLES PATTERN */}
-          <div className="absolute inset-0 opacity-[0.12]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230891b2' fill-opacity='0.6'%3E%3Ccircle cx='15' cy='15' r='3'/%3E%3Ccircle cx='45' cy='15' r='4'/%3E%3Ccircle cx='65' cy='15' r='2'/%3E%3Ccircle cx='25' cy='45' r='5'/%3E%3Ccircle cx='55' cy='45' r='3'/%3E%3Ccircle cx='35' cy='65' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '80px 80px'
-          }}></div>
-
-          {/* DEHYDRATION FLOW LINES */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-[0.12]">
-            {/* Horizontal moisture streams */}
-            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/60 to-transparent"></div>
-            <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
-
-            {/* Vertical filtration columns */}
-            <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-cyan-600/50 to-transparent"></div>
-            <div className="absolute left-3/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/40 to-transparent"></div>
-
-            {/* Diagonal pressure lines */}
-            <div className="absolute top-0 left-0 w-full h-full" style={{
-              background: `
-                linear-gradient(45deg, transparent 49%, rgba(8, 145, 178, 0.15) 49.5%, rgba(8, 145, 178, 0.15) 50.5%, transparent 51%),
-                linear-gradient(-45deg, transparent 49%, rgba(8, 145, 178, 0.1) 49.5%, rgba(8, 145, 178, 0.1) 50.5%, transparent 51%)
-              `,
-              backgroundSize: '200px 200px, 200px 200px'
-            }}></div>
-          </div>
-
-          {/* MOISTURE DROPLET INDICATORS */}
-          <div className="absolute inset-0 opacity-[0.12]">
-            {/* Large droplets (wet concentrate) */}
-            <div className="absolute top-1/6 left-[15%] w-4 h-4 bg-cyan-600/30 rounded-full animate-pulse"></div>
-            <div className="absolute top-1/3 left-[12%] w-3 h-3 bg-cyan-500/25 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="absolute top-1/2 left-[18%] w-5 h-5 bg-cyan-700/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-
-            {/* Medium droplets (processing) */}
-            <div className="absolute top-2/5 left-1/2 w-2 h-2 bg-cyan-500/40 rounded-full animate-ping" style={{animationDelay: '0.3s'}}></div>
-            <div className="absolute top-3/5 left-1/2 w-2.5 h-2.5 bg-cyan-600/35 rounded-full animate-ping" style={{animationDelay: '0.8s'}}></div>
-
-            {/* Small droplets (dry output) */}
-            <div className="absolute top-1/4 right-[15%] w-1.5 h-1.5 bg-cyan-400/50 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
-            <div className="absolute top-1/2 right-[12%] w-1 h-1 bg-cyan-500/45 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
-            <div className="absolute top-2/3 right-[18%] w-1.5 h-1.5 bg-cyan-600/40 rounded-full animate-ping" style={{animationDelay: '2.5s'}}></div>
-          </div>
-        </div>
-
-        {/* Large Dehydration Icon - Premium Processing */}
-        <div className="absolute -top-32 -right-40 w-96 h-96 pointer-events-none">
-          <div className="relative w-full h-full">
-            <Humidity className="w-full h-full text-cyan-500/8 transform rotate-12" />
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-full blur-3xl"></div>
-          </div>
-        </div>
-
-
-        {/* Enterprise Navigation Bar */}
-        <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">
-          <div className="max-w-7xl mx-auto px-8 py-3">
-            <div className="flex items-center justify-between">
-              <nav className="flex items-center space-x-1 text-sm">
-                <span className="text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">Servicios</span>
-                <span className="text-slate-300 mx-2">/</span>
-                <span className="text-cyan-600 font-medium">Deshidratación de Concentrados</span>
-              </nav>
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-2 text-xs text-slate-500">
-                  <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
-                  <span>Disponible 24/7</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Enterprise Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-8 pt-12 pb-16">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column - Premium Content */}
-            <div className="lg:col-span-7 overflow-visible">
-              {/* Main Heading */}
-              <div className="mb-6 relative z-[100]">
-                <h1 className="text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-black tracking-tight text-slate-900 leading-[0.9] mb-4">
-                  Deshidratación
-                  <span className="block text-cyan-600">
-                    de Concentrados
-                  </span>
-                </h1>
-                <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
-                  170 ton/día • 85-92% Reducción Humedad • Sistemas Móviles
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
-                Sistemas especializados de deshidratación para concentrados mineros con
-                <span className="font-bold text-slate-900"> hasta 92% reducción de humedad</span>.
-                <span className="text-cyan-600 font-medium"> Cumplimiento especificaciones</span> comerciales
-                para fundición y transporte optimizado.
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+                Menos agua significa más producto útil. Cumple especificaciones comerciales, reduce costos de transporte y recupera valor de tus concentrados y lodos con filtros prensa móviles de alta presión.
               </p>
 
+              <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
+                Solicitar Evaluación
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
             </div>
 
             {/* Right Column - Hero Image */}
-            <div className="lg:col-span-5 relative">
-              {/* Enhanced Background Elements */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute -top-4 -right-4 w-32 h-32 bg-gradient-to-br from-cyan-600/15 to-cyan-700/8 rounded-full opacity-40 animate-float-slow blur-sm"></div>
-                <div className="absolute bottom-8 -left-4 w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-cyan-600/12 rounded-full opacity-35 animate-float-medium blur-sm"></div>
-                <div className="absolute top-1/3 right-4 w-20 h-20 bg-gradient-to-br from-cyan-400/18 to-cyan-500/10 rounded-full opacity-30 animate-float-slow blur-md"></div>
-
-                <div className="absolute bottom-1/4 right-8 opacity-25">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full enterprise-pulse"></div>
-                    <div className="w-2 h-2 bg-cyan-500 rounded-full enterprise-pulse" style={{animationDelay: '0.3s'}}></div>
-                    <div className="w-2 h-2 bg-cyan-600 rounded-full enterprise-pulse" style={{animationDelay: '0.6s'}}></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hero Image Container */}
-              <div className="relative z-10 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                {/* Placeholder for concentrate dehydration equipment image */}
-                <div className="w-full h-full bg-gradient-to-br from-cyan-100 via-cyan-50 to-white flex items-center justify-center border border-cyan-200/50">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 bg-cyan-500/10 rounded-full flex items-center justify-center">
-                      <Humidity className="w-12 h-12 text-cyan-600" />
-                    </div>
-                    <h3 className="text-lg font-bold text-cyan-800 mb-2">Sistema de Deshidratación</h3>
-                    <p className="text-sm text-cyan-600">Filtros prensa y centrífugas móviles</p>
-                  </div>
-                </div>
-
-                {/* Technical overlay indicators */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                  <div className="flex items-center space-x-2 text-xs">
-                    <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
-                    <span className="font-medium text-gray-700">Sistema Activo</span>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                  <div className="text-xs text-gray-700">
-                    <div className="font-bold">92%</div>
-                    <div className="text-gray-500">Reducción</div>
-                  </div>
-                </div>
+            <div className="lg:col-span-6">
+              <div ref={heroImageRef} className="rounded-xl overflow-hidden shadow-2xl shadow-gray-200/50">
+                <Image
+                  src="/filtro_prensa_1200_drone_view.png"
+                  alt="Sistema de deshidratación de alta presión Tecionic"
+                  width={800}
+                  height={400}
+                  className="object-cover w-full h-auto"
+                  priority
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Overview Section - Progressive Disclosure */}
-      <section ref={overviewRef} className="py-24 bg-gradient-to-br from-cyan-50/30 via-white to-gray-50 relative overflow-hidden" style={{zIndex: 1}}>
-        {/* Enterprise Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{zIndex: 1}}>
-          <div className="absolute top-32 left-[5%] w-36 h-36 bg-gradient-to-br from-cyan-600/10 to-cyan-700/5 rounded-full opacity-20 animate-float-slow blur-sm"></div>
-          <div className="absolute bottom-24 right-[8%] w-28 h-28 bg-gradient-to-br from-cyan-500/15 to-cyan-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
-
-          {/* Strategic three ball brand element */}
-          <div className="absolute top-20 right-[12%] opacity-20">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full enterprise-pulse"></div>
-              <div className="w-2 h-2 bg-cyan-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="w-2 h-2 bg-cyan-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-            </div>
-          </div>
+      {/* SECTION 2: KEY BENEFITS */}
+      <section ref={overviewRef} className="bg-gradient-to-br from-emerald-50/50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 blur-sm"></div>
+          <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 relative">
-          {/* Enterprise Header */}
-          <div className="text-center mb-20 progressive-reveal">
-            <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-400/5 rounded-full text-cyan-700 text-sm font-semibold border border-cyan-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
-              <div className="flex items-center space-x-1 mr-3">
-                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full enterprise-pulse"></div>
-                <div className="w-1 h-2 bg-cyan-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-1.5 h-1.5 bg-cyan-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-              </div>
-              Tecnología de Deshidratación Avanzada
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+          <div className="max-w-4xl mb-16">
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
+              Valor en cada gota que eliminamos
+            </h2>
+          </div>
+
+          <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-0">
+            {/* 3-ball divider - left edge */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
-              Deshidratación Concentrados
-              <span className="block text-cyan-600 gradient-text-animated">de Alta Eficiencia</span>
-            </h2>
-
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
-              Tecnología especializada para deshidratación de concentrados mineros con
-              <span className="font-semibold text-cyan-600">cumplimiento especificaciones comerciales</span>.
-              Reducción de humedad hasta niveles requeridos por fundiciones.
-            </p>
-          </div>
-
-          {/* Feature Cards */}
-          <div className="grid lg:grid-cols-4 gap-6 mb-20 progressive-reveal">
-            {[
-              {
-                icon: Humidity,
-                title: "92% Reducción Humedad",
-                description: "Eficiencia máxima en eliminación de humedad para cumplir especificaciones comerciales",
-                color: "cyan",
-                metric: "92%"
-              },
-              {
-                icon: Industry,
-                title: "170 Ton/día Capacidad",
-                description: "Procesamiento alto volumen de concentrados con equipos móviles especializados",
-                color: "blue",
-                metric: "170t/d"
-              },
-              {
-                icon: Security,
-                title: "Cumplimiento 100%",
-                description: "No requiere de nuevos permisos ambientales",
-                color: "emerald",
-                metric: "100%"
-              },
-              {
-                icon: Growth,
-                title: "ROI <6 Meses",
-                description: "Retorno rápido por ahorro en costos transporte y bonificaciones calidad",
-                color: "slate",
-                metric: "<6m"
-              }
-            ].map((feature, index) => (
-              <div key={index} className="group relative bg-white rounded-xl p-6 border border-cyan-100/50 shadow-sm hover:shadow-lg transition-all duration-300 progressive-reveal overflow-hidden hover:-translate-y-1">
-                {/* Simplified color accent bar */}
-                <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500 group-hover:w-2 transition-all duration-300"></div>
-
-                {/* Content */}
-                <div className="relative z-10 ml-3">
-                  {/* Icon and metric */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="relative p-3 bg-cyan-100 rounded-lg group-hover:bg-cyan-200 transition-colors duration-300">
-                      <feature.icon className="w-7 h-7 text-cyan-600" />
-                    </div>
-
-                    <div className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-100 text-cyan-700 border border-cyan-200">
-                      {feature.metric}
-                    </div>
-                  </div>
-
-                  {/* Title and description */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-gray-800 transition-colors">
-                    {feature.title}
-                  </h3>
-
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors">
-                    {feature.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-cyan-600 group-hover:text-cyan-700 transition-colors duration-300">
-                    <span className="text-sm font-medium">Más información</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                  </div>
-                </div>
-
-                {/* Hover indicator */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 to-cyan-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            {/* Benefit 1: Transport cost reduction */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <DeliveryTruck className="w-5 h-5 text-emerald-600" />
               </div>
-            ))}
-          </div>
-
-          {/* Industry Applications Matrix */}
-          <div className="mb-20">
-            <div className="text-center mb-12 progressive-reveal">
-              <h3 className="text-4xl font-black text-gray-900 mb-4">Concentrados por Mineral</h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Soluciones especializadas de deshidratación para cada tipo de concentrado con resultados garantizados
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Reduce costos de transporte</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Menos agua = menos peso. Ahorra hasta 30% en costos logísticos.
               </p>
             </div>
 
-            <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 px-8 py-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Aplicaciones de Deshidratación TSF</h3>
-                    <p className="text-slate-300 text-sm">Resultados comprobados por tipo de concentrado mineral</p>
-                  </div>
-                  <div className="text-cyan-400 text-sm font-mono">VALIDADO ✓</div>
-                </div>
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+            </div>
+
+            {/* Benefit 2: Meet commercial specs */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <CertificateCheck className="w-5 h-5 text-emerald-600" />
               </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Cumple especificaciones</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Alcanza la humedad requerida por fundiciones. Evita penalizaciones comerciales.
+              </p>
+            </div>
 
-              {/* Applications Grid */}
-              <div className="p-8">
-                <div className="space-y-4">
-                  {[
-                    {
-                      element: "Cu",
-                      industry: "Concentrados Cobre",
-                      application: "Deshidratación Cu para fundición",
-                      performance: "30% Ahorro Transporte",
-                      specs: "Cumplimiento estándares comerciales de humedad",
-                      color: "#ea580c",
-                      status: "Operativo"
-                    }
-                  ].map((app, index) => (
-                    <div key={index} className="group relative bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all duration-300 border border-gray-100">
-                      <div className="flex items-start space-x-6">
-                        {/* Chemical Element Icon */}
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 rounded-xl flex items-center justify-center" style={{backgroundColor: `${app.color}15`}}>
-                            <div className="text-center">
-                              <div className="text-sm font-black" style={{color: app.color}}>{app.element}</div>
-                              <div className="text-xs font-medium" style={{color: app.color}}>conc.</div>
-                            </div>
-                          </div>
-                        </div>
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+            </div>
 
-                        {/* Industry & Application */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between mb-2">
-                            <div>
-                              <h4 className="text-lg font-bold text-gray-900">{app.industry}</h4>
-                              <p className="text-sm text-gray-600">{app.application}</p>
-                            </div>
-                            <div className="text-right">
-                              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium"
-                                   style={{backgroundColor: `${app.color}15`, color: app.color}}>
-                                {app.status}
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Performance Metrics */}
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">RENDIMIENTO</div>
-                              <div className="inline-flex items-center px-3 py-2 rounded-lg text-sm font-bold text-white"
-                                   style={{backgroundColor: app.color}}>
-                                {app.performance}
-                              </div>
-                            </div>
-                            <div>
-                              <div className="text-xs font-medium text-gray-500 mb-1">ESPECIFICACIONES</div>
-                              <div className="text-sm text-gray-700 font-medium">{app.specs}</div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Performance Indicator */}
-                        <div className="flex-shrink-0 w-16">
-                          <div className="text-center">
-                            <div className="w-12 h-12 mx-auto rounded-full border-4 flex items-center justify-center"
-                                 style={{borderColor: `${app.color}30`}}>
-                              <div className="w-6 h-6 rounded-full" style={{backgroundColor: app.color}}></div>
-                            </div>
-                            <div className="text-xs font-medium text-gray-500 mt-1">TSF</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            {/* Benefit 3: Production increase */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <Currency className="w-5 h-5 text-emerald-600" />
               </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Incrementa tu producción</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sube producción sin ampliar la planta. No dejes que el dimensionamiento de equipos te limite.
+              </p>
+            </div>
+
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+            </div>
+
+            {/* Benefit 4: Storage flexibility */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <Enterprise className="w-5 h-5 text-emerald-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Almacenamiento simplificado</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Concentrado seco se apila y almacena sin canchas de relaves ni piscinas de contención.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section ref={processRef} className="py-24 bg-gradient-to-br from-gray-50 via-white to-cyan-50/30 relative overflow-hidden">
-        {/* Enterprise Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-32 left-[10%] w-32 h-32 bg-gradient-to-br from-cyan-600/10 to-cyan-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
-          <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-gradient-to-br from-cyan-500/15 to-cyan-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
+      {/* SECTION 3: DARK - Three themes */}
+      <section ref={specsRef} className="border-b border-gray-800 bg-gray-900 relative">
+        {/* Columns of circles at top */}
+        <div className="absolute top-0 left-0 right-0 w-full flex justify-around z-0">
+          {[...Array(96)].map((_, col) => (
+            <div key={col} className="flex flex-col items-center gap-1">
+              <div className="w-3.5 h-3.5 rounded-full bg-gray-200"></div>
+              <div className="w-3 h-3 rounded-full bg-gray-400"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+              <div className="w-2 h-2 rounded-full bg-gray-800"></div>
+            </div>
+          ))}
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 relative">
-          {/* Enterprise Header */}
-          <div className="text-center mb-20 progressive-reveal">
-            <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-400/5 rounded-full text-cyan-700 text-sm font-semibold border border-cyan-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 enterprise-pulse"></div>
-              Proceso de Deshidratación Optimizado
-            </div>
+        <div className="max-w-[1400px] mx-auto px-8 py-24 lg:py-32 relative z-10">
 
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
-              Deshidratación
-              <span className="block text-cyan-600 gradient-text-animated">en 4 Etapas</span>
-            </h2>
+          {/* SCROLLYTELLING: One sticky left, all stats scroll on right */}
+          <div ref={scrollyContainerRef} className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left - Sticky with dynamic content */}
+            <div ref={scrollyLeftRef} className="lg:pr-8 pt-8">
+              {/* Theme indicator pills */}
+              <div className="flex gap-2 mb-6">
+                {themeContent.map((theme, idx) => (
+                  <button
+                    key={idx}
+                    className={`px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                      activeTheme === idx
+                        ? 'bg-emerald-500 text-white'
+                        : 'bg-gray-800 text-gray-500'
+                    }`}
+                  >
+                    {theme.label}
+                  </button>
+                ))}
+              </div>
 
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
-              Metodología probada de <span className="font-semibold text-cyan-600">4 etapas integradas</span> que garantiza máxima reducción de humedad en concentrados.
-            </p>
-          </div>
-
-          {/* Process Flow Map */}
-          <div className="max-w-7xl mx-auto">
-            <div className="relative">
-              {/* Process Flow Map Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
-                {processSteps.map((step, index) => (
-                  <div key={index} className="relative progressive-reveal">
-                    {/* Connection Lines */}
-                    {index < 3 && (
-                      <div className="hidden lg:block absolute top-8 -right-3 z-0">
-                        <div className="w-6 h-0.5 bg-gradient-to-r from-cyan-500 to-cyan-400"></div>
-                        <div className="absolute -right-1 -top-1 w-2 h-2 bg-cyan-500 rounded-full"></div>
-                      </div>
-                    )}
-
-                    {/* Process Step Card */}
-                    <div className="relative bg-white rounded-2xl p-6 shadow-lg border-2 border-cyan-100 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 group h-96 flex flex-col">
-                      {/* Step Number Badge */}
-                      <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        {step.step}
-                      </div>
-
-                      {/* Icon */}
-                      <div className="w-16 h-16 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
-                        <step.icon className="w-8 h-8 text-cyan-600" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 flex flex-col justify-between">
-                        <div className="space-y-3">
-                          <h3 className="text-lg font-bold text-gray-900 group-hover:text-cyan-700 transition-colors">
-                            {step.title}
-                          </h3>
-
-                          <p className="text-sm text-gray-600 leading-relaxed">
-                            {step.description}
-                          </p>
-
-                          {/* Additional Info */}
-                          {step.additionalInfo ? (
-                            <div className="space-y-2 mt-4">
-                              {step.additionalInfo.split(' • ').map((bullet, bulletIndex) => (
-                                <div key={bulletIndex} className="flex items-start space-x-3 group/bullet">
-                                  {/* TSF three-ball bullet points */}
-                                  <div className="relative flex-shrink-0 mt-1 w-4 h-4">
-                                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-cyan-600 rounded-full"></div>
-                                    <div className="absolute inset-0 animate-spin" style={{animationDuration: '3s'}}>
-                                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-500 rounded-full"></div>
-                                    </div>
-                                    <div className="absolute inset-0 animate-spin" style={{animationDuration: '3s', animationDelay: '1s'}}>
-                                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full"></div>
-                                    </div>
-                                    <div className="absolute inset-0 animate-spin" style={{animationDuration: '3s', animationDelay: '2s'}}>
-                                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-300 rounded-full"></div>
-                                    </div>
-                                  </div>
-                                  <p className="text-xs text-gray-700 font-medium leading-relaxed group-hover/bullet:text-cyan-700 transition-colors duration-200">
-                                    {bullet.trim()}
-                                  </p>
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <div className="mt-4 h-6">
-                              {/* Empty space to match other cards */}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Process Flow Indicator */}
-                        <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-100">
-                          <span className="text-xs font-medium text-gray-500">ETAPA {step.step}</span>
-                          <div className="flex items-center space-x-1">
-                            {[1, 2, 3, 4].map((dot) => (
-                              <div
-                                key={dot}
-                                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                                  parseInt(step.step) >= dot ? 'bg-cyan-500' : 'bg-gray-200'
-                                }`}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              {/* Dynamic title and description */}
+              <div className="relative">
+                {themeContent.map((theme, idx) => (
+                  <div
+                    key={idx}
+                    className={`transition-all duration-500 ${
+                      activeTheme === idx
+                        ? 'opacity-100 translate-y-0'
+                        : 'opacity-0 absolute inset-0 translate-y-4 pointer-events-none'
+                    }`}
+                  >
+                    <h2 className="text-4xl font-bold text-white mb-6">
+                      {theme.title}
+                    </h2>
+                    <p className="text-xl text-gray-300 leading-relaxed">
+                      {theme.description}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Performance Metrics Summary */}
-          <div className="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 text-white">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2">Métricas de Rendimiento TSF</h3>
-              <p className="text-slate-300">Resultados comprobados en deshidratación de concentrados</p>
-            </div>
+            {/* Right - All 12 stats scroll */}
+            <div className="space-y-0">
+              {/* Costos stats (0-3) */}
+              <div ref={el => statRefs.current[0] = el} className="py-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Reducción de humedad hasta 95%</h3>
+                <p className="text-gray-400">Filtros de alta presión eliminan el agua que no agrega valor. Cada punto porcentual menos es peso que no transportas ni pagas.</p>
+              </div>
 
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-black text-cyan-400 mb-2">50</div>
-                <div className="text-sm text-slate-300">Toneladas/día</div>
-                <div className="text-xs text-slate-400">Capacidad máxima</div>
+              <div ref={el => statRefs.current[1] = el} className="py-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Embarque sin demoras ni sobreestadía</h3>
+                <p className="text-gray-400">Concentrado sobre TML (9.1%) no puede cargarse legalmente. Con humedad garantizada bajo TML, el buque carga de inmediato. Sin esperas que cuestan $15-25K USD/día.</p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-cyan-400 mb-2">92%</div>
-                <div className="text-sm text-slate-300">Reducción humedad</div>
-                <div className="text-xs text-slate-400">Máxima eficiencia</div>
+
+              <div ref={el => statRefs.current[2] = el} className="py-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Producción protegida durante mantenciones</h3>
+                <p className="text-gray-400">Cuando tu filtro principal está en mantención, nuestro equipo móvil mantiene la producción. Evita pérdidas millonarias con un servicio que típicamente se paga en menos de un día de operación.</p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-cyan-400 mb-2">30%</div>
-                <div className="text-sm text-slate-300">Ahorro transporte</div>
-                <div className="text-xs text-slate-400">Costos logística</div>
+
+              <div ref={el => statRefs.current[3] = el} className="py-6 pb-12 mb-12 border-b border-gray-700">
+                <h3 className="text-xl font-semibold text-white mb-2">Capacidad extra sin inversión de capital</h3>
+                <p className="text-gray-400">Un segundo filtro fijo requiere millones en CAPEX, construcción y permisos. Nuestro servicio móvil llega operativo, sin obras civiles. OPEX flexible en vez de inversión permanente.</p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-cyan-400 mb-2">&lt;18m</div>
-                <div className="text-sm text-slate-300">ROI</div>
-                <div className="text-xs text-slate-400">Retorno inversión</div>
+
+              {/* Cumplimiento stats (4-7) */}
+              <div ref={el => statRefs.current[4] = el} className="py-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Certificación de humedad por lote</h3>
+                <p className="text-gray-400">Cada batch procesado viene con registro de humedad final. Documentación que respalda cumplimiento ante clientes, autoridades portuarias y auditores.</p>
+              </div>
+
+              <div ref={el => statRefs.current[5] = el} className="py-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Especificaciones de fundición cumplidas</h3>
+                <p className="text-gray-400">Fundiciones exigen humedad bajo 9% para evitar problemas en hornos. Incumplir significa penalizaciones o rechazo de lote. Cada batch filtrado cumple especificaciones, sin excepciones.</p>
+              </div>
+
+              <div ref={el => statRefs.current[6] = el} className="py-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Proceso estable durante mantenciones</h3>
+                <p className="text-gray-400">Sin filtración, la pulpa se acumula en espesadores. Densidades fuera de rango, riesgo de rebases, condiciones que complican el reinicio. Un filtro de respaldo mantiene el flujo estable.</p>
+              </div>
+
+              <div ref={el => statRefs.current[7] = el} className="py-6 pb-32">
+                <h3 className="text-xl font-semibold text-white mb-2">Compromisos de entrega protegidos</h3>
+                <p className="text-gray-400">Reprogramar entregas afecta contratos y relaciones comerciales. Filtración de respaldo durante mantenciones asegura que se cumplen compromisos y se demuestra gestión de riesgo ante stakeholders.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section ref={caseStudiesRef} className="py-24 bg-gradient-to-br from-cyan-50/30 via-white to-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-32 left-[5%] w-36 h-36 bg-gradient-to-br from-cyan-600/10 to-cyan-700/5 rounded-full opacity-20 animate-float-slow blur-sm"></div>
-          <div className="absolute bottom-24 right-[8%] w-28 h-28 bg-gradient-to-br from-cyan-500/15 to-cyan-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-8 relative">
-          <div className="text-center mb-20 progressive-reveal">
-            <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-400/5 rounded-full text-cyan-700 text-sm font-semibold border border-cyan-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 enterprise-pulse"></div>
-              Casos de Éxito Comprobados
-            </div>
-
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
-              Resultados
-              <span className="block text-cyan-600 gradient-text-animated">Verificados</span>
+      {/* SECTION 3b: CAPABILITIES - What you can now do */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em] mb-6">
+              Capacidad de filtración para cualquier escenario
             </h2>
-
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
-              Implementaciones exitosas de deshidratación en <span className="font-semibold text-cyan-600">múltiples tipos de concentrados</span>
-              con resultados medibles y ahorro comprobado.
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Una plataforma flexible que se adapta a tu operación, no al revés.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-20">
-            {useCases.map((useCase, index) => (
-              <div key={index} className="group relative bg-white/80 backdrop-blur-sm rounded-3xl layered-shadow-hover border border-cyan-100/50 p-8 sophisticated-hover magnetic-hover progressive-reveal overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-60 transition-opacity duration-300">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-1 h-1 bg-cyan-400 rounded-full enterprise-pulse"></div>
-                    <div className="w-1 h-1 bg-cyan-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-1 h-1 bg-cyan-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-                  </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Capability 1: Production continuity */}
+            <div className="relative">
+              {/* Circle outline behind card */}
+              <div className="absolute -top-12 -left-12 w-[140px] h-[140px] rounded-full pointer-events-none border-2 border-emerald-400"></div>
+              <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
+                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+                  <WorkflowAutomation className="w-6 h-6 text-emerald-600" />
                 </div>
-
-                <div className="relative z-10">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="w-4 h-4 bg-cyan-600 rounded-full enterprise-pulse"></div>
-                    <h3 className="text-2xl font-black text-gray-900 gradient-text-animated">{useCase.industry}</h3>
-                  </div>
-
-                  <h4 className="text-lg font-bold text-cyan-600 mb-4">{useCase.application}</h4>
-
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Desafío:</h5>
-                      <p className="text-gray-600 text-sm leading-relaxed">{useCase.challenge}</p>
-                    </div>
-
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Solución:</h5>
-                      <p className="text-gray-600 text-sm leading-relaxed">{useCase.solution}</p>
-                    </div>
-
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Resultado:</h5>
-                      <p className="text-cyan-600 text-sm font-semibold">{useCase.result}</p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500 font-medium">{useCase.client}</span>
-                      <span className="text-xs text-cyan-600 font-semibold">{useCase.savings}</span>
-                    </div>
-                  </div>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Deshidrata sin detener producción</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Filtro de respaldo opera mientras el principal está en mantención. Tu línea de concentrado sigue activa.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>75% capacidad mantenida</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Sin paradas de producción</span>
+                  </li>
+                </ul>
               </div>
-            ))}
+            </div>
+
+            {/* Capability 2: Scale on demand */}
+            <div className="relative">
+              {/* Circle outline behind card */}
+              <div className="absolute -top-12 -left-12 w-[140px] h-[140px] rounded-full pointer-events-none border-2 border-blue-400"></div>
+              <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <ChartLine className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Escala cuando demanda sube</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Agrega unidades en paralelo para picos de producción. Sin aprobaciones de capital, sin construcción.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
+                    <span>1x → 2x → 3x capacidad</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
+                    <span>Cero CAPEX adicional</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Capability 3: Fast deployment */}
+            <div className="relative">
+              {/* Circle outline behind card */}
+              <div className="absolute -top-12 -left-12 w-[140px] h-[140px] rounded-full pointer-events-none border-2 border-purple-400"></div>
+              <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                  <Clock className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Despliega en 48 horas, no en meses</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Flota regional lista para movilizar. Sin esperar fabricación, sin proyecto de ingeniería, sin permisos de construcción.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
+                    <span>OPEX inmediato</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
+                    <span>Sin permisos de construcción</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Enterprise CTA Section */}
-      <section className="relative bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 text-white overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-8 right-12 w-20 h-20 bg-cyan-500/20 rounded-full animate-float-slow blur-sm"></div>
-          <div className="absolute bottom-8 left-12 w-16 h-16 bg-cyan-400/25 rounded-full animate-float-medium blur-sm"></div>
-        </div>
+      {/* SECTION 3c: RELIEF - What you no longer manage */}
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          <div ref={statsRef} className="pt-0">
+            <div className="max-w-3xl mb-12">
+              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                Lo que ya no tienes que gestionar
+              </h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Servicio llave en mano. Nosotros operamos, tú produces.
+              </p>
+            </div>
 
-        <div className="relative max-w-7xl mx-auto px-8 py-24 text-center">
-          <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-animated">
-            Evita Cuellos de Botella en tu Producción
+            <div className="grid lg:grid-cols-4 gap-8 lg:gap-10">
+              {/* 24/7 Tecionic specialists */}
+              <div className="stat-fade text-center lg:text-left">
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">24/7</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">Operación</div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Personal certificado opera y mantiene los equipos en tu faena
+                </p>
+              </div>
+
+              {/* Zero CAPEX */}
+              <div className="stat-fade text-center lg:text-left">
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">$0</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">CAPEX</div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Servicio mensual todo incluido. Opex, no Capex.
+                </p>
+              </div>
+
+              {/* Compliance included */}
+              <div className="stat-fade text-center lg:text-left">
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">100%</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">Cumplimiento</div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Humedad objetivo garantizada. Documentación por lote incluida.
+                </p>
+              </div>
+
+              {/* Logistics included */}
+              <div className="stat-fade text-center lg:text-left">
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">0</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">Logística</div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Transporte, instalación y retiro. Llega listo, se va limpio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: EQUIPMENT */}
+      <section className="border-b border-gray-200 bg-white">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          <div className="mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
+              Filtración de alta presión, lista para operar
+            </h2>
+
+            {/* Equipment Benefits - Expandable with images */}
+            <EquipmentBenefits />
+          </div>
+
+          {/* Filter Press Equipment Grid */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">
+              Flota de Filtros Prensa
+            </h3>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Low capacity */}
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+                {/* Hover gradient */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Baja</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">70 ton/día</div>
+                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <ul className="space-y-2 text-sm text-gray-600 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Pilotos y pruebas</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Operaciones de bajo volumen</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Backup de emergencia</span>
+                  </li>
+                </ul>
+                <Link href="/contacto?equipo=filtro-70ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
+                  Consultar disponibilidad
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Medium capacity */}
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+                {/* Hover gradient */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Media</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">130 ton/día</div>
+                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <ul className="space-y-2 text-sm text-gray-600 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Operaciones estándar</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Tratamiento continuo</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Balance costo-capacidad</span>
+                  </li>
+                </ul>
+                <Link href="/contacto?equipo=filtro-130ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
+                  Consultar disponibilidad
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* High capacity */}
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+                {/* Hover gradient */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Alta</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">400 ton/día</div>
+                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <ul className="space-y-2 text-sm text-gray-600 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Alta producción</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Operaciones a gran escala</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Flujo continuo 24/7</span>
+                  </li>
+                </ul>
+                <Link href="/contacto?equipo=filtro-400ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
+                  Consultar disponibilidad
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: INDUSTRY BREADTH */}
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Probado en múltiples industrias
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Tecnología móvil adaptada a las necesidades específicas de cada sector
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
+            {/* Copper */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all">
+              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/copper_mine.jpg"
+                  alt="Mina de cobre"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold">Cu</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
+                </div>
+                <p className="text-sm text-gray-600">Deshidratación de concentrados, humedad ≤9%</p>
+                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                    Ver detalles
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Zinc */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all">
+              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/zinc_processing_plant.jpg"
+                  alt="Planta de procesamiento de zinc"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold">Zn</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">Zinc</h3>
+                </div>
+                <p className="text-sm text-gray-600">Control preciso para fundición</p>
+                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                    Ver detalles
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: CASE STUDY - Cerro Negro */}
+      <section ref={caseStudiesRef} className="border-b border-gray-200 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          {/* Header */}
+          <div className="mb-12">
+            <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
+              CASO DE ÉXITO
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
+              Cerro Negro protegió 2.43 MUSD en 30 días de mantención
+            </h2>
+          </div>
+
+          {/* Main content - Card */}
+          <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="grid lg:grid-cols-5">
+              {/* Left - Visual */}
+              <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem]">
+                <Image
+                  src="/copper_concentrate_plant.jpg"
+                  alt="Planta concentradora Cerro Negro"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:bg-gradient-to-r"></div>
+                <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-between text-white">
+                  <div>
+                    <div className="text-emerald-200 text-sm font-medium mb-2">COMPAÑÍA MINERA CERRO NEGRO</div>
+                    <div className="text-2xl font-bold">Planta Concentradora de Cobre</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-3xl font-black">2.43M</div>
+                      <div className="text-emerald-200 text-sm">USD protegidos</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-black">1,350</div>
+                      <div className="text-emerald-200 text-sm">ton preservadas</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Content */}
+              <div className="lg:col-span-3 p-6 lg:p-8">
+                {/* Metrics row */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">50:1</div>
+                    <div className="text-sm text-gray-600">Beneficio/Costo</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">&lt;1 día</div>
+                    <div className="text-sm text-gray-600">Payback</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">75%</div>
+                    <div className="text-sm text-gray-600">Capacidad mantenida</div>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 mb-6">
+                  Cerro Negro debía realizar mantención mayor de 30 días a su único filtro prensa. Sin filtro de respaldo, la alternativa era perder 3.24 MUSD. Con nuestro filtro móvil F-1200-3 operando 24/7, preservaron el 75% de su producción con un costo total de solo ~49 kUSD.
+                </p>
+
+                {/* CTA */}
+                <Link href="/casos-de-exito" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                  Ver caso completo
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7: Engagement Journey */}
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Empieza pequeño, escala según resultados
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              No pedimos compromisos a largo plazo. Prueba primero, decide después.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* Step 1: Piloto */}
+            <div className="relative">
+              <div className="bg-gray-50 rounded-2xl p-8 h-full">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">1</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Piloto</h3>
+                <p className="text-gray-600 mb-6">Prueba el servicio en tu faena. Valida resultados con tu equipo antes de comprometerte.</p>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
+                    <span>Sin inversión inicial</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
+                    <span>Resultados medibles</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
+                    <span>Sin compromiso de continuidad</span>
+                  </li>
+                </ul>
+              </div>
+              {/* Arrow connector */}
+              <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                <ArrowRightCarbon className="w-6 h-6 text-gray-300" />
+              </div>
+            </div>
+
+            {/* Step 2: Contrato de Servicio */}
+            <div className="relative">
+              <div className="bg-gray-50 rounded-2xl p-8 h-full">
+                <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">2</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Contrato de Servicio</h3>
+                <p className="text-gray-600 mb-6">Programa mensual con equipos y operadores dedicados. Pago por servicio, no por activo.</p>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Operación 24/7 incluida</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>KPIs garantizados</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                    <span>Flexibilidad para ajustar capacidad</span>
+                  </li>
+                </ul>
+              </div>
+              {/* Arrow connector */}
+              <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                <ArrowRightCarbon className="w-6 h-6 text-gray-300" />
+              </div>
+            </div>
+
+            {/* Step 3: Capacidad Dedicada */}
+            <div className="relative">
+              <div className="bg-gray-50 rounded-2xl p-8 h-full">
+                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">3</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Capacidad Dedicada</h3>
+                <p className="text-gray-600 mb-6">Flota exclusiva para tu operación. Contrato largo plazo con condiciones preferenciales.</p>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
+                    <span>Equipos reservados para ti</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
+                    <span>Prioridad de despliegue</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
+                    <span>Tarifas preferenciales</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 8: FINAL CTA */}
+      <section className="bg-gradient-to-br from-emerald-600 to-emerald-700 relative overflow-hidden">
+        {/* Clean interface line at top */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+        {/* Mining topographic contour lines - right corner */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <img
+            src="/mine_motif_right_corner.svg"
+            alt=""
+            className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Recupera más valor de tu operación
           </h2>
-          <p className="text-xl text-cyan-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Capacidad adicional móvil para mantener el flujo continuo de tu operación.
-            <span className="font-semibold text-cyan-300"> Flexibilidad cuando más lo necesitas.</span>
+          <p className="text-xl text-emerald-100 mb-4">
+            Deshidratación de alta presión para concentrados y lodos industriales. Cumple especificaciones, reduce costos, protege tu producción.
+          </p>
+          <p className="text-lg text-emerald-100 mb-10">
+            Servicio llave en mano: equipos, operadores certificados 24/7, y soporte técnico incluido. Sin CAPEX, sin riesgo operacional.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="group relative bg-white text-cyan-900 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-cyan-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/5 to-cyan-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-              <span className="relative z-10">Análisis de Concentrados</span>
-              <ArrowRight className="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
+            <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
+              Solicitar Evaluación
+              <ArrowRight className="ml-2 w-5 h-5" />
             </button>
+            <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
+              <Phone className="mr-2 w-5 h-5" />
+              Hablar con Ventas
+            </button>
+          </div>
 
-            <button className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm relative overflow-hidden sophisticated-hover">
-              <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              <span className="relative z-10">Casos de Éxito</span>
-              <Play className="relative z-10 w-5 h-5 ml-3 enterprise-pulse" />
-            </button>
+          <div className="border-t border-emerald-500 pt-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-emerald-100">
+              <div className="flex items-center gap-2">
+                <Phone className="w-5 h-5" />
+                <span>+56 2 2345 6789</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Enterprise className="w-5 h-5" />
+                <span>Santiago • Calama • Antofagasta</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

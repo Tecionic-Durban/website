@@ -6,6 +6,7 @@ import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import EfficiencyComparison from '@/components/EfficiencyComparison'
 import About from '@/components/About'
+import LatamPresence from '@/components/LatamPresence'
 import Customers from '@/components/Customers'
 import Contact from '@/components/Contact'
 import { checkHashAndScroll } from '@/utils/navigation'
@@ -21,6 +22,7 @@ export default function Home() {
       <About />
       <Services />
       <EfficiencyComparison />
+      <LatamPresence />
       <Customers />
       <Contact />
     </main>

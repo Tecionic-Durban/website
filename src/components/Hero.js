@@ -1,49 +1,25 @@
 // src/components/Hero.js
 'use client'
 import React from 'react'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { Chemistry, RainDrop, Industry, Flow, Location } from '@carbon/icons-react'
-import { CheckCircle, ArrowRight, Play } from 'lucide-react'
-import { handleContactClick } from '@/utils/navigation'
+import Image from 'next/image'
+import { CheckCircle, ArrowRight } from 'lucide-react'
 
-// Move achievements outside component to avoid SSR dependency issues
-const achievements = [
-  {
-    value: "80%",
-    label: "Reducción de Lodos",
-    description: "Volúmenes a disponer",
-    icon: RainDrop,
-    color: "text-emerald-400"
-  },
-  {
-    value: "+50%",
-    label: "Capacidad Concentrados",
-    description: "Procesamiento concentrados",
-    icon: Industry,
-    color: "text-blue-400"
-  },
-  {
-    value: "50%",
-    label: "Reducción Arrastres",
-    description: "Tratamiento orgánico",
-    icon: Flow,
-    color: "text-purple-400"
-  },
-  {
-    value: "<10ppm",
-    label: "Retención Sólidos",
-    description: "En orgánico SX",
-    icon: Location,
-    color: "text-green-400"
-  }
+// Hero background images for cycling carousel - TSF equipment focused
+const heroImages = [
+  { src: '/filtro_prensa_1200_drone_view.png', alt: 'TSF mobile filter press drone view' },
+  { src: '/mobile_equipment_spence.jpeg', alt: 'TSF mobile filtration equipment at Spence' },
+  { src: '/fotos spence/Imagen2.jpg', alt: 'TSF equipment installation at mining site' },
+  { src: '/Fotos Marccobre/Imagen de WhatsApp 2025-11-04 a las 15.10.48_f9ad096d.jpg', alt: 'TSF filter press on mobile trailer' },
+  { src: '/filtro_prensa_movil.png', alt: 'TSF mobile filter press unit' },
+  { src: '/copper_concentrate_plant.jpg', alt: 'Copper concentrate processing plant' },
 ]
 
 export default function Hero() {
   const router = useRouter()
-  const pathname = usePathname()
   const heroRef = useRef(null)
-  const [currentMetricIndex, setCurrentMetricIndex] = useState(0)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   // Progressive disclosure on scroll/mount
   useEffect(() => {
@@ -73,49 +49,44 @@ export default function Hero() {
     return () => observer.disconnect()
   }, [])
 
-  // Cycle through metrics every 7 seconds - SSR safe
+  // Cycle through hero images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentMetricIndex((prev) => (prev + 1) % achievements.length)
-    }, 7000)
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <section ref={heroRef} className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
+    <section ref={heroRef} className="relative min-h-screen text-white overflow-hidden flex flex-col justify-center">
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0">
+        {heroImages.map((image, index) => (
+          <div
+            key={image.src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+              sizes="100vw"
+            />
+          </div>
+        ))}
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
       </div>
 
-      {/* Enhanced Floating Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Primary floating elements with enhanced animations */}
-        <div className="absolute top-20 left-[8%] w-40 h-40 bg-gradient-to-br from-emerald-600/15 to-emerald-700/10 rounded-full opacity-20 animate-float-slow blur-sm"></div>
-        <div className="absolute top-32 right-[12%] w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-emerald-600/15 rounded-full opacity-25 animate-float-medium blur-sm"></div>
-        <div className="absolute bottom-40 left-[3%] w-36 h-36 bg-gradient-to-br from-emerald-400/15 to-emerald-500/10 rounded-full opacity-18 animate-float-slow blur-sm"></div>
-        <div className="absolute bottom-32 right-[8%] w-28 h-28 bg-gradient-to-br from-emerald-600/12 to-emerald-700/8 rounded-full opacity-15 animate-float-medium blur-sm"></div>
-
-        {/* Secondary texture elements */}
-        <div className="absolute top-1/4 left-[20%] w-24 h-24 bg-gradient-to-br from-emerald-400/8 to-emerald-500/5 rounded-full opacity-12 animate-float-slow blur-md"></div>
-        <div className="absolute top-3/4 right-[25%] w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-emerald-600/7 rounded-full opacity-10 animate-float-medium blur-md"></div>
-
-        {/* Geometric accent elements */}
-        <div className="absolute top-16 right-[20%] w-16 h-16 bg-emerald-400/5 rotate-45 opacity-8 animate-float-slow blur-sm"></div>
-        <div className="absolute bottom-24 left-[15%] w-12 h-12 bg-emerald-500/6 rotate-12 opacity-6 animate-float-medium blur-sm"></div>
-
-        {/* Enhanced gradient overlays for depth */}
-        <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-emerald-900/10 to-transparent"></div>
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-emerald-800/5 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-emerald-900/5 to-transparent"></div>
-      </div>
-
-      <div className="relative max-w-8xl mx-auto px-8 py-8 lg:py-12" style={{paddingBottom: 'calc(3rem + 30px)'}}>
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Content - 6 columns */}
-          <div className="lg:col-span-6 max-w-4xl">
+      
+      <div className="relative max-w-7xl mx-auto px-4 py-20 lg:py-32 w-full">
+        {/* Content */}
+        <div className="max-w-3xl">
             {/* Eyebrow + Headline Complex */}
             <div className="space-y-6">
               {/* Layered Headline Structure */}
@@ -130,115 +101,45 @@ export default function Hero() {
                 </h1>
 
                 <div className="space-y-4 max-w-3xl">
-                  <p className="text-lg lg:text-xl text-emerald-50/90 leading-[1.4] font-medium progressive-reveal">
-                    <span className="text-white font-semibold gradient-text-animated">Maximiza producción</span> mientras resuelves cuellos de botella críticos sin parar operaciones.
+                  <p className="text-lg lg:text-xl text-white leading-[1.4] font-medium progressive-reveal">
+                    <span className="text-emerald-400 font-bold">Maximiza producción</span> mientras resuelves cuellos de botella críticos sin parar operaciones.
                   </p>
 
-                  <div className="inline-flex items-center px-4 py-2 bg-emerald-400/10 rounded-lg border border-emerald-400/20 sophisticated-hover layered-shadow progressive-reveal">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 mr-2 enterprise-pulse" />
-                    <span className="text-emerald-200 font-semibold text-sm tracking-wide">CERO CAPEX • CERO MODIFICACIONES • MÁXIMO ROI</span>
+                  <div className="inline-flex items-center px-4 py-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 shadow-lg progressive-reveal">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 mr-2" />
+                    <span className="text-white font-semibold text-sm tracking-wide">CERO CAPEX • CERO MODIFICACIONES • MÁXIMO ROI</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Enhanced Trust Architecture - Compact */}
-            <div className="mt-6 space-y-4">
-              {/* Client Social Proof - Streamlined */}
-              <div className="bg-white/5 rounded-lg p-3 border border-emerald-400/10 backdrop-blur-sm sophisticated-hover progressive-reveal">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 enterprise-pulse" />
-                    <div>
-                      <div className="text-xs font-semibold text-emerald-300">BHP • Codelco • Antofagasta • Anglo American</div>
-                      <div className="text-xs text-emerald-200/70">23+ años experiencia enterprise</div>
-                    </div>
-                  </div>
-                </div>
+            {/* KPIs Row */}
+            <div className="mt-10 grid grid-cols-3 gap-8">
+              <div className="text-left">
+                <div className="text-4xl font-black text-white">23+</div>
+                <div className="text-sm text-white/70">Años de experiencia</div>
               </div>
-
-              {/* Strategic CTAs - Compact */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => router.push('/services')}
-                  className="group relative bg-white text-emerald-900 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-emerald-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Ver Casos de Éxito</span>
-                  <ArrowRight className="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
+              <div className="text-left">
+                <div className="text-4xl font-black text-white">50+</div>
+                <div className="text-sm text-white/70">Proyectos completados</div>
+              </div>
+              <div className="text-left">
+                <div className="text-4xl font-black text-white">24/7</div>
+                <div className="text-sm text-white/70">Soporte operacional</div>
               </div>
             </div>
-          </div>
 
-          {/* Visual + Cycling Metrics - 6 columns - Expanded */}
-          <div className="lg:col-span-6 lg:mt-0">
-            <div className="space-y-4">
-              {/* Equipment Visual - Compact */}
-              <div className="relative">
-                <div className="aspect-[3/2] bg-gradient-to-br from-emerald-800/40 to-emerald-900/60 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
-                  {/* Enhanced equipment placeholder */}
-                  <div className="text-center z-10">
-                    <div className="w-16 h-16 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 magnetic-hover">
-                      <Chemistry className="w-8 h-8 text-emerald-300 enterprise-pulse" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-1">Equipos Móviles TSF</h3>
-                    <p className="text-emerald-300/80 text-sm">Separación sólido-líquido avanzada</p>
-                  </div>
-
-                  {/* Play button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300 ripple-effect">
-                      <Play className="w-6 h-6 text-white ml-0.5" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Achievement Metric Display - Cycling */}
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-lg p-3 border border-emerald-400/20 shadow-xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity duration-1000"></div>
-
-                {/* Progress indicators - top right */}
-                <div className="absolute top-2 right-2 flex space-x-1">
-                  {achievements.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`h-0.5 rounded-full transition-all duration-700 ${
-                        index === currentMetricIndex
-                          ? 'w-4 bg-emerald-400'
-                          : 'w-1 bg-emerald-400/30'
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <div className="relative z-10 transition-all duration-1000 transform pr-6">
-                  {/* Horizontal layout: Icon + Big KPI + Label & Description */}
-                  <div className="flex items-center space-x-4">
-                    <div className="w-8 h-8 bg-emerald-500/30 rounded-lg flex items-center justify-center">
-                      {React.createElement(achievements[currentMetricIndex].icon, {
-                        className: "w-4 h-4 text-emerald-300 enterprise-pulse"
-                      })}
-                    </div>
-                    <div className="text-4xl font-black text-white tracking-tight gradient-text-animated">
-                      {achievements[currentMetricIndex].value}
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm text-emerald-100 font-semibold leading-tight">
-                        {achievements[currentMetricIndex].label}
-                      </div>
-                      <div className="text-xs text-emerald-200/70 leading-tight">
-                        {achievements[currentMetricIndex].description}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* CTA Button */}
+            <div className="mt-10">
+              <button
+                onClick={() => router.push('/services')}
+                className="group bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 inline-flex items-center"
+              >
+                <span>Ver Nuestros Servicios</span>
+                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+              </button>
             </div>
-          </div>
         </div>
-
       </div>
 
       {/* Bottom wave transition */}

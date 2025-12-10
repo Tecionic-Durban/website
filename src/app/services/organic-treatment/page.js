@@ -499,16 +499,10 @@ export default function OrganicTreatmentServicePage() {
                 Filtración y tratamiento en by-pass para que tu planta SX opere al máximo rendimiento. Extracción eficiente, producción estable.
               </p>
 
-              <div className="flex items-center gap-4">
-                <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
-                  Solicitar Evaluación
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
-                <button className="inline-flex items-center px-6 py-3 text-gray-600 font-medium hover:text-gray-900 transition-colors cursor-pointer">
-                  Ver Caso de Éxito
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
-              </div>
+              <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
+                Solicitar Evaluación
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
             </div>
 
             <div className="lg:col-span-6" ref={heroImageRef} style={{ opacity: 0 }}>

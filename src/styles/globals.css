@@ -143,6 +143,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .text-gradient-purple {
+    background: linear-gradient(
+      45deg,
+      #9333ea,
+      #a855f7,
+      #c084fc,
+      #9333ea
+    );
+    background-size: 300% 300%;
+    background-position: 50% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   
   /* Industrial Theme Elements */
   .industrial-pattern {
@@ -448,15 +463,15 @@
 
   @keyframes ballElegantAppear {
     0% {
-      transform: translateX(-50%) translateY(4px) scale(0);
+      transform: translateY(4px) scale(0);
       opacity: 0;
     }
     60% {
-      transform: translateX(-50%) translateY(-2px) scale(1.1);
+      transform: translateY(-2px) scale(1.1);
       opacity: 0.8;
     }
     100% {
-      transform: translateX(-50%) translateY(0px) scale(1);
+      transform: translateY(0px) scale(1);
       opacity: 0.9;
     }
   }
@@ -1975,6 +1990,143 @@
 @media (prefers-reduced-motion: reduce) {
   .electric-pulse,
   .electric-pulse-fast {
+    animation: none !important;
+  }
+}
+
+/* ===== PARTICLE FILTRATION ANIMATION (Fine Solids) ===== */
+/* Particles of varying sizes flowing through a filter */
+
+/* Large particles - move to filter then stop */
+.particle-large {
+  animation: particleLargeFlow 6s ease-in-out infinite;
+}
+
+@keyframes particleLargeFlow {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  70% {
+    transform: translateX(480px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translateX(490px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(490px);
+    opacity: 0;
+  }
+}
+
+/* Medium particles - some pass through slowly */
+.particle-medium {
+  animation: particleMediumFlow 5s ease-in-out infinite;
+}
+
+@keyframes particleMediumFlow {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(500px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+/* Small particles - pass through filter freely */
+.particle-small {
+  animation: particleSmallFlow 4s ease-in-out infinite;
+}
+
+@keyframes particleSmallFlow {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(1100px);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion support for particle animations */
+@media (prefers-reduced-motion: reduce) {
+  .particle-large,
+  .particle-medium,
+  .particle-small {
+    animation: none !important;
+  }
+}
+
+/* ===== COMPRESSION ANIMATION (Dehydration) ===== */
+/* Filter press plates that squeeze together, compressing material between them */
+
+@keyframes compressionPlateTop {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(18px);
+  }
+}
+
+@keyframes compressionPlateBottom {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+/* Material gets squished - ellipses flatten horizontally */
+@keyframes compressionMaterial {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.3) scaleX(1.8);
+  }
+}
+
+.compression-plate-top {
+  animation: compressionPlateTop var(--cycle-duration, 8s) ease-in-out infinite;
+}
+
+.compression-plate-bottom {
+  animation: compressionPlateBottom var(--cycle-duration, 8s) ease-in-out infinite;
+}
+
+.compression-material {
+  animation: compressionMaterial var(--cycle-duration, 8s) ease-in-out infinite;
+  transform-origin: center 50px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .compression-plate-top,
+  .compression-plate-bottom,
+  .compression-material {
     animation: none !important;
   }
 }

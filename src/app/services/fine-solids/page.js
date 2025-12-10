@@ -1,16 +1,134 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard } from '@carbon/icons-react'
-import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star } from 'lucide-react'
+import { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard, Delivery, Mountain, Certificate, CertificateCheck, Security, Flash, FlashFilled, ChevronLeft, ChevronRight, Loop, Construction, Renew, Time, IncreaseLevel, Exit, ContainerImagePull } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, TrendingUp } from 'lucide-react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ParticleFiltrationAnimation from '@/components/ParticleFiltrationAnimation'
+
+gsap.registerPlugin(ScrollTrigger)
+
+// SSR-safe useLayoutEffect
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
+
+// Expandable Equipment Benefits Component
+function EquipmentBenefits() {
+  const [expandedIndex, setExpandedIndex] = useState(0)
+
+  const benefits = [
+    {
+      title: 'Clasificación Ex-Proof',
+      description: 'Equipos con clasificación ex.proof para operar en ambientes explosivos. Bombas, tableros y sistemas de succión diseñados para trabajar de forma segura en estanques de petróleo y derivados.',
+      icon: CertificateCheck,
+      image: '/filtro_prensa_1200_drone_view.png'
+    },
+    {
+      title: 'Huella reducida y 100% móviles',
+      description: 'Equipos compactos que se posicionan junto a piscinas, settlers o estanques sin requerir obras civiles. Instalación en menos de 48 horas y reubicación rápida entre puntos de extracción. Sin modificar tu infraestructura existente.',
+      icon: Delivery,
+      image: '/filtro_prensa_movil.png'
+    },
+    {
+      title: 'Flexibilidad de bombeo',
+      description: 'Bombas sumergibles, de diafragma o peristálticas según la aplicación. Seleccionamos el sistema de succión óptimo para cada tipo de sólido y condición de estanque.',
+      icon: Filter,
+      image: '/filtro_prensa_1200_drone_view.png'
+    }
+  ]
+
+  return (
+    <div className="grid lg:grid-cols-2 gap-12">
+      {/* Left: Expandable list */}
+      <div>
+        {benefits.map((benefit, index) => {
+          const isExpanded = expandedIndex === index
+          const Icon = benefit.icon
+
+          return (
+            <div key={index}>
+              {/* Top border line */}
+              <div className="border-t border-gray-200"></div>
+
+              {/* Header - Icon + Title + Plus/Minus */}
+              <button
+                onClick={() => setExpandedIndex(index)}
+                className="w-full flex items-center justify-between py-6 text-left group cursor-pointer"
+              >
+                <div className="flex items-center gap-4">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
+                    isExpanded ? 'bg-emerald-100' : 'bg-gray-100 group-hover:bg-emerald-50'
+                  }`}>
+                    <Icon className={`w-5 h-5 transition-colors ${
+                      isExpanded ? 'text-emerald-600' : 'text-gray-500 group-hover:text-emerald-600'
+                    }`} />
+                  </div>
+                  <span className={`font-semibold text-lg transition-colors ${
+                    isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
+                  }`}>
+                    {benefit.title}
+                  </span>
+                </div>
+                <span className={`text-2xl font-light transition-colors ${
+                  isExpanded ? 'text-emerald-600' : 'text-gray-400 group-hover:text-emerald-600'
+                }`}>
+                  {isExpanded ? '−' : '+'}
+                </span>
+              </button>
+
+              {/* Expanded Content */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="pb-8">
+                  <p className="text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+        {/* Bottom border line */}
+        <div className="border-t border-gray-200"></div>
+      </div>
+
+      {/* Right: Image - changes based on selected item */}
+      <div className="lg:sticky lg:top-24 lg:self-start">
+        <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
+          <Image
+            src={benefits[expandedIndex].image}
+            alt={benefits[expandedIndex].title}
+            width={600}
+            height={450}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function FineSolidsServicePage() {
-  const router = null // Will be imported when needed
   const heroRef = useRef(null)
+  const heroImageRef = useRef(null)
   const overviewRef = useRef(null)
   const processRef = useRef(null)
   const benefitsRef = useRef(null)
   const caseStudiesRef = useRef(null)
+  const statsRef = useRef(null)
+
+  // Carousel state for service models
+  const [activeServiceModel, setActiveServiceModel] = useState('emergencia')
+  const [carouselKey, setCarouselKey] = useState(0)
+  const [timerKey, setTimerKey] = useState(0)
+  const carouselCardRef = useRef(null)
+  const timerRef = useRef(null)
+  const CAROUSEL_DURATION = 6000 // 6 seconds
 
   // Progressive disclosure on scroll
   useEffect(() => {
@@ -41,6 +159,144 @@ export default function FineSolidsServicePage() {
     })
 
     return () => observer.disconnect()
+  }, [])
+
+  // Hero image entrance animation
+  useIsomorphicLayoutEffect(() => {
+    if (!heroImageRef.current) return
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        heroImageRef.current,
+        {
+          opacity: 0,
+          y: 30,
+          scale: 0.98
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: 'power2.out',
+          delay: 0.2
+        }
+      )
+    }, heroImageRef)
+
+    return () => ctx.revert()
+  }, [])
+
+  // Stats animation on scroll
+  useIsomorphicLayoutEffect(() => {
+    if (!statsRef.current) return
+
+    const ctx = gsap.context(() => {
+      const fadeElements = statsRef.current.querySelectorAll('.stat-fade')
+      fadeElements.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              once: true
+            }
+          }
+        )
+      })
+
+      const countElement = statsRef.current.querySelector('.stat-count')
+      if (countElement) {
+        const target = parseInt(countElement.dataset.target, 10)
+
+        ScrollTrigger.create({
+          trigger: countElement,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            const counter = { val: 0 }
+            gsap.to(counter, {
+              val: target,
+              duration: 1.5,
+              ease: 'power2.out',
+              onUpdate: () => {
+                countElement.textContent = Math.round(counter.val) + 'h'
+              }
+            })
+          }
+        })
+      }
+    }, statsRef)
+
+    return () => ctx.revert()
+  }, [])
+
+  // Helper to change carousel and trigger animation + reset timer
+  const changeCarouselModel = (newModel) => {
+    setActiveServiceModel(newModel)
+    setCarouselKey(k => k + 1)
+    setTimerKey(k => k + 1)
+
+    // Clear and restart the auto-cycle timer
+    if (timerRef.current) {
+      clearInterval(timerRef.current)
+    }
+    timerRef.current = setInterval(() => {
+      setActiveServiceModel(prev => {
+        const models = ['emergencia', 'preventivo', 'continuo']
+        const currentIndex = models.indexOf(prev)
+        return models[(currentIndex + 1) % models.length]
+      })
+      setCarouselKey(k => k + 1)
+      setTimerKey(k => k + 1)
+    }, CAROUSEL_DURATION)
+  }
+
+  // GSAP animation for carousel card transitions
+  useIsomorphicLayoutEffect(() => {
+    if (carouselKey === 0) return
+
+    const ctx = gsap.context(() => {
+      const card = carouselCardRef.current
+      if (!card) return
+
+      gsap.fromTo(card,
+        { opacity: 0, x: 60 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        }
+      )
+    }, carouselCardRef)
+
+    return () => ctx.revert()
+  }, [carouselKey, activeServiceModel])
+
+  // Auto-cycle carousel
+  useEffect(() => {
+    const models = ['emergencia', 'preventivo', 'continuo']
+    timerRef.current = setInterval(() => {
+      setActiveServiceModel(prev => {
+        const currentIndex = models.indexOf(prev)
+        return models[(currentIndex + 1) % models.length]
+      })
+      setCarouselKey(k => k + 1)
+      setTimerKey(k => k + 1)
+    }, CAROUSEL_DURATION)
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+      }
+    }
   }, [])
 
   const processSteps = [
@@ -229,576 +485,837 @@ export default function FineSolidsServicePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Enterprise-Grade Fine Solids Hero */}
-      <section ref={heroRef} className="relative bg-white overflow-hidden">
-        {/* TSF Signature Industrial Fine Solids Theme */}
-        <div className="absolute inset-0 overflow-hidden" style={{
-          maskImage: `linear-gradient(to left,
-            rgba(0,0,0,1) 0%,
-            rgba(0,0,0,0.9) 20%,
-            rgba(0,0,0,0.7) 40%,
-            rgba(0,0,0,0.4) 65%,
-            rgba(0,0,0,0.15) 85%,
-            rgba(0,0,0,0.05) 100%
-          )`,
-          WebkitMaskImage: `linear-gradient(to left,
-            rgba(0,0,0,1) 0%,
-            rgba(0,0,0,0.9) 20%,
-            rgba(0,0,0,0.7) 40%,
-            rgba(0,0,0,0.4) 65%,
-            rgba(0,0,0,0.15) 85%,
-            rgba(0,0,0,0.05) 100%
-          )`
-        }}>
-          {/* Base gradient foundation */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-white to-gray-50/50"></div>
+    <div className="min-h-screen bg-white">
+      {/* HERO SECTION - Clean Stripe-style narrative */}
+      <section ref={heroRef} className="relative overflow-hidden bg-white">
+        {/* Particle Filtration Animation Background */}
+        <ParticleFiltrationAnimation variant="hero" className="opacity-30" />
 
-          {/* SIGNATURE PARTICLE SEPARATION PATTERN */}
-          <div className="absolute inset-0 opacity-[0.12]" style={{
-            backgroundImage: `
-              linear-gradient(30deg, transparent 48%, rgba(147, 51, 234, 0.4) 49%, rgba(147, 51, 234, 0.4) 51%, transparent 52%),
-              linear-gradient(150deg, transparent 48%, rgba(147, 51, 234, 0.3) 49%, rgba(147, 51, 234, 0.3) 51%, transparent 52%),
-              linear-gradient(90deg, transparent 48%, rgba(147, 51, 234, 0.2) 49%, rgba(147, 51, 234, 0.2) 51%, transparent 52%)
-            `,
-            backgroundSize: '60px 60px, 60px 60px, 120px 120px'
-          }}></div>
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-emerald-50/30 to-white pointer-events-none"></div>
 
-          {/* CENTRIFUGE SEPARATION PATTERN */}
-          <div className="absolute inset-0 opacity-[0.12]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237c3aed' fill-opacity='0.6'%3E%3Ccircle cx='40' cy='40' r='20' stroke='%237c3aed' stroke-width='1' fill='none'/%3E%3Ccircle cx='40' cy='40' r='3' fill='%237c3aed'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '80px 80px'
-          }}></div>
+        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            {/* Left Column - Hero Content */}
+            <div className="lg:col-span-6">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
+                Protege tu planta <span className="text-gradient">eliminando sólidos finos</span> de tus líquidos de proceso
+              </h1>
 
-          {/* PARTICLE SIZE GRADIENT */}
-          <div className="absolute inset-0 opacity-[0.12]">
-            {/* Large particles (input) */}
-            <div className="absolute top-1/6 left-[15%] w-4 h-4 bg-purple-600/30 rounded-full animate-pulse"></div>
-            <div className="absolute top-1/3 left-[12%] w-3 h-3 bg-purple-500/25 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="absolute top-1/2 left-[18%] w-5 h-5 bg-purple-700/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-
-            {/* Medium particles (process) */}
-            <div className="absolute top-2/5 left-1/2 w-2 h-2 bg-purple-500/40 rounded-full animate-ping" style={{animationDelay: '0.3s'}}></div>
-            <div className="absolute top-3/5 left-1/2 w-2.5 h-2.5 bg-purple-600/35 rounded-full animate-ping" style={{animationDelay: '0.8s'}}></div>
-
-            {/* Fine particles (output) */}
-            <div className="absolute top-1/4 right-[15%] w-1.5 h-1.5 bg-purple-400/50 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
-            <div className="absolute top-1/2 right-[12%] w-1 h-1 bg-purple-500/45 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
-            <div className="absolute top-2/3 right-[18%] w-1.5 h-1.5 bg-purple-600/40 rounded-full animate-ping" style={{animationDelay: '2.5s'}}></div>
-          </div>
-
-          {/* TSF BRAND MOLECULAR SIGNATURE */}
-          <div className="absolute bottom-1/6 right-1/6 opacity-[0.12]">
-            <div className="relative w-24 h-24">
-              {/* Central brand hub */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-600 rounded-full animate-pulse"></div>
-
-              {/* Orbital brand elements */}
-              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-purple-500 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-purple-600 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Large Centrifuge Icon - Premium Treatment */}
-        <div className="absolute -top-32 -right-40 w-96 h-96 pointer-events-none">
-          <div className="relative w-full h-full">
-            <Waves className="w-full h-full text-purple-500/8 transform rotate-12" />
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-full blur-3xl"></div>
-          </div>
-        </div>
-
-
-        {/* Enterprise Navigation Bar */}
-        <div className="relative z-20 border-b border-slate-200/60 backdrop-blur-xl bg-white/80">
-          <div className="max-w-8xl mx-auto px-8 py-3">
-            <div className="flex items-center justify-between">
-              <nav className="flex items-center space-x-1 text-sm">
-                <span className="text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">Servicios</span>
-                <span className="text-slate-300 mx-2">/</span>
-                <span className="text-purple-600 font-medium">Separación de Sólidos Finos</span>
-              </nav>
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-2 text-xs text-slate-500">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span>Disponible 24/7</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Enterprise Hero Content */}
-        <div className="relative z-10 max-w-8xl mx-auto px-8 pt-12 pb-8">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column - Premium Content */}
-            <div className="lg:col-span-7">
-              {/* Main Heading */}
-              <div className="mb-6">
-                <h1 className="text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-black tracking-tight text-slate-900 leading-[0.9] mb-4">
-                  Separación de Sólidos
-                  <span className="block text-purple-600">
-                    de Líquidos
-                  </span>
-                </h1>
-                <div className="text-xl lg:text-2xl text-slate-600 font-light tracking-wide">
-                  Filtración Alto Caudal • Desde 6μm • Aplicación Universal
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl font-light">
-                Protección avanzada de membranas DLE y filtración de líquidos de alto caudal
-                <span className="font-bold text-slate-900"> desde 6 micrones (μm) en adelante</span>.
-                <span className="text-purple-600 font-medium"> Filtros prensa 260 m³/día</span>
-                con control automático de turbidez para cualquier aplicación de separación sólido-líquido.
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+                Extrae sólidos acumulados de tus sistemas sin parar producción ni perder solución. Equipos móviles que se conectan directamente a piscinas, settlers y estanques mientras tu planta sigue operando.
               </p>
 
-              {/* Enterprise CTA Section */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group relative bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 overflow-hidden hover:shadow-xl hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Evaluación Técnica</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="group border-2 border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-white/50 hover:bg-white/80 backdrop-blur-sm">
-                  <span>Descargar Casos DLE</span>
-                  <Settings className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
-                </button>
-              </div>
+              <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
+                Solicitar Evaluación
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
             </div>
 
             {/* Right Column - Hero Image */}
-            <div className="lg:col-span-5 relative">
-              {/* Enhanced Background Elements */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute -top-4 -right-4 w-32 h-32 bg-gradient-to-br from-purple-600/15 to-purple-700/8 rounded-full opacity-40 animate-float-slow blur-sm"></div>
-                <div className="absolute bottom-8 -left-4 w-24 h-24 bg-gradient-to-br from-purple-500/20 to-purple-600/12 rounded-full opacity-35 animate-float-medium blur-sm"></div>
-                <div className="absolute top-1/3 right-4 w-20 h-20 bg-gradient-to-br from-purple-400/18 to-purple-500/10 rounded-full opacity-30 animate-float-slow blur-md"></div>
-
-                <div className="absolute bottom-1/4 right-8 opacity-25">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full enterprise-pulse"></div>
-                    <div className="w-2 h-2 bg-purple-500 rounded-full enterprise-pulse" style={{animationDelay: '0.3s'}}></div>
-                    <div className="w-2 h-2 bg-purple-600 rounded-full enterprise-pulse" style={{animationDelay: '0.6s'}}></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hero Image Container */}
-              <div className="relative z-10 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                {/* Placeholder for filter press equipment image */}
-                <div className="w-full h-full bg-gradient-to-br from-purple-100 via-purple-50 to-white flex items-center justify-center border border-purple-200/50">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 bg-purple-500/10 rounded-full flex items-center justify-center">
-                      <Waves className="w-12 h-12 text-purple-600" />
-                    </div>
-                    <h3 className="text-lg font-bold text-purple-800 mb-2">Sistema Filtros Prensa Móviles</h3>
-                    <p className="text-sm text-purple-600">Separación ultra-selectiva partículas finas</p>
-                  </div>
-                </div>
-
-                {/* Technical overlay indicators */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                  <div className="flex items-center space-x-2 text-xs">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="font-medium text-gray-700">Sistema Activo</span>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                  <div className="text-xs text-gray-700">
-                    <div className="font-bold">&lt;20μm</div>
-                    <div className="text-gray-500">Corte Partículas</div>
-                  </div>
-                </div>
+            <div className="lg:col-span-6">
+              <div ref={heroImageRef} style={{ opacity: 0 }} className="rounded-xl overflow-hidden shadow-2xl shadow-gray-200/50">
+                <Image
+                  src="/filtro_prensa_1200_drone_view.png"
+                  alt="Sistema de filtros prensa móviles para separación de sólidos finos"
+                  width={800}
+                  height={500}
+                  className="object-cover w-full h-auto"
+                  priority
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Industry Applications Matrix */}
-      <section className="py-20 bg-white">
-        <div className="max-w-8xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-4">
-              Aplicaciones por Industria
+      {/* SECTION 2: KEY BENEFITS */}
+      <section className="bg-gradient-to-br from-emerald-50/50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 blur-sm"></div>
+          <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+          <div className="max-w-4xl mb-16">
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
+              Resultados que impactan tu operación
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Soluciones específicas de separación sólidos finos para cada proceso hidrometalúrgico
-            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {industrialApplications.map((app, index) => (
-              <div
-                key={index}
-                className="group bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:shadow-slate-500/10 transition-all duration-500 hover:-translate-y-2"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg"
-                      style={{ backgroundColor: app.color }}
-                    >
-                      {app.element}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-slate-900">{app.industry}</h3>
-                      <div className="flex items-center space-x-2">
-                        <div className="flex items-center space-x-1">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
-                          <div className="w-1 h-1 bg-purple-600 rounded-full"></div>
-                        </div>
-                        <span className="text-xs font-medium text-slate-500">{app.status}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div>
-                    <span className="text-sm font-medium text-slate-500">Aplicación</span>
-                    <p className="text-slate-900 font-medium">{app.application}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-sm font-medium text-slate-500">Performance</span>
-                    <p className="text-lg font-bold" style={{ color: app.color }}>{app.performance}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-sm font-medium text-slate-500">Especificaciones Técnicas</span>
-                    <p className="text-sm text-slate-600 leading-relaxed">{app.specs}</p>
-                  </div>
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <button className="w-full bg-slate-50 hover:bg-slate-100 text-slate-700 py-2 px-4 rounded-lg font-medium transition-colors duration-200 group-hover:bg-slate-900 group-hover:text-white">
-                    Ver Especificaciones
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Benefits / KPIs Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-white">
-        <div className="max-w-8xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-4">
-              Beneficios Clave
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Ventajas técnicas y operacionales de nuestros sistemas de filtración de sólidos
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Reducción Turbidez */}
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
-              </div>
-
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <Humidity className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
-                </div>
-
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">Reducción Turbidez</h3>
-
-                <div className="mb-4">
-                  <div className="text-3xl font-black text-purple-600 mb-2">&lt;10 NTU</div>
-                  <p className="text-gray-600 text-sm">
-                    Control automático de turbidez para protección de membranas DLE y equipos hidrometalúrgicos
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-purple-100">
-                  <div className="flex items-center text-sm text-purple-600 font-medium">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    Monitoreo continuo
-                  </div>
-                </div>
-              </div>
+          <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-0">
+            {/* 3-ball divider - left edge */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
             </div>
 
-            {/* Equipos Móviles */}
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
+            {/* Benefit 1: Plant in spec */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <Dashboard className="w-5 h-5 text-emerald-600" />
               </div>
-
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <DeliveryTruck className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
-                </div>
-
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">Equipos Móviles</h3>
-
-                <div className="mb-4">
-                  <div className="text-3xl font-black text-purple-600 mb-2">24-48h</div>
-                  <p className="text-gray-600 text-sm">
-                    Instalación rápida sin modificar infraestructura. Sistema plug-and-play completamente portátil
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-purple-100">
-                  <div className="flex items-center text-sm text-purple-600 font-medium">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    Sin instalación permanente
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Planta operando en especificación</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sin acumulación de sólidos que reduzca capacidad o mueva tus sistemas fuera de parámetros óptimos.
+              </p>
             </div>
 
-            {/* Reducción PPM */}
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
-              </div>
-
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <ArrowDown className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
-                </div>
-
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">Reducción PPM</h3>
-
-                <div className="mb-4">
-                  <div className="text-3xl font-black text-purple-600 mb-2">&lt;20 mg/L</div>
-                  <p className="text-gray-600 text-sm">
-                    Remoción efectiva de sólidos suspendidos totales (TSS) para procesos SX/EW
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-purple-100">
-                  <div className="flex items-center text-sm text-purple-600 font-medium">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    Calidad garantizada
-                  </div>
-                </div>
-              </div>
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
             </div>
 
-            {/* Capacidad por Equipo */}
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-purple-100 transform hover:scale-105 group relative">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl">
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl"></div>
+            {/* Benefit 2: Extended component lifetime */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <IncreaseLevel className="w-5 h-5 text-emerald-600" />
               </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Mayor vida útil de componentes</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Bombas, válvulas y equipos de planta duran más cuando operan sin abrasión por sólidos.
+              </p>
+            </div>
 
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <Dashboard className="w-7 h-7 text-purple-600 group-hover:text-purple-700" />
-                </div>
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+            </div>
 
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">Capacidad Alto Caudal</h3>
-
-                <div className="mb-4">
-                  <div className="text-3xl font-black text-purple-600 mb-2">260 m³/día</div>
-                  <p className="text-gray-600 text-sm">
-                    Filtros prensa de alta capacidad por equipo. Configuración modular escalable
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-purple-100">
-                  <div className="flex items-center text-sm text-purple-600 font-medium">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    Escalabilidad ilimitada
-                  </div>
-                </div>
+            {/* Benefit 3: No invasive maintenance */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <Exit className="w-5 h-5 text-emerald-600" />
               </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Sin mantención invasiva</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Olvídate de excavadoras, vaciados y riesgos de daño a revestimientos o membranas.
+              </p>
+            </div>
+
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-300"></div>
+            </div>
+
+            {/* Benefit 4: Avoid unnecessary membrane expenses */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <ContainerImagePull className="w-5 h-5 text-emerald-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Evita cambios de membranas</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sin reemplazos innecesarios de membranas dañadas por limpieza agresiva con excavadoras.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Steps */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-8xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-4">
-              Proceso de Separación
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Metodología sistematizada para remoción ultra-eficiente de sólidos finos en aplicaciones críticas
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-96 flex flex-col">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-purple-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">
-                    {step.step}
-                  </div>
-                  <step.icon className="w-8 h-8 text-purple-600" />
-                </div>
-
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                <p className="text-slate-600 leading-relaxed flex-grow">{step.description}</p>
-
-                <div className="pt-4 mt-4 border-t border-slate-100">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
-                    <div className="w-1 h-1 bg-purple-600 rounded-full"></div>
-                  </div>
-                  <p className="text-sm text-slate-500">{step.additionalInfo}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* SECTION 3: IN-CIRCUIT OPERATION - Dark Section */}
+      <section className="border-b border-gray-800 bg-gray-900 relative overflow-hidden">
+        {/* Columns of circles at top - transitioning from previous section */}
+        <div className="absolute top-0 left-0 right-0 w-full flex justify-around z-0">
+          {[...Array(96)].map((_, col) => (
+            <div key={col} className="flex flex-col items-center gap-1">
+              <div className="w-3.5 h-3.5 rounded-full bg-gray-200"></div>
+              <div className="w-3 h-3 rounded-full bg-gray-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-gray-500"></div>
+              <div className="w-2 h-2 rounded-full bg-gray-700"></div>
+            </div>
+          ))}
         </div>
-      </section>
 
-      {/* Case Studies */}
-      <section className="py-20 bg-white">
-        <div className="max-w-8xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-4">
-              Casos de Éxito
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Resultados comprobados en proyectos de separación sólidos finos en Latinoamérica
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-1 xl:grid-cols-1 gap-12">
-            {caseStudies.map((study, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="grid lg:grid-cols-3 gap-8 items-start">
-                  {/* Case Study Header */}
-                  <div className="lg:col-span-1">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
-                        style={{ backgroundColor: study.color }}
-                      >
-                        {study.industry.charAt(0)}
-                      </div>
-                      <div>
-                        <span className="text-sm font-medium text-slate-500">{study.industry}</span>
-                        <h3 className="text-2xl font-black text-slate-900">{study.title}</h3>
-                      </div>
-                    </div>
-                    <p className="text-slate-600 font-medium">{study.client}</p>
-                  </div>
-
-                  {/* Challenge & Solution */}
-                  <div className="lg:col-span-1 space-y-6">
-                    <div>
-                      <h4 className="font-bold text-slate-900 mb-2 flex items-center">
-                        <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-                        Desafío
-                      </h4>
-                      <p className="text-slate-600 text-sm leading-relaxed">{study.challenge}</p>
-                    </div>
-
-                    <div>
-                      <h4 className="font-bold text-slate-900 mb-2 flex items-center">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                        Solución TSF
-                      </h4>
-                      <p className="text-slate-600 text-sm leading-relaxed">{study.solution}</p>
-                    </div>
-                  </div>
-
-                  {/* Results */}
-                  <div className="lg:col-span-1">
-                    <h4 className="font-bold text-slate-900 mb-4 flex items-center">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                      Resultados
-                    </h4>
-                    <div className="space-y-3">
-                      {study.results.map((result, resultIndex) => (
-                        <div key={resultIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                          <span className="text-sm font-medium text-slate-700">{result}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Before/After Metrics */}
-                    <div className="mt-6 pt-6 border-t border-slate-200">
-                      <div className="grid grid-cols-2 gap-4 text-center">
-                        <div>
-                          <span className="text-xs text-slate-500 block">Antes</span>
-                          <div className="text-lg font-bold text-red-600">{Object.values(study.metrics.before)[0]}</div>
-                        </div>
-                        <div>
-                          <span className="text-xs text-slate-500 block">Después</span>
-                          <div className="text-lg font-bold text-green-600">{Object.values(study.metrics.after)[0]}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image on left */}
+            <div className="relative">
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/filtro_prensa_1200_drone_view.png"
+                  alt="Sistema de extracción de sólidos finos en circuito cerrado"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto"
+                />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* Benefits */}
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-8xl mx-auto px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content on right */}
             <div>
-              <h2 className="text-4xl font-black text-white mb-6">
-                Beneficios Clave
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Operación sin detener tu planta
               </h2>
-              <p className="text-xl text-slate-300 mb-8">
-                Ventajas competitivas de nuestros sistemas de separación sólidos finos
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Nuestros equipos succionan desde el fondo de piscinas, settlers o estanques mientras tu circuito sigue produciendo. Los sólidos finos se filtran y la solución limpia retorna directamente al sistema.
               </p>
 
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
-                      <div className="w-1 h-1 bg-purple-600 rounded-full"></div>
-                    </div>
-                    <span className="text-slate-200 font-medium">{benefit}</span>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Loop className="w-5 h-5 text-emerald-400" />
                   </div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-1">Circuito cerrado</h3>
+                    <p className="text-gray-400 text-sm">Succión desde el fondo, filtración, retorno de solución limpia. Cero pérdida de líquido valioso.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Construction className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-1">Sin excavadoras ni vaciados</h3>
+                    <p className="text-gray-400 text-sm">Olvídate de vaciar piscinas, usar palas o arriesgar daños a membranas y revestimientos.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Renew className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-1">Producción continua</h3>
+                    <p className="text-gray-400 text-sm">Piscinas y settlers siguen operando mientras extraemos los sólidos acumulados.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Simplicidad Operacional - stats */}
+          <div className="mt-24 pt-16 border-t border-gray-700">
+            <div className="max-w-3xl mb-12">
+              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+                Simplicidad Operacional
+              </h3>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Implementación rápida sin complejidad. Equipos móviles que no interrumpen producción.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
+              {/* 24/7 Tecionic specialists */}
+              <div className="text-center lg:text-left">
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">24/7</div>
+                <div className="text-lg font-semibold text-white mb-2">Especialistas Tecionic</div>
+                <p className="text-gray-400 leading-relaxed">
+                  Personal dedicado opera y mantiene los equipos en tu faena
+                </p>
+              </div>
+
+              {/* Fast deployment */}
+              <div className="text-center lg:text-left">
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">48h</div>
+                <div className="text-lg font-semibold text-white mb-2">Despliegue rápido</div>
+                <p className="text-gray-400 leading-relaxed">
+                  Flota regional lista para movilizar sin esperar fabricación
+                </p>
+              </div>
+
+              {/* Zero CAPEX */}
+              <div className="text-center lg:text-left">
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">$0</div>
+                <div className="text-lg font-semibold text-white mb-2">Inversión en capital</div>
+                <p className="text-gray-400 leading-relaxed">
+                  Arriendo mensual todo incluido. Opex, no Capex.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: EQUIPMENT & DEHYDRATION BENEFITS */}
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          {/* Water/Disposal Card */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[500px] mb-24">
+            {/* Left half - darker emerald */}
+            <div className="absolute inset-y-0 left-0 w-1/2 bg-emerald-700"></div>
+            {/* Right half - lighter emerald */}
+            <div className="absolute inset-y-0 right-0 w-1/2 bg-emerald-200"></div>
+
+            {/* Subtle grid texture overlay */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}></div>
+
+            {/* Diagonal line accent */}
+            <div className="absolute top-0 left-1/2 w-px h-full bg-white/10 transform -skew-x-12 origin-top"></div>
+
+            {/* Content */}
+            <div className="relative z-10 grid lg:grid-cols-2 gap-12 p-10 lg:p-16 items-center min-h-[500px]">
+              {/* Left: The argument */}
+              <div>
+                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                  Deja de pagar por disponer agua
+                </h2>
+                <p className="text-lg text-emerald-100 leading-relaxed">
+                  El lodo húmedo es 70-80% agua. Cuando lo envías a disposición, estás pagando camiones, transporte y tarifas de relleno para botar agua. Los filtros prensa eliminan esa agua antes de disponer. Reduces el volumen a una fracción y pagas solo por el sólido real.
+                </p>
+              </div>
+
+              {/* Right: Image with overlapping stat card */}
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/filtro_prensa_1200_drone_view.png"
+                    alt="Torta seca de filtro prensa lista para disposición"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                {/* Overlapping stat card */}
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-6">
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-5xl font-bold text-emerald-600">70%</span>
+                    <span className="text-lg text-gray-500">menos</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    volumen a disponer
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Equipment Benefits title and expandable list */}
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
+            Equipos diseñados para el desafío
+          </h2>
+
+          {/* Equipment Benefits - Expandable with images */}
+          <EquipmentBenefits />
+        </div>
+      </section>
+
+      {/* SECTION 7: INDUSTRY BREADTH - Horizontal Scrolling Carousel */}
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Probado en múltiples industrias
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Tecnología móvil adaptada a las necesidades específicas de cada sector
+            </p>
+          </div>
+
+          {/* Horizontal scrolling carousel */}
+          <div className="relative -mx-8">
+            <div className="overflow-x-auto scrollbar-hide px-8 pb-4">
+              <div className="flex gap-6" style={{ width: 'max-content' }}>
+                {/* Copper */}
+                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
+                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                    <Image
+                      src="/copper_mine.jpg"
+                      alt="Mina de cobre"
+                      fill
+                      sizes="320px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-sm font-bold">Cu</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
+                    </div>
+                    <p className="text-sm text-gray-600">Limpieza settlers SX, piscinas PLS/ILS</p>
+                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                      <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                        Ver detalles
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Gold */}
+                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-yellow-400 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
+                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                    <Image
+                      src="/gold_sediment_pool.jpg"
+                      alt="Piscina de sedimentos oro"
+                      fill
+                      sizes="320px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-sm font-bold">Au</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Oro</h3>
+                    </div>
+                    <p className="text-sm text-gray-600">Piscinas de sedimentación y clarificación</p>
+                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mt-3">
+                        Consultar
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Lithium */}
+                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-cyan-300 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
+                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                    <Image
+                      src="/lithium_mine.jpg"
+                      alt="Mina de litio"
+                      fill
+                      sizes="320px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-sm font-bold">Li</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Litio</h3>
+                    </div>
+                    <p className="text-sm text-gray-600">Protección membranas DLE, salmueras</p>
+                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                      <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                        Ver detalles
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Potassium */}
+                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-purple-300 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
+                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                    <Image
+                      src="/potassium_plant.jpg"
+                      alt="Planta de potasio"
+                      fill
+                      sizes="320px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-sm font-bold">K</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Potasio</h3>
+                    </div>
+                    <p className="text-sm text-gray-600">Sales minerales y piscinas de evaporación</p>
+                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                      <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                        Ver detalles
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Zinc */}
+                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
+                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                    <Image
+                      src="/zinc_processing_plant.jpg"
+                      alt="Planta de procesamiento de zinc"
+                      fill
+                      sizes="320px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-sm font-bold">Zn</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Zinc</h3>
+                    </div>
+                    <p className="text-sm text-gray-600">Purificación electrolitos y settlers</p>
+                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                      <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                        Ver detalles
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Crude Oil */}
+                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-gray-400 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
+                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+                    <Image
+                      src="/oil_refinery.jpg"
+                      alt="Refinería de petróleo"
+                      fill
+                      sizes="320px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-sm font-bold">Oil</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Petróleo</h3>
+                    </div>
+                    <p className="text-sm text-gray-600">Estanques con equipos ATEX certificados</p>
+                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                      <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                        Ver detalles
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Scroll indicator - subtle gradient fade on right */}
+            <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 8: CASE STUDY */}
+      <section className="border-b border-gray-200 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          {/* Header */}
+          <div className="mb-12">
+            <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
+              CASO DE ÉXITO
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
+              Planta de Yoduro mantiene continuidad operacional sin detenciones
+            </h2>
+          </div>
+
+          {/* Main content - Card */}
+          <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="grid lg:grid-cols-5">
+              {/* Left - Image */}
+              <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300 group-hover:lg:col-span-2">
+                <Image
+                  src="/potassium_industry.jpg"
+                  alt="Planta de Yoduro N. Victoria"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:bg-gradient-to-r" />
+                <div className="absolute bottom-4 left-4 lg:bottom-6 lg:left-6">
+                  <div className="flex items-center gap-2 text-white">
+                    <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                      <span className="font-bold text-sm">I₂</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">Planta SX Yoduro</div>
+                      <div className="text-white/70 text-xs">N. Victoria y TEA</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Content */}
+              <div className="lg:col-span-3 p-6 lg:p-8">
+                {/* Metrics row */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">0</div>
+                    <div className="text-sm text-gray-600">Detenciones/año</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">24/7</div>
+                    <div className="text-sm text-gray-600">Monitoreo turbidez</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">+15%</div>
+                    <div className="text-sm text-gray-600">Capacidad filtrado</div>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 mb-6">
+                  Remoción continua de sólidos desde etapas de extracción E1 hasta coalescedores. El yoduro llega limpio a filtración final, aumentando capacidad de proceso y eliminando paradas por acumulación.
+                </p>
+
+                {/* CTA */}
+                <Link href="/casos-de-exito/filtracion-yoduro" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                  Ver caso completo
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9: SERVICE MODELS - Auto-cycling Carousel */}
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+          <div className="flex items-end justify-between mb-12">
+            <div className="max-w-3xl">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Servicio según tu necesidad
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Desde respuesta de emergencia hasta mantención preventiva continua
+              </p>
+            </div>
+
+            {/* Navigation arrows and dots */}
+            <div className="hidden md:flex flex-col items-end gap-3">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    const models = ['emergencia', 'preventivo', 'continuo']
+                    const currentIndex = models.indexOf(activeServiceModel)
+                    const newModel = models[(currentIndex - 1 + models.length) % models.length]
+                    changeCarouselModel(newModel)
+                  }}
+                  className="w-12 h-12 bg-white rounded-full shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors cursor-pointer"
+                  aria-label="Anterior"
+                >
+                  <ChevronLeft className="w-6 h-6 text-gray-600" />
+                </button>
+
+                <button
+                  onClick={() => {
+                    const models = ['emergencia', 'preventivo', 'continuo']
+                    const currentIndex = models.indexOf(activeServiceModel)
+                    const newModel = models[(currentIndex + 1) % models.length]
+                    changeCarouselModel(newModel)
+                  }}
+                  className="w-12 h-12 bg-white rounded-full shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors cursor-pointer"
+                  aria-label="Siguiente"
+                >
+                  <ChevronRight className="w-6 h-6 text-gray-600" />
+                </button>
+              </div>
+
+              {/* Dots indicator */}
+              <div className="flex justify-center gap-2 w-full">
+                {['emergencia', 'preventivo', 'continuo'].map((model) => (
+                  <button
+                    key={model}
+                    onClick={() => changeCarouselModel(model)}
+                    className={`h-2 rounded-full transition-all cursor-pointer relative overflow-hidden ${
+                      activeServiceModel === model
+                        ? 'bg-gray-300 w-8'
+                        : 'bg-gray-300 hover:bg-gray-400 w-2'
+                    }`}
+                    aria-label={`Ir a ${model}`}
+                  >
+                    {activeServiceModel === model && (
+                      <span
+                        key={timerKey}
+                        className="absolute inset-0 bg-emerald-600 rounded-full origin-left"
+                        style={{
+                          animation: `fillProgress ${CAROUSEL_DURATION}ms linear forwards`
+                        }}
+                      />
+                    )}
+                  </button>
                 ))}
               </div>
             </div>
+          </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Contacto Especializado</h3>
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Tipo de Aplicación</label>
-                  <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white">
-                    <option>DLE - Extracción Directa Litio</option>
-                    <option>SX - Extracción por Solventes</option>
-                    <option>EW - Electroobtención</option>
-                    <option>Cristalización Sales</option>
-                  </select>
+          {/* Carousel container */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div ref={carouselCardRef} className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 min-h-[400px]">
+
+                {/* Emergencia - Limpieza Profunda Spot */}
+                {activeServiceModel === 'emergencia' && (
+                <div className="carousel-content">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900">Limpieza Profunda Spot</h3>
+                    <p className="text-gray-500">Extracción intensiva de sólidos acumulados</p>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Movilización de equipos en 48-72 horas</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Succión desde fondo de piscinas y settlers</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Deshidratación con filtros prensa incluida</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Sin detener tu circuito de producción</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-red-50 rounded-xl p-6">
+                      <div className="text-sm font-semibold text-red-800 uppercase tracking-wide mb-2">Duración típica</div>
+                      <div className="flex items-baseline gap-2 mb-3">
+                        <span className="text-5xl font-bold text-red-600">2-6</span>
+                        <span className="text-lg text-gray-600">semanas</span>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        Ideal cuando necesitas recuperar capacidad de tus piscinas o settlers antes de una parada programada.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Capacidad Requerida</label>
-                  <input
-                    type="text"
-                    placeholder="ej: 50 m³/h"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-slate-400"
-                  />
+                )}
+
+                {/* Preventivo - Mantención Programada */}
+                {activeServiceModel === 'preventivo' && (
+                <div className="carousel-content">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900">Mantención Programada</h3>
+                    <p className="text-gray-500">Campañas trimestrales o semestrales</p>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Calendario acordado según tu operación</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Extracción preventiva antes de acumulación crítica</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Monitoreo de niveles de sólidos incluido</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Precio por campaña con garantía de resultados</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-emerald-50 rounded-xl p-6">
+                      <div className="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Resultado</div>
+                      <div className="flex items-baseline gap-2 mb-3">
+                        <span className="text-5xl font-bold text-emerald-600">0</span>
+                        <span className="text-lg text-gray-600">emergencias/año</span>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        Mantén tus equipos en especificación sin sorpresas. Planifica tus costos con certeza.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-lg font-semibold transition-colors duration-200">
-                  Solicitar Evaluación Técnica
-                </button>
+                )}
+
+                {/* Continuo - Cómo Funciona */}
+                {activeServiceModel === 'continuo' && (
+                <div className="carousel-content">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900">Cómo Funciona</h3>
+                    <p className="text-gray-500">Tres pasos para empezar</p>
+                  </div>
+
+                  <div className="grid lg:grid-cols-3 gap-4">
+                    <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
+                      <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mb-3">1</div>
+                      <h4 className="font-bold text-gray-900 mb-2">Evaluación</h4>
+                      <ul className="space-y-1 text-sm text-gray-600">
+                        <li>• Análisis de tu circuito</li>
+                        <li>• Caracterización de sólidos</li>
+                        <li>• Dimensionamiento</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
+                      <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold mb-3">2</div>
+                      <h4 className="font-bold text-gray-900 mb-2">Instalación</h4>
+                      <ul className="space-y-1 text-sm text-gray-600">
+                        <li>• Equipos asignados 24/7</li>
+                        <li>• Operadores Tecionic</li>
+                        <li>• Sin CAPEX</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
+                      <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mb-3">3</div>
+                      <h4 className="font-bold text-gray-900 mb-2">Operación</h4>
+                      <ul className="space-y-1 text-sm text-gray-600">
+                        <li>• Extracción permanente</li>
+                        <li>• Arriendo mensual</li>
+                        <li>• Escalamiento flexible</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 10: FINAL CTA */}
+      <section className="bg-gradient-to-br from-emerald-600 to-emerald-700 relative overflow-hidden">
+        {/* Clean interface line at top */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+        {/* Mining topographic contour lines - right corner */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <img
+            src="/mine_motif_right_corner.svg"
+            alt=""
+            className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Evalúa la solución para tu planta
+          </h2>
+          <p className="text-xl text-emerald-100 mb-4">
+            Cuéntanos sobre tu aplicación: tipo de sólidos, volumen estimado, y condiciones de acceso. Evaluamos factibilidad técnica sin costo.
+          </p>
+          <p className="text-lg text-emerald-100 mb-10">
+            En 48 horas recibes propuesta técnica con capacidad requerida, configuración de equipos, y modelo de servicio recomendado.
+          </p>
+
+          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
+            <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
+              Solicitar Evaluación Técnica
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+            <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
+              Descargar Caso Completo
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+          </div>
+
+          <div className="border-t border-emerald-500 pt-8">
+            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">Contacto directo</div>
+            <div className="grid md:grid-cols-2 gap-6 text-white">
+              <div>
+                <div className="font-semibold mb-1">Santiago:</div>
+                <div className="text-emerald-100">Luis Thayer Ojeda 95, of. 312</div>
+              </div>
+              <div>
+                <div className="font-semibold mb-1">Calama:</div>
+                <div className="text-emerald-100">Miraflores 1260 B</div>
               </div>
             </div>
           </div>
