@@ -10,8 +10,8 @@ import { CheckCircle, ArrowRight } from 'lucide-react'
 const heroImages = [
   { src: '/filtro_prensa_1200_drone_view.png', alt: 'TSF mobile filter press drone view' },
   { src: '/mobile_equipment_spence.jpeg', alt: 'TSF mobile filtration equipment at Spence' },
-  { src: '/fotos spence/Imagen2.jpg', alt: 'TSF equipment installation at mining site' },
-  { src: '/Fotos Marccobre/Imagen de WhatsApp 2025-11-04 a las 15.10.48_f9ad096d.jpg', alt: 'TSF filter press on mobile trailer' },
+  { src: '/fotos_spence/Imagen2.jpg', alt: 'TSF equipment installation at mining site' },
+  { src: '/Fotos_Marccobre/no_permit_modification.jpg', alt: 'TSF filter press on mobile trailer' },
   { src: '/filtro_prensa_movil.png', alt: 'TSF mobile filter press unit' },
   { src: '/copper_concentrate_plant.jpg', alt: 'Copper concentrate processing plant' },
 ]

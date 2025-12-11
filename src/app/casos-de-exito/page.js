@@ -1,337 +1,308 @@
+import Link from 'next/link'
+import { ArrowRight, Factory, Droplets, FlaskConical, Zap, Shield, Clock } from 'lucide-react'
+
 export const metadata = {
-  title: 'Casos de Éxito - Tec-Ionic Durban',
-  description: 'Explore nuestros casos de éxito de optimización de procesos LIX/SX/EW en operaciones mineras reales.',
+  title: 'Casos de Éxito - Tecionic',
+  description: 'Resultados comprobados en operaciones mineras y petroleras. Explore nuestros casos de éxito con métricas reales de ahorro y eficiencia.',
 }
 
 export default function CasosExitoPage() {
   const caseStudies = [
     {
       id: 1,
-      title: "Tratamiento de Fase Orgánica en Planta SX - USD $3.1M Ahorro Anual",
-      client: "Planta SX - Operación Minera",
+      slug: "tratamiento-organico-sx",
       industry: "Cobre",
-      challenge: "Problemas persistentes en calidad físico-química: TIF bajos (20,4-21,10 dinas/cm), Delta TIF elevados (5,5-6,5 dinas/cm), viscosidad >6,3 cP, TSF hasta 444 seg, arrastres de hasta 65% acuoso",
-      solution: "Filtrado mediante filtro prensa, aplicación de arcilla tratante (5-10 kg/m³) y centrifugado de mezcla con monitoreo continuo",
-      results: [
-        "52% reducción en arrastre diario (6 → 2,9 m³)",
-        "92,16% eficiencia global alcanzada",
-        "Ahorro anual de USD $3.124M",
-        "TIF aumentado de 20,4 a 23,7 dinas/cm (+16%)",
-        "TSF reducido de 444 a 153 segundos (-66%)"
-      ],
-      timeline: "18 meses",
-      image: "/sx_plant_stock_photo.jpg",
-      category: "Extracción por Solventes",
-      location: "Operación Minera - América Latina",
-      link: "/casos-de-exito/tratamiento-organico-sx",
-      details: {
-        background: "Durante 2023 y 2024, la planta SX enfrentó problemas persistentes en la calidad físico-química del orgánico con TIF bajos, delta TIF elevados, viscosidad sobre umbral, TSF alto, altos arrastres de acuoso (hasta 65%), descarga máxima de cobre hasta 410 ppm y eficiencia global fluctuante entre 77% y 92%.",
-        approach: [
-          "Filtrado de fase orgánica mediante filtro prensa",
-          "Retiro de sólidos desde el inventario",
-          "Aplicación de arcilla tratante con dosis optimizadas (5-10 kg/m³)",
-          "Centrifugado de mezcla con arcilla",
-          "Monitoreo continuo de TIF, viscosidad, TSF, contenido acuoso y descarga de cobre"
-        ],
-        technologies: [
-          "Filtro prensa para fase orgánica",
-          "Tratamiento con arcilla activada",
-          "Sistema de centrifugado industrial",
-          "Monitoreo de parámetros críticos en tiempo real"
-        ],
-        metrics: {
-          beforeAfter: {
-            tif: { before: 20.4, after: 23.7 },
-            deltaTIF: { before: 6.5, after: 3 },
-            tsf: { before: 444, after: 153 },
-            viscosity: { before: 7.5, after: 6.35 },
-            efficiency: { before: 77, after: 92.16 },
-            cuDischarge: { before: 410, after: 190 },
-            dailyDrag: { before: 6, after: 2.9 },
-            monthlyCost: { before: 504000, after: 243600 }
-          }
-        }
-      }
+      industryIcon: Factory,
+      headlineMetric: "$3.1M USD",
+      headlineLabel: "Ahorro anual",
+      title: "Optimización de circuito SX mediante filtrado y tratamiento con arcilla",
+      services: ["Filtrado", "Arcilla"],
     },
     {
       id: 2,
-      title: "Mejora de Eficiencia en Celdas EW - Proyecto Minero del Norte",
-      client: "Corporación Minera del Pacífico",
-      industry: "Cobre",
-      challenge: "Alto consumo energético y calidad inconsistente de cátodos",
-      solution: "Optimización de parámetros electroquímicos y desborre preventivo",
-      results: [
-        "20% reducción en consumo energético",
-        "98.5% pureza en cátodos (vs 96.2% anterior)",
-        "Reducción 40% en mantenimiento correctivo"
-      ],
-      timeline: "6 meses",
-      image: "/copper_concentrate_plant.jpg",
-      category: "Electroobtención",
-      location: "Norte de Chile",
-      details: {
-        background: "Planta EW con problemas recurrentes de cortocircuitos, alto consumo energético y cátodos con impurezas que afectaban la comercialización del producto final.",
-        approach: [
-          "Caracterización electroquímica completa del proceso",
-          "Implementación de protocolo de desborre predictivo",
-          "Optimización de densidad de corriente por celda",
-          "Mejora en composición y flujo de electrolito",
-          "Instalación de sistema de monitoreo en tiempo real"
-        ],
-        technologies: [
-          "Desborre robotizado con alta frecuencia",
-          "Control automático de temperatura",
-          "Sistema de purga inteligente de electrolito",
-          "Rectificadores de alta eficiencia"
-        ]
-      }
+      slug: "enap-lodos-petroleros",
+      industry: "Petróleo",
+      industryIcon: Droplets,
+      headlineMetric: "84%",
+      headlineLabel: "Reducción volumétrica",
+      title: "Deshidratación de lodos petroleros en refinería sin inversión de capital",
+      services: ["Filtración", "Deshidratación"],
     },
     {
       id: 3,
-      title: "Recuperación de Litio en Salmueras - Salar de Atacama",
-      client: "Lithium Extraction Corp",
-      industry: "Litio",
-      challenge: "Baja concentración de litio y alta relación Mg/Li en salmueras",
-      solution: "Implementación de proceso híbrido: evaporación solar + extracción selectiva",
-      results: [
-        "65% reducción en tiempo de concentración",
-        "92% recuperación de litio (vs 78% proceso anterior)",
-        "Disminución 50% en huella de agua"
-      ],
-      timeline: "12 meses",
-      image: "/lithium_mine.jpg",
-      category: "Procesamiento de Salmueras",
-      location: "Salar de Atacama, Chile",
-      details: {
-        background: "Operación de litio enfrentaba desafíos para alcanzar concentraciones comerciales debido a alta presencia de magnesio y condiciones climáticas variables que afectaban la evaporación solar tradicional.",
-        approach: [
-          "Análisis geoquímico detallado de las salmueras",
-          "Diseño de proceso híbrido de concentración",
-          "Implementación de tecnología de membranas selectivas",
-          "Optimización de piscinas de evaporación",
-          "Sistema de control climático predictivo"
-        ],
-        technologies: [
-          "Membranas de ósmosis inversa selectiva",
-          "Cristalizadores evaporativos asistidos",
-          "Sistema de monitoreo meteorológico avanzado",
-          "Tecnología de intercambio iónico especializada"
-        ]
-      }
+      slug: "deshidratacion-concentrados",
+      industry: "Cobre",
+      industryIcon: Factory,
+      headlineMetric: "$2.43M",
+      headlineLabel: "Valor protegido",
+      title: "Respaldo de filtración durante mantención programada en Cerro Negro",
+      services: ["Filtración", "Respaldo"],
     },
     {
       id: 4,
-      title: "Modernización de Planta de Zinc - Electroobtención",
-      client: "Zinc Technologies SA",
-      industry: "Zinc",
-      challenge: "Equipos obsoletos y eficiencia energética deficiente",
-      solution: "Renovación integral con tecnología de celdas de alta densidad",
-      results: [
-        "35% mejora en eficiencia energética",
-        "99.95% pureza en zinc metálico",
-        "Incremento 28% en capacidad de producción"
-      ],
-      timeline: "10 meses",
-      image: "/zinc_processing_plant.jpg",
-      category: "Electroobtención",
-      location: "Valparaíso, Chile",
-      details: {
-        background: "Planta de electroobtención de zinc con más de 25 años de operación requería modernización para mantenerse competitiva y cumplir nuevos estándares ambientales.",
-        approach: [
-          "Evaluación integral de equipos existentes",
-          "Diseño de layout optimizado",
-          "Instalación de celdas de última generación",
-          "Implementación de sistemas de control digital",
-          "Programa de capacitación técnica avanzada"
-        ],
-        technologies: [
-          "Celdas EW de alta densidad de corriente",
-          "Sistema SCADA integrado",
-          "Rectificadores de conmutación suave",
-          "Automatización robótica para manejo de cátodos"
-        ]
-      }
+      slug: "limpieza-celdas-ew",
+      industry: "Cobre",
+      industryIcon: Shield,
+      headlineMetric: "Zero",
+      headlineLabel: "Incidentes",
+      title: "Limpieza de celdas EW en faena de alta montaña - Caserones",
+      services: ["Limpieza EW", "Seguridad"],
     },
     {
       id: 5,
-      title: "Deshidratación de Lodos Petroleros - Refinería ENAP",
-      client: "ENAP Refinería Concón",
-      industry: "Petróleo Crudo",
-      challenge: "4.5+ millones kg/año de lodos petroleros con 70-92% humedad generan altos costos de disposición y logística. Tres corrientes críticas (planta fenólica, fenoles y T-2402) requieren solución de reducción volumétrica sin inversión en infraestructura permanente.",
-      solution: "Validación técnica de laboratorio con tecnología de filtración móvil. Pruebas con filtros equivalentes a sistemas industriales demostraron viabilidad de deshidratación mediante filtro prensa/centrífuga. Se identificaron 5 áreas de aplicación en procesos Delayed Coker, FCC, tratamiento efluentes y separadores API.",
-      results: [
-        "84.23% reducción volumen lodos planta fenólica (92.59% → 53% humedad)",
-        "77.31% reducción volumen lodos planta fenoles (90.02% → 56% humedad)",
-        "32.96% reducción volumen lodos T-2402 (70.37% → 55.8% humedad)",
-        "Validación técnica sin inversión del cliente",
-        "5 oportunidades adicionales identificadas en refinería",
-        "Potencial recuperación de agua para reutilización"
-      ],
-      timeline: "3 meses",
-      image: "/oil_refinery.jpg",
-      category: "Deshidratación de Lodos",
-      location: "Refinería ENAP Concón, Chile",
-      link: "/casos-de-exito/enap-lodos-petroleros",
-      details: {
-        background: "ENAP Refinería Concón enfrentaba desafíos en la gestión de lodos petroleros generados en múltiples procesos, con alta humedad (70-92%) que incrementaba costos de transporte y disposición final. La refinería requería una solución que permitiera evaluar tecnología de deshidratación sin comprometer recursos de capital antes de validar su efectividad.",
-        approach: [
-          "Caracterización fisicoquímica de tres corrientes de lodos (planta fenólica, fenoles, T-2402)",
-          "Pruebas de laboratorio con filtros equivalentes a escala industrial",
-          "Evaluación de tecnología de filtro prensa y centrífuga",
-          "Análisis de viabilidad técnica y económica",
-          "Identificación de oportunidades adicionales en Delayed Coker, FCC y tratamiento de efluentes"
-        ],
-        technologies: [
-          "Tecnología de filtración móvil bajo vacío",
-          "Filtro prensa industrial",
-          "Sistemas de centrífuga para lodos petroleros",
-          "Caracterización fisicoquímica avanzada",
-          "Modelo predictivo de reducción volumétrica"
-        ],
-        metrics: {
-          beforeAfter: {
-            volume: { before: "4.5M kg/año", after: "↓35-85%" },
-            humidity: { before: "70-92%", after: "53-56%" },
-            disposalCost: { before: "Alto", after: "Optimizado" },
-            transportTrips: { before: "100%", after: "↓40-85%" }
-          }
-        }
-      }
-    }
+      slug: "soporte-sx-dgm",
+      industry: "Cobre",
+      industryIcon: Clock,
+      headlineMetric: "8 años",
+      headlineLabel: "Operación continua",
+      title: "Soporte continuo de planta SX para CODELCO - DGM",
+      services: ["Filtrado SX", "Soporte"],
+    },
+    {
+      id: 6,
+      slug: "solidos-finos-yoduro",
+      industry: "Químico",
+      industryIcon: FlaskConical,
+      headlineMetric: "100%",
+      headlineLabel: "Continuidad",
+      title: "Filtración de sólidos finos para producción de yoduro",
+      services: ["Sólidos finos", "Monitoreo"],
+    },
   ]
 
-  const filterCategories = ["Todos", "Extracción por Solventes", "Electroobtención", "Procesamiento de Salmueras", "Deshidratación de Lodos"]
-  
+  const headlineStats = [
+    { value: "$3.1M", label: "Ahorro anual generado", company: "Planta SX" },
+    { value: "84%", label: "Reducción volumétrica", company: "ENAP Refinería" },
+    { value: "8 años", label: "Soporte continuo", company: "CODELCO DGM" },
+    { value: "50+", label: "Proyectos completados", company: "Latinoamérica" },
+  ]
+
+  const industries = ["Todos", "Cobre", "Petróleo", "Químico", "Zinc", "Litio"]
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6">Casos de Estudio</h1>
-            <div className="w-24 h-1 bg-emerald-400 mx-auto mb-6"></div>
-            <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
-              Descubre cómo hemos ayudado a empresas mineras a optimizar sus procesos LIX/SX/EW, 
-              logrando mejoras significativas en eficiencia, costos y sostenibilidad.
-            </p>
-          </div>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Clean & Minimal like Linear */}
+      <section className="bg-slate-950 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-24 md:py-32">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+            Resultados que hablan
+            <span className="block text-slate-400">por sí mismos</span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mb-10">
+            Operaciones reales con métricas verificables. Descubra cómo hemos ayudado a empresas
+            mineras y petroleras en toda Latinoamérica.
+          </p>
+          <Link
+            href="#casos"
+            className="inline-flex items-center text-emerald-400 font-medium hover:text-emerald-300 transition-colors group"
+          >
+            Ver todos los casos
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="p-6">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">50+</div>
-              <div className="text-gray-600">Proyectos Completados</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">$180M</div>
-              <div className="text-gray-600">Ahorros Generados</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">25%</div>
-              <div className="text-gray-600">Mejora Promedio</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">98%</div>
-              <div className="text-gray-600">Satisfacción Cliente</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {caseStudies.map((study) => (
-              <div key={study.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                {/* Image placeholder */}
-                <div className="h-64 bg-gradient-to-r from-emerald-100 to-emerald-200 flex items-center justify-center">
-                  <div className="text-emerald-600 text-lg font-medium">Imagen del Proyecto</div>
+      {/* Metrics Bar - Stripe Style */}
+      <section className="border-b border-slate-200 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <p className="text-center text-slate-600 mb-8 font-medium">
+            Ayudamos a nuestros clientes a lograr resultados medibles
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+            {headlineStats.map((stat, index) => (
+              <div key={index} className="text-center md:text-left md:border-l md:border-slate-300 md:pl-6 first:border-l-0 first:pl-0">
+                <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1">
+                  {stat.value}
                 </div>
-                
-                <div className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="bg-emerald-100 text-emerald-800 text-sm font-semibold px-3 py-1 rounded-full">
-                      {study.category}
-                    </span>
-                    <span className="text-gray-500 text-sm">{study.industry}</span>
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {study.title}
-                  </h3>
-
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Cliente:</h4>
-                      <p className="text-gray-600">{study.client}</p>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Desafío:</h4>
-                      <p className="text-gray-600">{study.challenge}</p>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Solución:</h4>
-                      <p className="text-gray-600">{study.solution}</p>
-                    </div>
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">Resultados Clave:</h4>
-                    <ul className="space-y-2">
-                      {study.results.map((result, index) => (
-                        <li key={index} className="flex items-center text-gray-600">
-                          <svg className="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                          </svg>
-                          {result}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-                    <div className="text-sm text-gray-500">
-                      <span className="font-semibold">Timeline:</span> {study.timeline}
-                    </div>
-                    {study.link ? (
-                      <a href={study.link} className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                        Ver Detalles
-                      </a>
-                    ) : (
-                      <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                        Ver Detalles
-                      </button>
-                    )}
-                  </div>
-                </div>
+                <div className="text-slate-600 text-sm">{stat.label}</div>
+                <div className="text-slate-400 text-xs mt-1">{stat.company}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-emerald-600">
-        <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-6">¿Listo para Optimizar sus Procesos?</h2>
-          <p className="text-xl text-emerald-100 mb-8">
-            Cada operación minera es única. Permítanos desarrollar una solución 
-            personalizada que maximice la eficiencia de sus procesos LIX/SX/EW.
+      {/* Case Studies Grid - Clean Cards */}
+      <section id="casos" className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Casos de éxito
+            </h2>
+            <p className="text-slate-600 max-w-2xl">
+              Cada proyecto representa un desafío único resuelto con nuestras soluciones móviles.
+            </p>
+          </div>
+
+          {/* Industry Filter Tabs */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {industries.map((industry, idx) => (
+              <button
+                key={industry}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  idx === 0
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {industry}
+              </button>
+            ))}
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caseStudies.map((study) => {
+              const IconComponent = study.industryIcon
+              return (
+                <Link
+                  key={study.id}
+                  href={`/casos-de-exito/${study.slug}`}
+                  className="group block bg-slate-50 hover:bg-slate-100 rounded-2xl p-6 transition-all duration-300"
+                >
+                  {/* Icon */}
+                  <div className="w-12 h-12 bg-slate-200 group-hover:bg-emerald-100 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300">
+                    <IconComponent className="w-6 h-6 text-slate-600 group-hover:text-emerald-600 transition-colors duration-300" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-semibold text-slate-900 mb-3 line-clamp-2 group-hover:text-emerald-700 transition-colors">
+                    {study.title}
+                  </h3>
+
+                  {/* Metric */}
+                  <div className="mb-4">
+                    <span className="text-2xl font-bold text-slate-900">{study.headlineMetric}</span>
+                    <span className="text-slate-500 text-sm ml-2">{study.headlineLabel}</span>
+                  </div>
+
+                  {/* Services */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {study.services.map((service, serviceIdx) => (
+                      <span
+                        key={serviceIdx}
+                        className="bg-white text-slate-500 text-xs px-2 py-1 rounded"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Read Story Link */}
+                  <div className="flex items-center text-slate-600 group-hover:text-emerald-600 font-medium text-sm transition-colors">
+                    Leer caso
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Case - Simplified */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div>
+              <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                Caso destacado
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Tratamiento de fase orgánica en planta SX
+              </h2>
+              <p className="text-slate-600 mb-6 leading-relaxed">
+                Durante 18 meses, implementamos un sistema integral de filtrado, tratamiento con arcilla
+                y centrifugado que transformó la operación de una planta SX con problemas críticos de
+                calidad de orgánico.
+              </p>
+
+              <div className="space-y-3 mb-8">
+                {[
+                  "TSF reducido de 444 a 153 segundos (-66%)",
+                  "TIF aumentado de 20.4 a 23.7 dinas/cm (+16%)",
+                  "Eficiencia global estabilizada en 92.16%"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center text-slate-700">
+                    <Zap className="w-4 h-4 text-emerald-500 mr-3 flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                href="/casos-de-exito/tratamiento-organico-sx"
+                className="inline-flex items-center bg-slate-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors group"
+              >
+                Ver caso completo
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { value: "$3.1M", label: "Ahorro anual USD" },
+                { value: "52%", label: "Reducción arrastres" },
+                { value: "92%", label: "Eficiencia global" },
+                { value: "18", label: "Meses operación" },
+              ].map((stat, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-xl p-6 text-center shadow-sm"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1">{stat.value}</div>
+                  <div className="text-slate-500 text-sm">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Logos Section - Like Stripe */}
+      <section className="py-16 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-center text-slate-500 text-sm mb-8">
+            Empresas que confían en nuestras soluciones
           </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+            {["CODELCO", "ENAP", "Caserones", "Minera Spence", "Cerro Negro"].map((company) => (
+              <div key={company} className="text-xl md:text-2xl font-bold text-slate-400">
+                {company}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Clean */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            ¿Listo para optimizar sus procesos?
+          </h2>
+          <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+            Cada operación es única. Permítanos desarrollar una solución personalizada
+            que maximice la eficiencia de sus procesos.
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-colors">
-              Solicitar Consulta
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-colors">
-              Descargar Portafolio
-            </button>
+            <Link
+              href="/contacto"
+              className="inline-flex items-center justify-center bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-400 transition-colors group"
+            >
+              Solicitar consulta
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              href="/servicios"
+              className="inline-flex items-center justify-center border border-slate-600 text-white px-8 py-4 rounded-lg font-semibold hover:border-slate-500 hover:bg-slate-800 transition-colors"
+            >
+              Ver servicios
+            </Link>
           </div>
         </div>
       </section>

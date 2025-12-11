@@ -23,19 +23,19 @@ function EquipmentBenefits() {
       title: 'Operación en altura extrema',
       description: 'Bombas, filtros prensa y tableros de control certificados para operar sobre 4.000 msnm. Sistemas auxiliares diseñados para condiciones de alta montaña, con mantenimiento preventivo actualizado.',
       icon: Mountain,
-      image: '/EW Photos/20251009_141022.jpg'
+      image: '/EW_Photos/20251009_141022.jpg'
     },
     {
       title: '100% Móviles',
       description: 'Equipos que se instalan directamente sobre el grating de la nave, al costado de las celdas. Sin obras civiles, sin construcción permanente. Reubicación rápida entre sectores de la nave.',
       icon: Delivery,
-      image: '/EW Photos/20251009_141008.jpg'
+      image: '/EW_Photos/20251009_141008.jpg'
     },
     {
       title: 'Mangueras antiestáticas',
       description: 'Líneas de succión de 2-3 pulgadas con certificación antiestática para trabajo seguro en ambiente de celdas energizadas. Sin riesgo de chispas ni contacto eléctrico.',
       icon: Security,
-      image: '/EW Photos/20251009_141022.jpg'
+      image: '/EW_Photos/20251009_141022.jpg'
     }
   ]
 
@@ -327,7 +327,7 @@ export default function EWCleaningServicePage() {
             <div className="lg:col-span-6">
               <div ref={heroImageRef} className="rounded-xl overflow-hidden shadow-2xl shadow-gray-200/50">
                 <Image
-                  src="/EW Photos/20251009_141008.jpg"
+                  src="/EW_Photos/20251009_141008.jpg"
                   alt="Sistema de limpieza de celdas EW Tecionic en operación"
                   width={800}
                   height={400}
@@ -510,7 +510,7 @@ export default function EWCleaningServicePage() {
             <div className="lg:col-span-4 rounded-3xl border border-gray-700 overflow-hidden bg-gray-800/50 group">
               <div className="relative h-40 lg:h-48 overflow-hidden">
                 <Image
-                  src="/EW Photos/20251009_141022.jpg"
+                  src="/EW_Photos/20251009_141022.jpg"
                   alt="Bomba peristáltica para succión de borra en celdas EW"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -536,7 +536,7 @@ export default function EWCleaningServicePage() {
             <div className="lg:col-span-4 rounded-3xl border border-gray-700 overflow-hidden bg-gray-800/50 group">
               <div className="relative h-40 lg:h-48 overflow-hidden">
                 <Image
-                  src="/EW Photos/20251009_141008.jpg"
+                  src="/EW_Photos/20251009_141008.jpg"
                   alt="Filtros prensa móviles para electrolito"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -806,7 +806,7 @@ export default function EWCleaningServicePage() {
               {/* Left - Image */}
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300">
                 <Image
-                  src="/fotos spence/Imagen4.jpg"
+                  src="/fotos_spence/Imagen4.jpg"
                   alt="Nave de electroobtención Caserones"
                   fill
                   className="object-cover"

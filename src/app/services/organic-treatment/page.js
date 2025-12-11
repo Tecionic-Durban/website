@@ -111,7 +111,7 @@ function EquipmentBenefits() {
       title: 'Sin modificar permisos',
       description: 'Equipos móviles clasificados que no requieren cambios a permisos ambientales ni RCA. Instalación rápida sin trámites burocráticos. Operación temporal que no afecta infraestructura permanente.',
       icon: License,
-      image: '/Fotos Marccobre/no_permit_modification.jpg'
+      image: '/Fotos_Marccobre/no_permit_modification.jpg'
     }
   ]
 
@@ -1069,7 +1069,7 @@ export default function OrganicTreatmentServicePage() {
               {/* Left - Image */}
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300 group-hover:lg:col-span-2">
                 <Image
-                  src="/fotos spence/Imagen10.jpg"
+                  src="/fotos_spence/Imagen10.jpg"
                   alt="Planta SX Cobre"
                   fill
                   className="object-cover"

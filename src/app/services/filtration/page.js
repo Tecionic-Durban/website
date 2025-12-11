@@ -44,12 +44,21 @@ function RecoverySection() {
     : { text: 'text-amber-700', bg: 'bg-amber-600', border: 'border-amber-600', light: 'bg-amber-50' }
 
   return (
-    <section className="border-b border-gray-200 bg-gradient-to-br from-emerald-50/50 via-white to-gray-50 relative overflow-hidden">
-      {/* Background texture elements */}
+    <section className="py-20 bg-gradient-to-br from-emerald-100/80 via-emerald-50/50 to-gray-100 relative overflow-hidden">
+      {/* Enterprise Background Elements - more visible */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 industrial-pattern opacity-30"></div>
-        <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 blur-sm"></div>
-        <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
+        <div className="absolute top-20 right-[12%] w-40 h-40 bg-gradient-to-br from-emerald-500/20 to-emerald-600/15 rounded-full opacity-60 animate-float-slow blur-md"></div>
+        <div className="absolute bottom-20 left-[15%] w-48 h-48 bg-gradient-to-br from-emerald-400/25 to-emerald-500/20 rounded-full opacity-50 animate-float-medium blur-md"></div>
+        <div className="absolute top-1/2 right-[25%] w-32 h-32 bg-gradient-to-br from-emerald-300/20 to-emerald-400/15 rounded-full opacity-40 animate-float-slow blur-sm"></div>
+
+        {/* Strategic three ball constellation */}
+        <div className="absolute top-16 left-[8%] opacity-40">
+          <div className="flex items-center space-x-2">
+            <div className="w-3 h-3 bg-emerald-400 rounded-full enterprise-pulse"></div>
+            <div className="w-3 h-3 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-3 h-3 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
@@ -917,7 +926,7 @@ export default function FiltrationPage() {
               {/* Left - Image */}
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300">
                 <Image
-                  src="/fotos spence/Imagen7.jpg"
+                  src="/fotos_spence/Imagen7.jpg"
                   alt="Filtración de lodos industriales ENAP"
                   fill
                   className="object-cover"

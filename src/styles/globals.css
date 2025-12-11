@@ -186,14 +186,14 @@
     background-size: 16px 16px, 16px 16px, 16px 16px, 16px 16px, 8px 8px;
   }
 
-  /* Industrial Steel Gradient */
+  /* Industrial Steel Gradient - increased opacity for production visibility */
   .steel-gradient {
-    background: linear-gradient(135deg, 
-      rgba(200,200,200,0.1) 0%, 
-      rgba(220,220,220,0.05) 25%, 
-      rgba(180,180,180,0.1) 50%, 
-      rgba(200,200,200,0.05) 75%, 
-      rgba(160,160,160,0.1) 100%);
+    background: linear-gradient(135deg,
+      rgba(200,200,200,0.15) 0%,
+      rgba(220,220,220,0.08) 25%,
+      rgba(180,180,180,0.15) 50%,
+      rgba(200,200,200,0.08) 75%,
+      rgba(160,160,160,0.15) 100%);
   }
   
   /* Floating Animation */

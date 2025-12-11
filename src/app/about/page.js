@@ -1,45 +1,15 @@
 // src/app/about/page.js
-'use client'
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Beaker, Users, Award, Target, CheckCircle, Calendar, TrendingUp, Zap, Clock, Building, Handshake, Globe, Fuel } from 'lucide-react'
+import { Flash, Security, Renew, Connect, Collaborate, Time, CertificateCheck, CheckmarkFilled, Growth, Building, Partnership, Chemistry, Earth, OilPump, Calendar } from '@carbon/icons-react'
 
 export default function AboutPage() {
-  // Phase 1: Live metrics
-  const [liveMetrics, setLiveMetrics] = useState({
-    yearsExperience: 23,
-    clientsSatisfied: 100,
-    projectsCompleted: 347,
-    efficiencyGain: 22.5
-  })
-
-  // Phase 1: Three-ball loading state
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Simulate loading
-    setTimeout(() => setIsLoading(false), 1500)
-
-    // Phase 1: Animate metrics
-    const interval = setInterval(() => {
-      setLiveMetrics(prev => ({
-        ...prev,
-        projectsCompleted: prev.projectsCompleted + Math.floor(Math.random() * 2),
-        efficiencyGain: Math.round((prev.efficiencyGain + (Math.random() - 0.5) * 0.1) * 10) / 10
-      }))
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [])
-
-  // Phase 1: Three-ball loader component
-  const ThreeBallLoader = () => (
-    <div className="flex items-center justify-center space-x-1 py-4">
-      <div className="w-3 h-3 bg-emerald-600 rounded-full animate-float-up-1"></div>
-      <div className="w-3 h-3 bg-emerald-500 rounded-full animate-float-up-2"></div>
-      <div className="w-3 h-3 bg-emerald-400 rounded-full animate-float-up-3"></div>
-    </div>
-  )
+  // Static metrics
+  const metrics = {
+    yearsExperience: "23+",
+    clientsSatisfied: "100%",
+    projectsCompleted: "120+",
+    efficiencyGain: "22%"
+  }
 
   const milestones = [
     {
@@ -102,31 +72,31 @@ export default function AboutPage() {
 
   const values = [
     {
-      icon: Award,
+      icon: Flash,
       title: "Innovación Aplicada",
       description: "Desarrollamos e implementamos soluciones tecnológicas que generen valor real para nuestros clientes.",
       color: "from-orange-500 to-red-600"
     },
     {
-      icon: CheckCircle,
+      icon: Security,
       title: "Seguridad Operacional",
       description: "Priorizamos la seguridad en todas nuestras operaciones, protegiendo a nuestro equipo y clientes.",
       color: "from-blue-500 to-purple-600"
     },
     {
-      icon: Globe,
+      icon: Renew,
       title: "Sostenibilidad Ambiental",
       description: "Comprometidos con soluciones que contribuyan al cuidado del medio ambiente y desarrollo sostenible.",
       color: "from-emerald-500 to-teal-600"
     },
     {
-      icon: Zap,
+      icon: Connect,
       title: "Flexibilidad Operativa",
       description: "Adaptamos nuestros servicios móviles a las necesidades específicas de cada operación.",
       color: "from-green-500 to-emerald-600"
     },
     {
-      icon: Users,
+      icon: Collaborate,
       title: "Compromiso con Clientes y Colaboradores",
       description: "Construimos relaciones duraderas basadas en confianza, transparencia y resultados.",
       color: "from-purple-500 to-indigo-600"
@@ -134,76 +104,126 @@ export default function AboutPage() {
   ]
 
   const stats = [
-    { number: liveMetrics.yearsExperience + "+", label: "Años de Experiencia", description: "En el mercado minero", icon: Clock },
-    { number: liveMetrics.clientsSatisfied + "%", label: "Satisfacción Cliente", description: "Índice de satisfacción", icon: Award },
-    { number: liveMetrics.projectsCompleted + "+", label: "Proyectos Completados", description: "Exitosamente entregados", icon: CheckCircle },
-    { number: liveMetrics.efficiencyGain + "%", label: "Mejora Promedio", description: "En eficiencia operacional", icon: TrendingUp }
+    { number: metrics.yearsExperience, label: "Años de Experiencia", description: "En el mercado minero", icon: Time },
+    { number: metrics.clientsSatisfied, label: "Satisfacción Cliente", description: "Índice de satisfacción", icon: CertificateCheck },
+    { number: metrics.projectsCompleted, label: "Proyectos Exitosos", description: "Exitosamente entregados", icon: CheckmarkFilled },
+    { number: metrics.efficiencyGain, label: "Mejora Promedio", description: "En eficiencia operacional", icon: Growth }
   ]
 
   return (
     <>
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section with Phase 2: Industrial textures */}
-        <section className="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white py-16 relative overflow-hidden metal-texture">
-          {/* Phase 2: Floating background elements */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-500 rounded-full animate-float"></div>
-            <div className="absolute bottom-20 right-20 w-32 h-32 bg-emerald-400 rounded-full animate-float-slow"></div>
-            <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-emerald-600 rounded-full animate-float-delayed"></div>
+        {/* Hero Section - Technical/Blueprint Style */}
+        <section className="bg-white py-20 lg:py-28 relative overflow-hidden">
+          {/* Technical grid background */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Fine grid pattern */}
+            <div
+              className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage: `
+                  linear-gradient(to right, #059669 1px, transparent 1px),
+                  linear-gradient(to bottom, #059669 1px, transparent 1px)
+                `,
+                backgroundSize: '40px 40px'
+              }}
+            ></div>
+            {/* Larger grid overlay */}
+            <div
+              className="absolute inset-0 opacity-[0.02]"
+              style={{
+                backgroundImage: `
+                  linear-gradient(to right, #059669 2px, transparent 2px),
+                  linear-gradient(to bottom, #059669 2px, transparent 2px)
+                `,
+                backgroundSize: '200px 200px'
+              }}
+            ></div>
+            {/* Corner accent - top left */}
+            <div className="absolute top-0 left-0 w-32 h-32 border-l-4 border-t-4 border-emerald-500/20"></div>
+            {/* Corner accent - bottom right */}
+            <div className="absolute bottom-0 right-0 w-48 h-48 border-r-4 border-b-4 border-emerald-500/10"></div>
+          </div>
+
+          {/* Highlighted grid paths - traces along existing 40px grid lines */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Path 1 - Top middle, zigzag down-right */}
+            <div className="absolute top-0 left-[400px] w-[1px] h-[80px] bg-emerald-500/45"></div>
+            <div className="absolute top-[80px] left-[400px] w-[120px] h-[1px] bg-emerald-500/45"></div>
+            <div className="absolute top-[80px] left-[520px] w-[1px] h-[120px] bg-emerald-500/40"></div>
+            <div className="absolute top-[200px] left-[520px] w-[80px] h-[1px] bg-emerald-500/35"></div>
+
+            {/* Path 2 - Right side, long vertical with horizontal branch */}
+            <div className="absolute top-[40px] right-[120px] w-[1px] h-[280px] bg-emerald-500/40"></div>
+            <div className="absolute top-[160px] right-[120px] w-[120px] h-[1px] bg-emerald-500/40"></div>
+
+            {/* Path 3 - Right bottom, staircase pattern */}
+            <div className="absolute bottom-[200px] right-0 w-[80px] h-[1px] bg-emerald-500/50"></div>
+            <div className="absolute bottom-[200px] right-[80px] w-[1px] h-[80px] bg-emerald-500/45"></div>
+            <div className="absolute bottom-[120px] right-[80px] w-[160px] h-[1px] bg-emerald-500/45"></div>
+            <div className="absolute bottom-[120px] right-[240px] w-[1px] h-[120px] bg-emerald-500/40"></div>
+
+            {/* Path 4 - Top right corner, short L */}
+            <div className="absolute top-0 right-[280px] w-[1px] h-[120px] bg-emerald-500/35"></div>
+            <div className="absolute top-[120px] right-[280px] w-[160px] h-[1px] bg-emerald-500/30"></div>
+
+            {/* Path 5 - Far right edge, vertical drop */}
+            <div className="absolute top-[200px] right-[40px] w-[1px] h-[200px] bg-emerald-500/35"></div>
+            <div className="absolute top-[400px] right-[40px] w-[80px] h-[1px] bg-emerald-500/30"></div>
+
+            {/* Path 6 - Bottom right corner trace */}
+            <div className="absolute bottom-[40px] right-[320px] w-[200px] h-[1px] bg-emerald-500/30"></div>
+            <div className="absolute bottom-[40px] right-[320px] w-[1px] h-[80px] bg-emerald-500/25"></div>
+
+            {/* Path 7 - Top edge, horizontal with short drop */}
+            <div className="absolute top-[40px] right-[400px] w-[160px] h-[1px] bg-emerald-500/30"></div>
+            <div className="absolute top-[40px] right-[400px] w-[1px] h-[80px] bg-emerald-500/25"></div>
+
+            {/* Path 8 - Bottom left, horizontal going right */}
+            <div className="absolute bottom-[40px] left-0 w-[280px] h-[1px] bg-emerald-500/35"></div>
+            <div className="absolute bottom-[40px] left-[280px] w-[1px] h-[80px] bg-emerald-500/30"></div>
+
           </div>
 
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Content */}
               <div>
-                <h1 className="text-5xl font-bold mb-6 animate-in slide-in-from-left duration-500">
-                  Acerca de Tec-Ionic Durban
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                  <span className="text-gray-900">Acerca de</span>
+                  <span className="block text-emerald-600">Tec-Ionic Durban</span>
                 </h1>
-                <div className="w-24 h-1 bg-emerald-400 mb-6"></div>
-                <p className="text-xl text-emerald-100 leading-relaxed mb-8 animate-in slide-in-from-left duration-700">
+                <div className="w-24 h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full mb-8"></div>
+                <p className="text-xl text-gray-600 leading-relaxed mb-10">
                   Con más de 23 años de experiencia, somos la empresa líder en servicios
                   especializados de filtrado y tratamiento de borra para procesos de
                   lixiviación, extracción por solventes y electroobtención.
                 </p>
-                
-                {/* Phase 1: Live metrics display */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-emerald-800/30 backdrop-blur rounded-lg p-4 border border-emerald-600/30">
-                    <div className="text-2xl font-bold text-emerald-300">{liveMetrics.projectsCompleted}+</div>
-                    <div className="text-sm text-emerald-200">Proyectos Exitosos</div>
-                  </div>
-                  <div className="bg-emerald-800/30 backdrop-blur rounded-lg p-4 border border-emerald-600/30">
-                    <div className="text-2xl font-bold text-emerald-300">{liveMetrics.efficiencyGain}%</div>
-                    <div className="text-sm text-emerald-200">Mejora Promedio</div>
-                  </div>
-                </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-white rounded-lg p-2 industrial-shimmer">
-                    <Image 
-                      src="/logo.png" 
-                      alt="Tec-Ionic Durban"
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-contain"
-                    />
+                {/* Metrics display - Latam style */}
+                <div className="grid grid-cols-2 gap-8">
+                  <div className="border-l-2 border-emerald-500 pl-4">
+                    <div className="text-3xl font-bold text-gray-900">{metrics.projectsCompleted}</div>
+                    <div className="text-gray-500 text-sm mt-1">Proyectos exitosos</div>
                   </div>
-                  <div>
-                    <div className="text-2xl font-bold">Tec-Ionic Durban</div>
-                    <div className="text-emerald-300">Servicios LIX/SX/EW</div>
+                  <div className="border-l-2 border-emerald-500 pl-4">
+                    <div className="text-3xl font-bold text-gray-900">{metrics.efficiencyGain}</div>
+                    <div className="text-gray-500 text-sm mt-1">Mejora promedio</div>
                   </div>
                 </div>
               </div>
+
+              {/* Right: Image */}
               <div className="relative">
-                {/* Phase 2: Interactive process visualization */}
-                <div className="aspect-video bg-emerald-800/30 rounded-2xl flex items-center justify-center backdrop-blur border border-emerald-600/30 carbon-fiber">
-                  {isLoading ? (
-                    <ThreeBallLoader />
-                  ) : (
-                    <div className="text-center">
-                      <Beaker className="w-24 h-24 text-emerald-300 mx-auto mb-4 animate-pulse" />
-                      <div className="text-emerald-200 font-semibold">Innovación en Procesos Mineros</div>
-                    </div>
-                  )}
+                <div className="rounded-xl overflow-hidden shadow-xl shadow-gray-200/80 ring-1 ring-gray-200">
+                  <Image
+                    src="/filtro_prensa_1200_drone_view.png"
+                    alt="TSF Industrial Equipment"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -215,7 +235,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
-                <Target className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
+                <Flash className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Misión</h2>
                 <p className="text-gray-600 leading-relaxed">
                   Asegurar la continuidad y eficiencia de las operaciones de nuestros clientes
@@ -224,7 +244,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
-                <Award className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
+                <Growth className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Visión</h2>
                 <p className="text-gray-600 leading-relaxed">
                   Convertirse en el socio estratégico líder en Latinoamérica en tecnologías
@@ -249,7 +269,7 @@ export default function AboutPage() {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center text-white group">
                   <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <stat.icon className="w-8 h-8 text-white" />
+                    <stat.icon size={32} />
                   </div>
                   <div className="text-4xl md:text-5xl font-bold mb-2 micro-bounce">{stat.number}</div>
                   <div className="text-xl font-semibold mb-1">{stat.label}</div>
@@ -269,21 +289,33 @@ export default function AboutPage() {
                 Los principios que guían nuestro trabajo diario
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-12 gap-y-10">
               {values.map((value, index) => (
-                <div key={index} className="group">
-                  <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
-                    {/* Phase 2: Gradient overlay on hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                    
-                    <div className="relative z-10">
-                      <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <value.icon className="w-8 h-8 text-emerald-600" />
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                      <p className="text-gray-600">{value.description}</p>
+                <div key={index} className="text-center">
+                  {/* Circuit node container */}
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    {/* Connecting lines - circuit traces */}
+                    <div className="absolute top-1/2 left-0 w-3 h-[2px] bg-emerald-300 -translate-y-1/2"></div>
+                    <div className="absolute top-1/2 right-0 w-3 h-[2px] bg-emerald-300 -translate-y-1/2"></div>
+                    <div className="absolute left-1/2 top-0 h-3 w-[2px] bg-emerald-300 -translate-x-1/2"></div>
+                    <div className="absolute left-1/2 bottom-0 h-3 w-[2px] bg-emerald-300 -translate-x-1/2"></div>
+                    {/* Corner traces */}
+                    <div className="absolute top-1 left-1 w-2 h-[2px] bg-emerald-200 rotate-45 origin-left"></div>
+                    <div className="absolute top-1 right-1 w-2 h-[2px] bg-emerald-200 -rotate-45 origin-right"></div>
+                    <div className="absolute bottom-1 left-1 w-2 h-[2px] bg-emerald-200 -rotate-45 origin-left"></div>
+                    <div className="absolute bottom-1 right-1 w-2 h-[2px] bg-emerald-200 rotate-45 origin-right"></div>
+                    {/* Central node */}
+                    <div className="absolute inset-3 bg-white rounded-full border-2 border-emerald-400 flex items-center justify-center shadow-sm text-emerald-600">
+                      <value.icon size={24} />
                     </div>
+                    {/* Node dots at line ends */}
+                    <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-y-1/2"></div>
+                    <div className="absolute top-1/2 right-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-y-1/2"></div>
+                    <div className="absolute left-1/2 top-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-x-1/2"></div>
+                    <div className="absolute left-1/2 bottom-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-x-1/2"></div>
                   </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{value.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -308,20 +340,20 @@ export default function AboutPage() {
                 {milestones.map((milestone, index) => {
                   const IconComponent = {
                     building: Building,
-                    handshake: Handshake,
-                    beaker: Beaker,
-                    'trending-up': TrendingUp,
-                    zap: Zap,
-                    globe: Globe,
-                    fuel: Fuel
+                    handshake: Partnership,
+                    beaker: Chemistry,
+                    'trending-up': Growth,
+                    zap: Flash,
+                    globe: Earth,
+                    fuel: OilPump
                   }[milestone.icon] || Calendar;
 
                   return (
                     <div key={index} className="relative flex items-start group">
                       {/* Enhanced timeline node with icon */}
                       <div className="relative z-10">
-                        <div className={`w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r ${milestone.color} rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:scale-110 transition-all duration-300`}>
-                          <IconComponent className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                        <div className={`w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r ${milestone.color} rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:scale-110 transition-all duration-300 text-white`}>
+                          <IconComponent size={20} />
                         </div>
                       </div>
 
