@@ -1,24 +1,42 @@
-export async function onRequestPost(context) {
-  const { request, env } = context;
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
-  // CORS headers
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-  };
+export const runtime = 'edge';
 
+export async function POST(request) {
   try {
     const data = await request.json();
 
     // Validate required fields
     const { firstName, lastName, company, email, service } = data;
     if (!firstName || !lastName || !company || !email || !service) {
-      return new Response(
-        JSON.stringify({ error: 'Faltan campos requeridos' }),
-        { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      return NextResponse.json(
+        { error: 'Faltan campos requeridos' },
+        { status: 400 }
       );
     }
+
+    // Get API key - try both methods for Cloudflare compatibility
+    let resendApiKey;
+    try {
+      // For Cloudflare Pages with next-on-pages
+      const { getRequestContext } = await import('@cloudflare/next-on-pages');
+      const ctx = getRequestContext();
+      resendApiKey = ctx.env.RESEND_API_KEY;
+    } catch {
+      // Fallback for local dev or other environments
+      resendApiKey = process.env.RESEND_API_KEY;
+    }
+
+    if (!resendApiKey) {
+      console.error('RESEND_API_KEY not configured');
+      return NextResponse.json(
+        { error: 'Error de configuración del servidor' },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(resendApiKey);
 
     // Format the email content for Tecionic
     const formattedDate = new Date().toLocaleString('es-CL', {
@@ -27,7 +45,8 @@ export async function onRequestPost(context) {
       timeStyle: 'short'
     });
 
-    const emailToTecionic = {
+    // Send email to Tecionic
+    const { error: tecioniError } = await resend.emails.send({
       from: 'Formulario Web <onboarding@resend.dev>',
       to: ['contacto@tsf.cl'],
       subject: `Nueva Consulta: ${service} - ${company}`,
@@ -88,10 +107,15 @@ export async function onRequestPost(context) {
           </div>
         </div>
       `,
-    };
+    });
 
-    // Confirmation email to the sender
-    const emailToSender = {
+    if (tecioniError) {
+      console.error('Failed to send email to Tecionic:', tecioniError);
+      throw new Error('Error enviando email');
+    }
+
+    // Send confirmation to sender
+    await resend.emails.send({
       from: 'Tecionic Durban <onboarding@resend.dev>',
       to: [email],
       subject: 'Hemos recibido su consulta - Tecionic Durban',
@@ -143,71 +167,18 @@ export async function onRequestPost(context) {
           </div>
         </div>
       `,
-    };
-
-    // Send both emails via Resend
-    const resendApiKey = env.RESEND_API_KEY;
-
-    if (!resendApiKey) {
-      console.error('RESEND_API_KEY not configured');
-      return new Response(
-        JSON.stringify({ error: 'Error de configuración del servidor' }),
-        { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
-      );
-    }
-
-    // Send email to Tecionic
-    const tecioniResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${resendApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(emailToTecionic),
     });
 
-    if (!tecioniResponse.ok) {
-      const error = await tecioniResponse.text();
-      console.error('Failed to send email to Tecionic:', error);
-      throw new Error('Error enviando email a Tecionic');
-    }
-
-    // Send confirmation to sender
-    const senderResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${resendApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(emailToSender),
-    });
-
-    if (!senderResponse.ok) {
-      console.error('Failed to send confirmation email:', await senderResponse.text());
-      // Don't fail the request if confirmation email fails
-    }
-
-    return new Response(
-      JSON.stringify({ success: true, message: 'Consulta enviada exitosamente' }),
-      { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+    return NextResponse.json(
+      { success: true, message: 'Consulta enviada exitosamente' },
+      { status: 200 }
     );
 
   } catch (error) {
     console.error('Contact form error:', error);
-    return new Response(
-      JSON.stringify({ error: 'Error procesando su solicitud. Por favor intente nuevamente.' }),
-      { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+    return NextResponse.json(
+      { error: 'Error procesando su solicitud. Por favor intente nuevamente.' },
+      { status: 500 }
     );
   }
-}
-
-// Handle CORS preflight
-export async function onRequestOptions() {
-  return new Response(null, {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
 }
