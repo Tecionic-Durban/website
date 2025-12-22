@@ -1,10 +1,12 @@
 'use client'
 import { useState } from 'react'
 import { Location, Email, Time } from '@carbon/icons-react'
-import { AlertCircle, CheckCircle } from 'lucide-react'
+import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react'
 
 export default function ContactPage() {
   const [selectedService, setSelectedService] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,6 +17,48 @@ export default function ContactPage() {
     serviceSpecificAnswer: '',
     message: ''
   })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (getFormProgress() < 100 || isSubmitting) return
+
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          company: '',
+          email: '',
+          phone: '',
+          service: '',
+          serviceSpecificAnswer: '',
+          message: ''
+        })
+        setSelectedService('')
+      } else {
+        setSubmitStatus('error')
+        console.error('Form submission error:', result.error)
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      console.error('Form submission error:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const services = [
     'Filtración y deshidratación de borras y sólidos',
@@ -74,7 +118,7 @@ export default function ContactPage() {
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Solicite una Consulta</h2>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Fields */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -197,18 +241,51 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-emerald-600 mr-2" />
+                      <div>
+                        <p className="font-semibold text-emerald-800">¡Consulta enviada exitosamente!</p>
+                        <p className="text-sm text-emerald-600">Recibirá una confirmación en su correo. Le responderemos dentro de 24 horas hábiles.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                    <div className="flex items-center">
+                      <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
+                      <div>
+                        <p className="font-semibold text-red-800">Error al enviar la consulta</p>
+                        <p className="text-sm text-red-600">Por favor intente nuevamente o contáctenos directamente a contacto@tsf.cl</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Smart Submit Button */}
                 <div className="flex items-center space-x-4">
-                  <button 
+                  <button
                     type="submit"
-                    disabled={getFormProgress() < 100}
-                    className={`flex-1 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg ${
-                      getFormProgress() >= 100 
-                        ? 'bg-emerald-600 hover:bg-emerald-500 text-white' 
-                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    disabled={getFormProgress() < 100 || isSubmitting}
+                    className={`flex-1 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform shadow-lg ${
+                      isSubmitting
+                        ? 'bg-emerald-400 text-white cursor-wait'
+                        : getFormProgress() >= 100
+                          ? 'bg-emerald-600 hover:bg-emerald-500 hover:scale-105 text-white'
+                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                   >
-                    {getFormProgress() >= 100 ? (
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center">
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        Enviando...
+                      </div>
+                    ) : getFormProgress() >= 100 ? (
                       <div className="flex items-center justify-center">
                         <CheckCircle className="w-5 h-5 mr-2" />
                         Enviar Consulta Técnica
@@ -220,8 +297,8 @@ export default function ContactPage() {
                       </div>
                     )}
                   </button>
-                  
-                  {getFormProgress() >= 100 && (
+
+                  {getFormProgress() >= 100 && !isSubmitting && submitStatus !== 'success' && (
                     <div className="text-emerald-600 text-sm animate-pulse">
                       ✓ Listo para enviar
                     </div>
