@@ -40,4 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 # Large video files
-public/Fotos Marccobre/*.mp4
+public/Fotos_Marccobre/*.mp4
