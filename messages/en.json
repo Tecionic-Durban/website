@@ -1,0 +1,89 @@
+{
+  "navigation": {
+    "services": "Services",
+    "industries": "Industries",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "header": {
+    "operationalServices": "Operational Services",
+    "dataAnalytics": "Data Analytics",
+    "qualityControl": "Quality Control",
+    "services": {
+      "filtration": {
+        "name": "Filtration & Dehydration",
+        "description": "Sludge processing"
+      },
+      "organicTreatment": {
+        "name": "Organic Treatment",
+        "description": "Extractant purification"
+      },
+      "concentrateDehydration": {
+        "name": "Concentrate Dehydration",
+        "description": "Minerals"
+      },
+      "fineSolids": {
+        "name": "Fine Solids",
+        "description": "Advanced removal"
+      },
+      "waterClarification": {
+        "name": "Water Clarification",
+        "description": "Industrial treatment"
+      },
+      "ewCleaning": {
+        "name": "EW Cell Cleaning",
+        "description": "Specialized maintenance"
+      },
+      "maintenance": {
+        "name": "Maintenance",
+        "description": "Comprehensive support"
+      }
+    },
+    "industries": {
+      "copper": "Copper",
+      "zinc": "Zinc",
+      "potassium": "Potassium",
+      "lithium": "Lithium",
+      "crudeOil": "Crude Oil"
+    },
+    "resourceLinks": {
+      "caseStudies": "Case Studies",
+      "industryTrends": "Industry Trends",
+      "whitePapers": "White Papers",
+      "technicalSpecs": "Technical Specifications",
+      "compliance": "Regulatory Compliance",
+      "customerStories": "Customer Stories"
+    },
+    "customerSuccessStory": "Customer success story",
+    "viewAllCaseStudies": "View all cases"
+  },
+  "footer": {
+    "description": "Over 18 years providing specialized solid-liquid separation solutions for the mining industry across Latin America.",
+    "services": "Services",
+    "industries": "Industries",
+    "resources": "Resources",
+    "contact": "Contact",
+    "address": "Av. Vitacura 2909, Of. 601, Las Condes, Santiago",
+    "email": "contacto@tecionic.cl",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "contactUs": "Contact us",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Select language",
+    "languages": {
+      "es-cl": "Spanish (Chile)",
+      "es-mx": "Spanish (Mexico)",
+      "pt-br": "Portuguese (Brazil)",
+      "en": "English"
+    }
+  }
+}

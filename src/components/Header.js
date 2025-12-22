@@ -1,10 +1,10 @@
 // src/components/Header.js
 'use client'
 import { useState } from 'react'
-import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { handleContactClick } from '@/utils/navigation'
 import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, Analytics, ChartLineData, Meter, CertificateCheck } from '@carbon/icons-react'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -466,8 +466,9 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button + Language Switcher */}
           <div className="hidden lg:flex items-center space-x-4">
+            <LanguageSwitcher />
             <button
               onClick={(e) => handleContactClick(e, router, pathname)}
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200"
@@ -652,6 +653,11 @@ export default function Header() {
               >
                 Acerca
               </Link>
+
+              {/* Language Switcher - Mobile */}
+              <div className="px-3 py-3">
+                <LanguageSwitcher />
+              </div>
 
               {/* Contact Button */}
               <button

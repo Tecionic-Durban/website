@@ -1,0 +1,89 @@
+{
+  "navigation": {
+    "services": "Servicos",
+    "industries": "Industrias",
+    "resources": "Recursos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "header": {
+    "operationalServices": "Servicos Operacionais",
+    "dataAnalytics": "Analise de Dados",
+    "qualityControl": "Controle de Qualidade",
+    "services": {
+      "filtration": {
+        "name": "Filtracao e Desidratacao",
+        "description": "De borras"
+      },
+      "organicTreatment": {
+        "name": "Tratamento Organico",
+        "description": "Purificacao de extratores"
+      },
+      "concentrateDehydration": {
+        "name": "Desidratacao de Concentrados",
+        "description": "Minerais"
+      },
+      "fineSolids": {
+        "name": "Solidos Finos",
+        "description": "Remocao avancada"
+      },
+      "waterClarification": {
+        "name": "Clarificacao de Aguas",
+        "description": "Tratamento industrial"
+      },
+      "ewCleaning": {
+        "name": "Limpeza de Celulas EW",
+        "description": "Manutencao especializada"
+      },
+      "maintenance": {
+        "name": "Manutencao",
+        "description": "Suporte integral"
+      }
+    },
+    "industries": {
+      "copper": "Cobre",
+      "zinc": "Zinco",
+      "potassium": "Potassio",
+      "lithium": "Litio",
+      "crudeOil": "Petroleo Bruto"
+    },
+    "resourceLinks": {
+      "caseStudies": "Casos de Sucesso",
+      "industryTrends": "Tendencias da Industria",
+      "whitePapers": "White Papers",
+      "technicalSpecs": "Especificacoes Tecnicas",
+      "compliance": "Conformidade Regulatoria",
+      "customerStories": "Historias de Clientes"
+    },
+    "customerSuccessStory": "Historia de sucesso do cliente",
+    "viewAllCaseStudies": "Ver todos os casos"
+  },
+  "footer": {
+    "description": "Mais de 18 anos fornecendo solucoes especializadas em separacao solido-liquido para a industria de mineracao da America Latina.",
+    "services": "Servicos",
+    "industries": "Industrias",
+    "resources": "Recursos",
+    "contact": "Contato",
+    "address": "Av. Vitacura 2909, Of. 601, Las Condes, Santiago",
+    "email": "contacto@tecionic.cl",
+    "copyright": "Todos os direitos reservados."
+  },
+  "common": {
+    "learnMore": "Saiba mais",
+    "contactUs": "Entre em contato",
+    "readMore": "Leia mais",
+    "viewAll": "Ver tudo",
+    "back": "Voltar",
+    "next": "Proximo",
+    "previous": "Anterior"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Selecionar idioma",
+    "languages": {
+      "es-cl": "Espanhol (Chile)",
+      "es-mx": "Espanhol (Mexico)",
+      "pt-br": "Portugues (Brasil)",
+      "en": "Ingles"
+    }
+  }
+}
