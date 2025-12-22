@@ -378,7 +378,7 @@ export default function SoporteSXDGMCase() {
                   <div className="text-emerald-100 text-sm">Años en el mercado</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <div className="text-4xl font-bold text-emerald-300 mb-2">50+</div>
+                  <div className="text-4xl font-bold text-emerald-300 mb-2">120+</div>
                   <div className="text-emerald-100 text-sm">Proyectos completados</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">

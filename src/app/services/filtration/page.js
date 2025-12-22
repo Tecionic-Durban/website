@@ -889,8 +889,8 @@ export default function FiltrationPage() {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-amber-700 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <RainDrop className="w-5 h-5 text-amber-400" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <RainDrop className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900">Petróleo Crudo</h3>
                 </div>

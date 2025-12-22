@@ -135,7 +135,7 @@ export default function CopperIndustryPage() {
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
                   Plantas de cobre enfrentan problemas operacionales continuos: orgánico contaminado, borras en celdas,
-                  concentrados húmedos, aguas con sólidos.
+                  concentrados húmedos, medios acuosos con sólidos.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Tradicionalmente cada problema requiere equipos fijos propios—millones en CAPEX, años de implementación.
@@ -163,7 +163,7 @@ export default function CopperIndustryPage() {
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">24-48 meses</div>
+                        <div className="text-3xl font-bold text-gray-900">24+ meses</div>
                       </div>
                       <div className="col-span-2">
                         <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Implementación</div>
@@ -406,7 +406,7 @@ export default function CopperIndustryPage() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Desborre Celdas EW</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Succión neumática + filtración en línea. Retorno limpio, sin pérdida de nivel.
+                    Succión peristáltica + filtración en línea. Retorno limpio, sin pérdida de nivel.
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2 text-gray-700">
@@ -446,7 +446,7 @@ export default function CopperIndustryPage() {
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2 text-gray-700">
                       <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                      Hasta 130 ton/día torta
+                      400 ton/día por equipo
                     </div>
                     <div className="flex items-center gap-2 text-gray-700">
                       <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
@@ -608,7 +608,7 @@ export default function CopperIndustryPage() {
                   Limpieza de celdas sin parar producción
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Succión neumática desde fondo de celda. Filtración inline retorna electrolito limpio.
+                  Succión peristáltica desde fondo de celda. Filtración inline retorna electrolito limpio.
                   Sin pérdida de nivel, sin detención de proceso.
                 </p>
 
@@ -749,7 +749,7 @@ export default function CopperIndustryPage() {
                 <div className="space-y-4">
                   {[
                     { metric: '$500K-$2M+', label: 'Inversión CAPEX inicial' },
-                    { metric: '24-48 meses', label: 'Tiempo instalación' },
+                    { metric: '24+ meses', label: 'Tiempo instalación' },
                     { metric: 'RCA modificada', label: 'Permisos ambientales' },
                     { metric: 'Dimensionamiento fijo', label: 'Equipos quedan mal dimensionados' }
                   ].map((item, i) => (

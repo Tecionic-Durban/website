@@ -1,6 +1,6 @@
 // src/app/about/page.js
 import Image from 'next/image'
-import { Flash, Security, Renew, Connect, Collaborate, Time, CertificateCheck, CheckmarkFilled, Growth, Building, Partnership, Chemistry, Earth, OilPump, Calendar } from '@carbon/icons-react'
+import { Flash, Security, Renew, Connect, Collaborate, Time, CertificateCheck, CheckmarkFilled, Growth, Building, Partnership, Chemistry, Earth, RainDrop, Calendar } from '@carbon/icons-react'
 
 export default function AboutPage() {
   // Static metrics
@@ -66,7 +66,7 @@ export default function AboutPage() {
       description: "Expansión hacia el mercado de refinación de petróleo, consolidando nuestra presencia en Latinoamérica.",
       metric: "Petróleo",
       icon: "fuel",
-      color: "from-slate-600 to-slate-700"
+      color: "from-amber-500 to-gray-900"
     }
   ]
 
@@ -113,87 +113,22 @@ export default function AboutPage() {
   return (
     <>
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section - Technical/Blueprint Style */}
-        <section className="bg-white py-20 lg:py-28 relative overflow-hidden">
-          {/* Technical grid background */}
-          <div className="absolute inset-0 pointer-events-none">
-            {/* Fine grid pattern */}
-            <div
-              className="absolute inset-0 opacity-[0.03]"
-              style={{
-                backgroundImage: `
-                  linear-gradient(to right, #059669 1px, transparent 1px),
-                  linear-gradient(to bottom, #059669 1px, transparent 1px)
-                `,
-                backgroundSize: '40px 40px'
-              }}
-            ></div>
-            {/* Larger grid overlay */}
-            <div
-              className="absolute inset-0 opacity-[0.02]"
-              style={{
-                backgroundImage: `
-                  linear-gradient(to right, #059669 2px, transparent 2px),
-                  linear-gradient(to bottom, #059669 2px, transparent 2px)
-                `,
-                backgroundSize: '200px 200px'
-              }}
-            ></div>
-            {/* Corner accent - top left */}
-            <div className="absolute top-0 left-0 w-32 h-32 border-l-4 border-t-4 border-emerald-500/20"></div>
-            {/* Corner accent - bottom right */}
-            <div className="absolute bottom-0 right-0 w-48 h-48 border-r-4 border-b-4 border-emerald-500/10"></div>
-          </div>
-
-          {/* Highlighted grid paths - traces along existing 40px grid lines */}
-          <div className="absolute inset-0 pointer-events-none">
-            {/* Path 1 - Top middle, zigzag down-right */}
-            <div className="absolute top-0 left-[400px] w-[1px] h-[80px] bg-emerald-500/45"></div>
-            <div className="absolute top-[80px] left-[400px] w-[120px] h-[1px] bg-emerald-500/45"></div>
-            <div className="absolute top-[80px] left-[520px] w-[1px] h-[120px] bg-emerald-500/40"></div>
-            <div className="absolute top-[200px] left-[520px] w-[80px] h-[1px] bg-emerald-500/35"></div>
-
-            {/* Path 2 - Right side, long vertical with horizontal branch */}
-            <div className="absolute top-[40px] right-[120px] w-[1px] h-[280px] bg-emerald-500/40"></div>
-            <div className="absolute top-[160px] right-[120px] w-[120px] h-[1px] bg-emerald-500/40"></div>
-
-            {/* Path 3 - Right bottom, staircase pattern */}
-            <div className="absolute bottom-[200px] right-0 w-[80px] h-[1px] bg-emerald-500/50"></div>
-            <div className="absolute bottom-[200px] right-[80px] w-[1px] h-[80px] bg-emerald-500/45"></div>
-            <div className="absolute bottom-[120px] right-[80px] w-[160px] h-[1px] bg-emerald-500/45"></div>
-            <div className="absolute bottom-[120px] right-[240px] w-[1px] h-[120px] bg-emerald-500/40"></div>
-
-            {/* Path 4 - Top right corner, short L */}
-            <div className="absolute top-0 right-[280px] w-[1px] h-[120px] bg-emerald-500/35"></div>
-            <div className="absolute top-[120px] right-[280px] w-[160px] h-[1px] bg-emerald-500/30"></div>
-
-            {/* Path 5 - Far right edge, vertical drop */}
-            <div className="absolute top-[200px] right-[40px] w-[1px] h-[200px] bg-emerald-500/35"></div>
-            <div className="absolute top-[400px] right-[40px] w-[80px] h-[1px] bg-emerald-500/30"></div>
-
-            {/* Path 6 - Bottom right corner trace */}
-            <div className="absolute bottom-[40px] right-[320px] w-[200px] h-[1px] bg-emerald-500/30"></div>
-            <div className="absolute bottom-[40px] right-[320px] w-[1px] h-[80px] bg-emerald-500/25"></div>
-
-            {/* Path 7 - Top edge, horizontal with short drop */}
-            <div className="absolute top-[40px] right-[400px] w-[160px] h-[1px] bg-emerald-500/30"></div>
-            <div className="absolute top-[40px] right-[400px] w-[1px] h-[80px] bg-emerald-500/25"></div>
-
-            {/* Path 8 - Bottom left, horizontal going right */}
-            <div className="absolute bottom-[40px] left-0 w-[280px] h-[1px] bg-emerald-500/35"></div>
-            <div className="absolute bottom-[40px] left-[280px] w-[1px] h-[80px] bg-emerald-500/30"></div>
-
+        {/* Hero Section - Emerald Gradient */}
+        <section className="bg-gradient-to-br from-emerald-50/50 via-white to-gray-50 py-20 lg:py-28 relative overflow-hidden">
+          {/* Subtle floating elements like organic-treatment */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 blur-sm"></div>
+            <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-tight">
                   <span className="text-gray-900">Acerca de</span>
-                  <span className="block text-emerald-600">Tec-Ionic Durban</span>
+                  <span className="block text-gradient">Tecionic</span>
                 </h1>
-                <div className="w-24 h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full mb-8"></div>
                 <p className="text-xl text-gray-600 leading-relaxed mb-10">
                   Con más de 23 años de experiencia, somos la empresa líder en servicios
                   especializados de filtrado y tratamiento de borra para procesos de
@@ -345,7 +280,7 @@ export default function AboutPage() {
                     'trending-up': Growth,
                     zap: Flash,
                     globe: Earth,
-                    fuel: OilPump
+                    fuel: RainDrop
                   }[milestone.icon] || Calendar;
 
                   return (

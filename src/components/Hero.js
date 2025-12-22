@@ -120,7 +120,7 @@ export default function Hero() {
                 <div className="text-sm text-white/70">Años de experiencia</div>
               </div>
               <div className="text-left">
-                <div className="text-4xl font-black text-white">50+</div>
+                <div className="text-4xl font-black text-white">120+</div>
                 <div className="text-sm text-white/70">Proyectos completados</div>
               </div>
               <div className="text-left">
