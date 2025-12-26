@@ -1241,7 +1241,7 @@
     "hero": {
       "title": "Improve your cathode quality",
       "titleHighlight": "without stopping production",
-      "description": "EW cell cleaning with mobile equipment that operates cell by cell while your tankhouse keeps producing. Pneumatic suction and in-situ filtration system that returns electrolyte to the circuit with less than 3 ppm solids.",
+      "subtitle": "EW cell cleaning with mobile equipment that operates cell by cell while your tankhouse keeps producing. Pneumatic suction and in-situ filtration system that returns electrolyte to the circuit with less than 3 ppm solids.",
       "cta": "Request Evaluation",
       "imageAlt": "Tecionic EW cell cleaning system in operation"
     },
@@ -1252,11 +1252,11 @@
           "title": "Zero electrolyte loss",
           "description": "Closed system that returns 100% of filtered electrolyte with less than 3 ppm solids."
         },
-        "energySaving": {
+        "energySavings": {
           "title": "Lower energy consumption",
           "description": "Elimination of deposits causing short circuits reduces electrical expense per ton."
         },
-        "quality": {
+        "cathodeQuality": {
           "title": "Assured cathode quality",
           "description": "Total elimination of crud causing cathode contamination."
         },
@@ -1268,9 +1268,9 @@
     },
     "operationalContinuity": {
       "title": "Cleaning without interrupting your operation",
-      "description": "Our mobile system operates cell by cell while the rest of your tankhouse keeps producing.",
-      "convenienceLabel": "Tecionic Convenience",
+      "subtitle": "Our mobile system operates cell by cell while the rest of your tankhouse keeps producing.",
       "heroCard": {
+        "label": "Tecionic Convenience",
         "title": "Only 100-200L outside the cell",
         "description": "Although we suction at 6 m³/hour, the continuous return system keeps only 100-200 liters outside at any moment.",
         "stats": {
@@ -1282,20 +1282,22 @@
       "zeroLossCard": {
         "title": "Zero electrolyte loss",
         "description": "All suctioned electrolyte returns filtered to the circuit. No level variation.",
-        "statValue": "0%",
-        "statLabel": "Loss"
+        "stat": {
+          "value": "0%",
+          "label": "Loss"
+        }
       },
-      "peristalticPump": {
+      "pumpCard": {
         "title": "Peristaltic pump",
         "description": "Higher efficiency suctioning heavy lead. No crud backflow when shutting off.",
         "imageAlt": "Peristaltic pump for crud suction in EW cells"
       },
-      "cellsPerShift": {
+      "cellsCard": {
         "value": "2-3",
         "label": "Cells per shift",
         "sublabel": "12 hours of continuous operation"
       },
-      "mobileFiltration": {
+      "filtrationCard": {
         "title": "Mobile filtration",
         "description": "Immediate return to circuit. Dewatered crud.",
         "imageAlt": "Mobile filter presses for electrolyte"
@@ -1303,43 +1305,52 @@
     },
     "operationalSimplicity": {
       "title": "Operational Simplicity",
-      "description": "Fast implementation without complexity. Mobile equipment that arrives operational to your site.",
+      "subtitle": "Fast implementation without complexity. Mobile equipment that arrives operational to your site.",
       "stats": {
         "specialists": {
           "value": "24/7",
-          "title": "Tecionic Specialists",
+          "label": "Tecionic Specialists",
           "description": "Certified personnel operate and maintain equipment at your site"
         },
         "deployment": {
           "value": "48h",
-          "title": "Fast deployment",
+          "label": "Fast deployment",
           "description": "Regional fleet ready to mobilize without waiting for manufacturing"
         },
         "capex": {
           "value": "$0",
-          "title": "Capital investment",
+          "label": "Capital investment",
           "description": "Monthly service all-inclusive. Opex, not Capex."
         }
       }
     },
     "safety": {
       "title": "Safety without compromise",
-      "description": "We eliminate the inherent risks of traditional EW cell cleaning.",
+      "subtitle": "We eliminate the inherent risks of traditional EW cell cleaning.",
       "cards": {
-        "confinedSpace": {
+        "confinedSpaces": {
           "title": "No confined spaces",
           "description": "Our system operates from outside the cell. Operators never need to enter confined spaces.",
-          "features": ["No lead oxide exposure", "No special permits"]
+          "bullets": {
+            "leadOxide": "No lead oxide exposure",
+            "permits": "No special permits"
+          }
         },
         "acidExposure": {
           "title": "No acid exposure",
           "description": "Closed suction and filtration system eliminates direct contact with corrosive solutions.",
-          "features": ["Zero chemical burns", "Complies with safety regulations"]
+          "bullets": {
+            "burns": "Zero chemical burns",
+            "compliance": "Complies with safety regulations"
+          }
         },
         "certifications": {
           "title": "Certified protocols",
           "description": "We operate under the highest safety standards required by the mining industry.",
-          "features": ["SG-SSSC Protocol", "\"Life-Saving Rules\""]
+          "bullets": {
+            "protocol": "SG-SSSC Protocol",
+            "rules": "\"Life-Saving Rules\""
+          }
         }
       },
       "trackRecord": {
@@ -1350,7 +1361,7 @@
     "equipmentBenefits": {
       "title": "Guaranteed performance at any site",
       "items": {
-        "altitude": {
+        "highAltitude": {
           "title": "Extreme altitude operation",
           "description": "Pumps, filter presses, and control panels certified to operate above 4,000 meters altitude. Auxiliary systems designed for high-altitude conditions, with updated preventive maintenance."
         },
@@ -1366,17 +1377,17 @@
     },
     "industries": {
       "title": "Industries we serve",
-      "description": "Specialized crud removal service for electrowinning tankhouses",
+      "subtitle": "Specialized crud removal service for electrowinning tankhouses",
       "viewDetails": "View details",
-      "items": {
-        "copper": {
-          "name": "Copper",
-          "description": "EW cell crud removal, lead crud filtration"
-        },
-        "zinc": {
-          "name": "Zinc",
-          "description": "Zinc EW cell cleaning, sludge removal"
-        }
+      "copper": {
+        "name": "Copper",
+        "description": "EW cell crud removal, lead crud filtration",
+        "imageAlt": "Copper mine"
+      },
+      "zinc": {
+        "name": "Zinc",
+        "description": "Zinc EW cell cleaning, sludge removal",
+        "imageAlt": "Zinc processing plant"
       }
     },
     "caseStudy": {
@@ -1395,7 +1406,7 @@
     },
     "pilotProgram": {
       "title": "Risk-free pilot, scale based on results",
-      "description": "We validate system feasibility in your tankhouse before major commitments. Variables resolved through on-site piloting.",
+      "subtitle": "We validate system feasibility in your tankhouse before major commitments. Variables resolved through on-site piloting.",
       "cards": {
         "validation": {
           "title": "Field Validation",
@@ -1409,7 +1420,7 @@
           "highlight": {
             "title": "No commitment",
             "description": "The pilot resolves all technical variables specific to your tankhouse. We only scale when results convince you.",
-            "cta": "Test → Validate → Scale"
+            "tagline": "Test → Validate → Scale"
           }
         },
         "traceability": {
@@ -1424,7 +1435,7 @@
           "highlight": {
             "title": "Total transparency",
             "description": "Each intervention is documented with date, time, responsible parties, initial/final state, and backup photos.",
-            "cta": "Client-validated reports"
+            "tagline": "Client-validated reports"
           }
         },
         "scalability": {
@@ -1432,17 +1443,14 @@
           "subtitle": "Start small, validate results, scale with confidence",
           "steps": {
             "pilot": {
-              "number": "1",
               "title": "Pilot",
               "items": ["Test on selected cells", "Variable validation", "No commitment"]
             },
             "contract": {
-              "number": "2",
               "title": "Service Contract",
               "items": ["Continuous cleaning program", "Dedicated equipment and operators", "No CAPEX"]
             },
-            "capacity": {
-              "number": "3",
+            "dedicated": {
               "title": "Dedicated Capacity",
               "items": ["Exclusive fleet for your tankhouse", "Long-term contract", "Strategic partnership"]
             }
@@ -1452,14 +1460,14 @@
     },
     "cta": {
       "title": "Improve your cathode quality",
-      "description": "We validate system feasibility through on-site piloting. No commitment, with measurable results in cathode quality.",
-      "timeline": "Turnkey service: equipment, certified operators, and waste management included. No CAPEX, no operational risk.",
-      "primaryCta": "Request Pilot",
-      "secondaryCta": "Talk to Sales",
-      "contactTitle": "Direct contact",
-      "locations": {
-        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
-        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
+      "subtitle": "We validate system feasibility through on-site piloting. No commitment, with measurable results in cathode quality.",
+      "description": "Turnkey service: equipment, certified operators, and waste management included. No CAPEX, no operational risk.",
+      "requestPilot": "Request Pilot",
+      "talkToSales": "Talk to Sales",
+      "contact": {
+        "title": "Direct contact",
+        "santiago": { "label": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
+        "calama": { "label": "Calama:", "address": "Miraflores 1260 B" }
       }
     }
   },

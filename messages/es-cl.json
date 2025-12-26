@@ -1241,7 +1241,7 @@
     "hero": {
       "title": "Mejora la calidad de tus cátodos",
       "titleHighlight": "sin detener producción",
-      "description": "Limpieza de celdas EW con equipos móviles que operan celda por celda mientras tu nave sigue produciendo. Sistema de succión neumática y filtración in-situ que retorna el electrolito al circuito con menos de 3 ppm de sólidos.",
+      "subtitle": "Limpieza de celdas EW con equipos móviles que operan celda por celda mientras tu nave sigue produciendo. Sistema de succión neumática y filtración in-situ que retorna el electrolito al circuito con menos de 3 ppm de sólidos.",
       "cta": "Solicitar Evaluación",
       "imageAlt": "Sistema de limpieza de celdas EW Tecionic en operación"
     },
@@ -1252,11 +1252,11 @@
           "title": "Cero pérdida de electrolito",
           "description": "Sistema cerrado que retorna 100% del electrolito filtrado con menos de 3 ppm de sólidos."
         },
-        "energySaving": {
+        "energySavings": {
           "title": "Menor consumo energético",
           "description": "Eliminación de depósitos que causan cortocircuitos reduce el gasto eléctrico por tonelada."
         },
-        "quality": {
+        "cathodeQuality": {
           "title": "Calidad catódica asegurada",
           "description": "Eliminación total de borras que causan contaminación catódica."
         },
@@ -1268,9 +1268,9 @@
     },
     "operationalContinuity": {
       "title": "Limpieza sin interrumpir tu operación",
-      "description": "Nuestro sistema móvil opera celda por celda mientras el resto de tu nave sigue produciendo.",
-      "convenienceLabel": "Conveniencia Tecionic",
+      "subtitle": "Nuestro sistema móvil opera celda por celda mientras el resto de tu nave sigue produciendo.",
       "heroCard": {
+        "label": "Conveniencia Tecionic",
         "title": "Solo 100-200L fuera de la celda",
         "description": "Aunque succionamos a 6 m³/hora, el sistema de retorno continuo mantiene solo 100-200 litros fuera en cualquier momento.",
         "stats": {
@@ -1282,20 +1282,22 @@
       "zeroLossCard": {
         "title": "Cero pérdida de electrolito",
         "description": "Todo el electrolito succionado retorna filtrado al circuito. Sin variación de nivel.",
-        "statValue": "0%",
-        "statLabel": "Pérdida"
+        "stat": {
+          "value": "0%",
+          "label": "Pérdida"
+        }
       },
-      "peristalticPump": {
+      "pumpCard": {
         "title": "Bomba peristáltica",
         "description": "Mayor eficiencia succionando plomo pesado. Sin reflujo de borra al apagar.",
         "imageAlt": "Bomba peristáltica para succión de borra en celdas EW"
       },
-      "cellsPerShift": {
+      "cellsCard": {
         "value": "2-3",
         "label": "Celdas por turno",
         "sublabel": "12 horas de operación continua"
       },
-      "mobileFiltration": {
+      "filtrationCard": {
         "title": "Filtración móvil",
         "description": "Retorno inmediato al circuito. Borra deshidratada.",
         "imageAlt": "Filtros prensa móviles para electrolito"
@@ -1303,43 +1305,52 @@
     },
     "operationalSimplicity": {
       "title": "Simplicidad Operacional",
-      "description": "Implementación rápida sin complejidad. Equipos móviles que llegan operativos a tu faena.",
+      "subtitle": "Implementación rápida sin complejidad. Equipos móviles que llegan operativos a tu faena.",
       "stats": {
         "specialists": {
           "value": "24/7",
-          "title": "Especialistas Tecionic",
+          "label": "Especialistas Tecionic",
           "description": "Personal certificado opera y mantiene los equipos en tu faena"
         },
         "deployment": {
           "value": "48h",
-          "title": "Despliegue rápido",
+          "label": "Despliegue rápido",
           "description": "Flota regional lista para movilizar sin esperar fabricación"
         },
         "capex": {
           "value": "$0",
-          "title": "Inversión en capital",
+          "label": "Inversión en capital",
           "description": "Servicio mensual todo incluido. Opex, no Capex."
         }
       }
     },
     "safety": {
       "title": "Seguridad sin compromisos",
-      "description": "Eliminamos los riesgos inherentes a la limpieza tradicional de celdas EW.",
+      "subtitle": "Eliminamos los riesgos inherentes a la limpieza tradicional de celdas EW.",
       "cards": {
-        "confinedSpace": {
+        "confinedSpaces": {
           "title": "Sin espacios confinados",
           "description": "Nuestro sistema opera desde fuera de la celda. Los operadores nunca necesitan ingresar a espacios confinados.",
-          "features": ["Sin exposición a óxido de plomo", "Sin permisos especiales"]
+          "bullets": {
+            "leadOxide": "Sin exposición a óxido de plomo",
+            "permits": "Sin permisos especiales"
+          }
         },
         "acidExposure": {
           "title": "Sin exposición a ácidos",
           "description": "Sistema cerrado de succión y filtración elimina el contacto directo con soluciones corrosivas.",
-          "features": ["Cero quemaduras químicas", "Cumple DS-43 MINSAL"]
+          "bullets": {
+            "burns": "Cero quemaduras químicas",
+            "compliance": "Cumple DS-43 MINSAL"
+          }
         },
         "certifications": {
           "title": "Protocolos certificados",
           "description": "Operamos bajo los más altos estándares de seguridad exigidos por la industria minera.",
-          "features": ["Protocolo SG-SSSC", "\"Reglas que Salvan Vidas\""]
+          "bullets": {
+            "protocol": "Protocolo SG-SSSC",
+            "rules": "\"Reglas que Salvan Vidas\""
+          }
         }
       },
       "trackRecord": {
@@ -1350,7 +1361,7 @@
     "equipmentBenefits": {
       "title": "Rendimiento garantizado en cualquier faena",
       "items": {
-        "altitude": {
+        "highAltitude": {
           "title": "Operación en altura extrema",
           "description": "Bombas, filtros prensa y tableros de control certificados para operar sobre 4.000 msnm. Sistemas auxiliares diseñados para condiciones de alta montaña, con mantenimiento preventivo actualizado."
         },
@@ -1366,17 +1377,17 @@
     },
     "industries": {
       "title": "Industrias que servimos",
-      "description": "Servicio de desborre especializado para naves de electroobtención",
+      "subtitle": "Servicio de desborre especializado para naves de electroobtención",
       "viewDetails": "Ver detalles",
-      "items": {
-        "copper": {
-          "name": "Cobre",
-          "description": "Desborre de celdas EW, filtración de borras plomadas"
-        },
-        "zinc": {
-          "name": "Zinc",
-          "description": "Limpieza de celdas EW de zinc, retiro de lodos"
-        }
+      "copper": {
+        "name": "Cobre",
+        "description": "Desborre de celdas EW, filtración de borras plomadas",
+        "imageAlt": "Mina de cobre"
+      },
+      "zinc": {
+        "name": "Zinc",
+        "description": "Limpieza de celdas EW de zinc, retiro de lodos",
+        "imageAlt": "Planta de procesamiento de zinc"
       }
     },
     "caseStudy": {
@@ -1395,7 +1406,7 @@
     },
     "pilotProgram": {
       "title": "Piloto sin riesgo, escala según resultados",
-      "description": "Validamos la factibilidad del sistema en tu nave antes de compromisos mayores. Variables despejadas mediante pilotaje en terreno.",
+      "subtitle": "Validamos la factibilidad del sistema en tu nave antes de compromisos mayores. Variables despejadas mediante pilotaje en terreno.",
       "cards": {
         "validation": {
           "title": "Validación en Terreno",
@@ -1409,7 +1420,7 @@
           "highlight": {
             "title": "Sin compromiso",
             "description": "El piloto despeja todas las variables técnicas específicas de tu nave. Solo escalamos cuando los resultados te convencen.",
-            "cta": "Prueba → Valida → Escala"
+            "tagline": "Prueba → Valida → Escala"
           }
         },
         "traceability": {
@@ -1424,7 +1435,7 @@
           "highlight": {
             "title": "Transparencia total",
             "description": "Cada intervención queda documentada con fecha, hora, responsables, estado inicial/final y fotografías de respaldo.",
-            "cta": "Informes validados por mandante"
+            "tagline": "Informes validados por mandante"
           }
         },
         "scalability": {
@@ -1432,17 +1443,14 @@
           "subtitle": "Inicia pequeño, valida resultados, escala con confianza",
           "steps": {
             "pilot": {
-              "number": "1",
               "title": "Piloto",
               "items": ["Prueba en celdas seleccionadas", "Validación de variables", "Sin compromiso"]
             },
             "contract": {
-              "number": "2",
               "title": "Contrato de Servicio",
               "items": ["Programa de limpieza continua", "Equipos y operadores dedicados", "Sin CAPEX"]
             },
-            "capacity": {
-              "number": "3",
+            "dedicated": {
               "title": "Capacidad Dedicada",
               "items": ["Flota exclusiva para tu nave", "Contrato largo plazo", "Asociación estratégica"]
             }
@@ -1452,14 +1460,14 @@
     },
     "cta": {
       "title": "Mejora la calidad de tus cátodos",
-      "description": "Validamos la factibilidad del sistema mediante pilotaje en terreno. Sin compromiso, con resultados medibles en calidad catódica.",
-      "timeline": "Servicio llave en mano: equipos, operadores certificados, y gestión de residuos incluida. Sin CAPEX, sin riesgo operacional.",
-      "primaryCta": "Solicitar Piloto",
-      "secondaryCta": "Hablar con Ventas",
-      "contactTitle": "Contacto directo",
-      "locations": {
-        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
-        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
+      "subtitle": "Validamos la factibilidad del sistema mediante pilotaje en terreno. Sin compromiso, con resultados medibles en calidad catódica.",
+      "description": "Servicio llave en mano: equipos, operadores certificados, y gestión de residuos incluida. Sin CAPEX, sin riesgo operacional.",
+      "requestPilot": "Solicitar Piloto",
+      "talkToSales": "Hablar con Ventas",
+      "contact": {
+        "title": "Contacto directo",
+        "santiago": { "label": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
+        "calama": { "label": "Calama:", "address": "Miraflores 1260 B" }
       }
     }
   },
