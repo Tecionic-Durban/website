@@ -1403,6 +1403,7 @@
       "title": "Caserones manteve qualidade LME com remoção de borra a 4.000+ m",
       "client": "SCM Lumina Copper",
       "location": "4.200 m de altitude",
+      "altitude": "4.200 m de altitude",
       "imageAlt": "Galpão de eletro-obtenção Caserones",
       "metrics": {
         "removal": { "value": "100%", "label": "Remoção depósitos" },
@@ -2331,6 +2332,7 @@
         { "label": "Arraste de Orgânico", "value": "52%", "unit": "redução" }
       ],
       "economicValue": "$3.1M USD",
+      "economicLabel": "Economia Anual",
       "achievements": [
         { "icon": "↓", "value": "66%", "label": "Redução TSF" },
         { "icon": "↑", "value": "16%", "label": "Melhoria TIF" },

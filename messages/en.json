@@ -1403,6 +1403,7 @@
       "title": "Caserones maintained LME quality with crud removal at 4,000+ meters",
       "client": "SCM Lumina Copper",
       "location": "4,200 meters altitude",
+      "altitude": "4,200 meters altitude",
       "imageAlt": "Caserones electrowinning tankhouse",
       "metrics": {
         "removal": { "value": "100%", "label": "Deposit removal" },
@@ -2331,6 +2332,7 @@
         { "label": "Organic Entrainment", "value": "52%", "unit": "reduction" }
       ],
       "economicValue": "$3.1M USD",
+      "economicLabel": "Annual Savings",
       "achievements": [
         { "icon": "↓", "value": "66%", "label": "PST Reduction" },
         { "icon": "↑", "value": "16%", "label": "IFT Improvement" },

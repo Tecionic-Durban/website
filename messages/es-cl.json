@@ -1403,6 +1403,7 @@
       "title": "Caserones mantuvo calidad LME con desborre a 4.000+ msnm",
       "client": "SCM Lumina Copper",
       "location": "4.200 msnm",
+      "altitude": "4.200 msnm",
       "imageAlt": "Nave de electroobtención Caserones",
       "metrics": {
         "removal": { "value": "100%", "label": "Remoción depósitos" },
@@ -2331,6 +2332,7 @@
         { "label": "Arrastre de Orgánico", "value": "52%", "unit": "reducción" }
       ],
       "economicValue": "$3.1M USD",
+      "economicLabel": "Ahorro Anual",
       "achievements": [
         { "icon": "↓", "value": "66%", "label": "Reducción TSF" },
         { "icon": "↑", "value": "16%", "label": "Mejora TIF" },
