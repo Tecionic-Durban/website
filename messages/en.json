@@ -114,7 +114,15 @@
     "viewAllCases": "View all cases",
     "viewFullCase": "View full case",
     "analyticsComingSoon": "New analytics services in development. Contact us for more information.",
-    "qualityComingSoon": "Mobile lab for on-site certification. More quality control services coming soon."
+    "qualityComingSoon": "Mobile lab for on-site certification. More quality control services coming soon.",
+    "enapStory": {
+      "imagePlaceholder": "Project Image",
+      "companyName": "ENAP",
+      "companyFullName": "National Petroleum Company",
+      "quote": "Tec-Ionic Durban optimized our refining processes, reducing operational costs by 18% and improving overall efficiency.",
+      "costReduction": "Cost reduction",
+      "efficiency": "Efficiency"
+    }
   },
   "hero": {
     "optimizeYour": "Optimize Your",

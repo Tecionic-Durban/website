@@ -114,7 +114,15 @@
     "viewAllCases": "Ver todos os casos",
     "viewFullCase": "Ver caso completo",
     "analyticsComingSoon": "Novos serviços de análise em desenvolvimento. Entre em contato para mais informações.",
-    "qualityComingSoon": "Laboratório móvel para certificação em mina. Em breve mais serviços de controle de qualidade."
+    "qualityComingSoon": "Laboratório móvel para certificação em mina. Em breve mais serviços de controle de qualidade.",
+    "enapStory": {
+      "imagePlaceholder": "Imagem do Projeto",
+      "companyName": "ENAP",
+      "companyFullName": "Empresa Nacional do Petróleo",
+      "quote": "Tec-Ionic Durban otimizou nossos processos de refino, reduzindo custos operacionais em 18% e melhorando a eficiência geral.",
+      "costReduction": "Redução de custos",
+      "efficiency": "Eficiência"
+    }
   },
   "hero": {
     "optimizeYour": "Otimize suas",

@@ -347,32 +347,31 @@ export default function Header() {
                           <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-6 border border-emerald-200">
                             {/* Thumbnail placeholder */}
                             <div className="w-full h-24 bg-emerald-200 rounded-lg mb-4 flex items-center justify-center">
-                              <div className="text-emerald-600 text-xs font-medium">Imagen del Proyecto</div>
+                              <div className="text-emerald-600 text-xs font-medium">{t('header.enapStory.imagePlaceholder')}</div>
                             </div>
-                            
+
                             <div className="flex items-center mb-4">
                               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mr-3 shadow-sm">
-                                <span className="text-emerald-600 text-xs font-bold">ENAP</span>
+                                <span className="text-emerald-600 text-xs font-bold">{t('header.enapStory.companyName')}</span>
                               </div>
                               <div>
-                                <div className="text-sm font-semibold text-emerald-800">ENAP</div>
-                                <div className="text-xs text-emerald-600">Empresa Nacional del Petróleo</div>
+                                <div className="text-sm font-semibold text-emerald-800">{t('header.enapStory.companyName')}</div>
+                                <div className="text-xs text-emerald-600">{t('header.enapStory.companyFullName')}</div>
                               </div>
                             </div>
-                            
+
                             <p className="text-sm text-emerald-700 mb-4 leading-relaxed">
-                              &quot;Tec-Ionic Durban optimizó nuestros procesos de refinación, 
-                              reduciendo costos operacionales en un 18% y mejorando la eficiencia general.&quot;
+                              &quot;{t('header.enapStory.quote')}&quot;
                             </p>
-                            
+
                             <div className="grid grid-cols-2 gap-3 mb-4">
                               <div className="text-center bg-white rounded-lg p-2">
                                 <div className="text-lg font-bold text-emerald-600">18%</div>
-                                <div className="text-xs text-gray-600">Reducción costos</div>
+                                <div className="text-xs text-gray-600">{t('header.enapStory.costReduction')}</div>
                               </div>
                               <div className="text-center bg-white rounded-lg p-2">
                                 <div className="text-lg font-bold text-emerald-600">95%</div>
-                                <div className="text-xs text-gray-600">Eficiencia</div>
+                                <div className="text-xs text-gray-600">{t('header.enapStory.efficiency')}</div>
                               </div>
                             </div>
                             
