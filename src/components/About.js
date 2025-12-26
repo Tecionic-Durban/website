@@ -4,50 +4,22 @@ import { useEffect, useRef } from 'react'
 import { Finance, Dashboard, Portfolio, Flash, Time, Security } from '@carbon/icons-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useTranslations } from 'next-intl'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function About() {
   const sectionRef = useRef(null)
   const cardsRef = useRef([])
+  const t = useTranslations('about')
 
   const cards = [
-    {
-      icon: Finance,
-      title: "Modelo OPEX Avanzado",
-      description: "Cero inversión inicial. Modelo de servicios con facturación mensual que optimiza el flujo de caja operacional del cliente.",
-      metric: "0% CAPEX"
-    },
-    {
-      icon: Dashboard,
-      title: "Rendimiento Verificable",
-      description: "Reportería diaria de KPIs operacionales específicos según el tipo de servicio prestado. Parámetros verificables que demuestran mejoras en eficiencia y productividad.",
-      metric: "24/7 Tracking"
-    },
-    {
-      icon: Portfolio,
-      title: "Experiencia Multisectorial",
-      description: "Portfolio comprobado en cobre, litio, potasio y refinación de petróleo con casos de éxito documentados.",
-      metric: "5 Sectores"
-    },
-    {
-      icon: Flash,
-      title: "Instalación Plug & Play",
-      description: "Equipos móviles preconfigurados que se integran directamente con sistemas existentes. Sin modificaciones de infraestructura, sin permisos adicionales. Operativo en 24-48 horas.",
-      metric: "24-48h"
-    },
-    {
-      icon: Time,
-      title: "Contratos Flexibles",
-      description: "Desde respuesta de emergencia hasta proyectos estratégicos de 5 años. Escalamiento automático según demanda operacional con términos adaptables a ciclos de mercado.",
-      metric: "48h-5 años"
-    },
-    {
-      icon: Security,
-      title: "Trabajos en Ambientes Corrosivos y Explosivos",
-      description: "Equipos de alta tecnología certificados para operar en atmósferas explosivas y ambientes altamente corrosivos. Máxima seguridad con certificación Ex.Proof para las condiciones más exigentes.",
-      metric: "Ex.Proof"
-    }
+    { key: 'opexModel', icon: Finance },
+    { key: 'performance', icon: Dashboard },
+    { key: 'multisector', icon: Portfolio },
+    { key: 'plugAndPlay', icon: Flash },
+    { key: 'flexibleContracts', icon: Time },
+    { key: 'corrosiveEnvironments', icon: Security }
   ]
 
   // Scroll-based vertical stack animation
@@ -152,19 +124,17 @@ export default function About() {
           {/* Left Side - Static Text */}
           <div className="lg:w-2/5 flex-shrink-0">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              Especialistas en Separación
-              <span className="block text-emerald-600">Sólido-Líquido Móvil</span>
+              {t('headline')}
+              <span className="block text-emerald-600">{t('headlineSub')}</span>
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Especialistas en separación sólido-líquido en aplicaciones SX/EW con <span className="font-semibold text-emerald-600">equipos móviles de alta capacidad</span>.
-              Atendemos a BHP, Codelco, Antofagasta Minerals, entre otras importantes empresas mineras,
-              proporcionando soluciones que optimizan operaciones sin interrumpir procesos existentes.
+              {t('description')} {t('clientList')}
             </p>
 
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm">
               <Security className="w-4 h-4 text-emerald-600 mr-2" />
-              Equipos Ex.Proof Certificados
+              {t('certifiedEquipment')}
             </div>
           </div>
 
@@ -191,12 +161,12 @@ export default function About() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-4">
-                          <h3 className="font-bold text-2xl text-gray-900">{card.title}</h3>
+                          <h3 className="font-bold text-2xl text-gray-900">{t(`cards.${card.key}.title`)}</h3>
                           <span className="text-sm font-semibold px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full">
-                            {card.metric}
+                            {t(`cards.${card.key}.metric`)}
                           </span>
                         </div>
-                        <p className="text-gray-600 text-lg leading-relaxed">{card.description}</p>
+                        <p className="text-gray-600 text-lg leading-relaxed">{t(`cards.${card.key}.description`)}</p>
                       </div>
                     </div>
                   </div>

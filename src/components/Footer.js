@@ -1,25 +1,28 @@
 // src/components/Footer.js
-import Link from 'next/link'
+'use client'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const t = useTranslations()
 
   const services = [
-    'Filtración y deshidratación de borras',
-    'Tratamiento y recuperación de orgánico SX',
-    'Deshidratación de concentrados',
-    'Tratamiento de sólidos finos',
-    'Clarificación de aguas',
-    'Limpieza de celdas EW'
+    { key: 'filtration', href: '/services/filtration' },
+    { key: 'organicTreatment', href: '/services/organic-treatment' },
+    { key: 'concentrateDehydration', href: '/services/concentrate-dehydration' },
+    { key: 'fineSolids', href: '/services/fine-solids' },
+    { key: 'waterClarification', href: '/services/water-clarification' },
+    { key: 'ewCleaning', href: '/services/ew-cleaning' }
   ]
 
   const industries = [
-    'Cobre',
-    'Zinc',
-    'Litio',
-    'Potasio',
-    'Petróleo Crudo'
+    { key: 'copper', href: '/industries/copper' },
+    { key: 'zinc', href: '/industries/zinc' },
+    { key: 'lithium', href: '/industries/lithium' },
+    { key: 'potassium', href: '/industries/potassium' },
+    { key: 'crudeOil', href: '/industries/crude-oil' }
   ]
 
   return (
@@ -44,9 +47,7 @@ export default function Footer() {
             </div>
             
             <p className="text-gray-300 mb-6 max-w-md">
-              Empresa chilena con más de dos décadas de experiencia en servicios 
-              de filtración, deshidratación de sólidos, separación sólido-líquido 
-              y tratamiento de orgánico en plantas de extracción por solventes (SX).
+              {t('footer.description')}
             </p>
 
             <div className="space-y-3">
@@ -56,7 +57,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
                 <div>
-                  <p className="text-gray-300">Oficinas en Santiago, Calama y Lima</p>
+                  <p className="text-gray-300">{t('footer.offices')}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -69,7 +70,7 @@ export default function Footer() {
               </div>
               <div className="mt-4">
                 <Link href="/contacto" className="text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors">
-                  Ver información completa de contacto →
+                  {t('footer.viewContactInfo')} →
                 </Link>
               </div>
             </div>
@@ -77,15 +78,15 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Servicios</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.services')}</h4>
             <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <Link 
-                    href="/services" 
+              {services.map((service) => (
+                <li key={service.key}>
+                  <Link
+                    href={service.href}
                     className="text-gray-300 hover:text-emerald-400 transition-colors text-sm"
                   >
-                    {service}
+                    {t(`services.items.${service.key}.title`)}
                   </Link>
                 </li>
               ))}
@@ -94,35 +95,35 @@ export default function Footer() {
 
           {/* Industries */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Industrias</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.industries')}</h4>
             <ul className="space-y-3">
-              {industries.map((industry, index) => (
-                <li key={index}>
-                  <Link 
-                    href="/industries" 
+              {industries.map((industry) => (
+                <li key={industry.key}>
+                  <Link
+                    href={industry.href}
                     className="text-gray-300 hover:text-emerald-400 transition-colors text-sm"
                   >
-                    {industry}
+                    {t(`header.industries.${industry.key}.name`)}
                   </Link>
                 </li>
               ))}
             </ul>
-            
-            <h4 className="text-lg font-semibold mb-4 mt-8">Recursos</h4>
+
+            <h4 className="text-lg font-semibold mb-4 mt-8">{t('footer.resources')}</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/resources" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
-                  Casos de Estudio
+                <Link href="/casos-de-exito" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
+                  {t('footer.caseStudies')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/especificaciones-tecnicas" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
+                  {t('footer.technicalGuides')}
                 </Link>
               </li>
               <li>
                 <Link href="/resources" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
-                  Guías Técnicas
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
-                  Webinars
+                  {t('footer.webinars')}
                 </Link>
               </li>
             </ul>
@@ -132,15 +133,15 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} Tec-Ionic Durban S.A. Todos los derechos reservados.
+            © {currentYear} Tec-Ionic Durban S.A. {t('footer.copyright')}
           </div>
-          
+
           <div className="flex space-x-6 text-sm">
             <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">
-              Política de Privacidad
+              {t('footer.privacyPolicy')}
             </Link>
             <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors">
-              Términos de Servicio
+              {t('footer.termsOfService')}
             </Link>
           </div>
         </div>

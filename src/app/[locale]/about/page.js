@@ -1,113 +1,33 @@
+'use client'
 // src/app/about/page.js
 import Image from 'next/image'
 import { Flash, Security, Renew, Connect, Collaborate, Time, CertificateCheck, CheckmarkFilled, Growth, Building, Partnership, Chemistry, Earth, RainDrop, Calendar } from '@carbon/icons-react'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export default function AboutPage() {
-  // Static metrics
-  const metrics = {
-    yearsExperience: "23+",
-    clientsSatisfied: "100%",
-    projectsCompleted: "120+",
-    efficiencyGain: "22%"
-  }
+  const t = useTranslations('aboutPage')
 
-  const milestones = [
-    {
-      year: "2002",
-      title: "Fundación de la Empresa",
-      description: "Inicio de operaciones como empresa especializada en servicios para la industria minera.",
-      metric: "Fundación",
-      icon: "building",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      year: "2003",
-      title: "Primer Contacto de Desborre de Celdas EW",
-      description: "Exitoso primer contacto de desborre de celdas EW, estableciendo nuestra especialización en electroobtención.",
-      metric: "1er Contacto EW",
-      icon: "handshake",
-      color: "from-emerald-500 to-emerald-600"
-    },
-    {
-      year: "2005",
-      title: "Expansión de Servicios SX",
-      description: "Expansión a servicios de filtrado de borra y tratamiento de orgánico en procesos de SX.",
-      metric: "Servicios SX",
-      icon: "beaker",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      year: "2010",
-      title: "Liderazgo en Mercado Chileno",
-      description: "Se alcanza presencia en más del 50% del mercado minero en Chile.",
-      metric: ">50% Mercado",
-      icon: "trending-up",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      year: "2020",
-      title: "Expansión a Li y K",
-      description: "Diversificación hacia el mercado del litio y potasio, ampliando nuestro portafolio de servicios.",
-      metric: "Li & K",
-      icon: "zap",
-      color: "from-cyan-500 to-cyan-600"
-    },
-    {
-      year: "2022",
-      title: "Expansión a Perú",
-      description: "Comienza expansión al mercado minero en Perú mientras se aumenta la presencia en mercado chileno por sobre 70% de la minería de cobre.",
-      metric: ">70% Cu Chile",
-      icon: "globe",
-      color: "from-green-500 to-green-600"
-    },
-    {
-      year: "2025",
-      title: "Mercado de Refinación de Petróleo",
-      description: "Expansión hacia el mercado de refinación de petróleo, consolidando nuestra presencia en Latinoamérica.",
-      metric: "Petróleo",
-      icon: "fuel",
-      color: "from-amber-500 to-gray-900"
-    }
+  // Icons for values (order matches JSON array)
+  const valueIcons = [Flash, Security, Renew, Connect, Collaborate]
+
+  // Icons and colors for timeline milestones (order matches JSON array)
+  const milestoneConfig = [
+    { icon: Building, color: "from-blue-500 to-blue-600" },
+    { icon: Partnership, color: "from-emerald-500 to-emerald-600" },
+    { icon: Chemistry, color: "from-orange-500 to-orange-600" },
+    { icon: Growth, color: "from-purple-500 to-purple-600" },
+    { icon: Flash, color: "from-cyan-500 to-cyan-600" },
+    { icon: Earth, color: "from-green-500 to-green-600" },
+    { icon: RainDrop, color: "from-amber-500 to-gray-900" }
   ]
 
-  const values = [
-    {
-      icon: Flash,
-      title: "Innovación Aplicada",
-      description: "Desarrollamos e implementamos soluciones tecnológicas que generen valor real para nuestros clientes.",
-      color: "from-orange-500 to-red-600"
-    },
-    {
-      icon: Security,
-      title: "Seguridad Operacional",
-      description: "Priorizamos la seguridad en todas nuestras operaciones, protegiendo a nuestro equipo y clientes.",
-      color: "from-blue-500 to-purple-600"
-    },
-    {
-      icon: Renew,
-      title: "Sostenibilidad Ambiental",
-      description: "Comprometidos con soluciones que contribuyan al cuidado del medio ambiente y desarrollo sostenible.",
-      color: "from-emerald-500 to-teal-600"
-    },
-    {
-      icon: Connect,
-      title: "Flexibilidad Operativa",
-      description: "Adaptamos nuestros servicios móviles a las necesidades específicas de cada operación.",
-      color: "from-green-500 to-emerald-600"
-    },
-    {
-      icon: Collaborate,
-      title: "Compromiso con Clientes y Colaboradores",
-      description: "Construimos relaciones duraderas basadas en confianza, transparencia y resultados.",
-      color: "from-purple-500 to-indigo-600"
-    }
-  ]
-
-  const stats = [
-    { number: metrics.yearsExperience, label: "Años de Experiencia", description: "En el mercado minero", icon: Time },
-    { number: metrics.clientsSatisfied, label: "Satisfacción Cliente", description: "Índice de satisfacción", icon: CertificateCheck },
-    { number: metrics.projectsCompleted, label: "Proyectos Exitosos", description: "Exitosamente entregados", icon: CheckmarkFilled },
-    { number: metrics.efficiencyGain, label: "Mejora Promedio", description: "En eficiencia operacional", icon: Growth }
+  // Stats icons (order matches JSON keys)
+  const statsConfig = [
+    { key: 'years', icon: Time },
+    { key: 'satisfaction', icon: CertificateCheck },
+    { key: 'projects', icon: CheckmarkFilled },
+    { key: 'efficiency', icon: Growth }
   ]
 
   return (
@@ -126,24 +46,22 @@ export default function AboutPage() {
               {/* Left: Content */}
               <div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-tight">
-                  <span className="text-gray-900">Acerca de</span>
-                  <span className="block text-gradient">Tecionic</span>
+                  <span className="text-gray-900">{t('hero.titleLine1')}</span>
+                  <span className="block text-gradient">{t('hero.titleLine2')}</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-10">
-                  Con más de 23 años de experiencia, somos la empresa líder en servicios
-                  especializados de filtrado y tratamiento de borra para procesos de
-                  lixiviación, extracción por solventes y electroobtención.
+                  {t('hero.description')}
                 </p>
 
                 {/* Metrics display - Latam style */}
                 <div className="grid grid-cols-2 gap-8">
                   <div className="border-l-2 border-emerald-500 pl-4">
-                    <div className="text-3xl font-bold text-gray-900">{metrics.projectsCompleted}</div>
-                    <div className="text-gray-500 text-sm mt-1">Proyectos exitosos</div>
+                    <div className="text-3xl font-bold text-gray-900">{t('hero.metrics.projects.value')}</div>
+                    <div className="text-gray-500 text-sm mt-1">{t('hero.metrics.projects.label')}</div>
                   </div>
                   <div className="border-l-2 border-emerald-500 pl-4">
-                    <div className="text-3xl font-bold text-gray-900">{metrics.efficiencyGain}</div>
-                    <div className="text-gray-500 text-sm mt-1">Mejora promedio</div>
+                    <div className="text-3xl font-bold text-gray-900">{t('hero.metrics.efficiency.value')}</div>
+                    <div className="text-gray-500 text-sm mt-1">{t('hero.metrics.efficiency.label')}</div>
                   </div>
                 </div>
               </div>
@@ -153,7 +71,7 @@ export default function AboutPage() {
                 <div className="rounded-xl overflow-hidden shadow-xl shadow-gray-200/80 ring-1 ring-gray-200">
                   <Image
                     src="/filtro_prensa_1200_drone_view.png"
-                    alt="TSF Industrial Equipment"
+                    alt={t('hero.imageAlt')}
                     width={800}
                     height={500}
                     className="w-full h-auto object-cover"
@@ -171,20 +89,16 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
                 <Flash className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Misión</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('mission.title')}</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Asegurar la continuidad y eficiencia de las operaciones de nuestros clientes
-                  mediante soluciones móviles de filtración y deshidratado que aporten valor,
-                  sostenibilidad y seguridad.
+                  {t('mission.description')}
                 </p>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
                 <Growth className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Visión</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('vision.title')}</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Convertirse en el socio estratégico líder en Latinoamérica en tecnologías
-                  móviles de separación sólido-líquido, ampliando presencia en cobre, zinc,
-                  litio, potasio y petróleo crudo.
+                  {t('vision.description')}
                 </p>
               </div>
             </div>
@@ -195,20 +109,20 @@ export default function AboutPage() {
         <section className="py-16 bg-gradient-to-r from-emerald-600 to-emerald-700 steel-gradient">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">Resultados que Hablan</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">{t('stats.title')}</h2>
               <p className="text-xl text-emerald-100">
-                Números que reflejan nuestro compromiso y experiencia
+                {t('stats.subtitle')}
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
+              {statsConfig.map((stat, index) => (
                 <div key={index} className="text-center text-white group">
                   <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <stat.icon size={32} />
                   </div>
-                  <div className="text-4xl md:text-5xl font-bold mb-2 micro-bounce">{stat.number}</div>
-                  <div className="text-xl font-semibold mb-1">{stat.label}</div>
-                  <div className="text-emerald-200 text-sm">{stat.description}</div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2 micro-bounce">{t(`stats.items.${stat.key}.value`)}</div>
+                  <div className="text-xl font-semibold mb-1">{t(`stats.items.${stat.key}.label`)}</div>
+                  <div className="text-emerald-200 text-sm">{t(`stats.items.${stat.key}.description`)}</div>
                 </div>
               ))}
             </div>
@@ -219,40 +133,43 @@ export default function AboutPage() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('values.title')}</h2>
               <p className="text-xl text-gray-600">
-                Los principios que guían nuestro trabajo diario
+                {t('values.subtitle')}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-12 gap-y-10">
-              {values.map((value, index) => (
-                <div key={index} className="text-center">
-                  {/* Circuit node container */}
-                  <div className="relative w-20 h-20 mx-auto mb-4">
-                    {/* Connecting lines - circuit traces */}
-                    <div className="absolute top-1/2 left-0 w-3 h-[2px] bg-emerald-300 -translate-y-1/2"></div>
-                    <div className="absolute top-1/2 right-0 w-3 h-[2px] bg-emerald-300 -translate-y-1/2"></div>
-                    <div className="absolute left-1/2 top-0 h-3 w-[2px] bg-emerald-300 -translate-x-1/2"></div>
-                    <div className="absolute left-1/2 bottom-0 h-3 w-[2px] bg-emerald-300 -translate-x-1/2"></div>
-                    {/* Corner traces */}
-                    <div className="absolute top-1 left-1 w-2 h-[2px] bg-emerald-200 rotate-45 origin-left"></div>
-                    <div className="absolute top-1 right-1 w-2 h-[2px] bg-emerald-200 -rotate-45 origin-right"></div>
-                    <div className="absolute bottom-1 left-1 w-2 h-[2px] bg-emerald-200 -rotate-45 origin-left"></div>
-                    <div className="absolute bottom-1 right-1 w-2 h-[2px] bg-emerald-200 rotate-45 origin-right"></div>
-                    {/* Central node */}
-                    <div className="absolute inset-3 bg-white rounded-full border-2 border-emerald-400 flex items-center justify-center shadow-sm text-emerald-600">
-                      <value.icon size={24} />
+              {t.raw('values.items').map((value, index) => {
+                const IconComponent = valueIcons[index]
+                return (
+                  <div key={index} className="text-center">
+                    {/* Circuit node container */}
+                    <div className="relative w-20 h-20 mx-auto mb-4">
+                      {/* Connecting lines - circuit traces */}
+                      <div className="absolute top-1/2 left-0 w-3 h-[2px] bg-emerald-300 -translate-y-1/2"></div>
+                      <div className="absolute top-1/2 right-0 w-3 h-[2px] bg-emerald-300 -translate-y-1/2"></div>
+                      <div className="absolute left-1/2 top-0 h-3 w-[2px] bg-emerald-300 -translate-x-1/2"></div>
+                      <div className="absolute left-1/2 bottom-0 h-3 w-[2px] bg-emerald-300 -translate-x-1/2"></div>
+                      {/* Corner traces */}
+                      <div className="absolute top-1 left-1 w-2 h-[2px] bg-emerald-200 rotate-45 origin-left"></div>
+                      <div className="absolute top-1 right-1 w-2 h-[2px] bg-emerald-200 -rotate-45 origin-right"></div>
+                      <div className="absolute bottom-1 left-1 w-2 h-[2px] bg-emerald-200 -rotate-45 origin-left"></div>
+                      <div className="absolute bottom-1 right-1 w-2 h-[2px] bg-emerald-200 rotate-45 origin-right"></div>
+                      {/* Central node */}
+                      <div className="absolute inset-3 bg-white rounded-full border-2 border-emerald-400 flex items-center justify-center shadow-sm text-emerald-600">
+                        <IconComponent size={24} />
+                      </div>
+                      {/* Node dots at line ends */}
+                      <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-y-1/2"></div>
+                      <div className="absolute top-1/2 right-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-y-1/2"></div>
+                      <div className="absolute left-1/2 top-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-x-1/2"></div>
+                      <div className="absolute left-1/2 bottom-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-x-1/2"></div>
                     </div>
-                    {/* Node dots at line ends */}
-                    <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-y-1/2"></div>
-                    <div className="absolute top-1/2 right-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-y-1/2"></div>
-                    <div className="absolute left-1/2 top-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-x-1/2"></div>
-                    <div className="absolute left-1/2 bottom-0 w-1.5 h-1.5 bg-emerald-400 rounded-full -translate-x-1/2"></div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{value.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{value.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{value.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{value.description}</p>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
@@ -261,9 +178,9 @@ export default function AboutPage() {
         <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestra Historia</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('timeline.title')}</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Más de dos décadas construyendo liderazgo en servicios especializados para la industria minera en Latinoamérica
+                {t('timeline.subtitle')}
               </p>
             </div>
 
@@ -272,22 +189,14 @@ export default function AboutPage() {
               <div className="absolute left-12 md:left-16 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-200 via-emerald-400 to-emerald-600 rounded-full shadow-sm"></div>
 
               <div className="space-y-8">
-                {milestones.map((milestone, index) => {
-                  const IconComponent = {
-                    building: Building,
-                    handshake: Partnership,
-                    beaker: Chemistry,
-                    'trending-up': Growth,
-                    zap: Flash,
-                    globe: Earth,
-                    fuel: RainDrop
-                  }[milestone.icon] || Calendar;
+                {t.raw('timeline.milestones').map((milestone, index) => {
+                  const { icon: IconComponent, color } = milestoneConfig[index] || { icon: Calendar, color: "from-gray-500 to-gray-600" }
 
                   return (
                     <div key={index} className="relative flex items-start group">
                       {/* Enhanced timeline node with icon */}
                       <div className="relative z-10">
-                        <div className={`w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r ${milestone.color} rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:scale-110 transition-all duration-300 text-white`}>
+                        <div className={`w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r ${color} rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:scale-110 transition-all duration-300 text-white`}>
                           <IconComponent size={20} />
                         </div>
                       </div>
@@ -298,10 +207,10 @@ export default function AboutPage() {
                           {/* Header with year and metric */}
                           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                             <div className="flex items-center mb-2 sm:mb-0">
-                              <div className={`w-2 h-2 bg-gradient-to-r ${milestone.color} rounded-full mr-3`}></div>
+                              <div className={`w-2 h-2 bg-gradient-to-r ${color} rounded-full mr-3`}></div>
                               <span className="text-2xl md:text-3xl font-bold text-gray-800">{milestone.year}</span>
                             </div>
-                            <div className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${milestone.color} text-white rounded-full text-sm font-semibold shadow-sm`}>
+                            <div className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${color} text-white rounded-full text-sm font-semibold shadow-sm`}>
                               {milestone.metric}
                             </div>
                           </div>
@@ -324,7 +233,7 @@ export default function AboutPage() {
               {/* Timeline completion indicator */}
               <div className="flex justify-center mt-12">
                 <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-3 rounded-full shadow-lg">
-                  <span className="font-semibold">Consolidando liderazgo en Latinoamérica</span>
+                  <span className="font-semibold">{t('timeline.completion')}</span>
                 </div>
               </div>
             </div>
@@ -335,13 +244,13 @@ export default function AboutPage() {
         <section className="py-16 bg-gray-900 relative overflow-hidden">
           {/* Phase 2: Industrial pattern overlay */}
           <div className="absolute inset-0 opacity-5 industrial-pattern"></div>
-          
+
           <div className="max-w-4xl mx-auto px-4 text-center text-white relative z-10">
-            <h2 className="text-4xl font-bold mb-4">¿Listo para Trabajar Juntos?</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('cta.title')}</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Descubre cómo nuestra experiencia puede optimizar tus operaciones mineras.
+              {t('cta.description')}
             </p>
-            
+
             {/* Phase 1: Three-ball decoration */}
             <div className="flex justify-center mb-8">
               <div className="flex space-x-2">
@@ -350,14 +259,14 @@ export default function AboutPage() {
                 <div className="w-3 h-3 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
               </div>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 precision-click">
-                Contactar Ahora
-              </button>
-              <button className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Ver Servicios
-              </button>
+              <Link href="/contact" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 precision-click">
+                {t('cta.contactButton')}
+              </Link>
+              <Link href="/services" className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                {t('cta.servicesButton')}
+              </Link>
             </div>
           </div>
         </section>

@@ -1,11 +1,13 @@
 // src/components/Contact.js
 'use client'
 import { useEffect, useRef } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { Location, Email, Edit, ChevronRight } from '@carbon/icons-react'
+import { useTranslations } from 'next-intl'
 
 export default function Contact() {
   const contactRef = useRef(null)
+  const t = useTranslations('contact')
 
   // Progressive disclosure on scroll
   useEffect(() => {
@@ -64,11 +66,11 @@ export default function Contact() {
         {/* Editorial Header */}
         <div className="text-center mb-16 progressive-reveal">
           <h2 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-            Hablemos de Tu Proyecto
+            {t('headline')}
           </h2>
 
           <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
-            Nuestro equipo está disponible para consultas técnicas y evaluaciones de proyecto
+            {t('description')}
           </p>
         </div>
 
@@ -82,7 +84,7 @@ export default function Contact() {
               <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Email className="w-5 h-5 text-emerald-300" />
               </div>
-              <span className="text-lg font-semibold text-emerald-200">contacto@tsf.cl</span>
+              <span className="text-lg font-semibold text-emerald-200">{t('email')}</span>
             </div>
             <ChevronRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
@@ -95,7 +97,7 @@ export default function Contact() {
               <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Edit className="w-5 h-5 text-emerald-300" />
               </div>
-              <span className="text-lg font-semibold text-emerald-200">Formulario de Contacto</span>
+              <span className="text-lg font-semibold text-emerald-200">{t('contactForm')}</span>
             </div>
             <ChevronRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
@@ -108,11 +110,11 @@ export default function Contact() {
               <Location className="w-5 h-5" />
             </div>
             <div className="text-lg">
-              <span className="font-semibold">Santiago</span>
+              <span className="font-semibold">{t('locations.santiago')}</span>
               <span className="text-emerald-400/60 mx-2">•</span>
-              <span className="font-semibold">Calama</span>
+              <span className="font-semibold">{t('locations.calama')}</span>
               <span className="text-emerald-400/60 mx-2">•</span>
-              <span className="font-semibold">Lima</span>
+              <span className="font-semibold">{t('locations.lima')}</span>
             </div>
           </div>
         </div>
@@ -120,7 +122,7 @@ export default function Contact() {
         {/* Trust Line */}
         <div className="text-center progressive-reveal">
           <p className="text-emerald-200/70 text-lg">
-            Trabajamos con las principales compañías industriales de Latinoamérica
+            {t('trustLine')}
           </p>
         </div>
       </div>

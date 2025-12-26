@@ -1,11 +1,11 @@
-import Link from 'next/link'
+'use client'
 
-export const metadata = {
-  title: 'Caso de Estudio: Tratamiento de Fase Orgánica en Planta SX - USD $3.1M Ahorro Anual',
-  description: 'Descubra cómo el tratamiento de fase orgánica logró reducir arrastres en 52%, aumentar eficiencia al 92% y generar USD $3.1M en ahorros anuales en una planta SX.',
-}
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export default function TratamientoOrganicoCase() {
+  const tc = useTranslations('caseStudyDetail.common')
+  const ts = useTranslations('caseStudyDetail.tratamientoOrganicoSx')
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section - Blueprint Style */}
@@ -32,7 +32,7 @@ export default function TratamientoOrganicoCase() {
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-8 font-mono text-sm">
             <Link href="/casos-de-exito" className="text-slate-400 hover:text-emerald-400 transition-colors">
-              Casos de Éxito
+              {tc('breadcrumb')}
             </Link>
             <span className="text-slate-600">/</span>
             <span className="text-emerald-400">PRJ-001</span>
@@ -43,27 +43,23 @@ export default function TratamientoOrganicoCase() {
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400">
-                [ Caso de Estudio ]
+                [ {tc('caseStudyLabel')} ]
               </span>
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight font-mono">
-              USD $3.1M
+              {ts('title')}
             </h1>
-            <p className="text-xl text-slate-400 mb-2">Ahorro Anual</p>
+            <p className="text-xl text-slate-400 mb-2">{ts('subtitle')}</p>
             <p className="text-2xl text-emerald-400 font-semibold">
-              Tratamiento de Fase Orgánica en Planta SX
+              {ts('headline')}
             </p>
           </div>
 
           {/* Key Stats Bar */}
           <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
-            {[
-              { value: "52%", label: "Reducción Arrastres" },
-              { value: "92%", label: "Eficiencia Global" },
-              { value: "18", label: "Meses Operación" },
-            ].map((stat, i) => (
+            {ts.raw('stats').map((stat, i) => (
               <div key={i} className="relative bg-white/5 backdrop-blur border border-slate-700 p-6 text-center"
                    style={{ clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))' }}>
                 <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-emerald-500"
@@ -83,11 +79,7 @@ export default function TratamientoOrganicoCase() {
       <section className="py-8 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { label: "Servicio", value: "Filtrado, centrifugado y tratamiento con arcilla de fase orgánica" },
-              { label: "Industria", value: "Extracción por Solventes (SX)" },
-              { label: "Objetivo", value: "Eliminar arrastres, estabilizar fase orgánica y mejorar eficiencia" },
-            ].map((item, i) => (
+            {ts.raw('overview').map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 <div className="font-mono text-xs text-slate-400 mt-1">[{String(i + 1).padStart(2, '0')}]</div>
                 <div>
@@ -106,37 +98,18 @@ export default function TratamientoOrganicoCase() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-300"></div>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">Análisis</span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">{tc('analysisLabel')}</span>
               <div className="w-12 h-px bg-slate-300"></div>
             </div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">El Desafío</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">{tc('challengeTitle')}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Durante 2023 y 2024, la planta SX enfrentó problemas persistentes en la calidad físico-química del orgánico
+              {ts('challengeDescription')}
             </p>
           </div>
 
           {/* Problem Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                title: "Degradación del Orgánico",
-                description: "Acumulación de contaminantes que afectaban la separación de fases",
-                metric: "TSF: 444 seg",
-                status: "Crítico"
-              },
-              {
-                title: "Arrastre Excesivo",
-                description: "Pérdidas significativas de cobre en el refino por arrastres de orgánico",
-                metric: "TIF: 20.4 d/cm",
-                status: "Alto"
-              },
-              {
-                title: "Eficiencia Reducida",
-                description: "Impacto directo en la recuperación de cobre y costos operacionales",
-                metric: "Efic: <85%",
-                status: "Impactante"
-              },
-            ].map((problem, i) => (
+            {ts.raw('problems').map((problem, i) => (
               <div key={i} className="relative bg-white border border-slate-200 p-6"
                    style={{ clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))' }}>
                 <div className="absolute top-0 right-0 w-3 h-3 bg-red-500"
@@ -164,37 +137,18 @@ export default function TratamientoOrganicoCase() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-300"></div>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">Implementación</span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">{tc('implementationLabel')}</span>
               <div className="w-12 h-px bg-slate-300"></div>
             </div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">La Solución</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">{tc('solutionTitle')}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Sistema integral de tratamiento con enfoque en tres etapas principales
+              {ts('solutionDescription')}
             </p>
           </div>
 
           {/* Solution Steps */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                step: "01",
-                title: "Filtrado de Orgánico",
-                description: "Remoción de sólidos finos y partículas que degradan la fase orgánica mediante filtros especializados.",
-                specs: ["Filtros de cartucho", "5-10 micrones", "Flujo continuo"]
-              },
-              {
-                step: "02",
-                title: "Tratamiento con Arcilla",
-                description: "Adsorción de compuestos polares y degradados usando arcilla activada en columnas de contacto.",
-                specs: ["Arcilla activada", "Tiempo contacto óptimo", "Regeneración in-situ"]
-              },
-              {
-                step: "03",
-                title: "Centrifugado Final",
-                description: "Separación de borras y emulsiones residuales para entregar orgánico de alta calidad.",
-                specs: ["Centrífuga de disco", "Alta velocidad", "Monitoreo continuo"]
-              },
-            ].map((solution, i) => (
+            {ts.raw('solutions').map((solution, i) => (
               <div key={i} className="relative bg-slate-50 border-2 border-slate-200 p-6 hover:border-emerald-400 transition-colors duration-300"
                    style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))' }}>
                 <div className="absolute top-0 right-0 w-4 h-4 bg-emerald-500"
@@ -226,12 +180,12 @@ export default function TratamientoOrganicoCase() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-600"></div>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">Resultados</span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">{tc('resultsLabel')}</span>
               <div className="w-12 h-px bg-slate-600"></div>
             </div>
-            <h2 className="text-4xl font-bold text-white mb-4">Métricas de Éxito</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">{tc('successMetrics')}</h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Comparativa antes vs después del tratamiento
+              {tc('beforeAfterComparison')}
             </p>
           </div>
 
@@ -242,15 +196,10 @@ export default function TratamientoOrganicoCase() {
                  style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))' }}>
               <div className="absolute top-0 right-0 w-4 h-4 bg-red-500"
                    style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}></div>
-              <div className="font-mono text-xs text-red-400 mb-4 uppercase tracking-wider">[ Estado Inicial ]</div>
+              <div className="font-mono text-xs text-red-400 mb-4 uppercase tracking-wider">[ {tc('initialState')} ]</div>
 
               <div className="space-y-6">
-                {[
-                  { label: "TSF (Tiempo Separación)", value: "444", unit: "seg", max: 500 },
-                  { label: "TIF (Tensión Interfacial)", value: "20.4", unit: "d/cm", max: 30 },
-                  { label: "Eficiencia Global", value: "84", unit: "%", max: 100 },
-                  { label: "Arrastre de Orgánico", value: "Alto", unit: "", max: 0 },
-                ].map((metric, i) => (
+                {ts.raw('beforeMetrics').map((metric, i) => (
                   <div key={i}>
                     <div className="flex justify-between mb-2">
                       <span className="text-slate-400 text-sm">{metric.label}</span>
@@ -272,15 +221,10 @@ export default function TratamientoOrganicoCase() {
                  style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))' }}>
               <div className="absolute top-0 right-0 w-4 h-4 bg-emerald-500"
                    style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}></div>
-              <div className="font-mono text-xs text-emerald-400 mb-4 uppercase tracking-wider">[ Estado Final ]</div>
+              <div className="font-mono text-xs text-emerald-400 mb-4 uppercase tracking-wider">[ {tc('finalState')} ]</div>
 
               <div className="space-y-6">
-                {[
-                  { label: "TSF (Tiempo Separación)", value: "153", unit: "seg", max: 500, improvement: "-66%" },
-                  { label: "TIF (Tensión Interfacial)", value: "23.7", unit: "d/cm", max: 30, improvement: "+16%" },
-                  { label: "Eficiencia Global", value: "92", unit: "%", max: 100, improvement: "+8%" },
-                  { label: "Arrastre de Orgánico", value: "52%", unit: "reducción", max: 0, improvement: "" },
-                ].map((metric, i) => (
+                {ts.raw('afterMetrics').map((metric, i) => (
                   <div key={i}>
                     <div className="flex justify-between mb-2">
                       <span className="text-slate-400 text-sm">{metric.label}</span>
@@ -311,9 +255,9 @@ export default function TratamientoOrganicoCase() {
             <div className="absolute bottom-0 left-0 w-5 h-5 bg-emerald-500"
                  style={{ clipPath: 'polygon(0 0, 0 100%, 100% 100%)' }}></div>
 
-            <div className="font-mono text-xs text-emerald-400 mb-4 uppercase tracking-wider">[ Impacto Económico ]</div>
-            <div className="text-5xl md:text-7xl font-bold text-white mb-2 font-mono">$3.1M USD</div>
-            <p className="text-xl text-slate-400">Ahorro Anual Proyectado</p>
+            <div className="font-mono text-xs text-emerald-400 mb-4 uppercase tracking-wider">[ {tc('economicImpact')} ]</div>
+            <div className="text-5xl md:text-7xl font-bold text-white mb-2 font-mono">{ts('economicValue')}</div>
+            <p className="text-xl text-slate-400">{ts('economicLabel')}</p>
           </div>
         </div>
       </section>
@@ -324,19 +268,14 @@ export default function TratamientoOrganicoCase() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-300"></div>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">Resumen</span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">{tc('summaryLabel')}</span>
               <div className="w-12 h-px bg-slate-300"></div>
             </div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Logros Clave</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">{tc('keyAchievements')}</h2>
           </div>
 
           <div className="grid md:grid-cols-4 gap-4">
-            {[
-              { icon: "↓", value: "66%", label: "Reducción TSF" },
-              { icon: "↑", value: "16%", label: "Mejora TIF" },
-              { icon: "↓", value: "52%", label: "Menos Arrastres" },
-              { icon: "↑", value: "92%", label: "Eficiencia" },
-            ].map((achievement, i) => (
+            {ts.raw('achievements').map((achievement, i) => (
               <div key={i} className="relative bg-slate-50 border border-slate-200 p-6 text-center hover:border-emerald-400 transition-colors duration-300"
                    style={{ clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))' }}>
                 <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-slate-200"
@@ -374,17 +313,16 @@ export default function TratamientoOrganicoCase() {
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
-              Siguiente paso
+              {tc('nextStep')}
             </span>
             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            ¿Enfrenta desafíos similares en su planta SX?
+            {ts('ctaTitle')}
           </h2>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-            Nuestro equipo de especialistas puede ayudarle a optimizar su proceso
-            y lograr resultados medibles.
+            {ts('ctaDescription')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -393,7 +331,7 @@ export default function TratamientoOrganicoCase() {
               className="group inline-flex items-center justify-center bg-emerald-500 text-white px-8 py-4 font-semibold hover:bg-emerald-400 transition-all duration-300"
               style={{ clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))' }}
             >
-              Solicitar consulta
+              {tc('requestConsultation')}
               <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -403,7 +341,7 @@ export default function TratamientoOrganicoCase() {
               className="inline-flex items-center justify-center border-2 border-slate-600 text-white px-8 py-4 font-semibold hover:border-emerald-500 hover:text-emerald-400 transition-all duration-300"
               style={{ clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))' }}
             >
-              Ver más casos
+              {tc('viewMoreCases')}
             </Link>
           </div>
         </div>

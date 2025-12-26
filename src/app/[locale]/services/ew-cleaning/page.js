@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Delivery, Mountain, Certificate, IbmDatastage, CheckmarkFilled, Security, Flash, ChartLine, Humidity, Chemistry, Phone, ArrowRight, ChevronLeft, ChevronRight, Analytics, Dashboard } from '@carbon/icons-react'
+import { useTranslations } from 'next-intl'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
@@ -15,25 +16,22 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 // Expandable Equipment Benefits Component
-function EquipmentBenefits() {
+function EquipmentBenefits({ t }) {
   const [expandedIndex, setExpandedIndex] = useState(0)
 
   const benefits = [
     {
-      title: 'Operación en altura extrema',
-      description: 'Bombas, filtros prensa y tableros de control certificados para operar sobre 4.000 msnm. Sistemas auxiliares diseñados para condiciones de alta montaña, con mantenimiento preventivo actualizado.',
+      key: 'highAltitude',
       icon: Mountain,
       image: '/EW_Photos/20251009_141022.jpg'
     },
     {
-      title: '100% Móviles',
-      description: 'Equipos que se instalan directamente sobre el grating de la nave, al costado de las celdas. Sin obras civiles, sin construcción permanente. Reubicación rápida entre sectores de la nave.',
+      key: 'mobile',
       icon: Delivery,
       image: '/EW_Photos/20251009_141008.jpg'
     },
     {
-      title: 'Mangueras antiestáticas',
-      description: 'Líneas de succión de 2-3 pulgadas con certificación antiestática para trabajo seguro en ambiente de celdas energizadas. Sin riesgo de chispas ni contacto eléctrico.',
+      key: 'antistatic',
       icon: Security,
       image: '/EW_Photos/20251009_141022.jpg'
     }
@@ -68,7 +66,7 @@ function EquipmentBenefits() {
                   <span className={`font-semibold text-lg transition-colors ${
                     isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
                   }`}>
-                    {benefit.title}
+                    {t(`equipmentBenefits.items.${benefit.key}.title`)}
                   </span>
                 </div>
                 <span className={`text-2xl font-light transition-colors ${
@@ -86,7 +84,7 @@ function EquipmentBenefits() {
               >
                 <div className="pb-8">
                   <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
+                    {t(`equipmentBenefits.items.${benefit.key}.description`)}
                   </p>
                 </div>
               </div>
@@ -102,7 +100,7 @@ function EquipmentBenefits() {
         <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
           <Image
             src={benefits[expandedIndex].image}
-            alt={benefits[expandedIndex].title}
+            alt={t(`equipmentBenefits.items.${benefits[expandedIndex].key}.title`)}
             width={600}
             height={450}
             className="w-full h-full object-cover"
@@ -114,6 +112,7 @@ function EquipmentBenefits() {
 }
 
 export default function EWCleaningServicePage() {
+  const t = useTranslations('ewCleaningService')
   const heroRef = useRef(null)
   const heroImageRef = useRef(null)
   const overviewRef = useRef(null)
@@ -310,15 +309,15 @@ export default function EWCleaningServicePage() {
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                Mejora la calidad de tus cátodos <span className="text-gradient">sin detener producción</span>
+                {t('hero.title')} <span className="text-gradient">{t('hero.titleHighlight')}</span>
               </h1>
 
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Limpieza de celdas EW con equipos móviles que operan celda por celda mientras tu nave sigue produciendo. Sistema de succión neumática y filtración in-situ que retorna el electrolito al circuito con menos de 3 ppm de sólidos.
+                {t('hero.subtitle')}
               </p>
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
-                Solicitar Evaluación
+                {t('hero.cta')}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
@@ -328,7 +327,7 @@ export default function EWCleaningServicePage() {
               <div ref={heroImageRef} className="rounded-xl overflow-hidden shadow-2xl shadow-gray-200/50">
                 <Image
                   src="/EW_Photos/20251009_141008.jpg"
-                  alt="Sistema de limpieza de celdas EW Tecionic en operación"
+                  alt={t('hero.imageAlt')}
                   width={800}
                   height={400}
                   className="object-cover w-full h-auto"
@@ -351,7 +350,7 @@ export default function EWCleaningServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
-              Resultados que impactan tu operación
+              {t('keyBenefits.title')}
             </h2>
           </div>
 
@@ -368,9 +367,9 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Humidity className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Cero pérdida de electrolito</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.zeroLoss.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Sistema cerrado que retorna 100% del electrolito filtrado con menos de 3 ppm de sólidos.
+                {t('keyBenefits.items.zeroLoss.description')}
               </p>
             </div>
 
@@ -386,9 +385,9 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Flash className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Menor consumo energético</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.energySavings.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Eliminación de depósitos que causan cortocircuitos reduce el gasto eléctrico por tonelada.
+                {t('keyBenefits.items.energySavings.description')}
               </p>
             </div>
 
@@ -404,9 +403,9 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Certificate className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Calidad catódica asegurada</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.cathodeQuality.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Eliminación total de borras que causan contaminación catódica.
+                {t('keyBenefits.items.cathodeQuality.description')}
               </p>
             </div>
 
@@ -422,9 +421,9 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Analytics className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Mayor vida útil de ánodos</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.anodeLife.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Menos acumulación de borra reduce desgaste y extiende ciclos de reemplazo.
+                {t('keyBenefits.items.anodeLife.description')}
               </p>
             </div>
           </div>
@@ -449,10 +448,10 @@ export default function EWCleaningServicePage() {
           {/* Section Header */}
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
-              Limpieza sin interrumpir tu operación
+              {t('operationalContinuity.title')}
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Nuestro sistema móvil opera celda por celda mientras el resto de tu nave sigue produciendo.
+              {t('operationalContinuity.subtitle')}
             </p>
           </div>
 
@@ -464,25 +463,25 @@ export default function EWCleaningServicePage() {
             <div className="lg:col-span-8 bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-emerald-500/30 rounded-3xl p-8 lg:p-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="relative z-10">
-                <div className="text-emerald-400 font-semibold text-sm uppercase tracking-wide mb-3">Conveniencia Tecionic</div>
+                <div className="text-emerald-400 font-semibold text-sm uppercase tracking-wide mb-3">{t('operationalContinuity.heroCard.label')}</div>
                 <h3 className="text-3xl lg:text-4xl font-black text-white mb-4">
-                  Solo 100-200L fuera de la celda
+                  {t('operationalContinuity.heroCard.title')}
                 </h3>
                 <p className="text-lg text-gray-300 leading-relaxed max-w-xl mb-6">
-                  Aunque succionamos a 6 m³/hora, el sistema de retorno continuo mantiene solo 100-200 litros fuera en cualquier momento.
+                  {t('operationalContinuity.heroCard.description')}
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
-                    <div className="text-2xl font-black text-white">6 m³/h</div>
-                    <div className="text-gray-400 text-xs">Succión</div>
+                    <div className="text-2xl font-black text-white">{t('operationalContinuity.heroCard.stats.suction.value')}</div>
+                    <div className="text-gray-400 text-xs">{t('operationalContinuity.heroCard.stats.suction.label')}</div>
                   </div>
                   <div className="bg-emerald-500/20 border border-emerald-500/30 rounded-xl px-4 py-3">
-                    <div className="text-2xl font-black text-emerald-400">100-200L</div>
-                    <div className="text-emerald-300/70 text-xs">Fuera de celda</div>
+                    <div className="text-2xl font-black text-emerald-400">{t('operationalContinuity.heroCard.stats.outOfCell.value')}</div>
+                    <div className="text-emerald-300/70 text-xs">{t('operationalContinuity.heroCard.stats.outOfCell.label')}</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
-                    <div className="text-2xl font-black text-white">{"<"}3 ppm</div>
-                    <div className="text-gray-400 text-xs">Retorno</div>
+                    <div className="text-2xl font-black text-white">{t('operationalContinuity.heroCard.stats.return.value')}</div>
+                    <div className="text-gray-400 text-xs">{t('operationalContinuity.heroCard.stats.return.label')}</div>
                   </div>
                 </div>
               </div>
@@ -494,14 +493,14 @@ export default function EWCleaningServicePage() {
                 <div className="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <Humidity className="w-6 h-6 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Cero pérdida de electrolito</h3>
+                <h3 className="text-xl font-bold text-white mb-2">{t('operationalContinuity.zeroLossCard.title')}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Todo el electrolito succionado retorna filtrado al circuito. Sin variación de nivel.
+                  {t('operationalContinuity.zeroLossCard.description')}
                 </p>
               </div>
               <div className="mt-6 pt-6 border-t border-gray-700">
-                <div className="text-5xl font-black text-white">0%</div>
-                <div className="text-gray-500 text-sm">Pérdida</div>
+                <div className="text-5xl font-black text-white">{t('operationalContinuity.zeroLossCard.stat.value')}</div>
+                <div className="text-gray-500 text-sm">{t('operationalContinuity.zeroLossCard.stat.label')}</div>
               </div>
             </div>
 
@@ -511,25 +510,25 @@ export default function EWCleaningServicePage() {
               <div className="relative h-40 lg:h-48 overflow-hidden">
                 <Image
                   src="/EW_Photos/20251009_141022.jpg"
-                  alt="Bomba peristáltica para succión de borra en celdas EW"
+                  alt={t('operationalContinuity.pumpCard.imageAlt')}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-white mb-2">Bomba peristáltica</h3>
+                <h3 className="text-lg font-bold text-white mb-2">{t('operationalContinuity.pumpCard.title')}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Mayor eficiencia succionando plomo pesado. Sin reflujo de borra al apagar.
+                  {t('operationalContinuity.pumpCard.description')}
                 </p>
               </div>
             </div>
 
             {/* Middle Card: Cells per shift - spans 4 cols */}
             <div className="lg:col-span-4 bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-center">
-              <div className="text-5xl lg:text-6xl font-black text-white mb-2">2-3</div>
-              <div className="text-emerald-100 text-lg font-medium">Celdas por turno</div>
-              <div className="text-emerald-200/70 text-sm mt-1">12 horas de operación continua</div>
+              <div className="text-5xl lg:text-6xl font-black text-white mb-2">{t('operationalContinuity.cellsCard.value')}</div>
+              <div className="text-emerald-100 text-lg font-medium">{t('operationalContinuity.cellsCard.label')}</div>
+              <div className="text-emerald-200/70 text-sm mt-1">{t('operationalContinuity.cellsCard.sublabel')}</div>
             </div>
 
             {/* Image Card 2: Filtration - spans 4 cols */}
@@ -537,16 +536,16 @@ export default function EWCleaningServicePage() {
               <div className="relative h-40 lg:h-48 overflow-hidden">
                 <Image
                   src="/EW_Photos/20251009_141008.jpg"
-                  alt="Filtros prensa móviles para electrolito"
+                  alt={t('operationalContinuity.filtrationCard.imageAlt')}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-white mb-2">Filtración móvil</h3>
+                <h3 className="text-lg font-bold text-white mb-2">{t('operationalContinuity.filtrationCard.title')}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Retorno inmediato al circuito. Borra deshidratada.
+                  {t('operationalContinuity.filtrationCard.description')}
                 </p>
               </div>
             </div>
@@ -557,38 +556,38 @@ export default function EWCleaningServicePage() {
           <div ref={statsRef} className="mt-20 pt-16 border-t border-gray-700">
             <div className="max-w-3xl mb-12">
               <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
-                Simplicidad Operacional
+                {t('operationalSimplicity.title')}
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Implementación rápida sin complejidad. Equipos móviles que llegan operativos a tu faena.
+                {t('operationalSimplicity.subtitle')}
               </p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
               {/* 24/7 Tecionic specialists */}
               <div className="stat-fade text-center lg:text-left">
-                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">24/7</div>
-                <div className="text-lg font-semibold text-white mb-2">Especialistas Tecionic</div>
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">{t('operationalSimplicity.stats.specialists.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.specialists.label')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Personal certificado opera y mantiene los equipos en tu faena
+                  {t('operationalSimplicity.stats.specialists.description')}
                 </p>
               </div>
 
               {/* Fast deployment */}
               <div className="text-center lg:text-left">
-                <div className="stat-count text-6xl lg:text-7xl font-bold text-emerald-400 mb-3" data-target="48">48h</div>
-                <div className="text-lg font-semibold text-white mb-2">Despliegue rápido</div>
+                <div className="stat-count text-6xl lg:text-7xl font-bold text-emerald-400 mb-3" data-target="48">{t('operationalSimplicity.stats.deployment.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.deployment.label')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Flota regional lista para movilizar sin esperar fabricación
+                  {t('operationalSimplicity.stats.deployment.description')}
                 </p>
               </div>
 
               {/* Zero CAPEX */}
               <div className="stat-fade text-center lg:text-left">
-                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">$0</div>
-                <div className="text-lg font-semibold text-white mb-2">Inversión en capital</div>
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">{t('operationalSimplicity.stats.capex.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.capex.label')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Servicio mensual todo incluido. Opex, no Capex.
+                  {t('operationalSimplicity.stats.capex.description')}
                 </p>
               </div>
             </div>
@@ -602,10 +601,10 @@ export default function EWCleaningServicePage() {
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em] mb-6">
-              Seguridad sin compromisos
+              {t('safety.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Eliminamos los riesgos inherentes a la limpieza tradicional de celdas EW.
+              {t('safety.subtitle')}
             </p>
           </div>
 
@@ -618,18 +617,18 @@ export default function EWCleaningServicePage() {
                 <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
                   <IbmDatastage className="w-6 h-6 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Sin espacios confinados</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('safety.cards.confinedSpaces.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Nuestro sistema opera desde fuera de la celda. Los operadores nunca necesitan ingresar a espacios confinados.
+                  {t('safety.cards.confinedSpaces.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Sin exposición a óxido de plomo</span>
+                    <span>{t('safety.cards.confinedSpaces.bullets.leadOxide')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Sin permisos especiales</span>
+                    <span>{t('safety.cards.confinedSpaces.bullets.permits')}</span>
                   </li>
                 </ul>
               </div>
@@ -643,18 +642,18 @@ export default function EWCleaningServicePage() {
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
                   <Chemistry className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Sin exposición a ácidos</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('safety.cards.acidExposure.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Sistema cerrado de succión y filtración elimina el contacto directo con soluciones corrosivas.
+                  {t('safety.cards.acidExposure.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-blue-500" />
-                    <span>Cero quemaduras químicas</span>
+                    <span>{t('safety.cards.acidExposure.bullets.burns')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-blue-500" />
-                    <span>Cumple DS-43 MINSAL</span>
+                    <span>{t('safety.cards.acidExposure.bullets.compliance')}</span>
                   </li>
                 </ul>
               </div>
@@ -668,18 +667,18 @@ export default function EWCleaningServicePage() {
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
                   <Certificate className="w-6 h-6 text-purple-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Protocolos certificados</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('safety.cards.certifications.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Operamos bajo los más altos estándares de seguridad exigidos por la industria minera.
+                  {t('safety.cards.certifications.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-purple-500" />
-                    <span>Protocolo SG-SSSC</span>
+                    <span>{t('safety.cards.certifications.bullets.protocol')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-purple-500" />
-                    <span>&quot;Reglas que Salvan Vidas&quot;</span>
+                    <span>{t('safety.cards.certifications.bullets.rules')}</span>
                   </li>
                 </ul>
               </div>
@@ -693,10 +692,10 @@ export default function EWCleaningServicePage() {
             </div>
             <div>
               <h4 className="text-xl font-bold text-white mb-2">
-                Cero incidentes de seguridad
+                {t('safety.trackRecord.title')}
               </h4>
               <p className="text-emerald-100 leading-relaxed">
-                En nuestra operación completa de desborre a más de 4.000 msnm, mantuvimos una tasa de incidentes igual a cero durante toda la ejecución del contrato.
+                {t('safety.trackRecord.description')}
               </p>
             </div>
           </div>
@@ -708,11 +707,11 @@ export default function EWCleaningServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
-              Rendimiento garantizado en cualquier faena
+              {t('equipmentBenefits.title')}
             </h2>
 
             {/* Equipment Benefits - Expandable with images */}
-            <EquipmentBenefits />
+            <EquipmentBenefits t={t} />
           </div>
         </div>
       </section>
@@ -722,10 +721,10 @@ export default function EWCleaningServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Industrias que servimos
+              {t('industries.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Servicio de desborre especializado para naves de electroobtención
+              {t('industries.subtitle')}
             </p>
           </div>
 
@@ -735,7 +734,7 @@ export default function EWCleaningServicePage() {
               <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/copper_mine.jpg"
-                  alt="Mina de cobre"
+                  alt={t('industries.copper.imageAlt')}
                   fill
                   className="object-cover"
                 />
@@ -745,12 +744,12 @@ export default function EWCleaningServicePage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Cu</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.copper.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Desborre de celdas EW, filtración de borras plomadas</p>
+                <p className="text-sm text-gray-600">{t('industries.copper.description')}</p>
                 <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -762,7 +761,7 @@ export default function EWCleaningServicePage() {
               <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/zinc_processing_plant.jpg"
-                  alt="Planta de procesamiento de zinc"
+                  alt={t('industries.zinc.imageAlt')}
                   fill
                   className="object-cover"
                 />
@@ -772,12 +771,12 @@ export default function EWCleaningServicePage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Zn</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Zinc</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.zinc.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Limpieza de celdas EW de zinc, retiro de lodos</p>
+                <p className="text-sm text-gray-600">{t('industries.zinc.description')}</p>
                 <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -793,10 +792,10 @@ export default function EWCleaningServicePage() {
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
-              CASO DE ÉXITO
+              {t('caseStudy.badge')}
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
-              Caserones mantuvo calidad LME con desborre a 4.000+ msnm
+              {t('caseStudy.title')}
             </h2>
           </div>
 
@@ -807,7 +806,7 @@ export default function EWCleaningServicePage() {
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300">
                 <Image
                   src="/fotos_spence/Imagen4.jpg"
-                  alt="Nave de electroobtención Caserones"
+                  alt={t('caseStudy.imageAlt')}
                   fill
                   className="object-cover"
                 />
@@ -818,8 +817,8 @@ export default function EWCleaningServicePage() {
                       <span className="font-bold text-sm">Cu</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">SCM Lumina Copper</div>
-                      <div className="text-white/70 text-xs">4.200 msnm</div>
+                      <div className="font-semibold text-sm">{t('caseStudy.client')}</div>
+                      <div className="text-white/70 text-xs">{t('caseStudy.altitude')}</div>
                     </div>
                   </div>
                 </div>
@@ -830,27 +829,27 @@ export default function EWCleaningServicePage() {
                 {/* Metrics row */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">100%</div>
-                    <div className="text-sm text-gray-600">Remoción depósitos</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.removal.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.removal.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">0</div>
-                    <div className="text-sm text-gray-600">Incidentes seguridad</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.incidents.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.incidents.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">LME</div>
-                    <div className="text-sm text-gray-600">Calidad mantenida</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.quality.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.quality.label')}</div>
                   </div>
                 </div>
 
                 {/* Description */}
                 <p className="text-gray-600 mb-6">
-                  Acumulación de borras plomadas causaba contaminación catódica a más de 4.000 msnm. Implementamos servicio integral 7x7 con equipos móviles adaptados a altura y contenedores-bodega autónomos, logrando un rendimiento de 1 celda por día sin interrumpir producción.
+                  {t('caseStudy.description')}
                 </p>
 
                 {/* CTA */}
                 <Link href="/casos-de-exito/caserones-desborre" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
-                  Ver caso completo
+                  {t('caseStudy.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -865,10 +864,10 @@ export default function EWCleaningServicePage() {
           <div className="flex items-end justify-between mb-12">
             <div className="max-w-3xl">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Piloto sin riesgo, escala según resultados
+                {t('pilotProgram.title')}
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Validamos la factibilidad del sistema en tu nave antes de compromisos mayores. Variables despejadas mediante pilotaje en terreno.
+                {t('pilotProgram.subtitle')}
               </p>
             </div>
 
@@ -943,37 +942,27 @@ export default function EWCleaningServicePage() {
                       <CheckmarkFilled className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Validación en Terreno</h3>
-                      <p className="text-gray-500">Probamos el sistema en tus celdas antes de compromisos</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{t('pilotProgram.cards.validation.title')}</h3>
+                      <p className="text-gray-500">{t('pilotProgram.cards.validation.subtitle')}</p>
                     </div>
                   </div>
 
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Verificamos capacidad de succión desde fondo de celdas</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Confirmamos filtración y deshidratación efectiva</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Medimos calidad del retorno (&lt;2-3 ppm sólidos)</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">95% eficiencia vs operación manual comprobada</span>
-                      </div>
+                      {t.raw('pilotProgram.cards.validation.features').map((feature, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
                     </div>
 
                     <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
-                      <h4 className="font-bold text-gray-900 mb-2">Sin compromiso</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('pilotProgram.cards.validation.highlight.title')}</h4>
                       <p className="text-sm text-gray-600 mb-4">
-                        El piloto despeja todas las variables técnicas específicas de tu nave. Solo escalamos cuando los resultados te convencen.
+                        {t('pilotProgram.cards.validation.highlight.description')}
                       </p>
-                      <div className="text-2xl font-bold text-emerald-600">Prueba → Valida → Escala</div>
+                      <div className="text-2xl font-bold text-emerald-600">{t('pilotProgram.cards.validation.highlight.tagline')}</div>
                     </div>
                   </div>
                 </div>
@@ -987,39 +976,29 @@ export default function EWCleaningServicePage() {
                       <Analytics className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Control Visual y Trazabilidad</h3>
-                      <p className="text-gray-500">Documentación completa de cada celda intervenida</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{t('pilotProgram.cards.traceability.title')}</h3>
+                      <p className="text-gray-500">{t('pilotProgram.cards.traceability.subtitle')}</p>
                     </div>
                   </div>
 
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Visor en línea de succión - operadores &quot;ven&quot; la eficiencia en tiempo real</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Fichas técnicas con fotografías georreferenciadas</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Estado inicial, proceso y final documentado</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Registro completo de cada celda para auditorías</span>
-                      </div>
+                      {t.raw('pilotProgram.cards.traceability.features').map((feature, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <CheckmarkFilled className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
                     </div>
 
                     <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                      <h4 className="font-bold text-gray-900 mb-2">Transparencia total</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('pilotProgram.cards.traceability.highlight.title')}</h4>
                       <p className="text-sm text-gray-600 mb-4">
-                        Cada intervención queda documentada con fecha, hora, responsables, estado inicial/final y fotografías de respaldo.
+                        {t('pilotProgram.cards.traceability.highlight.description')}
                       </p>
                       <div className="flex items-center gap-2">
                         <Dashboard className="w-5 h-5 text-blue-600" />
-                        <span className="text-blue-600 font-semibold">Informes validados por mandante</span>
+                        <span className="text-blue-600 font-semibold">{t('pilotProgram.cards.traceability.highlight.tagline')}</span>
                       </div>
                     </div>
                   </div>
@@ -1034,39 +1013,39 @@ export default function EWCleaningServicePage() {
                       <ChartLine className="w-6 h-6 text-purple-600" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Escalabilidad Probada</h3>
-                      <p className="text-gray-500">Inicia pequeño, valida resultados, escala con confianza</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{t('pilotProgram.cards.scalability.title')}</h3>
+                      <p className="text-gray-500">{t('pilotProgram.cards.scalability.subtitle')}</p>
                     </div>
                   </div>
 
                   <div className="grid lg:grid-cols-3 gap-4">
                     <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
                       <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mb-3">1</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Piloto</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('pilotProgram.cards.scalability.steps.pilot.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Prueba en celdas seleccionadas</li>
-                        <li>• Validación de variables</li>
-                        <li>• Sin compromiso</li>
+                        {t.raw('pilotProgram.cards.scalability.steps.pilot.items').map((item, index) => (
+                          <li key={index}>• {item}</li>
+                        ))}
                       </ul>
                     </div>
 
                     <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
                       <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold mb-3">2</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Contrato de Servicio</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('pilotProgram.cards.scalability.steps.contract.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Programa de limpieza continua</li>
-                        <li>• Equipos y operadores dedicados</li>
-                        <li>• Sin CAPEX</li>
+                        {t.raw('pilotProgram.cards.scalability.steps.contract.items').map((item, index) => (
+                          <li key={index}>• {item}</li>
+                        ))}
                       </ul>
                     </div>
 
                     <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
                       <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mb-3">3</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Capacidad Dedicada</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('pilotProgram.cards.scalability.steps.dedicated.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Flota exclusiva para tu nave</li>
-                        <li>• Contrato largo plazo</li>
-                        <li>• Asociación estratégica</li>
+                        {t.raw('pilotProgram.cards.scalability.steps.dedicated.items').map((item, index) => (
+                          <li key={index}>• {item}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -1094,36 +1073,36 @@ export default function EWCleaningServicePage() {
         </div>
         <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Mejora la calidad de tus cátodos
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-emerald-100 mb-4">
-            Validamos la factibilidad del sistema mediante pilotaje en terreno. Sin compromiso, con resultados medibles en calidad catódica.
+            {t('cta.subtitle')}
           </p>
           <p className="text-lg text-emerald-100 mb-10">
-            Servicio llave en mano: equipos, operadores certificados, y gestión de residuos incluida. Sin CAPEX, sin riesgo operacional.
+            {t('cta.description')}
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
             <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
-              Solicitar Piloto
+              {t('cta.requestPilot')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
             <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
               <Phone className="mr-2 w-5 h-5" />
-              Hablar con Ventas
+              {t('cta.talkToSales')}
             </button>
           </div>
 
           <div className="border-t border-emerald-500 pt-8">
-            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">Contacto directo</div>
+            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">{t('cta.contact.title')}</div>
             <div className="grid md:grid-cols-2 gap-6 text-white">
               <div>
-                <div className="font-semibold mb-1">Santiago:</div>
-                <div className="text-emerald-100">Luis Thayer Ojeda 95, of. 312</div>
+                <div className="font-semibold mb-1">{t('cta.contact.santiago.label')}</div>
+                <div className="text-emerald-100">{t('cta.contact.santiago.address')}</div>
               </div>
               <div>
-                <div className="font-semibold mb-1">Calama:</div>
-                <div className="text-emerald-100">Miraflores 1260 B</div>
+                <div className="font-semibold mb-1">{t('cta.contact.calama.label')}</div>
+                <div className="text-emerald-100">{t('cta.contact.calama.address')}</div>
               </div>
             </div>
           </div>

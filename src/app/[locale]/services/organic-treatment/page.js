@@ -9,35 +9,20 @@ import { Chemistry, Renew, Filter, CheckmarkFilled, Collaborate, Security, Time,
 import { ArrowRight, DollarSign, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react'
 import BypassAnimation from '@/components/BypassAnimation'
 import InterfaceLine, { InterfaceLineAnimated, PhaseSeparationBackground } from '@/components/InterfaceLine'
+import { useTranslations } from 'next-intl'
 
 // Use useLayoutEffect on client, useEffect on server (for SSR safety)
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 // Expandable Process Steps Component
-function ProcessSteps() {
+function ProcessSteps({ t }) {
   const [expandedIndex, setExpandedIndex] = useState(0)
 
   const steps = [
-    {
-      title: 'Operación Continua',
-      description: 'Configuración en by-pass permite tratamiento sin interrumpir el circuito SX/EW, eliminando pérdidas por downtime y costos de reconfiguración de planta',
-      icon: Renew
-    },
-    {
-      title: 'Filtración de Alta Eficiencia',
-      description: 'Filtros prensa móviles procesan flujo lateral de orgánico, removiendo sólidos suspendidos, arcillas, y precipitados que degradan la fase orgánica',
-      icon: Filter
-    },
-    {
-      title: 'Separación Sólido-Líquido',
-      description: 'Extracción de contaminantes particulados previene emulsificación, cruds, y arrastre de orgánico que impactan selectividad y cinética de transferencia',
-      icon: Chemistry
-    },
-    {
-      title: 'Recirculación Purificada',
-      description: 'Orgánico clarificado retorna al circuito, maximizando vida útil del reactivo y manteniendo parámetros operacionales óptimos en settlers',
-      icon: CheckmarkFilled
-    }
+    { key: 'continuousOperation', icon: Renew },
+    { key: 'highEfficiency', icon: Filter },
+    { key: 'solidLiquid', icon: Chemistry },
+    { key: 'purified', icon: CheckmarkFilled }
   ]
 
   return (
@@ -61,7 +46,7 @@ function ProcessSteps() {
                   <Icon className="w-5 h-5 text-emerald-400" />
                 </div>
                 <span className="text-white font-semibold text-lg group-hover:text-emerald-400 transition-colors">
-                  {step.title}
+                  {t(`processSteps.items.${step.key}.title`)}
                 </span>
               </div>
               <span className="text-gray-400 text-2xl font-light group-hover:text-emerald-400 transition-colors">
@@ -77,7 +62,7 @@ function ProcessSteps() {
             >
               <div className="pb-8">
                 <p className="text-gray-300 leading-relaxed">
-                  {step.description}
+                  {t(`processSteps.items.${step.key}.description`)}
                 </p>
               </div>
             </div>
@@ -91,28 +76,13 @@ function ProcessSteps() {
 }
 
 // Expandable Equipment Benefits Component
-function EquipmentBenefits() {
+function EquipmentBenefits({ t }) {
   const [expandedIndex, setExpandedIndex] = useState(0)
 
   const benefits = [
-    {
-      title: 'Ambientes altamente corrosivos',
-      description: 'Materiales y recubrimientos especializados para operar con ácidos, solventes orgánicos, y soluciones de alta concentración metálica. Componentes en contacto con proceso fabricados en polipropileno, HDPE, y aceros especiales.',
-      icon: WarningAltFilled,
-      image: '/corrosive_equipment.png'
-    },
-    {
-      title: '100% Móviles',
-      description: 'Equipos transportables que llegan a tu faena listos para operar. Sin construcción, sin obras civiles permanentes. Montados sobre skids o trailers para reubicación rápida entre puntos de proceso.',
-      icon: Delivery,
-      image: '/mobile_equipment_spence.jpeg'
-    },
-    {
-      title: 'Sin modificar permisos',
-      description: 'Equipos móviles clasificados que no requieren cambios a permisos ambientales ni RCA. Instalación rápida sin trámites burocráticos. Operación temporal que no afecta infraestructura permanente.',
-      icon: License,
-      image: '/Fotos_Marccobre/no_permit_modification.jpg'
-    }
+    { key: 'corrosive', icon: WarningAltFilled, image: '/corrosive_equipment.png' },
+    { key: 'mobile', icon: Delivery, image: '/mobile_equipment_spence.jpeg' },
+    { key: 'noPermits', icon: License, image: '/Fotos_Marccobre/no_permit_modification.jpg' }
   ]
 
   return (
@@ -144,7 +114,7 @@ function EquipmentBenefits() {
                   <span className={`font-semibold text-lg transition-colors ${
                     isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
                   }`}>
-                    {benefit.title}
+                    {t(`equipmentBenefits.items.${benefit.key}.title`)}
                   </span>
                 </div>
                 <span className={`text-2xl font-light transition-colors ${
@@ -162,7 +132,7 @@ function EquipmentBenefits() {
               >
                 <div className="pb-8">
                   <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
+                    {t(`equipmentBenefits.items.${benefit.key}.description`)}
                   </p>
                 </div>
               </div>
@@ -178,7 +148,7 @@ function EquipmentBenefits() {
         <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
           <Image
             src={benefits[expandedIndex].image}
-            alt={benefits[expandedIndex].title}
+            alt={t(`equipmentBenefits.items.${benefits[expandedIndex].key}.title`)}
             width={600}
             height={450}
             className="w-full h-full object-cover"
@@ -190,7 +160,7 @@ function EquipmentBenefits() {
 }
 
 // Two Methods Component - Bypass vs Batch
-function TreatmentMethods() {
+function TreatmentMethods({ t }) {
   return (
     <div className="grid lg:grid-cols-2 gap-8">
       {/* Method 1: Bypass */}
@@ -201,37 +171,37 @@ function TreatmentMethods() {
               <Renew className="w-6 h-6 text-emerald-400" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">Tratamiento en By-Pass</h3>
-              <p className="text-sm text-gray-400">Operación continua sin interrupciones</p>
+              <h3 className="text-xl font-bold text-white">{t('treatmentMethods.bypass.title')}</h3>
+              <p className="text-sm text-gray-400">{t('treatmentMethods.bypass.subtitle')}</p>
             </div>
           </div>
 
           <p className="text-gray-300 leading-relaxed mb-6">
-            Configuración en derivación que permite tratamiento continuo sin detener el circuito SX/EW. Flujo lateral de orgánico se procesa 24/7 mientras la planta opera normalmente.
+            {t('treatmentMethods.bypass.description')}
           </p>
 
           <div className="space-y-3 mb-6">
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Cero paradas de planta durante tratamiento</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.bypass.benefits.noStops')}</span>
             </div>
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Mantiene TIF/TSF en especificación permanentemente</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.bypass.benefits.tif')}</span>
             </div>
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Previene acumulación de contaminantes</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.bypass.benefits.prevention')}</span>
             </div>
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Ideal para operación preventiva continua</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.bypass.benefits.ideal')}</span>
             </div>
           </div>
 
           <div className="bg-gray-900/50 rounded-xl p-4">
-            <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wide mb-2">Cuándo usar</div>
-            <p className="text-sm text-gray-400">Prevención continua, mantenimiento de calidad orgánica, operaciones que no pueden detenerse</p>
+            <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wide mb-2">{t('treatmentMethods.bypass.whenToUse')}</div>
+            <p className="text-sm text-gray-400">{t('treatmentMethods.bypass.whenToUseDesc')}</p>
           </div>
         </div>
       </div>
@@ -244,37 +214,37 @@ function TreatmentMethods() {
               <Filter className="w-6 h-6 text-emerald-400" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">Procesamiento por Batches</h3>
-              <p className="text-sm text-gray-400">Recuperación intensiva de orgánico contaminado</p>
+              <h3 className="text-xl font-bold text-white">{t('treatmentMethods.batch.title')}</h3>
+              <p className="text-sm text-gray-400">{t('treatmentMethods.batch.subtitle')}</p>
             </div>
           </div>
 
           <p className="text-gray-300 leading-relaxed mb-6">
-            Para orgánico ya extraído a contenedores o situaciones de crisis. Filtros prensa móviles procesan batches iterativos in-situ hasta recuperar especificación química del reactivo.
+            {t('treatmentMethods.batch.description')}
           </p>
 
           <div className="space-y-3 mb-6">
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Recupera orgánico severamente degradado</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.batch.benefits.recovery')}</span>
             </div>
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Procesamiento intensivo hasta alcanzar spec</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.batch.benefits.intensive')}</span>
             </div>
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Evita pérdida total de reactivo contaminado</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.batch.benefits.avoidLoss')}</span>
             </div>
             <div className="flex items-start gap-3">
               <CheckmarkFilled className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">Ideal para emergencias y recuperación de inventario</span>
+              <span className="text-gray-300 text-sm">{t('treatmentMethods.batch.benefits.emergency')}</span>
             </div>
           </div>
 
           <div className="bg-gray-900/50 rounded-xl p-4">
-            <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wide mb-2">Cuándo usar</div>
-            <p className="text-sm text-gray-400">Crisis de contaminación, recuperación de inventario, orgánico fuera de especificación</p>
+            <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wide mb-2">{t('treatmentMethods.batch.whenToUse')}</div>
+            <p className="text-sm text-gray-400">{t('treatmentMethods.batch.whenToUseDesc')}</p>
           </div>
         </div>
       </div>
@@ -283,6 +253,7 @@ function TreatmentMethods() {
 }
 
 export default function OrganicTreatmentServicePage() {
+  const t = useTranslations('organicTreatmentService')
   const [activeBusinessModel, setActiveBusinessModel] = useState('preventivo')
   const [carouselKey, setCarouselKey] = useState(0)
   const [timerKey, setTimerKey] = useState(0) // Reset progress animation
@@ -492,15 +463,15 @@ export default function OrganicTreatmentServicePage() {
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                Equipos móviles que mantienen tu <span className="text-gradient">orgánico rindiendo al máximo</span>
+                {t('hero.title')} <span className="text-gradient">{t('hero.titleHighlight')}</span>
               </h1>
 
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Filtración y tratamiento en by-pass para que tu planta SX opere al máximo rendimiento. Extracción eficiente, producción estable.
+                {t('hero.description')}
               </p>
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
-                Solicitar Evaluación
+                {t('hero.cta')}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
@@ -533,7 +504,7 @@ export default function OrganicTreatmentServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
-              Resultados que impactan tu operación
+              {t('keyBenefits.title')}
             </h2>
           </div>
 
@@ -550,9 +521,9 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Time className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Mayor vida útil del orgánico</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.lifespan.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Tratamiento continuo que posterga reemplazos y ahorra en reactivo nuevo.
+                {t('keyBenefits.items.lifespan.description')}
               </p>
             </div>
 
@@ -568,9 +539,9 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <FlashFilled className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Separación más rápida</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.separation.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Orgánico limpio separa más rápido y permite más ciclos por hora.
+                {t('keyBenefits.items.separation.description')}
               </p>
             </div>
 
@@ -586,9 +557,9 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Filter className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Menor arrastre de orgánico</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.entrainment.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Menos pérdidas hacia la fase acuosa y electrolito más limpio para EW.
+                {t('keyBenefits.items.entrainment.description')}
               </p>
             </div>
 
@@ -604,9 +575,9 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Chemistry className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Menos formación de borra</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.crud.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Menos emulsiones estables y menos orgánico atrapado en los settlers.
+                {t('keyBenefits.items.crud.description')}
               </p>
             </div>
           </div>
@@ -630,51 +601,51 @@ export default function OrganicTreatmentServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
-              Dos métodos de tratamiento
+              {t('treatmentMethods.title')}
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Prevención continua o recuperación intensiva. Elige según tu situación operacional.
+              {t('treatmentMethods.description')}
             </p>
           </div>
 
-          <TreatmentMethods />
+          <TreatmentMethods t={t} />
 
           {/* Simplicidad Operacional - stats */}
           <div className="mt-24 pt-16 border-t border-gray-700">
             <div className="max-w-3xl mb-12">
               <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
-                Simplicidad Operacional
+                {t('operationalSimplicity.title')}
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Implementación rápida sin complejidad. Equipos móviles que no interrumpen producción.
+                {t('operationalSimplicity.description')}
               </p>
             </div>
 
             <div ref={statsRef} className="grid lg:grid-cols-3 gap-12 lg:gap-16">
               {/* 24/7 Tecionic specialists */}
               <div className="text-center lg:text-left">
-                <div className="stat-number stat-fade text-6xl lg:text-7xl font-bold text-emerald-400 mb-3" style={{ opacity: 0 }}>24/7</div>
-                <div className="text-lg font-semibold text-white mb-2">Especialistas Tecionic</div>
+                <div className="stat-number stat-fade text-6xl lg:text-7xl font-bold text-emerald-400 mb-3" style={{ opacity: 0 }}>{t('operationalSimplicity.stats.specialists.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.specialists.title')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Personal dedicado opera y mantiene los equipos en tu faena
+                  {t('operationalSimplicity.stats.specialists.description')}
                 </p>
               </div>
 
               {/* Fast deployment */}
               <div className="text-center lg:text-left">
                 <div className="stat-number stat-count text-6xl lg:text-7xl font-bold text-emerald-400 mb-3" data-target="48">0h</div>
-                <div className="text-lg font-semibold text-white mb-2">Despliegue rápido</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.deployment.title')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Flota regional lista para movilizar sin esperar fabricación
+                  {t('operationalSimplicity.stats.deployment.description')}
                 </p>
               </div>
 
               {/* Zero CAPEX */}
               <div className="text-center lg:text-left">
-                <div className="stat-number stat-fade text-6xl lg:text-7xl font-bold text-emerald-400 mb-3" style={{ opacity: 0 }}>$0</div>
-                <div className="text-lg font-semibold text-white mb-2">Inversión en capital</div>
+                <div className="stat-number stat-fade text-6xl lg:text-7xl font-bold text-emerald-400 mb-3" style={{ opacity: 0 }}>{t('operationalSimplicity.stats.capex.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.capex.title')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Arriendo mensual todo incluido. Opex, no Capex.
+                  {t('operationalSimplicity.stats.capex.description')}
                 </p>
               </div>
             </div>
@@ -687,17 +658,17 @@ export default function OrganicTreatmentServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
-              Equipos diseñados para operaciones industriales
+              {t('equipment.title')}
             </h2>
 
             {/* Equipment Benefits - Expandable with images */}
-            <EquipmentBenefits />
+            <EquipmentBenefits t={t} />
           </div>
 
           {/* Filter Press Equipment Grid */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Flota de Filtros Prensa
+              {t('equipment.filterPressFleet')}
             </h3>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -705,25 +676,25 @@ export default function OrganicTreatmentServicePage() {
               <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Baja</div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">70 ton/día</div>
-                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.lowCapacity.label')}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{t('equipment.lowCapacity.capacity')}</div>
+                <div className="text-gray-500 text-sm mb-4">{t('equipment.lowCapacity.capacityLabel')}</div>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Pilotos y pruebas</span>
+                    <span>{t('equipment.lowCapacity.features.pilots')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Operaciones de bajo volumen</span>
+                    <span>{t('equipment.lowCapacity.features.lowVolume')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Mantenimiento preventivo</span>
+                    <span>{t('equipment.lowCapacity.features.preventive')}</span>
                   </li>
                 </ul>
                 <Link href="/contacto?equipo=filtro-70ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
-                  Consultar disponibilidad
+                  {t('equipment.lowCapacity.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -732,25 +703,25 @@ export default function OrganicTreatmentServicePage() {
               <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Media</div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">130 ton/día</div>
-                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.mediumCapacity.label')}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{t('equipment.mediumCapacity.capacity')}</div>
+                <div className="text-gray-500 text-sm mb-4">{t('equipment.mediumCapacity.capacityLabel')}</div>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Operaciones estándar</span>
+                    <span>{t('equipment.mediumCapacity.features.standard')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Tratamiento continuo</span>
+                    <span>{t('equipment.mediumCapacity.features.continuous')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Balance costo-capacidad</span>
+                    <span>{t('equipment.mediumCapacity.features.balance')}</span>
                   </li>
                 </ul>
                 <Link href="/contacto?equipo=filtro-130ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
-                  Consultar disponibilidad
+                  {t('equipment.mediumCapacity.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -759,25 +730,25 @@ export default function OrganicTreatmentServicePage() {
               <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Alta</div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">400 ton/día</div>
-                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.highCapacity.label')}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{t('equipment.highCapacity.capacity')}</div>
+                <div className="text-gray-500 text-sm mb-4">{t('equipment.highCapacity.capacityLabel')}</div>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Alta producción</span>
+                    <span>{t('equipment.highCapacity.features.highProduction')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Operaciones a gran escala</span>
+                    <span>{t('equipment.highCapacity.features.largeScale')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Flujo continuo 24/7</span>
+                    <span>{t('equipment.highCapacity.features.continuous247')}</span>
                   </li>
                 </ul>
                 <Link href="/contacto?equipo=filtro-400ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
-                  Consultar disponibilidad
+                  {t('equipment.highCapacity.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -791,10 +762,10 @@ export default function OrganicTreatmentServicePage() {
             </div>
             <div>
               <h4 className="text-xl font-bold text-white mb-2">
-                Escalamiento en paralelo sin límites
+                {t('equipment.parallelScaling.title')}
               </h4>
               <p className="text-gray-300 leading-relaxed">
-                ¿Necesitas más capacidad? Instalamos unidades adicionales en paralelo para multiplicar el flujo de tratamiento. Cada equipo opera independientemente, permitiendo mantenimiento sin detener la operación completa.
+                {t('equipment.parallelScaling.description')}
               </p>
             </div>
           </div>
@@ -806,10 +777,10 @@ export default function OrganicTreatmentServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Tres tecnologías probadas
+              {t('technologies.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              De prevención continua a recuperación de emergencia
+              {t('technologies.description')}
             </p>
           </div>
 

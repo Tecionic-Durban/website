@@ -6,34 +6,35 @@ import Link from 'next/link'
 import { Flash, Enterprise, Launch, Apps, Connect, Filter as FilterCarbon, Renew, Currency, ArrowDownRight, Chemistry, RainDrop, Humidity, DeliveryTruck, Pipelines, Power } from '@carbon/icons-react'
 import { CheckCircle, ArrowRight } from 'lucide-react'
 import BorraSeparationAnimation from '@/components/BorraSeparationAnimation'
+import { useTranslations } from 'next-intl'
 
 // Recovery Section - Atlassian KPI Style with Tabs
-function RecoverySection() {
+function RecoverySection({ t }) {
   const [activeTab, setActiveTab] = useState('copper')
 
   const industries = {
     copper: {
-      name: 'Cobre',
+      name: t('recovery.tabs.copper'),
       icon: 'Cu',
       color: 'orange',
-      heroStat: '91%',
-      heroLabel: 'del valor vuelve al ciclo',
-      description: 'Separamos la borra en sus componentes: fase orgánica y fase acuosa. Ambas vuelven a sus respectivos circuitos. Nada se pierde.',
+      heroStat: t('recovery.industries.copper.heroStat'),
+      heroLabel: t('recovery.industries.copper.heroLabel'),
+      description: t('recovery.industries.copper.description'),
       kpis: [
-        { value: '90%', label: 'recuperación de orgánico' },
-        { value: '92%', label: 'fase acuosa retornada' }
+        { value: t('recovery.industries.copper.kpis.organic.value'), label: t('recovery.industries.copper.kpis.organic.label') },
+        { value: t('recovery.industries.copper.kpis.aqueous.value'), label: t('recovery.industries.copper.kpis.aqueous.label') }
       ]
     },
     petroleum: {
-      name: 'Petróleo',
+      name: t('recovery.tabs.petroleum'),
       icon: '⛽',
       color: 'amber',
-      heroStat: '67%',
-      heroLabel: 'de hidrocarburos recuperados',
-      description: 'Los lodos de refinería contienen hidrocarburos valiosos atrapados. El líquido recuperado vuelve a proceso o se comercializa.',
+      heroStat: t('recovery.industries.petroleum.heroStat'),
+      heroLabel: t('recovery.industries.petroleum.heroLabel'),
+      description: t('recovery.industries.petroleum.description'),
       kpis: [
-        { value: '67%', label: 'hidrocarburos recuperables' },
-        { value: '100%', label: 'líquido reutilizable' }
+        { value: t('recovery.industries.petroleum.kpis.hydrocarbons.value'), label: t('recovery.industries.petroleum.kpis.hydrocarbons.label') },
+        { value: t('recovery.industries.petroleum.kpis.liquid.value'), label: t('recovery.industries.petroleum.kpis.liquid.label') }
       ]
     }
   }
@@ -67,7 +68,7 @@ function RecoverySection() {
           {/* Left: Hero stat with title - dynamic based on tab */}
           <div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Recuperamos el valor atrapado en la borra
+              {t('recovery.title')}
             </h2>
             <div className={`text-7xl lg:text-8xl font-bold mb-4 transition-all ${colorClasses.text}`}>
               {active.heroStat}
@@ -129,25 +130,22 @@ function RecoverySection() {
 }
 
 // Expandable Equipment Benefits Component
-function EquipmentBenefits() {
+function EquipmentBenefits({ t }) {
   const [expandedIndex, setExpandedIndex] = useState(0)
 
   const benefits = [
     {
-      title: 'Equipos ágiles y compactos',
-      description: 'Unidades móviles de solo 35 m² que se instalan donde sea conveniente para tu operación. Llegan en camión, se posicionan cerca del punto de extracción, y operan sin infraestructura permanente. Flexibilidad total para adaptarse a tu layout.',
+      key: 'agile',
       icon: DeliveryTruck,
       image: '/filtro_prensa_1200_drone_view.png'
     },
     {
-      title: 'Mangueras de largo alcance',
-      description: 'Para plantas compactas con estanques en altura donde el espacio interno es limitado, nuestras mangueras de succión extra largas permiten instalar el equipo lejos del punto de extracción. Minimiza la invasión del espacio y se rutean por donde sea conveniente para tu operación.',
+      key: 'longReach',
       icon: Pipelines,
       image: '/filtros_acoplados.png'
     },
     {
-      title: 'Operación sin interferir tu planta',
-      description: 'Sistema 100% autónomo que no utiliza equipamiento de planta cliente. Bombas, tuberías, controles y energía propios. Sin modificar permisos ni RCA. Instalación en 48 horas, operación inmediata. Tu proceso sigue corriendo mientras limpiamos.',
+      key: 'noInterference',
       icon: Power,
       image: '/filtro_prensa_1200_drone_view.png'
     }
@@ -182,7 +180,7 @@ function EquipmentBenefits() {
                   <span className={`font-semibold text-lg transition-colors ${
                     isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
                   }`}>
-                    {benefit.title}
+                    {t(`equipmentBenefits.items.${benefit.key}.title`)}
                   </span>
                 </div>
                 <span className={`text-2xl font-light transition-colors ${
@@ -200,7 +198,7 @@ function EquipmentBenefits() {
               >
                 <div className="pb-8">
                   <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
+                    {t(`equipmentBenefits.items.${benefit.key}.description`)}
                   </p>
                 </div>
               </div>
@@ -216,7 +214,7 @@ function EquipmentBenefits() {
         <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
           <Image
             src={benefits[expandedIndex].image}
-            alt={benefits[expandedIndex].title}
+            alt={t(`equipmentBenefits.items.${benefits[expandedIndex].key}.title`)}
             width={600}
             height={450}
             className="w-full h-full object-cover"
@@ -229,6 +227,8 @@ function EquipmentBenefits() {
 
 
 export default function FiltrationPage() {
+  const t = useTranslations('filtrationService')
+
   return (
     <div className="min-h-screen bg-white">
       {/* SECTION 1: HERO - Matching organic-treatment style */}
@@ -240,15 +240,15 @@ export default function FiltrationPage() {
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                Filtración móvil para <span className="text-gradient">máxima eficiencia de planta</span>
+                {t('hero.title')} <span className="text-gradient">{t('hero.titleHighlight')}</span>
               </h1>
 
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Conecta filtros prensa a cualquier punto de tu proceso. Recupera hasta 90% del orgánico atrapado, reduce volumen de disposición hasta 85%, y mantén tu planta operando mientras limpiamos.
+                {t('hero.description')}
               </p>
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
-                Solicitar Evaluación
+                {t('hero.cta')}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
@@ -280,7 +280,7 @@ export default function FiltrationPage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
-              Beneficios de eliminar la borra
+              {t('keyBenefits.title')}
             </h2>
           </div>
 
@@ -297,9 +297,9 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Flash className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Aumenta la eficiencia de tu planta</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.efficiency.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Etapas más limpias mejoran la separación y transferencia en todo el proceso.
+                {t('keyBenefits.items.efficiency.description')}
               </p>
             </div>
 
@@ -315,9 +315,9 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Currency className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Recupera valor atrapado</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.value.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Extrae hidrocarburos o extractante orgánico que de otra forma se perdería atrapado en las borras.
+                {t('keyBenefits.items.value.description')}
               </p>
             </div>
 
@@ -333,9 +333,9 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Enterprise className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Recupera capacidad de almacenamiento</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.storage.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                La borra ocupa volumen valioso en tus estanques. Elimínala y aprovecha esa capacidad para crudo, fase acuosa u orgánica.
+                {t('keyBenefits.items.storage.description')}
               </p>
             </div>
 
@@ -351,9 +351,9 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <ArrowDownRight className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Reduce costos operacionales</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.costs.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Menos volumen a disponer, menor consumo de reactivos, y menores costos de transporte y tratamiento de residuos.
+                {t('keyBenefits.items.costs.description')}
               </p>
             </div>
           </div>
@@ -380,14 +380,13 @@ export default function FiltrationPage() {
             {/* Left: Header content */}
             <div className="lg:sticky lg:top-24">
               <div className="inline-flex items-center px-3 py-1 bg-orange-500/20 text-orange-400 text-sm font-semibold rounded-full mb-6">
-                EFICIENCIA OPERACIONAL
+                {t('operationalEfficiency.badge')}
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Devolvemos tu circuito a eficiencia de diseño
+                {t('operationalEfficiency.title')}
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
-                La borra acumulada en settler/mixer degrada la separación de fases y aumenta el arrastre entre etapas.
-                Nosotros removemos la causa raíz.
+                {t('operationalEfficiency.description')}
               </p>
             </div>
 
@@ -398,9 +397,9 @@ export default function FiltrationPage() {
                   <Flash className="w-5 h-5 text-orange-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Energía</h3>
+                  <h3 className="text-lg font-bold text-white mb-1">{t('operationalEfficiency.items.energy.title')}</h3>
                   <p className="text-gray-400 text-sm">
-                    Extraemos borra, reduciendo viscosidad. Bombas y agitadores vuelven a su curva de diseño.
+                    {t('operationalEfficiency.items.energy.description')}
                   </p>
                 </div>
               </div>
@@ -410,9 +409,9 @@ export default function FiltrationPage() {
                   <Chemistry className="w-5 h-5 text-orange-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Extractante</h3>
+                  <h3 className="text-lg font-bold text-white mb-1">{t('operationalEfficiency.items.extractant.title')}</h3>
                   <p className="text-gray-400 text-sm">
-                    Separamos el orgánico atrapado y lo devolvemos a tu circuito. Hasta 90% recuperado.
+                    {t('operationalEfficiency.items.extractant.description')}
                   </p>
                 </div>
               </div>
@@ -422,9 +421,9 @@ export default function FiltrationPage() {
                   <Humidity className="w-5 h-5 text-orange-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Ácido</h3>
+                  <h3 className="text-lg font-bold text-white mb-1">{t('operationalEfficiency.items.acid.title')}</h3>
                   <p className="text-gray-400 text-sm">
-                    Removemos sólidos finos que interfieren en stripping. Dosificación según diseño.
+                    {t('operationalEfficiency.items.acid.description')}
                   </p>
                 </div>
               </div>
@@ -434,9 +433,9 @@ export default function FiltrationPage() {
                   <RainDrop className="w-5 h-5 text-orange-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Agua</h3>
+                  <h3 className="text-lg font-bold text-white mb-1">{t('operationalEfficiency.items.water.title')}</h3>
                   <p className="text-gray-400 text-sm">
-                    Limpiamos sin detener operación. Sin lavados de emergencia ni consumo extra.
+                    {t('operationalEfficiency.items.water.description')}
                   </p>
                 </div>
               </div>
@@ -450,14 +449,13 @@ export default function FiltrationPage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-full mb-6">
-              CALIDAD DE PRODUCTO
+              {t('productQuality.badge')}
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Electrolito puro, cátodos de primera
+              {t('productQuality.title')}
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Etapas limpias entregan electrolito cargado libre de orgánico hacia EW.
-              Refino limpio retorna a lixiviación sin pérdida de extractante ni kerosene.
+              {t('productQuality.description')}
             </p>
           </div>
 
@@ -465,8 +463,8 @@ export default function FiltrationPage() {
             {/* Left: Protection for EW */}
             <div className="bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30">
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-white">Electrolito cargado limpio</h3>
-                <p className="text-sm text-emerald-300">Protección para tu electroobtención</p>
+                <h3 className="text-xl font-bold text-white">{t('productQuality.cleanElectrolyte.title')}</h3>
+                <p className="text-sm text-emerald-300">{t('productQuality.cleanElectrolyte.subtitle')}</p>
               </div>
 
               <div className="space-y-4">
@@ -475,8 +473,8 @@ export default function FiltrationPage() {
                     <CheckCircle className="w-3 h-3 text-emerald-400" />
                   </div>
                   <div>
-                    <span className="text-white font-medium">Cátodos de alta pureza</span>
-                    <p className="text-gray-400 text-sm">Sin contaminación orgánica que afecte la calidad</p>
+                    <span className="text-white font-medium">{t('productQuality.cleanElectrolyte.items.purity.title')}</span>
+                    <p className="text-gray-400 text-sm">{t('productQuality.cleanElectrolyte.items.purity.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -484,8 +482,8 @@ export default function FiltrationPage() {
                     <CheckCircle className="w-3 h-3 text-emerald-400" />
                   </div>
                   <div>
-                    <span className="text-white font-medium">Celdas EW protegidas</span>
-                    <p className="text-gray-400 text-sm">Vida útil extendida sin acumulación de residuos</p>
+                    <span className="text-white font-medium">{t('productQuality.cleanElectrolyte.items.cells.title')}</span>
+                    <p className="text-gray-400 text-sm">{t('productQuality.cleanElectrolyte.items.cells.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -493,8 +491,8 @@ export default function FiltrationPage() {
                     <CheckCircle className="w-3 h-3 text-emerald-400" />
                   </div>
                   <div>
-                    <span className="text-white font-medium">Extractante contenido</span>
-                    <p className="text-gray-400 text-sm">Sin pérdidas hacia la fase acuosa</p>
+                    <span className="text-white font-medium">{t('productQuality.cleanElectrolyte.items.extractant.title')}</span>
+                    <p className="text-gray-400 text-sm">{t('productQuality.cleanElectrolyte.items.extractant.description')}</p>
                   </div>
                 </div>
               </div>
@@ -503,8 +501,8 @@ export default function FiltrationPage() {
             {/* Right: Protection for Lixiviación */}
             <div className="bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30">
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-white">Refino limpio</h3>
-                <p className="text-sm text-emerald-300">Protección para tu lixiviación</p>
+                <h3 className="text-xl font-bold text-white">{t('productQuality.cleanRaffinate.title')}</h3>
+                <p className="text-sm text-emerald-300">{t('productQuality.cleanRaffinate.subtitle')}</p>
               </div>
 
               <div className="space-y-4">
@@ -513,8 +511,8 @@ export default function FiltrationPage() {
                     <CheckCircle className="w-3 h-3 text-emerald-400" />
                   </div>
                   <div>
-                    <span className="text-white font-medium">Orgánico concentrado</span>
-                    <p className="text-gray-400 text-sm">Sin dilución por arrastre acuoso</p>
+                    <span className="text-white font-medium">{t('productQuality.cleanRaffinate.items.concentrated.title')}</span>
+                    <p className="text-gray-400 text-sm">{t('productQuality.cleanRaffinate.items.concentrated.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -522,8 +520,8 @@ export default function FiltrationPage() {
                     <CheckCircle className="w-3 h-3 text-emerald-400" />
                   </div>
                   <div>
-                    <span className="text-white font-medium">Pilas de lixiviación limpias</span>
-                    <p className="text-gray-400 text-sm">Refino libre de orgánico</p>
+                    <span className="text-white font-medium">{t('productQuality.cleanRaffinate.items.heaps.title')}</span>
+                    <p className="text-gray-400 text-sm">{t('productQuality.cleanRaffinate.items.heaps.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -531,8 +529,8 @@ export default function FiltrationPage() {
                     <CheckCircle className="w-3 h-3 text-emerald-400" />
                   </div>
                   <div>
-                    <span className="text-white font-medium">Kerosene conservado</span>
-                    <p className="text-gray-400 text-sm">Menor consumo de diluyente</p>
+                    <span className="text-white font-medium">{t('productQuality.cleanRaffinate.items.kerosene.title')}</span>
+                    <p className="text-gray-400 text-sm">{t('productQuality.cleanRaffinate.items.kerosene.description')}</p>
                   </div>
                 </div>
               </div>
@@ -542,27 +540,27 @@ export default function FiltrationPage() {
           {/* Result stats */}
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-1">E1</div>
-              <div className="text-sm text-gray-400">Limpia</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.e1')}</div>
+              <div className="text-sm text-gray-400">{t('productQuality.stages.clean')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-1">E2</div>
-              <div className="text-sm text-gray-400">Limpia</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.e2')}</div>
+              <div className="text-sm text-gray-400">{t('productQuality.stages.clean')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-1">S1</div>
-              <div className="text-sm text-gray-400">Limpia</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.s1')}</div>
+              <div className="text-sm text-gray-400">{t('productQuality.stages.clean')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-1">S2</div>
-              <div className="text-sm text-gray-400">Limpia</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.s2')}</div>
+              <div className="text-sm text-gray-400">{t('productQuality.stages.clean')}</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* THEME 3: TODO VUELVE AL CICLO - Atlassian KPI Style */}
-      <RecoverySection />
+      <RecoverySection t={t} />
 
       {/* THEME 4: MÍNIMO IMPACTO TÉRMICO */}
       <section className="border-b border-gray-200 bg-white">
@@ -572,11 +570,10 @@ export default function FiltrationPage() {
             {/* Left: Header + Benefits */}
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Extracción precisa, impacto térmico mínimo
+                {t('thermalImpact.title')}
               </h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Pipeta larga identifica la cota exacta de contaminación. Solo extraemos lo necesario.
-                Menor volumen procesado significa menor costo de recalentamiento.
+                {t('thermalImpact.description')}
               </p>
 
               {/* Three benefits - clean list */}
@@ -584,22 +581,22 @@ export default function FiltrationPage() {
                 <div className="flex items-start gap-4">
                   <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-semibold text-gray-900">Extracción selectiva por cota.</span>
-                    <span className="text-gray-600"> Medimos dónde está la borra y atacamos específicamente esa zona.</span>
+                    <span className="font-semibold text-gray-900">{t('thermalImpact.benefits.selective.title')}</span>
+                    <span className="text-gray-600">{t('thermalImpact.benefits.selective.description')}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-semibold text-gray-900">Volumen mínimo procesado.</span>
-                    <span className="text-gray-600"> Sin extraer todo el estanque. Solo la zona contaminada.</span>
+                    <span className="font-semibold text-gray-900">{t('thermalImpact.benefits.minimal.title')}</span>
+                    <span className="text-gray-600">{t('thermalImpact.benefits.minimal.description')}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-semibold text-gray-900">Retorno inmediato.</span>
-                    <span className="text-gray-600"> Líquido separado vuelve a proceso con mínima pérdida de temperatura.</span>
+                    <span className="font-semibold text-gray-900">{t('thermalImpact.benefits.immediate.title')}</span>
+                    <span className="text-gray-600">{t('thermalImpact.benefits.immediate.description')}</span>
                   </div>
                 </div>
               </div>
@@ -610,34 +607,34 @@ export default function FiltrationPage() {
               {/* Conventional method */}
               <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">Método convencional</span>
-                  <span className="text-red-500 font-bold">Alto costo</span>
+                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">{t('thermalImpact.comparison.conventional.label')}</span>
+                  <span className="text-red-500 font-bold">{t('thermalImpact.comparison.conventional.cost')}</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="flex-1 bg-gradient-to-r from-red-400 to-red-500 h-10 rounded-lg"></div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-red-600">100%</div>
-                    <div className="text-sm text-gray-500">volumen extraído</div>
+                    <div className="text-2xl font-bold text-red-600">{t('thermalImpact.comparison.conventional.volume')}</div>
+                    <div className="text-sm text-gray-500">{t('thermalImpact.comparison.conventional.volumeLabel')}</div>
                   </div>
                 </div>
-                <p className="text-sm text-gray-500 mt-3">Vaciar todo el estanque, recalentar todo el volumen</p>
+                <p className="text-sm text-gray-500 mt-3">{t('thermalImpact.comparison.conventional.description')}</p>
               </div>
 
               {/* Tecionic method */}
               <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-medium text-emerald-700 uppercase tracking-wide">Método Tecionic</span>
-                  <span className="text-emerald-600 font-bold">Costo mínimo</span>
+                  <span className="text-sm font-medium text-emerald-700 uppercase tracking-wide">{t('thermalImpact.comparison.tecionic.label')}</span>
+                  <span className="text-emerald-600 font-bold">{t('thermalImpact.comparison.tecionic.cost')}</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="flex-1 bg-gradient-to-r from-emerald-400 to-emerald-500 h-10 rounded-lg" style={{width: '25%'}}></div>
                   <div className="flex-1"></div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-emerald-600">~15%</div>
-                    <div className="text-sm text-gray-500">volumen extraído</div>
+                    <div className="text-2xl font-bold text-emerald-600">{t('thermalImpact.comparison.tecionic.volume')}</div>
+                    <div className="text-sm text-gray-500">{t('thermalImpact.comparison.tecionic.volumeLabel')}</div>
                   </div>
                 </div>
-                <p className="text-sm text-gray-500 mt-3">Solo la zona contaminada, menor costo de recalentamiento</p>
+                <p className="text-sm text-gray-500 mt-3">{t('thermalImpact.comparison.tecionic.description')}</p>
               </div>
             </div>
           </div>
@@ -649,13 +646,13 @@ export default function FiltrationPage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-6">
-              CADA METRO CÚBICO CUENTA
+              {t('everyMeterCounts.badge')}
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Menos a disponer, más para producir
+              {t('everyMeterCounts.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              La borra ocupa espacio y atrapa valor. Nuestro proceso la reduce a torta seca y devuelve el líquido a tu circuito.
+              {t('everyMeterCounts.description')}
             </p>
           </div>
 
@@ -663,23 +660,22 @@ export default function FiltrationPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
               <div className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">
-                DISPOSICIÓN
+                {t('everyMeterCounts.disposal.badge')}
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Menos residuo, menos costo</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">{t('everyMeterCounts.disposal.title')}</h3>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                La borra entra como líquido y sale como torta seca. Menos peso, menos volumen,
-                menos camiones. Transporte y disposición final simplificados.
+                {t('everyMeterCounts.disposal.description')}
               </p>
 
               {/* KPIs */}
               <div className="flex gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-purple-600">85%</div>
-                  <div className="text-sm text-gray-600">Reducción de volumen</div>
+                  <div className="text-4xl font-bold text-purple-600">{t('everyMeterCounts.disposal.kpis.volume.value')}</div>
+                  <div className="text-sm text-gray-600">{t('everyMeterCounts.disposal.kpis.volume.label')}</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-purple-600">85%</div>
-                  <div className="text-sm text-gray-600">Sequedad de torta</div>
+                  <div className="text-4xl font-bold text-purple-600">{t('everyMeterCounts.disposal.kpis.dryness.value')}</div>
+                  <div className="text-sm text-gray-600">{t('everyMeterCounts.disposal.kpis.dryness.label')}</div>
                 </div>
               </div>
             </div>
@@ -688,7 +684,7 @@ export default function FiltrationPage() {
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/filtro_prensa_1200_drone_view.png"
-                alt="Torta seca lista para disposición"
+                alt={t('everyMeterCounts.disposal.title')}
                 width={600}
                 height={400}
                 className="w-full h-full object-cover"
@@ -702,7 +698,7 @@ export default function FiltrationPage() {
             <div className="rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1">
               <Image
                 src="/filtros_acoplados.png"
-                alt="Recuperación de volumen productivo"
+                alt={t('everyMeterCounts.recovery.title')}
                 width={600}
                 height={400}
                 className="w-full h-full object-cover"
@@ -711,23 +707,22 @@ export default function FiltrationPage() {
 
             <div className="order-1 lg:order-2">
               <div className="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">
-                RECUPERACIÓN
+                {t('everyMeterCounts.recovery.badge')}
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Capacidad productiva de vuelta</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">{t('everyMeterCounts.recovery.title')}</h3>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                El espacio que ocupaba la borra queda libre para tu proceso. Y el líquido atrapado—orgánico,
-                acuoso, hidrocarburos—retorna al circuito en vez de irse a disposición.
+                {t('everyMeterCounts.recovery.description')}
               </p>
 
               {/* KPIs */}
               <div className="flex gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-emerald-600">90%</div>
-                  <div className="text-sm text-gray-600">Líquido recuperado</div>
+                  <div className="text-4xl font-bold text-emerald-600">{t('everyMeterCounts.recovery.kpis.liquid.value')}</div>
+                  <div className="text-sm text-gray-600">{t('everyMeterCounts.recovery.kpis.liquid.label')}</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-emerald-600">100%</div>
-                  <div className="text-sm text-gray-600">Retorna al proceso</div>
+                  <div className="text-4xl font-bold text-emerald-600">{t('everyMeterCounts.recovery.kpis.returns.value')}</div>
+                  <div className="text-sm text-gray-600">{t('everyMeterCounts.recovery.kpis.returns.label')}</div>
                 </div>
               </div>
             </div>
@@ -741,23 +736,23 @@ export default function FiltrationPage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
-              Equipos diseñados para precisión operacional
+              {t('equipment.title')}
             </h2>
 
             {/* Equipment Benefits - Expandable with images */}
-            <EquipmentBenefits />
+            <EquipmentBenefits t={t} />
           </div>
 
           {/* Modular Configuration - Clean Minimal Design */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Configuración en Módulos Paralelos</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">{t('equipment.modular.title')}</h3>
 
             <div className="grid lg:grid-cols-[55%_45%] gap-12 items-start">
               {/* Left - Large Image */}
               <div>
                 <Image
                   src="/filtros_acoplados.png"
-                  alt="Configuración Modular de Equipos"
+                  alt={t('equipment.modular.title')}
                   width={800}
                   height={600}
                   className="w-full h-auto rounded-2xl shadow-xl"
@@ -767,9 +762,7 @@ export default function FiltrationPage() {
               {/* Right - Text Content */}
               <div className="space-y-8">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Los equipos pueden instalarse como módulos independientes en paralelo, permitiendo escalabilidad progresiva
-                  y acelerando la estabilidad de planta. Esta configuración es económica con el espacio disponible y permite
-                  instalación externa para minimizar la fricción operacional interna.
+                  {t('equipment.modular.description')}
                 </p>
 
                 {/* Benefits - Icon Bullets */}
@@ -779,8 +772,8 @@ export default function FiltrationPage() {
                       <Enterprise className="w-7 h-7 text-emerald-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 mb-1">Escalabilidad ilimitada</div>
-                      <div className="text-gray-600">Agrega todos los equipos que necesites según tu operación</div>
+                      <div className="font-semibold text-gray-900 mb-1">{t('equipment.modular.benefits.scalability.title')}</div>
+                      <div className="text-gray-600">{t('equipment.modular.benefits.scalability.description')}</div>
                     </div>
                   </div>
 
@@ -789,8 +782,8 @@ export default function FiltrationPage() {
                       <Launch className="w-7 h-7 text-emerald-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 mb-1">Instalación externa</div>
-                      <div className="text-gray-600">Sin modificar infraestructura de planta existente</div>
+                      <div className="font-semibold text-gray-900 mb-1">{t('equipment.modular.benefits.external.title')}</div>
+                      <div className="text-gray-600">{t('equipment.modular.benefits.external.description')}</div>
                     </div>
                   </div>
 
@@ -799,8 +792,8 @@ export default function FiltrationPage() {
                       <Apps className="w-7 h-7 text-emerald-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 mb-1">Eficiencia espacial</div>
-                      <div className="text-gray-600">Optimiza espacio disponible con configuración flexible</div>
+                      <div className="font-semibold text-gray-900 mb-1">{t('equipment.modular.benefits.space.title')}</div>
+                      <div className="text-gray-600">{t('equipment.modular.benefits.space.description')}</div>
                     </div>
                   </div>
                 </div>
@@ -815,10 +808,10 @@ export default function FiltrationPage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Probado en múltiples industrias
+              {t('industries.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Tecnología móvil adaptada a las necesidades específicas de cada sector
+              {t('industries.description')}
             </p>
           </div>
 
@@ -828,7 +821,7 @@ export default function FiltrationPage() {
               <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/copper_ore.jpg"
-                  alt="Mineral de cobre"
+                  alt={t('industries.items.copper.name')}
                   fill
                   className="object-cover"
                 />
@@ -838,12 +831,12 @@ export default function FiltrationPage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Cu</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.copper.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Filtración borras SX con 98% sólidos capturados y 90% recuperación orgánico</p>
+                <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
                 <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <a href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -855,7 +848,7 @@ export default function FiltrationPage() {
               <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/zinc_ore.jpg"
-                  alt="Mineral de zinc"
+                  alt={t('industries.items.zinc.name')}
                   fill
                   className="object-cover"
                 />
@@ -865,12 +858,12 @@ export default function FiltrationPage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Zn</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Zinc</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.zinc.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Filtración de sólidos abrasivos adaptado a densidades Zn y sensibilidad orgánica</p>
+                <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
                 <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <a href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -882,7 +875,7 @@ export default function FiltrationPage() {
               <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/crude_oil.png"
-                  alt="Petróleo crudo"
+                  alt={t('industries.items.crudeOil.name')}
                   fill
                   className="object-cover"
                 />
@@ -892,12 +885,12 @@ export default function FiltrationPage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
                     <RainDrop className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Petróleo Crudo</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.crudeOil.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Limpieza de borras desde estanques con 80% reducción de volumen y 90% recuperación HC</p>
+                <p className="text-sm text-gray-600">{t('industries.items.crudeOil.description')}</p>
                 <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <a href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -913,10 +906,10 @@ export default function FiltrationPage() {
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-amber-100 text-amber-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
-              CASO DE ÉXITO
+              {t('caseStudy.badge')}
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
-              ENAP redujo volumen de lodos en 85% y recuperó hidrocarburos valiosos
+              {t('caseStudy.title')}
             </h2>
           </div>
 
@@ -927,7 +920,7 @@ export default function FiltrationPage() {
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300">
                 <Image
                   src="/fotos_spence/Imagen7.jpg"
-                  alt="Filtración de lodos industriales ENAP"
+                  alt={t('caseStudy.client')}
                   fill
                   className="object-cover"
                 />
@@ -938,8 +931,8 @@ export default function FiltrationPage() {
                       <RainDrop className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">Refinería ENAP</div>
-                      <div className="text-white/70 text-xs">Lodos industriales</div>
+                      <div className="font-semibold text-sm">{t('caseStudy.client')}</div>
+                      <div className="text-white/70 text-xs">{t('caseStudy.clientSubtitle')}</div>
                     </div>
                   </div>
                 </div>
@@ -950,27 +943,27 @@ export default function FiltrationPage() {
                 {/* Metrics row */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">-85%</div>
-                    <div className="text-sm text-gray-600">Volumen de lodo</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.volume.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.volume.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">67%</div>
-                    <div className="text-sm text-gray-600">HC recuperados</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.hc.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.hc.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">100%</div>
-                    <div className="text-sm text-gray-600">Cumplimiento ambiental</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.compliance.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.compliance.label')}</div>
                   </div>
                 </div>
 
                 {/* Description */}
                 <p className="text-gray-600 mb-6">
-                  Tratamiento de lodos fenólicos, fondo de estanque T-2402 y separadores API. Reducción masiva del volumen a disponer con recuperación de hidrocarburos de alto valor que retornaron al proceso.
+                  {t('caseStudy.description')}
                 </p>
 
                 {/* CTA */}
                 <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 transition-colors">
-                  Ver más sobre petróleo
+                  {t('caseStudy.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -994,36 +987,36 @@ export default function FiltrationPage() {
         </div>
         <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Evalúa los resultados para tu planta
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-emerald-100 mb-4">
-            Diagnóstico técnico sin costo. Cuantificamos el orgánico recuperable, la reducción de volumen, y el impacto en eficiencia de tu circuito.
+            {t('cta.description')}
           </p>
           <p className="text-lg text-emerald-100 mb-10">
-            En 48 horas instalamos el equipo. Resultados visibles desde el primer día de operación.
+            {t('cta.timeline')}
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
             <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
-              Solicitar Evaluación Técnica
+              {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
             <a href="/industries/copper" className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors">
-              Ver Caso Cobre
+              {t('cta.secondaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </div>
 
           <div className="border-t border-emerald-500 pt-8">
-            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">Contacto directo</div>
+            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
             <div className="grid md:grid-cols-2 gap-6 text-white">
               <div>
-                <div className="font-semibold mb-1">Santiago:</div>
-                <div className="text-emerald-100">Luis Thayer Ojeda 95, of. 312</div>
+                <div className="font-semibold mb-1">{t('cta.locations.santiago.name')}</div>
+                <div className="text-emerald-100">{t('cta.locations.santiago.address')}</div>
               </div>
               <div>
-                <div className="font-semibold mb-1">Calama:</div>
-                <div className="text-emerald-100">Miraflores 1260 B</div>
+                <div className="font-semibold mb-1">{t('cta.locations.calama.name')}</div>
+                <div className="text-emerald-100">{t('cta.locations.calama.address')}</div>
               </div>
             </div>
           </div>

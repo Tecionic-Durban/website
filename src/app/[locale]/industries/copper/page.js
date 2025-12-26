@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { Chemistry, Flash, Filter as FilterCarbon, Humidity, Settings as SettingsCarbon, Security } from '@carbon/icons-react'
 import { Wrench, ArrowRight, Download, CheckCircle, TrendingUp, Factory } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { handleContactClick } from '@/utils/navigation'
 import Image from 'next/image'
 import gsap from 'gsap'
@@ -15,6 +16,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function CopperIndustryPage() {
+  const t = useTranslations('copperIndustry')
   const router = useRouter()
   const pathname = usePathname()
   const [isLoading, setIsLoading] = useState(true)
@@ -57,7 +59,7 @@ export default function CopperIndustryPage() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <ThreeBallLoader />
-          <p className="mt-6 text-gray-600 font-medium">Cargando...</p>
+          <p className="mt-6 text-gray-600 font-medium">{t('loading')}</p>
         </div>
       </div>
     )
@@ -85,26 +87,26 @@ export default function CopperIndustryPage() {
               {/* Left - Content */}
               <div className="max-w-xl">
                 <div className="inline-block px-3 py-1 bg-orange-50 border border-orange-200 rounded-full mb-6">
-                  <span className="text-sm font-semibold text-orange-900">Industria del Cobre</span>
+                  <span className="text-sm font-semibold text-orange-900">{t('hero.badge')}</span>
                 </div>
 
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-[1.1]">
-                  Infraestructura móvil para plantas de cobre
+                  {t('hero.title')}
                 </h1>
 
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Filtración, deshidratación, tratamiento—todo lo que necesitas para tu planta hidrometalúrgica o concentradora, sin inversión permanente.
+                  {t('hero.subtitle')}
                 </p>
 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div>
-                    <div className="text-3xl font-bold text-gray-900">20+</div>
-                    <div className="text-sm text-gray-600">años</div>
+                    <div className="text-3xl font-bold text-gray-900">{t('hero.stats.years.value')}</div>
+                    <div className="text-sm text-gray-600">{t('hero.stats.years.label')}</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-gray-900">$0</div>
-                    <div className="text-sm text-gray-600">CAPEX</div>
+                    <div className="text-3xl font-bold text-gray-900">{t('hero.stats.capex.value')}</div>
+                    <div className="text-sm text-gray-600">{t('hero.stats.capex.label')}</div>
                   </div>
                 </div>
               </div>
@@ -113,7 +115,7 @@ export default function CopperIndustryPage() {
               <div className="relative lg:h-[450px] h-[300px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/filtro_prensa_movil.png"
-                  alt="Filtro prensa móvil Tecionic"
+                  alt={t('hero.imageAlt')}
                   fill
                   className="object-cover"
                   priority
@@ -131,15 +133,13 @@ export default function CopperIndustryPage() {
               {/* Left - Sticky */}
               <div className="lg:sticky lg:top-32">
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  De infraestructura fija a móvil
+                  {t('stickyScroll.title')}
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                  Plantas de cobre enfrentan problemas operacionales continuos: orgánico contaminado, borras en celdas,
-                  concentrados húmedos, medios acuosos con sólidos.
+                  {t('stickyScroll.description')}
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Tradicionalmente cada problema requiere equipos fijos propios—millones en CAPEX, años de implementación.
-                  Tecionic cambia este modelo completamente.
+                  {t('stickyScroll.subdescription')}
                 </p>
               </div>
 
@@ -148,46 +148,46 @@ export default function CopperIndustryPage() {
 
                 {/* Traditional model - scrolls up and out */}
                 <div>
-                  <div className="text-lg font-bold text-gray-600 uppercase tracking-wider mb-8">Modelo tradicional</div>
+                  <div className="text-lg font-bold text-gray-600 uppercase tracking-wider mb-8">{t('stickyScroll.traditional.label')}</div>
 
                   <div className="space-y-12">
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">$500K-$2M+</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.capex.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">CAPEX por sistema</div>
-                        <p className="text-gray-600">Inversión permanente en infraestructura fija. Capital inmovilizado por décadas.</p>
+                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.capex.label')}</div>
+                        <p className="text-gray-600">{t('stickyScroll.traditional.items.capex.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">24+ meses</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.implementation.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Implementación</div>
-                        <p className="text-gray-600">Desde ingeniería hasta operación. Más permisos ambientales modificados.</p>
+                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.implementation.label')}</div>
+                        <p className="text-gray-600">{t('stickyScroll.traditional.items.implementation.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">Complejo</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.maintenance.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Mantención</div>
-                        <p className="text-gray-600">Mantenimiento especializado costoso. Paradas programadas afectan continuidad operacional.</p>
+                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.maintenance.label')}</div>
+                        <p className="text-gray-600">{t('stickyScroll.traditional.items.maintenance.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">Rígido</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.sizing.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">Dimensionamiento fijo</div>
-                        <p className="text-gray-600">Equipos mal dimensionados según evolución de leyes. Insuficientes para colas finales o sobredimensionados en cierre.</p>
+                        <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.sizing.label')}</div>
+                        <p className="text-gray-600">{t('stickyScroll.traditional.items.sizing.description')}</p>
                       </div>
                     </div>
                   </div>
@@ -195,66 +195,66 @@ export default function CopperIndustryPage() {
 
                 {/* Tecionic model - appears as you scroll */}
                 <div className="pt-16">
-                  <div className="text-lg font-bold text-emerald-900 uppercase tracking-wider mb-8">Modelo Tecionic móvil</div>
+                  <div className="text-lg font-bold text-emerald-900 uppercase tracking-wider mb-8">{t('stickyScroll.tecionic.label')}</div>
 
                   <div className="space-y-12">
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">$0 CAPEX</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.capex.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Sin inversión inicial</div>
-                        <p className="text-gray-700">Opex predecible mensual. Capital libre para prioridades estratégicas.</p>
+                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.capex.label')}</div>
+                        <p className="text-gray-700">{t('stickyScroll.tecionic.items.capex.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">0-2 semanas</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.mobilization.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Movilización</div>
-                        <p className="text-gray-700">Equipos llegan listos. Sin obra civil. Sin modificación de permisos RCA.</p>
+                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.mobilization.label')}</div>
+                        <p className="text-gray-700">{t('stickyScroll.tecionic.items.mobilization.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">Incluida</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.maintenance.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Mantención</div>
-                        <p className="text-gray-700">Mantenimiento preventivo y correctivo incluido en tarifa. Cero paradas no programadas.</p>
+                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.maintenance.label')}</div>
+                        <p className="text-gray-700">{t('stickyScroll.tecionic.items.maintenance.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">Actualizada</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.technology.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Tecnología renovada</div>
-                        <p className="text-gray-700">Flota renovada continuamente. Acceso a mejoras sin nuevas inversiones.</p>
+                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.technology.label')}</div>
+                        <p className="text-gray-700">{t('stickyScroll.tecionic.items.technology.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">Escalable</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.scalability.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Capacidad flexible</div>
-                        <p className="text-gray-700">Crece o reduce según demanda. Sin costos hundidos ni equipos ociosos.</p>
+                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.scalability.label')}</div>
+                        <p className="text-gray-700">{t('stickyScroll.tecionic.items.scalability.description')}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-8">
                       <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">Operado</div>
+                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.operation.value')}</div>
                       </div>
                       <div className="col-span-2">
-                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">Servicio completo</div>
-                        <p className="text-gray-700">Operación continua con personal especializado Tecionic, KPIs diarios, mantención incluida. Swap garantizado.</p>
+                        <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.operation.label')}</div>
+                        <p className="text-gray-700">{t('stickyScroll.tecionic.items.operation.description')}</p>
                       </div>
                     </div>
                   </div>
@@ -270,71 +270,60 @@ export default function CopperIndustryPage() {
           <div className="max-w-[1400px] mx-auto px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-emerald-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-                Por qué Tecionic
+                {t('whyTecionic.badge')}
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Socio estratégico, no proveedor transaccional
+                {t('whyTecionic.title')}
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                No vendemos ni arrendamos equipos. Aseguramos continuidad operacional con un modelo de servicio completo.
+                {t('whyTecionic.subtitle')}
               </p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">
               <div>
-                <div className="text-6xl font-bold text-emerald-600 mb-4">1</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnóstico inicial</h3>
+                <div className="text-6xl font-bold text-emerald-600 mb-4">{t('whyTecionic.steps.diagnosis.number')}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('whyTecionic.steps.diagnosis.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Análisis de muestras y condiciones específicas de tu planta. Diseño de solución a medida.
+                  {t('whyTecionic.steps.diagnosis.description')}
                 </p>
-                <div className="text-sm text-gray-500">2-3 semanas típicamente</div>
+                <div className="text-sm text-gray-500">{t('whyTecionic.steps.diagnosis.timeline')}</div>
               </div>
 
               <div>
-                <div className="text-6xl font-bold text-emerald-600 mb-4">2</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Montaje rápido</h3>
+                <div className="text-6xl font-bold text-emerald-600 mb-4">{t('whyTecionic.steps.setup.number')}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('whyTecionic.steps.setup.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Equipos móviles llegan listos. Sin obra civil, sin modificación de permisos ambientales.
+                  {t('whyTecionic.steps.setup.description')}
                 </p>
-                <div className="text-sm text-gray-500">0-2 semanas movilización</div>
+                <div className="text-sm text-gray-500">{t('whyTecionic.steps.setup.timeline')}</div>
               </div>
 
               <div>
-                <div className="text-6xl font-bold text-emerald-600 mb-4">3</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Operación continua</h3>
+                <div className="text-6xl font-bold text-emerald-600 mb-4">{t('whyTecionic.steps.operation.number')}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('whyTecionic.steps.operation.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Personal especializado Tecionic con mantención y KPIs diarios incluidos. Swap garantizado de equipos.
+                  {t('whyTecionic.steps.operation.description')}
                 </p>
-                <div className="text-sm text-gray-500">Garantía de continuidad</div>
+                <div className="text-sm text-gray-500">{t('whyTecionic.steps.operation.timeline')}</div>
               </div>
             </div>
 
             <div className="mt-12 p-8 bg-gray-50 rounded-2xl">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">Diferencia clave</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">{t('whyTecionic.keyDifference.title')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Si un equipo requiere mantención mayor, lo reemplazamos. Tu producción no se detiene mientras nosotros reparamos.
-                    Eso es un socio estratégico—no un arriendo de equipos.
+                    {t('whyTecionic.keyDifference.description')}
                   </p>
                 </div>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">Operadores Tecionic especializados</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">KPIs diarios (volumen, eficiencia, sólidos)</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">Equipos certificados para ambientes explosivos y corrosivos</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">Mantención preventiva incluida</span>
-                  </div>
+                  {t.raw('whyTecionic.keyDifference.benefits').map((benefit, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                      <span className="text-gray-700">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -346,13 +335,13 @@ export default function CopperIndustryPage() {
           <div className="max-w-[1400px] mx-auto px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-gray-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-                Servicios
+                {t('services.badge')}
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Todo lo que necesitas para tu planta hidrometalúrgica o concentradora
+                {t('services.title')}
               </h2>
               <p className="text-xl text-gray-600">
-                Flota móvil completa. Sin instalaciones permanentes, sin modificaciones a permisos ambientales.
+                {t('services.subtitle')}
               </p>
             </div>
 
@@ -369,27 +358,21 @@ export default function CopperIndustryPage() {
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:shadow-xl group-hover:shadow-blue-500/30 group-hover:scale-105 transition-all">
                     <Chemistry className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Tratamiento Orgánico SX</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.organicTreatment.title')}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Filtración, arcilla activada, centrifugación. Restaura TIF, reduce TSF, reduce arrastre.
+                    {t('services.cards.organicTreatment.description')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
-                      TIF 20 → 24+ dinas/cm
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
-                      TSF -65% (444s → 153s)
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
-                      Reducción arrastre 50%
-                    </div>
+                    {t.raw('services.cards.organicTreatment.specs').map((spec, index) => (
+                      <div key={index} className="flex items-center gap-2 text-gray-700">
+                        <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+                        {spec}
+                      </div>
+                    ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
-                    <div className="text-xs font-semibold text-gray-500">VALIDADO</div>
-                    <div className="text-sm font-bold text-blue-600">CODELCO Norte • 20+ años</div>
+                    <div className="text-xs font-semibold text-gray-500">{t('services.cards.organicTreatment.validated')}</div>
+                    <div className="text-sm font-bold text-blue-600">{t('services.cards.organicTreatment.client')}</div>
                   </div>
                 </div>
               </div>
@@ -404,27 +387,21 @@ export default function CopperIndustryPage() {
                   <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20 group-hover:shadow-xl group-hover:shadow-amber-500/30 group-hover:scale-105 transition-all">
                     <Flash className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Desborre Celdas EW</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.ewCleaning.title')}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Succión peristáltica + filtración en línea. Retorno limpio, sin pérdida de nivel.
+                    {t('services.cards.ewCleaning.description')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
-                      2-3 celdas/turno 12h
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
-                      Retorno 2-3 ppm sólidos
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
-                      95% eficiencia vs manual
-                    </div>
+                    {t.raw('services.cards.ewCleaning.specs').map((spec, index) => (
+                      <div key={index} className="flex items-center gap-2 text-gray-700">
+                        <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
+                        {spec}
+                      </div>
+                    ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
-                    <div className="text-xs font-semibold text-gray-500">VALIDADO</div>
-                    <div className="text-sm font-bold text-amber-600">Minera Región de Atacama • 4,200 msnm</div>
+                    <div className="text-xs font-semibold text-gray-500">{t('services.cards.ewCleaning.validated')}</div>
+                    <div className="text-sm font-bold text-amber-600">{t('services.cards.ewCleaning.client')}</div>
                   </div>
                 </div>
               </div>
@@ -439,27 +416,21 @@ export default function CopperIndustryPage() {
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 group-hover:scale-105 transition-all">
                     <FilterCarbon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Deshidratación Concentrados</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.concentrateDehydration.title')}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Filtros prensa de alta capacidad. Reduce humedad, optimiza transporte.
+                    {t('services.cards.concentrateDehydration.description')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                      400 ton/día por equipo
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                      Humedad reducida
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                      Equipos escalables
-                    </div>
+                    {t.raw('services.cards.concentrateDehydration.specs').map((spec, index) => (
+                      <div key={index} className="flex items-center gap-2 text-gray-700">
+                        <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
+                        {spec}
+                      </div>
+                    ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
-                    <div className="text-xs font-semibold text-gray-500">CAPACIDAD</div>
-                    <div className="text-sm font-bold text-purple-600">Mayor flota móvil Latinoamérica</div>
+                    <div className="text-xs font-semibold text-gray-500">{t('services.cards.concentrateDehydration.validated')}</div>
+                    <div className="text-sm font-bold text-purple-600">{t('services.cards.concentrateDehydration.client')}</div>
                   </div>
                 </div>
               </div>
@@ -474,19 +445,17 @@ export default function CopperIndustryPage() {
                   <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/20 group-hover:shadow-xl group-hover:shadow-teal-500/30 group-hover:scale-105 transition-all">
                     <Humidity className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Tratamiento Borras SX</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.sxSludge.title')}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Filtración desde settlers, sumideros, piscinas. Recuperación de orgánico.
+                    {t('services.cards.sxSludge.description')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-teal-500 rounded-full"></div>
-                      Limpieza LOT completo
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-teal-500 rounded-full"></div>
-                      Recuperación orgánico
-                    </div>
+                    {t.raw('services.cards.sxSludge.specs').map((spec, index) => (
+                      <div key={index} className="flex items-center gap-2 text-gray-700">
+                        <div className="w-1 h-1 bg-teal-500 rounded-full"></div>
+                        {spec}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -501,19 +470,17 @@ export default function CopperIndustryPage() {
                   <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20 group-hover:shadow-xl group-hover:shadow-cyan-500/30 group-hover:scale-105 transition-all">
                     <Humidity className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Clarificación Aguas</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.waterClarification.title')}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Remoción de sólidos. Recirculación, cumplimiento ambiental.
+                    {t('services.cards.waterClarification.description')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
-                      120 m³/día clarificada
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
-                      Reducción {'>'}90%
-                    </div>
+                    {t.raw('services.cards.waterClarification.specs').map((spec, index) => (
+                      <div key={index} className="flex items-center gap-2 text-gray-700">
+                        <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
+                        {spec}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -528,19 +495,17 @@ export default function CopperIndustryPage() {
                   <div className="w-14 h-14 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-slate-500/20 group-hover:shadow-xl group-hover:shadow-slate-500/30 group-hover:scale-105 transition-all">
                     <SettingsCarbon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Sólidos Finos</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.fineSolids.title')}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Tratamiento especializado de clarificadores. Partículas difíciles.
+                    {t('services.cards.fineSolids.description')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-slate-500 rounded-full"></div>
-                      14 ton/día sólidos finos
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <div className="w-1 h-1 bg-slate-500 rounded-full"></div>
-                      Filtros especializados
-                    </div>
+                    {t.raw('services.cards.fineSolids.specs').map((spec, index) => (
+                      <div key={index} className="flex items-center gap-2 text-gray-700">
+                        <div className="w-1 h-1 bg-slate-500 rounded-full"></div>
+                        {spec}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -554,28 +519,28 @@ export default function CopperIndustryPage() {
                     <Security className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-emerald-100 text-sm font-semibold mb-1">CONTINUIDAD PRODUCTIVA</div>
-                    <h3 className="text-3xl font-bold">Respaldo en Mantenciones Programadas</h3>
+                    <div className="text-emerald-100 text-sm font-semibold mb-1">{t('services.backup.badge')}</div>
+                    <h3 className="text-3xl font-bold">{t('services.backup.title')}</h3>
                   </div>
                 </div>
                 <p className="text-xl text-emerald-50 mb-8 leading-relaxed">
-                  Mantén producción durante paradas planificadas de tus equipos. Equipos móviles operan mientras realizas mantenciones mayores—cero pérdida de producción.
+                  {t('services.backup.description')}
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="font-bold mb-3">Beneficios clave</div>
+                    <div className="font-bold mb-3">{t('services.backup.keyBenefits.title')}</div>
                     <div className="space-y-2 text-sm text-emerald-50">
-                      <div>• Elimina pérdidas de producción</div>
-                      <div>• Des-riesga calendarios mantención</div>
-                      <div>• Sin comprometer salud de equipos</div>
+                      {t.raw('services.backup.keyBenefits.items').map((item, index) => (
+                        <div key={index}>• {item}</div>
+                      ))}
                     </div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="font-bold mb-3">Movilización rápida</div>
+                    <div className="font-bold mb-3">{t('services.backup.rapidMobilization.title')}</div>
                     <div className="space-y-2 text-sm text-emerald-50">
-                      <div>• 0-2 semanas despliegue</div>
-                      <div>• Operación inmediata</div>
-                      <div>• Retiro al término de mantención</div>
+                      {t.raw('services.backup.rapidMobilization.items').map((item, index) => (
+                        <div key={index}>• {item}</div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -593,7 +558,7 @@ export default function CopperIndustryPage() {
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/EW_Photos/20251009_141022.jpg"
-                  alt="Desborre celdas EW"
+                  alt={t('ewSection.imageAlt')}
                   fill
                   className="object-cover"
                 />
@@ -602,38 +567,25 @@ export default function CopperIndustryPage() {
               {/* Right - Content */}
               <div>
                 <div className="text-amber-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-                  Desborre EW
+                  {t('ewSection.badge')}
                 </div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  Limpieza de celdas sin parar producción
+                  {t('ewSection.title')}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Succión peristáltica desde fondo de celda. Filtración inline retorna electrolito limpio.
-                  Sin pérdida de nivel, sin detención de proceso.
+                  {t('ewSection.description')}
                 </p>
 
                 <div className="space-y-4 mb-8">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <div className="font-semibold text-gray-900">2-3 celdas por turno</div>
-                      <div className="text-gray-600">Eficiencia 95% vs limpieza manual</div>
+                  {['cells', 'return', 'altitude'].map((key) => (
+                    <div key={key} className="flex items-start gap-3">
+                      <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" />
+                      <div>
+                        <div className="font-semibold text-gray-900">{t(`ewSection.benefits.${key}.title`)}</div>
+                        <div className="text-gray-600">{t(`ewSection.benefits.${key}.description`)}</div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <div className="font-semibold text-gray-900">Retorno 2-3 ppm sólidos</div>
-                      <div className="text-gray-600">Cero pérdida de electrolito</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <div className="font-semibold text-gray-900">Validado 4,200 msnm</div>
-                      <div className="text-gray-600">Minera Región de Atacama - condiciones extremas</div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
                 {/* CTA to EW cleaning service page */}
@@ -641,7 +593,7 @@ export default function CopperIndustryPage() {
                   onClick={() => handleContactClick('/services/ew-cleaning', { router, currentPath: pathname })}
                   className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:gap-3 shadow-lg shadow-amber-600/20"
                 >
-                  Ver servicio completo
+                  {t('ewSection.cta')}
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
@@ -654,32 +606,27 @@ export default function CopperIndustryPage() {
           <div className="max-w-[1400px] mx-auto px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-blue-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-                Caso validado
+                {t('caseStudy.badge')}
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                CODELCO Norte: 20+ años de validación continua
+                {t('caseStudy.title')}
               </h2>
               <p className="text-xl text-gray-600">
-                Tratamiento de orgánico SX. Renovación anual por licitación competitiva desde 2016.
+                {t('caseStudy.subtitle')}
               </p>
             </div>
 
             {/* Before/After comparison */}
             <div className="grid lg:grid-cols-2 gap-12 mb-12">
               <div>
-                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-6">Antes</div>
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-6">{t('caseStudy.before')}</div>
                 <div className="space-y-4">
-                  {[
-                    { label: 'TIF', value: '20.4', unit: 'dinas/cm', bad: true },
-                    { label: 'TSF', value: '444', unit: 'segundos', bad: true },
-                    { label: 'Arrastre', value: '6', unit: 'm³/día', bad: true },
-                    { label: 'Eficiencia', value: '77-92%', unit: 'variable', bad: true }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center justify-between p-5 rounded-xl bg-red-50">
-                      <span className="font-medium text-gray-700">{item.label}</span>
+                  {['tif', 'tsf', 'entrainment', 'efficiency'].map((key) => (
+                    <div key={key} className="flex items-center justify-between p-5 rounded-xl bg-red-50">
+                      <span className="font-medium text-gray-700">{t(`caseStudy.metrics.${key}.label`)}</span>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-red-600">{item.value}</div>
-                        <div className="text-xs text-gray-500">{item.unit}</div>
+                        <div className="text-2xl font-bold text-red-600">{t(`caseStudy.metrics.${key}.before`)}</div>
+                        <div className="text-xs text-gray-500">{t(`caseStudy.metrics.${key}.beforeUnit`)}</div>
                       </div>
                     </div>
                   ))}
@@ -687,19 +634,14 @@ export default function CopperIndustryPage() {
               </div>
 
               <div>
-                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-6">Después</div>
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-6">{t('caseStudy.after')}</div>
                 <div className="space-y-4">
-                  {[
-                    { label: 'TIF', value: '23.7', unit: 'dinas/cm' },
-                    { label: 'TSF', value: '153', unit: '-65%' },
-                    { label: 'Arrastre', value: '2.9', unit: '-52%' },
-                    { label: 'Eficiencia', value: '92%+', unit: 'estable' }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center justify-between p-5 rounded-xl bg-emerald-50">
-                      <span className="font-medium text-gray-700">{item.label}</span>
+                  {['tif', 'tsf', 'entrainment', 'efficiency'].map((key) => (
+                    <div key={key} className="flex items-center justify-between p-5 rounded-xl bg-emerald-50">
+                      <span className="font-medium text-gray-700">{t(`caseStudy.metrics.${key}.label`)}</span>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-emerald-600">{item.value}</div>
-                        <div className="text-xs text-gray-500">{item.unit}</div>
+                        <div className="text-2xl font-bold text-emerald-600">{t(`caseStudy.metrics.${key}.after`)}</div>
+                        <div className="text-xs text-gray-500">{t(`caseStudy.metrics.${key}.afterUnit`)}</div>
                       </div>
                     </div>
                   ))}
@@ -710,21 +652,15 @@ export default function CopperIndustryPage() {
             {/* Economic impact */}
             <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-12 border border-emerald-100">
               <div className="text-center mb-8">
-                <div className="text-sm font-semibold text-emerald-900 mb-2 uppercase tracking-wider">Impacto económico</div>
+                <div className="text-sm font-semibold text-emerald-900 mb-2 uppercase tracking-wider">{t('caseStudy.economicImpact.title')}</div>
               </div>
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-emerald-600 mb-2">$260K</div>
-                  <div className="text-sm text-gray-600 font-medium">ahorro mensual</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-emerald-600 mb-2">$3.1M</div>
-                  <div className="text-sm text-gray-600 font-medium">ahorro anual</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-emerald-600 mb-2">$12M+</div>
-                  <div className="text-sm text-gray-600 font-medium">reemplazo evitado</div>
-                </div>
+                {['monthly', 'annual', 'avoided'].map((key) => (
+                  <div key={key} className="text-center">
+                    <div className="text-5xl font-bold text-emerald-600 mb-2">{t(`caseStudy.economicImpact.${key}.value`)}</div>
+                    <div className="text-sm text-gray-600 font-medium">{t(`caseStudy.economicImpact.${key}.label`)}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -735,24 +671,19 @@ export default function CopperIndustryPage() {
           <div className="max-w-[1400px] mx-auto px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-gray-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-                Modelo móvil
+                {t('mobileVsFixed.badge')}
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Por qué equipos móviles cambian todo
+                {t('mobileVsFixed.title')}
               </h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Traditional */}
               <div>
-                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Modelo tradicional</div>
+                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">{t('mobileVsFixed.traditional.label')}</div>
                 <div className="space-y-4">
-                  {[
-                    { metric: '$500K-$2M+', label: 'Inversión CAPEX inicial' },
-                    { metric: '24+ meses', label: 'Tiempo instalación' },
-                    { metric: 'RCA modificada', label: 'Permisos ambientales' },
-                    { metric: 'Dimensionamiento fijo', label: 'Equipos quedan mal dimensionados' }
-                  ].map((item, i) => (
+                  {t.raw('mobileVsFixed.traditional.items').map((item, i) => (
                     <div key={i} className="group relative flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
                       {/* Subtle corner decoration */}
                       <div className="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full opacity-40"></div>
@@ -771,14 +702,9 @@ export default function CopperIndustryPage() {
 
               {/* Tecionic Model */}
               <div>
-                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Modelo Tecionic</div>
+                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">{t('mobileVsFixed.tecionic.label')}</div>
                 <div className="space-y-4">
-                  {[
-                    { metric: '$0', label: 'Sin inversión inicial' },
-                    { metric: '0-2 semanas', label: 'Movilización rápida' },
-                    { metric: 'Sin modificación', label: 'Permisos ambientales intactos' },
-                    { metric: 'Siempre actualizado', label: 'Flota renovada' }
-                  ].map((item, i) => (
+                  {t.raw('mobileVsFixed.tecionic.items').map((item, i) => (
                     <div key={i} className="group relative flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
                       {/* Subtle corner decoration */}
                       <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-200/30 rounded-bl-full"></div>
@@ -803,10 +729,10 @@ export default function CopperIndustryPage() {
           <div className="max-w-[1400px] mx-auto px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-bold mb-6">
-                Diagnóstico técnico
+                {t('cta.title')}
               </h2>
               <p className="text-xl text-gray-400 mb-12 leading-relaxed">
-                Envíanos muestras. Te daremos un diagnóstico honesto—si no tiene sentido, te lo diremos directamente.
+                {t('cta.description')}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -814,31 +740,31 @@ export default function CopperIndustryPage() {
                   onClick={(e) => handleContactClick(e, router, pathname)}
                   className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Solicitar diagnóstico
+                  {t('cta.primaryCta')}
                 </button>
                 <button className="px-8 py-4 bg-white/10 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors">
                   <div className="flex items-center gap-2 justify-center">
                     <Download className="w-5 h-5" />
-                    Caso Radomiro Tomic
+                    {t('cta.secondaryCta')}
                   </div>
                 </button>
               </div>
 
               <div className="grid md:grid-cols-3 gap-8 text-left">
                 <div>
-                  <div className="text-sm font-semibold text-gray-500 mb-2">Contacto</div>
-                  <div className="text-white font-medium">+56 2 2334 7087</div>
-                  <div className="text-gray-400 text-sm">contacto@tsf.cl</div>
+                  <div className="text-sm font-semibold text-gray-500 mb-2">{t('cta.contact.title')}</div>
+                  <div className="text-white font-medium">{t('cta.contact.phone')}</div>
+                  <div className="text-gray-400 text-sm">{t('cta.contact.email')}</div>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-gray-500 mb-2">Cobertura</div>
-                  <div className="text-white font-medium">Toda Latinoamérica</div>
-                  <div className="text-gray-400 text-sm">Flota móvil disponible</div>
+                  <div className="text-sm font-semibold text-gray-500 mb-2">{t('cta.coverage.title')}</div>
+                  <div className="text-white font-medium">{t('cta.coverage.region')}</div>
+                  <div className="text-gray-400 text-sm">{t('cta.coverage.description')}</div>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-gray-500 mb-2">Clientes</div>
-                  <div className="text-white font-medium">CODELCO Norte, BHP</div>
-                  <div className="text-gray-400 text-sm">Anglo American, Capstone, Antofagasta</div>
+                  <div className="text-sm font-semibold text-gray-500 mb-2">{t('cta.clients.title')}</div>
+                  <div className="text-white font-medium">{t('cta.clients.main')}</div>
+                  <div className="text-gray-400 text-sm">{t('cta.clients.others')}</div>
                 </div>
               </div>
             </div>

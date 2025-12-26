@@ -8,6 +8,7 @@ import { CheckCircle, DollarSign, TrendingUp, Clock, ArrowRight } from 'lucide-r
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import CompressionAnimation from '@/components/CompressionAnimation'
+import { useTranslations } from 'next-intl'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,28 +16,13 @@ gsap.registerPlugin(ScrollTrigger)
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 // Expandable Equipment Benefits Component
-function EquipmentBenefits() {
+function EquipmentBenefits({ t }) {
   const [expandedIndex, setExpandedIndex] = useState(0)
 
   const benefits = [
-    {
-      title: 'Móvil y compacto',
-      description: 'Solo 35 m² de huella operativa. Sin obras civiles, sin permisos de construcción. Se instala donde tienes espacio y se reubica cuando cambia la operación.',
-      icon: Delivery,
-      image: '/filtro_prensa_1200_drone_view.png'
-    },
-    {
-      title: 'Equipamiento completo integrado',
-      description: 'Bomba peristáltica, bombas de diafragma, flujómetro calibrado, placas, telas y repuestos críticos incluidos. Sin coordinar proveedores ni órdenes de compra separadas.',
-      icon: AppConnectivity,
-      image: '/filtro_prensa_movil.png'
-    },
-    {
-      title: 'Instalación temporal sin permisos',
-      description: 'Sin obras civiles, sin modificaciones permanentes a tu planta, sin riesgo regulatorio. Se instala, opera el tiempo necesario, y se retira cuando termina el servicio.',
-      icon: License,
-      image: '/filtros_acoplados.png'
-    }
+    { key: 'mobile', icon: Delivery, image: '/filtro_prensa_1200_drone_view.png' },
+    { key: 'complete', icon: AppConnectivity, image: '/filtro_prensa_movil.png' },
+    { key: 'noPermits', icon: License, image: '/filtros_acoplados.png' }
   ]
 
   return (
@@ -68,7 +54,7 @@ function EquipmentBenefits() {
                   <span className={`font-semibold text-lg transition-colors ${
                     isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
                   }`}>
-                    {benefit.title}
+                    {t(`equipmentBenefits.items.${benefit.key}.title`)}
                   </span>
                 </div>
                 <span className={`text-2xl font-light transition-colors ${
@@ -86,7 +72,7 @@ function EquipmentBenefits() {
               >
                 <div className="pb-8">
                   <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
+                    {t(`equipmentBenefits.items.${benefit.key}.description`)}
                   </p>
                 </div>
               </div>
@@ -102,7 +88,7 @@ function EquipmentBenefits() {
         <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
           <Image
             src={benefits[expandedIndex].image}
-            alt={benefits[expandedIndex].title}
+            alt={t(`equipmentBenefits.items.${benefits[expandedIndex].key}.title`)}
             width={600}
             height={450}
             className="w-full h-full object-cover"
@@ -114,6 +100,7 @@ function EquipmentBenefits() {
 }
 
 export default function ConcentrateDehydrationServicePage() {
+  const t = useTranslations('concentrateDehydrationService')
   const heroRef = useRef(null)
   const heroImageRef = useRef(null)
   const overviewRef = useRef(null)
@@ -130,16 +117,8 @@ export default function ConcentrateDehydrationServicePage() {
 
   // Theme content for left column
   const themeContent = [
-    {
-      label: 'Costos',
-      title: 'Transporte más eficiente, sin pérdidas evitables',
-      description: 'Concentrado deshidratado es concentrado más liviano. Menos agua significa menos peso muerto en cada camión y cada embarque, reduciendo el costo por tonelada de metal transportado.'
-    },
-    {
-      label: 'Cumplimiento',
-      title: 'Especificaciones cumplidas, riesgos mitigados',
-      description: 'Alcanzar la humedad correcta no es solo cumplir un número. Es evitar que el buque rechace tu carga, que el espesador se sature durante una mantención, o que un cliente renegocie un contrato. Filtración confiable es la línea entre operación normal y crisis evitable.'
-    }
+    { key: 'costs' },
+    { key: 'compliance' }
   ]
 
 
@@ -287,15 +266,15 @@ export default function ConcentrateDehydrationServicePage() {
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                Recupera valor con <span className="text-gradient">deshidratación de alta presión</span>
+                {t('hero.title')} <span className="text-gradient">{t('hero.titleHighlight')}</span>
               </h1>
 
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Menos agua significa más producto útil. Cumple especificaciones comerciales, reduce costos de transporte y recupera valor de tus concentrados y lodos con filtros prensa móviles de alta presión.
+                {t('hero.description')}
               </p>
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
-                Solicitar Evaluación
+                {t('hero.cta')}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
@@ -439,7 +418,7 @@ export default function ConcentrateDehydrationServicePage() {
                         : 'bg-gray-800 text-gray-500'
                     }`}
                   >
-                    {theme.label}
+                    {t(`themeContent.${theme.key}.label`)}
                   </button>
                 ))}
               </div>
@@ -456,10 +435,10 @@ export default function ConcentrateDehydrationServicePage() {
                     }`}
                   >
                     <h2 className="text-4xl font-bold text-white mb-6">
-                      {theme.title}
+                      {t(`themeContent.${theme.key}.title`)}
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed">
-                      {theme.description}
+                      {t(`themeContent.${theme.key}.description`)}
                     </p>
                   </div>
                 ))}
@@ -668,7 +647,7 @@ export default function ConcentrateDehydrationServicePage() {
             </h2>
 
             {/* Equipment Benefits - Expandable with images */}
-            <EquipmentBenefits />
+            <EquipmentBenefits t={t} />
           </div>
 
           {/* Filter Press Equipment Grid */}

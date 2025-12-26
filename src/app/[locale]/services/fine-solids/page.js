@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard, Delivery, Mountain, Certificate, CertificateCheck, Security, Flash, FlashFilled, ChevronLeft, ChevronRight, Loop, Construction, Renew, Time, IncreaseLevel, Exit, ContainerImagePull, RainDrop } from '@carbon/icons-react'
@@ -15,25 +16,22 @@ gsap.registerPlugin(ScrollTrigger)
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 // Expandable Equipment Benefits Component
-function EquipmentBenefits() {
+function EquipmentBenefits({ t }) {
   const [expandedIndex, setExpandedIndex] = useState(0)
 
   const benefits = [
     {
-      title: 'Clasificación Ex-Proof',
-      description: 'Equipos con clasificación ex.proof para operar en ambientes explosivos. Bombas, tableros y sistemas de succión diseñados para trabajar de forma segura en estanques de petróleo y derivados.',
+      key: 'exProof',
       icon: CertificateCheck,
       image: '/filtro_prensa_1200_drone_view.png'
     },
     {
-      title: 'Huella reducida y 100% móviles',
-      description: 'Equipos compactos que se posicionan junto a piscinas, settlers o estanques sin requerir obras civiles. Instalación en menos de 48 horas y reubicación rápida entre puntos de extracción. Sin modificar tu infraestructura existente.',
+      key: 'mobile',
       icon: Delivery,
       image: '/filtro_prensa_movil.png'
     },
     {
-      title: 'Flexibilidad de bombeo',
-      description: 'Bombas sumergibles, de diafragma o peristálticas según la aplicación. Seleccionamos el sistema de succión óptimo para cada tipo de sólido y condición de estanque.',
+      key: 'flexibility',
       icon: Filter,
       image: '/filtro_prensa_1200_drone_view.png'
     }
@@ -68,7 +66,7 @@ function EquipmentBenefits() {
                   <span className={`font-semibold text-lg transition-colors ${
                     isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
                   }`}>
-                    {benefit.title}
+                    {t(`equipmentBenefits.items.${benefit.key}.title`)}
                   </span>
                 </div>
                 <span className={`text-2xl font-light transition-colors ${
@@ -86,7 +84,7 @@ function EquipmentBenefits() {
               >
                 <div className="pb-8">
                   <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
+                    {t(`equipmentBenefits.items.${benefit.key}.description`)}
                   </p>
                 </div>
               </div>
@@ -102,7 +100,7 @@ function EquipmentBenefits() {
         <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
           <Image
             src={benefits[expandedIndex].image}
-            alt={benefits[expandedIndex].title}
+            alt={t(`equipmentBenefits.items.${benefits[expandedIndex].key}.title`)}
             width={600}
             height={450}
             className="w-full h-full object-cover"
@@ -114,6 +112,7 @@ function EquipmentBenefits() {
 }
 
 export default function FineSolidsServicePage() {
+  const t = useTranslations('fineSolidsService')
   const heroRef = useRef(null)
   const heroImageRef = useRef(null)
   const overviewRef = useRef(null)
@@ -499,15 +498,15 @@ export default function FineSolidsServicePage() {
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                Protege tu planta <span className="text-gradient">eliminando sólidos finos</span> de tus líquidos de proceso
+                {t('hero.title')} <span className="text-gradient">{t('hero.titleHighlight')}</span> {t('hero.titleSuffix')}
               </h1>
 
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Extrae sólidos acumulados de tus sistemas sin parar producción ni perder solución. Equipos móviles que se conectan directamente a piscinas, settlers y estanques mientras tu planta sigue operando.
+                {t('hero.description')}
               </p>
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
-                Solicitar Evaluación
+                {t('hero.cta')}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
@@ -540,7 +539,7 @@ export default function FineSolidsServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
-              Resultados que impactan tu operación
+              {t('keyBenefits.title')}
             </h2>
           </div>
 
@@ -557,9 +556,9 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Dashboard className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Planta operando en especificación</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.plantInSpec.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Sin acumulación de sólidos que reduzca capacidad o mueva tus sistemas fuera de parámetros óptimos.
+                {t('keyBenefits.items.plantInSpec.description')}
               </p>
             </div>
 
@@ -575,9 +574,9 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <IncreaseLevel className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Mayor vida útil de componentes</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.componentLife.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Bombas, válvulas y equipos de planta duran más cuando operan sin abrasión por sólidos.
+                {t('keyBenefits.items.componentLife.description')}
               </p>
             </div>
 
@@ -593,9 +592,9 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Exit className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Sin mantención invasiva</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.noInvasive.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Olvídate de excavadoras, vaciados y riesgos de daño a revestimientos o membranas.
+                {t('keyBenefits.items.noInvasive.description')}
               </p>
             </div>
 
@@ -611,9 +610,9 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <ContainerImagePull className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Evita cambios de membranas</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.avoidMembranes.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Sin reemplazos innecesarios de membranas dañadas por limpieza agresiva con excavadoras.
+                {t('keyBenefits.items.avoidMembranes.description')}
               </p>
             </div>
           </div>
@@ -652,10 +651,10 @@ export default function FineSolidsServicePage() {
             {/* Content on right */}
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Operación sin detener tu planta
+                {t('inCircuitOperation.title')}
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Nuestros equipos succionan desde el fondo de piscinas, settlers o estanques mientras tu circuito sigue produciendo. Los sólidos finos se filtran y la solución limpia retorna directamente al sistema.
+                {t('inCircuitOperation.description')}
               </p>
 
               <div className="space-y-6">
@@ -664,8 +663,8 @@ export default function FineSolidsServicePage() {
                     <Loop className="w-5 h-5 text-emerald-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Circuito cerrado</h3>
-                    <p className="text-gray-400 text-sm">Succión desde el fondo, filtración, retorno de solución limpia. Cero pérdida de líquido valioso.</p>
+                    <h3 className="font-semibold text-white mb-1">{t('inCircuitOperation.features.closedLoop.title')}</h3>
+                    <p className="text-gray-400 text-sm">{t('inCircuitOperation.features.closedLoop.description')}</p>
                   </div>
                 </div>
 
@@ -674,8 +673,8 @@ export default function FineSolidsServicePage() {
                     <Construction className="w-5 h-5 text-emerald-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Sin excavadoras ni vaciados</h3>
-                    <p className="text-gray-400 text-sm">Olvídate de vaciar piscinas, usar palas o arriesgar daños a membranas y revestimientos.</p>
+                    <h3 className="font-semibold text-white mb-1">{t('inCircuitOperation.features.noExcavators.title')}</h3>
+                    <p className="text-gray-400 text-sm">{t('inCircuitOperation.features.noExcavators.description')}</p>
                   </div>
                 </div>
 
@@ -684,8 +683,8 @@ export default function FineSolidsServicePage() {
                     <Renew className="w-5 h-5 text-emerald-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Producción continua</h3>
-                    <p className="text-gray-400 text-sm">Piscinas y settlers siguen operando mientras extraemos los sólidos acumulados.</p>
+                    <h3 className="font-semibold text-white mb-1">{t('inCircuitOperation.features.continuousProduction.title')}</h3>
+                    <p className="text-gray-400 text-sm">{t('inCircuitOperation.features.continuousProduction.description')}</p>
                   </div>
                 </div>
               </div>
@@ -696,38 +695,38 @@ export default function FineSolidsServicePage() {
           <div className="mt-24 pt-16 border-t border-gray-700">
             <div className="max-w-3xl mb-12">
               <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
-                Simplicidad Operacional
+                {t('operationalSimplicity.title')}
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Implementación rápida sin complejidad. Equipos móviles que no interrumpen producción.
+                {t('operationalSimplicity.description')}
               </p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
               {/* 24/7 Tecionic specialists */}
               <div className="text-center lg:text-left">
-                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">24/7</div>
-                <div className="text-lg font-semibold text-white mb-2">Especialistas Tecionic</div>
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">{t('operationalSimplicity.stats.specialists.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.specialists.title')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Personal dedicado opera y mantiene los equipos en tu faena
+                  {t('operationalSimplicity.stats.specialists.description')}
                 </p>
               </div>
 
               {/* Fast deployment */}
               <div className="text-center lg:text-left">
-                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">48h</div>
-                <div className="text-lg font-semibold text-white mb-2">Despliegue rápido</div>
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">{t('operationalSimplicity.stats.deployment.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.deployment.title')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Flota regional lista para movilizar sin esperar fabricación
+                  {t('operationalSimplicity.stats.deployment.description')}
                 </p>
               </div>
 
               {/* Zero CAPEX */}
               <div className="text-center lg:text-left">
-                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">$0</div>
-                <div className="text-lg font-semibold text-white mb-2">Inversión en capital</div>
+                <div className="text-6xl lg:text-7xl font-bold text-emerald-400 mb-3">{t('operationalSimplicity.stats.capex.value')}</div>
+                <div className="text-lg font-semibold text-white mb-2">{t('operationalSimplicity.stats.capex.title')}</div>
                 <p className="text-gray-400 leading-relaxed">
-                  Arriendo mensual todo incluido. Opex, no Capex.
+                  {t('operationalSimplicity.stats.capex.description')}
                 </p>
               </div>
             </div>
@@ -758,10 +757,10 @@ export default function FineSolidsServicePage() {
               {/* Left: The argument */}
               <div>
                 <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                  Deja de pagar por disponer agua
+                  {t('dehydrationBenefits.title')}
                 </h2>
                 <p className="text-lg text-emerald-100 leading-relaxed">
-                  El lodo húmedo es 70-80% agua. Cuando lo envías a disposición, estás pagando camiones, transporte y tarifas de relleno para botar agua. Los filtros prensa eliminan esa agua antes de disponer. Reduces el volumen a una fracción y pagas solo por el sólido real.
+                  {t('dehydrationBenefits.description')}
                 </p>
               </div>
 
@@ -779,11 +778,11 @@ export default function FineSolidsServicePage() {
                 {/* Overlapping stat card */}
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-6">
                   <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-5xl font-bold text-emerald-600">70%</span>
-                    <span className="text-lg text-gray-500">menos</span>
+                    <span className="text-5xl font-bold text-emerald-600">{t('dehydrationBenefits.statValue')}</span>
+                    <span className="text-lg text-gray-500">{t('dehydrationBenefits.statLabel')}</span>
                   </div>
                   <p className="text-gray-600 text-sm">
-                    volumen a disponer
+                    {t('dehydrationBenefits.statDescription')}
                   </p>
                 </div>
               </div>
@@ -792,11 +791,11 @@ export default function FineSolidsServicePage() {
 
           {/* Equipment Benefits title and expandable list */}
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
-            Equipos diseñados para el desafío
+            {t('equipmentBenefits.title')}
           </h2>
 
           {/* Equipment Benefits - Expandable with images */}
-          <EquipmentBenefits />
+          <EquipmentBenefits t={t} />
         </div>
       </section>
 
@@ -805,10 +804,10 @@ export default function FineSolidsServicePage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Probado en múltiples industrias
+              {t('industries.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Tecnología móvil adaptada a las necesidades específicas de cada sector
+              {t('industries.description')}
             </p>
           </div>
 
@@ -821,7 +820,7 @@ export default function FineSolidsServicePage() {
                   <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                     <Image
                       src="/copper_mine.jpg"
-                      alt="Mina de cobre"
+                      alt={t('industries.items.copper.name')}
                       fill
                       sizes="320px"
                       className="object-cover"
@@ -832,12 +831,12 @@ export default function FineSolidsServicePage() {
                       <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                         <span className="text-white text-sm font-bold">Cu</span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
+                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.copper.name')}</h3>
                     </div>
-                    <p className="text-sm text-gray-600">Limpieza settlers SX, piscinas PLS/ILS</p>
+                    <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
                     <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                       <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        Ver detalles
+                        {t('industries.viewDetails')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -849,7 +848,7 @@ export default function FineSolidsServicePage() {
                   <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                     <Image
                       src="/gold_sediment_pool.jpg"
-                      alt="Piscina de sedimentos oro"
+                      alt={t('industries.items.gold.name')}
                       fill
                       sizes="320px"
                       className="object-cover"
@@ -860,12 +859,12 @@ export default function FineSolidsServicePage() {
                       <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
                         <span className="text-white text-sm font-bold">Au</span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900">Oro</h3>
+                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.gold.name')}</h3>
                     </div>
-                    <p className="text-sm text-gray-600">Piscinas de sedimentación y clarificación</p>
+                    <p className="text-sm text-gray-600">{t('industries.items.gold.description')}</p>
                     <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                       <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mt-3">
-                        Consultar
+                        {t('industries.consult')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
@@ -877,7 +876,7 @@ export default function FineSolidsServicePage() {
                   <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                     <Image
                       src="/lithium_mine.jpg"
-                      alt="Mina de litio"
+                      alt={t('industries.items.lithium.name')}
                       fill
                       sizes="320px"
                       className="object-cover"
@@ -888,12 +887,12 @@ export default function FineSolidsServicePage() {
                       <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
                         <span className="text-white text-sm font-bold">Li</span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900">Litio</h3>
+                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.lithium.name')}</h3>
                     </div>
-                    <p className="text-sm text-gray-600">Protección membranas DLE, salmueras</p>
+                    <p className="text-sm text-gray-600">{t('industries.items.lithium.description')}</p>
                     <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                       <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        Ver detalles
+                        {t('industries.viewDetails')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -905,7 +904,7 @@ export default function FineSolidsServicePage() {
                   <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                     <Image
                       src="/potassium_plant.jpg"
-                      alt="Planta de potasio"
+                      alt={t('industries.items.potassium.name')}
                       fill
                       sizes="320px"
                       className="object-cover"
@@ -916,12 +915,12 @@ export default function FineSolidsServicePage() {
                       <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                         <span className="text-white text-sm font-bold">K</span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900">Potasio</h3>
+                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.potassium.name')}</h3>
                     </div>
-                    <p className="text-sm text-gray-600">Sales minerales y piscinas de evaporación</p>
+                    <p className="text-sm text-gray-600">{t('industries.items.potassium.description')}</p>
                     <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                       <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        Ver detalles
+                        {t('industries.viewDetails')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -933,7 +932,7 @@ export default function FineSolidsServicePage() {
                   <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                     <Image
                       src="/zinc_processing_plant.jpg"
-                      alt="Planta de procesamiento de zinc"
+                      alt={t('industries.items.zinc.name')}
                       fill
                       sizes="320px"
                       className="object-cover"
@@ -944,12 +943,12 @@ export default function FineSolidsServicePage() {
                       <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
                         <span className="text-white text-sm font-bold">Zn</span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900">Zinc</h3>
+                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.zinc.name')}</h3>
                     </div>
-                    <p className="text-sm text-gray-600">Purificación electrolitos y settlers</p>
+                    <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
                     <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                       <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        Ver detalles
+                        {t('industries.viewDetails')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -961,7 +960,7 @@ export default function FineSolidsServicePage() {
                   <div className="h-64 group-hover:h-52 relative transition-all duration-300">
                     <Image
                       src="/oil_refinery.jpg"
-                      alt="Refinería de petróleo"
+                      alt={t('industries.items.oil.name')}
                       fill
                       sizes="320px"
                       className="object-cover"
@@ -972,12 +971,12 @@ export default function FineSolidsServicePage() {
                       <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
                         <RainDrop className="w-5 h-5 text-white" />
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900">Petróleo</h3>
+                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.oil.name')}</h3>
                     </div>
-                    <p className="text-sm text-gray-600">Estanques con equipos ATEX certificados</p>
+                    <p className="text-sm text-gray-600">{t('industries.items.oil.description')}</p>
                     <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                       <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        Ver detalles
+                        {t('industries.viewDetails')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -998,10 +997,10 @@ export default function FineSolidsServicePage() {
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
-              CASO DE ÉXITO
+              {t('caseStudy.badge')}
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
-              Planta de Yoduro mantiene continuidad operacional sin detenciones
+              {t('caseStudy.title')}
             </h2>
           </div>
 
@@ -1023,8 +1022,8 @@ export default function FineSolidsServicePage() {
                       <span className="font-bold text-sm">I₂</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">Planta SX Yoduro</div>
-                      <div className="text-white/70 text-xs">N. Victoria y TEA</div>
+                      <div className="font-semibold text-sm">{t('caseStudy.client')}</div>
+                      <div className="text-white/70 text-xs">{t('caseStudy.location')}</div>
                     </div>
                   </div>
                 </div>
@@ -1035,27 +1034,27 @@ export default function FineSolidsServicePage() {
                 {/* Metrics row */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">0</div>
-                    <div className="text-sm text-gray-600">Detenciones/año</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.stoppages.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.stoppages.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">24/7</div>
-                    <div className="text-sm text-gray-600">Monitoreo turbidez</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.monitoring.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.monitoring.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">+15%</div>
-                    <div className="text-sm text-gray-600">Capacidad filtrado</div>
+                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.capacity.value')}</div>
+                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.capacity.label')}</div>
                   </div>
                 </div>
 
                 {/* Description */}
                 <p className="text-gray-600 mb-6">
-                  Remoción continua de sólidos desde etapas de extracción E1 hasta coalescedores. El yoduro llega limpio a filtración final, aumentando capacidad de proceso y eliminando paradas por acumulación.
+                  {t('caseStudy.description')}
                 </p>
 
                 {/* CTA */}
                 <Link href="/casos-de-exito/filtracion-yoduro" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
-                  Ver caso completo
+                  {t('caseStudy.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -1070,10 +1069,10 @@ export default function FineSolidsServicePage() {
           <div className="flex items-end justify-between mb-12">
             <div className="max-w-3xl">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Servicio según tu necesidad
+                {t('serviceModels.title')}
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Desde respuesta de emergencia hasta mantención preventiva continua
+                {t('serviceModels.description')}
               </p>
             </div>
 
@@ -1144,38 +1143,28 @@ export default function FineSolidsServicePage() {
                 {activeServiceModel === 'emergencia' && (
                 <div className="carousel-content">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900">Limpieza Profunda Spot</h3>
-                    <p className="text-gray-500">Extracción intensiva de sólidos acumulados</p>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('serviceModels.emergencia.title')}</h3>
+                    <p className="text-gray-500">{t('serviceModels.emergencia.subtitle')}</p>
                   </div>
 
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Movilización de equipos en 48-72 horas</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Succión desde fondo de piscinas y settlers</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Deshidratación con filtros prensa incluida</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Sin detener tu circuito de producción</span>
-                      </div>
+                      {t.raw('serviceModels.emergencia.features').map((feature, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
                     </div>
 
                     <div className="bg-red-50 rounded-xl p-6">
-                      <div className="text-sm font-semibold text-red-800 uppercase tracking-wide mb-2">Duración típica</div>
+                      <div className="text-sm font-semibold text-red-800 uppercase tracking-wide mb-2">{t('serviceModels.emergencia.durationLabel')}</div>
                       <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-5xl font-bold text-red-600">2-6</span>
-                        <span className="text-lg text-gray-600">semanas</span>
+                        <span className="text-5xl font-bold text-red-600">{t('serviceModels.emergencia.durationValue')}</span>
+                        <span className="text-lg text-gray-600">{t('serviceModels.emergencia.durationUnit')}</span>
                       </div>
                       <p className="text-sm text-gray-600">
-                        Ideal cuando necesitas recuperar capacidad de tus piscinas o settlers antes de una parada programada.
+                        {t('serviceModels.emergencia.durationDescription')}
                       </p>
                     </div>
                   </div>
@@ -1186,38 +1175,28 @@ export default function FineSolidsServicePage() {
                 {activeServiceModel === 'preventivo' && (
                 <div className="carousel-content">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900">Mantención Programada</h3>
-                    <p className="text-gray-500">Campañas trimestrales o semestrales</p>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('serviceModels.preventivo.title')}</h3>
+                    <p className="text-gray-500">{t('serviceModels.preventivo.subtitle')}</p>
                   </div>
 
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Calendario acordado según tu operación</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Extracción preventiva antes de acumulación crítica</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Monitoreo de niveles de sólidos incluido</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Precio por campaña con garantía de resultados</span>
-                      </div>
+                      {t.raw('serviceModels.preventivo.features').map((feature, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
                     </div>
 
                     <div className="bg-emerald-50 rounded-xl p-6">
-                      <div className="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Resultado</div>
+                      <div className="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">{t('serviceModels.preventivo.resultLabel')}</div>
                       <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-5xl font-bold text-emerald-600">0</span>
-                        <span className="text-lg text-gray-600">emergencias/año</span>
+                        <span className="text-5xl font-bold text-emerald-600">{t('serviceModels.preventivo.resultValue')}</span>
+                        <span className="text-lg text-gray-600">{t('serviceModels.preventivo.resultUnit')}</span>
                       </div>
                       <p className="text-sm text-gray-600">
-                        Mantén tus equipos en especificación sin sorpresas. Planifica tus costos con certeza.
+                        {t('serviceModels.preventivo.resultDescription')}
                       </p>
                     </div>
                   </div>
@@ -1228,38 +1207,38 @@ export default function FineSolidsServicePage() {
                 {activeServiceModel === 'continuo' && (
                 <div className="carousel-content">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900">Cómo Funciona</h3>
-                    <p className="text-gray-500">Tres pasos para empezar</p>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('serviceModels.continuo.title')}</h3>
+                    <p className="text-gray-500">{t('serviceModels.continuo.subtitle')}</p>
                   </div>
 
                   <div className="grid lg:grid-cols-3 gap-4">
                     <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
-                      <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mb-3">1</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Evaluación</h4>
+                      <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mb-3">{t('serviceModels.continuo.steps.evaluation.number')}</div>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('serviceModels.continuo.steps.evaluation.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Análisis de tu circuito</li>
-                        <li>• Caracterización de sólidos</li>
-                        <li>• Dimensionamiento</li>
+                        {t.raw('serviceModels.continuo.steps.evaluation.items').map((item, i) => (
+                          <li key={i}>• {item}</li>
+                        ))}
                       </ul>
                     </div>
 
                     <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
-                      <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold mb-3">2</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Instalación</h4>
+                      <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold mb-3">{t('serviceModels.continuo.steps.installation.number')}</div>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('serviceModels.continuo.steps.installation.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Equipos asignados 24/7</li>
-                        <li>• Operadores Tecionic</li>
-                        <li>• Sin CAPEX</li>
+                        {t.raw('serviceModels.continuo.steps.installation.items').map((item, i) => (
+                          <li key={i}>• {item}</li>
+                        ))}
                       </ul>
                     </div>
 
                     <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
-                      <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mb-3">3</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Operación</h4>
+                      <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mb-3">{t('serviceModels.continuo.steps.operation.number')}</div>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('serviceModels.continuo.steps.operation.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Extracción permanente</li>
-                        <li>• Arriendo mensual</li>
-                        <li>• Escalamiento flexible</li>
+                        {t.raw('serviceModels.continuo.steps.operation.items').map((item, i) => (
+                          <li key={i}>• {item}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -1286,36 +1265,36 @@ export default function FineSolidsServicePage() {
         </div>
         <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Evalúa la solución para tu planta
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-emerald-100 mb-4">
-            Cuéntanos sobre tu aplicación: tipo de sólidos, volumen estimado, y condiciones de acceso. Evaluamos factibilidad técnica sin costo.
+            {t('cta.description')}
           </p>
           <p className="text-lg text-emerald-100 mb-10">
-            En 48 horas recibes propuesta técnica con capacidad requerida, configuración de equipos, y modelo de servicio recomendado.
+            {t('cta.timeline')}
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
             <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
-              Solicitar Evaluación Técnica
+              {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
             <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
-              Descargar Caso Completo
+              {t('cta.secondaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>
 
           <div className="border-t border-emerald-500 pt-8">
-            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">Contacto directo</div>
+            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
             <div className="grid md:grid-cols-2 gap-6 text-white">
               <div>
-                <div className="font-semibold mb-1">Santiago:</div>
-                <div className="text-emerald-100">Luis Thayer Ojeda 95, of. 312</div>
+                <div className="font-semibold mb-1">{t('cta.locations.santiago.name')}</div>
+                <div className="text-emerald-100">{t('cta.locations.santiago.address')}</div>
               </div>
               <div>
-                <div className="font-semibold mb-1">Calama:</div>
-                <div className="text-emerald-100">Miraflores 1260 B</div>
+                <div className="font-semibold mb-1">{t('cta.locations.calama.name')}</div>
+                <div className="text-emerald-100">{t('cta.locations.calama.address')}</div>
               </div>
             </div>
           </div>

@@ -2,8 +2,10 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import { Dashboard, Growth, Time, ArrowDown, Currency } from '@carbon/icons-react'
+import { useTranslations } from 'next-intl'
 
 export default function EfficiencyComparison() {
+  const t = useTranslations('efficiencyComparison')
   const [sliderPosition, setSliderPosition] = useState(0)
   const [animatedMetrics, setAnimatedMetrics] = useState({})
   const comparisonRef = useRef(null)
@@ -37,9 +39,9 @@ export default function EfficiencyComparison() {
   }, [])
 
   const caseStudy = {
-    name: 'Cobre',
-    location: 'Proyecto en Segunda Región',
-    industry: 'Cobre',
+    name: t('caseStudy.name'),
+    location: t('caseStudy.location'),
+    industry: t('caseStudy.name'),
     color: 'orange',
     before: {
       efficiency: 85,
@@ -118,17 +120,16 @@ export default function EfficiencyComparison() {
         <div className="text-center mb-12 progressive-reveal">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-4 sophisticated-hover">
             <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2 enterprise-pulse"></div>
-            Casos de Éxito Interactivos
+            {t('badge')}
           </div>
 
           <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4 leading-tight enterprise-slide-up">
-            Resultados Comprobados:
-            <span className="block text-emerald-600 gradient-text-animated">Antes vs Después</span>
+            {t('headline')}
+            <span className="block text-emerald-600 gradient-text-animated">{t('headlineSub')}</span>
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed progressive-reveal">
-            Descubre el impacto real de nuestras optimizaciones.
-            <span className="font-semibold text-emerald-600">Usa el deslizador interactivo</span> para ver la transformación.
+            {t('description')} <span className="font-semibold text-emerald-600">{t('interactiveSlider')}</span> {t('toSeeTransformation')}
           </p>
         </div>
 
@@ -162,10 +163,10 @@ export default function EfficiencyComparison() {
                 <div className="w-4 h-4 bg-gray-400/20 rounded-lg flex items-center justify-center">
                   <div className="w-2 h-2 bg-gray-400 rounded-full enterprise-pulse"></div>
                 </div>
-                <span className="text-gray-500 font-bold text-sm tracking-wide">ANTES</span>
+                <span className="text-gray-500 font-bold text-sm tracking-wide">{t('before')}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-emerald-600 font-bold text-sm tracking-wide">DESPUÉS</span>
+                <span className="text-emerald-600 font-bold text-sm tracking-wide">{t('after')}</span>
                 <div className="w-4 h-4 bg-emerald-500/20 rounded-lg flex items-center justify-center">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse"></div>
                 </div>
@@ -196,7 +197,7 @@ export default function EfficiencyComparison() {
                 <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
                   {animatedMetrics.efficiency || currentCase.before.efficiency}%
                 </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">Eficiencia</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.efficiency')}</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.efficiency : '---'}
                 </div>
@@ -213,7 +214,7 @@ export default function EfficiencyComparison() {
                 <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
                   {(animatedMetrics.production || currentCase.before.production).toLocaleString()}
                 </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">Producción (t/año)</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.production')}</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.production : '---'}
                 </div>
@@ -224,9 +225,9 @@ export default function EfficiencyComparison() {
               <div className="relative z-10">
                 <Time className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
                 <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {animatedMetrics.downtime !== undefined ? animatedMetrics.downtime : currentCase.before.downtime} días
+                  {animatedMetrics.downtime !== undefined ? animatedMetrics.downtime : currentCase.before.downtime} {t('metrics.downtimeDays')}
                 </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">Tiempo Parada/año</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.downtime')}</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.downtime : '---'}
                 </div>
@@ -239,7 +240,7 @@ export default function EfficiencyComparison() {
                 <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
                   {animatedMetrics.dragLosses || currentCase.before.dragLosses} m³
                 </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">Pérdidas Arrastre/día</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.dragLosses')}</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.dragLosses : '---'}
                 </div>
@@ -252,7 +253,7 @@ export default function EfficiencyComparison() {
                 <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
                   ${(animatedMetrics.savings || currentCase.before.savings).toLocaleString()}
                 </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">Ahorro Mensual</div>
+                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.monthlySavings')}</div>
                 <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.savings : '---'}
                 </div>
@@ -276,10 +277,10 @@ export default function EfficiencyComparison() {
 
           <div className="relative z-10">
             <h3 className="text-2xl lg:text-3xl font-black mb-4">
-              ¿Listo para Transformar Tu Operación?
+              {t('cta.headline')}
             </h3>
             <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
-              Nuestros especialistas pueden evaluar tu proceso actual y diseñar una solución personalizada.
+              {t('cta.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -287,14 +288,14 @@ export default function EfficiencyComparison() {
                 className="group relative bg-white text-emerald-900 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect"
                 suppressHydrationWarning
               >
-                <span className="relative z-10">Solicitar Análisis Especializado</span>
+                <span className="relative z-10">{t('cta.requestAnalysis')}</span>
               </button>
 
               <button
                 className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
                 suppressHydrationWarning
               >
-                <span className="relative z-10">Ver Más Casos de Éxito</span>
+                <span className="relative z-10">{t('cta.viewMoreCases')}</span>
               </button>
             </div>
           </div>

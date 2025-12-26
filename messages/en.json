@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Tec-Ionic Durban - Specialized LIX/SX/EW Services",
+    "description": "Company with over 18 years of experience in filtration and crud treatment services for LIX/SX/EW areas."
+  },
   "navigation": {
     "services": "Services",
     "industries": "Industries",
@@ -10,62 +14,215 @@
     "operationalServices": "Operational Services",
     "dataAnalytics": "Data Analytics",
     "qualityControl": "Quality Control",
+    "specializedSectors": "Specialized Sectors",
+    "successStory": "Success Story",
+    "resourceCenter": "Resource Center",
     "services": {
       "filtration": {
         "name": "Filtration & Dehydration",
-        "description": "Sludge processing"
+        "description": "Crud processing"
       },
       "organicTreatment": {
         "name": "Organic Treatment",
         "description": "Extractant purification"
       },
       "concentrateDehydration": {
-        "name": "Concentrate Dehydration",
-        "description": "Minerals"
+        "name": "Dehydration",
+        "description": "Mineral concentrates"
       },
       "fineSolids": {
         "name": "Fine Solids",
-        "description": "Advanced removal"
+        "description": "Fines separation"
       },
       "waterClarification": {
         "name": "Water Clarification",
-        "description": "Industrial treatment"
+        "description": "Water recovery"
       },
       "ewCleaning": {
         "name": "EW Cell Cleaning",
-        "description": "Specialized maintenance"
+        "description": "Cell crud removal"
       },
       "maintenance": {
         "name": "Maintenance",
         "description": "Comprehensive support"
+      },
+      "turbidityMonitoring": {
+        "name": "Turbidity Monitoring",
+        "description": "Real-time in potash"
+      },
+      "tsfMonitoring": {
+        "name": "TSF Monitoring",
+        "description": "Crud quality control"
+      },
+      "tifMeasurement": {
+        "name": "TIF Measurement",
+        "description": "Organic/aqueous interface"
+      },
+      "humidityCertification": {
+        "name": "Moisture Certification",
+        "description": "TML and IMSBC standards"
       }
     },
     "industries": {
-      "copper": "Copper",
-      "zinc": "Zinc",
-      "potassium": "Potassium",
-      "lithium": "Lithium",
-      "crudeOil": "Crude Oil"
+      "copper": {
+        "name": "Copper",
+        "description": "Leaching and SX/EW"
+      },
+      "zinc": {
+        "name": "Zinc",
+        "description": "Electrowinning and refining"
+      },
+      "potassium": {
+        "name": "Potassium",
+        "description": "Mineral salts"
+      },
+      "lithium": {
+        "name": "Lithium",
+        "description": "Batteries and energy"
+      },
+      "crudeOil": {
+        "name": "Crude Oil",
+        "description": "Refining and processing"
+      }
     },
     "resourceLinks": {
-      "caseStudies": "Case Studies",
-      "industryTrends": "Industry Trends",
-      "whitePapers": "White Papers",
-      "technicalSpecs": "Technical Specifications",
-      "compliance": "Regulatory Compliance",
-      "customerStories": "Customer Stories"
+      "caseStudies": {
+        "name": "Case Studies",
+        "description": "Documented real projects"
+      },
+      "industryTrends": {
+        "name": "Industry Trends",
+        "description": "Analysis and insights"
+      },
+      "whitePapers": {
+        "name": "White Papers",
+        "description": "In-depth technical research"
+      },
+      "technicalSpecs": {
+        "name": "Technical Specifications",
+        "description": "Equipment and process details"
+      },
+      "compliance": {
+        "name": "Compliance",
+        "description": "Standards and certifications"
+      },
+      "customerStories": {
+        "name": "Customer Stories",
+        "description": "Client testimonials"
+      }
     },
-    "customerSuccessStory": "Customer success story",
-    "viewAllCaseStudies": "View all cases"
+    "viewAllCases": "View all cases",
+    "viewFullCase": "View full case",
+    "analyticsComingSoon": "New analytics services in development. Contact us for more information.",
+    "qualityComingSoon": "Mobile lab for on-site certification. More quality control services coming soon."
+  },
+  "hero": {
+    "optimizeYour": "Optimize Your",
+    "operations": "Operations",
+    "withoutStopping": "Without Plant Shutdowns",
+    "subtitle": "Maximize production while solving critical bottlenecks without stopping operations.",
+    "tagline": "ZERO CAPEX • ZERO MODIFICATIONS • MAXIMUM ROI",
+    "stats": {
+      "yearsExperience": "Years of experience",
+      "projectsCompleted": "Projects completed",
+      "operationalSupport": "Operational support"
+    },
+    "cta": "View Our Services"
+  },
+  "services": {
+    "sectionTitle": "Specialized Mining Services",
+    "headline": "Mobile Technology",
+    "headlineSub": "That Transforms Operations",
+    "description": "Filtration, solids dehydration, and solid-liquid separation services with scalable mobile equipment. Over two decades of experience in mining operations backing our solutions.",
+    "twoDecades": "Over two decades of experience",
+    "moreInfo": "Learn more",
+    "items": {
+      "filtration": {
+        "title": "Crud and Solids Filtration & Dehydration",
+        "description": "Mobile filtration of crud and solids in refineries and SX plants. Capacity up to 130 tons/day of filter cake using filter presses or centrifuges per client requirements."
+      },
+      "organicTreatment": {
+        "title": "SX Organic Treatment & Recovery",
+        "description": "Specialized treatment for organic recovery in solvent extraction processes. Reduces losses and optimizes plant efficiency."
+      },
+      "concentrateDehydration": {
+        "title": "Concentrate Dehydration",
+        "description": "Copper concentrate dehydration using mobile filter presses. 60-70% weight reduction for concentrator plant optimization and export cargo preparation."
+      },
+      "fineSolids": {
+        "title": "Fine Solids Treatment",
+        "description": "Processing of fine solids from clarifiers. Capacity up to 14 tons/day with specialized equipment."
+      },
+      "ewCleaning": {
+        "title": "EW Cell Cleaning",
+        "description": "Specialized electrowinning cell cleaning to minimize cathodic contamination and ensure higher-grade copper cathodes. Scheduled services to maintain product quality standards."
+      },
+      "waterClarification": {
+        "title": "Clarified Water Solids Removal",
+        "description": "Process water recirculation optimization through efficient solids removal. Up to 120 m³/day of clarified water."
+      }
+    },
+    "cta": {
+      "headline": "Mobile Solutions That Add Value and Sustainability",
+      "description": "Initial diagnosis, rapid deployment via mobile platforms, and continuous operation with daily KPI delivery.",
+      "flexibility": "Operational flexibility without permanent installations.",
+      "requestConsultation": "Request Consultation",
+      "viewCaseStudies": "View Case Studies"
+    }
+  },
+  "about": {
+    "headline": "Specialists in",
+    "headlineSub": "Mobile Solid-Liquid Separation",
+    "description": "Specialists in solid-liquid separation for SX/EW applications with high-capacity mobile equipment.",
+    "clientList": "We serve BHP, Codelco, Antofagasta Minerals, Freeport-McMoRan, and other major mining companies, providing solutions that optimize operations without interrupting existing processes.",
+    "highCapacity": "high-capacity mobile equipment",
+    "certifiedEquipment": "Ex.Proof Certified Equipment",
+    "cards": {
+      "opexModel": {
+        "title": "Advanced OPEX Model",
+        "description": "Zero initial investment. Service model with monthly billing that optimizes the client's operational cash flow.",
+        "metric": "0% CAPEX"
+      },
+      "performance": {
+        "title": "Verifiable Performance",
+        "description": "Daily reporting of specific operational KPIs based on service type. Verifiable parameters demonstrating improvements in efficiency and productivity.",
+        "metric": "24/7 Tracking"
+      },
+      "multisector": {
+        "title": "Multi-Sector Experience",
+        "description": "Proven portfolio in copper, lithium, potash, and petroleum refining with documented success cases.",
+        "metric": "5 Sectors"
+      },
+      "plugAndPlay": {
+        "title": "Plug & Play Installation",
+        "description": "Pre-configured mobile equipment that integrates directly with existing systems. No infrastructure modifications, no additional permits. Operational in 24-48 hours.",
+        "metric": "24-48h"
+      },
+      "flexibleContracts": {
+        "title": "Flexible Contracts",
+        "description": "From emergency response to 5-year strategic projects. Automatic scaling based on operational demand with terms adaptable to market cycles.",
+        "metric": "48h-5 years"
+      },
+      "corrosiveEnvironments": {
+        "title": "Work in Corrosive and Explosive Environments",
+        "description": "High-tech equipment certified to operate in explosive atmospheres and highly corrosive environments. Maximum safety with Ex.Proof certification for the most demanding conditions.",
+        "metric": "Ex.Proof"
+      }
+    }
   },
   "footer": {
-    "description": "Over 18 years providing specialized solid-liquid separation solutions for the mining industry across Latin America.",
+    "description": "Company with over two decades of experience in filtration services, solids dehydration, solid-liquid separation, and organic treatment in solvent extraction (SX) plants.",
     "services": "Services",
     "industries": "Industries",
     "resources": "Resources",
     "contact": "Contact",
-    "address": "Av. Vitacura 2909, Of. 601, Las Condes, Santiago",
-    "email": "contacto@tecionic.cl",
+    "offices": "Offices in Santiago, Calama, and Lima",
+    "viewContactInfo": "View complete contact information",
+    "caseStudies": "Case Studies",
+    "technicalGuides": "Technical Guides",
+    "webinars": "Webinars",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
     "copyright": "All rights reserved."
   },
   "common": {
@@ -75,7 +232,10 @@
     "viewAll": "View all",
     "back": "Back",
     "next": "Next",
-    "previous": "Previous"
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
   },
   "languageSwitcher": {
     "selectLanguage": "Select language",
@@ -84,6 +244,3049 @@
       "es-mx": "Spanish (Mexico)",
       "pt-br": "Portuguese (Brazil)",
       "en": "English"
+    }
+  },
+  "contact": {
+    "headline": "Let's Talk About Your Project",
+    "description": "Our team is available for technical consultations and project assessments",
+    "email": "contacto@tsf.cl",
+    "contactForm": "Contact Form",
+    "offices": "Offices",
+    "locations": {
+      "santiago": "Santiago",
+      "calama": "Calama",
+      "lima": "Lima"
+    },
+    "trustLine": "We work with leading industrial companies across Latin America"
+  },
+  "efficiencyComparison": {
+    "badge": "Interactive Success Stories",
+    "headline": "Proven Results:",
+    "headlineSub": "Before vs After",
+    "description": "Discover the real impact of our optimizations.",
+    "interactiveSlider": "Use the interactive slider",
+    "toSeeTransformation": "to see the transformation.",
+    "before": "BEFORE",
+    "after": "AFTER",
+    "caseStudy": {
+      "name": "Copper",
+      "location": "Project in Northern Chile"
+    },
+    "metrics": {
+      "efficiency": "Efficiency",
+      "production": "Production (t/year)",
+      "downtime": "Downtime/year",
+      "downtimeDays": "days",
+      "dragLosses": "Drag Losses/day",
+      "monthlySavings": "Monthly Savings"
+    },
+    "cta": {
+      "headline": "Ready to Transform Your Operation?",
+      "description": "Our specialists can evaluate your current process and design a customized solution.",
+      "requestAnalysis": "Request Specialized Analysis",
+      "viewMoreCases": "View More Success Stories"
+    }
+  },
+  "latamPresence": {
+    "badge": "REGIONAL REACH",
+    "headline": "Mobile equipment for",
+    "headlineSub": "all of Latin America",
+    "description": "From our bases in Chile and Peru, we deploy filtration and treatment equipment to industrial operations across the continent.",
+    "loadingMap": "Loading interactive map...",
+    "mobileEquipment": {
+      "title": "100% mobile equipment",
+      "description": "Our equipment is transported directly to your operation, regardless of location."
+    },
+    "requestEquipment": "Request Equipment",
+    "operationBases": "Operation bases",
+    "mainIndustries": "Main industries",
+    "industries": {
+      "copper": "Copper",
+      "lithium": "Lithium",
+      "zinc": "Zinc",
+      "oil": "Oil",
+      "potassium": "Potassium"
+    }
+  },
+  "customers": {
+    "badge": "Proven Success Stories",
+    "headline": "Clients Who",
+    "headlineSub": "Trust Us",
+    "description": "We work with leading industrial companies worldwide, providing specialized solutions that optimize your operations with measurable results.",
+    "resultsTitle": "Proven Industry Results",
+    "stats": {
+      "efficiency": "Average Efficiency Improvement",
+      "downtime": "Downtime Reduction",
+      "savings": "Cumulative Savings USD",
+      "years": "Years of Trust"
+    },
+    "testimonial": {
+      "quote": "Tec-Ionic Durban has transformed our operations with results that consistently exceed our expectations.",
+      "author": "Operations Manager, Major Mining Company",
+      "disclaimer": "*Specific names are kept confidential under privacy agreements"
+    }
+  },
+  "miningTerms": {
+    "sludge": "sludge",
+    "crud": "crud",
+    "filterCake": "filter cake",
+    "leaching": "leaching",
+    "electrowinning": "electrowinning",
+    "solventExtraction": "solvent extraction",
+    "organicPhase": "organic phase",
+    "aqueousPhase": "aqueous phase",
+    "refinery": "refinery",
+    "miningOperation": "mining operation",
+    "miningSite": "mine site",
+    "clarifiers": "clarifiers",
+    "cathodes": "cathodes",
+    "concentrates": "concentrates",
+    "fineSolids": "fine solids",
+    "tanks": "tanks",
+    "filterPress": "filter press",
+    "centrifuge": "centrifuge",
+    "dehydration": "dehydration",
+    "filtration": "filtration",
+    "extractants": "extractants",
+    "cathodicContamination": "cathodic contamination",
+    "waterRecirculation": "water recirculation",
+    "processWater": "process water"
+  },
+  "filtrationService": {
+    "hero": {
+      "title": "Mobile filtration for",
+      "titleHighlight": "maximum plant efficiency",
+      "description": "Connect filter presses to any point in your process. Recover up to 90% of trapped organic, reduce disposal volume by up to 85%, and keep your plant running while we clean.",
+      "cta": "Request Evaluation"
+    },
+    "recovery": {
+      "title": "We recover the value trapped in crud",
+      "tabs": {
+        "copper": "Copper",
+        "petroleum": "Petroleum"
+      },
+      "industries": {
+        "copper": {
+          "heroStat": "91%",
+          "heroLabel": "of value returns to cycle",
+          "description": "We separate crud into its components: organic phase and aqueous phase. Both return to their respective circuits. Nothing is lost.",
+          "kpis": {
+            "organic": { "value": "90%", "label": "organic recovery" },
+            "aqueous": { "value": "92%", "label": "aqueous phase returned" }
+          }
+        },
+        "petroleum": {
+          "heroStat": "67%",
+          "heroLabel": "of hydrocarbons recovered",
+          "description": "Refinery sludge contains valuable trapped hydrocarbons. The recovered liquid returns to process or is commercialized.",
+          "kpis": {
+            "hydrocarbons": { "value": "67%", "label": "recoverable hydrocarbons" },
+            "liquid": { "value": "100%", "label": "reusable liquid" }
+          }
+        }
+      }
+    },
+    "equipmentBenefits": {
+      "items": {
+        "agile": {
+          "title": "Agile and compact equipment",
+          "description": "Mobile units of just 35 m² that install wherever convenient for your operation. They arrive by truck, position near the extraction point, and operate without permanent infrastructure. Total flexibility to adapt to your layout."
+        },
+        "longReach": {
+          "title": "Long-reach hoses",
+          "description": "For compact plants with elevated tanks where internal space is limited, our extra-long suction hoses allow installing equipment away from the extraction point. Minimizes space invasion and routes wherever convenient for your operation."
+        },
+        "noInterference": {
+          "title": "Operation without interfering with your plant",
+          "description": "100% autonomous system that doesn't use client plant equipment. Own pumps, piping, controls, and power. Without modifying permits or environmental licenses. 48-hour installation, immediate operation. Your process keeps running while we clean."
+        }
+      }
+    },
+    "keyBenefits": {
+      "title": "Benefits of eliminating crud",
+      "items": {
+        "efficiency": {
+          "title": "Increase your plant efficiency",
+          "description": "Cleaner stages improve separation and transfer throughout the process."
+        },
+        "value": {
+          "title": "Recover trapped value",
+          "description": "Extract hydrocarbons or organic extractant that would otherwise be lost trapped in the crud."
+        },
+        "storage": {
+          "title": "Recover storage capacity",
+          "description": "Crud takes up valuable volume in your tanks. Eliminate it and use that capacity for crude, aqueous, or organic phase."
+        },
+        "costs": {
+          "title": "Reduce operational costs",
+          "description": "Less volume to dispose of, lower reagent consumption, and lower transportation and waste treatment costs."
+        }
+      }
+    },
+    "operationalEfficiency": {
+      "badge": "OPERATIONAL EFFICIENCY",
+      "title": "We return your circuit to design efficiency",
+      "description": "Accumulated crud in settler/mixer degrades phase separation and increases entrainment between stages. We remove the root cause.",
+      "items": {
+        "energy": {
+          "title": "Energy",
+          "description": "We extract crud, reducing viscosity. Pumps and agitators return to their design curve."
+        },
+        "extractant": {
+          "title": "Extractant",
+          "description": "We separate trapped organic and return it to your circuit. Up to 90% recovered."
+        },
+        "acid": {
+          "title": "Acid",
+          "description": "We remove fine solids that interfere with stripping. Dosing according to design."
+        },
+        "water": {
+          "title": "Water",
+          "description": "We clean without stopping operation. No emergency washes or extra consumption."
+        }
+      }
+    },
+    "productQuality": {
+      "badge": "PRODUCT QUALITY",
+      "title": "Pure electrolyte, premium cathodes",
+      "description": "Clean stages deliver organic-free loaded electrolyte to EW. Clean raffinate returns to leaching without extractant or kerosene loss.",
+      "cleanElectrolyte": {
+        "title": "Clean loaded electrolyte",
+        "subtitle": "Protection for your electrowinning",
+        "items": {
+          "purity": { "title": "High-purity cathodes", "description": "No organic contamination affecting quality" },
+          "cells": { "title": "Protected EW cells", "description": "Extended lifespan without residue accumulation" },
+          "extractant": { "title": "Contained extractant", "description": "No losses to the aqueous phase" }
+        }
+      },
+      "cleanRaffinate": {
+        "title": "Clean raffinate",
+        "subtitle": "Protection for your leaching",
+        "items": {
+          "concentrated": { "title": "Concentrated organic", "description": "No dilution from aqueous entrainment" },
+          "heaps": { "title": "Clean leach heaps", "description": "Organic-free raffinate" },
+          "kerosene": { "title": "Conserved kerosene", "description": "Lower diluent consumption" }
+        }
+      },
+      "stages": {
+        "e1": "E1",
+        "e2": "E2",
+        "s1": "S1",
+        "s2": "S2",
+        "clean": "Clean"
+      }
+    },
+    "thermalImpact": {
+      "title": "Precise extraction, minimal thermal impact",
+      "description": "Long pipette identifies the exact contamination level. We only extract what's necessary. Lower processed volume means lower reheating cost.",
+      "benefits": {
+        "selective": { "title": "Selective extraction by level.", "description": " We measure where the crud is and specifically target that zone." },
+        "minimal": { "title": "Minimal volume processed.", "description": " Without extracting the entire tank. Only the contaminated zone." },
+        "immediate": { "title": "Immediate return.", "description": " Separated liquid returns to process with minimal temperature loss." }
+      },
+      "comparison": {
+        "conventional": {
+          "label": "Conventional method",
+          "cost": "High cost",
+          "volume": "100%",
+          "volumeLabel": "volume extracted",
+          "description": "Empty the entire tank, reheat the entire volume"
+        },
+        "tecionic": {
+          "label": "Tecionic method",
+          "cost": "Minimum cost",
+          "volume": "~15%",
+          "volumeLabel": "volume extracted",
+          "description": "Only the contaminated zone, lower reheating cost"
+        }
+      }
+    },
+    "everyMeterCounts": {
+      "badge": "EVERY CUBIC METER COUNTS",
+      "title": "Less to dispose, more to produce",
+      "description": "Crud takes up space and traps value. Our process reduces it to dry cake and returns the liquid to your circuit.",
+      "disposal": {
+        "badge": "DISPOSAL",
+        "title": "Less waste, less cost",
+        "description": "Crud enters as liquid and exits as dry cake. Less weight, less volume, fewer trucks. Simplified transport and final disposal.",
+        "kpis": {
+          "volume": { "value": "85%", "label": "Volume reduction" },
+          "dryness": { "value": "85%", "label": "Cake dryness" }
+        }
+      },
+      "recovery": {
+        "badge": "RECOVERY",
+        "title": "Productive capacity back",
+        "description": "The space that crud occupied is now free for your process. And the trapped liquid—organic, aqueous, hydrocarbons—returns to circuit instead of going to disposal.",
+        "kpis": {
+          "liquid": { "value": "90%", "label": "Liquid recovered" },
+          "returns": { "value": "100%", "label": "Returns to process" }
+        }
+      }
+    },
+    "equipment": {
+      "title": "Equipment designed for operational precision",
+      "modular": {
+        "title": "Parallel Module Configuration",
+        "description": "Equipment can be installed as independent modules in parallel, enabling progressive scalability and accelerating plant stability. This configuration is economical with available space and allows external installation to minimize internal operational friction.",
+        "benefits": {
+          "scalability": { "title": "Unlimited scalability", "description": "Add all the equipment you need according to your operation" },
+          "external": { "title": "External installation", "description": "Without modifying existing plant infrastructure" },
+          "space": { "title": "Space efficiency", "description": "Optimizes available space with flexible configuration" }
+        }
+      }
+    },
+    "industries": {
+      "title": "Proven in multiple industries",
+      "description": "Mobile technology adapted to the specific needs of each sector",
+      "viewDetails": "View details",
+      "items": {
+        "copper": {
+          "name": "Copper",
+          "description": "SX crud filtration with 98% solids captured and 90% organic recovery"
+        },
+        "zinc": {
+          "name": "Zinc",
+          "description": "Abrasive solids filtration adapted to Zn densities and organic sensitivity"
+        },
+        "crudeOil": {
+          "name": "Crude Oil",
+          "description": "Tank sludge cleaning with 80% volume reduction and 90% HC recovery"
+        }
+      }
+    },
+    "caseStudy": {
+      "badge": "SUCCESS STORY",
+      "title": "ENAP reduced sludge volume by 85% and recovered valuable hydrocarbons",
+      "client": "ENAP Refinery",
+      "clientSubtitle": "Industrial sludge",
+      "metrics": {
+        "volume": { "value": "-85%", "label": "Sludge volume" },
+        "hc": { "value": "67%", "label": "HC recovered" },
+        "compliance": { "value": "100%", "label": "Environmental compliance" }
+      },
+      "description": "Treatment of phenolic sludge, tank T-2402 bottom and API separators. Massive volume reduction for disposal with recovery of high-value hydrocarbons that returned to process.",
+      "cta": "See more about petroleum"
+    },
+    "cta": {
+      "title": "Evaluate the results for your plant",
+      "description": "Free technical diagnosis. We quantify recoverable organic, volume reduction, and the impact on your circuit efficiency.",
+      "timeline": "In 48 hours we install the equipment. Visible results from day one of operation.",
+      "primaryCta": "Request Technical Evaluation",
+      "secondaryCta": "See Copper Case",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
+        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
+      }
+    }
+  },
+  "organicTreatmentService": {
+    "hero": {
+      "title": "Mobile equipment that keeps your",
+      "titleHighlight": "organic performing at peak",
+      "description": "Bypass filtration and treatment so your SX plant operates at maximum yield. Efficient extraction, stable production.",
+      "cta": "Request Evaluation"
+    },
+    "processSteps": {
+      "items": {
+        "continuousOperation": {
+          "title": "Continuous Operation",
+          "description": "Bypass configuration allows treatment without interrupting the SX/EW circuit, eliminating downtime losses and plant reconfiguration costs"
+        },
+        "highEfficiency": {
+          "title": "High Efficiency Filtration",
+          "description": "Mobile filter presses process lateral organic flow, removing suspended solids, clays, and precipitates that degrade the organic phase"
+        },
+        "solidLiquid": {
+          "title": "Solid-Liquid Separation",
+          "description": "Extraction of particulate contaminants prevents emulsification, crud, and organic entrainment that impact selectivity and transfer kinetics"
+        },
+        "purified": {
+          "title": "Purified Recirculation",
+          "description": "Clarified organic returns to circuit, maximizing reagent lifespan and maintaining optimal operational parameters in settlers"
+        }
+      }
+    },
+    "equipmentBenefits": {
+      "items": {
+        "corrosive": {
+          "title": "Highly corrosive environments",
+          "description": "Specialized materials and coatings for operating with acids, organic solvents, and high metal concentration solutions. Process contact components manufactured in polypropylene, HDPE, and special steels."
+        },
+        "mobile": {
+          "title": "100% Mobile",
+          "description": "Transportable equipment that arrives at your operation ready to run. No construction, no permanent civil works. Mounted on skids or trailers for quick relocation between process points."
+        },
+        "noPermits": {
+          "title": "No permit modifications",
+          "description": "Classified mobile equipment that doesn't require changes to environmental permits. Quick installation without bureaucratic procedures. Temporary operation that doesn't affect permanent infrastructure."
+        }
+      }
+    },
+    "keyBenefits": {
+      "title": "Results that impact your operation",
+      "items": {
+        "lifespan": {
+          "title": "Extended organic lifespan",
+          "description": "Continuous treatment that delays replacements and saves on new reagent."
+        },
+        "separation": {
+          "title": "Faster separation",
+          "description": "Clean organic separates faster and allows more cycles per hour."
+        },
+        "entrainment": {
+          "title": "Lower organic entrainment",
+          "description": "Less losses to aqueous phase and cleaner electrolyte for EW."
+        },
+        "crud": {
+          "title": "Less crud formation",
+          "description": "Fewer stable emulsions and less organic trapped in settlers."
+        }
+      }
+    },
+    "treatmentMethods": {
+      "title": "Two treatment methods",
+      "description": "Continuous prevention or intensive recovery. Choose based on your operational situation.",
+      "bypass": {
+        "title": "Bypass Treatment",
+        "subtitle": "Continuous operation without interruptions",
+        "description": "Bypass configuration that allows continuous treatment without stopping the SX/EW circuit. Lateral organic flow is processed 24/7 while the plant operates normally.",
+        "benefits": {
+          "noStops": "Zero plant shutdowns during treatment",
+          "tif": "Maintains TIF/TSF in specification permanently",
+          "prevention": "Prevents contaminant accumulation",
+          "ideal": "Ideal for continuous preventive operation"
+        },
+        "whenToUse": "When to use",
+        "whenToUseDesc": "Continuous prevention, organic quality maintenance, operations that cannot stop"
+      },
+      "batch": {
+        "title": "Batch Processing",
+        "subtitle": "Intensive recovery of contaminated organic",
+        "description": "For organic already extracted to containers or crisis situations. Mobile filter presses process iterative batches on-site until reagent chemical specification is recovered.",
+        "benefits": {
+          "recovery": "Recovers severely degraded organic",
+          "intensive": "Intensive processing until spec is reached",
+          "avoidLoss": "Avoids total loss of contaminated reagent",
+          "emergency": "Ideal for emergencies and inventory recovery"
+        },
+        "whenToUse": "When to use",
+        "whenToUseDesc": "Contamination crisis, inventory recovery, out-of-spec organic"
+      }
+    },
+    "operationalSimplicity": {
+      "title": "Operational Simplicity",
+      "description": "Quick implementation without complexity. Mobile equipment that doesn't interrupt production.",
+      "stats": {
+        "specialists": {
+          "value": "24/7",
+          "title": "Tecionic Specialists",
+          "description": "Dedicated staff operates and maintains equipment at your operation"
+        },
+        "deployment": {
+          "value": "48h",
+          "title": "Rapid deployment",
+          "description": "Regional fleet ready to mobilize without waiting for fabrication"
+        },
+        "capex": {
+          "value": "$0",
+          "title": "Capital investment",
+          "description": "All-inclusive monthly lease. Opex, not Capex."
+        }
+      }
+    },
+    "equipment": {
+      "title": "Equipment designed for industrial operations",
+      "filterPressFleet": "Filter Press Fleet",
+      "lowCapacity": {
+        "label": "Low Capacity",
+        "capacity": "70 ton/day",
+        "capacityLabel": "Nominal capacity",
+        "features": {
+          "pilots": "Pilots and testing",
+          "lowVolume": "Low volume operations",
+          "preventive": "Preventive maintenance"
+        },
+        "cta": "Check availability"
+      },
+      "mediumCapacity": {
+        "label": "Medium Capacity",
+        "capacity": "130 ton/day",
+        "capacityLabel": "Nominal capacity",
+        "features": {
+          "standard": "Standard operations",
+          "continuous": "Continuous treatment",
+          "balance": "Cost-capacity balance"
+        },
+        "cta": "Check availability"
+      },
+      "highCapacity": {
+        "label": "High Capacity",
+        "capacity": "400 ton/day",
+        "capacityLabel": "Nominal capacity",
+        "features": {
+          "highProduction": "High production",
+          "largeScale": "Large scale operations",
+          "continuous247": "Continuous 24/7 flow"
+        },
+        "cta": "Check availability"
+      },
+      "parallelScaling": {
+        "title": "Unlimited parallel scaling",
+        "description": "Need more capacity? We install additional units in parallel to multiply treatment flow. Each unit operates independently, allowing maintenance without stopping the complete operation."
+      }
+    },
+    "technologies": {
+      "title": "Three proven technologies",
+      "description": "From continuous prevention to emergency recovery",
+      "activatedClay": {
+        "badge": "Low TIF / High Delta TIF",
+        "title": "Activated Clay",
+        "description": "Restores interfacial tension by eliminating surfactant compounds formed by oxidative degradation",
+        "benefits": {
+          "tif": "TIF <21 to >23 dynes/cm in 24-48h",
+          "dosage": "Dosing 5-10 kg/m³ based on severity",
+          "selective": "Selective adsorption without affecting extractant"
+        },
+        "mechanism": "Mechanism:",
+        "mechanismDesc": "Activated montmorillonite adsorbs surfactant compounds, restoring physicochemical properties without affecting extractant or diluent.",
+        "metrics": {
+          "tifImprovement": { "value": "+16%", "label": "TIF: 20.4 → 23.7" },
+          "deltaTif": { "value": "-50%", "label": "Delta TIF: >6 → ~3" }
+        }
+      },
+      "crudRecovery": {
+        "badge": "High entrainment / Emulsions",
+        "title": "Crud Recovery",
+        "description": "Three-phase Tricanter® centrifuge separates organic, aqueous and solids from stabilized emulsions",
+        "benefits": {
+          "recovery": "95% organic recovered (crud >50% org)",
+          "capacity": "Up to 15 m³/hour capacity",
+          "payback": "Typical payback 4 months on organic alone"
+        },
+        "separation": "3-phase separation:",
+        "separationDesc": "Clean organic → returns to circuit | Aqueous → refinery or disposal | Solids → final disposal.",
+        "metrics": {
+          "entrainment": { "value": "-52%", "label": "Entrainment: 6 → 2.9 m³/day" },
+          "savings": { "value": "$260K", "label": "Monthly savings USD" }
+        }
+      },
+      "continuousDialysis": {
+        "badge": "High TSF / Viscosity",
+        "title": "Continuous Dialysis",
+        "description": "24/7 bypass filter press removes fine solids that stabilize emulsions and crud",
+        "benefits": {
+          "flow": "1200-1500L treats 5-10% flow in bypass",
+          "stops": "From 3-4 shutdowns/year to zero",
+          "spec": "Maintains TIF/TSF in spec without emergencies"
+        },
+        "mode": "Preventive mode:",
+        "modeDesc": "Continuous removal of fine solids <10 microns that stabilize emulsions, preventing cumulative degradation.",
+        "metrics": {
+          "tsf": { "value": "-65%", "label": "TSF: 444s → 153s" },
+          "stops": { "value": "0", "label": "Shutdowns/year" }
+        }
+      }
+    },
+    "industries": {
+      "title": "Proven in multiple industries",
+      "description": "Mobile technology adapted to the specific needs of each sector",
+      "viewDetails": "View details",
+      "items": {
+        "copper": {
+          "name": "Copper",
+          "description": "Organic treatment, crud filtration, EW cleaning"
+        },
+        "potassium": {
+          "name": "Potassium",
+          "description": "Mineral salts and environmental compliance"
+        },
+        "lithium": {
+          "name": "Lithium",
+          "description": "Brine treatment and fine solids"
+        }
+      }
+    },
+    "caseStudy": {
+      "badge": "SUCCESS STORY",
+      "title": "SX plant recovered operational stability and saved $3.1M annually",
+      "client": "Copper SX Plant",
+      "clientCapacity": "50,000 t Cu/year",
+      "metrics": {
+        "entrainment": { "value": "-52%", "label": "Organic entrainment" },
+        "separation": { "value": "-66%", "label": "Separation time" },
+        "savings": { "value": "$260K", "label": "Monthly savings" }
+      },
+      "description": "An SX plant with critical degraded organic problems achieved optimal parameter recovery in 18 months with integrated clay, centrifuge, and filter press treatment.",
+      "cta": "View full case"
+    },
+    "businessModels": {
+      "title": "Risk-free pilot, scale based on results",
+      "description": "Test with shared fleet equipment. Validate ROI. Scale to dedicated capacity when you have confidence.",
+      "preventive": {
+        "title": "Preventive Maintenance",
+        "subtitle": "24/7 dialysis maintains quality without emergencies",
+        "benefits": {
+          "bypass": "Mobile filter press in continuous 24/7 bypass",
+          "monitoring": "Weekly TIF/TSF/entrainment monitoring",
+          "scheduled": "Scheduled clay by calendar",
+          "included": "Operation, maintenance and consumables included"
+        },
+        "result": "Result",
+        "resultValue": "0",
+        "resultLabel": "shutdowns/year",
+        "resultDesc": "Ideal for plants seeking operational stability. Immediate ROI in avoiding shutdown losses."
+      },
+      "crisis": {
+        "title": "Emergency Response",
+        "subtitle": "Restores critical parameters in 2-4 weeks",
+        "benefits": {
+          "mobilization": "Fleet mobilization in 48-72 hours",
+          "intensive": "Intensive treatment with activated clay",
+          "accelerated": "Accelerated dialysis until recovery",
+          "daily": "Daily monitoring of critical parameters"
+        },
+        "result": "Typical restoration",
+        "resultValue": "2-4",
+        "resultLabel": "weeks",
+        "resultDesc": "For plants with TIF <18 dynes/cm or TSF >300s. Can then continue with preventive mode."
+      },
+      "pilot": {
+        "title": "Proven Scalability",
+        "subtitle": "Start small, validate ROI, scale with confidence",
+        "steps": {
+          "pilot": {
+            "title": "Pilot",
+            "features": {
+              "unit": "1 shared fleet unit",
+              "test": "2-3 month test",
+              "validate": "Validate ROI"
+            }
+          },
+          "standard": {
+            "title": "Standard Operation",
+            "features": {
+              "regional": "Assigned regional equipment",
+              "monthly": "Flexible monthly lease",
+              "noCapex": "No CAPEX"
+            }
+          },
+          "dedicated": {
+            "title": "Dedicated Capacity",
+            "features": {
+              "highCapacity": "High capacity equipment",
+              "longTerm": "Long-term contract",
+              "partnership": "Strategic partnership"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Evaluate the solution for your plant",
+      "description": "Send us samples of your organic (2L sufficient) for complete analysis: TIF, TSF, viscosity, density, aqueous content, and treatability evaluation",
+      "timeline": "In 5 business days you receive complete technical diagnosis, treatment recommendation, results estimate, and economic proposal without CAPEX",
+      "primaryCta": "Request Technical Evaluation",
+      "secondaryCta": "Download Full Case",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
+        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
+      }
+    }
+  },
+  "concentrateDehydrationService": {
+    "hero": {
+      "title": "Recover value with",
+      "titleHighlight": "high-pressure dehydration",
+      "description": "Less water means more useful product. Meet commercial specifications, reduce transportation costs, and recover value from your concentrates and sludges with high-pressure mobile filter presses.",
+      "cta": "Request Evaluation"
+    },
+    "equipmentBenefits": {
+      "items": {
+        "mobile": {
+          "title": "Mobile and compact",
+          "description": "Only 35 m² operational footprint. No civil works, no construction permits. Installs where you have space and relocates when operations change."
+        },
+        "complete": {
+          "title": "Complete integrated equipment",
+          "description": "Peristaltic pump, diaphragm pumps, calibrated flowmeter, plates, cloths and critical spare parts included. No coordinating vendors or separate purchase orders."
+        },
+        "noPermits": {
+          "title": "Temporary installation without permits",
+          "description": "No civil works, no permanent modifications to your plant, no regulatory risk. Installs, operates for the required time, and removes when service ends."
+        }
+      }
+    },
+    "themeContent": {
+      "costs": {
+        "label": "Costs",
+        "title": "More efficient transport, without avoidable losses",
+        "description": "Dehydrated concentrate is lighter concentrate. Less water means less dead weight in every truck and shipment, reducing cost per ton of metal transported."
+      },
+      "compliance": {
+        "label": "Compliance",
+        "title": "Specifications met, risks mitigated",
+        "description": "Achieving correct moisture isn't just meeting a number. It's preventing the ship from rejecting your cargo, the thickener saturating during maintenance, or a client renegotiating a contract."
+      }
+    },
+    "operationalSimplicity": {
+      "title": "Operational Simplicity",
+      "description": "Quick implementation without complexity. Mobile equipment that doesn't interrupt production.",
+      "stats": {
+        "specialists": {
+          "value": "24/7",
+          "title": "Tecionic Specialists",
+          "description": "Dedicated staff operates and maintains equipment at your operation"
+        },
+        "deployment": {
+          "value": "48h",
+          "title": "Rapid deployment",
+          "description": "Regional fleet ready to mobilize without waiting for fabrication"
+        },
+        "capex": {
+          "value": "$0",
+          "title": "Capital investment",
+          "description": "All-inclusive monthly lease. Opex, not Capex."
+        }
+      }
+    },
+    "equipment": {
+      "title": "Equipment designed for industrial operations",
+      "filterPressFleet": "Filter Press Fleet",
+      "lowCapacity": {
+        "label": "Low Capacity",
+        "capacity": "70 ton/day",
+        "capacityLabel": "Nominal capacity",
+        "features": {
+          "pilots": "Pilots and testing",
+          "lowVolume": "Low volume operations",
+          "preventive": "Preventive maintenance"
+        },
+        "cta": "Check availability"
+      },
+      "mediumCapacity": {
+        "label": "Medium Capacity",
+        "capacity": "130 ton/day",
+        "capacityLabel": "Nominal capacity",
+        "features": {
+          "standard": "Standard operations",
+          "continuous": "Continuous treatment",
+          "balance": "Cost-capacity balance"
+        },
+        "cta": "Check availability"
+      },
+      "highCapacity": {
+        "label": "High Capacity",
+        "capacity": "400 ton/day",
+        "capacityLabel": "Nominal capacity",
+        "features": {
+          "highProduction": "High production",
+          "largeScale": "Large scale operations",
+          "continuous247": "Continuous 24/7 flow"
+        },
+        "cta": "Check availability"
+      },
+      "parallelScaling": {
+        "title": "Unlimited parallel scaling",
+        "description": "Need more capacity? We install additional units in parallel to multiply treatment flow."
+      }
+    },
+    "industries": {
+      "title": "Proven in multiple industries",
+      "description": "Mobile technology adapted to the specific needs of each sector",
+      "viewDetails": "View details",
+      "items": {
+        "copper": {
+          "name": "Copper",
+          "description": "Copper concentrates, tailings and sludges"
+        },
+        "zinc": {
+          "name": "Zinc",
+          "description": "Zinc concentrates and process sludges"
+        },
+        "lithium": {
+          "name": "Lithium",
+          "description": "Lithium precipitates and brines"
+        }
+      }
+    },
+    "cta": {
+      "title": "Evaluate the solution for your plant",
+      "description": "Send us samples of your concentrate for complete filterability analysis and results estimate",
+      "timeline": "In 5 business days you receive complete technical diagnosis, treatment recommendation, results estimate, and economic proposal without CAPEX",
+      "primaryCta": "Request Technical Evaluation",
+      "secondaryCta": "Download Full Case",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
+        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
+      }
+    }
+  },
+  "fineSolidsService": {
+    "hero": {
+      "title": "Protect your plant by",
+      "titleHighlight": "removing fine solids",
+      "titleSuffix": "from your process liquids",
+      "description": "Extract accumulated solids from your systems without stopping production or losing solution. Mobile equipment that connects directly to ponds, settlers, and tanks while your plant keeps operating.",
+      "cta": "Request Evaluation"
+    },
+    "keyBenefits": {
+      "title": "Results that impact your operation",
+      "items": {
+        "plantInSpec": {
+          "title": "Plant operating in specification",
+          "description": "Without solids accumulation that reduces capacity or moves your systems outside optimal parameters."
+        },
+        "componentLife": {
+          "title": "Extended component lifespan",
+          "description": "Pumps, valves, and plant equipment last longer when operating without abrasion from solids."
+        },
+        "noInvasive": {
+          "title": "No invasive maintenance",
+          "description": "Forget about excavators, drain-downs, and risks of damage to liners or membranes."
+        },
+        "avoidMembranes": {
+          "title": "Avoid membrane replacements",
+          "description": "No unnecessary membrane replacements damaged by aggressive cleaning with excavators."
+        }
+      }
+    },
+    "inCircuitOperation": {
+      "title": "Operation without stopping your plant",
+      "description": "Our equipment suctions from the bottom of ponds, settlers, or tanks while your circuit keeps producing. Fine solids are filtered and clean solution returns directly to the system.",
+      "features": {
+        "closedLoop": {
+          "title": "Closed loop",
+          "description": "Suction from bottom, filtration, return of clean solution. Zero loss of valuable liquid."
+        },
+        "noExcavators": {
+          "title": "No excavators or drain-downs",
+          "description": "Forget about draining ponds, using shovels, or risking damage to membranes and liners."
+        },
+        "continuousProduction": {
+          "title": "Continuous production",
+          "description": "Ponds and settlers keep operating while we extract accumulated solids."
+        }
+      }
+    },
+    "operationalSimplicity": {
+      "title": "Operational Simplicity",
+      "description": "Fast implementation without complexity. Mobile equipment that doesn't interrupt production.",
+      "stats": {
+        "specialists": {
+          "value": "24/7",
+          "title": "Tecionic Specialists",
+          "description": "Dedicated personnel operate and maintain equipment at your operation"
+        },
+        "deployment": {
+          "value": "48h",
+          "title": "Fast deployment",
+          "description": "Regional fleet ready to mobilize without waiting for manufacturing"
+        },
+        "capex": {
+          "value": "$0",
+          "title": "Capital investment",
+          "description": "Monthly rental all-inclusive. Opex, not Capex."
+        }
+      }
+    },
+    "dehydrationBenefits": {
+      "title": "Stop paying to dispose of water",
+      "description": "Wet sludge is 70-80% water. When you send it for disposal, you're paying for trucks, transport, and landfill fees to throw away water. Filter presses remove that water before disposal. You reduce volume to a fraction and pay only for actual solids.",
+      "statValue": "70%",
+      "statLabel": "less",
+      "statDescription": "volume to dispose"
+    },
+    "equipmentBenefits": {
+      "title": "Equipment designed for the challenge",
+      "items": {
+        "exProof": {
+          "title": "Ex-Proof Classification",
+          "description": "Equipment with ex.proof classification to operate in explosive environments. Pumps, panels, and suction systems designed to work safely in petroleum and derivative tanks."
+        },
+        "mobile": {
+          "title": "Small footprint and 100% mobile",
+          "description": "Compact equipment that positions next to ponds, settlers, or tanks without requiring civil works. Installation in less than 48 hours and quick relocation between extraction points. Without modifying your existing infrastructure."
+        },
+        "flexibility": {
+          "title": "Pumping flexibility",
+          "description": "Submersible, diaphragm, or peristaltic pumps depending on application. We select the optimal suction system for each type of solid and tank condition."
+        }
+      }
+    },
+    "industries": {
+      "title": "Proven in multiple industries",
+      "description": "Mobile technology adapted to the specific needs of each sector",
+      "viewDetails": "View details",
+      "consult": "Consult",
+      "items": {
+        "copper": {
+          "name": "Copper",
+          "description": "SX settlers cleaning, PLS/ILS ponds"
+        },
+        "gold": {
+          "name": "Gold",
+          "description": "Sedimentation and clarification ponds"
+        },
+        "lithium": {
+          "name": "Lithium",
+          "description": "DLE membrane protection, brines"
+        },
+        "potassium": {
+          "name": "Potassium",
+          "description": "Mineral salts and evaporation ponds"
+        },
+        "zinc": {
+          "name": "Zinc",
+          "description": "Electrolyte purification and settlers"
+        },
+        "oil": {
+          "name": "Petroleum",
+          "description": "Tanks with ATEX certified equipment"
+        }
+      }
+    },
+    "caseStudy": {
+      "badge": "SUCCESS STORY",
+      "title": "Iodide plant maintains operational continuity without stoppages",
+      "client": "Iodide SX Plant",
+      "location": "N. Victoria and TEA",
+      "metrics": {
+        "stoppages": {
+          "value": "0",
+          "label": "Stoppages/year"
+        },
+        "monitoring": {
+          "value": "24/7",
+          "label": "Turbidity monitoring"
+        },
+        "capacity": {
+          "value": "+15%",
+          "label": "Filtration capacity"
+        }
+      },
+      "description": "Continuous solids removal from extraction stages E1 to coalescers. Iodide arrives clean to final filtration, increasing process capacity and eliminating stoppages due to accumulation.",
+      "cta": "View full case"
+    },
+    "serviceModels": {
+      "title": "Service according to your need",
+      "description": "From emergency response to continuous preventive maintenance",
+      "emergencia": {
+        "title": "Deep Spot Cleaning",
+        "subtitle": "Intensive extraction of accumulated solids",
+        "features": [
+          "Equipment mobilization in 48-72 hours",
+          "Suction from pond and settler bottoms",
+          "Dewatering with filter presses included",
+          "Without stopping your production circuit"
+        ],
+        "durationLabel": "Typical duration",
+        "durationValue": "2-6",
+        "durationUnit": "weeks",
+        "durationDescription": "Ideal when you need to recover capacity from your ponds or settlers before a scheduled shutdown."
+      },
+      "preventivo": {
+        "title": "Scheduled Maintenance",
+        "subtitle": "Quarterly or semi-annual campaigns",
+        "features": [
+          "Calendar agreed according to your operation",
+          "Preventive extraction before critical accumulation",
+          "Solids level monitoring included",
+          "Price per campaign with results guarantee"
+        ],
+        "resultLabel": "Result",
+        "resultValue": "0",
+        "resultUnit": "emergencies/year",
+        "resultDescription": "Keep your equipment in specification without surprises. Plan your costs with certainty."
+      },
+      "continuo": {
+        "title": "How It Works",
+        "subtitle": "Three steps to get started",
+        "steps": {
+          "evaluation": {
+            "number": "1",
+            "title": "Evaluation",
+            "items": ["Analysis of your circuit", "Solids characterization", "Sizing"]
+          },
+          "installation": {
+            "number": "2",
+            "title": "Installation",
+            "items": ["Equipment assigned 24/7", "Tecionic operators", "No CAPEX"]
+          },
+          "operation": {
+            "number": "3",
+            "title": "Operation",
+            "items": ["Permanent extraction", "Monthly rental", "Flexible scaling"]
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Evaluate the solution for your plant",
+      "description": "Tell us about your application: type of solids, estimated volume, and access conditions. We evaluate technical feasibility at no cost.",
+      "timeline": "In 48 hours you receive technical proposal with required capacity, equipment configuration, and recommended service model.",
+      "primaryCta": "Request Technical Evaluation",
+      "secondaryCta": "Download Full Case",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
+        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
+      }
+    }
+  },
+  "ewCleaningService": {
+    "hero": {
+      "title": "Improve your cathode quality",
+      "titleHighlight": "without stopping production",
+      "description": "EW cell cleaning with mobile equipment that operates cell by cell while your tankhouse keeps producing. Pneumatic suction and in-situ filtration system that returns electrolyte to the circuit with less than 3 ppm solids.",
+      "cta": "Request Evaluation",
+      "imageAlt": "Tecionic EW cell cleaning system in operation"
+    },
+    "keyBenefits": {
+      "title": "Results that impact your operation",
+      "items": {
+        "zeroLoss": {
+          "title": "Zero electrolyte loss",
+          "description": "Closed system that returns 100% of filtered electrolyte with less than 3 ppm solids."
+        },
+        "energySaving": {
+          "title": "Lower energy consumption",
+          "description": "Elimination of deposits causing short circuits reduces electrical expense per ton."
+        },
+        "quality": {
+          "title": "Assured cathode quality",
+          "description": "Total elimination of crud causing cathode contamination."
+        },
+        "anodeLife": {
+          "title": "Extended anode lifespan",
+          "description": "Less crud accumulation reduces wear and extends replacement cycles."
+        }
+      }
+    },
+    "operationalContinuity": {
+      "title": "Cleaning without interrupting your operation",
+      "description": "Our mobile system operates cell by cell while the rest of your tankhouse keeps producing.",
+      "convenienceLabel": "Tecionic Convenience",
+      "heroCard": {
+        "title": "Only 100-200L outside the cell",
+        "description": "Although we suction at 6 m³/hour, the continuous return system keeps only 100-200 liters outside at any moment.",
+        "stats": {
+          "suction": { "value": "6 m³/h", "label": "Suction" },
+          "outOfCell": { "value": "100-200L", "label": "Outside cell" },
+          "return": { "value": "<3 ppm", "label": "Return" }
+        }
+      },
+      "zeroLossCard": {
+        "title": "Zero electrolyte loss",
+        "description": "All suctioned electrolyte returns filtered to the circuit. No level variation.",
+        "statValue": "0%",
+        "statLabel": "Loss"
+      },
+      "peristalticPump": {
+        "title": "Peristaltic pump",
+        "description": "Higher efficiency suctioning heavy lead. No crud backflow when shutting off.",
+        "imageAlt": "Peristaltic pump for crud suction in EW cells"
+      },
+      "cellsPerShift": {
+        "value": "2-3",
+        "label": "Cells per shift",
+        "sublabel": "12 hours of continuous operation"
+      },
+      "mobileFiltration": {
+        "title": "Mobile filtration",
+        "description": "Immediate return to circuit. Dewatered crud.",
+        "imageAlt": "Mobile filter presses for electrolyte"
+      }
+    },
+    "operationalSimplicity": {
+      "title": "Operational Simplicity",
+      "description": "Fast implementation without complexity. Mobile equipment that arrives operational to your site.",
+      "stats": {
+        "specialists": {
+          "value": "24/7",
+          "title": "Tecionic Specialists",
+          "description": "Certified personnel operate and maintain equipment at your site"
+        },
+        "deployment": {
+          "value": "48h",
+          "title": "Fast deployment",
+          "description": "Regional fleet ready to mobilize without waiting for manufacturing"
+        },
+        "capex": {
+          "value": "$0",
+          "title": "Capital investment",
+          "description": "Monthly service all-inclusive. Opex, not Capex."
+        }
+      }
+    },
+    "safety": {
+      "title": "Safety without compromise",
+      "description": "We eliminate the inherent risks of traditional EW cell cleaning.",
+      "cards": {
+        "confinedSpace": {
+          "title": "No confined spaces",
+          "description": "Our system operates from outside the cell. Operators never need to enter confined spaces.",
+          "features": ["No lead oxide exposure", "No special permits"]
+        },
+        "acidExposure": {
+          "title": "No acid exposure",
+          "description": "Closed suction and filtration system eliminates direct contact with corrosive solutions.",
+          "features": ["Zero chemical burns", "Complies with safety regulations"]
+        },
+        "certifications": {
+          "title": "Certified protocols",
+          "description": "We operate under the highest safety standards required by the mining industry.",
+          "features": ["SG-SSSC Protocol", "\"Life-Saving Rules\""]
+        }
+      },
+      "trackRecord": {
+        "title": "Zero safety incidents",
+        "description": "In our complete crud removal operation at over 4,000 meters altitude, we maintained a zero incident rate throughout the entire contract execution."
+      }
+    },
+    "equipmentBenefits": {
+      "title": "Guaranteed performance at any site",
+      "items": {
+        "altitude": {
+          "title": "Extreme altitude operation",
+          "description": "Pumps, filter presses, and control panels certified to operate above 4,000 meters altitude. Auxiliary systems designed for high-altitude conditions, with updated preventive maintenance."
+        },
+        "mobile": {
+          "title": "100% Mobile",
+          "description": "Equipment that installs directly on the tankhouse grating, next to the cells. No civil works, no permanent construction. Quick relocation between tankhouse sectors."
+        },
+        "antistatic": {
+          "title": "Antistatic hoses",
+          "description": "2-3 inch suction lines with antistatic certification for safe work in energized cell environments. No spark or electrical contact risk."
+        }
+      }
+    },
+    "industries": {
+      "title": "Industries we serve",
+      "description": "Specialized crud removal service for electrowinning tankhouses",
+      "viewDetails": "View details",
+      "items": {
+        "copper": {
+          "name": "Copper",
+          "description": "EW cell crud removal, lead crud filtration"
+        },
+        "zinc": {
+          "name": "Zinc",
+          "description": "Zinc EW cell cleaning, sludge removal"
+        }
+      }
+    },
+    "caseStudy": {
+      "badge": "SUCCESS STORY",
+      "title": "Caserones maintained LME quality with crud removal at 4,000+ meters",
+      "client": "SCM Lumina Copper",
+      "location": "4,200 meters altitude",
+      "imageAlt": "Caserones electrowinning tankhouse",
+      "metrics": {
+        "removal": { "value": "100%", "label": "Deposit removal" },
+        "incidents": { "value": "0", "label": "Safety incidents" },
+        "quality": { "value": "LME", "label": "Quality maintained" }
+      },
+      "description": "Lead crud accumulation was causing cathode contamination at over 4,000 meters altitude. We implemented comprehensive 7x7 service with mobile equipment adapted for altitude and autonomous container-warehouses, achieving 1 cell per day without interrupting production.",
+      "cta": "View full case"
+    },
+    "pilotProgram": {
+      "title": "Risk-free pilot, scale based on results",
+      "description": "We validate system feasibility in your tankhouse before major commitments. Variables resolved through on-site piloting.",
+      "cards": {
+        "validation": {
+          "title": "Field Validation",
+          "subtitle": "We test the system in your cells before commitments",
+          "features": [
+            "We verify suction capacity from cell bottoms",
+            "We confirm effective filtration and dewatering",
+            "We measure return quality (<2-3 ppm solids)",
+            "95% efficiency vs manual operation proven"
+          ],
+          "highlight": {
+            "title": "No commitment",
+            "description": "The pilot resolves all technical variables specific to your tankhouse. We only scale when results convince you.",
+            "cta": "Test → Validate → Scale"
+          }
+        },
+        "traceability": {
+          "title": "Visual Control and Traceability",
+          "subtitle": "Complete documentation of each intervened cell",
+          "features": [
+            "Viewer on suction line - operators \"see\" efficiency in real time",
+            "Technical sheets with geotagged photos",
+            "Initial, process, and final state documented",
+            "Complete record of each cell for audits"
+          ],
+          "highlight": {
+            "title": "Total transparency",
+            "description": "Each intervention is documented with date, time, responsible parties, initial/final state, and backup photos.",
+            "cta": "Client-validated reports"
+          }
+        },
+        "scalability": {
+          "title": "Proven Scalability",
+          "subtitle": "Start small, validate results, scale with confidence",
+          "steps": {
+            "pilot": {
+              "number": "1",
+              "title": "Pilot",
+              "items": ["Test on selected cells", "Variable validation", "No commitment"]
+            },
+            "contract": {
+              "number": "2",
+              "title": "Service Contract",
+              "items": ["Continuous cleaning program", "Dedicated equipment and operators", "No CAPEX"]
+            },
+            "capacity": {
+              "number": "3",
+              "title": "Dedicated Capacity",
+              "items": ["Exclusive fleet for your tankhouse", "Long-term contract", "Strategic partnership"]
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Improve your cathode quality",
+      "description": "We validate system feasibility through on-site piloting. No commitment, with measurable results in cathode quality.",
+      "timeline": "Turnkey service: equipment, certified operators, and waste management included. No CAPEX, no operational risk.",
+      "primaryCta": "Request Pilot",
+      "secondaryCta": "Talk to Sales",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
+        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
+      }
+    }
+  },
+  "copperIndustry": {
+    "loading": "Loading...",
+    "hero": {
+      "badge": "Copper Industry",
+      "title": "Mobile infrastructure for copper plants",
+      "subtitle": "Filtration, dewatering, treatment—everything you need for your hydrometallurgical or concentrator plant, without permanent investment.",
+      "imageAlt": "Tecionic mobile filter press",
+      "stats": {
+        "years": { "value": "20+", "label": "years" },
+        "capex": { "value": "$0", "label": "CAPEX" }
+      }
+    },
+    "stickyScroll": {
+      "title": "From fixed to mobile infrastructure",
+      "description": "Copper plants face continuous operational challenges: contaminated organic, crud in cells, wet concentrates, aqueous media with solids.",
+      "subdescription": "Traditionally each problem requires fixed equipment—millions in CAPEX, years of implementation. Tecionic changes this model completely.",
+      "traditional": {
+        "label": "Traditional model",
+        "items": {
+          "capex": {
+            "value": "$500K-$2M+",
+            "label": "CAPEX per system",
+            "description": "Permanent investment in fixed infrastructure. Capital tied up for decades."
+          },
+          "implementation": {
+            "value": "24+ months",
+            "label": "Implementation",
+            "description": "From engineering to operation. Plus modified environmental permits."
+          },
+          "maintenance": {
+            "value": "Complex",
+            "label": "Maintenance",
+            "description": "Expensive specialized maintenance. Scheduled shutdowns affect operational continuity."
+          },
+          "sizing": {
+            "value": "Rigid",
+            "label": "Fixed sizing",
+            "description": "Equipment poorly sized as ore grades evolve. Insufficient for tail-end or oversized at closure."
+          }
+        }
+      },
+      "tecionic": {
+        "label": "Tecionic mobile model",
+        "items": {
+          "capex": {
+            "value": "$0 CAPEX",
+            "label": "No upfront investment",
+            "description": "Predictable monthly opex. Capital free for strategic priorities."
+          },
+          "mobilization": {
+            "value": "0-2 weeks",
+            "label": "Mobilization",
+            "description": "Equipment arrives ready. No civil works. No environmental permit modifications."
+          },
+          "maintenance": {
+            "value": "Included",
+            "label": "Maintenance",
+            "description": "Preventive and corrective maintenance included in rate. Zero unplanned shutdowns."
+          },
+          "technology": {
+            "value": "Updated",
+            "label": "Renewed technology",
+            "description": "Fleet continuously renewed. Access to improvements without new investments."
+          },
+          "scalability": {
+            "value": "Scalable",
+            "label": "Flexible capacity",
+            "description": "Grows or reduces with demand. No sunk costs or idle equipment."
+          },
+          "operation": {
+            "value": "Operated",
+            "label": "Full service",
+            "description": "Continuous operation with specialized Tecionic personnel, daily KPIs, maintenance included. Guaranteed swap."
+          }
+        }
+      }
+    },
+    "whyTecionic": {
+      "badge": "Why Tecionic",
+      "title": "Strategic partner, not transactional supplier",
+      "subtitle": "We don't sell or rent equipment. We ensure operational continuity with a complete service model.",
+      "steps": {
+        "diagnosis": {
+          "number": "1",
+          "title": "Initial diagnosis",
+          "description": "Sample analysis and specific plant conditions. Custom solution design.",
+          "timeline": "2-3 weeks typically"
+        },
+        "setup": {
+          "number": "2",
+          "title": "Quick setup",
+          "description": "Mobile equipment arrives ready. No civil works, no environmental permit modifications.",
+          "timeline": "0-2 weeks mobilization"
+        },
+        "operation": {
+          "number": "3",
+          "title": "Continuous operation",
+          "description": "Specialized Tecionic personnel with maintenance and daily KPIs included. Guaranteed equipment swap.",
+          "timeline": "Continuity guarantee"
+        }
+      },
+      "keyDifference": {
+        "title": "Key difference",
+        "description": "If equipment requires major maintenance, we replace it. Your production doesn't stop while we repair. That's a strategic partner—not equipment rental.",
+        "benefits": [
+          "Specialized Tecionic operators",
+          "Daily KPIs (volume, efficiency, solids)",
+          "Equipment certified for explosive and corrosive environments",
+          "Preventive maintenance included"
+        ]
+      }
+    },
+    "services": {
+      "badge": "Services",
+      "title": "Everything you need for your hydrometallurgical or concentrator plant",
+      "subtitle": "Complete mobile fleet. No permanent installations, no environmental permit modifications.",
+      "cards": {
+        "organicTreatment": {
+          "title": "Organic Treatment SX",
+          "description": "Filtration, activated clay, centrifugation. Restores IFT, reduces TSF, reduces entrainment.",
+          "specs": ["IFT 20 → 24+ dynes/cm", "TSF -65% (444s → 153s)", "Entrainment reduction 50%"],
+          "validated": "VALIDATED",
+          "client": "CODELCO Norte • 20+ years"
+        },
+        "ewCleaning": {
+          "title": "EW Cell Cleaning",
+          "description": "Peristaltic suction + inline filtration. Clean return, no level loss.",
+          "specs": ["2-3 cells/shift 12h", "Return 2-3 ppm solids", "95% efficiency vs manual"],
+          "validated": "VALIDATED",
+          "client": "Mining Company Atacama Region • 4,200 masl"
+        },
+        "concentrateDehydration": {
+          "title": "Concentrate Dewatering",
+          "description": "High-capacity filter presses. Reduces moisture, optimizes transport.",
+          "specs": ["400 ton/day per unit", "Reduced moisture", "Scalable equipment"],
+          "validated": "CAPACITY",
+          "client": "Largest mobile fleet in Latin America"
+        },
+        "sxSludge": {
+          "title": "SX Crud Treatment",
+          "description": "Filtration from settlers, sumps, ponds. Organic recovery.",
+          "specs": ["Complete LOT cleaning", "Organic recovery"]
+        },
+        "waterClarification": {
+          "title": "Water Clarification",
+          "description": "Solids removal. Recirculation, environmental compliance.",
+          "specs": ["120 m³/day clarified", "Reduction >90%"]
+        },
+        "fineSolids": {
+          "title": "Fine Solids",
+          "description": "Specialized clarifier treatment. Difficult particles.",
+          "specs": ["14 ton/day fine solids", "Specialized filters"]
+        }
+      },
+      "backup": {
+        "badge": "PRODUCTION CONTINUITY",
+        "title": "Backup for Scheduled Maintenance",
+        "description": "Maintain production during planned shutdowns of your equipment. Mobile equipment operates while you perform major maintenance—zero production loss.",
+        "keyBenefits": {
+          "title": "Key benefits",
+          "items": ["Eliminates production losses", "De-risks maintenance schedules", "Without compromising equipment health"]
+        },
+        "rapidMobilization": {
+          "title": "Rapid mobilization",
+          "items": ["0-2 weeks deployment", "Immediate operation", "Removal at maintenance completion"]
+        }
+      }
+    },
+    "ewSection": {
+      "badge": "EW Cleaning",
+      "title": "Cell cleaning without stopping production",
+      "description": "Peristaltic suction from cell bottom. Inline filtration returns clean electrolyte. No level loss, no process interruption.",
+      "imageAlt": "EW cell cleaning",
+      "benefits": {
+        "cells": {
+          "title": "2-3 cells per shift",
+          "description": "95% efficiency vs manual cleaning"
+        },
+        "return": {
+          "title": "Return 2-3 ppm solids",
+          "description": "Zero electrolyte loss"
+        },
+        "altitude": {
+          "title": "Validated at 4,200 masl",
+          "description": "Mining Company Atacama Region - extreme conditions"
+        }
+      },
+      "cta": "View complete service"
+    },
+    "caseStudy": {
+      "badge": "Validated case",
+      "title": "CODELCO Norte: 20+ years of continuous validation",
+      "subtitle": "Organic SX treatment. Annual renewal through competitive bidding since 2016.",
+      "before": "Before",
+      "after": "After",
+      "metrics": {
+        "tif": { "label": "IFT", "before": "20.4", "beforeUnit": "dynes/cm", "after": "23.7", "afterUnit": "dynes/cm" },
+        "tsf": { "label": "TSF", "before": "444", "beforeUnit": "seconds", "after": "153", "afterUnit": "-65%" },
+        "entrainment": { "label": "Entrainment", "before": "6", "beforeUnit": "m³/day", "after": "2.9", "afterUnit": "-52%" },
+        "efficiency": { "label": "Efficiency", "before": "77-92%", "beforeUnit": "variable", "after": "92%+", "afterUnit": "stable" }
+      },
+      "economicImpact": {
+        "title": "Economic impact",
+        "monthly": { "value": "$260K", "label": "monthly savings" },
+        "annual": { "value": "$3.1M", "label": "annual savings" },
+        "avoided": { "value": "$12M+", "label": "replacement avoided" }
+      }
+    },
+    "mobileVsFixed": {
+      "badge": "Mobile model",
+      "title": "Why mobile equipment changes everything",
+      "traditional": {
+        "label": "Traditional model",
+        "items": [
+          { "metric": "$500K-$2M+", "label": "Initial CAPEX investment" },
+          { "metric": "24+ months", "label": "Installation time" },
+          { "metric": "Modified permit", "label": "Environmental permits" },
+          { "metric": "Fixed sizing", "label": "Equipment becomes poorly sized" }
+        ]
+      },
+      "tecionic": {
+        "label": "Tecionic model",
+        "items": [
+          { "metric": "$0", "label": "No upfront investment" },
+          { "metric": "0-2 weeks", "label": "Rapid mobilization" },
+          { "metric": "No modification", "label": "Environmental permits intact" },
+          { "metric": "Always updated", "label": "Renewed fleet" }
+        ]
+      }
+    },
+    "cta": {
+      "title": "Technical diagnosis",
+      "description": "Send us samples. We'll give you an honest diagnosis—if it doesn't make sense, we'll tell you directly.",
+      "primaryCta": "Request diagnosis",
+      "secondaryCta": "Radomiro Tomic Case",
+      "contact": {
+        "title": "Contact",
+        "phone": "+56 2 2334 7087",
+        "email": "contacto@tsf.cl"
+      },
+      "coverage": {
+        "title": "Coverage",
+        "region": "All Latin America",
+        "description": "Mobile fleet available"
+      },
+      "clients": {
+        "title": "Clients",
+        "main": "CODELCO Norte, BHP",
+        "others": "Anglo American, Capstone, Antofagasta"
+      }
+    }
+  },
+  "zincIndustry": {
+    "loading": "Loading zinc data...",
+    "hero": {
+      "badge": "Zinc Industry",
+      "title": "Solid-liquid separation",
+      "titleHighlight": "for electrolytic zinc",
+      "subtitle": "Centralized smelters in Latin America process over 1.5M tons/year. Each stage of the electrolytic process generates critical filtration challenges.",
+      "stats": {
+        "peru": { "value": "1.47M", "label": "tons/year Peru" },
+        "cajamarquilla": { "value": "344K", "label": "Cajamarquilla cap." },
+        "electrolytic": { "value": "90%+", "label": "electrolytic process" }
+      },
+      "cta": "View process"
+    },
+    "processFlow": {
+      "badge": "Electrolytic Process",
+      "title": "Each stage generates",
+      "titleHighlight": "solid-liquid separation challenges",
+      "subtitle": "The electrolytic zinc process involves multiple critical points where TSF intervenes",
+      "steps": [
+        {
+          "step": "Leaching",
+          "number": "01",
+          "process": "Calcine + H₂SO₄ → ZnSO₄",
+          "challenge": "Leach residue (Pb, Ag, Fe) requires separation",
+          "tsf": "TSF filter presses dewater residue"
+        },
+        {
+          "step": "Iron Removal",
+          "number": "02",
+          "process": "Jarosite / Goethite",
+          "challenge": "Gelatinous precipitates difficult to filter",
+          "tsf": "TSF handles Goethite iron residues"
+        },
+        {
+          "step": "Electrowinning",
+          "number": "03",
+          "process": "ZnSO₄ → Zn cathode (99.99%)",
+          "challenge": "Cell sediment affects purity",
+          "tsf": "TSF pneumatic cleaning without shutdown"
+        }
+      ],
+      "labels": {
+        "challenge": "Challenge",
+        "solution": "TSF Solution"
+      },
+      "summary": {
+        "title": "3 of 5 stages",
+        "titleSuffix": "require specialized solid-liquid separation",
+        "description": "Smelters processing 300K+ tons/year cannot afford shutdowns or inefficiencies. TSF offers mobile solutions without CAPEX that intervene exactly where needed.",
+        "stats": {
+          "downtime": { "value": "0%", "label": "Production downtime" },
+          "capex": { "value": "$0", "label": "Initial CAPEX" },
+          "mobile": { "value": "100%", "label": "Mobile and flexible" }
+        }
+      }
+    },
+    "services": {
+      "badge": "TSF Solutions",
+      "title": "Mobile services for zinc smelters",
+      "subtitle": "Specialized filtration at every critical point of the electrolytic process. No CAPEX investment, no shutdowns.",
+      "cards": {
+        "leachResidue": {
+          "title": "Leach Residue Filtration",
+          "description": "Efficient separation of leach residue (Pb, Ag, Fe) with high-capacity mobile filter presses.",
+          "specs": ["Up to 70 tons/day cake", "Pb/Ag recovery", "High abrasion handling"],
+          "status": "APPLICABLE",
+          "statusLabel": "Validated technology"
+        },
+        "ewCleaning": {
+          "title": "Zinc EW Cell Cleaning",
+          "description": "Pneumatic cleaning with inline filtration. Maximum zinc electrolyte purity.",
+          "specs": ["No electrolyte loss", "Purity >99.99%", "No shutdowns"],
+          "status": "APPLICABLE",
+          "statusLabel": "Validated technology"
+        },
+        "concentrateDehydration": {
+          "title": "Concentrate Dewatering",
+          "description": "Mobile filter presses adapted for zinc concentrates with higher abrasiveness.",
+          "specs": ["Up to 70 tons/day cake", "Reinforced equipment", "High Zn abrasiveness"],
+          "status": "APPLICABLE",
+          "statusLabel": "Adaptable technology"
+        },
+        "jarositeGoethite": {
+          "title": "Jarosite/Goethite Residue Filtration",
+          "description": "Specialized handling of gelatinous iron precipitates, the biggest filtration challenge in electrolytic zinc.",
+          "specs": ["Up to 50 tons/day Fe residue", "Gelatinous phase handling", "Filtration optimization"],
+          "status": "CRITICAL",
+          "statusLabel": "Biggest zinc challenge"
+        },
+        "waterClarification": {
+          "title": "Water Clarification",
+          "description": "Solids removal from clarified water to meet environmental regulations.",
+          "specs": ["Up to 120 m³/day", "Environmental compliance", "Total mobility"],
+          "status": "APPLICABLE",
+          "statusLabel": "Multi-industry"
+        },
+        "fineSolids": {
+          "title": "Fine Solids Removal",
+          "description": "Fine solids treatment from clarifiers with zinc abrasiveness control.",
+          "specs": ["Up to 14 tons/day solids", "High abrasion equipment", "Clarifier protection"],
+          "status": "APPLICABLE",
+          "statusLabel": "Proven capacity"
+        }
+      }
+    },
+    "cajamarquilla": {
+      "badge": "REFERENCE OPERATION",
+      "title": "Cajamarquilla: The Scale of Electrolytic Zinc",
+      "description": "The Cajamarquilla refinery in Peru is the largest zinc smelter in the Americas (344K tons/year), processing concentrates from multiple mines. This centralized scale defines why mobile TSF is strategic.",
+      "challenges": {
+        "title": "Challenges at Scale",
+        "items": [
+          "Massive iron residue volumes (Jarosite/Goethite)",
+          "Multiple feeds with high variability",
+          "Scaled shutdown costs",
+          "Critical continuous operation"
+        ]
+      },
+      "advantages": {
+        "title": "Mobile TSF Advantages",
+        "items": [
+          "Scalable capacity per campaign",
+          "No $5M+ CAPEX on fixed filtration",
+          "Flexibility for variable feed",
+          "Maintenance without affecting production"
+        ]
+      },
+      "opportunity": {
+        "label": "TSF OPPORTUNITY",
+        "text": "TSF allows centralized smelters to optimize filtration without permanent CAPEX investment, adapting to feed variability and campaign volumes characteristic of electrolytic zinc."
+      }
+    },
+    "results": {
+      "badge": "Results",
+      "title": "Measurable improvements in electrolytic process",
+      "subtitle": "Standard operation comparison vs. optimization with specialized mobile TSF filtration",
+      "before": "Before",
+      "after": "After",
+      "metrics": {
+        "purity": { "label": "Zn Purity", "before": "99.90%", "beforeUnit": "cathodes", "after": "99.99%+", "afterUnit": "cathodes" },
+        "impurities": { "label": "Impurities", "before": "80", "beforeUnit": "ppm total", "after": "< 30", "afterUnit": "ppm total" },
+        "consumption": { "label": "Consumption", "before": "3.6", "beforeUnit": "kWh/kg Zn", "after": "3.1", "afterUnit": "kWh/kg Zn" },
+        "recovery": { "label": "Recovery", "before": "88%", "beforeUnit": "variable", "after": "95%+", "afterUnit": "consistent" }
+      },
+      "improvements": [
+        { "value": "+0.09%", "label": "additional purity" },
+        { "value": "-60%", "label": "total impurities" },
+        { "value": "-15%", "label": "EW energy" }
+      ]
+    },
+    "whyMobile": {
+      "badge": "TSF Model",
+      "title": "Why mobile at smelter scale?",
+      "reasons": [
+        {
+          "title": "Massive centralized volumes",
+          "description": "Smelters 300K+ tons/year process iron residues in volumes that justify specialized services"
+        },
+        {
+          "title": "Multiple feeds with high variability",
+          "description": "Concentrates from multiple mines require flexibility that fixed equipment doesn't provide"
+        },
+        {
+          "title": "Exponential shutdown costs",
+          "description": "At smelter scale, each hour stopped costs $50K+. Mobile allows maintenance without stopping production"
+        }
+      ],
+      "highlight": {
+        "value": "$0",
+        "label": "Initial CAPEX",
+        "comparison": "vs $5M-$15M fixed filtration at smelter scale",
+        "model": {
+          "title": "TSF Model at Scale",
+          "description": "Scalable capacity per campaign, specialized operators, TSF maintenance without stopping smelter"
+        }
+      }
+    },
+    "cta": {
+      "title": "Zinc operation in Latin America?",
+      "description": "We evaluate your electrolytic zinc smelter and design a mobile solution adapted to your scale and specific conditions",
+      "primaryCta": "Smelter technical evaluation",
+      "secondaryCta": "Smelter scale cases",
+      "contact": {
+        "email": { "label": "Email", "value": "contacto@tsf.cl" },
+        "phone": { "label": "Phone", "value": "+56 2 2334 7087" },
+        "location": { "label": "Location", "value": "Latin America" }
+      }
+    }
+  },
+  "crudeOilIndustry": {
+    "hero": {
+      "badge": "Refineries and Petroleum Terminals",
+      "title": "Transform your oily sludge into recoverable hydrocarbons",
+      "description": "We reduce up to 84% of tank sludge and bottom volume with certified mobile equipment, no CAPEX investment.",
+      "descriptionHighlight": "Recover valuable hydrocarbons while reducing disposal costs.",
+      "imageAlt": "Tecionic mobile filter press for refineries"
+    },
+    "challenge": {
+      "badge": "The Operational Challenge",
+      "title": "Tank sludge costs millions in losses",
+      "subtitle": "Accumulated oily sludge generates massive operational losses and increasing disposal costs",
+      "problems": {
+        "capacity": {
+          "value": "15-25%",
+          "title": "Storage capacity loss",
+          "description": "Accumulated sludge reduces effective tank capacity.",
+          "costLabel": "Cleaning cost",
+          "costValue": "$500K-$2M"
+        },
+        "hydrocarbons": {
+          "value": "60-75%",
+          "title": "Recoverable HC lost",
+          "description": "Valuable hydrocarbons in sludge are lost as waste.",
+          "costLabel": "Annual lost value",
+          "costValue": "$1M-$2M"
+        },
+        "disposal": {
+          "value": "$300-600",
+          "title": "Hazardous waste disposal",
+          "description": "Cost per ton for certified sludge disposal.",
+          "costLabel": "Typical annual cost",
+          "costValue": "$0.6-3M"
+        }
+      },
+      "industryScope": {
+        "title": "Magnitude of the sector challenge",
+        "subtitle": "Based on Latin American refinery analysis",
+        "stats": {
+          "waste": { "value": "4.5M+", "label": "kg of annual waste per typical refinery" },
+          "areas": { "value": "5", "label": "Critical areas of sludge generation" },
+          "recovery": { "value": "$2M+", "label": "Annual recovery potential per site" }
+        }
+      }
+    },
+    "capabilities": {
+      "badge": "Critical Capabilities",
+      "title": "Infrastructure that pays for itself",
+      "subtitle": "Four critical capabilities that transform your sludge from liability to valuable asset",
+      "zeroCAPEX": {
+        "label": "Financial Model",
+        "title": "$0 initial investment",
+        "description": "100% OPEX service. No equipment purchase, no permanent installations, no capital risk.",
+        "value": "$0",
+        "valueLabel": "CAPEX required"
+      },
+      "volumeReduction": {
+        "label": "Volume Reduction",
+        "title": "Up to 84% reduction",
+        "description": "Certified volume reduction of dewatered oily sludge.",
+        "value": "84%",
+        "valueLabel": "Proven in certified laboratory"
+      },
+      "speed": {
+        "label": "Speed",
+        "title": "48-hour deployment",
+        "description": "Certified mobile equipment ready to operate.",
+        "value": "2 days",
+        "valueLabel": "complete installation"
+      },
+      "compliance": {
+        "label": "Compliance",
+        "title": "Complete certification included",
+        "description": "All environmental permits, operational safety, and regulatory compliance guaranteed.",
+        "certifications": ["ISO Certified", "Environmental Compliance", "Maintenance Included"]
+      }
+    },
+    "labResults": {
+      "badge": "Technical Validation",
+      "title": "Technology validated for refinery sludge",
+      "subtitle": "Certified laboratory tests confirm effectiveness on multiple types of oily waste from the refining sector",
+      "tableTitle": "Certified test results",
+      "tableHeaders": {
+        "type": "Sludge type",
+        "initialMoisture": "Initial moisture",
+        "finalMoisture": "Final moisture",
+        "volumeReduction": "Volume reduction"
+      },
+      "rows": [
+        { "type": "Phenolic sludge", "initial": "92.59%", "final": "53%", "reduction": "84.23%" },
+        { "type": "Phenol sludge", "initial": "90.02%", "final": "56%", "reduction": "77.31%" },
+        { "type": "Process sludge (T-2402)", "initial": "70.37%", "final": "55.8%", "reduction": "32.96%" }
+      ],
+      "benefits": {
+        "validation": { "title": "Technical validation", "description": "Tests under real refinery conditions confirm process viability" },
+        "applications": { "title": "Multiple applications", "description": "Effective on phenolic, phenol and process sludge - comprehensive coverage" },
+        "certification": { "title": "Independent certification", "description": "Results validated by external specialized laboratory" }
+      }
+    },
+    "applications": {
+      "title": "Refinery applications",
+      "subtitle": "Mobile technology applicable at multiple critical points of oily sludge generation in petroleum refineries",
+      "areas": {
+        "coker": { "title": "Delayed Coker", "description": "Settling ponds with flows of 250-300 m³/hour generate high-density sludge with recoverable hydrocarbons", "cta": "→ Continuous filtration, no shutdown" },
+        "fcc": { "title": "FCC Wet Gas Scrubber", "description": "Clarification plants (14.4 m³/h) accumulate fine solids in recirculation requiring continuous purging", "cta": "→ Optimized clarification" },
+        "tanks": { "title": "Tank cleaning", "description": "Crude and product tanks accumulate bottom sludge with high hydrocarbon content", "cta": "→ Capacity recovery" },
+        "effluent": { "title": "Effluent treatment", "description": "Industrial treatment plants generate sludge with organic content requiring dewatering", "cta": "→ 70-84% volume reduction" },
+        "api": { "title": "API and DAF separators", "description": "API and DAF systems accumulate grease and floating solids that become hazardous waste", "cta": "→ Conversion to solid cake" },
+        "other": { "title": "Other applications", "description": "Desalters, process filters, equipment cleaning - any oily sludge generation point", "cta": "→ Comprehensive solution" }
+      }
+    },
+    "benefits": {
+      "sectionLabel": "Operational Benefits",
+      "title": "Benefits for the refining sector",
+      "subtitle": "Certified mobile technology transforms waste into recoverable assets",
+      "primary": {
+        "hcRecovery": {
+          "title": "Maximum HC recovery",
+          "tagline": "Capture value lost in sludge",
+          "items": [
+            { "highlight": "84% volume reduction", "text": "in dewatered oily sludge" },
+            { "highlight": "Recoverable hydrocarbons", "text": "return to process for monetization" },
+            { "highlight": "Continuous processing", "text": "without operation shutdown" }
+          ],
+          "metric": { "value": "$2M+", "label": "Annual recovery potential per site", "note": "Based on 4.5M+ kg waste/year × HC value" }
+        },
+        "costReduction": {
+          "title": "Disposal cost reduction",
+          "tagline": "Less waste = less spending",
+          "items": [
+            { "highlight": "Up to 84% reduction", "text": "in post-dewatering waste volume" },
+            { "highlight": "Dry solid cakes", "text": "with reduced moisture for economical disposal" },
+            { "highlight": "Environmental compliance", "text": "guaranteed with certified handling" }
+          ],
+          "metric": { "value": "$0.6-3M", "label": "Disposal cost reduction/year", "note": "84% less volume @ $300-600/ton" }
+        }
+      },
+      "secondary": {
+        "mobile": {
+          "title": "Mobile infrastructure without CAPEX",
+          "tagline": "Predictable OPEX model",
+          "description": "Mobile equipment includes filter presses, pumps and complete systems. No permanent refinery investment.",
+          "cta": "Deployment in 1-2 weeks"
+        },
+        "exproof": {
+          "title": "Explosion-proof certification",
+          "tagline": "Classified areas",
+          "description": "Equipment certified to operate in Class I, Div 1. Full regulatory compliance for refineries.",
+          "cta": "100% certified equipment"
+        }
+      }
+    },
+    "comparison": {
+      "title": "Fixed infrastructure vs certified mobile technology",
+      "subtitle": "Comparison of investment, implementation time and operational flexibility",
+      "traditional": {
+        "title": "Traditional Model",
+        "items": [
+          { "title": "$2M-$5M infrastructure CAPEX", "description": "Filters, pumps, civil works, installation" },
+          { "title": "6-12 months installation", "description": "Long wait before processing sludge" },
+          { "title": "Idle equipment between campaigns", "description": "Immobilized capital not generating value" },
+          { "title": "Own personnel + maintenance", "description": "Fixed OPEX + internal technical risk" }
+        ],
+        "total": { "label": "Typical total investment", "value": "$2M-$5M", "note": "CAPEX + installation + permits" }
+      },
+      "mobile": {
+        "title": "Mobile Technology",
+        "items": [
+          { "title": "Zero CAPEX for refinery", "description": "OPEX model covers equipment, operation and comprehensive maintenance" },
+          { "title": "1-2 weeks deployment", "description": "Quick start, immediate HC recovery" },
+          { "title": "Flexible and scalable capacity", "description": "Equipment adjustment per volume without additional CAPEX" },
+          { "title": "Specialized personnel included", "description": "24/7 operation with certified expertise, zero technical risk" }
+        ],
+        "total": { "label": "Client investment", "value": "$0", "note": "Capital available for core business" }
+      }
+    },
+    "cta": {
+      "title": "Recover value from your oily sludge",
+      "description": "Our engineers can evaluate your operation and design a mobile solution for maximum hydrocarbon recovery and minimum disposal costs",
+      "button": "Request technical evaluation"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "titleLine1": "About",
+      "titleLine2": "Tecionic",
+      "description": "With over 23 years of experience, we are the leading company in specialized filtration and sludge treatment services for leaching, solvent extraction, and electrowinning processes.",
+      "imageAlt": "TSF Industrial Equipment",
+      "metrics": {
+        "projects": { "value": "120+", "label": "Successful projects" },
+        "efficiency": { "value": "22%", "label": "Average improvement" }
+      }
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Ensure the continuity and efficiency of our clients' operations through mobile filtration and dewatering solutions that deliver value, sustainability, and safety."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "Become the leading strategic partner in Latin America for mobile solid-liquid separation technologies, expanding presence in copper, zinc, lithium, potassium, and crude oil sectors."
+    },
+    "stats": {
+      "title": "Results That Speak",
+      "subtitle": "Numbers that reflect our commitment and experience",
+      "items": {
+        "years": { "value": "23+", "label": "Years of Experience", "description": "In the mining market" },
+        "satisfaction": { "value": "100%", "label": "Client Satisfaction", "description": "Satisfaction rate" },
+        "projects": { "value": "120+", "label": "Successful Projects", "description": "Successfully delivered" },
+        "efficiency": { "value": "22%", "label": "Average Improvement", "description": "In operational efficiency" }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide our daily work",
+      "items": [
+        { "title": "Applied Innovation", "description": "We develop and implement technological solutions that generate real value for our clients." },
+        { "title": "Operational Safety", "description": "We prioritize safety in all our operations, protecting our team and clients." },
+        { "title": "Environmental Sustainability", "description": "Committed to solutions that contribute to environmental care and sustainable development." },
+        { "title": "Operational Flexibility", "description": "We adapt our mobile services to the specific needs of each operation." },
+        { "title": "Commitment to Clients and Collaborators", "description": "We build lasting relationships based on trust, transparency, and results." }
+      ]
+    },
+    "timeline": {
+      "title": "Our History",
+      "subtitle": "Over two decades building leadership in specialized services for the mining industry in Latin America",
+      "milestones": [
+        { "year": "2002", "title": "Company Foundation", "description": "Start of operations as a company specialized in services for the mining industry.", "metric": "Foundation" },
+        { "year": "2003", "title": "First EW Cell Cleaning Contract", "description": "Successful first EW cell cleaning contract, establishing our specialization in electrowinning.", "metric": "1st EW Contract" },
+        { "year": "2005", "title": "SX Services Expansion", "description": "Expansion to sludge filtration and organic treatment services in SX processes.", "metric": "SX Services" },
+        { "year": "2010", "title": "Chilean Market Leadership", "description": "Achieved presence in over 50% of the mining market in Chile.", "metric": ">50% Market" },
+        { "year": "2020", "title": "Expansion to Li and K", "description": "Diversification into the lithium and potassium market, expanding our service portfolio.", "metric": "Li & K" },
+        { "year": "2022", "title": "Expansion to Peru", "description": "Begins expansion to the Peruvian mining market while increasing presence in the Chilean market to over 70% of copper mining.", "metric": ">70% Cu Chile" },
+        { "year": "2025", "title": "Oil Refining Market", "description": "Expansion into the oil refining market, consolidating our presence in Latin America.", "metric": "Oil" }
+      ],
+      "completion": "Consolidating leadership in Latin America"
+    },
+    "cta": {
+      "title": "Ready to Work Together?",
+      "description": "Discover how our experience can optimize your mining operations.",
+      "contactButton": "Contact Now",
+      "servicesButton": "View Services"
+    }
+  },
+  "caseStudies": {
+    "hero": {
+      "label": "Case Studies",
+      "titleLine1": "Results that satisfy",
+      "titleLine2": "operations",
+      "description": "Verifiable metrics from real operations in mining and oil across Latin America."
+    },
+    "stats": [
+      { "value": "$3.1M", "label": "Documented savings" },
+      { "value": "84%", "label": "Maximum reduction" },
+      { "value": "8+", "label": "Years operating" },
+      { "value": "120+", "label": "Completed projects" }
+    ],
+    "grid": {
+      "label": "Projects",
+      "title": "Documented cases",
+      "readCase": "Read case"
+    },
+    "cases": [
+      {
+        "slug": "tratamiento-organico-sx",
+        "industry": "Copper",
+        "headlineMetric": "$3.1M",
+        "metricUnit": "USD",
+        "headlineLabel": "Annual savings",
+        "title": "SX circuit optimization through filtration and clay treatment",
+        "services": ["Filtration", "Clay"]
+      },
+      {
+        "slug": "enap-lodos-petroleros",
+        "industry": "Oil",
+        "headlineMetric": "84",
+        "metricUnit": "%",
+        "headlineLabel": "Volume reduction",
+        "title": "Oil sludge dewatering at refinery without capital investment",
+        "services": ["Filtration", "Dewatering"]
+      },
+      {
+        "slug": "deshidratacion-concentrados",
+        "industry": "Copper",
+        "headlineMetric": "$2.43M",
+        "metricUnit": "USD",
+        "headlineLabel": "Protected value",
+        "title": "Filtration backup during scheduled maintenance at Cerro Negro",
+        "services": ["Filtration", "Backup"]
+      },
+      {
+        "slug": "limpieza-celdas-ew",
+        "industry": "Copper",
+        "headlineMetric": "0",
+        "metricUnit": "",
+        "headlineLabel": "Incidents",
+        "title": "EW cell cleaning at high-altitude operation - Caserones",
+        "services": ["EW Cleaning", "Safety"]
+      },
+      {
+        "slug": "soporte-sx-dgm",
+        "industry": "Copper",
+        "headlineMetric": "8",
+        "metricUnit": "years",
+        "headlineLabel": "Continuous operation",
+        "title": "Continuous SX plant support for CODELCO - DGM",
+        "services": ["SX Filtration", "Support"]
+      },
+      {
+        "slug": "solidos-finos-yoduro",
+        "industry": "Chemical",
+        "headlineMetric": "100",
+        "metricUnit": "%",
+        "headlineLabel": "Operational continuity",
+        "title": "Fine solids filtration for iodide production",
+        "services": ["Fine solids", "Monitoring"]
+      }
+    ],
+    "featured": {
+      "label": "Featured Case",
+      "title": "Organic phase treatment in SX plant",
+      "description": "Over 18 months, we implemented a comprehensive filtration, clay treatment, and centrifugation system that transformed the operation of an SX plant with critical organic quality issues.",
+      "specs": [
+        { "label": "TSF", "before": "444s", "after": "153s", "change": "-66%" },
+        { "label": "IFT", "before": "20.4", "after": "23.7", "change": "+16%", "unit": "dynes/cm" },
+        { "label": "Overall efficiency", "value": "92.16%" }
+      ],
+      "button": "View full case",
+      "resultsLabel": "Key Results",
+      "results": [
+        { "value": "$3.1M", "label": "Annual savings", "unit": "USD" },
+        { "value": "52%", "label": "Entrainment reduction" },
+        { "value": "92%", "label": "Overall efficiency" },
+        { "value": "18", "label": "Months operation" }
+      ]
+    },
+    "clients": {
+      "title": "Companies that trust our solutions"
+    },
+    "cta": {
+      "title": "Ready to optimize your processes?",
+      "description": "Every operation is unique. We develop customized solutions that maximize the efficiency of your processes.",
+      "contactButton": "Request consultation",
+      "servicesButton": "View services"
+    }
+  },
+  "caseStudyDetail": {
+    "common": {
+      "breadcrumb": "Case Studies",
+      "caseStudyLabel": "Case Study",
+      "analysisLabel": "Analysis",
+      "implementationLabel": "Implementation",
+      "resultsLabel": "Results",
+      "summaryLabel": "Summary",
+      "challengeTitle": "The Challenge",
+      "solutionTitle": "The Solution",
+      "successMetrics": "Success Metrics",
+      "keyAchievements": "Key Achievements",
+      "beforeAfterComparison": "Before vs after treatment comparison",
+      "initialState": "Initial State",
+      "finalState": "Final State",
+      "economicImpact": "Economic Impact",
+      "annualSavingsProjected": "Projected Annual Savings",
+      "nextStep": "Next step",
+      "requestConsultation": "Request consultation",
+      "viewMoreCases": "View more cases",
+      "service": "Service",
+      "industry": "Industry",
+      "objective": "Objective",
+      "client": "Client",
+      "technicalValidation": "Technical Validation"
+    },
+    "tratamientoOrganicoSx": {
+      "title": "USD $3.1M",
+      "subtitle": "Annual Savings",
+      "headline": "Organic Phase Treatment in SX Plant",
+      "stats": [
+        { "value": "52%", "label": "Entrainment Reduction" },
+        { "value": "92%", "label": "Overall Efficiency" },
+        { "value": "18", "label": "Months Operation" }
+      ],
+      "overview": [
+        { "label": "Service", "value": "Filtration, centrifugation and clay treatment of organic phase" },
+        { "label": "Industry", "value": "Solvent Extraction (SX)" },
+        { "label": "Objective", "value": "Eliminate entrainment, stabilize organic phase and improve efficiency" }
+      ],
+      "challengeDescription": "During 2023 and 2024, the SX plant faced persistent problems with the physical-chemical quality of the organic",
+      "problems": [
+        { "title": "Organic Degradation", "description": "Accumulation of contaminants affecting phase separation", "metric": "PST: 444 sec", "status": "Critical" },
+        { "title": "Excessive Entrainment", "description": "Significant copper losses in raffinate due to organic entrainment", "metric": "IFT: 20.4 d/cm", "status": "High" },
+        { "title": "Reduced Efficiency", "description": "Direct impact on copper recovery and operational costs", "metric": "Eff: <85%", "status": "Impactful" }
+      ],
+      "solutionDescription": "Comprehensive treatment system focused on three main stages",
+      "solutions": [
+        { "step": "01", "title": "Organic Filtration", "description": "Removal of fine solids and particles that degrade the organic phase using specialized filters.", "specs": ["Cartridge filters", "5-10 microns", "Continuous flow"] },
+        { "step": "02", "title": "Clay Treatment", "description": "Adsorption of polar and degraded compounds using activated clay in contact columns.", "specs": ["Activated clay", "Optimal contact time", "In-situ regeneration"] },
+        { "step": "03", "title": "Final Centrifugation", "description": "Separation of sludge and residual emulsions to deliver high-quality organic.", "specs": ["Disc centrifuge", "High speed", "Continuous monitoring"] }
+      ],
+      "beforeMetrics": [
+        { "label": "PST (Phase Separation Time)", "value": "444", "unit": "sec" },
+        { "label": "IFT (Interfacial Tension)", "value": "20.4", "unit": "d/cm" },
+        { "label": "Overall Efficiency", "value": "84", "unit": "%" },
+        { "label": "Organic Entrainment", "value": "High", "unit": "" }
+      ],
+      "afterMetrics": [
+        { "label": "PST (Phase Separation Time)", "value": "153", "unit": "sec", "improvement": "-66%" },
+        { "label": "IFT (Interfacial Tension)", "value": "23.7", "unit": "d/cm", "improvement": "+16%" },
+        { "label": "Overall Efficiency", "value": "92", "unit": "%", "improvement": "+8%" },
+        { "label": "Organic Entrainment", "value": "52%", "unit": "reduction" }
+      ],
+      "economicValue": "$3.1M USD",
+      "achievements": [
+        { "icon": "↓", "value": "66%", "label": "PST Reduction" },
+        { "icon": "↑", "value": "16%", "label": "IFT Improvement" },
+        { "icon": "↓", "value": "52%", "label": "Less Entrainment" },
+        { "icon": "↑", "value": "92%", "label": "Efficiency" }
+      ],
+      "ctaTitle": "Facing similar challenges in your SX plant?",
+      "ctaDescription": "Our team of specialists can help you optimize your process and achieve measurable results."
+    },
+    "enapLodosPetroleros": {
+      "tagline": "Technical Validation · Crude Oil",
+      "title": "35-85% Volume Reduction",
+      "headline": "Oil Sludge Dewatering - ENAP Concón Refinery",
+      "stats": [
+        { "value": "84%", "label": "Phenolic Sludge Reduction" },
+        { "value": "77%", "label": "Phenols Sludge Reduction" },
+        { "value": "3 months", "label": "Technical Validation" }
+      ],
+      "overview": [
+        { "label": "Client", "value": "ENAP Concón Refinery" },
+        { "label": "Industry", "value": "Crude Oil Refining" },
+        { "label": "Objective", "value": "Reduce disposal costs through sludge dewatering" }
+      ],
+      "challengeDescription": "4.5+ million kg/year of oil sludge with high moisture generate excessive transport and disposal costs",
+      "problems": [
+        { "title": "High Moisture", "value": "70-92% water content", "description": "Increases transport weight and volume" },
+        { "title": "High Volume Generated", "value": "4.5M kg/year", "description": "Three critical process streams" },
+        { "title": "Logistics Costs", "value": "Transport + Disposal", "description": "Significant OPEX impact" }
+      ],
+      "streamsTitle": "Three Critical Streams",
+      "streams": [
+        { "humidity": "92.59%", "humidityLabel": "Initial Moisture", "name": "Phenolic Plant Sludge", "description": "Most critical stream" },
+        { "humidity": "90.02%", "humidityLabel": "Initial Moisture", "name": "Phenols Plant Sludge", "description": "Second priority stream" },
+        { "humidity": "70.37%", "humidityLabel": "Initial Moisture", "name": "T-2402 Sludge", "description": "Third evaluated stream" }
+      ],
+      "solutionTitle": "The Tec-Ionic Solution",
+      "solutionDescription": "Laboratory technical validation without client investment",
+      "approachTitle": "Innovative Approach",
+      "approachItems": [
+        { "title": "No client investment", "description": "technical validation with TecIonic equipment" },
+        { "title": "Laboratory testing", "description": "with industrial-scale equivalent filters" },
+        { "title": "Physicochemical characterization", "description": "complete for three streams" }
+      ],
+      "technologyTitle": "Applied Technology",
+      "technologyItems": [
+        { "title": "Mobile vacuum filtration", "description": "portable and flexible technology" },
+        { "title": "Industrial filter press", "description": "real-scale simulation" },
+        { "title": "Centrifuge systems", "description": "alternative evaluation" }
+      ],
+      "opportunitiesTitle": "5 Additional Opportunities Identified",
+      "opportunitiesText": "During the study, applications were identified in <strong>Delayed Coker, FCC, effluent treatment, API separators, and storage tanks</strong>, expanding the potential impact of mobile filtration technology in the refinery.",
+      "resultsTitle": "Validation Results",
+      "resultsDescription": "Proven volume reduction in three sludge streams",
+      "results": [
+        { "badge": "Best Result", "name": "Phenolic Plant Sludge", "reduction": "84.23%", "reductionLabel": "Volume Reduction", "initialHumidity": "92.59%", "finalHumidity": "53%", "note": "Highest dewatering efficiency achieved" },
+        { "badge": "Second Result", "name": "Phenols Plant Sludge", "reduction": "77.31%", "reductionLabel": "Volume Reduction", "initialHumidity": "90.02%", "finalHumidity": "56%", "note": "Excellent moisture reduction" },
+        { "badge": "Third Result", "name": "T-2402 Sludge", "reduction": "32.96%", "reductionLabel": "Volume Reduction", "initialHumidity": "70.37%", "finalHumidity": "55.8%", "note": "Lower initial moisture, still effective" }
+      ],
+      "initialHumidityLabel": "Initial Moisture",
+      "finalHumidityLabel": "Final Moisture",
+      "impactTitle": "Global Dewatering Impact",
+      "beforeTitle": "Before Treatment",
+      "beforeMetrics": [
+        { "label": "Annual sludge volume:", "value": "4.5M kg" },
+        { "label": "Average moisture:", "value": "70-92%" },
+        { "label": "Disposal cost:", "value": "High", "isHighlight": true }
+      ],
+      "afterTitle": "With Mobile Filtration Technology",
+      "afterMetrics": [
+        { "label": "Volume reduction:", "value": "35-85%" },
+        { "label": "Final moisture:", "value": "53-56%" },
+        { "label": "Disposal cost:", "value": "Optimized", "isHighlight": true }
+      ],
+      "impactStats": [
+        { "value": "↓40-85%", "label": "Transport trips reduction" },
+        { "value": "53-56%", "label": "Optimal final moisture" },
+        { "value": "5", "label": "Additional opportunities" }
+      ],
+      "benefitsTitle": "Competitive Advantages of the Solution",
+      "benefits": [
+        { "title": "No Client Investment", "description": "Technical validation without capital commitment, reducing financial risk" },
+        { "title": "Mobile Technology", "description": "Portable equipment allows operation at multiple refinery points" },
+        { "title": "Logistics Cost Reduction", "description": "Lower volume and weight dramatically reduce transport and disposal costs" },
+        { "title": "Potential Water Recovery", "description": "Extracted water can be reused in refinery industrial processes" },
+        { "title": "Proven Scalability", "description": "20+ years of mining experience applied to the oil sector" },
+        { "title": "Multiple Applications", "description": "5 additional opportunities identified in refinery processes" }
+      ],
+      "conclusionTitle": "Technical Conclusion",
+      "conclusionText1": "The technical validation performed by <strong>Tec-Ionic Durban</strong> at ENAP Concón Refinery demonstrates the viability of <strong>significantly reducing oil sludge volume through mobile filtration technology</strong>, with volume reductions ranging from 32.96% to 84.23% depending on the stream.",
+      "conclusionText2": "This solution allows ENAP to <strong>evaluate the technology without capital investment</strong>, reduce transport and disposal costs, and potentially recover water for reuse. The identification of 5 additional opportunities in different refinery processes expands the potential impact of mobile filtration technology in the oil sector.",
+      "conclusionStats": [
+        { "value": "84%", "label": "Maximum Reduction" },
+        { "value": "53-56%", "label": "Final Moisture" },
+        { "value": "3", "label": "Validated Streams" },
+        { "value": "5", "label": "More Opportunities" }
+      ],
+      "ctaTitle": "Need to Reduce Sludge Disposal Costs?",
+      "ctaDescription": "Our specialists can help you validate dewatering solutions without initial investment, with mobile technology proven in mining and oil sectors.",
+      "ctaButton": "Request Technical Evaluation"
+    },
+    "deshidratacionConcentrados": {
+      "tagline": "Case Study - Operational Continuity",
+      "title": "USD $2.43M Protected Value",
+      "headline": "Mobile Concentrate Filtration Backup at Cerro Negro",
+      "stats": [
+        { "value": "50:1", "label": "Benefit/Cost Ratio" },
+        { "value": "75%", "label": "Capacity Maintained" },
+        { "value": "<1 day", "label": "Service Payback" },
+        { "value": "30 days", "label": "Backup Period" }
+      ],
+      "overview": [
+        { "label": "Client", "value": "Cerro Negro Mining Company" },
+        { "label": "Unit", "value": "Copper concentrator plant" },
+        { "label": "Service", "value": "Mobile filter press F-1200-3" },
+        { "label": "Objective", "value": "Operational continuity during major maintenance" }
+      ],
+      "challengeDescription": "30-day major maintenance on main filter press without backup equipment",
+      "situationTitle": "Critical Situation",
+      "situations": [
+        { "title": "No backup filter", "description": "The plant operated with a single filter press as the thickening line bottleneck" },
+        { "title": "Scheduled major maintenance", "description": "30 days of plate replacement, hydraulic revision, structure, piping, valves, and cloths" },
+        { "title": "Limited stock", "description": "Thickeners and tanks only allow a few days of transitory operation" }
+      ],
+      "risksTitle": "Identified Risks",
+      "risks": [
+        { "title": "Production loss", "description": "1,800 tons of concentrate at risk" },
+        { "title": "Operational risk", "description": "Thickener accumulation, overflows, out-of-spec conditions" },
+        { "title": "Commercial risk", "description": "Non-compliance with smelter delivery contracts" },
+        { "title": "Reputational risk", "description": "Impact on mining plan compliance indicators" }
+      ],
+      "riskValueLabel": "VALUE AT RISK",
+      "riskValue": "$3.24M USD",
+      "riskValueNote": "Without backup solution",
+      "solutionTitle": "The Tec-Ionic Solution",
+      "solutionDescription": "Turnkey mobile filtration service to maintain operational continuity",
+      "resultsTitle": "Project Results",
+      "resultsDescription": "Verifiable economic impact in 30 days of operation",
+      "withoutSolutionTitle": "Without Backup Solution",
+      "withSolutionTitle": "With Tec-Ionic Mobile Filter",
+      "roiTitle": "Return on Investment",
+      "keyInsightLabel": "For every $1 USD invested in the mobile service",
+      "keyInsightValue": "$50 USD",
+      "keyInsightNote": "in preserved concentrate value",
+      "risksMitigatedTitle": "Mitigated Risks",
+      "conclusionTitle": "Case Conclusion",
+      "conclusionText1": "Cerro Negro needed to perform 30-day major maintenance on their concentrate filter, without a backup filter. By contracting the <strong>Tec-Ionic F-1200-3 mobile filter press service</strong>, the plant managed to maintain ~75% of its capacity, dewatering ~1,350 tons of concentrate in 30 days.",
+      "conclusionText2": "This resulted in a <strong>preserved value of ~$2.43M USD</strong>, against a total service cost of around $49K USD, with a <strong>benefit/cost ratio close to 50:1</strong> and a payback of less than one day.",
+      "conclusionStats": [
+        { "value": "$2.43M", "label": "Protected Value" },
+        { "value": "50:1", "label": "B/C Ratio" },
+        { "value": "75%", "label": "Capacity Maintained" },
+        { "value": "<1 day", "label": "Payback" }
+      ],
+      "ctaTitle": "Need Backup for Your Concentrate Filtration?",
+      "ctaDescription": "Our mobile filtration solutions protect your production during major maintenance or as permanent backup to eliminate bottlenecks.",
+      "ctaButton": "Request Quote"
+    },
+    "limpiezaCeldasEw": {
+      "tagline": "Success Story - High Altitude",
+      "title": "Zero Safety Incidents",
+      "headline": "EW Cell Crud Removal at Minera Caserones",
+      "stats": [
+        { "value": "0", "label": "Safety Incidents" },
+        { "value": "100%", "label": "Crud Removal" },
+        { "value": "4,200+", "label": "Meters Altitude" },
+        { "value": "1 cell", "label": "Per Day (Target Met)" }
+      ],
+      "overview": [
+        { "label": "Client", "value": "SCM Minera Lumina Copper Chile - Caserones" },
+        { "label": "Location", "value": "Atacama Region, +4,200 masl" },
+        { "label": "Service", "value": "Comprehensive EW cell crud removal" },
+        { "label": "Management System", "value": "SG-SSSC (Safety, Health, Sustainability)" }
+      ],
+      "challengeDescription": "EW cell cleaning under extreme high-altitude conditions",
+      "problemTitle": "Operational Problem",
+      "problemDescription": "The accumulation of metallic and organic crud at the bottom of cells during electrolytic operation creates multiple problems affecting EW process efficiency and safety.",
+      "problems": [
+        { "title": "Short Circuits", "description": "Metallic deposits cause electrical failures and safety risks" },
+        { "title": "High Power Consumption", "description": "Accumulated crud increases resistance and energy costs" },
+        { "title": "Cathode Quality", "description": "Contamination reduces copper purity" }
+      ],
+      "conditionsTitle": "Extreme Conditions",
+      "altitudeValue": "+4,200 masl",
+      "altitudeLabel": "Operating altitude",
+      "altitudeDescription": "Hypobaric conditions requiring special protocols and trained personnel",
+      "risksTitle": "Critical Risks",
+      "risks": [
+        "Electrical risk in energized cells",
+        "Exposure to acid mist",
+        "Mechanical entrapment risk",
+        "Confined space work"
+      ],
+      "sgssscTitle": "SG-SSSC System",
+      "sgssscDescription": "Strict compliance with MLCC's Safety, Health, Sustainability and Communities Management System",
+      "solutionTitle": "The Tec-Ionic Solution",
+      "solutionDescription": "Comprehensive crud removal methodology with the highest safety standards",
+      "processSteps": [
+        { "step": "1", "title": "Safety Analysis", "description": "JSA and electrical/structural parameter review for each cell" },
+        { "step": "2", "title": "Electrode Removal", "description": "Controlled removal of 3 cathodes and 3 anodes to enable access" },
+        { "step": "3", "title": "Vacuuming and Cleaning", "description": "Pneumatic crud suction and controlled-pressure hydraulic cleaning" },
+        { "step": "4", "title": "Verification and Reinstallation", "description": "Leveling, electrode reinstallation and photographic record" }
+      ],
+      "equipmentTitle": "Specialized Equipment",
+      "equipment": [
+        "High-capacity industrial vacuum with pneumatic pumps",
+        "Anti-static hose lines (2-3 inches)",
+        "Mobile filter presses for solid-liquid separation",
+        "Settling tanks",
+        "Three-phase control panels",
+        "Container-warehouses with logistical autonomy"
+      ],
+      "equipmentNote": "All equipment certified and designed for high-altitude operations",
+      "safetyTitle": "Safety Management",
+      "eppTitle": "Certified PPE",
+      "eppItems": [
+        "P100 filter respirators",
+        "Waterproof suits",
+        "Dielectric footwear"
+      ],
+      "proceduresTitle": "Procedures",
+      "proceduresItems": [
+        "Lockout/Tagout (LOTO)",
+        "Gas verification and ventilation",
+        "Special permits (hot work, confined spaces)"
+      ],
+      "trainingsTitle": "Training",
+      "trainingsItems": [
+        "HYPOBARIA (geographic altitude work)",
+        "PREXOR (noise exposure)",
+        "PLANESI (silica exposure)"
+      ],
+      "operationsInfo": [
+        { "value": "7x7", "label": "Day shift (08:00-20:00h)" },
+        { "value": "1 cell/day", "label": "Contractual output" },
+        { "value": "APR 3+ years", "label": "Mining experience" },
+        { "value": "ISOTools", "label": "Traceability and tracking" }
+      ],
+      "resultsTitle": "Verifiable Results",
+      "resultsDescription": "Measurable impact on safety, quality and operational continuity",
+      "safetyResultTitle": "Safety",
+      "safetyResultValue": "0",
+      "safetyResultLabel": "Incidents throughout the contract",
+      "safetyResultItems": [
+        "\"Life-Saving Rules\" compliance",
+        "100% deadlines met",
+        "Law 20.393 adherence"
+      ],
+      "qualityResultTitle": "Quality",
+      "qualityResultValue": "100%",
+      "qualityResultLabel": "Metallic deposit removal",
+      "qualityResultItems": [
+        "Electrical conductivity restored",
+        "Cathodes within LME standard",
+        "Georeferenced photographic record"
+      ],
+      "operationsResultTitle": "Operations",
+      "operationsResultValue": "No Stoppages",
+      "operationsResultLabel": "Productive continuity maintained",
+      "operationsResultItems": [
+        "Reduced energy consumption",
+        "Lower short-circuit risk",
+        "Successful staged planning"
+      ],
+      "keyHighlightText": "Tec-Ionic's operating model proved to be an efficient, quick-to-implement, low-impact alternative for operations under extreme high-altitude conditions.",
+      "keyHighlightValue": "Measurable and replicable results across other sector operations",
+      "environmentalTitle": "Environmental Management",
+      "environmentalItems": [
+        { "title": "Waste Control", "description": "Metallic waste and contaminated water stored in sealed containers" },
+        { "title": "DS-43 Regulation", "description": "Disposal in accordance with current MINSAL regulations" },
+        { "title": "PR-SUST Compliance", "description": "PR-SUST-009 and PR-SUST-010 compliance for hazardous substances" }
+      ],
+      "ctaTitle": "Need Crud Removal Services for Your EW Plant?",
+      "ctaDescription": "Our specialized team operates under extreme conditions with the highest safety standards. We guarantee measurable results and zero incidents.",
+      "ctaButton": "Request Quote"
+    },
+    "soporteSxDgm": {
+      "tagline": "Real Case Study - CODELCO DGM",
+      "title": "8 Years of Continuous Operation",
+      "headline": "Comprehensive SX Plant Support - Gabriela Mistral Division",
+      "stats": [
+        { "value": "96%", "label": "Cu Recovery" },
+        { "value": "2.6%", "label": "Organic Replacement" },
+        { "value": "29.5", "label": "IFT (dynes/cm)" },
+        { "value": "18+", "label": "Years TSF Experience" }
+      ],
+      "overview": [
+        { "label": "Client", "value": "CODELCO - Gabriela Mistral Division (DGM)" },
+        { "label": "Duration", "value": "8 years of continuous operation" },
+        { "label": "Service", "value": "Comprehensive SX plant support" },
+        { "label": "Industry", "value": "Copper Mining - SX/EW" }
+      ],
+      "partnershipTitle": "Long-Term Strategic Partnership",
+      "partnershipDescription": "For over 8 years, TSF has been CODELCO DGM's strategic partner for maintaining and optimizing their solvent extraction plant, ensuring consistent results year after year.",
+      "collaborationTitle": "Collaboration History",
+      "collaborationSteps": [
+        { "step": "1", "title": "Operations Start", "description": "Initial contract for filtration and crud removal services at SX plant" },
+        { "step": "2", "title": "Service Expansion", "description": "Addition of organic dialysis and scheduled treatment campaigns" },
+        { "step": "3", "title": "Comprehensive Support", "description": "Complete service model with continuous monitoring and immediate response" },
+        { "step": "8+", "title": "Today", "description": "8 years of continuous operation with consistent results" }
+      ],
+      "servicesProvidedTitle": "Services Provided",
+      "servicesProvided": [
+        { "title": "Crud Removal", "description": "Continuous cleaning of emulsions and crud" },
+        { "title": "Organic Dialysis", "description": "Treatment for organic phase regeneration" },
+        { "title": "Scheduled Campaigns", "description": "Preventive treatments according to schedule" },
+        { "title": "Continuous Filtration", "description": "Fine solids removal from circuit" }
+      ],
+      "technicalTitle": "Technical Parameters Achieved",
+      "technicalDescription": "Consistent results demonstrating the effectiveness of continuous support",
+      "tifTitle": "Interfacial Tension (IFT)",
+      "optimalLabel": "Optimal",
+      "tifValue": "29.5",
+      "tifUnit": "dynes/cm",
+      "freshOrganicLabel": "Fresh organic:",
+      "freshOrganicValue": "30-32 dynes/cm",
+      "tifPercentage": "≈ 98% of ideal value",
+      "tifNote": "An IFT close to fresh organic indicates minimal chemical degradation and excellent phase separation in mixer-settlers.",
+      "tsfTitle": "Phase Separation Time (PST)",
+      "withinStandardLabel": "Within Standard",
+      "organicContinuityLabel": "Organic Continuity",
+      "organicContinuityValue": "70",
+      "aqueousContinuityLabel": "Aqueous Continuity",
+      "aqueousContinuityValue": "92",
+      "secondsUnit": "seconds",
+      "tsfMaxNote": "Both values below the maximum allowed of 120 seconds",
+      "recoveryTitle": "96%",
+      "recoveryLabel": "Copper Recovery",
+      "recoveryDescription": "High copper recovery is consistently maintained through rigorous organic quality control and prevention of excessive entrainment.",
+      "replacementTitle": "2.6%",
+      "replacementLabel": "Annual Organic Replacement",
+      "replacementDescription": "A low replacement rate indicates minimal losses from chemical degradation and entrainment, significantly reducing operational costs.",
+      "valueDeliveredTitle": "Value Delivered",
+      "valueItems": [
+        { "title": "Operational Stability", "description": "8 years without major interruptions thanks to preventive maintenance and rapid response to contingencies." },
+        { "title": "Cost Reduction", "description": "Organic replacement rate of 2.6% vs. typical industry rate of 5-8%, representing significant input savings." },
+        { "title": "Trust Relationship", "description": "Continuous contract renewal year after year, demonstrating client satisfaction with delivered results." }
+      ],
+      "experienceTitle": "Over 18 Years of SX Experience",
+      "experienceDescription": "The DGM case is part of TSF's 18+ year track record providing specialized organic phase maintenance services to leading mining operations in Chile and Latin America.",
+      "experienceFeatures": [
+        "High-technology mobile equipment",
+        "Highly trained personnel",
+        "24-48 hour response time",
+        "Flexible contracts as needed"
+      ],
+      "experienceStats": [
+        { "value": "18+", "label": "Years in the market" },
+        { "value": "120+", "label": "Projects completed" },
+        { "value": "15+", "label": "SX plants served" },
+        { "value": "24/7", "label": "Support available" }
+      ],
+      "ctaTitle": "Looking for a long-term partner for your SX plant?",
+      "ctaDescription": "Our continuous support model guarantees consistent results and reduces your operational costs. Let's discuss how we can help you.",
+      "ctaButton": "Request consultation"
+    },
+    "solidosFinosYoduro": {
+      "tagline": "Real Case Study - Chemical Industry",
+      "title": "100% Operational Continuity",
+      "headline": "Fine Solids Filtration for Iodide Production",
+      "stats": [
+        { "value": "100%", "label": "Operational Continuity" },
+        { "value": "24/7", "label": "Continuous Monitoring" },
+        { "value": "<5 NTU", "label": "Controlled Turbidity" }
+      ],
+      "overview": [
+        { "label": "Industry", "value": "Chemical - Iodide Production" },
+        { "label": "Service", "value": "Fine solids removal" },
+        { "label": "Objective", "value": "Turbidity control and product quality" },
+        { "label": "Result", "value": "Operational continuity assured" }
+      ],
+      "challengeDescription": "Maintaining process purity in an iodide production plant where fine solids contamination can compromise final product quality",
+      "problemsTitle": "Identified Problems",
+      "problems": [
+        { "title": "Fine Solids Presence", "description": "Submicron particles that pass through conventional filtration systems" },
+        { "title": "Contamination Risk", "description": "Any contamination directly affects the purity of the iodide produced" },
+        { "title": "Process Variability", "description": "Fluctuations in solids loading that make continuous control difficult" }
+      ],
+      "requirementsTitle": "Client Requirements",
+      "requirements": [
+        { "title": "No Production Interruption", "description": "The solution cannot affect continuous plant operation" },
+        { "title": "Turbidity Control", "description": "Maintain low and consistent turbidity levels in the process" },
+        { "title": "Real-Time Monitoring", "description": "Constant visibility of filtration process status" }
+      ],
+      "solutionTitle": "Our Solution",
+      "solutionDescription": "Mobile filtration system with continuous turbidity monitoring, designed to operate without affecting production",
+      "solutionCards": [
+        { "title": "Specialized Filtration", "description": "High-efficiency filtration system for submicron particle capture without reducing process flow." },
+        { "title": "Turbidity Monitoring", "description": "Inline sensors for continuous turbidity measurement with automatic alerts for parameter deviations." },
+        { "title": "Continuous Operation", "description": "Design that allows filter changes and maintenance without interrupting production flow." }
+      ],
+      "processFlowTitle": "Process Flow",
+      "processSteps": [
+        { "step": "1", "title": "Input", "description": "Flow with fine solids" },
+        { "step": "2", "title": "Filtration", "description": "Particle removal" },
+        { "step": "3", "title": "Monitoring", "description": "Turbidity control" },
+        { "step": "4", "title": "Output", "description": "Clarified flow" }
+      ],
+      "resultsTitle": "Results Achieved",
+      "resultStats": [
+        { "value": "100%", "label": "Continuity", "description": "No production interruptions" },
+        { "value": "<5", "label": "NTU", "description": "Controlled turbidity" },
+        { "value": "24/7", "label": "Monitoring", "description": "Real-time control" },
+        { "value": "0", "label": "Rejections", "description": "Due to product contamination" }
+      ],
+      "resultCards": [
+        { "title": "Quality Assured", "description": "Effective fine solids removal ensures produced iodide meets required purity specifications." },
+        { "title": "Rapid Response", "description": "The alert system allows identifying and correcting deviations before they affect product quality." },
+        { "title": "Cost-Effective", "description": "Avoiding product rejections and unplanned stops represents a significant return on filtration investment." }
+      ],
+      "chemicalTitle": "Solutions for the Chemical Industry",
+      "chemicalDescription": "The chemical industry requires purity and control levels that conventional systems cannot always guarantee. Our mobile filtration solutions adapt to the specific needs of each process.",
+      "chemicalFeatures": [
+        "Equipment certified for use in chemical plants",
+        "Materials compatible with corrosive processes",
+        "Instrumentation for real-time monitoring",
+        "Personnel trained in safety protocols"
+      ],
+      "chemicalStats": [
+        { "value": "5+", "label": "Chemical plants served" },
+        { "value": "ISO", "label": "Certified processes" },
+        { "value": "0", "label": "Safety incidents" },
+        { "value": "100%", "label": "Customer satisfaction" }
+      ],
+      "ctaTitle": "Need specialized filtration for your chemical process?",
+      "ctaDescription": "Each chemical process has unique requirements. Let us design a filtration solution that ensures your product quality.",
+      "ctaButton": "Request consultation"
+    }
+  },
+  "industryTrends": {
+    "common": {
+      "readMore": "Read more",
+      "allCategories": "All",
+      "backToTrends": "Back to Trends",
+      "readingTime": "read",
+      "impact": "Impact",
+      "sources": "Sources",
+      "conclusionTitle": "Conclusion",
+      "ctaTitle": "Need to optimize your operation?",
+      "ctaDescription": "Our technical team can evaluate your current process and propose solutions tailored to your specific needs.",
+      "ctaButton": "Contact Technical Team",
+      "viewMoreTrends": "View more industry trends"
+    },
+    "listing": {
+      "heroTitle": "Industry Trends",
+      "heroDescription": "Technical analysis and strategic perspectives on the forces transforming hydrometallurgical mining in Latin America.",
+      "marketTitle": "2025 Market Outlook",
+      "marketDescription": "Key indicators defining the competitive landscape of the Latin American mining industry",
+      "analysisTitle": "Analysis & Perspectives",
+      "analysisDescription": "Technical research on trends impacting sector operations and competitiveness",
+      "stats": [
+        { "value": "5.8Mt", "label": "Chile Copper Production 2025" },
+        { "value": "$50B", "label": "Pre-2030 Project Investment" },
+        { "value": "+24%", "label": "Lithium Demand Growth" },
+        { "value": "10%", "label": "Continental Water Limit" }
+      ],
+      "ctaBadge": "Strategic Intelligence",
+      "ctaTitle": "Stay Ahead of the Market",
+      "ctaDescription": "Subscribe to our weekly analysis and receive exclusive insights on the future of the Latin American mining industry.",
+      "emailPlaceholder": "Your professional email",
+      "subscribeButton": "Subscribe",
+      "downloadReportButton": "Download Annual Report",
+      "consultingButton": "Strategic Consulting"
+    },
+    "categories": {
+      "technology": "Technology",
+      "markets": "Markets",
+      "regulation": "Regulation",
+      "production": "Production",
+      "innovation": "Innovation",
+      "geopolitics": "Geopolitics"
+    },
+    "trends": [
+      {
+        "slug": "perdidas-solvente-sx",
+        "category": "Technology",
+        "title": "Solvent Losses in SX: A Million-Dollar Problem with a Solution",
+        "excerpt": "With over 60% of new projects opting for SX-EW, organic losses represent hidden costs of $300-900K USD annually. New treatment technologies recover up to 98% of degraded solvent.",
+        "date": "December 2025",
+        "readTime": "10 min"
+      },
+      {
+        "slug": "litio-triangulo-agua",
+        "category": "Markets",
+        "title": "Lithium in the Triangle: The Water Challenge and Filtration Opportunity",
+        "excerpt": "Argentina could become the world's largest lithium producer, but the industry must solve a critical problem: consumption of 21 million liters of water daily threatens the viability of new projects.",
+        "date": "December 2025",
+        "readTime": "12 min"
+      },
+      {
+        "slug": "politica-minera-2050",
+        "category": "Regulation",
+        "title": "Mining Policy 2050: Chile Limits Continental Water Use to 10%",
+        "excerpt": "New Chilean regulation requires mining not to exceed 10% of continental water use by 2025 and 5% by 2040. Operations must achieve 85-90% water recirculation.",
+        "date": "November 2025",
+        "readTime": "8 min"
+      },
+      {
+        "slug": "boom-cobre-chile-peru",
+        "category": "Production",
+        "title": "Copper Boom: Chile and Peru Project Record Production",
+        "excerpt": "Chile projects 5.8Mt of copper for 2025 (+5.8%), with Escondida up 22% and Codelco targeting 1.4Mt. Filtration capacity will be the bottleneck during maintenance.",
+        "date": "November 2025",
+        "readTime": "9 min"
+      },
+      {
+        "slug": "ia-automatizacion-sx-ew",
+        "category": "Innovation",
+        "title": "AI and Automation Revolutionize Efficiency in SX-EW Plants",
+        "excerpt": "Integration of artificial intelligence and real-time sensors is optimizing leaching and electrowinning processes, reducing operational costs by up to 35%.",
+        "date": "October 2025",
+        "readTime": "8 min"
+      },
+      {
+        "slug": "minerales-criticos-latam",
+        "category": "Geopolitics",
+        "title": "Critical Minerals: Latin America at the Center of Global Competition",
+        "excerpt": "With U.S. tariffs on China and export restrictions, Western manufacturers seek alternative suppliers. Chile and Peru emerge as strategic options.",
+        "date": "October 2025",
+        "readTime": "11 min"
+      }
+    ],
+    "articles": {
+      "perdidas-solvente-sx": {
+        "subtitle": "Solvent extraction (SX) is the heart of copper hydrometallurgy. But every liter of organic lost is money escaping from your operation.",
+        "author": "TSF Technical Team",
+        "tags": ["SX-EW", "Organic Recovery", "Cost Reduction", "Hydrometallurgy"],
+        "impact": "High",
+        "content": [
+          {
+            "type": "section",
+            "title": "The Context: SX-EW Dominates the Industry",
+            "text": "In 2025, over 60% of new mining projects opt for hydrometallurgical methods like SX-EW instead of traditional smelting. The reasons are clear: lower capital investment, greater operational flexibility, and better environmental profile.\n\nBut this technology has an Achilles' heel: organic solvent losses."
+          },
+          {
+            "type": "section",
+            "title": "The Real Problem",
+            "text": "In a typical SX plant, organic losses come from:",
+            "list": [
+              "Aqueous entrainment - Organic droplets that escape with the raffinate",
+              "Chemical degradation - Extractant degrades from oxidation and contaminants",
+              "Stable emulsions - Fine solids and crud that trap irrecoverable organic",
+              "Leaks and spills - Mechanical losses in the circuit"
+            ]
+          },
+          {
+            "type": "highlight",
+            "text": "With extractant prices exceeding $8-12 USD/liter, a plant losing 100-200 liters daily is losing $300,000 - $900,000 USD annually just in reagent replacement."
+          },
+          {
+            "type": "section",
+            "title": "But the real cost is higher",
+            "text": "Degraded organic means lower extraction efficiency, higher energy consumption in EW, and lower purity cathodes."
+          },
+          {
+            "type": "section",
+            "title": "Technological Advances 2025-2026",
+            "text": "The industry is responding with innovations:",
+            "list": [
+              "AI Optimization: Real-time sensors adjust parameters to maximize recovery",
+              "Modular electrowinning cells: Higher efficiency, lower energy consumption",
+              "Centrifuge technology: More effective separation of organic and aqueous phases"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "The Solution: Organic Treatment and Recovery",
+            "text": "Specialized treatment of degraded organic enables:"
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "90-98%", "label": "Solvent Recovery", "description": "Organic that appears lost in emulsions and crud can be recovered through specialized separation processes." },
+              { "value": "60%", "label": "Loss Reduction", "description": "By eliminating contaminants that cause degradation, treated organic lasts longer in the circuit." },
+              { "value": "18-24", "label": "Months Between Treatments", "description": "Plants that treated every 12-15 months now extend the cycle significantly." }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "Operation Stabilization",
+            "text": "Stable emulsions are the enemy of SX efficiency. They cause longer phase separation times, excessive entrainment to EW, and cathode contamination. Treatment eliminates emulsion precursors, returning stability to the circuit."
+          },
+          {
+            "type": "table",
+            "title": "Real Case: Measurable Impact",
+            "description": "A copper SX plant processing 50,000 annual tons implemented organic treatment:",
+            "headers": ["Metric", "Before", "After", "Improvement"],
+            "rows": [
+              ["Cu Recovery", "85%", "94%", "+9 points"],
+              ["Solvent life", "12 months", "20 months", "+67%"],
+              ["Organic losses", "80 L/day", "32 L/day", "-60%"],
+              ["Cathode purity", "99.95%", "99.99%", "Grade A"]
+            ]
+          },
+          {
+            "type": "highlight",
+            "text": "Annual savings exceeded $3.1 million USD considering lower reagent replacement, higher metal recovery, and elimination of cathode quality penalties."
+          },
+          {
+            "type": "section",
+            "title": "When to Consider Organic Treatment",
+            "text": "Your SX plant probably needs treatment if you observe:",
+            "list": [
+              "Phase separation times exceeding 3-4 minutes",
+              "Recurring crud formation in settlers",
+              "Organic entrainment to electrolyte >15 ppm",
+              "Visible organic color degradation (darkening)",
+              "Extractant consumption above industry benchmark",
+              "Extraction efficiency drop without apparent cause"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "Mobile Treatment Advantages",
+            "text": "Mobile treatment solutions offer unique benefits:",
+            "list": [
+              "No capital investment: Monthly service instead of buying equipment",
+              "No plant modifications: Treatment is performed parallel to the circuit",
+              "No additional permits: Temporary installation requires no environmental approvals",
+              "Flexibility: Scale as needed, from pilots to continuous treatment"
+            ]
+          },
+          {
+            "type": "conclusion",
+            "text": "Solvent losses in SX are not an inevitable cost of operation. With the right technology and approach, it's possible to recover up to 98% of degraded organic and reduce ongoing losses by over 60%.\n\nIn a context where Chile and Peru project significant copper production increases toward 2030, optimizing every aspect of SX-EW operation is not optional - it's a competitive advantage."
+          }
+        ],
+        "sources": [
+          { "name": "SXEW Mining: 5 Breakthroughs Powering Extraction 2026", "url": "https://farmonaut.com/mining/sxew-mining-5-breakthroughs-powering-extraction-2026" },
+          { "name": "SME - Centrifuge Technology in SX Process", "url": "https://me.smenet.org/centrifuge-technology-in-sx-process-provides-solvent-loss-reduction/" },
+          { "name": "The Future of Copper Mining in Latin America 2025", "url": "https://americasmi.com/insights/future-copper-mining-latin-america-2025/" }
+        ]
+      },
+      "litio-triangulo-agua": {
+        "subtitle": "Argentina could become the world's largest lithium producer in the next decade. But to achieve this, the industry must solve a critical problem: water.",
+        "author": "TSF Technical Team",
+        "tags": ["Lithium", "Water Management", "Argentina", "Filtration", "Sustainability"],
+        "impact": "Very High",
+        "content": [
+          {
+            "type": "section",
+            "title": "The Latin American Lithium Boom",
+            "text": "The \"Lithium Triangle\" - Argentina, Chile, and Bolivia - holds 68% of the world's reserves of this critical mineral for energy transition. And demand keeps growing.\n\nIn 2025 alone, global lithium demand will increase 24% year-over-year, driven mainly by electric vehicles representing 65% of consumption. Projections indicate 15% annual growth - no other mineral has a comparable trajectory."
+          },
+          {
+            "type": "highlight",
+            "text": "Argentina is positioning aggressively. In June 2024, the government announced a 10-year plan with 4 new mining projects that will increase annual capacity by 79% (202,000 additional metric tons)."
+          },
+          {
+            "type": "section",
+            "title": "The Problem: 21 Million Liters Daily",
+            "text": "Lithium extraction from brines consumes water. A lot of water.\n\nThe wetlands of Argentina, Bolivia, and Chile face a significant threat: lithium mining consumes approximately 21 million liters of water daily in the region. This massive consumption is contributing to:",
+            "list": [
+              "Persistent droughts in already arid zones",
+              "Agricultural decline in local communities",
+              "Notable reduction in wildlife populations",
+              "Conflicts with indigenous communities"
+            ]
+          },
+          {
+            "type": "highlight",
+            "text": "In 2024, a court in Argentina's Catamarca province suspended new mining permits over water-related concerns. This legal precedent is changing the rules of the game."
+          },
+          {
+            "type": "section",
+            "title": "Regulatory Pressure Grows",
+            "text": "Companies are responding in different ways:"
+          },
+          {
+            "type": "subsection",
+            "title": "Chile: \"Green Lithium\"",
+            "text": "Chile is betting on \"green lithium,\" arguing that sustainability and traceability can command a premium price from automakers. The strategy seeks to protect local communities from commodity boom-and-bust cycles."
+          },
+          {
+            "type": "subsection",
+            "title": "Argentina: DLE as Promise",
+            "text": "Companies promote Direct Lithium Extraction (DLE), a technology presented as less resource-intensive. However, this technology has not yet been proven at industrial scale."
+          },
+          {
+            "type": "subsection",
+            "title": "The Reality",
+            "text": "With lithium prices that have fallen significantly from their 2022 peak, some operations are reducing production or delaying expansions. Mining towns that prospered during the boom now face difficulties."
+          },
+          {
+            "type": "section",
+            "title": "Where Filtration Comes In",
+            "text": "Regardless of the extraction technology used, all lithium operations require:",
+            "list": [
+              "Brine clarification - Remove suspended solids before processing",
+              "Effluent treatment - Meet standards before discharge or recirculation",
+              "Water recovery - Maximize reuse to reduce net consumption",
+              "Sludge handling - Dewater residues for responsible disposal"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "Mobile Filtration Advantages for Lithium",
+            "text": "Lithium projects in the Triangle face unique challenges that make mobile solutions especially attractive:"
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "Remote", "label": "Locations", "description": "Salt flats are in hard-to-access, high-altitude areas. Mobile systems arrive ready to operate." },
+              { "value": "Volatile", "label": "Market", "description": "With fluctuating prices, the service model allows scaling according to market conditions." },
+              { "value": "Fast", "label": "Permits", "description": "Mobile systems, being temporary, avoid the regulatory bottleneck." },
+              { "value": "Flexible", "label": "Adaptation", "description": "Each salt flat has different chemical composition. Mobile equipment reconfigures easily." }
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Relevant Technical Specifications",
+            "description": "For lithium operations, effective filtration must meet:",
+            "headers": ["Parameter", "Typical Requirement"],
+            "rows": [
+              ["Clarification capacity", "80-120 m³/day"],
+              ["Outlet turbidity", "<5 NTU"],
+              ["Water recovery", ">85%"],
+              ["Sludge dewatering", "<30% final moisture"],
+              ["Certification", "Ex-proof for gas environments"]
+            ]
+          },
+          {
+            "type": "section",
+            "title": "The Geopolitical Factor",
+            "text": "China currently dominates the lithium value chain - from extraction to refining and processing. It is the largest investor in lithium projects in Latin America.\n\nBut with current trade tensions (U.S. tariffs, Chinese export restrictions), Western battery manufacturers seek to diversify suppliers. Latin America is at the center of this geopolitical competition."
+          },
+          {
+            "type": "section",
+            "title": "Recommendations for Lithium Operators",
+            "text": "",
+            "list": [
+              "Audit your water consumption - Identify where it's lost and where it can be recirculated",
+              "Evaluate clarification technologies - Not all discarded water is really unusable",
+              "Consider mobile solutions for pilots - Before investing in permanent infrastructure, validate with flexible equipment",
+              "Document your environmental management - Premium buyers will pay more for \"green\" lithium with demonstrable traceability",
+              "Prepare for regulatory scrutiny - What happened in Catamarca can replicate in other jurisdictions"
+            ]
+          },
+          {
+            "type": "conclusion",
+            "text": "Latin American lithium has a bright future, but only if the industry solves the water dilemma. Operations that manage to maximize production while minimizing water impact will be the ones that thrive in the next decade.\n\nFiltration and clarification are not glamorous, but they are fundamental. Every cubic meter of water recirculated instead of discarded is one less cubic meter of community conflict, one less cubic meter of regulatory risk, and one more step toward the \"green lithium\" the market demands."
+          }
+        ],
+        "sources": [
+          { "name": "Buenos Aires Herald - Argentina's New 10-Year Lithium Plan", "url": "https://buenosairesherald.com/business/mining/argentinas-new-10-year-lithium-plan-just-dropped" },
+          { "name": "Rest of World - Lithium Price Crash Hits Mining Towns", "url": "https://restofworld.org/2025/lithium-price-crash-latin-america-mining/" },
+          { "name": "IMARC Group - Latin America Lithium Mining Market", "url": "https://www.imarcgroup.com/latin-america-lithium-mining-market" },
+          { "name": "Control Risks - Latin America Key Player in Lithium", "url": "https://www.controlrisks.com/our-thinking/insights/latin-america-to-be-a-key-player-as-global-demand-for-lithium-skyrockets" }
+        ]
+      },
+      "politica-minera-2050": {
+        "subtitle": "New Chilean regulation requires mining not to exceed 10% of continental water use by 2025 and 5% by 2040. Operations must achieve 85-90% water recirculation.",
+        "author": "TSF Technical Team",
+        "tags": ["Regulation", "Water", "Chile", "Desalination", "Recirculation"],
+        "impact": "High",
+        "content": [
+          {
+            "type": "section",
+            "title": "The New Regulatory Framework",
+            "text": "Chile has established the world's strictest rules for water use in mining. The National Mining Policy 2050 is not a suggestion - it's a binding roadmap that will transform how every mine in the country operates."
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "10%", "label": "2025 Limit", "description": "Maximum continental water use allowed for mining" },
+              { "value": "5%", "label": "2040 Limit", "description": "Long-term goal for reducing water dependency" },
+              { "value": "85-90%", "label": "Recirculation", "description": "Water reuse rate required in modern plants" },
+              { "value": "130%", "label": "Desal Growth", "description": "Projected increase in desalination capacity by 2031" }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "What It Means For Operations",
+            "text": "Major miners are already responding. BHP and Antofagasta currently use 30% desalinated water, with a target to reach 50% by 2030. But for medium and small operations, the challenge is greater."
+          },
+          {
+            "type": "highlight",
+            "text": "The copper sector's water consumption will grow 2.3% annually to reach 23.7 m³/s by 2034. Seawater use will increase 230% this decade."
+          },
+          {
+            "type": "section",
+            "title": "Compliance Technologies",
+            "text": "Operations have several options to comply:",
+            "list": [
+              "Desalination - Expensive but independent of continental sources",
+              "Advanced recirculation - Treatment and reuse of process water",
+              "Effluent clarification - Water recovery from waste streams",
+              "Tailings thickening - Reduction of water sent to dams"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "The Role of Filtration",
+            "text": "Mobile filtration allows operations to implement recirculation without large capital investments. A clarification system can recover 80-90% of water from streams currently discarded, directly contributing to recirculation target compliance."
+          },
+          {
+            "type": "conclusion",
+            "text": "Mining Policy 2050 is non-negotiable. Operations that don't adapt will face operational restrictions, fines, and eventually, closure. Investment in water management technologies is not an expense - it's the license to keep operating."
+          }
+        ],
+        "sources": [
+          { "name": "National Mining Policy 2050 - Government of Chile", "url": "https://www.minmineria.cl/" },
+          { "name": "Cochilco - Mining Water Consumption Projection", "url": "https://www.cochilco.cl/" }
+        ]
+      },
+      "boom-cobre-chile-peru": {
+        "subtitle": "Chile projects 5.8Mt of copper for 2025 (+5.8%), with Escondida up 22% and Codelco targeting 1.4Mt. Filtration capacity will be the bottleneck during maintenance.",
+        "author": "TSF Technical Team",
+        "tags": ["Copper", "Chile", "Peru", "Production", "Maintenance"],
+        "impact": "High",
+        "content": [
+          {
+            "type": "section",
+            "title": "Production Records on the Horizon",
+            "text": "2025 will be a historic year for Latin American copper. After years of stagnant production, investments are finally paying off."
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "5.8Mt", "label": "Chile 2025", "description": "Projected copper production, a 5.8% increase year-over-year" },
+              { "value": "+22%", "label": "Escondida", "description": "Production increase in first half 2025" },
+              { "value": "$10.8B", "label": "BHP Investment", "description": "Investment commitment in Chile, $2B in Escondida alone" },
+              { "value": "2.7Mt", "label": "Codelco-Anglo JV", "description": "Additional capacity from joint venture over 21 years" }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "The Investment Pipeline",
+            "text": "Nearly $50B USD will be invested in copper projects starting production before 2030, adding 3.2 Mt/year to the region's current 7.6 Mt/year."
+          },
+          {
+            "type": "highlight",
+            "text": "Codelco, the world's largest copper producer, targets 1.4Mt of own production. The joint venture with Anglo American will add significant capacity to the portfolio."
+          },
+          {
+            "type": "section",
+            "title": "The Maintenance Challenge",
+            "text": "More production means more equipment wear. Scheduled and unscheduled maintenance shutdowns will be more frequent and more critical. During these periods, filtration capacity becomes the bottleneck.",
+            "list": [
+              "SX plants require organic treatment during shutdowns",
+              "EW cells need cleaning and crud removal",
+              "Clarification systems must remain operational",
+              "Crud filtration cannot stop"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "Mobile Solutions for Maintenance",
+            "text": "Mobile filtration allows maintaining operations during fixed equipment shutdowns. A backup system can be deployed in 24-48 hours, avoiding production losses that can exceed $100,000 USD per day of unplanned downtime."
+          },
+          {
+            "type": "conclusion",
+            "text": "The copper boom is a historic opportunity for Latin America. But seizing it requires reliable and resilient operations. Companies that invest in backup capacity and flexible solutions will be the ones capturing the full value of this bull cycle."
+          }
+        ],
+        "sources": [
+          { "name": "Americas Market Intelligence - Future of Copper Mining", "url": "https://americasmi.com/insights/future-copper-mining-latin-america-2025/" },
+          { "name": "Mining.com - Chile Copper Production Forecast", "url": "https://www.mining.com/" },
+          { "name": "BHP Annual Report 2024", "url": "https://www.bhp.com/" }
+        ]
+      },
+      "ia-automatizacion-sx-ew": {
+        "subtitle": "Integration of artificial intelligence and real-time sensors is optimizing leaching and electrowinning processes, reducing operational costs by up to 35%.",
+        "author": "TSF Technical Team",
+        "tags": ["Digitalization", "Automation", "IoT", "Artificial Intelligence"],
+        "impact": "High",
+        "content": [
+          {
+            "type": "section",
+            "title": "The Digital Revolution in Hydrometallurgy",
+            "text": "SX-EW plants are experiencing an unprecedented transformation. The combination of IoT sensors, real-time data analysis, and artificial intelligence is redefining what's possible in operational efficiency."
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "35%", "label": "Cost Reduction", "description": "Savings in operational costs through advanced automation" },
+              { "value": "28%", "label": "Efficiency Improvement", "description": "Efficiency increase with real-time monitoring" },
+              { "value": "45%", "label": "Less Downtime", "description": "Reduction in downtime through failure prediction" },
+              { "value": "80%", "label": "2026 Adoption", "description": "Operations that will have some level of automation" }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "Key Technologies",
+            "text": "The most impactful innovations include:",
+            "list": [
+              "In-line phase sensors - Continuous monitoring of organic/aqueous separation",
+              "Predictive algorithms - Anticipate solvent degradation before it affects production",
+              "Modular EW cells - Enable rapid scaling and maintenance without total shutdown",
+              "Digital twins - Process simulation for optimization without operational risk"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "Integration with Mobile Services",
+            "text": "Automation doesn't replace the need for specialized services - it complements them. Sensor data can identify when organic needs treatment, when cells require cleaning, or when clarification is losing efficiency."
+          },
+          {
+            "type": "highlight",
+            "text": "The most advanced plants are integrating automatic alerts with service providers, enabling preventive deployment of mobile equipment before problems affect production."
+          },
+          {
+            "type": "conclusion",
+            "text": "AI and automation are not the future - they are the present. Operations that don't adopt these technologies will be at a competitive disadvantage. But technology alone is not enough; it must be combined with operational response capability to maximize its value."
+          }
+        ],
+        "sources": [
+          { "name": "Farmonaut - SXEW Mining Breakthroughs 2026", "url": "https://farmonaut.com/mining/sxew-mining-5-breakthroughs-powering-extraction-2026" },
+          { "name": "Mining Technology - Digital Transformation in Mining", "url": "https://www.mining-technology.com/" }
+        ]
+      },
+      "minerales-criticos-latam": {
+        "subtitle": "With U.S. tariffs on China and export restrictions, Western manufacturers seek alternative suppliers. Chile and Peru emerge as strategic options.",
+        "author": "TSF Technical Team",
+        "tags": ["Geopolitics", "Critical Minerals", "Supply Chain", "Latin America"],
+        "impact": "High",
+        "content": [
+          {
+            "type": "section",
+            "title": "The New Mineral Order",
+            "text": "The competition between the United States and China is redrawing the global map of critical minerals. And Latin America is exactly at the center of this battle."
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "40.5%", "label": "Copper Production", "description": "Latin America's share of global copper production" },
+              { "value": "68%", "label": "Lithium Reserves", "description": "Percentage of world reserves in the Lithium Triangle" },
+              { "value": "#1", "label": "Chile Copper", "description": "World's largest copper producer" },
+              { "value": "#3", "label": "Argentina Lithium", "description": "Third-largest producer with potential to be #1" }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "The Push to Diversify",
+            "text": "China currently dominates the lithium value chain and processes much of the world's copper. With U.S. tariffs and Chinese export restrictions, Western manufacturers are desperate for alternatives.",
+            "list": [
+              "EV manufacturers seek non-Chinese suppliers",
+              "Western governments offer incentives for local production",
+              "Premium buyers pay more for minerals with traceability",
+              "ESG becomes a requirement, not a preference"
+            ]
+          },
+          {
+            "type": "highlight",
+            "text": "For operations in Chile, Peru, and Argentina, this means greater scrutiny of environmental practices, but also an opportunity to differentiate with sustainable production."
+          },
+          {
+            "type": "section",
+            "title": "Premium Market Requirements",
+            "text": "Western buyers demand:",
+            "list": [
+              "Responsible water management - Documentation of use and recirculation",
+              "Complete traceability - From extraction to final product",
+              "Environmental compliance - Certifications and independent audits",
+              "Community relations - Demonstrable social license"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "How Filtration Supports Positioning",
+            "text": "Water management is central to the ESG narrative. Operations that can demonstrate high recirculation rates, effective effluent treatment, and minimal water impact have competitive advantage in premium markets."
+          },
+          {
+            "type": "conclusion",
+            "text": "Latin America has a unique opportunity to capture greater share of the global critical minerals market. But this requires more than having the resources - it requires demonstrating they can be extracted responsibly. Investments in water management and treatment technologies are not costs - they are the gateway to the world's most valuable markets."
+          }
+        ],
+        "sources": [
+          { "name": "Colombia One - Lithium: Latin America's White Gold", "url": "https://colombiaone.com/2025/05/27/lithium-latin-america-china/" },
+          { "name": "Control Risks - Latin America Key Player in Lithium", "url": "https://www.controlrisks.com/our-thinking/insights/latin-america-to-be-a-key-player-as-global-demand-for-lithium-skyrockets" },
+          { "name": "Americas Market Intelligence - Critical Minerals Report", "url": "https://americasmi.com/" }
+        ]
+      }
     }
   }
 }

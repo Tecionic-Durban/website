@@ -1,84 +1,14 @@
 'use client'
 
-import Link from 'next/link'
 import { ArrowRight, Factory, Droplets, FlaskConical, Shield, Clock } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export default function CasosExitoPage() {
-  const caseStudies = [
-    {
-      id: 1,
-      slug: "tratamiento-organico-sx",
-      industry: "Cobre",
-      industryIcon: Factory,
-      headlineMetric: "$3.1M",
-      metricUnit: "USD",
-      headlineLabel: "Ahorro anual",
-      title: "Optimización de circuito SX mediante filtrado y tratamiento con arcilla",
-      services: ["Filtrado", "Arcilla"],
-    },
-    {
-      id: 2,
-      slug: "enap-lodos-petroleros",
-      industry: "Petróleo",
-      industryIcon: Droplets,
-      headlineMetric: "84",
-      metricUnit: "%",
-      headlineLabel: "Reducción volumétrica",
-      title: "Deshidratación de lodos petroleros en refinería sin inversión de capital",
-      services: ["Filtración", "Deshidratación"],
-    },
-    {
-      id: 3,
-      slug: "deshidratacion-concentrados",
-      industry: "Cobre",
-      industryIcon: Factory,
-      headlineMetric: "$2.43M",
-      metricUnit: "USD",
-      headlineLabel: "Valor protegido",
-      title: "Respaldo de filtración durante mantención programada en Cerro Negro",
-      services: ["Filtración", "Respaldo"],
-    },
-    {
-      id: 4,
-      slug: "limpieza-celdas-ew",
-      industry: "Cobre",
-      industryIcon: Shield,
-      headlineMetric: "0",
-      metricUnit: "",
-      headlineLabel: "Incidentes",
-      title: "Limpieza de celdas EW en faena de alta montaña - Caserones",
-      services: ["Limpieza EW", "Seguridad"],
-    },
-    {
-      id: 5,
-      slug: "soporte-sx-dgm",
-      industry: "Cobre",
-      industryIcon: Clock,
-      headlineMetric: "8",
-      metricUnit: "años",
-      headlineLabel: "Operación continua",
-      title: "Soporte continuo de planta SX para CODELCO - DGM",
-      services: ["Filtrado SX", "Soporte"],
-    },
-    {
-      id: 6,
-      slug: "solidos-finos-yoduro",
-      industry: "Químico",
-      industryIcon: FlaskConical,
-      headlineMetric: "100",
-      metricUnit: "%",
-      headlineLabel: "Continuidad operacional",
-      title: "Filtración de sólidos finos para producción de yoduro",
-      services: ["Sólidos finos", "Monitoreo"],
-    },
-  ]
+  const t = useTranslations('caseStudies')
 
-  const headlineStats = [
-    { value: "$3.1M", label: "Ahorro documentado" },
-    { value: "84%", label: "Reducción máxima" },
-    { value: "8+", label: "Años operando" },
-    { value: "120+", label: "Proyectos completados" },
-  ]
+  // Icons for each case study (order matches JSON array)
+  const caseIcons = [Factory, Droplets, Factory, Shield, Clock, FlaskConical]
 
   return (
     <main className="min-h-screen bg-white">
@@ -95,16 +25,16 @@ export default function CasosExitoPage() {
             {/* Technical label */}
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-12 bg-emerald-600" />
-              <span className="text-xs font-mono tracking-widest text-gray-500 uppercase">Casos de Éxito</span>
+              <span className="text-xs font-mono tracking-widest text-gray-500 uppercase">{t('hero.label')}</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight mb-6 leading-[1.1]">
-              Resultados que satisfacen<br />
-              <span className="text-gradient">las operaciones</span>
+              {t('hero.titleLine1')}<br />
+              <span className="text-gradient">{t('hero.titleLine2')}</span>
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Métricas verificables de operaciones reales en minería y petróleo a través de Latinoamérica.
+              {t('hero.description')}
             </p>
           </div>
         </div>
@@ -114,7 +44,7 @@ export default function CasosExitoPage() {
       <section className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4">
-            {headlineStats.map((stat, index) => (
+            {t.raw('stats').map((stat, index) => (
               <div
                 key={index}
                 className={`px-6 py-8 ${index < 3 ? 'border-r border-gray-200' : ''} ${index < 2 ? 'border-b lg:border-b-0 border-gray-200' : ''}`}
@@ -137,10 +67,10 @@ export default function CasosExitoPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-8 bg-emerald-600" />
-                <span className="text-xs font-mono tracking-widest text-gray-500 uppercase">Proyectos</span>
+                <span className="text-xs font-mono tracking-widest text-gray-500 uppercase">{t('grid.label')}</span>
               </div>
               <h2 className="text-3xl font-semibold text-gray-900">
-                Casos documentados
+                {t('grid.title')}
               </h2>
             </div>
 
@@ -148,11 +78,11 @@ export default function CasosExitoPage() {
 
           {/* Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200">
-            {caseStudies.map((study) => {
-              const IconComponent = study.industryIcon
+            {t.raw('cases').map((study, index) => {
+              const IconComponent = caseIcons[index]
               return (
                 <Link
-                  key={study.id}
+                  key={index}
                   href={`/casos-de-exito/${study.slug}`}
                   className="group bg-white p-8 hover:bg-gray-50 transition-colors relative"
                 >
@@ -194,7 +124,7 @@ export default function CasosExitoPage() {
 
                   {/* Read link */}
                   <div className="flex items-center text-sm font-medium text-emerald-600 group-hover:text-emerald-700">
-                    <span>Leer caso</span>
+                    <span>{t('grid.readCase')}</span>
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
@@ -212,26 +142,20 @@ export default function CasosExitoPage() {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-8 bg-emerald-600" />
-                <span className="text-xs font-mono tracking-widest text-gray-500 uppercase">Caso Destacado</span>
+                <span className="text-xs font-mono tracking-widest text-gray-500 uppercase">{t('featured.label')}</span>
               </div>
 
               <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-                Tratamiento de fase orgánica en planta SX
+                {t('featured.title')}
               </h2>
 
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Durante 18 meses, implementamos un sistema integral de filtrado, tratamiento con arcilla
-                y centrifugado que transformó la operación de una planta SX con problemas críticos de
-                calidad de orgánico.
+                {t('featured.description')}
               </p>
 
               {/* Technical specs list */}
               <div className="space-y-4 mb-10">
-                {[
-                  { label: "TSF", before: "444s", after: "153s", change: "-66%" },
-                  { label: "TIF", before: "20.4", after: "23.7", change: "+16%", unit: "dinas/cm" },
-                  { label: "Eficiencia global", value: "92.16%" },
-                ].map((item, i) => (
+                {t.raw('featured.specs').map((item, i) => (
                   <div key={i} className="flex items-center justify-between py-3 border-b border-gray-200">
                     <span className="text-sm font-mono text-gray-600">{item.label}</span>
                     <div className="text-right">
@@ -254,7 +178,7 @@ export default function CasosExitoPage() {
                 href="/casos-de-exito/tratamiento-organico-sx"
                 className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
               >
-                Ver caso completo
+                {t('featured.button')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -263,7 +187,7 @@ export default function CasosExitoPage() {
             <div className="bg-white border border-gray-200 p-8">
               {/* Panel header */}
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-gray-200">
-                <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">Resultados Clave</span>
+                <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">{t('featured.resultsLabel')}</span>
                 <div className="flex gap-1">
                   <div className="w-2 h-2 rounded-full bg-emerald-500" />
                   <div className="w-2 h-2 rounded-full bg-gray-300" />
@@ -272,12 +196,7 @@ export default function CasosExitoPage() {
               </div>
 
               <div className="grid grid-cols-2 gap-6">
-                {[
-                  { value: "$3.1M", label: "Ahorro anual", unit: "USD" },
-                  { value: "52%", label: "Reducción arrastres" },
-                  { value: "92%", label: "Eficiencia global" },
-                  { value: "18", label: "Meses operación" },
-                ].map((stat, i) => (
+                {t.raw('featured.results').map((stat, i) => (
                   <div key={i} className="relative">
                     {/* Corner accent */}
                     <div className="absolute -top-1 -left-1 w-2 h-2 border-l border-t border-emerald-600/30" />
@@ -300,7 +219,7 @@ export default function CasosExitoPage() {
       {/* Client Logos - Minimal */}
       <section className="py-16 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-sm text-gray-500 mb-10">Empresas que confían en nuestras soluciones</p>
+          <p className="text-center text-sm text-gray-500 mb-10">{t('clients.title')}</p>
           <div className="flex justify-center items-center gap-12 flex-wrap">
             {["CODELCO", "ENAP", "Caserones", "Minera Spence", "Cerro Negro"].map((company) => (
               <span key={company} className="font-mono text-sm text-gray-400 tracking-wider">
@@ -315,24 +234,24 @@ export default function CasosExitoPage() {
       <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-semibold text-white mb-4">
-            ¿Listo para optimizar sus procesos?
+            {t('cta.title')}
           </h2>
           <p className="text-gray-400 mb-10 max-w-xl mx-auto">
-            Cada operación es única. Desarrollamos soluciones personalizadas que maximizan la eficiencia de sus procesos.
+            {t('cta.description')}
           </p>
           <div className="flex justify-center gap-4">
             <Link
               href="/contacto"
               className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
             >
-              Solicitar consulta
+              {t('cta.contactButton')}
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/servicios"
               className="inline-flex items-center gap-2 border border-gray-700 text-gray-300 px-6 py-3 rounded-lg font-semibold hover:border-gray-500 hover:text-white transition-colors"
             >
-              Ver servicios
+              {t('cta.servicesButton')}
             </Link>
           </div>
         </div>

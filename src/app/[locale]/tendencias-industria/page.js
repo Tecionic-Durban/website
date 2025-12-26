@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import { ArrowRight, Zap, Activity, Globe } from 'lucide-react'
 
 // Animated Counter Component
@@ -55,7 +56,7 @@ function StatCard({ value, label, color, delay }) {
 }
 
 // Trend Card Component - News Article Style
-function TrendCard({ trend, index }) {
+function TrendCard({ trend, readMore }) {
   return (
     <Link
       href={`/tendencias-industria/${trend.slug}`}
@@ -95,7 +96,7 @@ function TrendCard({ trend, index }) {
           <div className="flex items-center justify-between">
             <span className="text-xs text-gray-400">{trend.date} · {trend.readTime}</span>
             <span className="text-emerald-600 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-              Leer más
+              {readMore}
               <ArrowRight className="w-4 h-4" />
             </span>
           </div>
@@ -106,7 +107,7 @@ function TrendCard({ trend, index }) {
 }
 
 // Filter Tabs Component
-function FilterTabs({ categories, activeCategory, setActiveCategory }) {
+function FilterTabs({ categories, activeCategory, setActiveCategory, allLabel }) {
   return (
     <div className="flex flex-wrap justify-center gap-2 mb-12">
       <button
@@ -118,7 +119,7 @@ function FilterTabs({ categories, activeCategory, setActiveCategory }) {
             : 'bg-white text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 border border-gray-200'}
         `}
       >
-        Todos
+        {allLabel}
       </button>
       {categories.map((cat) => (
         <button
@@ -138,143 +139,37 @@ function FilterTabs({ categories, activeCategory, setActiveCategory }) {
   )
 }
 
+// Color mapping for trends
+const trendColors = {
+  0: "from-emerald-500 to-emerald-600",
+  1: "from-cyan-500 to-cyan-600",
+  2: "from-blue-500 to-blue-600",
+  3: "from-orange-500 to-orange-600",
+  4: "from-purple-500 to-purple-600",
+  5: "from-red-500 to-red-600"
+}
+
 export default function TendenciasIndustriaPage() {
   const [activeCategory, setActiveCategory] = useState('all')
+  const tc = useTranslations('industryTrends.common')
+  const tl = useTranslations('industryTrends.listing')
 
-  const trends = [
-    {
-      id: 1,
-      slug: "perdidas-solvente-sx",
-      category: "Tecnología",
-      title: "Pérdidas de Solvente en SX: Un Problema de Millones que Tiene Solución",
-      excerpt: "Con más del 60% de nuevos proyectos optando por SX-EW, las pérdidas de orgánico representan costos ocultos de $300-900K USD anuales. Nuevas tecnologías de tratamiento recuperan hasta 98% del solvente degradado.",
-      date: "Diciembre 2025",
-      readTime: "10 min",
-      author: "Equipo Técnico TSF",
-      tags: ["SX-EW", "Recuperación Orgánico", "Reducción Costos", "Hidrometalurgia"],
-      impact: "Alto",
-      trend: "Creciendo",
-      keyInsights: [
-        "60% de nuevos proyectos prefieren métodos hidrometalúrgicos SX-EW",
-        "Pérdidas de 100-200 L/día = $300-900K USD anuales en reposición",
-        "Tratamiento especializado recupera 90-98% del orgánico degradado",
-        "Reducción del 60% en pérdidas continuas post-tratamiento"
-      ],
-      forecast: "La optimización de circuitos SX será crítica con Chile proyectando 5.8Mt de cobre para 2025 (+5.8%) y $50B en inversiones antes de 2030.",
-      color: "from-emerald-500 to-emerald-600"
-    },
-    {
-      id: 2,
-      slug: "litio-triangulo-agua",
-      category: "Mercados",
-      title: "Litio en el Triángulo: El Desafío del Agua y la Oportunidad de la Filtración",
-      excerpt: "Argentina podría convertirse en el mayor productor mundial de litio, pero la industria debe resolver un problema crítico: el consumo de 21 millones de litros de agua diarios amenaza la viabilidad de nuevos proyectos.",
-      date: "Diciembre 2025",
-      readTime: "12 min",
-      author: "Equipo Técnico TSF",
-      tags: ["Litio", "Gestión de Agua", "Argentina", "Filtración", "Sustentabilidad"],
-      impact: "Muy Alto",
-      trend: "Explosivo",
-      keyInsights: [
-        "Demanda de litio sube 24% en 2025, 65% para vehículos eléctricos",
-        "Argentina lanza 4 nuevos proyectos (+79% capacidad, 202K ton adicionales)",
-        "Consumo de agua: 21 millones de litros/día amenaza permisos",
-        "Tribunal de Catamarca suspendió nuevos permisos por agua en 2024"
-      ],
-      forecast: "Argentina podría superar a Australia y Chile como mayor productor mundial si resuelve el desafío hídrico. La filtración móvil permite cumplir exigencias ambientales sin infraestructura permanente.",
-      color: "from-cyan-500 to-cyan-600"
-    },
-    {
-      id: 3,
-      slug: "politica-minera-2050",
-      category: "Regulación",
-      title: "Política Minera 2050: Chile Limita Uso de Agua Continental al 10%",
-      excerpt: "La nueva regulación chilena exige que la minería no supere el 10% de uso de agua continental para 2025 y 5% para 2040. Las operaciones deben alcanzar 85-90% de recirculación de agua.",
-      date: "Noviembre 2025",
-      readTime: "8 min",
-      author: "Equipo Técnico TSF",
-      tags: ["Regulación", "Agua", "Chile", "Desalinización", "Recirculación"],
-      impact: "Alto",
-      trend: "Regulatorio",
-      keyInsights: [
-        "Límite de 10% agua continental para minería en 2025",
-        "BHP y Antofagasta ya usan 30% agua desalinizada, meta 50% para 2030",
-        "Plantas modernas alcanzan 85-90% de recirculación de agua",
-        "Capacidad de desalinización crecerá 130% para 2031"
-      ],
-      forecast: "El consumo de agua del sector cobre crecerá 2.3% anual hasta 23.7 m³/s en 2034. El uso de agua de mar aumentará 230% esta década.",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      id: 4,
-      slug: "boom-cobre-chile-peru",
-      category: "Producción",
-      title: "Boom del Cobre: Chile y Perú Proyectan Récords de Producción",
-      excerpt: "Chile proyecta 5.8Mt de cobre para 2025 (+5.8%), con Escondida subiendo 22% y Codelco apuntando a 1.4Mt. La capacidad de filtración será el cuello de botella durante mantenciones.",
-      date: "Noviembre 2025",
-      readTime: "9 min",
-      author: "Equipo Técnico TSF",
-      tags: ["Cobre", "Chile", "Perú", "Producción", "Mantenciones"],
-      impact: "Alto",
-      trend: "Creciendo",
-      keyInsights: [
-        "Chile: 5.8Mt cobre proyectado 2025 (+5.8%)",
-        "Escondida: +22% producción primer semestre 2025",
-        "BHP invierte $10.8B en Chile, $2B solo en Escondida",
-        "Codelco-Anglo American JV: 2.7Mt adicionales en 21 años"
-      ],
-      forecast: "Casi $50B USD se invertirán en proyectos de cobre que iniciarán producción antes de 2030, agregando 3.2 Mt/año a los 7.6 Mt/año actuales.",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      id: 5,
-      slug: "ia-automatizacion-sx-ew",
-      category: "Innovación",
-      title: "IA y Automatización Revolucionan Eficiencia en Plantas SX-EW",
-      excerpt: "La integración de inteligencia artificial y sensores en tiempo real está optimizando procesos de lixiviación y electroobtención, reduciendo costos operacionales hasta 35%.",
-      date: "Octubre 2025",
-      readTime: "8 min",
-      author: "Dr. Carlos Mendoza",
-      tags: ["Digitalización", "Automatización", "IoT", "Inteligencia Artificial"],
-      impact: "Alto",
-      trend: "Creciendo",
-      keyInsights: [
-        "35% reducción en costos operacionales mediante automatización",
-        "Monitoreo en tiempo real mejora eficiencia en 28%",
-        "Predicción de fallas reduce downtime en 45%",
-        "Celdas EW modulares permiten escalamiento rápido"
-      ],
-      forecast: "Se espera que el 80% de las operaciones mineras adopten algún nivel de automatización para 2026.",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      id: 6,
-      slug: "minerales-criticos-latam",
-      category: "Geopolítica",
-      title: "Minerales Críticos: Latinoamérica en el Centro de la Competencia Global",
-      excerpt: "Con aranceles de EE.UU. a China y restricciones de exportación, los fabricantes occidentales buscan proveedores alternativos. Chile y Perú emergen como opciones estratégicas.",
-      date: "Octubre 2025",
-      readTime: "11 min",
-      author: "Econ. Patricia Vega",
-      tags: ["Geopolítica", "Minerales Críticos", "Cadena Suministro", "Latinoamérica"],
-      impact: "Alto",
-      trend: "Geopolítico",
-      keyInsights: [
-        "Latinoamérica tiene 40.5% de producción global de cobre",
-        "Triángulo del Litio posee 68% de reservas mundiales",
-        "China domina cadena de valor del litio, genera presión por diversificar",
-        "Aranceles de Trump impulsan búsqueda de proveedores alternativos"
-      ],
-      forecast: "Latinoamérica podría capturar mayor participación del mercado si demuestra producción sustentable y gestión responsable del agua.",
-      color: "from-red-500 to-red-600"
-    }
-  ]
+  // Get trends from translations
+  const trendsRaw = useTranslations('industryTrends').raw('trends')
+  const trends = trendsRaw.map((trend, index) => ({
+    ...trend,
+    id: index + 1,
+    color: trendColors[index] || "from-gray-500 to-gray-600"
+  }))
 
   const categories = [...new Set(trends.map(t => t.category))]
 
   const filteredTrends = activeCategory === 'all'
     ? trends
     : trends.filter(t => t.category === activeCategory)
+
+  // Get stats from translations
+  const stats = tl.raw('stats')
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -296,10 +191,10 @@ export default function TendenciasIndustriaPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-24 md:py-32">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-[family-name:var(--font-family-headings)]">
-              Tendencias de la Industria
+              {tl('heroTitle')}
             </h1>
             <p className="text-lg text-emerald-100 leading-relaxed">
-              Análisis técnico y perspectivas estratégicas sobre las fuerzas que están transformando la minería hidrometalúrgica en Latinoamérica.
+              {tl('heroDescription')}
             </p>
           </div>
         </div>
@@ -310,38 +205,23 @@ export default function TendenciasIndustriaPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 font-[family-name:var(--font-family-headings)]">
-              Panorama del Mercado 2025
+              {tl('marketTitle')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Indicadores clave que definen el escenario competitivo de la industria minera latinoamericana
+              {tl('marketDescription')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <StatCard
-              value="5.8Mt"
-              label="Producción Cobre Chile 2025"
-              color="bg-emerald-500"
-              delay={0}
-            />
-            <StatCard
-              value="$50B"
-              label="Inversión Proyectos pre-2030"
-              color="bg-blue-500"
-              delay={100}
-            />
-            <StatCard
-              value="+24%"
-              label="Crecimiento Demanda Litio"
-              color="bg-cyan-500"
-              delay={200}
-            />
-            <StatCard
-              value="10%"
-              label="Límite Agua Continental"
-              color="bg-orange-500"
-              delay={300}
-            />
+            {stats.map((stat, index) => (
+              <StatCard
+                key={index}
+                value={stat.value}
+                label={stat.label}
+                color={['bg-emerald-500', 'bg-blue-500', 'bg-cyan-500', 'bg-orange-500'][index]}
+                delay={index * 100}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -352,10 +232,10 @@ export default function TendenciasIndustriaPage() {
           {/* Section Header */}
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 font-[family-name:var(--font-family-headings)]">
-              Análisis y Perspectivas
+              {tl('analysisTitle')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              Investigación técnica sobre las tendencias que impactan la operación y competitividad del sector
+              {tl('analysisDescription')}
             </p>
           </div>
 
@@ -364,12 +244,13 @@ export default function TendenciasIndustriaPage() {
             categories={categories}
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
+            allLabel={tc('allCategories')}
           />
 
           {/* Trends Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredTrends.map((trend, index) => (
-              <TrendCard key={trend.id} trend={trend} index={index} />
+              <TrendCard key={trend.id} trend={trend} readMore={tc('readMore')} />
             ))}
           </div>
         </div>
@@ -398,30 +279,29 @@ export default function TendenciasIndustriaPage() {
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full mb-6">
             <Zap className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm font-semibold">Inteligencia Estratégica</span>
+            <span className="text-emerald-400 text-sm font-semibold">{tl('ctaBadge')}</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-[family-name:var(--font-family-headings)]">
-            Manténgase Adelante del Mercado
+            {tl('ctaTitle')}
           </h2>
 
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-            Suscríbase a nuestro análisis semanal y reciba insights exclusivos
-            sobre el futuro de la industria minera latinoamericana.
+            {tl('ctaDescription')}
           </p>
 
           {/* Email Form */}
           <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3 mb-10">
             <input
               type="email"
-              placeholder="Su email profesional"
+              placeholder={tl('emailPlaceholder')}
               className="flex-1 px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"
             />
             <button
               type="submit"
               className="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 flex items-center justify-center gap-2"
             >
-              Suscribirse
+              {tl('subscribeButton')}
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
@@ -430,11 +310,11 @@ export default function TendenciasIndustriaPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
               <Activity className="w-4 h-4" />
-              Descargar Reporte Anual
+              {tl('downloadReportButton')}
             </button>
             <button className="px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
               <Globe className="w-4 h-4" />
-              Consultoría Estratégica
+              {tl('consultingButton')}
             </button>
           </div>
         </div>

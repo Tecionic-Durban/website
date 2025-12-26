@@ -2,6 +2,7 @@
 'use client'
 import { useState } from 'react'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import { handleContactClick } from '@/utils/navigation'
 import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, Analytics, ChartLineData, Meter, CertificateCheck } from '@carbon/icons-react'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -12,12 +13,13 @@ export default function Header() {
   const [activeServiceTab, setActiveServiceTab] = useState('operaciones')
   const pathname = usePathname()
   const router = useRouter()
+  const t = useTranslations()
 
   const navigation = [
-    { name: 'Servicios', href: '/services' },
-    { name: 'Industrias', href: '/industries' },
-    { name: 'Recursos', href: '/resources' },
-    { name: 'Acerca', href: '/about' },
+    { name: t('navigation.services'), href: '/services', key: 'services' },
+    { name: t('navigation.industries'), href: '/industries', key: 'industries' },
+    { name: t('navigation.resources'), href: '/resources', key: 'resources' },
+    { name: t('navigation.about'), href: '/about', key: 'about' },
   ]
 
   const toggleMobileSection = (section) => {
@@ -48,9 +50,9 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <div key={item.name} className="group relative">
-                {/* Dropdown triggers for Servicios, Industrias and Recursos */}
-                {(item.name === 'Servicios' || item.name === 'Industrias' || item.name === 'Recursos') ? (
+              <div key={item.key} className="group relative">
+                {/* Dropdown triggers for Services, Industries and Resources */}
+                {(item.key === 'services' || item.key === 'industries' || item.key === 'resources') ? (
                   <div className="relative px-3 py-2 text-sm font-medium transition-colors duration-200 block text-gray-700 hover:text-emerald-600 cursor-default z-10">
                     <span className="flex items-center relative z-10">
                       <span className="relative">
@@ -94,7 +96,7 @@ export default function Header() {
                 )}
                 
                 {/* Services Dropdown - Plaid-style tabbed layout */}
-                {item.name === 'Servicios' && (
+                {item.key === 'services' && (
                   <div className="absolute top-full left-0 -translate-x-[10%] mt-1 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="flex">
@@ -108,7 +110,7 @@ export default function Header() {
                               : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50 border-l-2 border-transparent'
                           }`}
                         >
-                          Servicios Operacionales
+                          {t('header.operationalServices')}
                         </button>
                         <button
                           onMouseEnter={() => setActiveServiceTab('analitica')}
@@ -118,7 +120,7 @@ export default function Header() {
                               : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50 border-l-2 border-transparent'
                           }`}
                         >
-                          Analítica de Datos
+                          {t('header.dataAnalytics')}
                         </button>
                         <button
                           onMouseEnter={() => setActiveServiceTab('calidad')}
@@ -128,7 +130,7 @@ export default function Header() {
                               : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50 border-l-2 border-transparent'
                           }`}
                         >
-                          Control de Calidad
+                          {t('header.qualityControl')}
                         </button>
                       </div>
 
@@ -143,8 +145,8 @@ export default function Header() {
                                   <Filter className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Filtración y Deshidratación</div>
-                                  <div className="text-xs text-gray-500">De borras</div>
+                                  <div className="font-medium">{t('header.services.filtration.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.filtration.description')}</div>
                                 </div>
                               </a>
 
@@ -153,8 +155,8 @@ export default function Header() {
                                   <Chemistry className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Tratamiento Orgánico</div>
-                                  <div className="text-xs text-gray-500">Purificación extractantes</div>
+                                  <div className="font-medium">{t('header.services.organicTreatment.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.organicTreatment.description')}</div>
                                 </div>
                               </a>
 
@@ -163,8 +165,8 @@ export default function Header() {
                                   <Layers className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Deshidratación</div>
-                                  <div className="text-xs text-gray-500">Concentrados mineros</div>
+                                  <div className="font-medium">{t('header.services.concentrateDehydration.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.concentrateDehydration.description')}</div>
                                 </div>
                               </a>
 
@@ -173,8 +175,8 @@ export default function Header() {
                                   <CirclePacking className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Sólidos Finos</div>
-                                  <div className="text-xs text-gray-500">Separación de finos</div>
+                                  <div className="font-medium">{t('header.services.fineSolids.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.fineSolids.description')}</div>
                                 </div>
                               </a>
 
@@ -183,8 +185,8 @@ export default function Header() {
                                   <RainDrop className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Clarificación de Aguas</div>
-                                  <div className="text-xs text-gray-500">Recuperación de agua</div>
+                                  <div className="font-medium">{t('header.services.waterClarification.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.waterClarification.description')}</div>
                                 </div>
                               </a>
 
@@ -193,8 +195,8 @@ export default function Header() {
                                   <BatteryCharging className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Limpieza Celdas EW</div>
-                                  <div className="text-xs text-gray-500">Desborre de celdas</div>
+                                  <div className="font-medium">{t('header.services.ewCleaning.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.ewCleaning.description')}</div>
                                 </div>
                               </a>
                             </div>
@@ -210,8 +212,8 @@ export default function Header() {
                                   <Analytics className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Monitoreo Turbidez</div>
-                                  <div className="text-xs text-gray-500">Tiempo real en potasio</div>
+                                  <div className="font-medium">{t('header.services.turbidityMonitoring.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.turbidityMonitoring.description')}</div>
                                 </div>
                               </a>
 
@@ -220,8 +222,8 @@ export default function Header() {
                                   <ChartLineData className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Monitoreo TSF</div>
-                                  <div className="text-xs text-gray-500">Control de calidad borra</div>
+                                  <div className="font-medium">{t('header.services.tsfMonitoring.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.tsfMonitoring.description')}</div>
                                 </div>
                               </a>
 
@@ -230,8 +232,8 @@ export default function Header() {
                                   <Meter className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Medición TIF</div>
-                                  <div className="text-xs text-gray-500">Interfase orgánico/acuoso</div>
+                                  <div className="font-medium">{t('header.services.tifMeasurement.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.tifMeasurement.description')}</div>
                                 </div>
                               </a>
                             </div>
@@ -239,7 +241,7 @@ export default function Header() {
                             {/* Coming soon indicator */}
                             <div className="mt-6 pt-4 border-t border-gray-100">
                               <p className="text-xs text-gray-400">
-                                Nuevos servicios de analítica en desarrollo. Contáctenos para más información.
+                                {t('header.analyticsComingSoon')}
                               </p>
                             </div>
                           </>
@@ -254,8 +256,8 @@ export default function Header() {
                                   <CertificateCheck className="w-5 h-5 text-blue-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
                                 <div>
-                                  <div className="font-medium">Certificación de Humedad</div>
-                                  <div className="text-xs text-gray-500">TML y normas IMSBC</div>
+                                  <div className="font-medium">{t('header.services.humidityCertification.name')}</div>
+                                  <div className="text-xs text-gray-500">{t('header.services.humidityCertification.description')}</div>
                                 </div>
                               </a>
                             </div>
@@ -263,7 +265,7 @@ export default function Header() {
                             {/* Coming soon indicator */}
                             <div className="mt-6 pt-4 border-t border-gray-100">
                               <p className="text-xs text-gray-400">
-                                Laboratorio móvil para certificación en faena. Próximamente más servicios de control de calidad.
+                                {t('header.qualityComingSoon')}
                               </p>
                             </div>
                           </>
@@ -275,14 +277,14 @@ export default function Header() {
 
 
                 {/* Professional Industrial Dropdown for Industries */}
-                {item.name === 'Industrias' && (
+                {item.key === 'industries' && (
                   <div className="absolute top-full left-0 -translate-x-[10%] mt-1 w-[42rem] bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="p-6">
                       <div className="flex gap-8">
                         <div className="flex-1">
                           <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">
-                            Sectores Especializados
+                            {t('header.specializedSectors')}
                           </div>
                           <div className="space-y-2">
                             <a href="/industries/copper" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
@@ -290,57 +292,57 @@ export default function Header() {
                                 <span className="text-white text-xs font-bold">Cu</span>
                               </div>
                               <div>
-                                <div className="font-medium">Cobre</div>
-                                <div className="text-xs text-gray-500">Lixiviación y SX/EW</div>
+                                <div className="font-medium">{t('header.industries.copper.name')}</div>
+                                <div className="text-xs text-gray-500">{t('header.industries.copper.description')}</div>
                               </div>
                             </a>
-                            
+
                             <a href="/industries/zinc" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-8 h-8 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-xs font-bold">Zn</span>
                               </div>
                               <div>
-                                <div className="font-medium">Zinc</div>
-                                <div className="text-xs text-gray-500">Electroobtención y refinación</div>
+                                <div className="font-medium">{t('header.industries.zinc.name')}</div>
+                                <div className="text-xs text-gray-500">{t('header.industries.zinc.description')}</div>
                               </div>
                             </a>
-                            
+
                             <a href="/industries/potassium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-xs font-bold">K</span>
                               </div>
                               <div>
-                                <div className="font-medium">Potasio</div>
-                                <div className="text-xs text-gray-500">Sales minerales</div>
+                                <div className="font-medium">{t('header.industries.potassium.name')}</div>
+                                <div className="text-xs text-gray-500">{t('header.industries.potassium.description')}</div>
                               </div>
                             </a>
-                            
+
                             <a href="/industries/lithium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-xs font-bold">Li</span>
                               </div>
                               <div>
-                                <div className="font-medium">Litio</div>
-                                <div className="text-xs text-gray-500">Baterías y energía</div>
+                                <div className="font-medium">{t('header.industries.lithium.name')}</div>
+                                <div className="text-xs text-gray-500">{t('header.industries.lithium.description')}</div>
                               </div>
                             </a>
-                            
+
                             <a href="/industries/crude-oil" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <RainDrop className="w-5 h-5 text-white" />
                               </div>
                               <div>
-                                <div className="font-medium">Petróleo Crudo</div>
-                                <div className="text-xs text-gray-500">Refinación y procesamiento</div>
+                                <div className="font-medium">{t('header.industries.crudeOil.name')}</div>
+                                <div className="text-xs text-gray-500">{t('header.industries.crudeOil.description')}</div>
                               </div>
                             </a>
                           </div>
                         </div>
-                        
+
                         {/* ENAP Customer Success Story - Enhanced */}
                         <div className="w-80 border-l border-gray-100 pl-6">
                           <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
-                            Historia de Éxito
+                            {t('header.successStory')}
                           </div>
                           <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-6 border border-emerald-200">
                             {/* Thumbnail placeholder */}
@@ -375,7 +377,7 @@ export default function Header() {
                             </div>
                             
                             <a href="#" className="flex items-center justify-center w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
-                              Ver caso completo
+                              {t('header.viewFullCase')}
                               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
                               </svg>
@@ -388,12 +390,12 @@ export default function Header() {
                 )}
 
                 {/* Professional Resources Dropdown */}
-                {item.name === 'Recursos' && (
+                {item.key === 'resources' && (
                   <div className="absolute top-full left-0 -translate-x-[10%] mt-1 w-80 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="p-4">
                       <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-2">
-                        Centro de Recursos
+                        {t('header.resourceCenter')}
                       </div>
                       <div className="space-y-1">
                         <a href="/casos-de-exito" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
@@ -403,8 +405,8 @@ export default function Header() {
                             </svg>
                           </div>
                           <div>
-                            <div className="font-medium">Casos de Éxito</div>
-                            <div className="text-xs text-gray-500">Proyectos reales documentados</div>
+                            <div className="font-medium">{t('header.resourceLinks.caseStudies.name')}</div>
+                            <div className="text-xs text-gray-500">{t('header.resourceLinks.caseStudies.description')}</div>
                           </div>
                         </a>
 
@@ -415,11 +417,11 @@ export default function Header() {
                             </svg>
                           </div>
                           <div>
-                            <div className="font-medium">Tendencias de la Industria</div>
-                            <div className="text-xs text-gray-500">Análisis y perspectivas</div>
+                            <div className="font-medium">{t('header.resourceLinks.industryTrends.name')}</div>
+                            <div className="text-xs text-gray-500">{t('header.resourceLinks.industryTrends.description')}</div>
                           </div>
                         </Link>
-                        
+
                         <a href="/white-papers" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                           <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                             <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -427,11 +429,11 @@ export default function Header() {
                             </svg>
                           </div>
                           <div>
-                            <div className="font-medium">White Papers</div>
-                            <div className="text-xs text-gray-500">Investigación técnica profunda</div>
+                            <div className="font-medium">{t('header.resourceLinks.whitePapers.name')}</div>
+                            <div className="text-xs text-gray-500">{t('header.resourceLinks.whitePapers.description')}</div>
                           </div>
                         </a>
-                        
+
                         <a href="/especificaciones-tecnicas" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                           <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                             <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -440,11 +442,11 @@ export default function Header() {
                             </svg>
                           </div>
                           <div>
-                            <div className="font-medium">Especificaciones Técnicas</div>
-                            <div className="text-xs text-gray-500">Detalles de equipos y procesos</div>
+                            <div className="font-medium">{t('header.resourceLinks.technicalSpecs.name')}</div>
+                            <div className="text-xs text-gray-500">{t('header.resourceLinks.technicalSpecs.description')}</div>
                           </div>
                         </a>
-                        
+
                         <a href="/cumplimiento" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                           <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                             <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -452,11 +454,11 @@ export default function Header() {
                             </svg>
                           </div>
                           <div>
-                            <div className="font-medium">Cumplimiento</div>
-                            <div className="text-xs text-gray-500">Normativas y certificaciones</div>
+                            <div className="font-medium">{t('header.resourceLinks.compliance.name')}</div>
+                            <div className="text-xs text-gray-500">{t('header.resourceLinks.compliance.description')}</div>
                           </div>
                         </a>
-                        
+
                       </div>
                     </div>
                   </div>
@@ -473,7 +475,7 @@ export default function Header() {
               onClick={(e) => handleContactClick(e, router, pathname)}
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200"
             >
-              Contactar
+              {t('navigation.contact')}
             </button>
           </div>
 
@@ -510,7 +512,7 @@ export default function Header() {
                   onClick={() => toggleMobileSection('servicios')}
                   className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                 >
-                  <span>Servicios</span>
+                  <span>{t('navigation.services')}</span>
                   <svg
                     className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'servicios' ? 'rotate-180' : ''}`}
                     fill="none"
@@ -524,39 +526,39 @@ export default function Header() {
                   <div className="pl-4 pr-2 py-2 bg-gray-50 rounded-lg mt-1">
                     {/* Servicios Operacionales */}
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 py-2">
-                      Servicios Operacionales
+                      {t('header.operationalServices')}
                     </div>
                     <Link href="/services/filtration" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Filtración y Deshidratación
+                      {t('header.services.filtration.name')}
                     </Link>
                     <Link href="/services/organic-treatment" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Tratamiento Orgánico
+                      {t('header.services.organicTreatment.name')}
                     </Link>
                     <Link href="/services/concentrate-dehydration" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Deshidratación Concentrados
+                      {t('header.services.concentrateDehydration.name')}
                     </Link>
                     <Link href="/services/fine-solids" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Sólidos Finos
+                      {t('header.services.fineSolids.name')}
                     </Link>
                     <Link href="/services/water-clarification" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Clarificación de Aguas
+                      {t('header.services.waterClarification.name')}
                     </Link>
                     <Link href="/services/ew-cleaning" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Limpieza Celdas EW
+                      {t('header.services.ewCleaning.name')}
                     </Link>
 
                     {/* Analítica de Datos */}
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 py-2 mt-3 border-t border-gray-200 pt-3">
-                      Analítica de Datos
+                      {t('header.dataAnalytics')}
                     </div>
                     <Link href="/services/turbidity-monitoring" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
-                      Monitoreo Turbidez
+                      {t('header.services.turbidityMonitoring.name')}
                     </Link>
                     <Link href="/services/tsf-monitoring" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
-                      Monitoreo TSF
+                      {t('header.services.tsfMonitoring.name')}
                     </Link>
                     <Link href="/services/tif-measurement" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
-                      Medición TIF
+                      {t('header.services.tifMeasurement.name')}
                     </Link>
                   </div>
                 )}
@@ -568,7 +570,7 @@ export default function Header() {
                   onClick={() => toggleMobileSection('industrias')}
                   className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                 >
-                  <span>Industrias</span>
+                  <span>{t('navigation.industries')}</span>
                   <svg
                     className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'industrias' ? 'rotate-180' : ''}`}
                     fill="none"
@@ -581,24 +583,24 @@ export default function Header() {
                 {openMobileSection === 'industrias' && (
                   <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
                     <Link href="/industries/copper" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">Cobre</span>
-                      <span className="text-xs text-gray-500 block">Lixiviación y SX/EW</span>
+                      <span className="font-medium">{t('header.industries.copper.name')}</span>
+                      <span className="text-xs text-gray-500 block">{t('header.industries.copper.description')}</span>
                     </Link>
                     <Link href="/industries/zinc" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">Zinc</span>
-                      <span className="text-xs text-gray-500 block">Electroobtención y refinación</span>
+                      <span className="font-medium">{t('header.industries.zinc.name')}</span>
+                      <span className="text-xs text-gray-500 block">{t('header.industries.zinc.description')}</span>
                     </Link>
                     <Link href="/industries/potassium" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">Potasio</span>
-                      <span className="text-xs text-gray-500 block">Sales minerales</span>
+                      <span className="font-medium">{t('header.industries.potassium.name')}</span>
+                      <span className="text-xs text-gray-500 block">{t('header.industries.potassium.description')}</span>
                     </Link>
                     <Link href="/industries/lithium" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">Litio</span>
-                      <span className="text-xs text-gray-500 block">Baterías y energía</span>
+                      <span className="font-medium">{t('header.industries.lithium.name')}</span>
+                      <span className="text-xs text-gray-500 block">{t('header.industries.lithium.description')}</span>
                     </Link>
                     <Link href="/industries/crude-oil" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">Petróleo Crudo</span>
-                      <span className="text-xs text-gray-500 block">Refinación y procesamiento</span>
+                      <span className="font-medium">{t('header.industries.crudeOil.name')}</span>
+                      <span className="text-xs text-gray-500 block">{t('header.industries.crudeOil.description')}</span>
                     </Link>
                   </div>
                 )}
@@ -610,7 +612,7 @@ export default function Header() {
                   onClick={() => toggleMobileSection('recursos')}
                   className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                 >
-                  <span>Recursos</span>
+                  <span>{t('navigation.resources')}</span>
                   <svg
                     className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'recursos' ? 'rotate-180' : ''}`}
                     fill="none"
@@ -623,19 +625,19 @@ export default function Header() {
                 {openMobileSection === 'recursos' && (
                   <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
                     <Link href="/casos-de-exito" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Casos de Éxito
+                      {t('header.resourceLinks.caseStudies.name')}
                     </Link>
                     <Link href="/tendencias-industria" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Tendencias de la Industria
+                      {t('header.resourceLinks.industryTrends.name')}
                     </Link>
                     <Link href="/white-papers" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      White Papers
+                      {t('header.resourceLinks.whitePapers.name')}
                     </Link>
                     <Link href="/especificaciones-tecnicas" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Especificaciones Técnicas
+                      {t('header.resourceLinks.technicalSpecs.name')}
                     </Link>
                     <Link href="/cumplimiento" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      Cumplimiento
+                      {t('header.resourceLinks.compliance.name')}
                     </Link>
                   </div>
                 )}
@@ -651,7 +653,7 @@ export default function Header() {
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
-                Acerca
+                {t('navigation.about')}
               </Link>
 
               {/* Language Switcher - Mobile */}
@@ -667,7 +669,7 @@ export default function Header() {
                 }}
                 className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors duration-200 w-full"
               >
-                Contactar
+                {t('navigation.contact')}
               </button>
             </nav>
           </div>

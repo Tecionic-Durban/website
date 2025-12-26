@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { CheckCircle, ArrowRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 // Hero background images for cycling carousel - TSF equipment focused
 const heroImages = [
@@ -20,6 +21,7 @@ export default function Hero() {
   const router = useRouter()
   const heroRef = useRef(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const t = useTranslations('hero')
 
   // Progressive disclosure on scroll/mount
   useEffect(() => {
@@ -92,22 +94,22 @@ export default function Hero() {
               {/* Layered Headline Structure */}
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-[-0.02em] enterprise-slide-up stagger-1">
-                  <span className="gradient-text-animated">Optimiza tus</span>
+                  <span className="gradient-text-animated">{t('optimizeYour')}</span>
                   <span className="block text-emerald-300 font-black relative enterprise-slide-up stagger-2">
-                    Operaciones
+                    {t('operations')}
                     <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full opacity-60 enterprise-scale-in stagger-3"></div>
                   </span>
-                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-100/80 mt-2 enterprise-slide-up stagger-4">Sin Parar la Planta</span>
+                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-100/80 mt-2 enterprise-slide-up stagger-4">{t('withoutStopping')}</span>
                 </h1>
 
                 <div className="space-y-4 max-w-3xl">
                   <p className="text-lg lg:text-xl text-white leading-[1.4] font-medium progressive-reveal">
-                    <span className="text-emerald-400 font-bold">Maximiza producción</span> mientras resuelves cuellos de botella críticos sin parar operaciones.
+                    {t('subtitle')}
                   </p>
 
                   <div className="inline-flex items-center px-4 py-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 shadow-lg progressive-reveal">
                     <CheckCircle className="w-4 h-4 text-emerald-400 mr-2" />
-                    <span className="text-white font-semibold text-sm tracking-wide">CERO CAPEX • CERO MODIFICACIONES • MÁXIMO ROI</span>
+                    <span className="text-white font-semibold text-sm tracking-wide">{t('tagline')}</span>
                   </div>
                 </div>
               </div>
@@ -117,15 +119,15 @@ export default function Hero() {
             <div className="mt-10 grid grid-cols-3 gap-8">
               <div className="text-left">
                 <div className="text-4xl font-black text-white">23+</div>
-                <div className="text-sm text-white/70">Años de experiencia</div>
+                <div className="text-sm text-white/70">{t('stats.yearsExperience')}</div>
               </div>
               <div className="text-left">
                 <div className="text-4xl font-black text-white">120+</div>
-                <div className="text-sm text-white/70">Proyectos completados</div>
+                <div className="text-sm text-white/70">{t('stats.projectsCompleted')}</div>
               </div>
               <div className="text-left">
                 <div className="text-4xl font-black text-white">24/7</div>
-                <div className="text-sm text-white/70">Soporte operacional</div>
+                <div className="text-sm text-white/70">{t('stats.operationalSupport')}</div>
               </div>
             </div>
 
@@ -135,7 +137,7 @@ export default function Hero() {
                 onClick={() => router.push('/services')}
                 className="group bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 inline-flex items-center"
               >
-                <span>Ver Nuestros Servicios</span>
+                <span>{t('cta')}</span>
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
             </div>

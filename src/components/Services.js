@@ -5,10 +5,12 @@ import { useEffect, useRef } from 'react'
 import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging } from '@carbon/icons-react'
 import { CheckCircle, ArrowRight } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
+import { useTranslations } from 'next-intl'
 
 export default function Services() {
   const router = useRouter()
   const servicesRef = useRef(null)
+  const t = useTranslations('services')
 
   // Progressive disclosure on scroll
   useEffect(() => {
@@ -39,45 +41,33 @@ export default function Services() {
   }, [])
   const services = [
     {
-      title: "Filtración y Deshidratación de Borras y Sólidos",
-      description: "Filtración móvil de borras y sólidos en refinerías y plantas SX. Capacidad hasta 130 ton/día de torta seca mediante filtros prensa o centrífugas según requerimiento del cliente.",
+      key: 'filtration',
       icon: Filter,
-      features: [],
       slug: "/services/filtration"
     },
     {
-      title: "Tratamiento y Recuperación de Orgánico SX",
-      description: "Tratamiento especializado para recuperación de orgánico en procesos de extracción por solventes. Reduce pérdidas y optimiza la eficiencia de planta.",
+      key: 'organicTreatment',
       icon: Chemistry,
-      features: [],
       slug: "/services/organic-treatment"
     },
     {
-      title: "Deshidratación de Concentrados",
-      description: "Deshidratación de concentrados de cobre mediante filtros prensa móviles. Reducción de peso 60-70% para optimización de plantas concentradoras y preparación de carga para exportación.",
+      key: 'concentrateDehydration',
       icon: Layers,
-      features: [],
       slug: "/services/concentrate-dehydration"
     },
     {
-      title: "Tratamiento de Sólidos Finos",
-      description: "Procesamiento de sólidos finos provenientes de clarificadores. Capacidad hasta 14 ton/día con equipos especializados.",
+      key: 'fineSolids',
       icon: CirclePacking,
-      features: [],
       slug: "/services/fine-solids"
     },
     {
-      title: "Limpieza de Celdas EW",
-      description: "Limpieza especializada de celdas de electroobtención para minimizar contaminación catódica y asegurar cátodos de cobre de mayor grado. Servicios programados para mantener estándares de calidad de producto.",
+      key: 'ewCleaning',
       icon: BatteryCharging,
-      features: [],
       slug: "/services/ew-cleaning"
     },
     {
-      title: "Remoción de Sólidos de Aguas Clarificadas",
-      description: "Optimización de la recirculación de agua de proceso mediante remoción eficiente de sólidos. Hasta 120 m³/día de agua clarificada.",
+      key: 'waterClarification',
       icon: RainDrop,
-      features: [],
       slug: "/services/water-clarification"
     }
   ]
@@ -104,18 +94,16 @@ export default function Services() {
         <div className="text-center mb-20 progressive-reveal">
           <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
             <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
-            Servicios Especializados en Minería
+            {t('sectionTitle')}
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
-            Tecnología Móvil
-            <span className="block text-emerald-600 gradient-text-animated">Que Transforma Operaciones</span>
+            {t('headline')}
+            <span className="block text-emerald-600 gradient-text-animated">{t('headlineSub')}</span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
-            Servicios de filtración, deshidratación de sólidos y separación sólido-líquido
-            con equipos móviles escalables. <span className="font-semibold text-emerald-600">Más de dos décadas de experiencia</span> en faenas
-            mineras respaldando nuestras soluciones.
+            {t('description')}
           </p>
         </div>
 
@@ -138,16 +126,16 @@ export default function Services() {
                   <service.icon className="w-7 h-7 text-emerald-600 group-hover:text-emerald-700 enterprise-pulse" />
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-emerald-800 transition-colors duration-300">{service.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-emerald-800 transition-colors duration-300">{t(`items.${service.key}.title`)}</h3>
 
-                <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">{t(`items.${service.key}.description`)}</p>
 
                 {/* Enterprise CTA */}
                 <button
                   onClick={() => router.push(service.slug)}
                   className="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300 cursor-pointer"
                 >
-                  <span className="text-sm">Más información</span>
+                  <span className="text-sm">{t('moreInfo')}</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
@@ -174,11 +162,10 @@ export default function Services() {
 
           <div className="relative z-10">
             <h3 className="text-4xl lg:text-5xl font-black mb-6 gradient-text-animated">
-              Soluciones Móviles que Aportan Valor y Sostenibilidad
+              {t('cta.headline')}
             </h3>
             <p className="text-xl text-emerald-100 mb-10 max-w-4xl mx-auto leading-relaxed">
-              Diagnóstico inicial, montaje rápido mediante plataformas móviles y operación
-              continua con entrega de KPIs diarios. <span className="font-semibold text-emerald-300">Flexibilidad operativa sin instalaciones definitivas.</span>
+              {t('cta.description')} <span className="font-semibold text-emerald-300">{t('cta.flexibility')}</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
@@ -188,7 +175,7 @@ export default function Services() {
                 suppressHydrationWarning
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-emerald-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                <span className="relative z-10">Solicitar Consulta</span>
+                <span className="relative z-10">{t('cta.requestConsultation')}</span>
                 <ArrowRight className="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
 
@@ -198,7 +185,7 @@ export default function Services() {
                 suppressHydrationWarning
               >
                 <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                <span className="relative z-10">Ver Casos de Éxito</span>
+                <span className="relative z-10">{t('cta.viewCaseStudies')}</span>
                 <CheckCircle className="relative z-10 w-5 h-5 ml-3 enterprise-pulse" />
               </button>
             </div>

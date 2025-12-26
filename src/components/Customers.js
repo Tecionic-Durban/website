@@ -3,8 +3,10 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Growth, Currency, Security, Time } from '@carbon/icons-react'
+import { useTranslations } from 'next-intl'
 
 export default function Customers() {
+  const t = useTranslations('customers')
   const [isCarouselPaused, setIsCarouselPaused] = useState(false)
   const isPausedRef = useRef(false)
   const customersRef = useRef(null)
@@ -159,16 +161,15 @@ export default function Customers() {
         <div className="text-center mb-20 progressive-reveal">
           <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
             <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
-            Casos de Éxito Comprobados
+            {t('badge')}
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
-            Clientes que <span className="text-emerald-600 gradient-text-animated">Confían en Nosotros</span>
+            {t('headline')} <span className="text-emerald-600 gradient-text-animated">{t('headlineSub')}</span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
-            Trabajamos con las principales compañías industriales del mundo,
-            brindando soluciones especializadas que optimizan tus operaciones con resultados medibles.
+            {t('description')}
           </p>
         </div>
 
@@ -273,27 +274,27 @@ export default function Customers() {
 
         {/* Results Summary */}
         <div className="bg-emerald-600 rounded-2xl p-8 text-white text-center mb-12">
-          <h3 className="text-2xl font-bold mb-6">Resultados Comprobados en la Industria</h3>
+          <h3 className="text-2xl font-bold mb-6">{t('resultsTitle')}</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="flex flex-col items-center">
               <Growth className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">+22%</div>
-              <div className="text-emerald-100 text-sm">Promedio Mejora Eficiencia</div>
+              <div className="text-emerald-100 text-sm">{t('stats.efficiency')}</div>
             </div>
             <div className="flex flex-col items-center">
               <Time className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">95%</div>
-              <div className="text-emerald-100 text-sm">Reducción Tiempo Parada</div>
+              <div className="text-emerald-100 text-sm">{t('stats.downtime')}</div>
             </div>
             <div className="flex flex-col items-center">
               <Currency className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">$500M+</div>
-              <div className="text-emerald-100 text-sm">Ahorros Acumulados USD</div>
+              <div className="text-emerald-100 text-sm">{t('stats.savings')}</div>
             </div>
             <div className="flex flex-col items-center">
               <Security className="w-8 h-8 mb-3 text-emerald-200" />
               <div className="text-3xl font-bold mb-2">23+</div>
-              <div className="text-emerald-100 text-sm">Años de Confianzas</div>
+              <div className="text-emerald-100 text-sm">{t('stats.years')}</div>
             </div>
           </div>
         </div>
@@ -301,13 +302,13 @@ export default function Customers() {
         {/* Client Testimonial Highlight */}
         <div className="bg-white rounded-xl p-8 shadow-lg text-center border-l-4 border-emerald-600">
           <div className="text-lg font-semibold text-gray-900 mb-2">
-            &quot;Tec-Ionic Durban ha transformado nuestras operaciones con resultados que superan consistentemente nuestras expectativas.&quot;
+            &quot;{t('testimonial.quote')}&quot;
           </div>
           <div className="text-emerald-600 font-medium">
-            — Gerente de Operaciones, Minera Principal
+            — {t('testimonial.author')}
           </div>
           <div className="text-sm text-gray-500 mt-4">
-            *Los nombres específicos se mantienen confidenciales por acuerdos de privacidad
+            {t('testimonial.disclaimer')}
           </div>
         </div>
       </div>
