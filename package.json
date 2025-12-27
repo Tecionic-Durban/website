@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --turbopack",
+    "build:cloudflare": "npx opennextjs-cloudflare build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@opennextjs/cloudflare": "^1.14.7",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "^20",
     "@types/react": "^19",

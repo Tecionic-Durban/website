@@ -1,0 +1,16 @@
+#:schema node_modules/@opennextjs/cloudflare/wrangler-schema.json
+
+name = "tecionic-website"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+# OpenNext configuration
+main = ".open-next/worker.js"
+
+[vars]
+# Environment variables (add your RESEND_API_KEY in Cloudflare dashboard)
+
+# Assets configuration
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
