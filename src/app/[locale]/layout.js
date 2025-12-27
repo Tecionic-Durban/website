@@ -8,6 +8,10 @@ import Footer from '@/components/Footer';
 // TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request
 // import FloatingElements from "@/components/FloatingElements"
 
+// Force static generation for Cloudflare Pages deployment
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 // Generate static params for all locales
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
