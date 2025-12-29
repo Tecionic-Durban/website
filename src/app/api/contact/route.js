@@ -1,24 +1,25 @@
-// Cloudflare Pages Function for contact form
-export async function onRequestPost(context) {
+import { NextResponse } from 'next/server';
+
+export async function POST(request) {
   try {
-    const data = await context.request.json();
+    const data = await request.json();
 
     // Validate required fields
     const { firstName, lastName, company, email, service } = data;
     if (!firstName || !lastName || !company || !email || !service) {
-      return new Response(
-        JSON.stringify({ error: 'Faltan campos requeridos' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      return NextResponse.json(
+        { error: 'Faltan campos requeridos' },
+        { status: 400 }
       );
     }
 
     // Get API key from environment
-    const resendApiKey = context.env.RESEND_API_KEY;
+    const resendApiKey = process.env.RESEND_API_KEY;
 
     if (!resendApiKey) {
-      return new Response(
-        JSON.stringify({ error: 'CONFIG_ERROR: API key not found' }),
-        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      return NextResponse.json(
+        { error: 'CONFIG_ERROR: API key not found' },
+        { status: 500 }
       );
     }
 
@@ -59,9 +60,9 @@ export async function onRequestPost(context) {
 
     if (!tecioniResponse.ok) {
       const errorText = await tecioniResponse.text();
-      return new Response(
-        JSON.stringify({ error: `RESEND_ERROR: ${tecioniResponse.status} - ${errorText}` }),
-        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      return NextResponse.json(
+        { error: `RESEND_ERROR: ${tecioniResponse.status} - ${errorText}` },
+        { status: 500 }
       );
     }
 
@@ -90,15 +91,15 @@ export async function onRequestPost(context) {
       body: JSON.stringify(emailToSender),
     });
 
-    return new Response(
-      JSON.stringify({ success: true, message: 'Consulta enviada exitosamente' }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    return NextResponse.json(
+      { success: true, message: 'Consulta enviada exitosamente' },
+      { status: 200 }
     );
 
   } catch (error) {
-    return new Response(
-      JSON.stringify({ error: `CATCH_ERROR: ${error.message}` }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
+    return NextResponse.json(
+      { error: `CATCH_ERROR: ${error.message}` },
+      { status: 500 }
     );
   }
 }
