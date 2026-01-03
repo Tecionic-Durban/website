@@ -3398,5 +3398,171 @@
         ]
       }
     }
+  },
+  "privacy": {
+    "title": "Politica de Privacidade",
+    "subtitle": "Respeitamos sua privacidade e protegemos seus dados pessoais.",
+    "lastUpdated": "Ultima atualizacao",
+    "context": "A Tecionic fornece servicos moveis de separacao solido-liquido para a industria de mineracao na America Latina.",
+    "intro": "Esta Politica de Privacidade descreve como a Tecionic S.A. coleta, utiliza e protege suas informacoes quando voce visita tecionic.com.",
+    "legalNote": "Cumprimos com a legislacao do Chile (Lei 19.628), Brasil (LGPD), Mexico (LFPDPPP) e outras jurisdicoes latino-americanas.",
+    "section1": {
+      "title": "1. Informacoes que Coletamos",
+      "subtitle1": "1.1 Informacoes que voce nos fornece",
+      "description1": "Quando voce utiliza nosso formulario de contato, coletamos:",
+      "items1": ["Nome e sobrenome", "Email corporativo", "Nome da empresa", "Numero de telefone (opcional)", "Servico de interesse", "Mensagem ou consulta"],
+      "subtitle2": "1.2 Informacoes coletadas automaticamente",
+      "description2": "Utilizamos o PostHog, uma plataforma de analitica, para coletar informacoes sobre como voce interage com nosso site. Essas informacoes incluem:",
+      "items2": ["Paginas visitadas e tempo de permanencia", "Cliques em botoes e links (como \"Contato\")", "Tipo de navegador e dispositivo", "Endereco IP (para localizacao geografica aproximada)", "Pagina de referencia (como chegou ao nosso site)", "Interacoes com formularios (sem incluir dados pessoais inseridos)"]
+    },
+    "section2": {
+      "title": "2. Como Utilizamos suas Informacoes",
+      "description": "Utilizamos as informacoes coletadas para:",
+      "items": [
+        {"title": "Responder suas consultas:", "description": "Processar e responder solicitacoes de contato"},
+        {"title": "Melhorar nosso site:", "description": "Analisar padroes de uso para otimizar a experiencia"},
+        {"title": "Comunicacoes comerciais:", "description": "Enviar informacoes sobre nossos servicos (apenas com seu consentimento)"},
+        {"title": "Cumprimento legal:", "description": "Cumprir obrigacoes legais aplicaveis"}
+      ]
+    },
+    "section3": {
+      "title": "3. Cookies e Tecnologias de Rastreamento",
+      "description": "Utilizamos as seguintes tecnologias de rastreamento:",
+      "posthog": {
+        "title": "PostHog Analytics",
+        "purpose": "Proposito:",
+        "purposeDesc": "Analise de uso do site",
+        "data": "Dados:",
+        "dataDesc": "Comportamento de navegacao, cliques, tempo na pagina",
+        "retention": "Armazenamento:",
+        "retentionDesc": "O PostHog armazena os dados em servidores nos Estados Unidos"
+      },
+      "choice": "Sua escolha: Ao visitar nosso site pela primeira vez, pedimos seu consentimento para utilizar essas tecnologias. Voce pode recusar os cookies de analitica e continuaremos respeitando sua decisao. Tambem pode alterar sua preferencia excluindo os cookies do seu navegador."
+    },
+    "section4": {
+      "title": "4. Compartilhamento de Dados",
+      "description": "Nao vendemos nem alugamos suas informacoes pessoais. Compartilhamos dados apenas com:",
+      "items": [
+        {"title": "Provedores de servicos:", "description": "PostHog (analitica), Resend (envio de emails)"},
+        {"title": "Autoridades legais:", "description": "Quando exigido por lei"},
+        {"title": "Transferencias corporativas:", "description": "Em caso de fusao ou aquisicao"}
+      ]
+    },
+    "section5": {
+      "title": "5. Seus Direitos",
+      "description": "Sob as leis de protecao de dados aplicaveis, voce tem direito a:",
+      "rights": {
+        "access": {"title": "Acesso", "description": "Solicitar uma copia dos dados pessoais que temos sobre voce"},
+        "rectification": {"title": "Retificacao", "description": "Corrigir dados inexatos ou incompletos"},
+        "deletion": {"title": "Eliminacao", "description": "Solicitar a exclusao de seus dados pessoais"},
+        "opposition": {"title": "Oposicao", "description": "Opor-se ao processamento de seus dados para determinados fins"},
+        "portability": {"title": "Portabilidade", "description": "Receber seus dados em formato estruturado e legivel"},
+        "withdrawal": {"title": "Revogacao de consentimento", "description": "Revogar seu consentimento a qualquer momento"}
+      },
+      "contact": "Para exercer esses direitos, entre em contato conosco em"
+    },
+    "section6": {
+      "title": "6. Retencao de Dados",
+      "items": [
+        {"title": "Dados de contato:", "description": "Conservamos seus dados enquanto existir uma relacao comercial ativa ou potencial. Tambem os retemos pelo periodo legalmente exigido."},
+        {"title": "Dados de analitica:", "description": "Retemos dados anonimizados por um periodo de 2 anos"},
+        {"title": "Cookies:", "description": "Seu navegador armazena as preferencias de consentimento ate que voce as exclua"}
+      ]
+    },
+    "section7": {
+      "title": "7. Seguranca de Dados",
+      "description": "Implementamos medidas tecnicas e organizacionais apropriadas para proteger seus dados pessoais contra acesso nao autorizado, alteracao, divulgacao ou destruicao. Essas medidas incluem criptografia de dados em transito (HTTPS), controle de acesso e monitoramento de seguranca."
+    },
+    "section8": {
+      "title": "8. Transferencias Internacionais",
+      "description": "Seus dados podem ser transferidos e processados em servidores localizados fora do seu pais de residencia, incluindo os Estados Unidos (PostHog). Garantimos que tais transferencias cumpram as leis aplicaveis e que existam salvaguardas adequadas para proteger seus dados."
+    },
+    "section9": {
+      "title": "9. Alteracoes nesta Politica",
+      "description": "Podemos atualizar esta Politica de Privacidade periodicamente. Notificaremos sobre alteracoes significativas publicando a nova politica nesta pagina com uma nova data de \"ultima atualizacao\". Recomendamos revisar esta politica periodicamente."
+    },
+    "section10": {
+      "title": "10. Contato",
+      "description": "Se tiver duvidas sobre esta Politica de Privacidade ou desejar exercer seus direitos, pode entrar em contato conosco em:",
+      "company": "Tecionic S.A.",
+      "role": "Responsavel pela Protecao de Dados",
+      "email": "Email:",
+      "address": "Endereco:",
+      "addressValue": "Luis Thayer Ojeda 95, of. 312, Providencia, Santiago, Chile"
+    },
+    "compliance": {
+      "title": "Conformidade Legal",
+      "description": "Esta politica foi elaborada para cumprir com: Lei 19.628 sobre Protecao da Vida Privada (Chile), Lei Geral de Protecao de Dados - LGPD (Brasil), Lei Federal de Protecao de Dados Pessoais em Posse de Particulares - LFPDPPP (Mexico), e principios de protecao de dados reconhecidos internacionalmente."
+    }
+  },
+  "terms": {
+    "title": "Termos de Servico",
+    "subtitle": "Condicoes de uso do site da Tecionic",
+    "lastUpdated": "Ultima atualizacao",
+    "intro": "Bem-vindo ao site da Tecionic S.A. Ao acessar e utilizar este site (tecionic.com), voce concorda em cumprir estes Termos de Servico. Se nao concordar com alguma parte destes termos, solicitamos que nao utilize nosso site.",
+    "section1": {
+      "title": "1. Uso do Site",
+      "subtitle1": "1.1 Uso Permitido",
+      "description1": "Este site destina-se a fornecer informacoes sobre os servicos de filtracao e separacao solido-liquido da Tecionic para a industria de mineracao. Voce pode utilizar este site para:",
+      "items1": ["Conhecer nossos servicos e capacidades", "Solicitar informacoes ou cotacoes atraves do formulario de contato", "Acessar recursos tecnicos e estudos de caso"],
+      "subtitle2": "1.2 Uso Proibido",
+      "description2": "Voce concorda em nao:",
+      "items2": ["Utilizar o site de maneira que viole leis ou regulamentos aplicaveis", "Tentar acessar areas restritas do site ou sistemas", "Transmitir virus, malware ou codigo malicioso", "Coletar informacoes de outros usuarios sem autorizacao", "Reproduzir, duplicar ou copiar conteudo sem permissao por escrito"]
+    },
+    "section2": {
+      "title": "2. Propriedade Intelectual",
+      "description1": "Todo o conteudo deste site, incluindo mas nao limitado a textos, graficos, logos, imagens, videos, icones e software, e propriedade da Tecionic S.A. ou seus licenciadores e esta protegido pelas leis de propriedade intelectual do Chile e tratados internacionais.",
+      "description2": "As marcas \"Tecionic\", o logotipo de tres esferas e outros identificadores visuais sao marcas comerciais da Tecionic S.A. Nenhuma licenca ou direito de uso dessas marcas e concedido sem nosso consentimento previo por escrito."
+    },
+    "section3": {
+      "title": "3. Informacoes do Site",
+      "description": "Nos esforcamos para manter as informacoes deste site precisas e atualizadas. No entanto:",
+      "warning": {
+        "title": "Aviso Importante",
+        "description": "As informacoes fornecidas neste site sao de carater geral e informativo. As especificacoes tecnicas, capacidades e resultados podem variar de acordo com as condicoes especificas de cada projeto. Para informacoes vinculantes, solicite uma cotacao formal."
+      }
+    },
+    "section4": {
+      "title": "4. Formulario de Contato",
+      "description": "Ao utilizar nosso formulario de contato, voce:",
+      "items": ["Garante que as informacoes fornecidas sao verdadeiras e precisas", "Aceita que podemos entrar em contato para responder sua consulta", "Compreende que o envio de uma consulta nao gera obrigacao contratual", "Aceita nossa Politica de Privacidade"]
+    },
+    "section5": {
+      "title": "5. Limitacao de Responsabilidade",
+      "description": "Na maxima extensao permitida pela lei aplicavel:",
+      "items": ["Este site e fornecido \"como esta\" sem garantias de qualquer tipo, expressas ou implicitas", "A Tecionic nao sera responsavel por danos diretos, indiretos, incidentais ou consequentes decorrentes do uso ou impossibilidade de uso do site", "Nao garantimos que o site estara disponivel de forma ininterrupta ou livre de erros"]
+    },
+    "section6": {
+      "title": "6. Links de Terceiros",
+      "description": "Este site pode conter links para sites de terceiros. Esses links sao fornecidos apenas para sua conveniencia. Nao temos controle sobre o conteudo desses sites e nao assumimos responsabilidade por eles ou por qualquer perda ou dano que possa surgir de seu uso."
+    },
+    "section7": {
+      "title": "7. Modificacoes",
+      "description": "Reservamo-nos o direito de modificar estes Termos de Servico a qualquer momento. As alteracoes entrarao em vigor imediatamente apos sua publicacao no site. Seu uso continuado do site apos qualquer alteracao constitui aceitacao dos novos termos."
+    },
+    "section8": {
+      "title": "8. Lei Aplicavel e Jurisdicao",
+      "description": "Estes Termos de Servico serao regidos e interpretados de acordo com as leis da Republica do Chile. Qualquer disputa decorrente destes termos sera submetida a jurisdicao exclusiva dos tribunais ordinarios da cidade de Santiago, Chile."
+    },
+    "section9": {
+      "title": "9. Servicos Profissionais",
+      "description": "Os servicos profissionais de filtracao e separacao solido-liquido da Tecionic sao regidos por contratos especificos separados destes termos. Este site nao constitui uma oferta de servicos e qualquer contratacao estara sujeita a:",
+      "items": ["Avaliacao tecnica do projeto", "Proposta comercial formal", "Contrato de servicos assinado por ambas as partes"]
+    },
+    "section10": {
+      "title": "10. Contato",
+      "description": "Se tiver duvidas sobre estes Termos de Servico, pode entrar em contato conosco em:",
+      "company": "Tecionic S.A.",
+      "email": "Email:",
+      "address": "Endereco:",
+      "addressValue": "Luis Thayer Ojeda 95, of. 312, Providencia, Santiago, Chile"
+    }
+  },
+  "cookieConsent": {
+    "message": "Utilizamos cookies e tecnologias similares para melhorar sua experiencia, analisar o trafego do site e personalizar o conteudo. Ao clicar em \"Aceitar\", voce consente o uso dessas tecnologias.",
+    "privacyPolicy": "Politica de Privacidade",
+    "accept": "Aceitar",
+    "decline": "Recusar",
+    "close": "Fechar"
   }
 }

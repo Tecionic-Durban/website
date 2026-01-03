@@ -3398,5 +3398,171 @@
         ]
       }
     }
+  },
+  "privacy": {
+    "title": "Politica de Privacidad",
+    "subtitle": "Respetamos su privacidad y protegemos sus datos personales.",
+    "lastUpdated": "Ultima actualizacion",
+    "context": "Tecionic proporciona servicios moviles de separacion solido-liquido para la industria minera en Latinoamerica.",
+    "intro": "Esta Politica de Privacidad describe como Tecionic S.A. recopila, utiliza y protege su informacion cuando visita tecionic.com.",
+    "legalNote": "Cumplimos con la legislacion de Chile (Ley 19.628), Brasil (LGPD), Mexico (LFPDPPP) y otras jurisdicciones latinoamericanas.",
+    "section1": {
+      "title": "1. Informacion que Recopilamos",
+      "subtitle1": "1.1 Informacion que usted nos proporciona",
+      "description1": "Cuando utiliza nuestro formulario de contacto, recopilamos:",
+      "items1": ["Nombre y apellido", "Correo electronico corporativo", "Nombre de la empresa", "Numero de telefono (opcional)", "Servicio de interes", "Mensaje o consulta"],
+      "subtitle2": "1.2 Informacion recopilada automaticamente",
+      "description2": "Utilizamos PostHog, una plataforma de analitica, para recopilar informacion sobre como interactua con nuestro sitio. Esta informacion incluye:",
+      "items2": ["Paginas visitadas y tiempo de permanencia", "Clics en botones y enlaces (como \"Contactar\")", "Tipo de navegador y dispositivo", "Direccion IP (para ubicacion geografica aproximada)", "Pagina de referencia (como llego a nuestro sitio)", "Interacciones con formularios (sin incluir datos personales ingresados)"]
+    },
+    "section2": {
+      "title": "2. Como Utilizamos su Informacion",
+      "description": "Utilizamos la informacion recopilada para:",
+      "items": [
+        {"title": "Responder a sus consultas:", "description": "Procesar y responder solicitudes de contacto"},
+        {"title": "Mejorar nuestro sitio:", "description": "Analizar patrones de uso para optimizar la experiencia"},
+        {"title": "Comunicaciones comerciales:", "description": "Enviar informacion sobre nuestros servicios (solo con su consentimiento)"},
+        {"title": "Cumplimiento legal:", "description": "Cumplir con obligaciones legales aplicables"}
+      ]
+    },
+    "section3": {
+      "title": "3. Cookies y Tecnologias de Seguimiento",
+      "description": "Utilizamos las siguientes tecnologias de seguimiento:",
+      "posthog": {
+        "title": "PostHog Analytics",
+        "purpose": "Proposito:",
+        "purposeDesc": "Analisis de uso del sitio web",
+        "data": "Datos:",
+        "dataDesc": "Comportamiento de navegacion, clics, tiempo en pagina",
+        "retention": "Almacenamiento:",
+        "retentionDesc": "PostHog almacena los datos en servidores en Estados Unidos"
+      },
+      "choice": "Su eleccion: Al visitar nuestro sitio por primera vez, le pedimos su consentimiento para utilizar estas tecnologias. Puede rechazar las cookies de analitica y seguiremos respetando su decision. Tambien puede cambiar su preferencia eliminando las cookies de su navegador."
+    },
+    "section4": {
+      "title": "4. Comparticion de Datos",
+      "description": "No vendemos ni alquilamos su informacion personal. Compartimos datos solo con:",
+      "items": [
+        {"title": "Proveedores de servicios:", "description": "PostHog (analitica), Resend (envio de emails)"},
+        {"title": "Autoridades legales:", "description": "Cuando sea requerido por ley"},
+        {"title": "Transferencias corporativas:", "description": "En caso de fusion o adquisicion"}
+      ]
+    },
+    "section5": {
+      "title": "5. Sus Derechos",
+      "description": "Bajo las leyes de proteccion de datos aplicables, usted tiene derecho a:",
+      "rights": {
+        "access": {"title": "Acceso", "description": "Solicitar una copia de los datos personales que tenemos sobre usted"},
+        "rectification": {"title": "Rectificacion", "description": "Corregir datos inexactos o incompletos"},
+        "deletion": {"title": "Eliminacion", "description": "Solicitar la eliminacion de sus datos personales"},
+        "opposition": {"title": "Oposicion", "description": "Oponerse al procesamiento de sus datos para ciertos fines"},
+        "portability": {"title": "Portabilidad", "description": "Recibir sus datos en un formato estructurado y legible"},
+        "withdrawal": {"title": "Retiro de consentimiento", "description": "Retirar su consentimiento en cualquier momento"}
+      },
+      "contact": "Para ejercer estos derechos, contactenos a"
+    },
+    "section6": {
+      "title": "6. Retencion de Datos",
+      "items": [
+        {"title": "Datos de contacto:", "description": "Conservamos sus datos mientras exista una relacion comercial activa o potencial. Tambien los retenemos por el periodo legalmente requerido."},
+        {"title": "Datos de analitica:", "description": "Retenemos datos anonimizados por un periodo de 2 anos"},
+        {"title": "Cookies:", "description": "Su navegador almacena las preferencias de consentimiento hasta que usted las elimine"}
+      ]
+    },
+    "section7": {
+      "title": "7. Seguridad de Datos",
+      "description": "Implementamos medidas tecnicas y organizativas apropiadas para proteger sus datos personales contra acceso no autorizado, alteracion, divulgacion o destruccion. Estas medidas incluyen encriptacion de datos en transito (HTTPS), control de acceso y monitoreo de seguridad."
+    },
+    "section8": {
+      "title": "8. Transferencias Internacionales",
+      "description": "Sus datos pueden ser transferidos y procesados en servidores ubicados fuera de su pais de residencia, incluyendo Estados Unidos (PostHog). Nos aseguramos de que dichas transferencias cumplan con las leyes aplicables y que existan salvaguardas adecuadas para proteger sus datos."
+    },
+    "section9": {
+      "title": "9. Cambios a esta Politica",
+      "description": "Podemos actualizar esta Politica de Privacidad periodicamente. Le notificaremos sobre cambios significativos publicando la nueva politica en esta pagina con una nueva fecha de \"ultima actualizacion\". Le recomendamos revisar esta politica periodicamente."
+    },
+    "section10": {
+      "title": "10. Contacto",
+      "description": "Si tiene preguntas sobre esta Politica de Privacidad o desea ejercer sus derechos, puede contactarnos a:",
+      "company": "Tecionic S.A.",
+      "role": "Responsable de Proteccion de Datos",
+      "email": "Email:",
+      "address": "Direccion:",
+      "addressValue": "Luis Thayer Ojeda 95, of. 312, Providencia, Santiago, Chile"
+    },
+    "compliance": {
+      "title": "Cumplimiento Legal",
+      "description": "Esta politica ha sido disenada para cumplir con: Ley 19.628 sobre Proteccion de la Vida Privada (Chile), Lei Geral de Protecao de Dados - LGPD (Brasil), Ley Federal de Proteccion de Datos Personales en Posesion de los Particulares - LFPDPPP (Mexico), y principios generales de proteccion de datos reconocidos internacionalmente."
+    }
+  },
+  "terms": {
+    "title": "Terminos de Servicio",
+    "subtitle": "Condiciones de uso del sitio web de Tecionic",
+    "lastUpdated": "Ultima actualizacion",
+    "intro": "Bienvenido al sitio web de Tecionic S.A. Al acceder y utilizar este sitio web (tecionic.com), usted acepta cumplir con estos Terminos de Servicio. Si no esta de acuerdo con alguna parte de estos terminos, le solicitamos no utilizar nuestro sitio.",
+    "section1": {
+      "title": "1. Uso del Sitio Web",
+      "subtitle1": "1.1 Uso Permitido",
+      "description1": "Este sitio web esta destinado a proporcionar informacion sobre los servicios de filtracion y separacion solido-liquido de Tecionic para la industria minera. Usted puede utilizar este sitio para:",
+      "items1": ["Conocer nuestros servicios y capacidades", "Solicitar informacion o cotizaciones a traves del formulario de contacto", "Acceder a recursos tecnicos y casos de estudio"],
+      "subtitle2": "1.2 Uso Prohibido",
+      "description2": "Usted se compromete a no:",
+      "items2": ["Utilizar el sitio de manera que viole leyes o regulaciones aplicables", "Intentar acceder a areas restringidas del sitio o sistemas", "Transmitir virus, malware o codigo danino", "Recopilar informacion de otros usuarios sin autorizacion", "Reproducir, duplicar o copiar contenido sin permiso escrito"]
+    },
+    "section2": {
+      "title": "2. Propiedad Intelectual",
+      "description1": "Todo el contenido de este sitio web, incluyendo pero no limitado a textos, graficos, logos, imagenes, videos, iconos y software, es propiedad de Tecionic S.A. o sus licenciantes y esta protegido por las leyes de propiedad intelectual de Chile y tratados internacionales.",
+      "description2": "Las marcas \"Tecionic\", el logotipo de tres esferas, y otros identificadores visuales son marcas comerciales de Tecionic S.A. No se otorga ninguna licencia o derecho para usar estas marcas sin nuestro consentimiento previo por escrito."
+    },
+    "section3": {
+      "title": "3. Informacion del Sitio",
+      "description": "Nos esforzamos por mantener la informacion de este sitio precisa y actualizada. Sin embargo:",
+      "warning": {
+        "title": "Aviso Importante",
+        "description": "La informacion proporcionada en este sitio es de caracter general e informativo. Las especificaciones tecnicas, capacidades y resultados pueden variar segun las condiciones especificas de cada proyecto. Para informacion vinculante, solicite una cotizacion formal."
+      }
+    },
+    "section4": {
+      "title": "4. Formulario de Contacto",
+      "description": "Al utilizar nuestro formulario de contacto, usted:",
+      "items": ["Garantiza que la informacion proporcionada es veraz y precisa", "Acepta que podemos contactarle para responder a su consulta", "Comprende que el envio de una consulta no genera una obligacion contractual", "Acepta nuestra Politica de Privacidad"]
+    },
+    "section5": {
+      "title": "5. Limitacion de Responsabilidad",
+      "description": "En la maxima medida permitida por la ley aplicable:",
+      "items": ["Este sitio web se proporciona \"tal cual\" sin garantias de ningun tipo, expresas o implicitas", "Tecionic no sera responsable por danos directos, indirectos, incidentales o consecuentes derivados del uso o imposibilidad de uso del sitio", "No garantizamos que el sitio estara disponible de forma ininterrumpida o libre de errores"]
+    },
+    "section6": {
+      "title": "6. Enlaces a Terceros",
+      "description": "Este sitio puede contener enlaces a sitios web de terceros. Estos enlaces se proporcionan unicamente para su conveniencia. No tenemos control sobre el contenido de esos sitios y no asumimos responsabilidad por ellos ni por cualquier perdida o dano que pueda surgir de su uso."
+    },
+    "section7": {
+      "title": "7. Modificaciones",
+      "description": "Nos reservamos el derecho de modificar estos Terminos de Servicio en cualquier momento. Los cambios entraran en vigor inmediatamente despues de su publicacion en el sitio. Su uso continuado del sitio despues de cualquier cambio constituye su aceptacion de los nuevos terminos."
+    },
+    "section8": {
+      "title": "8. Ley Aplicable y Jurisdiccion",
+      "description": "Estos Terminos de Servicio se regiran e interpretaran de acuerdo con las leyes de la Republica de Chile. Cualquier disputa que surja en relacion con estos terminos sera sometida a la jurisdiccion exclusiva de los tribunales ordinarios de la ciudad de Santiago, Chile."
+    },
+    "section9": {
+      "title": "9. Servicios Profesionales",
+      "description": "Los servicios profesionales de filtracion y separacion solido-liquido de Tecionic se rigen por contratos especificos separados de estos terminos. Este sitio web no constituye una oferta de servicios y cualquier contratacion estara sujeta a:",
+      "items": ["Evaluacion tecnica del proyecto", "Propuesta comercial formal", "Contrato de servicios firmado por ambas partes"]
+    },
+    "section10": {
+      "title": "10. Contacto",
+      "description": "Si tiene preguntas sobre estos Terminos de Servicio, puede contactarnos a:",
+      "company": "Tecionic S.A.",
+      "email": "Email:",
+      "address": "Direccion:",
+      "addressValue": "Luis Thayer Ojeda 95, of. 312, Providencia, Santiago, Chile"
+    }
+  },
+  "cookieConsent": {
+    "message": "Utilizamos cookies y tecnologias similares para mejorar su experiencia, analizar el trafico del sitio y personalizar el contenido. Al hacer clic en \"Aceptar\", usted consiente el uso de estas tecnologias.",
+    "privacyPolicy": "Politica de Privacidad",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "close": "Cerrar"
   }
 }
