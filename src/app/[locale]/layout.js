@@ -6,6 +6,7 @@ import '../../styles/globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PostHogProvider from '@/components/PostHogProvider';
+import CookieConsent from '@/components/CookieConsent';
 // TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request
 // import FloatingElements from "@/components/FloatingElements"
 
@@ -248,6 +249,7 @@ export default async function LocaleLayout({children, params}) {
               {children}
             </main>
             <Footer />
+            <CookieConsent />
             {/* TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request */}
             {/* <FloatingElements /> */}
           </NextIntlClientProvider>

@@ -12,6 +12,14 @@ if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
     person_profiles: 'identified_only',
     capture_pageview: false, // We'll manually capture page views for better control
     capture_pageleave: true, // Track when users leave pages (time on page)
+    persistence: 'localStorage',
+    loaded: (posthog) => {
+      // Check consent status on load
+      const consent = localStorage.getItem('cookie_consent')
+      if (consent === 'declined') {
+        posthog.opt_out_capturing()
+      }
+    }
   })
 }
 

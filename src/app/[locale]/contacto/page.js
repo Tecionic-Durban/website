@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Location, Email, Time } from '@carbon/icons-react'
 import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react'
+import posthog from 'posthog-js'
 
 export default function ContactPage() {
   const [selectedService, setSelectedService] = useState('')
@@ -36,6 +37,13 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        // Track successful form submission
+        posthog.capture('contact_form_submitted', {
+          service: formData.service,
+          company: formData.company,
+          has_phone: !!formData.phone,
+          has_message: !!formData.message
+        })
         // Reset form
         setFormData({
           firstName: '',
@@ -50,6 +58,10 @@ export default function ContactPage() {
         setSelectedService('')
       } else {
         setSubmitStatus('error')
+        // Track failed submission
+        posthog.capture('contact_form_failed', {
+          error: result.error || 'unknown'
+        })
         console.error('Form submission error:', result.error)
       }
     } catch (error) {
