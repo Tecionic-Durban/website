@@ -81,7 +81,7 @@
         "description": "Batteries and energy"
       },
       "crudeOil": {
-        "name": "Crude Oil",
+        "name": "Hydrocarbons",
         "description": "Refining and processing"
       }
     },
@@ -93,14 +93,6 @@
       "industryTrends": {
         "name": "Industry Trends",
         "description": "Analysis and insights"
-      },
-      "whitePapers": {
-        "name": "White Papers",
-        "description": "In-depth technical research"
-      },
-      "technicalSpecs": {
-        "name": "Technical Specifications",
-        "description": "Equipment and process details"
       },
       "compliance": {
         "name": "Compliance",
@@ -115,13 +107,21 @@
     "viewFullCase": "View full case",
     "analyticsComingSoon": "New analytics services in development. Contact us for more information.",
     "qualityComingSoon": "Mobile lab for on-site certification. More quality control services coming soon.",
-    "enapStory": {
+    "refineryStory": {
       "imagePlaceholder": "Project Image",
-      "companyName": "ENAP",
-      "companyFullName": "National Petroleum Company",
+      "companyName": "Oil Refinery",
+      "companyFullName": "Petroleum Refinery",
       "quote": "Tec-Ionic Durban optimized our refining processes, reducing operational costs by 18% and improving overall efficiency.",
       "costReduction": "Cost reduction",
       "efficiency": "Efficiency"
+    },
+    "copperCaseStudy": {
+      "imageAlt": "Mobile filter press at copper operation",
+      "title": "EW Cell Cleaning",
+      "location": "4,200m • High Altitude",
+      "description": "EW cell cleaning with zero safety incidents and 100% crud removal in extreme conditions.",
+      "incidents": "Incidents",
+      "removal": "Removal"
     }
   },
   "hero": {
@@ -182,7 +182,7 @@
     "headline": "Specialists in",
     "headlineSub": "Mobile Solid-Liquid Separation",
     "description": "Specialists in solid-liquid separation for SX/EW applications with high-capacity mobile equipment.",
-    "clientList": "We serve BHP, Codelco, Antofagasta Minerals, Freeport-McMoRan, and other major mining companies, providing solutions that optimize operations without interrupting existing processes.",
+    "clientList": "We serve major copper, zinc, lithium, and potash operations across Latin America, providing solutions that optimize operations without interrupting existing processes.",
     "highCapacity": "high-capacity mobile equipment",
     "certifiedEquipment": "Ex.Proof Certified Equipment",
     "cards": {
@@ -223,6 +223,7 @@
     "services": "Services",
     "industries": "Industries",
     "resources": "Resources",
+    "company": "Company",
     "contact": "Contact",
     "offices": "Offices in Santiago, Calama, and Lima",
     "viewContactInfo": "View complete contact information",
@@ -316,6 +317,62 @@
       "potassium": "Potassium"
     }
   },
+  "operationalIntelligence": {
+    "badge": "Analysis Laboratory",
+    "headline": "Predictive control to",
+    "headlineSub": "optimize your operation",
+    "description": "Our specialized laboratory measures the critical parameters that define the health of your process. We detect problems before they impact your production.",
+    "cta": {
+      "primary": "Request Analysis",
+      "secondary": "View Services"
+    },
+    "datapoints": {
+      "tif": {
+        "title": "Interfacial Tension (IFT)",
+        "description": "Measures the chemical health of your organic. Low IFT indicates contaminants that degrade phase separation and increase entrainment.",
+        "benchmark": "Optimal",
+        "benefits": [
+          "Predicts when you need clay treatment",
+          "Reduces organic entrainment in electrolyte by up to 52%",
+          "Extends extractant life, saving $150K+/year"
+        ]
+      },
+      "tsf": {
+        "title": "Phase Separation Time (PST)",
+        "description": "Indicates phase separation speed. High PST means persistent emulsions that reduce capacity and recovery.",
+        "benchmark": "Maximum",
+        "benefits": [
+          "Detects organic degradation 2-3 weeks before crisis",
+          "Optimizes flow rate in mixer-settlers",
+          "Eliminates emergency shutdowns due to poor separation"
+        ]
+      },
+      "turbidity": {
+        "title": "Inline Turbidity",
+        "description": "Continuous monitoring of suspended particles in process. Critical for product quality and separation efficiency.",
+        "benchmark": "Maximum",
+        "benefits": [
+          "Real-time control without waiting for lab analysis",
+          "Automatically optimizes flocculant dosing",
+          "Ensures compliance with product specifications"
+        ]
+      }
+    },
+    "labSection": {
+      "title": "Dedicated laboratory with specialized staff",
+      "description": "We have our own facilities and certified technicians for sample analysis from any operation in Latin America. Reliable results that support operational decisions.",
+      "features": [
+        "Certified analysis",
+        "Dedicated personnel",
+        "Latin America coverage"
+      ],
+      "stats": {
+        "monitoring": "Monitoring",
+        "turnaround": "Results delivery",
+        "accuracy": "Accuracy"
+      }
+    }
+  },
   "customers": {
     "badge": "Proven Success Stories",
     "headline": "Clients Who",
@@ -406,7 +463,7 @@
         },
         "noInterference": {
           "title": "Operation without interfering with your plant",
-          "description": "100% autonomous system that doesn't use client plant equipment. Own pumps, piping, controls, and power. Without modifying permits or environmental licenses. 48-hour installation, immediate operation. Your process keeps running while we clean."
+          "description": "100% autonomous system that doesn't use client plant equipment. Own pumps, piping, controls, and air supply. Without modifying permits or environmental licenses. 48-hour installation, immediate operation. Your process keeps running while we clean."
         }
       }
     },
@@ -436,10 +493,6 @@
       "title": "We return your circuit to design efficiency",
       "description": "Accumulated crud in settler/mixer degrades phase separation and increases entrainment between stages. We remove the root cause.",
       "items": {
-        "energy": {
-          "title": "Energy",
-          "description": "We extract crud, reducing viscosity. Pumps and agitators return to their design curve."
-        },
         "extractant": {
           "title": "Extractant",
           "description": "We separate trapped organic and return it to your circuit. Up to 90% recovered."
@@ -485,27 +538,28 @@
       }
     },
     "thermalImpact": {
-      "title": "Precise extraction, minimal thermal impact",
-      "description": "Long pipette identifies the exact contamination level. We only extract what's necessary. Lower processed volume means lower reheating cost.",
+      "title": "Precision without intrusion",
+      "description": "Long pipette identifies the exact contamination level. We only extract what's necessary. Lower processed volume means lower cost and less interference with your operation.",
       "benefits": {
         "selective": { "title": "Selective extraction by level.", "description": " We measure where the crud is and specifically target that zone." },
         "minimal": { "title": "Minimal volume processed.", "description": " Without extracting the entire tank. Only the contaminated zone." },
-        "immediate": { "title": "Immediate return.", "description": " Separated liquid returns to process with minimal temperature loss." }
+        "immediate": { "title": "Immediate return.", "description": " Separated liquid returns to process without delays." }
       },
+      "accessFootprint": "for suction access",
       "comparison": {
         "conventional": {
           "label": "Conventional method",
           "cost": "High cost",
           "volume": "100%",
           "volumeLabel": "volume extracted",
-          "description": "Empty the entire tank, reheat the entire volume"
+          "description": "Empty the entire tank, longer downtime"
         },
         "tecionic": {
           "label": "Tecionic method",
           "cost": "Minimum cost",
           "volume": "~15%",
           "volumeLabel": "volume extracted",
-          "description": "Only the contaminated zone, lower reheating cost"
+          "description": "Only the contaminated zone, continuous operation"
         }
       }
     },
@@ -519,7 +573,7 @@
         "description": "Crud enters as liquid and exits as dry cake. Less weight, less volume, fewer trucks. Simplified transport and final disposal.",
         "kpis": {
           "volume": { "value": "85%", "label": "Volume reduction" },
-          "dryness": { "value": "85%", "label": "Cake dryness" }
+          "dryness": { "value": "15%", "label": "Cake moisture" }
         }
       },
       "recovery": {
@@ -558,30 +612,29 @@
           "description": "Abrasive solids filtration adapted to Zn densities and organic sensitivity"
         },
         "crudeOil": {
-          "name": "Crude Oil",
+          "name": "Hydrocarbons",
           "description": "Tank sludge cleaning with 80% volume reduction and 90% HC recovery"
         }
       }
     },
     "caseStudy": {
       "badge": "SUCCESS STORY",
-      "title": "ENAP reduced sludge volume by 85% and recovered valuable hydrocarbons",
-      "client": "ENAP Refinery",
+      "title": "Refinery reduced sludge volume by 85% and recovered valuable hydrocarbons",
+      "client": "Petroleum Refinery",
       "clientSubtitle": "Industrial sludge",
       "metrics": {
         "volume": { "value": "-85%", "label": "Sludge volume" },
         "hc": { "value": "67%", "label": "HC recovered" },
         "compliance": { "value": "100%", "label": "Environmental compliance" }
       },
-      "description": "Treatment of phenolic sludge, tank T-2402 bottom and API separators. Massive volume reduction for disposal with recovery of high-value hydrocarbons that returned to process.",
+      "description": "Treatment of phenolic sludge, tank bottoms and API separators. Massive volume reduction for disposal with recovery of high-value hydrocarbons that returned to process.",
       "cta": "See more about petroleum"
     },
     "cta": {
-      "title": "Evaluate the results for your plant",
-      "description": "Free technical diagnosis. We quantify recoverable organic, volume reduction, and the impact on your circuit efficiency.",
+      "title": "Crud filtration and dewatering for your plant",
+      "description": "We quantify recoverable organic, volume reduction, and the impact on your circuit efficiency.",
       "timeline": "In 48 hours we install the equipment. Visible results from day one of operation.",
       "primaryCta": "Request Technical Evaluation",
-      "secondaryCta": "See Copper Case",
       "contactTitle": "Direct contact",
       "locations": {
         "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
@@ -619,8 +672,8 @@
     "equipmentBenefits": {
       "items": {
         "corrosive": {
-          "title": "Highly corrosive environments",
-          "description": "Specialized materials and coatings for operating with acids, organic solvents, and high metal concentration solutions. Process contact components manufactured in polypropylene, HDPE, and special steels."
+          "title": "Anti-corrosive and explosion-proof",
+          "description": "Certified equipment for corrosive environments and explosive atmospheres. Specialized materials and coatings for operating with acids, organic solvents, and high metal concentration solutions. Ex-Proof components manufactured in polypropylene, HDPE, and special steels."
         },
         "mobile": {
           "title": "100% Mobile",
@@ -892,16 +945,10 @@
       }
     },
     "cta": {
-      "title": "Evaluate the solution for your plant",
-      "description": "Send us samples of your organic (2L sufficient) for complete analysis: TIF, TSF, viscosity, density, aqueous content, and treatability evaluation",
-      "timeline": "In 5 business days you receive complete technical diagnosis, treatment recommendation, results estimate, and economic proposal without CAPEX",
-      "primaryCta": "Request Technical Evaluation",
-      "secondaryCta": "Download Full Case",
-      "contactTitle": "Direct contact",
-      "locations": {
-        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
-        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
-      }
+      "title": "Organic treatment for your plant",
+      "description": "We evaluate your situation and propose the most suitable solution for your operation.",
+      "timeline": "Contact us to coordinate a technical evaluation and receive a tailored proposal.",
+      "primaryCta": "Request Technical Evaluation"
     }
   },
   "concentrateDehydrationService": {
@@ -919,7 +966,7 @@
         },
         "complete": {
           "title": "Complete integrated equipment",
-          "description": "Peristaltic pump, diaphragm pumps, calibrated flowmeter, plates, cloths and critical spare parts included. No coordinating vendors or separate purchase orders."
+          "description": "Peristaltic pump, diaphragm pumps, piston diaphragm pump, calibrated flowmeter, plates, cloths and critical spare parts included. No coordinating vendors or separate purchase orders."
         },
         "noPermits": {
           "title": "Temporary installation without permits",
@@ -1232,6 +1279,52 @@
         }
       }
     },
+    "waterClarification": {
+      "badge": "Water Clarification",
+      "title": "Recover process water in hours, not weeks",
+      "description": "Our mobile filter presses clarify high-solids water and return it ready to recirculate. Dry cake goes straight to disposal—no ponds, no waiting, no construction.",
+      "benefits": {
+        "recirculate": {
+          "title": "Recirculate more water",
+          "description": "Clarified water ready to return to your process. No settling ponds taking up hectares of your site."
+        },
+        "dryCake": {
+          "title": "Zero intervention from your team",
+          "description": "Our operators handle the entire process. Your staff stays focused on production, not cleaning sludge."
+        },
+        "noWaiting": {
+          "title": "No settling time",
+          "description": "Continuous operation. Water in, clean water out. No waiting days for solids to settle."
+        }
+      },
+      "applicationsLabel": "Common applications",
+      "applications": {
+        "tailings": {
+          "title": "Tailings Reprocessing",
+          "description": "Recover copper and other minerals trapped in legacy tailings dams. Our filter presses dewater material for reprocessing and value recovery."
+        },
+        "industrial": {
+          "title": "Industrial Waters",
+          "description": "Clarification of high-solids water in mining, metallurgy, and chemical processes."
+        },
+        "sludge": {
+          "title": "Process Sludge",
+          "description": "Dehydration of treatment, biological, and physico-chemical sludge to 30-45% solids cake."
+        },
+        "reuse": {
+          "title": "Water for Reuse",
+          "description": "Clarified water for cooling towers, boilers, and production processes."
+        },
+        "metals": {
+          "title": "Heavy Metals",
+          "description": "Treatment of acid waters and effluents with Fe, Cu, Zn, Al, Pb post-precipitation."
+        }
+      },
+      "stat": {
+        "value": "<0.2",
+        "label": "NTU turbidity"
+      }
+    },
     "cta": {
       "title": "Evaluate the solution for your plant",
       "description": "Tell us about your application: type of solids, estimated volume, and access conditions. We evaluate technical feasibility at no cost.",
@@ -1400,11 +1493,11 @@
     },
     "caseStudy": {
       "badge": "SUCCESS STORY",
-      "title": "Caserones maintained LME quality with crud removal at 4,000+ meters",
-      "client": "SCM Lumina Copper",
+      "title": "Copper plant maintained LME quality with crud removal at 4,000+ meters",
+      "client": "Copper SX/EW Plant",
       "location": "4,200 meters altitude",
       "altitude": "4,200 meters altitude",
-      "imageAlt": "Caserones electrowinning tankhouse",
+      "imageAlt": "Copper electrowinning tankhouse",
       "metrics": {
         "removal": { "value": "100%", "label": "Deposit removal" },
         "incidents": { "value": "0", "label": "Safety incidents" },
@@ -1437,7 +1530,6 @@
           "subtitle": "Complete documentation of each intervened cell",
           "features": [
             "Viewer on suction line - operators \"see\" efficiency in real time",
-            "Technical sheets with geotagged photos",
             "Initial, process, and final state documented",
             "Complete record of each cell for audits"
           ],
@@ -1602,7 +1694,7 @@
           "description": "Filtration, activated clay, centrifugation. Restores IFT, reduces TSF, reduces entrainment.",
           "specs": ["IFT 20 → 24+ dynes/cm", "TSF -65% (444s → 153s)", "Entrainment reduction 50%"],
           "validated": "VALIDATED",
-          "client": "CODELCO Norte • 20+ years"
+          "client": "Large-scale copper operation • 20+ years"
         },
         "ewCleaning": {
           "title": "EW Cell Cleaning",
@@ -1671,7 +1763,7 @@
     },
     "caseStudy": {
       "badge": "Validated case",
-      "title": "CODELCO Norte: 20+ years of continuous validation",
+      "title": "Copper operation: 20+ years of continuous validation",
       "subtitle": "Organic SX treatment. Annual renewal through competitive bidding since 2016.",
       "before": "Before",
       "after": "After",
@@ -1727,8 +1819,8 @@
       },
       "clients": {
         "title": "Clients",
-        "main": "CODELCO Norte, BHP",
-        "others": "Anglo American, Capstone, Antofagasta"
+        "main": "Large-scale copper operations",
+        "others": "SX/EW plants in Chile, Peru, and Mexico"
       }
     }
   },
@@ -1996,7 +2088,7 @@
         "label": "Compliance",
         "title": "Complete certification included",
         "description": "All environmental permits, operational safety, and regulatory compliance guaranteed.",
-        "certifications": ["ISO Certified", "Environmental Compliance", "Maintenance Included"]
+        "certifications": ["Ex-Proof Certified", "Environmental Compliance", "Maintenance Included"]
       }
     },
     "labResults": {
@@ -2013,7 +2105,7 @@
       "rows": [
         { "type": "Phenolic sludge", "initial": "92.59%", "final": "53%", "reduction": "84.23%" },
         { "type": "Phenol sludge", "initial": "90.02%", "final": "56%", "reduction": "77.31%" },
-        { "type": "Process sludge (T-2402)", "initial": "70.37%", "final": "55.8%", "reduction": "32.96%" }
+        { "type": "Process sludge", "initial": "70.37%", "final": "55.8%", "reduction": "32.96%" }
       ],
       "benefits": {
         "validation": { "title": "Technical validation", "description": "Tests under real refinery conditions confirm process viability" },
@@ -2121,7 +2213,7 @@
     },
     "vision": {
       "title": "Our Vision",
-      "description": "Become the leading strategic partner in Latin America for mobile solid-liquid separation technologies, expanding presence in copper, zinc, lithium, potassium, and crude oil sectors."
+      "description": "Become the leading strategic partner in Latin America for mobile solid-liquid separation technologies, expanding presence in copper, zinc, lithium, potassium, and hydrocarbons sectors."
     },
     "stats": {
       "title": "Results That Speak",
@@ -2154,7 +2246,7 @@
         { "year": "2010", "title": "Chilean Market Leadership", "description": "Achieved presence in over 50% of the mining market in Chile.", "metric": ">50% Market" },
         { "year": "2020", "title": "Expansion to Li and K", "description": "Diversification into the lithium and potassium market, expanding our service portfolio.", "metric": "Li & K" },
         { "year": "2022", "title": "Expansion to Peru", "description": "Begins expansion to the Peruvian mining market while increasing presence in the Chilean market to over 70% of copper mining.", "metric": ">70% Cu Chile" },
-        { "year": "2025", "title": "Oil Refining Market", "description": "Expansion into the oil refining market, consolidating our presence in Latin America.", "metric": "Oil" }
+        { "year": "2025", "title": "Hydrocarbons Market", "description": "Expansion into the hydrocarbons market, consolidating our presence in Latin America.", "metric": "Hydrocarbons" }
       ],
       "completion": "Consolidating leadership in Latin America"
     },
@@ -2173,7 +2265,7 @@
       "description": "Verifiable metrics from real operations in mining and oil across Latin America."
     },
     "stats": [
-      { "value": "$3.1M", "label": "Documented savings" },
+      { "value": "$500M+", "label": "Client savings" },
       { "value": "84%", "label": "Maximum reduction" },
       { "value": "8+", "label": "Years operating" },
       { "value": "120+", "label": "Completed projects" }
@@ -2208,7 +2300,7 @@
         "headlineMetric": "$2.43M",
         "metricUnit": "USD",
         "headlineLabel": "Protected value",
-        "title": "Filtration backup during scheduled maintenance at Cerro Negro",
+        "title": "Filtration backup during scheduled maintenance at copper plant",
         "services": ["Filtration", "Backup"]
       },
       {
@@ -2217,7 +2309,7 @@
         "headlineMetric": "0",
         "metricUnit": "",
         "headlineLabel": "Incidents",
-        "title": "EW cell cleaning at high-altitude operation - Caserones",
+        "title": "EW cell cleaning at high-altitude copper operation",
         "services": ["EW Cleaning", "Safety"]
       },
       {
@@ -2226,7 +2318,7 @@
         "headlineMetric": "8",
         "metricUnit": "years",
         "headlineLabel": "Continuous operation",
-        "title": "Continuous SX plant support for CODELCO - DGM",
+        "title": "Continuous SX plant support for copper operation",
         "services": ["SX Filtration", "Support"]
       },
       {
@@ -2343,17 +2435,17 @@
       "ctaDescription": "Our team of specialists can help you optimize your process and achieve measurable results."
     },
     "enapLodosPetroleros": {
-      "tagline": "Technical Validation · Crude Oil",
+      "tagline": "Technical Validation · Hydrocarbons",
       "title": "35-85% Volume Reduction",
-      "headline": "Oil Sludge Dewatering - ENAP Concón Refinery",
+      "headline": "Oil Sludge Dewatering - Central Chile Refinery",
       "stats": [
         { "value": "84%", "label": "Phenolic Sludge Reduction" },
         { "value": "77%", "label": "Phenols Sludge Reduction" },
         { "value": "3 months", "label": "Technical Validation" }
       ],
       "overview": [
-        { "label": "Client", "value": "ENAP Concón Refinery" },
-        { "label": "Industry", "value": "Crude Oil Refining" },
+        { "label": "Type", "value": "Oil Refinery" },
+        { "label": "Industry", "value": "Hydrocarbons Refining" },
         { "label": "Objective", "value": "Reduce disposal costs through sludge dewatering" }
       ],
       "challengeDescription": "4.5+ million kg/year of oil sludge with high moisture generate excessive transport and disposal costs",
@@ -2366,7 +2458,7 @@
       "streams": [
         { "humidity": "92.59%", "humidityLabel": "Initial Moisture", "name": "Phenolic Plant Sludge", "description": "Most critical stream" },
         { "humidity": "90.02%", "humidityLabel": "Initial Moisture", "name": "Phenols Plant Sludge", "description": "Second priority stream" },
-        { "humidity": "70.37%", "humidityLabel": "Initial Moisture", "name": "T-2402 Sludge", "description": "Third evaluated stream" }
+        { "humidity": "70.37%", "humidityLabel": "Initial Moisture", "name": "Process Sludge", "description": "Third evaluated stream" }
       ],
       "solutionTitle": "The Tec-Ionic Solution",
       "solutionDescription": "Laboratory technical validation without client investment",
@@ -2389,7 +2481,7 @@
       "results": [
         { "badge": "Best Result", "name": "Phenolic Plant Sludge", "reduction": "84.23%", "reductionLabel": "Volume Reduction", "initialHumidity": "92.59%", "finalHumidity": "53%", "note": "Highest dewatering efficiency achieved" },
         { "badge": "Second Result", "name": "Phenols Plant Sludge", "reduction": "77.31%", "reductionLabel": "Volume Reduction", "initialHumidity": "90.02%", "finalHumidity": "56%", "note": "Excellent moisture reduction" },
-        { "badge": "Third Result", "name": "T-2402 Sludge", "reduction": "32.96%", "reductionLabel": "Volume Reduction", "initialHumidity": "70.37%", "finalHumidity": "55.8%", "note": "Lower initial moisture, still effective" }
+        { "badge": "Third Result", "name": "Process Sludge", "reduction": "32.96%", "reductionLabel": "Volume Reduction", "initialHumidity": "70.37%", "finalHumidity": "55.8%", "note": "Lower initial moisture, still effective" }
       ],
       "initialHumidityLabel": "Initial Moisture",
       "finalHumidityLabel": "Final Moisture",
@@ -2421,8 +2513,8 @@
         { "title": "Multiple Applications", "description": "5 additional opportunities identified in refinery processes" }
       ],
       "conclusionTitle": "Technical Conclusion",
-      "conclusionText1": "The technical validation performed by <strong>Tec-Ionic Durban</strong> at ENAP Concón Refinery demonstrates the viability of <strong>significantly reducing oil sludge volume through mobile filtration technology</strong>, with volume reductions ranging from 32.96% to 84.23% depending on the stream.",
-      "conclusionText2": "This solution allows ENAP to <strong>evaluate the technology without capital investment</strong>, reduce transport and disposal costs, and potentially recover water for reuse. The identification of 5 additional opportunities in different refinery processes expands the potential impact of mobile filtration technology in the oil sector.",
+      "conclusionText1": "The technical validation performed by <strong>Tec-Ionic Durban</strong> at this refinery demonstrates the viability of <strong>significantly reducing oil sludge volume through mobile filtration technology</strong>, with volume reductions ranging from 32.96% to 84.23% depending on the stream.",
+      "conclusionText2": "This solution allows the refinery to <strong>evaluate the technology without capital investment</strong>, reduce transport and disposal costs, and potentially recover water for reuse. The identification of 5 additional opportunities in different refinery processes expands the potential impact of mobile filtration technology in the oil sector.",
       "conclusionStats": [
         { "value": "84%", "label": "Maximum Reduction" },
         { "value": "53-56%", "label": "Final Moisture" },
@@ -2436,7 +2528,7 @@
     "deshidratacionConcentrados": {
       "tagline": "Case Study - Operational Continuity",
       "title": "USD $2.43M Protected Value",
-      "headline": "Mobile Concentrate Filtration Backup at Cerro Negro",
+      "headline": "Mobile Concentrate Filtration Backup at Copper Plant",
       "stats": [
         { "value": "50:1", "label": "Benefit/Cost Ratio" },
         { "value": "75%", "label": "Capacity Maintained" },
@@ -2444,7 +2536,7 @@
         { "value": "30 days", "label": "Backup Period" }
       ],
       "overview": [
-        { "label": "Client", "value": "Cerro Negro Mining Company" },
+        { "label": "Operation", "value": "Copper Concentrate Plant" },
         { "label": "Unit", "value": "Copper concentrator plant" },
         { "label": "Service", "value": "Mobile filter press F-1200-3" },
         { "label": "Objective", "value": "Operational continuity during major maintenance" }
@@ -2478,7 +2570,7 @@
       "keyInsightNote": "in preserved concentrate value",
       "risksMitigatedTitle": "Mitigated Risks",
       "conclusionTitle": "Case Conclusion",
-      "conclusionText1": "Cerro Negro needed to perform 30-day major maintenance on their concentrate filter, without a backup filter. By contracting the <strong>Tec-Ionic F-1200-3 mobile filter press service</strong>, the plant managed to maintain ~75% of its capacity, dewatering ~1,350 tons of concentrate in 30 days.",
+      "conclusionText1": "The plant needed to perform 30-day major maintenance on their concentrate filter, without a backup filter. By contracting the <strong>Tec-Ionic F-1200-3 mobile filter press service</strong>, they managed to maintain ~75% of their capacity, dewatering ~1,350 tons of concentrate in 30 days.",
       "conclusionText2": "This resulted in a <strong>preserved value of ~$2.43M USD</strong>, against a total service cost of around $49K USD, with a <strong>benefit/cost ratio close to 50:1</strong> and a payback of less than one day.",
       "conclusionStats": [
         { "value": "$2.43M", "label": "Protected Value" },
@@ -2493,7 +2585,7 @@
     "limpiezaCeldasEw": {
       "tagline": "Success Story - High Altitude",
       "title": "Zero Safety Incidents",
-      "headline": "EW Cell Crud Removal at Minera Caserones",
+      "headline": "EW Cell Crud Removal at High-Altitude Copper Plant",
       "stats": [
         { "value": "0", "label": "Safety Incidents" },
         { "value": "100%", "label": "Crud Removal" },
@@ -2501,7 +2593,7 @@
         { "value": "1 cell", "label": "Per Day (Target Met)" }
       ],
       "overview": [
-        { "label": "Client", "value": "SCM Minera Lumina Copper Chile - Caserones" },
+        { "label": "Operation", "value": "Copper SX/EW Plant" },
         { "label": "Location", "value": "Atacama Region, +4,200 masl" },
         { "label": "Service", "value": "Comprehensive EW cell crud removal" },
         { "label": "Management System", "value": "SG-SSSC (Safety, Health, Sustainability)" }
@@ -2609,9 +2701,9 @@
       "ctaButton": "Request Quote"
     },
     "soporteSxDgm": {
-      "tagline": "Real Case Study - CODELCO DGM",
+      "tagline": "Real Case Study - Copper SX Plant",
       "title": "8 Years of Continuous Operation",
-      "headline": "Comprehensive SX Plant Support - Gabriela Mistral Division",
+      "headline": "Comprehensive SX Plant Support at Copper Operation",
       "stats": [
         { "value": "96%", "label": "Cu Recovery" },
         { "value": "2.6%", "label": "Organic Replacement" },
@@ -2619,13 +2711,13 @@
         { "value": "18+", "label": "Years TSF Experience" }
       ],
       "overview": [
-        { "label": "Client", "value": "CODELCO - Gabriela Mistral Division (DGM)" },
+        { "label": "Operation", "value": "Copper SX Plant" },
         { "label": "Duration", "value": "8 years of continuous operation" },
         { "label": "Service", "value": "Comprehensive SX plant support" },
         { "label": "Industry", "value": "Copper Mining - SX/EW" }
       ],
       "partnershipTitle": "Long-Term Strategic Partnership",
-      "partnershipDescription": "For over 8 years, TSF has been CODELCO DGM's strategic partner for maintaining and optimizing their solvent extraction plant, ensuring consistent results year after year.",
+      "partnershipDescription": "For over 8 years, TSF has been the strategic partner of this copper operation for maintaining and optimizing their solvent extraction plant, ensuring consistent results year after year.",
       "collaborationTitle": "Collaboration History",
       "collaborationSteps": [
         { "step": "1", "title": "Operations Start", "description": "Initial contract for filtration and crud removal services at SX plant" },
@@ -2752,7 +2844,7 @@
       ],
       "chemicalStats": [
         { "value": "5+", "label": "Chemical plants served" },
-        { "value": "ISO", "label": "Certified processes" },
+        { "value": "Ex-Proof", "label": "Certified processes" },
         { "value": "0", "label": "Safety incidents" },
         { "value": "100%", "label": "Customer satisfaction" }
       ],
@@ -2784,7 +2876,7 @@
       "analysisDescription": "Technical research on trends impacting sector operations and competitiveness",
       "stats": [
         { "value": "5.8Mt", "label": "Chile Copper Production 2025" },
-        { "value": "$50B", "label": "Pre-2030 Project Investment" },
+        { "value": "$104B", "label": "Pre-2030 Project Investment" },
         { "value": "+24%", "label": "Lithium Demand Growth" },
         { "value": "10%", "label": "Continental Water Limit" }
       ],
@@ -3160,7 +3252,7 @@
           {
             "type": "section",
             "title": "The Investment Pipeline",
-            "text": "Nearly $50B USD will be invested in copper projects starting production before 2030, adding 3.2 Mt/year to the region's current 7.6 Mt/year."
+            "text": "Nearly $104B USD will be invested in copper projects starting production before 2030, adding 3.2 Mt/year to the region's current 7.6 Mt/year."
           },
           {
             "type": "highlight",

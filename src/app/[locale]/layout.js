@@ -5,6 +5,7 @@ import {routing} from '@/i18n/routing';
 import '../../styles/globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PostHogProvider from '@/components/PostHogProvider';
 // TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request
 // import FloatingElements from "@/components/FloatingElements"
 
@@ -240,15 +241,17 @@ export default async function LocaleLayout({children, params}) {
         />
       </head>
       <body className="min-h-screen bg-white" style={{fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'}}>
-        <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
-          {/* TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request */}
-          {/* <FloatingElements /> */}
-        </NextIntlClientProvider>
+        <PostHogProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+            {/* TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request */}
+            {/* <FloatingElements /> */}
+          </NextIntlClientProvider>
+        </PostHogProvider>
       </body>
     </html>
   );

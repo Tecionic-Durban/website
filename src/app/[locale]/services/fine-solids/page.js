@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard, Delivery, Mountain, Certificate, CertificateCheck, Security, Flash, FlashFilled, ChevronLeft, ChevronRight, Loop, Construction, Renew, Time, IncreaseLevel, Exit, ContainerImagePull, RainDrop } from '@carbon/icons-react'
-import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, TrendingUp } from 'lucide-react'
+import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, TrendingUp, Droplets } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ParticleFiltrationAnimation from '@/components/ParticleFiltrationAnimation'
@@ -788,18 +788,185 @@ export default function FineSolidsServicePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Equipment Benefits title and expandable list */}
+      {/* WATER CLARIFICATION */}
+      <section className="border-b border-gray-200 relative overflow-hidden">
+        {/* Decorative background circles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-24 right-[10%] w-32 h-32 bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 rounded-full opacity-40 blur-sm"></div>
+          <div className="absolute bottom-32 left-[8%] w-40 h-40 bg-gradient-to-br from-cyan-400/15 to-cyan-500/10 rounded-full opacity-30 blur-sm"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left: Header */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-700 text-sm font-semibold px-3 py-1.5 rounded-full mb-6">
+                <Droplets className="w-4 h-4" />
+                {t('waterClarification.badge')}
+              </div>
+
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                {t('waterClarification.title')}
+              </h2>
+
+              <p className="text-xl text-gray-600 leading-relaxed">
+                {t('waterClarification.description')}
+              </p>
+            </div>
+
+            {/* Right: Benefits - always after header on mobile */}
+            <div className="order-last lg:order-none space-y-6 lg:mt-24">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Renew className="w-5 h-5 text-cyan-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">{t('waterClarification.benefits.recirculate.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('waterClarification.benefits.recirculate.description')}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Users className="w-5 h-5 text-cyan-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">{t('waterClarification.benefits.dryCake.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('waterClarification.benefits.dryCake.description')}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Flash className="w-5 h-5 text-cyan-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">{t('waterClarification.benefits.noWaiting.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('waterClarification.benefits.noWaiting.description')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Applications - Horizontal Scroll */}
+          <div className="mt-16">
+            <div className="flex items-center justify-between mb-8">
+              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{t('waterClarification.applicationsLabel')}</div>
+              <div className="text-sm text-gray-400 flex items-center gap-1">
+                <span>→</span>
+              </div>
+            </div>
+            <div className="relative -mx-8">
+              <div className="overflow-x-auto scrollbar-hide px-8 pb-4">
+                <div className="flex gap-6" style={{ width: 'max-content' }}>
+                  {/* Tailings Reprocessing */}
+                  <div className="w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
+                    <div className="h-40 relative overflow-hidden">
+                      <Image
+                        src="/copper_mine.jpg"
+                        alt={t('waterClarification.applications.tailings.title')}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-gray-900 mb-2">{t('waterClarification.applications.tailings.title')}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{t('waterClarification.applications.tailings.description')}</p>
+                    </div>
+                  </div>
+
+                  {/* Industrial Waters */}
+                  <div className="w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
+                    <div className="h-40 relative overflow-hidden">
+                      <Image
+                        src="/filtro_prensa_movil.png"
+                        alt={t('waterClarification.applications.industrial.title')}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-gray-900 mb-2">{t('waterClarification.applications.industrial.title')}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{t('waterClarification.applications.industrial.description')}</p>
+                    </div>
+                  </div>
+
+                  {/* Process Sludge */}
+                  <div className="w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
+                    <div className="h-40 relative overflow-hidden">
+                      <Image
+                        src="/filtro_prensa_1200_drone_view.png"
+                        alt={t('waterClarification.applications.sludge.title')}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-gray-900 mb-2">{t('waterClarification.applications.sludge.title')}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{t('waterClarification.applications.sludge.description')}</p>
+                    </div>
+                  </div>
+
+                  {/* Water Reuse */}
+                  <div className="w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
+                    <div className="h-40 relative overflow-hidden">
+                      <Image
+                        src="/lithium_mine.jpg"
+                        alt={t('waterClarification.applications.reuse.title')}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-gray-900 mb-2">{t('waterClarification.applications.reuse.title')}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{t('waterClarification.applications.reuse.description')}</p>
+                    </div>
+                  </div>
+
+                  {/* Heavy Metals */}
+                  <div className="w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
+                    <div className="h-40 relative overflow-hidden">
+                      <Image
+                        src="/zinc_processing_plant.jpg"
+                        alt={t('waterClarification.applications.metals.title')}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-gray-900 mb-2">{t('waterClarification.applications.metals.title')}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{t('waterClarification.applications.metals.description')}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Fade indicator */}
+              <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EQUIPMENT BENEFITS */}
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
             {t('equipmentBenefits.title')}
           </h2>
 
-          {/* Equipment Benefits - Expandable with images */}
           <EquipmentBenefits t={t} />
         </div>
       </section>
 
-      {/* SECTION 7: INDUSTRY BREADTH - Horizontal Scrolling Carousel */}
+      {/* SECTION 8: INDUSTRY BREADTH - Horizontal Scrolling Carousel */}
       <section className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
@@ -991,7 +1158,7 @@ export default function FineSolidsServicePage() {
         </div>
       </section>
 
-      {/* SECTION 8: CASE STUDY */}
+      {/* SECTION 9: CASE STUDY */}
       <section className="border-b border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           {/* Header */}

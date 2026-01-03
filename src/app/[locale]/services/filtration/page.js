@@ -45,43 +45,27 @@ function RecoverySection({ t }) {
     : { text: 'text-amber-700', bg: 'bg-amber-600', border: 'border-amber-600', light: 'bg-amber-50' }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-100/80 via-emerald-50/50 to-gray-100 relative overflow-hidden">
-      {/* Enterprise Background Elements - more visible */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-[12%] w-40 h-40 bg-gradient-to-br from-emerald-500/20 to-emerald-600/15 rounded-full opacity-60 animate-float-slow blur-md"></div>
-        <div className="absolute bottom-20 left-[15%] w-48 h-48 bg-gradient-to-br from-emerald-400/25 to-emerald-500/20 rounded-full opacity-50 animate-float-medium blur-md"></div>
-        <div className="absolute top-1/2 right-[25%] w-32 h-32 bg-gradient-to-br from-emerald-300/20 to-emerald-400/15 rounded-full opacity-40 animate-float-slow blur-sm"></div>
-
-        {/* Strategic three ball constellation */}
-        <div className="absolute top-16 left-[8%] opacity-40">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-emerald-400 rounded-full enterprise-pulse"></div>
-            <div className="w-3 h-3 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-3 h-3 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
-      </div>
-
+    <section className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
         {/* Atlassian-style two column layout */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left: Hero stat with title - dynamic based on tab */}
-          <div>
+          {/* Left: Hero stat with title and tabs */}
+          <div className="relative">
+            {/* Decorative circle - large, mostly off-page, just showing curvature */}
+            <div className="absolute -bottom-[350px] -left-[300px] w-[900px] h-[900px] bg-gradient-to-br from-emerald-100/50 to-emerald-50/30 rounded-full -z-10"></div>
+
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t('recovery.title')}
             </h2>
             <div className={`text-7xl lg:text-8xl font-bold mb-4 transition-all ${colorClasses.text}`}>
               {active.heroStat}
             </div>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-8">
               {active.heroLabel}
             </p>
-          </div>
 
-          {/* Right: Tabbed KPIs */}
-          <div>
             {/* Tabs */}
-            <div className="flex gap-2 mb-8">
+            <div className="flex gap-2">
               <button
                 onClick={() => setActiveTab('copper')}
                 className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
@@ -103,7 +87,10 @@ function RecoverySection({ t }) {
                 Petróleo
               </button>
             </div>
+          </div>
 
+          {/* Right: KPIs */}
+          <div>
             {/* KPI Cards */}
             <div className="space-y-6">
               {active.kpis.map((kpi, index) => (
@@ -390,20 +377,8 @@ export default function FiltrationPage() {
               </p>
             </div>
 
-            {/* Right: 4 items stacked */}
+            {/* Right: 3 items stacked */}
             <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Flash className="w-5 h-5 text-orange-400" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-1">{t('operationalEfficiency.items.energy.title')}</h3>
-                  <p className="text-gray-400 text-sm">
-                    {t('operationalEfficiency.items.energy.description')}
-                  </p>
-                </div>
-              </div>
-
               <div className="flex gap-4">
                 <div className="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Chemistry className="w-5 h-5 text-orange-400" />
@@ -562,10 +537,9 @@ export default function FiltrationPage() {
       {/* THEME 3: TODO VUELVE AL CICLO - Atlassian KPI Style */}
       <RecoverySection t={t} />
 
-      {/* THEME 4: MÍNIMO IMPACTO TÉRMICO */}
+      {/* THEME 4: EXTRACCIÓN PRECISA */}
       <section className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
-          {/* Two column layout */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Header + Benefits */}
             <div>
@@ -602,40 +576,15 @@ export default function FiltrationPage() {
               </div>
             </div>
 
-            {/* Right: Visual comparison */}
-            <div className="space-y-6">
-              {/* Conventional method */}
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">{t('thermalImpact.comparison.conventional.label')}</span>
-                  <span className="text-red-500 font-bold">{t('thermalImpact.comparison.conventional.cost')}</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex-1 bg-gradient-to-r from-red-400 to-red-500 h-10 rounded-lg"></div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-red-600">{t('thermalImpact.comparison.conventional.volume')}</div>
-                    <div className="text-sm text-gray-500">{t('thermalImpact.comparison.conventional.volumeLabel')}</div>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-500 mt-3">{t('thermalImpact.comparison.conventional.description')}</p>
+            {/* Right: Access footprint stat */}
+            <div className="flex flex-col items-center justify-center text-center">
+              <div className="flex items-baseline gap-2">
+                <span className="text-8xl lg:text-9xl font-bold text-emerald-600 leading-none">&lt;1</span>
+                <span className="text-5xl lg:text-6xl font-semibold text-gray-700">m²</span>
               </div>
-
-              {/* Tecionic method */}
-              <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-medium text-emerald-700 uppercase tracking-wide">{t('thermalImpact.comparison.tecionic.label')}</span>
-                  <span className="text-emerald-600 font-bold">{t('thermalImpact.comparison.tecionic.cost')}</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex-1 bg-gradient-to-r from-emerald-400 to-emerald-500 h-10 rounded-lg" style={{width: '25%'}}></div>
-                  <div className="flex-1"></div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-emerald-600">{t('thermalImpact.comparison.tecionic.volume')}</div>
-                    <div className="text-sm text-gray-500">{t('thermalImpact.comparison.tecionic.volumeLabel')}</div>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-500 mt-3">{t('thermalImpact.comparison.tecionic.description')}</p>
-              </div>
+              <p className="text-lg text-gray-500 mt-4 max-w-xs">
+                {t('thermalImpact.accessFootprint')}
+              </p>
             </div>
           </div>
         </div>
@@ -996,29 +945,11 @@ export default function FiltrationPage() {
             {t('cta.timeline')}
           </p>
 
-          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
+          <div className="flex items-center justify-center">
             <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
-            <a href="/industries/copper" className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors">
-              {t('cta.secondaryCta')}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </div>
-
-          <div className="border-t border-emerald-500 pt-8">
-            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
-            <div className="grid md:grid-cols-2 gap-6 text-white">
-              <div>
-                <div className="font-semibold mb-1">{t('cta.locations.santiago.name')}</div>
-                <div className="text-emerald-100">{t('cta.locations.santiago.address')}</div>
-              </div>
-              <div>
-                <div className="font-semibold mb-1">{t('cta.locations.calama.name')}</div>
-                <div className="text-emerald-100">{t('cta.locations.calama.address')}</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

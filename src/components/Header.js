@@ -1,6 +1,7 @@
 // src/components/Header.js
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { handleContactClick } from '@/utils/navigation'
@@ -180,16 +181,6 @@ export default function Header() {
                                 </div>
                               </a>
 
-                              <a href="/services/water-clarification" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                                <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
-                                  <RainDrop className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
-                                </div>
-                                <div>
-                                  <div className="font-medium">{t('header.services.waterClarification.name')}</div>
-                                  <div className="text-xs text-gray-500">{t('header.services.waterClarification.description')}</div>
-                                </div>
-                              </a>
-
                               <a href="/services/ew-cleaning" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <BatteryCharging className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
@@ -339,43 +330,48 @@ export default function Header() {
                           </div>
                         </div>
 
-                        {/* ENAP Customer Success Story - Enhanced */}
+                        {/* Copper Case Study - Real */}
                         <div className="w-80 border-l border-gray-100 pl-6">
                           <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
                             {t('header.successStory')}
                           </div>
-                          <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-6 border border-emerald-200">
-                            {/* Thumbnail placeholder */}
-                            <div className="w-full h-24 bg-emerald-200 rounded-lg mb-4 flex items-center justify-center">
-                              <div className="text-emerald-600 text-xs font-medium">{t('header.enapStory.imagePlaceholder')}</div>
+                          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-5 border border-orange-200">
+                            {/* Real image */}
+                            <div className="w-full h-24 rounded-lg mb-4 overflow-hidden relative">
+                              <Image
+                                src="/filtro_prensa_1200_drone_view.png"
+                                alt={t('header.copperCaseStudy.imageAlt')}
+                                fill
+                                className="object-cover"
+                              />
                             </div>
 
-                            <div className="flex items-center mb-4">
-                              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mr-3 shadow-sm">
-                                <span className="text-emerald-600 text-xs font-bold">{t('header.enapStory.companyName')}</span>
+                            <div className="flex items-center mb-3">
+                              <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mr-3">
+                                <span className="text-white text-xs font-bold">Cu</span>
                               </div>
                               <div>
-                                <div className="text-sm font-semibold text-emerald-800">{t('header.enapStory.companyName')}</div>
-                                <div className="text-xs text-emerald-600">{t('header.enapStory.companyFullName')}</div>
+                                <div className="text-sm font-semibold text-orange-800">{t('header.copperCaseStudy.title')}</div>
+                                <div className="text-xs text-orange-600">{t('header.copperCaseStudy.location')}</div>
                               </div>
                             </div>
 
-                            <p className="text-sm text-emerald-700 mb-4 leading-relaxed">
-                              &quot;{t('header.enapStory.quote')}&quot;
+                            <p className="text-sm text-orange-700 mb-4 leading-relaxed">
+                              {t('header.copperCaseStudy.description')}
                             </p>
 
-                            <div className="grid grid-cols-2 gap-3 mb-4">
+                            <div className="grid grid-cols-2 gap-2 mb-4">
                               <div className="text-center bg-white rounded-lg p-2">
-                                <div className="text-lg font-bold text-emerald-600">18%</div>
-                                <div className="text-xs text-gray-600">{t('header.enapStory.costReduction')}</div>
+                                <div className="text-lg font-bold text-orange-600">0</div>
+                                <div className="text-xs text-gray-600">{t('header.copperCaseStudy.incidents')}</div>
                               </div>
                               <div className="text-center bg-white rounded-lg p-2">
-                                <div className="text-lg font-bold text-emerald-600">95%</div>
-                                <div className="text-xs text-gray-600">{t('header.enapStory.efficiency')}</div>
+                                <div className="text-lg font-bold text-orange-600">100%</div>
+                                <div className="text-xs text-gray-600">{t('header.copperCaseStudy.removal')}</div>
                               </div>
                             </div>
-                            
-                            <a href="#" className="flex items-center justify-center w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
+
+                            <a href="/case-studies/limpieza-celdas-ew" className="flex items-center justify-center w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
                               {t('header.viewFullCase')}
                               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
@@ -421,42 +417,6 @@ export default function Header() {
                           </div>
                         </Link>
 
-                        <a href="/white-papers" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                          <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <div className="font-medium">{t('header.resourceLinks.whitePapers.name')}</div>
-                            <div className="text-xs text-gray-500">{t('header.resourceLinks.whitePapers.description')}</div>
-                          </div>
-                        </a>
-
-                        <a href="/especificaciones-tecnicas" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                          <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <div className="font-medium">{t('header.resourceLinks.technicalSpecs.name')}</div>
-                            <div className="text-xs text-gray-500">{t('header.resourceLinks.technicalSpecs.description')}</div>
-                          </div>
-                        </a>
-
-                        <a href="/cumplimiento" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                          <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <div className="font-medium">{t('header.resourceLinks.compliance.name')}</div>
-                            <div className="text-xs text-gray-500">{t('header.resourceLinks.compliance.description')}</div>
-                          </div>
-                        </a>
 
                       </div>
                     </div>
@@ -472,7 +432,7 @@ export default function Header() {
             <LanguageSwitcher />
             <button
               onClick={(e) => handleContactClick(e, router, pathname)}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 cursor-pointer"
             >
               {t('navigation.contact')}
             </button>
@@ -538,9 +498,6 @@ export default function Header() {
                     </Link>
                     <Link href="/services/fine-solids" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       {t('header.services.fineSolids.name')}
-                    </Link>
-                    <Link href="/services/water-clarification" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.waterClarification.name')}
                     </Link>
                     <Link href="/services/ew-cleaning" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       {t('header.services.ewCleaning.name')}
@@ -629,15 +586,6 @@ export default function Header() {
                     <Link href="/tendencias-industria" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
                       {t('header.resourceLinks.industryTrends.name')}
                     </Link>
-                    <Link href="/white-papers" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.resourceLinks.whitePapers.name')}
-                    </Link>
-                    <Link href="/especificaciones-tecnicas" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.resourceLinks.technicalSpecs.name')}
-                    </Link>
-                    <Link href="/cumplimiento" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.resourceLinks.compliance.name')}
-                    </Link>
                   </div>
                 )}
               </div>
@@ -666,7 +614,7 @@ export default function Header() {
                   handleContactClick(e, router, pathname)
                   setIsMenuOpen(false)
                 }}
-                className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors duration-200 w-full"
+                className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors duration-200 w-full cursor-pointer"
               >
                 {t('navigation.contact')}
               </button>

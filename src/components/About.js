@@ -128,14 +128,9 @@ export default function About() {
               <span className="block text-emerald-600">{t('headlineSub')}</span>
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            <p className="text-lg text-gray-600 leading-relaxed">
               {t('description')} {t('clientList')}
             </p>
-
-            <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm">
-              <Security className="w-4 h-4 text-emerald-600 mr-2" />
-              {t('certifiedEquipment')}
-            </div>
           </div>
 
           {/* Right Side - Card Track */}

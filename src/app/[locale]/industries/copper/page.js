@@ -460,32 +460,7 @@ export default function CopperIndustryPage() {
                 </div>
               </div>
 
-              {/* Service 5 - Cyan accent */}
-              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-                {/* Subtle corner decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-100 to-blue-50 rounded-bl-full opacity-50"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-500/5 rounded-tr-full"></div>
-
-                <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20 group-hover:shadow-xl group-hover:shadow-cyan-500/30 group-hover:scale-105 transition-all">
-                    <Humidity className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.waterClarification.title')}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {t('services.cards.waterClarification.description')}
-                  </p>
-                  <div className="space-y-2 text-sm">
-                    {t.raw('services.cards.waterClarification.specs').map((spec, index) => (
-                      <div key={index} className="flex items-center gap-2 text-gray-700">
-                        <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
-                        {spec}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Service 6 - Slate accent, slightly offset down */}
+              {/* Service 5 - Slate accent, slightly offset down */}
               <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden lg:translate-y-4">
                 {/* Subtle corner decoration */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-slate-100 to-gray-50 rounded-br-full opacity-50"></div>

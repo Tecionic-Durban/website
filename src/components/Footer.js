@@ -2,7 +2,6 @@
 'use client'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -13,7 +12,6 @@ export default function Footer() {
     { key: 'organicTreatment', href: '/services/organic-treatment' },
     { key: 'concentrateDehydration', href: '/services/concentrate-dehydration' },
     { key: 'fineSolids', href: '/services/fine-solids' },
-    { key: 'waterClarification', href: '/services/water-clarification' },
     { key: 'ewCleaning', href: '/services/ew-cleaning' }
   ]
 
@@ -32,17 +30,13 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-emerald-600 rounded-lg p-2">
-                <Image 
-                  src="/logo.png" 
-                  alt="Tec-Ionic Durban"
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-contain filter brightness-0 invert"
-                />
+              <div className="flex items-center space-x-1.5">
+                <div className="w-4 h-4 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full shadow-sm"></div>
+                <div className="w-4 h-4 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full shadow-sm"></div>
+                <div className="w-4 h-4 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full shadow-sm"></div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold">Tec-Ionic Durban</h3>
+                <h3 className="text-2xl font-black">Teci<span className="text-emerald-400">o</span>nic</h3>
               </div>
             </div>
             
@@ -113,17 +107,17 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/casos-de-exito" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
-                  {t('footer.caseStudies')}
+                  {t('header.resourceLinks.caseStudies.name')}
                 </Link>
               </li>
               <li>
-                <Link href="/especificaciones-tecnicas" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
-                  {t('footer.technicalGuides')}
+                <Link href="/tendencias-industria" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
+                  {t('header.resourceLinks.industryTrends.name')}
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
-                  {t('footer.webinars')}
+                <Link href="/about" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
+                  {t('navigation.about')}
                 </Link>
               </li>
             </ul>
@@ -133,7 +127,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} Tec-Ionic Durban S.A. {t('footer.copyright')}
+            © {currentYear} Tecionic S.A. {t('footer.copyright')}
           </div>
 
           <div className="flex space-x-6 text-sm">

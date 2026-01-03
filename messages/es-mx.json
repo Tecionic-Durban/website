@@ -81,7 +81,7 @@
         "description": "Baterías y energía"
       },
       "crudeOil": {
-        "name": "Petróleo Crudo",
+        "name": "Hidrocarburos",
         "description": "Refinación y procesamiento"
       }
     },
@@ -93,14 +93,6 @@
       "industryTrends": {
         "name": "Tendencias de la Industria",
         "description": "Análisis y perspectivas"
-      },
-      "whitePapers": {
-        "name": "White Papers",
-        "description": "Investigación técnica profunda"
-      },
-      "technicalSpecs": {
-        "name": "Especificaciones Técnicas",
-        "description": "Detalles de equipos y procesos"
       },
       "compliance": {
         "name": "Cumplimiento",
@@ -115,13 +107,21 @@
     "viewFullCase": "Ver caso completo",
     "analyticsComingSoon": "Nuevos servicios de analítica en desarrollo. Contáctenos para más información.",
     "qualityComingSoon": "Laboratorio móvil para certificación en mina. Próximamente más servicios de control de calidad.",
-    "enapStory": {
+    "refineryStory": {
       "imagePlaceholder": "Imagen del Proyecto",
-      "companyName": "ENAP",
-      "companyFullName": "Empresa Nacional del Petróleo",
+      "companyName": "Refinería",
+      "companyFullName": "Refinería de Petróleo",
       "quote": "Tec-Ionic Durban optimizó nuestros procesos de refinación, reduciendo costos operacionales en un 18% y mejorando la eficiencia general.",
       "costReduction": "Reducción costos",
       "efficiency": "Eficiencia"
+    },
+    "copperCaseStudy": {
+      "imageAlt": "Filtro prensa móvil en operación de cobre",
+      "title": "Limpieza Celdas EW",
+      "location": "4,200 msnm • Alta Montaña",
+      "description": "Limpieza de celdas EW con cero incidentes de seguridad y 100% remoción de crud en condiciones extremas.",
+      "incidents": "Incidentes",
+      "removal": "Remoción"
     }
   },
   "hero": {
@@ -182,7 +182,7 @@
     "headline": "Especialistas en Separación",
     "headlineSub": "Sólido-Líquido Móvil",
     "description": "Especialistas en separación sólido-líquido en aplicaciones SX/EW con equipos móviles de alta capacidad.",
-    "clientList": "Atendemos a BHP, Codelco, Antofagasta Minerals, Grupo México, entre otras importantes empresas mineras, proporcionando soluciones que optimizan operaciones sin interrumpir procesos existentes.",
+    "clientList": "Atendemos a las principales operaciones de cobre, zinc, litio y potasio en Latinoamérica, proporcionando soluciones que optimizan operaciones sin interrumpir procesos existentes.",
     "highCapacity": "equipos móviles de alta capacidad",
     "certifiedEquipment": "Equipos Ex.Proof Certificados",
     "cards": {
@@ -198,7 +198,7 @@
       },
       "multisector": {
         "title": "Experiencia Multisectorial",
-        "description": "Portafolio comprobado en cobre, litio, potasio y refinación de petróleo con casos de éxito documentados.",
+        "description": "Portafolio comprobado en cobre, litio, potasio y hidrocarburos con casos de éxito documentados.",
         "metric": "5 Sectores"
       },
       "plugAndPlay": {
@@ -223,6 +223,7 @@
     "services": "Servicios",
     "industries": "Industrias",
     "resources": "Recursos",
+    "company": "Empresa",
     "contact": "Contacto",
     "offices": "Oficinas en Santiago, Calama y Lima",
     "viewContactInfo": "Ver información completa de contacto",
@@ -316,6 +317,62 @@
       "potassium": "Potasio"
     }
   },
+  "operationalIntelligence": {
+    "badge": "Laboratorio de Análisis",
+    "headline": "Control predictivo para",
+    "headlineSub": "optimizar tu operación",
+    "description": "Nuestro laboratorio especializado mide los parámetros críticos que definen la salud de tu proceso. Detectamos problemas antes de que impacten tu producción.",
+    "cta": {
+      "primary": "Solicitar Análisis",
+      "secondary": "Ver Servicios"
+    },
+    "datapoints": {
+      "tif": {
+        "title": "Tensión Interfacial (TIF)",
+        "description": "Mide la salud química de tu orgánico. Una TIF baja indica contaminantes que degradan la separación de fases y aumentan los arrastres.",
+        "benchmark": "Óptimo",
+        "benefits": [
+          "Predice cuándo necesitas tratamiento con arcilla",
+          "Reduce arrastres de orgánico en electrolito hasta 52%",
+          "Extiende vida útil de extractante, ahorrando $150K+/año"
+        ]
+      },
+      "tsf": {
+        "title": "Tiempo de Separación (TSF)",
+        "description": "Indica la velocidad de separación de fases. Un TSF alto significa emulsiones persistentes que reducen capacidad y recuperación.",
+        "benchmark": "Máximo",
+        "benefits": [
+          "Detecta degradación de orgánico 2-3 semanas antes de crisis",
+          "Optimiza velocidad de flujo en mezcladores-decantadores",
+          "Elimina paradas de emergencia por separación deficiente"
+        ]
+      },
+      "turbidity": {
+        "title": "Turbidez en Línea",
+        "description": "Monitoreo continuo de partículas suspendidas en proceso. Crítico para calidad de producto y eficiencia de separación.",
+        "benchmark": "Máximo",
+        "benefits": [
+          "Control en tiempo real sin esperar análisis de laboratorio",
+          "Optimiza dosificación de floculantes automáticamente",
+          "Asegura cumplimiento de especificaciones de producto"
+        ]
+      }
+    },
+    "labSection": {
+      "title": "Laboratorio dedicado con personal especializado",
+      "description": "Contamos con instalaciones propias y técnicos certificados para análisis de muestras de cualquier operación en Latinoamérica. Resultados confiables que fundamentan decisiones operacionales.",
+      "features": [
+        "Análisis certificados",
+        "Personal dedicado",
+        "Cobertura Latinoamérica"
+      ],
+      "stats": {
+        "monitoring": "Monitoreo",
+        "turnaround": "Entrega resultados",
+        "accuracy": "Precisión"
+      }
+    }
+  },
   "customers": {
     "badge": "Casos de Éxito Comprobados",
     "headline": "Clientes que",
@@ -364,7 +421,7 @@
     "hero": {
       "title": "Filtración móvil para",
       "titleHighlight": "máxima eficiencia de planta",
-      "description": "Conecta filtros prensa a cualquier punto de tu proceso. Recupera hasta 90% del orgánico atrapado, reduce volumen de disposición hasta 85%, y mantén tu planta operando mientras limpiamos.",
+      "description": "Conecta filtros prensa a cualquier punto de tu proceso. Recupera hasta 90% del orgánico, reduce volumen de disposición hasta 85%, y mantén tu planta operando mientras limpiamos.",
       "cta": "Solicitar Evaluación"
     },
     "recovery": {
@@ -406,7 +463,7 @@
         },
         "noInterference": {
           "title": "Operación sin interferir tu planta",
-          "description": "Sistema 100% autónomo que no utiliza equipamiento de planta cliente. Bombas, tuberías, controles y energía propios. Sin modificar permisos ni MIA. Instalación en 48 horas, operación inmediata. Tu proceso sigue corriendo mientras limpiamos."
+          "description": "Sistema 100% autónomo que no utiliza equipamiento de planta cliente. Bombas, tuberías, controles y aire propios. Sin modificar permisos ni MIA. Instalación en 48 horas, operación inmediata. Tu proceso sigue corriendo mientras limpiamos."
         }
       }
     },
@@ -418,7 +475,7 @@
           "description": "Etapas más limpias mejoran la separación y transferencia en todo el proceso."
         },
         "value": {
-          "title": "Recupera valor atrapado",
+          "title": "Recupera valor",
           "description": "Extrae hidrocarburos o extractante orgánico que de otra forma se perdería atrapado en el crud."
         },
         "storage": {
@@ -436,13 +493,9 @@
       "title": "Devolvemos tu circuito a eficiencia de diseño",
       "description": "El crud acumulado en settler/mixer degrada la separación de fases y aumenta el arrastre entre etapas. Nosotros removemos la causa raíz.",
       "items": {
-        "energy": {
-          "title": "Energía",
-          "description": "Extraemos crud, reduciendo viscosidad. Bombas y agitadores vuelven a su curva de diseño."
-        },
         "extractant": {
           "title": "Extractante",
-          "description": "Separamos el orgánico atrapado y lo devolvemos a tu circuito. Hasta 90% recuperado."
+          "description": "Separamos el orgánico y lo devolvemos a tu circuito. Hasta 90% recuperado."
         },
         "acid": {
           "title": "Ácido",
@@ -485,27 +538,28 @@
       }
     },
     "thermalImpact": {
-      "title": "Extracción precisa, impacto térmico mínimo",
-      "description": "Pipeta larga identifica la cota exacta de contaminación. Solo extraemos lo necesario. Menor volumen procesado significa menor costo de recalentamiento.",
+      "title": "Precisión sin invadir",
+      "description": "Pipeta larga identifica la cota exacta de contaminación. Solo extraemos lo necesario. Menor volumen procesado significa menor costo y menor interferencia con tu operación.",
       "benefits": {
         "selective": { "title": "Extracción selectiva por cota.", "description": " Medimos dónde está el crud y atacamos específicamente esa zona." },
         "minimal": { "title": "Volumen mínimo procesado.", "description": " Sin extraer todo el tanque. Solo la zona contaminada." },
-        "immediate": { "title": "Retorno inmediato.", "description": " Líquido separado vuelve a proceso con mínima pérdida de temperatura." }
+        "immediate": { "title": "Retorno inmediato.", "description": " Líquido separado vuelve a proceso sin demoras." }
       },
+      "accessFootprint": "para el acceso del succionador",
       "comparison": {
         "conventional": {
           "label": "Método convencional",
           "cost": "Alto costo",
           "volume": "100%",
           "volumeLabel": "volumen extraído",
-          "description": "Vaciar todo el tanque, recalentar todo el volumen"
+          "description": "Vaciar todo el tanque, mayor tiempo fuera de servicio"
         },
         "tecionic": {
           "label": "Método Tecionic",
           "cost": "Costo mínimo",
           "volume": "~15%",
           "volumeLabel": "volumen extraído",
-          "description": "Solo la zona contaminada, menor costo de recalentamiento"
+          "description": "Solo la zona contaminada, operación continua"
         }
       }
     },
@@ -519,7 +573,7 @@
         "description": "El crud entra como líquido y sale como torta seca. Menos peso, menos volumen, menos camiones. Transporte y disposición final simplificados.",
         "kpis": {
           "volume": { "value": "85%", "label": "Reducción de volumen" },
-          "dryness": { "value": "85%", "label": "Sequedad de torta" }
+          "dryness": { "value": "15%", "label": "Humedad de torta" }
         }
       },
       "recovery": {
@@ -558,30 +612,29 @@
           "description": "Filtración de sólidos abrasivos adaptado a densidades Zn y sensibilidad orgánica"
         },
         "crudeOil": {
-          "name": "Petróleo Crudo",
+          "name": "Hidrocarburos",
           "description": "Limpieza de lodos desde tanques con 80% reducción de volumen y 90% recuperación HC"
         }
       }
     },
     "caseStudy": {
       "badge": "CASO DE ÉXITO",
-      "title": "ENAP redujo volumen de lodos en 85% y recuperó hidrocarburos valiosos",
-      "client": "Refinería ENAP",
+      "title": "Refinería redujo volumen de lodos en 85% y recuperó hidrocarburos valiosos",
+      "client": "Refinería de Petróleo",
       "clientSubtitle": "Lodos industriales",
       "metrics": {
         "volume": { "value": "-85%", "label": "Volumen de lodo" },
         "hc": { "value": "67%", "label": "HC recuperados" },
         "compliance": { "value": "100%", "label": "Cumplimiento ambiental" }
       },
-      "description": "Tratamiento de lodos fenólicos, fondo de tanque T-2402 y separadores API. Reducción masiva del volumen a disponer con recuperación de hidrocarburos de alto valor que retornaron al proceso.",
+      "description": "Tratamiento de lodos fenólicos, fondos de tanque y separadores API. Reducción masiva del volumen a disponer con recuperación de hidrocarburos de alto valor que retornaron al proceso.",
       "cta": "Ver más sobre petróleo"
     },
     "cta": {
-      "title": "Evalúa los resultados para tu planta",
-      "description": "Diagnóstico técnico sin costo. Cuantificamos el orgánico recuperable, la reducción de volumen, y el impacto en eficiencia de tu circuito.",
+      "title": "Filtración y deshidratación de crud para tu planta",
+      "description": "Cuantificamos el orgánico recuperable, la reducción de volumen, y el impacto en eficiencia de tu circuito.",
       "timeline": "En 48 horas instalamos el equipo. Resultados visibles desde el primer día de operación.",
       "primaryCta": "Solicitar Evaluación Técnica",
-      "secondaryCta": "Ver Caso Cobre",
       "contactTitle": "Contacto directo",
       "locations": {
         "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
@@ -619,8 +672,8 @@
     "equipmentBenefits": {
       "items": {
         "corrosive": {
-          "title": "Ambientes altamente corrosivos",
-          "description": "Materiales y recubrimientos especializados para operar con ácidos, solventes orgánicos, y soluciones de alta concentración metálica. Componentes en contacto con proceso fabricados en polipropileno, HDPE, y aceros especiales."
+          "title": "Anticorrosivo y antiexplosión",
+          "description": "Equipos certificados para ambientes corrosivos y atmósferas explosivas. Materiales y recubrimientos especializados para operar con ácidos, solventes orgánicos y soluciones de alta concentración metálica. Componentes Ex-Proof y fabricados en polipropileno, HDPE y aceros especiales."
         },
         "mobile": {
           "title": "100% Móviles",
@@ -892,16 +945,10 @@
       }
     },
     "cta": {
-      "title": "Evalúa la solución para tu planta",
-      "description": "Envíanos muestras de tu orgánico (2L suficiente) para análisis completo: TIF, TSF, viscosidad, densidad, contenido acuoso, y evaluación de tratabilidad",
-      "timeline": "En 5 días hábiles recibes diagnóstico técnico completo, recomendación de tratamiento, estimación de resultados, y propuesta económica sin CAPEX",
-      "primaryCta": "Solicitar Evaluación Técnica",
-      "secondaryCta": "Descargar Caso Completo",
-      "contactTitle": "Contacto directo",
-      "locations": {
-        "santiago": { "name": "Santiago:", "address": "Luis Thayer Ojeda 95, of. 312" },
-        "calama": { "name": "Calama:", "address": "Miraflores 1260 B" }
-      }
+      "title": "Tratamiento de orgánico para tu planta",
+      "description": "Evaluamos tu situación y proponemos la solución más adecuada para tu operación.",
+      "timeline": "Contáctanos para coordinar una evaluación técnica y recibir una propuesta a tu medida.",
+      "primaryCta": "Solicitar Evaluación Técnica"
     }
   },
   "concentrateDehydrationService": {
@@ -919,7 +966,7 @@
         },
         "complete": {
           "title": "Equipamiento completo integrado",
-          "description": "Bomba peristáltica, bombas de diafragma, flujómetro calibrado, placas, telas y repuestos críticos incluidos. Sin coordinar proveedores ni órdenes de compra separadas."
+          "description": "Bomba peristáltica, bombas de diafragma, bomba pistón diafragma, flujómetro calibrado, placas, telas y repuestos críticos incluidos. Sin coordinar proveedores ni órdenes de compra separadas."
         },
         "noPermits": {
           "title": "Instalación temporal sin permisos",
@@ -1232,6 +1279,52 @@
         }
       }
     },
+    "waterClarification": {
+      "badge": "Clarificación de Aguas",
+      "title": "Recupera agua de proceso en horas, no semanas",
+      "description": "Nuestros filtros prensa móviles clarifican agua con alta carga de sólidos y la devuelven lista para recircular. La torta seca sale directo a disposición—sin piscinas, sin esperas, sin obras.",
+      "benefits": {
+        "recirculate": {
+          "title": "Recircula más agua",
+          "description": "Agua clarificada lista para volver a tu proceso. Sin piscinas de decantación ocupando hectáreas de tu operación."
+        },
+        "dryCake": {
+          "title": "Cero intervención de tu equipo",
+          "description": "Nuestros operadores manejan todo el proceso. Tu personal sigue enfocado en producción, no en limpiar lodos."
+        },
+        "noWaiting": {
+          "title": "Sin tiempos de decantación",
+          "description": "Operación continua. Agua entra, agua limpia sale. Sin esperar días a que los sólidos decanten."
+        }
+      },
+      "applicationsLabel": "Aplicaciones comunes",
+      "applications": {
+        "tailings": {
+          "title": "Reprocesamiento de Jales",
+          "description": "Recupera cobre y otros minerales atrapados en presas de jales antiguas. Nuestros filtros prensa deshidratan el material para reprocesamiento y recuperación de valor."
+        },
+        "industrial": {
+          "title": "Aguas Industriales",
+          "description": "Clarificación de aguas con alta carga de sólidos en minería, metalurgia y procesos químicos."
+        },
+        "sludge": {
+          "title": "Lodos de Proceso",
+          "description": "Deshidratación de lodos de tratamiento, biológicos y físico-químicos a torta de 30-45% sólidos."
+        },
+        "reuse": {
+          "title": "Agua para Reúso",
+          "description": "Agua clarificada para torres de enfriamiento, calderas y procesos productivos."
+        },
+        "metals": {
+          "title": "Metales Pesados",
+          "description": "Tratamiento de aguas ácidas y efluentes con Fe, Cu, Zn, Al, Pb post-precipitación."
+        }
+      },
+      "stat": {
+        "value": "<0.2",
+        "label": "NTU turbidez"
+      }
+    },
     "cta": {
       "title": "Evalúa la solución para tu planta",
       "description": "Cuéntanos sobre tu aplicación: tipo de sólidos, volumen estimado, y condiciones de acceso. Evaluamos factibilidad técnica sin costo.",
@@ -1400,11 +1493,11 @@
     },
     "caseStudy": {
       "badge": "CASO DE ÉXITO",
-      "title": "Caserones mantuvo calidad LME con limpieza de crud a 4.000+ msnm",
-      "client": "SCM Lumina Copper",
+      "title": "Planta de cobre mantuvo calidad LME con limpieza de crud a 4.000+ msnm",
+      "client": "Planta SX/EW de Cobre",
       "location": "4.200 msnm",
       "altitude": "4.200 msnm",
-      "imageAlt": "Nave de electroobtención Caserones",
+      "imageAlt": "Nave de electroobtención de cobre",
       "metrics": {
         "removal": { "value": "100%", "label": "Remoción depósitos" },
         "incidents": { "value": "0", "label": "Incidentes seguridad" },
@@ -1437,7 +1530,6 @@
           "subtitle": "Documentación completa de cada celda intervenida",
           "features": [
             "Visor en línea de succión - operadores \"ven\" la eficiencia en tiempo real",
-            "Fichas técnicas con fotografías georreferenciadas",
             "Estado inicial, proceso y final documentado",
             "Registro completo de cada celda para auditorías"
           ],
@@ -1602,7 +1694,7 @@
           "description": "Filtración, arcilla activada, centrifugación. Restaura TIF, reduce TSF, reduce arrastre.",
           "specs": ["TIF 20 → 24+ dinas/cm", "TSF -65% (444s → 153s)", "Reducción arrastre 50%"],
           "validated": "VALIDADO",
-          "client": "CODELCO Norte • 20+ años"
+          "client": "Operación de cobre a gran escala • 20+ años"
         },
         "ewCleaning": {
           "title": "Limpieza Celdas EW",
@@ -1671,7 +1763,7 @@
     },
     "caseStudy": {
       "badge": "Caso validado",
-      "title": "CODELCO Norte: 20+ años de validación continua",
+      "title": "Operación de cobre: 20+ años de validación continua",
       "subtitle": "Tratamiento de orgánico SX. Renovación anual por licitación competitiva desde 2016.",
       "before": "Antes",
       "after": "Después",
@@ -1727,8 +1819,8 @@
       },
       "clients": {
         "title": "Clientes",
-        "main": "CODELCO Norte, BHP",
-        "others": "Anglo American, Capstone, Antofagasta"
+        "main": "Operaciones de cobre a gran escala",
+        "others": "Plantas SX/EW en Chile, Perú y México"
       }
     }
   },
@@ -1996,7 +2088,7 @@
         "label": "Cumplimiento",
         "title": "Certificación completa incluida",
         "description": "Todos los permisos ambientales, seguridad operacional, y cumplimiento regulatorio garantizado.",
-        "certifications": ["Certificado ISO", "Cumplimiento Ambiental", "Mantenimiento Incluido"]
+        "certifications": ["Certificado Ex-Proof", "Cumplimiento Ambiental", "Mantenimiento Incluido"]
       }
     },
     "labResults": {
@@ -2013,7 +2105,7 @@
       "rows": [
         { "type": "Lodos fenólicos", "initial": "92.59%", "final": "53%", "reduction": "84.23%" },
         { "type": "Lodos de fenol", "initial": "90.02%", "final": "56%", "reduction": "77.31%" },
-        { "type": "Lodos de proceso (T-2402)", "initial": "70.37%", "final": "55.8%", "reduction": "32.96%" }
+        { "type": "Lodos de proceso", "initial": "70.37%", "final": "55.8%", "reduction": "32.96%" }
       ],
       "benefits": {
         "validation": { "title": "Validación técnica", "description": "Pruebas en condiciones reales de refinería confirman viabilidad del proceso" },
@@ -2121,7 +2213,7 @@
     },
     "vision": {
       "title": "Nuestra Visión",
-      "description": "Convertirse en el socio estratégico líder en Latinoamérica en tecnologías móviles de separación sólido-líquido, ampliando presencia en cobre, zinc, litio, potasio y petróleo crudo."
+      "description": "Convertirse en el socio estratégico líder en Latinoamérica en tecnologías móviles de separación sólido-líquido, ampliando presencia en cobre, zinc, litio, potasio e hidrocarburos."
     },
     "stats": {
       "title": "Resultados que Hablan",
@@ -2154,7 +2246,7 @@
         { "year": "2010", "title": "Liderazgo en Mercado Chileno", "description": "Se alcanza presencia en más del 50% del mercado minero en Chile.", "metric": ">50% Mercado" },
         { "year": "2020", "title": "Expansión a Li y K", "description": "Diversificación hacia el mercado del litio y potasio, ampliando nuestro portafolio de servicios.", "metric": "Li & K" },
         { "year": "2022", "title": "Expansión a Perú", "description": "Comienza expansión al mercado minero en Perú mientras se aumenta la presencia en mercado chileno por sobre 70% de la minería de cobre.", "metric": ">70% Cu Chile" },
-        { "year": "2025", "title": "Mercado de Refinación de Petróleo", "description": "Expansión hacia el mercado de refinación de petróleo, consolidando nuestra presencia en Latinoamérica.", "metric": "Petróleo" }
+        { "year": "2025", "title": "Mercado de Hidrocarburos", "description": "Expansión hacia el mercado de hidrocarburos, consolidando nuestra presencia en Latinoamérica.", "metric": "Hidrocarburos" }
       ],
       "completion": "Consolidando liderazgo en Latinoamérica"
     },
@@ -2173,7 +2265,7 @@
       "description": "Métricas verificables de operaciones reales en minería y petróleo a través de Latinoamérica."
     },
     "stats": [
-      { "value": "$3.1M", "label": "Ahorro documentado" },
+      { "value": "$500M+", "label": "Ahorro generado" },
       { "value": "84%", "label": "Reducción máxima" },
       { "value": "8+", "label": "Años operando" },
       { "value": "120+", "label": "Proyectos completados" }
@@ -2208,7 +2300,7 @@
         "headlineMetric": "$2.43M",
         "metricUnit": "USD",
         "headlineLabel": "Valor protegido",
-        "title": "Respaldo de filtración durante mantenimiento programado en Cerro Negro",
+        "title": "Respaldo de filtración durante mantenimiento programado en planta de cobre",
         "services": ["Filtración", "Respaldo"]
       },
       {
@@ -2217,7 +2309,7 @@
         "headlineMetric": "0",
         "metricUnit": "",
         "headlineLabel": "Incidentes",
-        "title": "Limpieza de celdas EW en operación de alta montaña - Caserones",
+        "title": "Limpieza de celdas EW en operación de cobre de alta montaña",
         "services": ["Limpieza EW", "Seguridad"]
       },
       {
@@ -2226,7 +2318,7 @@
         "headlineMetric": "8",
         "metricUnit": "años",
         "headlineLabel": "Operación continua",
-        "title": "Soporte continuo de planta SX para CODELCO - DGM",
+        "title": "Soporte continuo de planta SX para operación de cobre",
         "services": ["Filtrado SX", "Soporte"]
       },
       {
@@ -2343,17 +2435,17 @@
       "ctaDescription": "Nuestro equipo de especialistas puede ayudarle a optimizar su proceso y lograr resultados medibles."
     },
     "enapLodosPetroleros": {
-      "tagline": "Validación Técnica · Petróleo Crudo",
+      "tagline": "Validación Técnica · Hidrocarburos",
       "title": "35-85% Reducción Volumétrica",
-      "headline": "Deshidratación de Lodos Petroleros - ENAP Refinería Concón",
+      "headline": "Deshidratación de Lodos Petroleros - Refinería en Chile Central",
       "stats": [
         { "value": "84%", "label": "Reducción Lodos Fenólica" },
         { "value": "77%", "label": "Reducción Lodos Fenoles" },
         { "value": "3 meses", "label": "Validación Técnica" }
       ],
       "overview": [
-        { "label": "Cliente", "value": "ENAP Refinería Concón" },
-        { "label": "Industria", "value": "Refinación de Petróleo Crudo" },
+        { "label": "Tipo", "value": "Refinería de Petróleo" },
+        { "label": "Industria", "value": "Refinación de Hidrocarburos" },
         { "label": "Objetivo", "value": "Reducir costos de disposición mediante deshidratación de lodos" }
       ],
       "challengeDescription": "4.5+ millones kg/año de lodos petroleros con alta humedad generan costos excesivos de transporte y disposición",
@@ -2366,7 +2458,7 @@
       "streams": [
         { "humidity": "92.59%", "humidityLabel": "Humedad Inicial", "name": "Lodos Planta Fenólica", "description": "Corriente más crítica" },
         { "humidity": "90.02%", "humidityLabel": "Humedad Inicial", "name": "Lodos Planta Fenoles", "description": "Segunda corriente prioritaria" },
-        { "humidity": "70.37%", "humidityLabel": "Humedad Inicial", "name": "Lodos T-2402", "description": "Tercera corriente evaluada" }
+        { "humidity": "70.37%", "humidityLabel": "Humedad Inicial", "name": "Lodos de Proceso", "description": "Tercera corriente evaluada" }
       ],
       "solutionTitle": "La Solución Tec-Ionic",
       "solutionDescription": "Validación técnica de laboratorio sin inversión del cliente",
@@ -2389,7 +2481,7 @@
       "results": [
         { "badge": "Mejor Resultado", "name": "Lodos Planta Fenólica", "reduction": "84.23%", "reductionLabel": "Reducción Volumétrica", "initialHumidity": "92.59%", "finalHumidity": "53%", "note": "Mayor eficiencia de deshidratación lograda" },
         { "badge": "Segundo Resultado", "name": "Lodos Planta Fenoles", "reduction": "77.31%", "reductionLabel": "Reducción Volumétrica", "initialHumidity": "90.02%", "finalHumidity": "56%", "note": "Excelente reducción de humedad" },
-        { "badge": "Tercer Resultado", "name": "Lodos T-2402", "reduction": "32.96%", "reductionLabel": "Reducción Volumétrica", "initialHumidity": "70.37%", "finalHumidity": "55.8%", "note": "Menor humedad inicial, sigue siendo efectivo" }
+        { "badge": "Tercer Resultado", "name": "Lodos de Proceso", "reduction": "32.96%", "reductionLabel": "Reducción Volumétrica", "initialHumidity": "70.37%", "finalHumidity": "55.8%", "note": "Menor humedad inicial, sigue siendo efectivo" }
       ],
       "initialHumidityLabel": "Humedad Inicial",
       "finalHumidityLabel": "Humedad Final",
@@ -2421,8 +2513,8 @@
         { "title": "Múltiples Aplicaciones", "description": "5 oportunidades adicionales identificadas en procesos de refinería" }
       ],
       "conclusionTitle": "Conclusión Técnica",
-      "conclusionText1": "La validación técnica realizada por <strong>Tec-Ionic Durban</strong> en ENAP Refinería Concón demuestra la viabilidad de <strong>reducir significativamente el volumen de lodos petroleros mediante tecnología móvil de filtración</strong>, con reducciones volumétricas que van desde 32.96% hasta 84.23% dependiendo de la corriente.",
-      "conclusionText2": "Esta solución permite a ENAP <strong>evaluar la tecnología sin inversión de capital</strong>, reducir costos de transporte y disposición, y potencialmente recuperar agua para reutilización. La identificación de 5 oportunidades adicionales en diferentes procesos de la refinería amplía el potencial impacto de la tecnología móvil de filtración en el sector petrolero.",
+      "conclusionText1": "La validación técnica realizada por <strong>Tec-Ionic Durban</strong> en esta refinería demuestra la viabilidad de <strong>reducir significativamente el volumen de lodos petroleros mediante tecnología móvil de filtración</strong>, con reducciones volumétricas que van desde 32.96% hasta 84.23% dependiendo de la corriente.",
+      "conclusionText2": "Esta solución permite a la refinería <strong>evaluar la tecnología sin inversión de capital</strong>, reducir costos de transporte y disposición, y potencialmente recuperar agua para reutilización. La identificación de 5 oportunidades adicionales en diferentes procesos de la refinería amplía el potencial impacto de la tecnología móvil de filtración en el sector petrolero.",
       "conclusionStats": [
         { "value": "84%", "label": "Reducción Máxima" },
         { "value": "53-56%", "label": "Humedad Final" },
@@ -2436,7 +2528,7 @@
     "deshidratacionConcentrados": {
       "tagline": "Caso de Éxito - Continuidad Operacional",
       "title": "USD $2.43M Valor Protegido",
-      "headline": "Backup Móvil de Filtración de Concentrado en Cerro Negro",
+      "headline": "Backup Móvil de Filtración de Concentrado en Planta de Cobre",
       "stats": [
         { "value": "50:1", "label": "Ratio Beneficio/Costo" },
         { "value": "75%", "label": "Capacidad Mantenida" },
@@ -2444,7 +2536,7 @@
         { "value": "30 días", "label": "Período de Respaldo" }
       ],
       "overview": [
-        { "label": "Cliente", "value": "Compañía Minera Cerro Negro" },
+        { "label": "Operación", "value": "Planta de Concentrado de Cobre" },
         { "label": "Unidad", "value": "Planta concentradora de cobre" },
         { "label": "Servicio", "value": "Filtro prensa móvil F-1200-3" },
         { "label": "Objetivo", "value": "Continuidad operacional durante mantenimiento mayor" }
@@ -2478,7 +2570,7 @@
       "keyInsightNote": "en valor de concentrado preservado",
       "risksMitigatedTitle": "Riesgos Mitigados",
       "conclusionTitle": "Conclusión del Caso",
-      "conclusionText1": "Cerro Negro debía realizar un mantenimiento mayor de 30 días a su filtro de concentrados, sin filtro de respaldo. Mediante la contratación del servicio de <strong>filtro prensa móvil F-1200-3 de Tec-Ionic</strong>, la planta logró mantener ~75% de su capacidad, deshidratando ~1,350 ton de concentrado en 30 días.",
+      "conclusionText1": "La planta debía realizar un mantenimiento mayor de 30 días a su filtro de concentrados, sin filtro de respaldo. Mediante la contratación del servicio de <strong>filtro prensa móvil F-1200-3 de Tec-Ionic</strong>, logró mantener ~75% de su capacidad, deshidratando ~1,350 ton de concentrado en 30 días.",
       "conclusionText2": "Esto se tradujo en un <strong>valor preservado de ~$2.43M USD</strong>, frente a un costo total del servicio del orden de $49K USD, con una <strong>relación beneficio/costo cercana a 50:1</strong> y un payback inferior a un día.",
       "conclusionStats": [
         { "value": "$2.43M", "label": "Valor Protegido" },
@@ -2493,7 +2585,7 @@
     "limpiezaCeldasEw": {
       "tagline": "Caso de Éxito - Alta Montaña",
       "title": "Zero Incidentes de Seguridad",
-      "headline": "Remoción de Crud en Celdas EW en Minera Caserones",
+      "headline": "Remoción de Crud en Celdas EW en Planta de Cobre de Alta Montaña",
       "stats": [
         { "value": "0", "label": "Incidentes de Seguridad" },
         { "value": "100%", "label": "Remoción de Crud" },
@@ -2501,7 +2593,7 @@
         { "value": "1 celda", "label": "Por Día (Meta Cumplida)" }
       ],
       "overview": [
-        { "label": "Cliente", "value": "SCM Minera Lumina Copper Chile - Caserones" },
+        { "label": "Operación", "value": "Planta SX/EW de Cobre" },
         { "label": "Ubicación", "value": "Región de Atacama, +4,200 msnm" },
         { "label": "Servicio", "value": "Remoción integral de crud en celdas EW" },
         { "label": "Sistema de Gestión", "value": "SG-SSSC (Seguridad, Salud, Sustentabilidad)" }
@@ -2609,9 +2701,9 @@
       "ctaButton": "Solicitar Cotización"
     },
     "soporteSxDgm": {
-      "tagline": "Caso de Estudio Real - CODELCO DGM",
+      "tagline": "Caso de Estudio Real - Planta SX de Cobre",
       "title": "8 Años de Operación Continua",
-      "headline": "Soporte Integral de Planta SX - División Gabriela Mistral",
+      "headline": "Soporte Integral de Planta SX en Operación de Cobre",
       "stats": [
         { "value": "96%", "label": "Recuperación Cu" },
         { "value": "2.6%", "label": "Reposición Orgánico" },
@@ -2619,13 +2711,13 @@
         { "value": "18+", "label": "Años Experiencia TSF" }
       ],
       "overview": [
-        { "label": "Cliente", "value": "CODELCO - División Gabriela Mistral (DGM)" },
+        { "label": "Operación", "value": "Planta SX de Cobre" },
         { "label": "Duración", "value": "8 años de operación continua" },
         { "label": "Servicio", "value": "Soporte integral de planta SX" },
         { "label": "Industria", "value": "Minería del Cobre - SX/EW" }
       ],
       "partnershipTitle": "Alianza Estratégica de Largo Plazo",
-      "partnershipDescription": "Desde hace más de 8 años, TSF ha sido el socio estratégico de CODELCO DGM para el mantenimiento y optimización de su planta de extracción por solventes, asegurando resultados consistentes año tras año.",
+      "partnershipDescription": "Desde hace más de 8 años, TSF ha sido el socio estratégico de esta operación de cobre para el mantenimiento y optimización de su planta de extracción por solventes, asegurando resultados consistentes año tras año.",
       "collaborationTitle": "Historia de la Colaboración",
       "collaborationSteps": [
         { "step": "1", "title": "Inicio de Operaciones", "description": "Contrato inicial para servicios de filtrado y remoción de crud en planta SX" },
@@ -2752,7 +2844,7 @@
       ],
       "chemicalStats": [
         { "value": "5+", "label": "Plantas químicas atendidas" },
-        { "value": "ISO", "label": "Procesos certificados" },
+        { "value": "Ex-Proof", "label": "Procesos certificados" },
         { "value": "0", "label": "Incidentes de seguridad" },
         { "value": "100%", "label": "Satisfacción del cliente" }
       ],
@@ -2784,7 +2876,7 @@
       "analysisDescription": "Investigación técnica sobre las tendencias que impactan la operación y competitividad del sector",
       "stats": [
         { "value": "5.8Mt", "label": "Producción Cobre Chile 2025" },
-        { "value": "$50B", "label": "Inversión Proyectos pre-2030" },
+        { "value": "$104B", "label": "Inversión Proyectos pre-2030" },
         { "value": "+24%", "label": "Crecimiento Demanda Litio" },
         { "value": "10%", "label": "Límite Agua Continental" }
       ],
@@ -3160,7 +3252,7 @@
           {
             "type": "section",
             "title": "El Pipeline de Inversiones",
-            "text": "Casi $50B USD se invertirán en proyectos de cobre que iniciarán producción antes de 2030, agregando 3.2 Mt/año a los 7.6 Mt/año actuales de la región."
+            "text": "Casi $104B USD se invertirán en proyectos de cobre que iniciarán producción antes de 2030, agregando 3.2 Mt/año a los 7.6 Mt/año actuales de la región."
           },
           {
             "type": "highlight",

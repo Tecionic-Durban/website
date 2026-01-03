@@ -27,7 +27,6 @@ const routes = [
   { path: '/services/concentrate-dehydration', changeFrequency: 'monthly' as const, priority: 0.85 },
   { path: '/services/fine-solids', changeFrequency: 'monthly' as const, priority: 0.85 },
   { path: '/services/maintenance', changeFrequency: 'monthly' as const, priority: 0.85 },
-  { path: '/services/water-clarification', changeFrequency: 'monthly' as const, priority: 0.85 },
 
   // Case studies - medium-high priority (trust signals)
   { path: '/casos-de-exito', changeFrequency: 'monthly' as const, priority: 0.8 },

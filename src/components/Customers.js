@@ -299,18 +299,6 @@ export default function Customers() {
           </div>
         </div>
 
-        {/* Client Testimonial Highlight */}
-        <div className="bg-white rounded-xl p-8 shadow-lg text-center border-l-4 border-emerald-600">
-          <div className="text-lg font-semibold text-gray-900 mb-2">
-            &quot;{t('testimonial.quote')}&quot;
-          </div>
-          <div className="text-emerald-600 font-medium">
-            — {t('testimonial.author')}
-          </div>
-          <div className="text-sm text-gray-500 mt-4">
-            {t('testimonial.disclaimer')}
-          </div>
-        </div>
       </div>
     </section>
   )

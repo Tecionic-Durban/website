@@ -118,11 +118,6 @@ export default function EfficiencyComparison() {
       <div className="max-w-7xl mx-auto px-8 relative">
         {/* Compact Enterprise Header */}
         <div className="text-center mb-12 progressive-reveal">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-4 sophisticated-hover">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2 enterprise-pulse"></div>
-            {t('badge')}
-          </div>
-
           <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4 leading-tight enterprise-slide-up">
             {t('headline')}
             <span className="block text-emerald-600 gradient-text-animated">{t('headlineSub')}</span>
@@ -261,43 +256,6 @@ export default function EfficiencyComparison() {
             </div>
           </div>
 
-          </div>
-        </div>
-
-        {/* Compact CTA Section */}
-        <div className="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 rounded-2xl p-8 text-white text-center overflow-hidden progressive-reveal mt-12">
-          {/* Strategic three ball constellation */}
-          <div className="absolute top-4 left-4 opacity-30">
-            <div className="flex items-center space-x-1">
-              <div className="w-1.5 h-1.5 bg-emerald-300 rounded-full enterprise-pulse"></div>
-              <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-            </div>
-          </div>
-
-          <div className="relative z-10">
-            <h3 className="text-2xl lg:text-3xl font-black mb-4">
-              {t('cta.headline')}
-            </h3>
-            <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
-              {t('cta.description')}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                className="group relative bg-white text-emerald-900 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect"
-                suppressHydrationWarning
-              >
-                <span className="relative z-10">{t('cta.requestAnalysis')}</span>
-              </button>
-
-              <button
-                className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
-                suppressHydrationWarning
-              >
-                <span className="relative z-10">{t('cta.viewMoreCases')}</span>
-              </button>
-            </div>
           </div>
         </div>
       </div>

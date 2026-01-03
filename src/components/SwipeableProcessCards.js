@@ -28,7 +28,7 @@ export default function SwipeableProcessCards() {
         'Filtración placas intercambiables',
         'Descarga automatizada torta seca'
       ],
-      applications: ['Cobre', 'Zinc', 'Potasio', 'Litio', 'Petróleo'],
+      applications: ['Cobre', 'Zinc', 'Potasio', 'Litio', 'Hidrocarburos'],
       benefits: [
         'Sin instalaciones definitivas',
         'Sin modificación permisos',

@@ -232,8 +232,7 @@ export default function ZincIndustryPage() {
                   { key: 'ewCleaning', icon: Zap, color: 'amber', offset: true, cornerPos: 'left' },
                   { key: 'concentrateDehydration', icon: Factory, color: 'purple', offset: false, cornerPos: 'right' },
                   { key: 'jarositeGoethite', icon: Microscope, color: 'cyan', offset: true, cornerPos: 'left' },
-                  { key: 'waterClarification', icon: Droplets, color: 'teal', offset: false, cornerPos: 'right' },
-                  { key: 'fineSolids', icon: Filter, color: 'indigo', offset: true, cornerPos: 'left' }
+                  { key: 'fineSolids', icon: Filter, color: 'indigo', offset: false, cornerPos: 'right' }
                 ]
                 return serviceConfig.map((config) => (
                   <div key={config.key} className={`group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden ${config.offset ? 'lg:translate-y-4' : ''}`}>

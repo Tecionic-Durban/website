@@ -173,7 +173,7 @@ export default function FloatingElements() {
     }
     
     if (lowerMessage.includes('industria') || lowerMessage.includes('mining')) {
-      return 'Trabajamos con diversas industrias mineras: Cobre, Zinc, Potasio, Litio y Petróleo Crudo. Cada una tiene procesos especializados. ¿Cuál te interesa más?'
+      return 'Trabajamos con diversas industrias: Cobre, Zinc, Potasio, Litio e Hidrocarburos. Cada una tiene procesos especializados. ¿Cuál te interesa más?'
     }
     
     if (lowerMessage.includes('contacto') || lowerMessage.includes('contact')) {
