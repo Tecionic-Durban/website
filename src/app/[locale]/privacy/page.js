@@ -35,7 +35,7 @@ export default function PrivacyPage() {
             {/* Introduction */}
             <div>
               <p className="text-gray-700 leading-relaxed">
-                Esta Politica de Privacidad describe como Tecionic S.A. ("nosotros", "nuestro" o "la Empresa")
+                Esta Politica de Privacidad describe como Tecionic S.A. (&quot;nosotros&quot;, &quot;nuestro&quot; o &quot;la Empresa&quot;)
                 recopila, utiliza y protege la informacion que usted nos proporciona cuando utiliza nuestro
                 sitio web tecionic.com. Esta politica cumple con la legislacion aplicable en Chile
                 (Ley 19.628), Brasil (LGPD), Mexico (LFPDPPP) y otras jurisdicciones de Latinoamerica.
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
                 <li>Paginas visitadas y tiempo de permanencia</li>
-                <li>Clics en botones y enlaces (como "Contactar")</li>
+                <li>Clics en botones y enlaces (como &quot;Contactar&quot;)</li>
                 <li>Tipo de navegador y dispositivo</li>
                 <li>Direccion IP (para ubicacion geografica aproximada)</li>
                 <li>Pagina de referencia (como llego a nuestro sitio)</li>
@@ -220,7 +220,7 @@ export default function PrivacyPage() {
               <p className="text-gray-700">
                 Podemos actualizar esta Politica de Privacidad periodicamente. Le notificaremos sobre
                 cambios significativos publicando la nueva politica en esta pagina con una nueva fecha
-                de "ultima actualizacion". Le recomendamos revisar esta politica periodicamente.
+                de &quot;ultima actualizacion&quot;. Le recomendamos revisar esta politica periodicamente.
               </p>
             </div>
 

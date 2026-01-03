@@ -77,7 +77,7 @@ export default function TermsPage() {
               </p>
 
               <p className="text-gray-700">
-                Las marcas "Tecionic", el logotipo de tres esferas, y otros identificadores
+                Las marcas &quot;Tecionic&quot;, el logotipo de tres esferas, y otros identificadores
                 visuales son marcas comerciales de Tecionic S.A. No se otorga ninguna licencia
                 o derecho para usar estas marcas sin nuestro consentimiento previo por escrito.
               </p>
@@ -135,7 +135,7 @@ export default function TermsPage() {
               </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
                 <li>
-                  Este sitio web se proporciona "tal cual" sin garantias de ningun tipo,
+                  Este sitio web se proporciona &quot;tal cual&quot; sin garantias de ningun tipo,
                   expresas o implicitas
                 </li>
                 <li>

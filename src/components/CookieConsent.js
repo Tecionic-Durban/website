@@ -41,7 +41,7 @@ export default function CookieConsent() {
           <div className="flex-1 pr-8">
             <p className="text-gray-200 text-sm">
               Utilizamos cookies y tecnologías similares para mejorar su experiencia, analizar el tráfico del sitio y personalizar el contenido.
-              Al hacer clic en "Aceptar", usted consiente el uso de estas tecnologías.{' '}
+              Al hacer clic en &quot;Aceptar&quot;, usted consiente el uso de estas tecnologías.{' '}
               <a href="/privacy" className="text-emerald-400 hover:text-emerald-300 underline">
                 Política de Privacidad
               </a>
