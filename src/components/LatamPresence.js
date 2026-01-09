@@ -49,7 +49,7 @@ export default function LatamPresence() {
       {/* Mobile: Globe on right as background, content on left (Stripe-style) */}
       <div className="lg:hidden relative min-h-[600px] overflow-hidden">
         {/* Globe positioned on right edge as ambient background */}
-        <div className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60 pointer-events-none">
+        <div className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-90 pointer-events-none">
           <LatamGlobe mobile={true} className="w-full h-full" />
         </div>
 
