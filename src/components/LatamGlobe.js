@@ -232,16 +232,23 @@ function LocationMarker({ position, color = '#10b981', size = 0.05 }) {
 }
 
 // Main globe
-function Globe({ imageData }) {
+function Globe({ imageData, isMobile }) {
   const globeRef = useRef()
   const { camera } = useThree()
 
   useEffect(() => {
-    // Camera positioned to make LATAM + Brazil the visual hero
-    // Rotated slightly southeast to show more of Brazil/Atlantic
-    camera.position.set(1.5, -0.6, 5.0)
-    camera.lookAt(0.3, -0.3, 0)
-  }, [camera])
+    if (isMobile) {
+      // Mobile: Camera centered on Latin America, looking straight at Chile/Peru
+      // Position camera to face the continent head-on
+      camera.position.set(3.5, -1.2, 3.8)
+      camera.lookAt(0, -0.5, 0)
+    } else {
+      // Desktop: Camera positioned to make LATAM + Brazil the visual hero
+      // Rotated slightly southeast to show more of Brazil/Atlantic
+      camera.position.set(1.5, -0.6, 5.0)
+      camera.lookAt(0.3, -0.3, 0)
+    }
+  }, [camera, isMobile])
 
 
   // Industry-colored arcs from offices to mining regions (spread out timing)
@@ -299,12 +306,18 @@ function Globe({ imageData }) {
   )
 }
 
-export default function LatamGlobe({ className = '' }) {
+export default function LatamGlobe({ className = '', mobile = false }) {
   const [isClient, setIsClient] = useState(false)
   const [imageData, setImageData] = useState(null)
+  const [isMobile, setIsMobile] = useState(mobile)
 
   useEffect(() => {
     setIsClient(true)
+
+    // Detect mobile if not explicitly passed
+    if (!mobile) {
+      setIsMobile(window.innerWidth < 1024)
+    }
 
     // Load the earth texture and extract pixel data
     const img = new Image()
@@ -319,7 +332,7 @@ export default function LatamGlobe({ className = '' }) {
       setImageData(data)
     }
     img.src = '/earth-land.png'
-  }, [])
+  }, [mobile])
 
   if (!isClient) {
     return (
@@ -329,21 +342,32 @@ export default function LatamGlobe({ className = '' }) {
     )
   }
 
+  // Mobile: responsive size, Desktop: fixed 900x900
+  const containerStyle = isMobile
+    ? { width: '100%', height: '100%' }
+    : { width: '900px', height: '900px' }
+
+  // Mobile camera position: centered on LATAM
+  const cameraPosition = isMobile
+    ? [3.5, -1.2, 3.8]
+    : [1.5, -0.6, 5.0]
+
   return (
-    <div className={`relative ${className}`} style={{ width: '900px', height: '900px' }}>
+    <div className={`relative ${className}`} style={containerStyle}>
       <Canvas
-        camera={{ position: [1.5, -0.6, 5.0], fov: 42 }}
+        camera={{ position: cameraPosition, fov: isMobile ? 50 : 42 }}
         gl={{ antialias: false, alpha: true }}
         style={{ background: 'transparent' }}
       >
         <ambientLight intensity={0.5} />
-        <Globe imageData={imageData} />
+        <Globe imageData={imageData} isMobile={isMobile} />
         <OrbitControls
           enableZoom={false}
           enablePan={false}
-          enableRotate={false}
-          minPolarAngle={Math.PI / 3}
-          maxPolarAngle={Math.PI / 1.7}
+          enableRotate={isMobile}
+          rotateSpeed={0.5}
+          minPolarAngle={Math.PI / 4}
+          maxPolarAngle={Math.PI / 1.5}
         />
       </Canvas>
     </div>

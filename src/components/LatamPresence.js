@@ -46,15 +46,15 @@ export default function LatamPresence() {
         <LatamGlobe />
       </div>
 
-      {/* Mobile: Globe peek at top with content overlapping */}
+      {/* Mobile: Globe at top with content below */}
       <div className="lg:hidden relative">
-        {/* Globe container - cropped height */}
-        <div className="h-[280px] overflow-hidden -mb-20">
-          <LatamGlobe className="w-full h-[400px]" />
+        {/* Globe container - taller to show continents properly */}
+        <div className="h-[350px] flex items-center justify-center">
+          <LatamGlobe mobile={true} className="w-full h-full" />
         </div>
 
-        {/* Content overlapping the globe */}
-        <div className="relative z-10 bg-gradient-to-b from-transparent via-slate-950/95 to-slate-950 pt-8 pb-16 px-4">
+        {/* Content below the globe */}
+        <div className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-950 to-slate-950/80 pt-4 pb-16 px-4 -mt-8">
           {/* Header */}
           <div className="text-center mb-8">
             <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
