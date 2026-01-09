@@ -261,8 +261,10 @@ export default function OrganicTreatmentServicePage() {
   const heroVideoRef = useRef(null)
   const statsRef = useRef(null)
   const carouselCardRef = useRef(null)
+  const mobileCarouselRef = useRef(null)
   const timerRef = useRef(null)
-  const CAROUSEL_DURATION = 6000 // 6 seconds
+  const [autoCycleEnabled, setAutoCycleEnabled] = useState(true)
+  const CAROUSEL_DURATION = 10000 // 10 seconds
 
   // Register GSAP plugins on mount
   useEffect(() => {
@@ -430,8 +432,16 @@ export default function OrganicTreatmentServicePage() {
     return () => ctx.revert()
   }, [carouselKey, activeBusinessModel])
 
-  // Auto-cycle carousel (always runs, uses ref for proper reset)
+  // Auto-cycle carousel (only runs when autoCycleEnabled is true)
   useEffect(() => {
+    if (!autoCycleEnabled) {
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+        timerRef.current = null
+      }
+      return
+    }
+
     const models = ['preventivo', 'crisis', 'piloto']
     timerRef.current = setInterval(() => {
       setActiveBusinessModel(prev => {
@@ -447,7 +457,19 @@ export default function OrganicTreatmentServicePage() {
         clearInterval(timerRef.current)
       }
     }
-  }, [])
+  }, [autoCycleEnabled])
+
+  // Sync mobile carousel scroll with activeBusinessModel
+  useEffect(() => {
+    if (!mobileCarouselRef.current) return
+    const models = ['preventivo', 'crisis', 'piloto']
+    const index = models.indexOf(activeBusinessModel)
+    const scrollContainer = mobileCarouselRef.current
+    const cardWidth = scrollContainer.firstElementChild?.offsetWidth || 0
+    const gap = 16 // gap-4 = 1rem = 16px
+    const scrollPosition = index * (cardWidth + gap)
+    scrollContainer.scrollTo({ left: scrollPosition, behavior: 'smooth' })
+  }, [activeBusinessModel])
 
   return (
     <div className="min-h-screen bg-white">
@@ -703,9 +725,9 @@ export default function OrganicTreatmentServicePage() {
               {t('equipment.filterPressFleet')}
             </h3>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
               {/* Low capacity */}
-              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.lowCapacity.label')}</div>
@@ -732,7 +754,7 @@ export default function OrganicTreatmentServicePage() {
               </div>
 
               {/* Medium capacity */}
-              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.mediumCapacity.label')}</div>
@@ -759,7 +781,7 @@ export default function OrganicTreatmentServicePage() {
               </div>
 
               {/* High capacity */}
-              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.highCapacity.label')}</div>
@@ -817,7 +839,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
 
           {/* Treatment cards - 3 column grid */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Card 1: Arcilla Activada */}
             <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col">
               <div className="p-6 flex-1">
@@ -1156,6 +1178,7 @@ export default function OrganicTreatmentServicePage() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => {
+                    setAutoCycleEnabled(false)
                     const models = ['preventivo', 'crisis', 'piloto']
                     const currentIndex = models.indexOf(activeBusinessModel)
                     const newModel = models[(currentIndex - 1 + models.length) % models.length]
@@ -1169,6 +1192,7 @@ export default function OrganicTreatmentServicePage() {
 
                 <button
                   onClick={() => {
+                    setAutoCycleEnabled(false)
                     const models = ['preventivo', 'crisis', 'piloto']
                     const currentIndex = models.indexOf(activeBusinessModel)
                     const newModel = models[(currentIndex + 1) % models.length]
@@ -1209,10 +1233,117 @@ export default function OrganicTreatmentServicePage() {
             </div>
           </div>
 
-          {/* Carousel container */}
-          <div className="relative">
+          {/* Mobile: Horizontal carousel with auto-scroll | Desktop: Auto-cycling carousel */}
 
-            {/* Cards container */}
+          {/* Mobile carousel - swipeable cards with auto-scroll */}
+          <div ref={mobileCarouselRef} className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            {/* Preventivo Card */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex-shrink-0 w-[85vw] snap-start">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
+                  <Security className="w-5 h-5 text-emerald-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Mantención Preventiva</h3>
+                  <p className="text-xs text-gray-500">Diálisis 24/7 sin emergencias</p>
+                </div>
+              </div>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-start gap-2">
+                  <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">Filtro prensa móvil 24/7</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">Monitoreo semanal TIF/TSF</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">Operación y consumibles incluidos</span>
+                </div>
+              </div>
+              <div className="bg-emerald-50 rounded-xl p-4">
+                <div className="text-xs font-semibold text-emerald-800 uppercase mb-1">Resultado</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-emerald-600">0</span>
+                  <span className="text-sm text-gray-600">paradas/año</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Crisis Card */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex-shrink-0 w-[85vw] snap-start">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
+                  <FlashFilled className="w-5 h-5 text-red-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Respuesta de Emergencia</h3>
+                  <p className="text-xs text-gray-500">Restaura parámetros críticos</p>
+                </div>
+              </div>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-start gap-2">
+                  <CheckmarkFilled className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">Movilización en 48-72 horas</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckmarkFilled className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">Tratamiento intensivo arcilla</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckmarkFilled className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">Monitoreo diario de parámetros</span>
+                </div>
+              </div>
+              <div className="bg-red-50 rounded-xl p-4">
+                <div className="text-xs font-semibold text-red-800 uppercase mb-1">Restauración típica</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-red-600">2-4</span>
+                  <span className="text-sm text-gray-600">semanas</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Piloto Card */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex-shrink-0 w-[85vw] snap-start">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Escalabilidad Probada</h3>
+                  <p className="text-xs text-gray-500">Inicia pequeño, escala con confianza</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <span className="font-semibold text-gray-900 text-sm">Piloto</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Prueba 2-3 meses, valida ROI</p>
+                </div>
+                <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-5 h-5 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                    <span className="font-semibold text-gray-900 text-sm">Operación Estándar</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Arriendo mensual, sin CAPEX</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <span className="font-semibold text-gray-900 text-sm">Capacidad Dedicada</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Contrato largo plazo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop: Auto-cycling carousel */}
+          <div className="hidden md:block relative">
             <div className="overflow-hidden">
               <div ref={carouselCardRef} className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 min-h-[400px]">
                 {/* Preventivo */}
