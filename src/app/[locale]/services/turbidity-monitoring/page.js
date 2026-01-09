@@ -143,36 +143,9 @@ export default function TurbidityMonitoringPage() {
                 </span>
               </h1>
 
-              <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl">
+              <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
                 {t('hero.description')}
               </p>
-
-              <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
-                  </div>
-                  <span className="text-slate-300 text-sm">{t('hero.benefits.realTimeControl')}</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
-                  </div>
-                  <span className="text-slate-300 text-sm">{t('hero.benefits.optimizeFlocculant')}</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
-                  </div>
-                  <span className="text-slate-300 text-sm">{t('hero.benefits.ensureCompliance')}</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
-                  </div>
-                  <span className="text-slate-300 text-sm">{t('hero.benefits.eliminateLabDelay')}</span>
-                </div>
-              </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -195,7 +168,7 @@ export default function TurbidityMonitoringPage() {
               <div ref={heroImageRef} style={{ opacity: 0 }} className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-purple-500/20">
                   <img
-                    src="/data_analytics_device.jpg"
+                    src="/data_analytics_device.jpg?v=2"
                     alt="Data Analytics Device"
                     className="object-cover w-full h-auto"
                   />
@@ -228,6 +201,46 @@ export default function TurbidityMonitoringPage() {
             <div className="text-center">
               <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">0</div>
               <div className="text-sm text-gray-500">{t('metrics.specViolations')}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KEY BENEFITS */}
+      <section className="bg-gradient-to-br from-purple-50 to-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-8 py-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
+                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.realTimeControl')}</h3>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
+                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.optimizeFlocculant')}</h3>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
+                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.ensureCompliance')}</h3>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
+                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.eliminateLabDelay')}</h3>
+              </div>
             </div>
           </div>
         </div>

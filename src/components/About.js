@@ -97,25 +97,25 @@ export default function About() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [cards.length, isMobile])
 
-  // Mobile card - compact design
+  // Mobile card - compact design with larger text
   const MobileCard = ({ card }) => (
     <div
-      className="bg-white rounded-xl border border-emerald-200 shadow-md p-4 min-w-[75vw] max-w-[75vw] snap-center"
+      className="bg-white rounded-xl border border-emerald-200 shadow-md p-5 min-w-[80vw] max-w-[80vw] snap-center scroll-ml-4"
     >
-      <div className="flex items-center gap-3 mb-3">
-        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
-          <card.icon className="w-5 h-5 text-white" />
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+          <card.icon className="w-6 h-6 text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-base text-gray-900 leading-tight">
+          <h3 className="font-bold text-lg text-gray-900 leading-tight">
             {t(`cards.${card.key}.title`)}
           </h3>
-          <span className="text-xs font-medium text-emerald-600">
+          <span className="text-sm font-medium text-emerald-600">
             {t(`cards.${card.key}.metric`)}
           </span>
         </div>
       </div>
-      <p className="text-gray-600 text-sm leading-snug line-clamp-3">
+      <p className="text-gray-700 text-base leading-relaxed">
         {t(`cards.${card.key}.description`)}
       </p>
     </div>
@@ -168,22 +168,15 @@ export default function About() {
           </p>
         </div>
 
-        {/* Horizontal scroll carousel */}
-        <div className="overflow-x-auto scrollbar-hide pb-4 -mx-4">
-          <div className="flex gap-3 px-4 snap-x snap-mandatory">
+        {/* Horizontal scroll carousel with snap lock */}
+        <div className="overflow-x-auto scrollbar-hide -mx-4 scroll-smooth" style={{ scrollSnapType: 'x mandatory' }}>
+          <div className="flex gap-4 px-4">
             {cards.map((card, index) => (
               <MobileCard key={index} card={card} />
             ))}
-            {/* End padding */}
-            <div className="min-w-[1px]"></div>
+            {/* End padding for last card visibility */}
+            <div className="min-w-4"></div>
           </div>
-        </div>
-
-        {/* Scroll hint */}
-        <div className="flex justify-center mt-4 gap-1.5">
-          {cards.map((_, index) => (
-            <div key={index} className="w-2 h-2 rounded-full bg-emerald-300"></div>
-          ))}
         </div>
       </section>
     )
