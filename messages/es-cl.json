@@ -3934,47 +3934,41 @@
   "turbidityMonitoringService": {
     "hero": {
       "badge": "Analítica de Datos",
-      "title": "Control en tiempo real de partículas",
-      "titleHighlight": "para calidad garantizada",
-      "description": "El monitoreo continuo de turbidez te permite controlar la claridad de tus soluciones en tiempo real, optimizar dosificación de floculantes y asegurar cumplimiento de especificaciones.",
+      "title": "Análisis de turbidez de precisión",
+      "titleHighlight": "para operaciones optimizadas",
+      "description": "Análisis profesional de laboratorio que te entrega los datos de claridad que necesitas para optimizar dosificación de floculantes, asegurar calidad de producto y tomar decisiones de proceso con confianza.",
       "benefits": {
-        "realTimeControl": "Control en tiempo real sin esperar análisis de laboratorio",
-        "optimizeFlocculant": "Optimiza dosificación de floculantes automáticamente",
-        "ensureCompliance": "Asegura cumplimiento de especificaciones de producto",
-        "eliminateLabDelay": "Elimina el retraso de análisis de laboratorio"
+        "realTimeControl": "Análisis profesional de laboratorio",
+        "optimizeFlocculant": "Optimiza dosificación con datos reales",
+        "ensureCompliance": "Insights accionables, no solo números",
+        "eliminateLabDelay": "Sin inversión en equipos"
       },
       "ctaPrimary": "Solicitar Evaluación",
       "ctaSecondary": "Ver Industria Potasio",
-      "gaugeLabel": "Turbidez Actual",
-      "gaugeUnit": "NTU",
-      "liveLabel": "En vivo",
-      "specLimit": "Límite especificación",
-      "nowLabel": "Ahora",
-      "statusWithinSpec": "Dentro de especificación",
-      "statusOptimized": "Dosificación optimizada"
+      "imageAlt": "Equipos de laboratorio de analítica de datos Tecionic"
     },
     "metrics": {
-      "continuousMonitoring": "Monitoreo continuo",
+      "continuousMonitoring": "Años de experiencia",
       "achievedClarity": "Claridad alcanzada",
-      "flocculantSavings": "Ahorro en floculantes",
-      "specViolations": "Violaciones de especificación"
+      "flocculantSavings": "Ahorro típico en reactivos",
+      "specViolations": "Reportes entregados"
     },
     "problem": {
-      "badge": "El Problema",
-      "title": "Sin monitoreo continuo, estás operando a ciegas",
-      "description": "Los análisis de laboratorio tienen un retraso de horas. Cuando llegan los resultados, las condiciones ya cambiaron y puedes haber producido producto fuera de especificación.",
+      "badge": "El Desafío",
+      "title": "La turbidez impacta la calidad en cada etapa",
+      "description": "Desde dosificación de floculantes hasta claridad del producto final, la carga de partículas afecta todo tu proceso. Tener datos precisos y confiables de turbidez permite optimización proactiva en vez de correcciones reactivas.",
       "symptoms": {
         "labDelay": {
-          "title": "Retraso de laboratorio",
-          "description": "2-4 horas entre toma de muestra y resultado. Demasiado tarde para corregir."
+          "title": "Optimización de dosificación",
+          "description": "Datos precisos te permiten ajustar dosificación de floculantes a la carga real de partículas."
         },
         "variability": {
-          "title": "Variabilidad de proceso",
-          "description": "Condiciones de entrada cambian constantemente. Dosificación fija no funciona."
+          "title": "Visibilidad de proceso",
+          "description": "Monitorea tendencias de turbidez en el tiempo para identificar patrones y optimizar rendimiento."
         },
         "quality": {
-          "title": "Rechazos de calidad",
-          "description": "Producto fuera de especificación que debe reprocesarse o descartarse."
+          "title": "Aseguramiento de calidad",
+          "description": "Asegura que el producto cumpla especificaciones con mediciones documentadas y trazables."
         }
       },
       "chartTitle": "Escala de Turbidez",
@@ -3983,122 +3977,122 @@
         "acceptable": "Aceptable",
         "warning": "Alerta",
         "outOfSpec": "Fuera de especificación",
-        "insight": "La turbidez varía minuto a minuto",
-        "insightText": "Solo el monitoreo continuo captura la variabilidad real del proceso."
+        "insight": "Conoce exactamente dónde opera tu proceso",
+        "insightText": "Datos precisos permiten control preciso y calidad consistente."
       }
     },
     "solution": {
-      "badge": "La Solución",
-      "title": "Monitoreo continuo con control automático",
-      "description": "Sensores en línea que miden turbidez cada segundo y permiten ajustar dosificación en tiempo real.",
+      "badge": "Nuestro Servicio",
+      "title": "Análisis experto entregado a tu correo",
+      "description": "Nos encargamos de la recolección de muestras, análisis profesional de laboratorio, y entregamos reportes claros con recomendaciones accionables—sin inversión en equipos ni capacitación requerida.",
       "benefits": {
         "realTime": {
-          "title": "Tiempo real",
-          "description": "Medición cada segundo, sin esperas ni muestreo manual.",
-          "metric": "24/7",
-          "metricLabel": "monitoreo continuo"
+          "title": "Análisis profesional",
+          "description": "Precisión de laboratorio con interpretación experta de resultados.",
+          "metric": "±2%",
+          "metricLabel": "precisión de medición"
         },
         "flocculant": {
-          "title": "Optimización automática",
-          "description": "Ajusta dosificación de floculantes según demanda real, no por receta fija.",
-          "metric": "-30%",
-          "metricLabel": "ahorro en floculantes"
+          "title": "Insights accionables",
+          "description": "No solo números—recomendaciones específicas para tu proceso.",
+          "metric": "48h",
+          "metricLabel": "tiempo de respuesta"
         },
         "compliance": {
-          "title": "Cumplimiento garantizado",
-          "description": "Alertas inmediatas cuando se acerca al límite de especificación.",
-          "metric": "100%",
-          "metricLabel": "dentro de especificación"
+          "title": "Cero inversión",
+          "description": "Sin equipos que comprar, instalar o mantener. Nosotros manejamos todo.",
+          "metric": "$0",
+          "metricLabel": "capital requerido"
         }
       }
     },
     "howItWorks": {
       "badge": "Cómo Funciona",
-      "title": "Sistema de monitoreo en línea",
-      "description": "Instalación rápida de sensores conectados a tu sistema de control para visibilidad total del proceso.",
+      "title": "De la muestra al insight",
+      "description": "Un proceso simple diseñado para operaciones que necesitan datos sin la complejidad de manejar su propio laboratorio.",
       "steps": {
         "installation": {
-          "title": "Instalación Rápida",
-          "description": "Sensores de turbidez en línea instalados en puntos críticos del proceso."
+          "title": "Recolección de Muestras",
+          "description": "Coordinamos con tu equipo para recolectar muestras en los puntos y momentos correctos."
         },
         "monitoring": {
-          "title": "Medición Continua",
-          "description": "Lectura cada segundo con transmisión a sistema de control y dashboard."
+          "title": "Análisis de Laboratorio",
+          "description": "Pruebas profesionales en nuestro laboratorio equipado con instrumentos calibrados."
         },
         "alerts": {
-          "title": "Alertas Inteligentes",
-          "description": "Notificaciones cuando se acerca a límites o detecta tendencias anormales."
+          "title": "Interpretación Experta",
+          "description": "Nuestros especialistas analizan resultados en contexto de tu proceso y objetivos específicos."
         },
         "optimization": {
-          "title": "Control Automático",
-          "description": "Integración con dosificadores para ajuste automático de floculantes."
+          "title": "Entrega de Reporte",
+          "description": "Reporte claro vía email con datos, tendencias y recomendaciones específicas."
         }
       },
       "specs": {
         "range": {
           "value": "0-1000",
           "label": "Rango de medición",
-          "detail": "NTU con auto-calibración"
+          "detail": "NTU con equipos calibrados"
         },
         "frequency": {
-          "value": "1/seg",
-          "label": "Frecuencia de lectura",
-          "detail": "Captura toda la variabilidad"
+          "value": "48h",
+          "label": "Tiempo de respuesta",
+          "detail": "De muestra a reporte"
         },
         "connectivity": {
-          "value": "4-20mA",
-          "label": "Conectividad",
-          "detail": "Compatible con cualquier PLC/DCS"
+          "value": "Email",
+          "label": "Entrega de reporte",
+          "detail": "PDF con análisis completo"
         }
       }
     },
     "industries": {
       "title": "Aplicaciones por industria",
-      "description": "El monitoreo de turbidez es esencial donde la claridad del producto o solución determina calidad.",
+      "description": "El análisis de turbidez es crítico donde la claridad de solución afecta calidad del producto o procesos downstream.",
       "potassium": {
         "title": "Potasio",
-        "description": "Cristalización de sales donde la claridad de salmuera determina pureza del producto.",
-        "benefit": "Asegura pureza de KCl comercial"
+        "description": "La claridad de salmuera impacta directamente la cristalización y pureza del producto final.",
+        "benefit": "Optimiza calidad de cristalización"
       },
       "lithium": {
-        "title": "Litio DLE",
-        "description": "Protección de membranas de extracción directa que requieren soluciones ultra-claras.",
-        "benefit": "Protege membranas de alto costo"
+        "title": "Litio",
+        "description": "Membranas DLE requieren soluciones de alimentación ultra-claras para prevenir ensuciamiento.",
+        "benefit": "Protege inversión en membranas"
       },
       "copper": {
-        "title": "Cobre PLS",
-        "description": "Clarificación de PLS para prevenir crud en circuitos SX.",
-        "benefit": "Previene formación de crud"
+        "title": "Cobre",
+        "description": "La claridad de PLS previene formación de crud en circuitos SX.",
+        "benefit": "Reduce costos de tratamiento de crud"
       }
     },
     "integration": {
-      "badge": "Ecosistema Integrado",
-      "title": "Turbidez conecta con tus otros procesos",
-      "description": "El monitoreo de turbidez se integra con servicios de filtración y control de calidad.",
+      "badge": "Visión Completa",
+      "title": "Turbidez es una pieza del rompecabezas",
+      "description": "Combina análisis de turbidez con nuestros otros servicios de datos para visibilidad completa del proceso.",
       "services": {
         "fineSolids": {
           "title": "Tratamiento Sólidos Finos",
-          "description": "Cuando turbidez sube, activamos filtración para remover partículas."
+          "description": "Cuando el análisis muestra alta turbidez, podemos desplegar filtración para resolver la causa raíz."
         },
         "tifMeasurement": {
           "title": "Medición de TIF",
-          "description": "Sólidos finos afectan TIF. Monitoreo conjunto da visión completa."
+          "description": "Sólidos finos afectan tensión interfacial. Análisis combinado revela el panorama completo."
         },
         "tsfMonitoring": {
-          "title": "Monitoreo de TSF",
-          "description": "Partículas estabilizan emulsiones. Control de turbidez reduce TSF."
+          "title": "Análisis de Separación de Fases",
+          "description": "Partículas estabilizan emulsiones. Entender turbidez ayuda a explicar problemas de separación."
         }
       },
       "diagram": {
-        "title": "Control de Calidad Integrado",
-        "subtitle": "Turbidez → Filtración → Calidad",
-        "result": "Especificación garantizada"
+        "title": "Análisis Integrado",
+        "subtitle": "Datos → Insights → Acción",
+        "result": "Operaciones optimizadas"
       }
     },
     "cta": {
-      "title": "Deja de operar a ciegas",
-      "description": "El monitoreo de turbidez en tiempo real te da control total sobre la calidad de tu proceso.",
-      "timeline": "Instalación en 48 horas. Resultados inmediatos.",
+      "title": "Obtén datos de turbidez de precisión",
+      "description": "Análisis profesional e insights accionables—nos encargamos de todo, desde recolección de muestras hasta entrega del reporte.",
+      "timeline": "Primer reporte dentro de una semana de contratación.",
       "primaryCta": "Solicitar Evaluación",
       "secondaryCta": "Ver Casos en Potasio",
       "contactTitle": "Contacto directo",

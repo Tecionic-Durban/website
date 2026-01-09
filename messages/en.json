@@ -3934,47 +3934,41 @@
   "turbidityMonitoringService": {
     "hero": {
       "badge": "Data Analytics",
-      "title": "Real-time particle control",
-      "titleHighlight": "for guaranteed quality",
-      "description": "Continuous turbidity monitoring lets you control solution clarity in real-time, optimize flocculant dosing and ensure specification compliance.",
+      "title": "Precision turbidity analysis",
+      "titleHighlight": "for optimized operations",
+      "description": "Professional lab analysis that gives you the clarity data you need to optimize flocculant dosing, ensure product quality, and make confident process decisions.",
       "benefits": {
-        "realTimeControl": "Real-time control without waiting for lab analysis",
-        "optimizeFlocculant": "Automatically optimize flocculant dosing",
-        "ensureCompliance": "Ensure product specification compliance",
-        "eliminateLabDelay": "Eliminate lab analysis delays"
+        "realTimeControl": "Professional lab-grade analysis",
+        "optimizeFlocculant": "Optimize flocculant dosing with real data",
+        "ensureCompliance": "Actionable insights, not just numbers",
+        "eliminateLabDelay": "No equipment investment required"
       },
       "ctaPrimary": "Request Evaluation",
       "ctaSecondary": "See Potassium Industry",
-      "gaugeLabel": "Current Turbidity",
-      "gaugeUnit": "NTU",
-      "liveLabel": "Live",
-      "specLimit": "Spec limit",
-      "nowLabel": "Now",
-      "statusWithinSpec": "Within specification",
-      "statusOptimized": "Dosing optimized"
+      "imageAlt": "Tecionic data analytics laboratory equipment"
     },
     "metrics": {
-      "continuousMonitoring": "Continuous monitoring",
+      "continuousMonitoring": "Years of expertise",
       "achievedClarity": "Achieved clarity",
-      "flocculantSavings": "Flocculant savings",
-      "specViolations": "Spec violations"
+      "flocculantSavings": "Typical reagent savings",
+      "specViolations": "Reports delivered"
     },
     "problem": {
-      "badge": "The Problem",
-      "title": "Without continuous monitoring, you're operating blind",
-      "description": "Lab analyses have hours of delay. By the time results arrive, conditions have changed and you may have produced out-of-spec product.",
+      "badge": "The Challenge",
+      "title": "Turbidity impacts quality at every stage",
+      "description": "From flocculant dosing to final product clarity, particle load affects your entire process. Having precise, reliable turbidity data enables proactive optimization instead of reactive corrections.",
       "symptoms": {
         "labDelay": {
-          "title": "Lab delay",
-          "description": "2-4 hours between sampling and result. Too late to correct."
+          "title": "Dosing optimization",
+          "description": "Precise data lets you dial in flocculant dosing to actual particle load—not estimates."
         },
         "variability": {
-          "title": "Process variability",
-          "description": "Input conditions constantly change. Fixed dosing doesn't work."
+          "title": "Process visibility",
+          "description": "Track turbidity trends over time to identify patterns and optimize performance."
         },
         "quality": {
-          "title": "Quality rejections",
-          "description": "Out-of-spec product that must be reprocessed or discarded."
+          "title": "Quality assurance",
+          "description": "Ensure product meets specifications with documented, traceable measurements."
         }
       },
       "chartTitle": "Turbidity Scale",
@@ -3983,122 +3977,122 @@
         "acceptable": "Acceptable",
         "warning": "Warning",
         "outOfSpec": "Out of specification",
-        "insight": "Turbidity varies minute by minute",
-        "insightText": "Only continuous monitoring captures real process variability."
+        "insight": "Know exactly where your process operates",
+        "insightText": "Precise data enables precise control and consistent quality."
       }
     },
     "solution": {
-      "badge": "The Solution",
-      "title": "Continuous monitoring with automatic control",
-      "description": "In-line sensors measuring turbidity every second, enabling real-time dosing adjustment.",
+      "badge": "Our Service",
+      "title": "Expert analysis delivered to your inbox",
+      "description": "We handle sample collection, professional lab analysis, and deliver clear reports with actionable recommendations—no equipment investment or training required.",
       "benefits": {
         "realTime": {
-          "title": "Real-time",
-          "description": "Measurement every second, no waiting or manual sampling.",
-          "metric": "24/7",
-          "metricLabel": "continuous monitoring"
+          "title": "Professional analysis",
+          "description": "Lab-grade precision with expert interpretation of results.",
+          "metric": "±2%",
+          "metricLabel": "measurement accuracy"
         },
         "flocculant": {
-          "title": "Automatic optimization",
-          "description": "Adjust flocculant dosing based on real demand, not fixed recipe.",
-          "metric": "-30%",
-          "metricLabel": "flocculant savings"
+          "title": "Actionable insights",
+          "description": "Not just numbers—specific recommendations for your process.",
+          "metric": "48h",
+          "metricLabel": "turnaround time"
         },
         "compliance": {
-          "title": "Guaranteed compliance",
-          "description": "Immediate alerts when approaching specification limits.",
-          "metric": "100%",
-          "metricLabel": "within specification"
+          "title": "Zero investment",
+          "description": "No equipment to buy, install, or maintain. We handle everything.",
+          "metric": "$0",
+          "metricLabel": "capital required"
         }
       }
     },
     "howItWorks": {
       "badge": "How It Works",
-      "title": "In-line monitoring system",
-      "description": "Quick installation of sensors connected to your control system for total process visibility.",
+      "title": "From sample to insight",
+      "description": "A simple process designed for operations that need data without the complexity of running their own lab.",
       "steps": {
         "installation": {
-          "title": "Quick Installation",
-          "description": "In-line turbidity sensors installed at critical process points."
+          "title": "Sample Collection",
+          "description": "We coordinate with your team to collect samples at the right points and times."
         },
         "monitoring": {
-          "title": "Continuous Measurement",
-          "description": "Reading every second with transmission to control system and dashboard."
+          "title": "Lab Analysis",
+          "description": "Professional testing in our equipped laboratory with calibrated instruments."
         },
         "alerts": {
-          "title": "Smart Alerts",
-          "description": "Notifications when approaching limits or detecting abnormal trends."
+          "title": "Expert Interpretation",
+          "description": "Our specialists analyze results in context of your specific process and goals."
         },
         "optimization": {
-          "title": "Automatic Control",
-          "description": "Integration with dosing systems for automatic flocculant adjustment."
+          "title": "Report Delivery",
+          "description": "Clear report via email with data, trends, and specific recommendations."
         }
       },
       "specs": {
         "range": {
           "value": "0-1000",
           "label": "Measurement range",
-          "detail": "NTU with auto-calibration"
+          "detail": "NTU with calibrated equipment"
         },
         "frequency": {
-          "value": "1/sec",
-          "label": "Reading frequency",
-          "detail": "Captures all variability"
+          "value": "48h",
+          "label": "Turnaround time",
+          "detail": "From sample to report"
         },
         "connectivity": {
-          "value": "4-20mA",
-          "label": "Connectivity",
-          "detail": "Compatible with any PLC/DCS"
+          "value": "Email",
+          "label": "Report delivery",
+          "detail": "PDF with full analysis"
         }
       }
     },
     "industries": {
       "title": "Industry applications",
-      "description": "Turbidity monitoring is essential where product or solution clarity determines quality.",
+      "description": "Turbidity analysis is critical where solution clarity affects product quality or downstream processes.",
       "potassium": {
         "title": "Potassium",
-        "description": "Salt crystallization where brine clarity determines product purity.",
-        "benefit": "Ensures commercial KCl purity"
+        "description": "Brine clarity directly impacts crystallization and final product purity.",
+        "benefit": "Optimize crystallization quality"
       },
       "lithium": {
-        "title": "Lithium DLE",
-        "description": "Protection of direct extraction membranes requiring ultra-clear solutions.",
-        "benefit": "Protects high-cost membranes"
+        "title": "Lithium",
+        "description": "DLE membranes require ultra-clear feed solutions to prevent fouling.",
+        "benefit": "Protect membrane investment"
       },
       "copper": {
-        "title": "Copper PLS",
-        "description": "PLS clarification to prevent crud in SX circuits.",
-        "benefit": "Prevents crud formation"
+        "title": "Copper",
+        "description": "PLS clarity prevents crud formation in SX circuits.",
+        "benefit": "Reduce crud treatment costs"
       }
     },
     "integration": {
-      "badge": "Integrated Ecosystem",
-      "title": "Turbidity connects with your other processes",
-      "description": "Turbidity monitoring integrates with filtration and quality control services.",
+      "badge": "Complete Picture",
+      "title": "Turbidity is one piece of the puzzle",
+      "description": "Combine turbidity analysis with our other data services for complete process visibility.",
       "services": {
         "fineSolids": {
           "title": "Fine Solids Treatment",
-          "description": "When turbidity rises, we activate filtration to remove particles."
+          "description": "When analysis shows high turbidity, we can deploy filtration to solve the root cause."
         },
         "tifMeasurement": {
           "title": "IFT Measurement",
-          "description": "Fine solids affect IFT. Joint monitoring gives complete visibility."
+          "description": "Fine solids affect interfacial tension. Combined analysis reveals the full picture."
         },
         "tsfMonitoring": {
-          "title": "PST Monitoring",
-          "description": "Particles stabilize emulsions. Turbidity control reduces PST."
+          "title": "Phase Separation Analysis",
+          "description": "Particles stabilize emulsions. Understanding turbidity helps explain separation issues."
         }
       },
       "diagram": {
-        "title": "Integrated Quality Control",
-        "subtitle": "Turbidity → Filtration → Quality",
-        "result": "Guaranteed specification"
+        "title": "Integrated Analysis",
+        "subtitle": "Data → Insights → Action",
+        "result": "Optimized operations"
       }
     },
     "cta": {
-      "title": "Stop operating blind",
-      "description": "Real-time turbidity monitoring gives you total control over your process quality.",
-      "timeline": "Installation in 48 hours. Immediate results.",
+      "title": "Get precision turbidity data",
+      "description": "Professional analysis and actionable insights—we handle everything from sample collection to report delivery.",
+      "timeline": "First report within one week of engagement.",
       "primaryCta": "Request Evaluation",
       "secondaryCta": "See Potassium Cases",
       "contactTitle": "Direct contact",

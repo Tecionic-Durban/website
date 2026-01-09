@@ -46,17 +46,17 @@ export default function LatamPresence() {
         <LatamGlobe />
       </div>
 
-      {/* Mobile: Globe at top with content below */}
-      <div className="lg:hidden relative">
-        {/* Globe container - taller to show continents properly */}
-        <div className="h-[350px] flex items-center justify-center">
+      {/* Mobile: Globe on right as background, content on left (Stripe-style) */}
+      <div className="lg:hidden relative min-h-[600px] overflow-hidden">
+        {/* Globe positioned on right edge as ambient background */}
+        <div className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60 pointer-events-none">
           <LatamGlobe mobile={true} className="w-full h-full" />
         </div>
 
-        {/* Content below the globe */}
-        <div className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-950 to-slate-950/80 pt-4 pb-16 px-4 -mt-8">
+        {/* Content on left, overlapping globe */}
+        <div className="relative z-10 py-12 px-4">
           {/* Header */}
-          <div className="text-center mb-8">
+          <div className="max-w-[75%] mb-10">
             <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
               {t('badge')}
             </span>
@@ -69,19 +69,17 @@ export default function LatamPresence() {
             </p>
           </div>
 
-          {/* Mobile content */}
-          <div className="space-y-8">
+          {/* Mobile content - stats style like Stripe */}
+          <div className="space-y-6 max-w-[80%]">
             {/* Mobile equipment callout */}
-            <div>
-              <div className="border-l-2 border-emerald-500 pl-4">
-                <p className="text-white text-base font-medium mb-1">{t('mobileEquipment.title')}</p>
-                <p className="text-slate-400 text-sm">
-                  {t('mobileEquipment.description')}
-                </p>
-              </div>
+            <div className="border-l-2 border-emerald-500 pl-4">
+              <p className="text-white text-lg font-bold mb-1">{t('mobileEquipment.title')}</p>
+              <p className="text-slate-400 text-sm">
+                {t('mobileEquipment.description')}
+              </p>
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors group mt-3 ml-4 text-sm"
+                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors group mt-2 text-sm"
               >
                 {t('requestEquipment')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
@@ -89,29 +87,22 @@ export default function LatamPresence() {
             </div>
 
             {/* Offices */}
-            <div>
-              <p className="text-slate-500 text-xs uppercase tracking-wider mb-2">{t('operationBases')}</p>
-              <p className="text-white text-sm">
-                <span className="font-medium">Santiago</span>
-                <span className="text-slate-500">, Chile</span>
-                <span className="text-slate-600 mx-2">·</span>
-                <span className="font-medium">Calama</span>
-                <span className="text-slate-500">, Chile</span>
-                <span className="text-slate-600 mx-2">·</span>
-                <span className="font-medium">Lima</span>
-                <span className="text-slate-500">, Perú</span>
+            <div className="border-l-2 border-cyan-500 pl-4">
+              <p className="text-white text-lg font-bold mb-1">{t('operationBases')}</p>
+              <p className="text-slate-400 text-sm">
+                Santiago, Chile · Calama, Chile · Lima, Perú
               </p>
             </div>
 
             {/* Industries */}
-            <div>
-              <p className="text-slate-500 text-xs uppercase tracking-wider mb-3">{t('mainIndustries')}</p>
+            <div className="border-l-2 border-purple-500 pl-4">
+              <p className="text-white text-lg font-bold mb-2">{t('mainIndustries')}</p>
               <div className="flex flex-wrap gap-2">
                 {industries.map((industry, index) => (
                   <Link
                     key={index}
                     href={industry.href}
-                    className="flex items-center gap-2 bg-slate-800/50 px-3 py-2 rounded-lg group"
+                    className="flex items-center gap-2 bg-slate-800/50 px-3 py-1.5 rounded-lg group"
                   >
                     <div className={`w-2 h-2 rounded-full ${industry.color}`} />
                     <span className="text-white text-sm group-hover:text-emerald-400 transition-colors">{t(`industries.${industry.key}`)}</span>

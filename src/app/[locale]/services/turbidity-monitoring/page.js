@@ -185,7 +185,7 @@ export default function TurbidityMonitoringPage() {
         <div className="max-w-7xl mx-auto px-8 py-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">24/7</div>
+              <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">18+</div>
               <div className="text-sm text-gray-500">{t('metrics.continuousMonitoring')}</div>
             </div>
             <div className="text-center">
@@ -199,7 +199,9 @@ export default function TurbidityMonitoringPage() {
               <div className="text-sm text-gray-500">{t('metrics.flocculantSavings')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">0</div>
+              <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+                <AnimatedCounter value="500" suffix="+" />
+              </div>
               <div className="text-sm text-gray-500">{t('metrics.specViolations')}</div>
             </div>
           </div>
@@ -225,7 +227,7 @@ export default function TurbidityMonitoringPage() {
             {/* Benefit 1 */}
             <div className="flex-1 lg:px-6">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Eye className="w-5 h-5 text-purple-600" />
+                <Chemistry className="w-5 h-5 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.realTimeControl')}</h3>
             </div>
@@ -255,7 +257,7 @@ export default function TurbidityMonitoringPage() {
             {/* Benefit 3 */}
             <div className="flex-1 lg:px-6">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-5 h-5 text-purple-600" />
+                <BarChart3 className="w-5 h-5 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.ensureCompliance')}</h3>
             </div>
@@ -270,7 +272,7 @@ export default function TurbidityMonitoringPage() {
             {/* Benefit 4 */}
             <div className="flex-1 lg:px-6">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-5 h-5 text-purple-600" />
+                <CheckCircle className="w-5 h-5 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.eliminateLabDelay')}</h3>
             </div>
