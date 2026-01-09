@@ -2434,6 +2434,97 @@
       "ctaTitle": "¿Enfrenta desafíos similares en su planta SX?",
       "ctaDescription": "Nuestro equipo de especialistas puede ayudarle a optimizar su proceso y lograr resultados medibles."
     },
+    "enapLodosPetroleros": {
+      "tagline": "Validación Técnica · Hidrocarburos",
+      "title": "35-85% Reducción Volumétrica",
+      "headline": "Deshidratación de Lodos Petroleros - Refinería en Chile Central",
+      "stats": [
+        { "value": "84%", "label": "Reducción Lodos Fenólica" },
+        { "value": "77%", "label": "Reducción Lodos Fenoles" },
+        { "value": "3 meses", "label": "Validación Técnica" }
+      ],
+      "overview": [
+        { "label": "Tipo", "value": "Refinería de Petróleo" },
+        { "label": "Industria", "value": "Refinación de Hidrocarburos" },
+        { "label": "Objetivo", "value": "Reducir costos de disposición mediante deshidratación de lodos" }
+      ],
+      "challengeDescription": "4.5+ millones kg/año de lodos petroleros con alta humedad generan costos excesivos de transporte y disposición",
+      "problems": [
+        { "title": "Alta Humedad", "value": "70-92% contenido de agua", "description": "Incrementa peso y volumen de transporte" },
+        { "title": "Alto Volumen Generado", "value": "4.5M kg/año", "description": "Tres corrientes críticas de proceso" },
+        { "title": "Costos Logísticos", "value": "Transporte + Disposición", "description": "Impacto significativo en OPEX" }
+      ],
+      "streamsTitle": "Tres Corrientes Críticas",
+      "streams": [
+        { "humidity": "92.59%", "humidityLabel": "Humedad Inicial", "name": "Lodos Planta Fenólica", "description": "Corriente más crítica" },
+        { "humidity": "90.02%", "humidityLabel": "Humedad Inicial", "name": "Lodos Planta Fenoles", "description": "Segunda corriente prioritaria" },
+        { "humidity": "70.37%", "humidityLabel": "Humedad Inicial", "name": "Lodos de Proceso", "description": "Tercera corriente evaluada" }
+      ],
+      "solutionTitle": "La Solución Tec-Ionic",
+      "solutionDescription": "Validación técnica de laboratorio sin inversión del cliente",
+      "approachTitle": "Enfoque Innovador",
+      "approachItems": [
+        { "title": "Sin inversión del cliente", "description": "validación técnica con equipos de TecIonic" },
+        { "title": "Pruebas de laboratorio", "description": "con filtros equivalentes a escala industrial" },
+        { "title": "Caracterización fisicoquímica", "description": "completa de tres corrientes" }
+      ],
+      "technologyTitle": "Tecnología Aplicada",
+      "technologyItems": [
+        { "title": "Filtración móvil bajo vacío", "description": "tecnología portátil y flexible" },
+        { "title": "Filtro prensa industrial", "description": "simulación a escala real" },
+        { "title": "Sistemas de centrífuga", "description": "evaluación de alternativas" }
+      ],
+      "opportunitiesTitle": "5 Oportunidades Adicionales Identificadas",
+      "opportunitiesText": "Durante el estudio se identificaron aplicaciones en <strong>Delayed Coker, FCC, tratamiento de efluentes, separadores API y tanques de almacenamiento</strong>, ampliando el potencial de impacto de la tecnología móvil de filtración en la refinería.",
+      "resultsTitle": "Resultados de Validación",
+      "resultsDescription": "Reducción volumétrica comprobada en tres corrientes de lodos",
+      "results": [
+        { "badge": "Mejor Resultado", "name": "Lodos Planta Fenólica", "reduction": "84.23%", "reductionLabel": "Reducción Volumétrica", "initialHumidity": "92.59%", "finalHumidity": "53%", "note": "Mayor eficiencia de deshidratación lograda" },
+        { "badge": "Segundo Resultado", "name": "Lodos Planta Fenoles", "reduction": "77.31%", "reductionLabel": "Reducción Volumétrica", "initialHumidity": "90.02%", "finalHumidity": "56%", "note": "Excelente reducción de humedad" },
+        { "badge": "Tercer Resultado", "name": "Lodos de Proceso", "reduction": "32.96%", "reductionLabel": "Reducción Volumétrica", "initialHumidity": "70.37%", "finalHumidity": "55.8%", "note": "Menor humedad inicial, sigue siendo efectivo" }
+      ],
+      "initialHumidityLabel": "Humedad Inicial",
+      "finalHumidityLabel": "Humedad Final",
+      "impactTitle": "Impacto Global de la Deshidratación",
+      "beforeTitle": "Antes del Tratamiento",
+      "beforeMetrics": [
+        { "label": "Volumen anual de lodos:", "value": "4.5M kg" },
+        { "label": "Humedad promedio:", "value": "70-92%" },
+        { "label": "Costo disposición:", "value": "Alto", "isHighlight": true }
+      ],
+      "afterTitle": "Con Tecnología Móvil de Filtración",
+      "afterMetrics": [
+        { "label": "Reducción volumétrica:", "value": "35-85%" },
+        { "label": "Humedad final:", "value": "53-56%" },
+        { "label": "Costo disposición:", "value": "Optimizado", "isHighlight": true }
+      ],
+      "impactStats": [
+        { "value": "↓40-85%", "label": "Reducción viajes transporte" },
+        { "value": "53-56%", "label": "Humedad final óptima" },
+        { "value": "5", "label": "Oportunidades adicionales" }
+      ],
+      "benefitsTitle": "Ventajas Competitivas de la Solución",
+      "benefits": [
+        { "title": "Sin Inversión del Cliente", "description": "Validación técnica sin compromiso de capital, reduciendo riesgo financiero" },
+        { "title": "Tecnología Móvil", "description": "Equipos portátiles permiten operar en múltiples puntos de la refinería" },
+        { "title": "Reducción de Costos Logísticos", "description": "Menor volumen y peso reducen dramáticamente costos de transporte y disposición" },
+        { "title": "Potencial Recuperación de Agua", "description": "Agua extraída puede reutilizarse en procesos industriales de la refinería" },
+        { "title": "Escalabilidad Comprobada", "description": "20+ años de experiencia en minería aplicada al sector petrolero" },
+        { "title": "Múltiples Aplicaciones", "description": "5 oportunidades adicionales identificadas en procesos de refinería" }
+      ],
+      "conclusionTitle": "Conclusión Técnica",
+      "conclusionText1": "La validación técnica realizada por <strong>Tec-Ionic Durban</strong> en esta refinería demuestra la viabilidad de <strong>reducir significativamente el volumen de lodos petroleros mediante tecnología móvil de filtración</strong>, con reducciones volumétricas que van desde 32.96% hasta 84.23% dependiendo de la corriente.",
+      "conclusionText2": "Esta solución permite a la refinería <strong>evaluar la tecnología sin inversión de capital</strong>, reducir costos de transporte y disposición, y potencialmente recuperar agua para reutilización. La identificación de 5 oportunidades adicionales en diferentes procesos de la refinería amplía el potencial impacto de la tecnología móvil de filtración en el sector petrolero.",
+      "conclusionStats": [
+        { "value": "84%", "label": "Reducción Máxima" },
+        { "value": "53-56%", "label": "Humedad Final" },
+        { "value": "3", "label": "Corrientes Validadas" },
+        { "value": "5", "label": "Oportunidades Más" }
+      ],
+      "ctaTitle": "¿Necesita Reducir Costos de Disposición de Lodos?",
+      "ctaDescription": "Nuestros especialistas pueden ayudarle a validar soluciones de deshidratación sin inversión inicial, con tecnología móvil comprobada en minería y sector petrolero.",
+      "ctaButton": "Solicitar Evaluación Técnica"
+    },
     "deshidratacionConcentrados": {
       "tagline": "Caso de Éxito - Continuidad Operacional",
       "title": "USD $2.43M Valor Protegido",

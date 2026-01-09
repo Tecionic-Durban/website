@@ -48,7 +48,8 @@ const segmentLabels = {
 
   // Case studies
   'deshidratacion-concentrados': { 'es-cl': 'Deshidratación Concentrados', 'es-mx': 'Deshidratación Concentrados', 'pt-br': 'Desidratação Concentrados', 'en': 'Concentrate Dehydration' },
-    'limpieza-celdas-ew': { 'es-cl': 'Limpieza Celdas EW', 'es-mx': 'Limpieza Celdas EW', 'pt-br': 'Limpeza Células EW', 'en': 'EW Cell Cleaning' },
+  'enap-lodos-petroleros': { 'es-cl': 'ENAP Lodos Petroleros', 'es-mx': 'ENAP Lodos Petroleros', 'pt-br': 'ENAP Lodos Petrolíferos', 'en': 'ENAP Petroleum Sludge' },
+  'limpieza-celdas-ew': { 'es-cl': 'Limpieza Celdas EW', 'es-mx': 'Limpieza Celdas EW', 'pt-br': 'Limpeza Células EW', 'en': 'EW Cell Cleaning' },
   'solidos-finos-yoduro': { 'es-cl': 'Sólidos Finos Yoduro', 'es-mx': 'Sólidos Finos Yoduro', 'pt-br': 'Sólidos Finos Iodeto', 'en': 'Iodide Fine Solids' },
   'soporte-sx-dgm': { 'es-cl': 'Soporte SX DGM', 'es-mx': 'Soporte SX DGM', 'pt-br': 'Suporte SX DGM', 'en': 'SX DGM Support' },
   'tratamiento-organico-sx': { 'es-cl': 'Tratamiento Orgánico SX', 'es-mx': 'Tratamiento Orgánico SX', 'pt-br': 'Tratamento Orgânico SX', 'en': 'SX Organic Treatment' },

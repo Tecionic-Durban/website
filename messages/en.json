@@ -2434,6 +2434,97 @@
       "ctaTitle": "Facing similar challenges in your SX plant?",
       "ctaDescription": "Our team of specialists can help you optimize your process and achieve measurable results."
     },
+    "enapLodosPetroleros": {
+      "tagline": "Technical Validation · Hydrocarbons",
+      "title": "35-85% Volume Reduction",
+      "headline": "Oil Sludge Dewatering - Central Chile Refinery",
+      "stats": [
+        { "value": "84%", "label": "Phenolic Sludge Reduction" },
+        { "value": "77%", "label": "Phenols Sludge Reduction" },
+        { "value": "3 months", "label": "Technical Validation" }
+      ],
+      "overview": [
+        { "label": "Type", "value": "Oil Refinery" },
+        { "label": "Industry", "value": "Hydrocarbons Refining" },
+        { "label": "Objective", "value": "Reduce disposal costs through sludge dewatering" }
+      ],
+      "challengeDescription": "4.5+ million kg/year of oil sludge with high moisture generate excessive transport and disposal costs",
+      "problems": [
+        { "title": "High Moisture", "value": "70-92% water content", "description": "Increases transport weight and volume" },
+        { "title": "High Volume Generated", "value": "4.5M kg/year", "description": "Three critical process streams" },
+        { "title": "Logistics Costs", "value": "Transport + Disposal", "description": "Significant OPEX impact" }
+      ],
+      "streamsTitle": "Three Critical Streams",
+      "streams": [
+        { "humidity": "92.59%", "humidityLabel": "Initial Moisture", "name": "Phenolic Plant Sludge", "description": "Most critical stream" },
+        { "humidity": "90.02%", "humidityLabel": "Initial Moisture", "name": "Phenols Plant Sludge", "description": "Second priority stream" },
+        { "humidity": "70.37%", "humidityLabel": "Initial Moisture", "name": "Process Sludge", "description": "Third evaluated stream" }
+      ],
+      "solutionTitle": "The Tec-Ionic Solution",
+      "solutionDescription": "Laboratory technical validation without client investment",
+      "approachTitle": "Innovative Approach",
+      "approachItems": [
+        { "title": "No client investment", "description": "technical validation with TecIonic equipment" },
+        { "title": "Laboratory testing", "description": "with industrial-scale equivalent filters" },
+        { "title": "Physicochemical characterization", "description": "complete for three streams" }
+      ],
+      "technologyTitle": "Applied Technology",
+      "technologyItems": [
+        { "title": "Mobile vacuum filtration", "description": "portable and flexible technology" },
+        { "title": "Industrial filter press", "description": "real-scale simulation" },
+        { "title": "Centrifuge systems", "description": "alternative evaluation" }
+      ],
+      "opportunitiesTitle": "5 Additional Opportunities Identified",
+      "opportunitiesText": "During the study, applications were identified in <strong>Delayed Coker, FCC, effluent treatment, API separators, and storage tanks</strong>, expanding the potential impact of mobile filtration technology in the refinery.",
+      "resultsTitle": "Validation Results",
+      "resultsDescription": "Proven volume reduction in three sludge streams",
+      "results": [
+        { "badge": "Best Result", "name": "Phenolic Plant Sludge", "reduction": "84.23%", "reductionLabel": "Volume Reduction", "initialHumidity": "92.59%", "finalHumidity": "53%", "note": "Highest dewatering efficiency achieved" },
+        { "badge": "Second Result", "name": "Phenols Plant Sludge", "reduction": "77.31%", "reductionLabel": "Volume Reduction", "initialHumidity": "90.02%", "finalHumidity": "56%", "note": "Excellent moisture reduction" },
+        { "badge": "Third Result", "name": "Process Sludge", "reduction": "32.96%", "reductionLabel": "Volume Reduction", "initialHumidity": "70.37%", "finalHumidity": "55.8%", "note": "Lower initial moisture, still effective" }
+      ],
+      "initialHumidityLabel": "Initial Moisture",
+      "finalHumidityLabel": "Final Moisture",
+      "impactTitle": "Global Dewatering Impact",
+      "beforeTitle": "Before Treatment",
+      "beforeMetrics": [
+        { "label": "Annual sludge volume:", "value": "4.5M kg" },
+        { "label": "Average moisture:", "value": "70-92%" },
+        { "label": "Disposal cost:", "value": "High", "isHighlight": true }
+      ],
+      "afterTitle": "With Mobile Filtration Technology",
+      "afterMetrics": [
+        { "label": "Volume reduction:", "value": "35-85%" },
+        { "label": "Final moisture:", "value": "53-56%" },
+        { "label": "Disposal cost:", "value": "Optimized", "isHighlight": true }
+      ],
+      "impactStats": [
+        { "value": "↓40-85%", "label": "Transport trips reduction" },
+        { "value": "53-56%", "label": "Optimal final moisture" },
+        { "value": "5", "label": "Additional opportunities" }
+      ],
+      "benefitsTitle": "Competitive Advantages of the Solution",
+      "benefits": [
+        { "title": "No Client Investment", "description": "Technical validation without capital commitment, reducing financial risk" },
+        { "title": "Mobile Technology", "description": "Portable equipment allows operation at multiple refinery points" },
+        { "title": "Logistics Cost Reduction", "description": "Lower volume and weight dramatically reduce transport and disposal costs" },
+        { "title": "Potential Water Recovery", "description": "Extracted water can be reused in refinery industrial processes" },
+        { "title": "Proven Scalability", "description": "20+ years of mining experience applied to the oil sector" },
+        { "title": "Multiple Applications", "description": "5 additional opportunities identified in refinery processes" }
+      ],
+      "conclusionTitle": "Technical Conclusion",
+      "conclusionText1": "The technical validation performed by <strong>Tec-Ionic Durban</strong> at this refinery demonstrates the viability of <strong>significantly reducing oil sludge volume through mobile filtration technology</strong>, with volume reductions ranging from 32.96% to 84.23% depending on the stream.",
+      "conclusionText2": "This solution allows the refinery to <strong>evaluate the technology without capital investment</strong>, reduce transport and disposal costs, and potentially recover water for reuse. The identification of 5 additional opportunities in different refinery processes expands the potential impact of mobile filtration technology in the oil sector.",
+      "conclusionStats": [
+        { "value": "84%", "label": "Maximum Reduction" },
+        { "value": "53-56%", "label": "Final Moisture" },
+        { "value": "3", "label": "Validated Streams" },
+        { "value": "5", "label": "More Opportunities" }
+      ],
+      "ctaTitle": "Need to Reduce Sludge Disposal Costs?",
+      "ctaDescription": "Our specialists can help you validate dewatering solutions without initial investment, with mobile technology proven in mining and oil sectors.",
+      "ctaButton": "Request Technical Evaluation"
+    },
     "deshidratacionConcentrados": {
       "tagline": "Case Study - Operational Continuity",
       "title": "USD $2.43M Protected Value",
