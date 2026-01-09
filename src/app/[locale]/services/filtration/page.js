@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Flash, Enterprise, Launch, Apps, Connect, Filter as FilterCarbon, Renew, Currency, ArrowDownRight, Chemistry, RainDrop, Humidity, DeliveryTruck, Pipelines, Power } from '@carbon/icons-react'
@@ -219,6 +219,17 @@ function EquipmentBenefits({ t }) {
 
 export default function FiltrationPage() {
   const t = useTranslations('filtrationService')
+  const [activeProductCard, setActiveProductCard] = useState(0)
+  const productCarouselRef = useRef(null)
+
+  // Handle scroll to update active dot
+  const handleProductScroll = () => {
+    if (!productCarouselRef.current) return
+    const scrollLeft = productCarouselRef.current.scrollLeft
+    const cardWidth = productCarouselRef.current.offsetWidth * 0.85 + 16
+    const activeIndex = Math.round(scrollLeft / cardWidth)
+    setActiveProductCard(activeIndex)
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -550,7 +561,7 @@ export default function FiltrationPage() {
 
           {/* Mobile: Horizontal carousel with dots */}
           <div className="lg:hidden">
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div ref={productCarouselRef} onScroll={handleProductScroll} className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
               {/* Card 1: Electrolito + E1/E2 stats */}
               <div className="bg-emerald-500/10 rounded-2xl p-6 border border-emerald-500/30 flex-shrink-0 w-[85vw] snap-center">
                 <div className="mb-4">
