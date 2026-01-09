@@ -162,10 +162,10 @@ function EquipmentBenefits({ t }) {
 // Two Methods Component - Bypass vs Batch
 function TreatmentMethods({ t }) {
   return (
-    <div className="grid lg:grid-cols-2 gap-8">
+    <div className="flex lg:grid lg:grid-cols-2 gap-4 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory -mx-8 px-8 lg:mx-0 lg:px-0 pb-4 lg:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
       {/* Method 1: Bypass */}
-      <div className="rounded-2xl border border-gray-700 bg-gray-800/50">
-        <div className="p-8">
+      <div className="rounded-2xl border border-gray-700 bg-gray-800/50 flex-shrink-0 w-[85vw] lg:w-auto snap-start">
+        <div className="p-6 lg:p-8">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-emerald-500/20">
               <Renew className="w-6 h-6 text-emerald-400" />
@@ -207,8 +207,8 @@ function TreatmentMethods({ t }) {
       </div>
 
       {/* Method 2: Batch */}
-      <div className="rounded-2xl border border-gray-700 bg-gray-800/50">
-        <div className="p-8">
+      <div className="rounded-2xl border border-gray-700 bg-gray-800/50 flex-shrink-0 w-[85vw] lg:w-auto snap-start">
+        <div className="p-6 lg:p-8">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-emerald-500/20">
               <Filter className="w-6 h-6 text-emerald-400" />
@@ -968,10 +968,11 @@ export default function OrganicTreatmentServicePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Mobile: Horizontal carousel with peeking | Desktop: Grid */}
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Copper */}
-            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all">
-              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/copper_mine.jpg"
                   alt="Mina de cobre"
@@ -979,7 +980,7 @@ export default function OrganicTreatmentServicePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Cu</span>
@@ -987,7 +988,11 @@ export default function OrganicTreatmentServicePage() {
                   <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
                 </div>
                 <p className="text-sm text-gray-600">Tratamiento orgánico, filtración borras, limpieza EW</p>
-                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  Ver detalles
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -997,8 +1002,8 @@ export default function OrganicTreatmentServicePage() {
             </div>
 
             {/* Potassium */}
-            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-purple-300 hover:shadow-lg transition-all">
-              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-purple-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/potassium_plant.jpg"
                   alt="Planta de potasio"
@@ -1006,7 +1011,7 @@ export default function OrganicTreatmentServicePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">K</span>
@@ -1014,7 +1019,11 @@ export default function OrganicTreatmentServicePage() {
                   <h3 className="text-lg font-bold text-gray-900">Potasio</h3>
                 </div>
                 <p className="text-sm text-gray-600">Sales minerales y cumplimiento ambiental</p>
-                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  Ver detalles
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -1024,8 +1033,8 @@ export default function OrganicTreatmentServicePage() {
             </div>
 
             {/* Lithium */}
-            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-cyan-300 hover:shadow-lg transition-all">
-              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-cyan-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/lithium_mine.jpg?v=2"
                   alt="Mina de litio"
@@ -1033,7 +1042,7 @@ export default function OrganicTreatmentServicePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Li</span>
@@ -1041,7 +1050,11 @@ export default function OrganicTreatmentServicePage() {
                   <h3 className="text-lg font-bold text-gray-900">Litio</h3>
                 </div>
                 <p className="text-sm text-gray-600">Tratamiento salmueras y sólidos finos</p>
-                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  Ver detalles
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

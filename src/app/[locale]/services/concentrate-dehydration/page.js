@@ -756,10 +756,11 @@ export default function ConcentrateDehydrationServicePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
+          {/* Mobile: Horizontal carousel with peeking | Desktop: Grid */}
+          <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-6 max-w-3xl overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Copper */}
-            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all">
-              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/copper_mine.jpg"
                   alt="Mina de cobre"
@@ -767,7 +768,7 @@ export default function ConcentrateDehydrationServicePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Cu</span>
@@ -775,7 +776,11 @@ export default function ConcentrateDehydrationServicePage() {
                   <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
                 </div>
                 <p className="text-sm text-gray-600">Deshidratación de concentrados, humedad ≤9%</p>
-                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  Ver detalles
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -785,8 +790,8 @@ export default function ConcentrateDehydrationServicePage() {
             </div>
 
             {/* Zinc */}
-            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all">
-              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/zinc_processing_plant.jpg"
                   alt="Planta de procesamiento de zinc"
@@ -794,7 +799,7 @@ export default function ConcentrateDehydrationServicePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Zn</span>
@@ -802,7 +807,11 @@ export default function ConcentrateDehydrationServicePage() {
                   <h3 className="text-lg font-bold text-gray-900">Zinc</h3>
                 </div>
                 <p className="text-sm text-gray-600">Control preciso para fundición</p>
-                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  Ver detalles
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -810,12 +819,11 @@ export default function ConcentrateDehydrationServicePage() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* SECTION 6: CASE STUDY - Cerro Negro */}
+      {/* SECTION 6: CASE STUDY - Planta Concentradora */}
       <section ref={caseStudiesRef} className="border-b border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           {/* Header */}
@@ -824,35 +832,30 @@ export default function ConcentrateDehydrationServicePage() {
               CASO DE ÉXITO
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
-              Cerro Negro protegió 2.43 MUSD en 30 días de mantención
+              Planta concentradora protegió 2.43 MUSD en 30 días de mantención
             </h2>
           </div>
 
           {/* Main content - Card */}
           <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
             <div className="grid lg:grid-cols-5">
-              {/* Left - Visual */}
-              <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem]">
+              {/* Left - Image */}
+              <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300">
                 <Image
                   src="/copper_concentrate_plant.jpg"
-                  alt="Planta concentradora Cerro Negro"
+                  alt="Planta concentradora de cobre"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:bg-gradient-to-r"></div>
-                <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-between text-white">
-                  <div>
-                    <div className="text-emerald-200 text-sm font-medium mb-2">COMPAÑÍA MINERA CERRO NEGRO</div>
-                    <div className="text-2xl font-bold">Planta Concentradora de Cobre</div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <div className="text-3xl font-black">2.43M</div>
-                      <div className="text-emerald-200 text-sm">USD protegidos</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:bg-gradient-to-r" />
+                <div className="absolute bottom-4 left-4 lg:bottom-6 lg:left-6">
+                  <div className="flex items-center gap-2 text-white">
+                    <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                      <span className="text-sm font-bold">Cu</span>
                     </div>
                     <div>
-                      <div className="text-3xl font-black">1,350</div>
-                      <div className="text-emerald-200 text-sm">ton preservadas</div>
+                      <div className="font-semibold text-sm">Planta Concentradora</div>
+                      <div className="text-white/70 text-xs">Minería del Cobre</div>
                     </div>
                   </div>
                 </div>
@@ -878,7 +881,7 @@ export default function ConcentrateDehydrationServicePage() {
 
                 {/* Description */}
                 <p className="text-gray-600 mb-6">
-                  Cerro Negro debía realizar mantención mayor de 30 días a su único filtro prensa. Sin filtro de respaldo, la alternativa era perder 3.24 MUSD. Con nuestro filtro móvil F-1200-3 operando 24/7, preservaron el 75% de su producción con un costo total de solo ~49 kUSD.
+                  Una planta concentradora de cobre debía realizar mantención mayor de 30 días a su único filtro prensa. Sin filtro de respaldo, la alternativa era perder 3.24 MUSD. Con nuestro filtro móvil F-1200-3 operando 24/7, preservaron el 75% de su producción con un costo total de solo ~49 kUSD.
                 </p>
 
                 {/* CTA */}

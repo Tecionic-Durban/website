@@ -134,7 +134,7 @@ export default function Hero() {
             {/* CTA Button */}
             <div className="mt-4 lg:mt-8">
               <button
-                onClick={() => router.push('/services')}
+                onClick={() => router.push('/calculadora')}
                 className="group bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-base lg:text-lg transition-all duration-300 inline-flex items-center"
               >
                 <span>{t('cta')}</span>

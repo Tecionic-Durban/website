@@ -1017,182 +1017,199 @@ export default function FineSolidsServicePage() {
             </p>
           </div>
 
-          {/* Horizontal scrolling carousel */}
-          <div className="relative -mx-8">
-            <div className="overflow-x-auto scrollbar-hide px-8 pb-4">
-              <div className="flex gap-6" style={{ width: 'max-content' }}>
-                {/* Copper */}
-                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
-                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
-                    <Image
-                      src="/copper_mine.jpg"
-                      alt={t('industries.items.copper.name')}
-                      fill
-                      sizes="320px"
-                      className="object-cover"
-                    />
+          {/* Mobile: Horizontal carousel with peeking | Desktop: Horizontal carousel */}
+          <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            {/* Copper */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/copper_mine.jpg"
+                  alt={t('industries.items.copper.name')}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 320px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold">Cu</span>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-sm font-bold">Cu</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.copper.name')}</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
-                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                      <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        {t('industries.viewDetails')}
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.copper.name')}</h3>
                 </div>
-
-                {/* Gold */}
-                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-yellow-400 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
-                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
-                    <Image
-                      src="/gold_sediment_pool.jpg"
-                      alt={t('industries.items.gold.name')}
-                      fill
-                      sizes="320px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-sm font-bold">Au</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.gold.name')}</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">{t('industries.items.gold.description')}</p>
-                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mt-3">
-                        {t('industries.consult')}
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Lithium */}
-                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-cyan-300 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
-                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
-                    <Image
-                      src="/lithium_mine.jpg"
-                      alt={t('industries.items.lithium.name')}
-                      fill
-                      sizes="320px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-sm font-bold">Li</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.lithium.name')}</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">{t('industries.items.lithium.description')}</p>
-                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                      <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        {t('industries.viewDetails')}
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Potassium */}
-                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-purple-300 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
-                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
-                    <Image
-                      src="/potassium_plant.jpg"
-                      alt={t('industries.items.potassium.name')}
-                      fill
-                      sizes="320px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-sm font-bold">K</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.potassium.name')}</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">{t('industries.items.potassium.description')}</p>
-                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                      <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        {t('industries.viewDetails')}
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Zinc */}
-                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
-                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
-                    <Image
-                      src="/zinc_processing_plant.jpg"
-                      alt={t('industries.items.zinc.name')}
-                      fill
-                      sizes="320px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-sm font-bold">Zn</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.zinc.name')}</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
-                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                      <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        {t('industries.viewDetails')}
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Crude Oil */}
-                <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-gray-400 hover:shadow-lg transition-all w-[320px] flex-shrink-0">
-                  <div className="h-64 group-hover:h-52 relative transition-all duration-300">
-                    <Image
-                      src="/oil_refinery.jpg"
-                      alt={t('industries.items.oil.name')}
-                      fill
-                      sizes="320px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <RainDrop className="w-5 h-5 text-white" />
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900">{t('industries.items.oil.name')}</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">{t('industries.items.oil.description')}</p>
-                    <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                      <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                        {t('industries.viewDetails')}
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
+                <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
+                <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  {t('industries.viewDetails')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                    {t('industries.viewDetails')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Scroll indicator - subtle gradient fade on right */}
-            <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+            {/* Gold */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-yellow-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/gold_sediment_pool.jpg"
+                  alt={t('industries.items.gold.name')}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 320px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold">Au</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.gold.name')}</h3>
+                </div>
+                <p className="text-sm text-gray-600">{t('industries.items.gold.description')}</p>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mt-3 md:hidden">
+                  {t('industries.consult')}
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mt-3">
+                    {t('industries.consult')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Lithium */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-cyan-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/lithium_mine.jpg"
+                  alt={t('industries.items.lithium.name')}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 320px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold">Li</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.lithium.name')}</h3>
+                </div>
+                <p className="text-sm text-gray-600">{t('industries.items.lithium.description')}</p>
+                <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  {t('industries.viewDetails')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                    {t('industries.viewDetails')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Potassium */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-purple-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/potassium_plant.jpg"
+                  alt={t('industries.items.potassium.name')}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 320px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold">K</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.potassium.name')}</h3>
+                </div>
+                <p className="text-sm text-gray-600">{t('industries.items.potassium.description')}</p>
+                <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  {t('industries.viewDetails')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                    {t('industries.viewDetails')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Zinc */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/zinc_processing_plant.jpg"
+                  alt={t('industries.items.zinc.name')}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 320px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold">Zn</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.zinc.name')}</h3>
+                </div>
+                <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
+                <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  {t('industries.viewDetails')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                    {t('industries.viewDetails')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Crude Oil */}
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-gray-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
+                <Image
+                  src="/oil_refinery.jpg"
+                  alt={t('industries.items.oil.name')}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 320px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5 md:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <RainDrop className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.oil.name')}</h3>
+                </div>
+                <p className="text-sm text-gray-600">{t('industries.items.oil.description')}</p>
+                <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  {t('industries.viewDetails')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                  <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                    {t('industries.viewDetails')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

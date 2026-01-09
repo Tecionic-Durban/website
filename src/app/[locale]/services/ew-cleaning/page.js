@@ -758,10 +758,11 @@ export default function EWCleaningServicePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+          {/* Mobile: Horizontal carousel with peeking | Desktop: Grid */}
+          <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Copper */}
-            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all">
-              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/copper_mine.jpg"
                   alt={t('industries.copper.imageAlt')}
@@ -769,7 +770,7 @@ export default function EWCleaningServicePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Cu</span>
@@ -777,7 +778,11 @@ export default function EWCleaningServicePage() {
                   <h3 className="text-lg font-bold text-gray-900">{t('industries.copper.name')}</h3>
                 </div>
                 <p className="text-sm text-gray-600">{t('industries.copper.description')}</p>
-                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  {t('industries.viewDetails')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -787,8 +792,8 @@ export default function EWCleaningServicePage() {
             </div>
 
             {/* Zinc */}
-            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all">
-              <div className="h-64 group-hover:h-52 relative transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
+              <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/zinc_processing_plant.jpg"
                   alt={t('industries.zinc.imageAlt')}
@@ -796,7 +801,7 @@ export default function EWCleaningServicePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Zn</span>
@@ -804,7 +809,11 @@ export default function EWCleaningServicePage() {
                   <h3 className="text-lg font-bold text-gray-900">{t('industries.zinc.name')}</h3>
                 </div>
                 <p className="text-sm text-gray-600">{t('industries.zinc.description')}</p>
-                <div className="h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
+                <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                  {t('industries.viewDetails')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
