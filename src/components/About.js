@@ -97,12 +97,34 @@ export default function About() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [cards.length, isMobile])
 
-  // Card component for reuse
-  const CardContent = ({ card, index, forMobile = false }) => (
+  // Mobile card - compact design
+  const MobileCard = ({ card }) => (
     <div
-      className={`group relative bg-white rounded-2xl border border-emerald-300/50 shadow-xl overflow-hidden ${
-        forMobile ? 'p-5 min-w-[85vw] snap-center' : 'p-8'
-      }`}
+      className="bg-white rounded-xl border border-emerald-200 shadow-md p-4 min-w-[75vw] max-w-[75vw] snap-center"
+    >
+      <div className="flex items-center gap-3 mb-3">
+        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+          <card.icon className="w-5 h-5 text-white" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-bold text-base text-gray-900 leading-tight">
+            {t(`cards.${card.key}.title`)}
+          </h3>
+          <span className="text-xs font-medium text-emerald-600">
+            {t(`cards.${card.key}.metric`)}
+          </span>
+        </div>
+      </div>
+      <p className="text-gray-600 text-sm leading-snug line-clamp-3">
+        {t(`cards.${card.key}.description`)}
+      </p>
+    </div>
+  )
+
+  // Desktop card - full design
+  const DesktopCard = ({ card }) => (
+    <div
+      className="group relative bg-white rounded-2xl border border-emerald-300/50 shadow-xl overflow-hidden p-8"
       style={{
         boxShadow: '0 20px 60px -15px rgba(16, 185, 129, 0.15), 0 10px 30px -10px rgba(0, 0, 0, 0.1)'
       }}
@@ -110,20 +132,20 @@ export default function About() {
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       <div className="relative z-10">
-        <div className={`flex ${forMobile ? 'flex-col gap-4' : 'items-start gap-6'}`}>
-          <div className={`${forMobile ? 'w-12 h-12' : 'w-16 h-16'} bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
-            <card.icon className={`${forMobile ? 'w-6 h-6' : 'w-8 h-8'} text-white`} />
+        <div className="flex items-start gap-6">
+          <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+            <card.icon className="w-8 h-8 text-white" />
           </div>
           <div className="flex-1 min-w-0">
-            <div className={`flex ${forMobile ? 'flex-col gap-2' : 'items-center justify-between'} mb-3`}>
-              <h3 className={`font-bold ${forMobile ? 'text-lg' : 'text-2xl'} text-gray-900`}>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-bold text-2xl text-gray-900">
                 {t(`cards.${card.key}.title`)}
               </h3>
-              <span className={`${forMobile ? 'text-xs' : 'text-sm'} font-semibold px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full w-fit`}>
+              <span className="text-sm font-semibold px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full w-fit">
                 {t(`cards.${card.key}.metric`)}
               </span>
             </div>
-            <p className={`text-gray-600 ${forMobile ? 'text-sm' : 'text-lg'} leading-relaxed`}>
+            <p className="text-gray-600 text-lg leading-relaxed">
               {t(`cards.${card.key}.description`)}
             </p>
           </div>
@@ -147,11 +169,13 @@ export default function About() {
         </div>
 
         {/* Horizontal scroll carousel */}
-        <div className="overflow-x-auto scrollbar-hide pb-4">
-          <div className="flex gap-4 px-4 snap-x snap-mandatory" style={{ width: 'max-content' }}>
+        <div className="overflow-x-auto scrollbar-hide pb-4 -mx-4">
+          <div className="flex gap-3 px-4 snap-x snap-mandatory">
             {cards.map((card, index) => (
-              <CardContent key={index} card={card} index={index} forMobile={true} />
+              <MobileCard key={index} card={card} />
             ))}
+            {/* End padding */}
+            <div className="min-w-[1px]"></div>
           </div>
         </div>
 
@@ -205,7 +229,7 @@ export default function About() {
                   className="absolute top-1/2 left-0 right-0 -translate-y-1/2 will-change-transform transition-all duration-500 ease-out"
                   style={{ transformOrigin: 'center center' }}
                 >
-                  <CardContent card={card} index={index} forMobile={false} />
+                  <DesktopCard card={card} />
                 </div>
               ))}
             </div>

@@ -193,45 +193,13 @@ export default function TurbidityMonitoringPage() {
 
             <div className="lg:col-span-5">
               <div ref={heroImageRef} style={{ opacity: 0 }} className="relative">
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-purple-500/20 shadow-2xl">
-                  <div className="text-center mb-6">
-                    <div className="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-2">{t('hero.gaugeLabel')}</div>
-                    <div className="text-6xl font-bold text-white mb-1">4.2</div>
-                    <div className="text-slate-400">{t('hero.gaugeUnit')}</div>
-                  </div>
-
-                  {/* Live monitoring visualization */}
-                  <div className="relative h-24 mb-6 bg-slate-800 rounded-lg overflow-hidden">
-                    <div className="absolute inset-0 flex items-end justify-around px-2">
-                      {[4.1, 4.3, 4.0, 4.2, 4.5, 4.1, 4.2, 4.3, 4.2, 4.1, 4.4, 4.2].map((val, i) => (
-                        <div
-                          key={i}
-                          className="w-4 bg-gradient-to-t from-purple-500 to-violet-400 rounded-t"
-                          style={{ height: `${(val / 10) * 100}%`, opacity: i === 11 ? 1 : 0.5 + (i * 0.04) }}
-                        />
-                      ))}
-                    </div>
-                    <div className="absolute top-2 right-2 flex items-center gap-1 text-xs text-purple-400">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-                      {t('hero.liveLabel')}
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between text-xs text-slate-500 mb-4">
-                    <span>-12h</span>
-                    <span className="text-emerald-400">{t('hero.specLimit')}: &lt;10 NTU</span>
-                    <span>{t('hero.nowLabel')}</span>
-                  </div>
-
-                  <div className="pt-4 border-t border-slate-700">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                        <span className="text-sm text-slate-300">{t('hero.statusWithinSpec')}</span>
-                      </div>
-                      <span className="text-sm text-purple-400">{t('hero.statusOptimized')}</span>
-                    </div>
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-purple-500/20">
+                  <img
+                    src="/data_analytics_device.jpg"
+                    alt="Data Analytics Device"
+                    className="object-cover w-full h-auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-950/60 via-transparent to-transparent" />
                 </div>
               </div>
             </div>
