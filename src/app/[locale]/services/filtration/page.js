@@ -941,7 +941,7 @@ export default function FiltrationPage() {
         </div>
       </section>
 
-      {/* CASE STUDY: ENAP */}
+      {/* CASE STUDY */}
       <section className="border-b border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           {/* Header */}

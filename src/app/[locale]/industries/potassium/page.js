@@ -634,7 +634,7 @@ export default function PotassiumIndustryPage() {
                 <button className="px-8 py-4 bg-white/10 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors">
                   <div className="flex items-center gap-2 justify-center">
                     <Download className="w-5 h-5" />
-                    Caso SQM Salar Atacama
+                    Descargar caso de éxito
                   </div>
                 </button>
               </div>
@@ -651,9 +651,9 @@ export default function PotassiumIndustryPage() {
                   <div className="text-gray-400 text-sm">Respuesta 24 horas</div>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-gray-500 mb-2">Cliente operando</div>
-                  <div className="text-white font-medium">SQM</div>
-                  <div className="text-gray-400 text-sm">Plantas N. Victoria + TEA</div>
+                  <div className="text-sm font-semibold text-gray-500 mb-2">Experiencia</div>
+                  <div className="text-white font-medium">Plantas SX potasio</div>
+                  <div className="text-gray-400 text-sm">Múltiples operaciones activas</div>
                 </div>
               </div>
             </div>

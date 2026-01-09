@@ -816,7 +816,7 @@ export default function EWCleaningServicePage() {
         </div>
       </section>
 
-      {/* SECTION 5: CASE STUDY - Caserones highlight */}
+      {/* SECTION 5: CASE STUDY */}
       <section ref={caseStudiesRef} className="border-b border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           {/* Header */}
@@ -878,7 +878,7 @@ export default function EWCleaningServicePage() {
                 </p>
 
                 {/* CTA */}
-                <Link href="/casos-de-exito/caserones-desborre" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                <Link href="/casos-de-exito" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
                   {t('caseStudy.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
