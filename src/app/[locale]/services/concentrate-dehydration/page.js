@@ -224,6 +224,7 @@ export default function ConcentrateDehydrationServicePage() {
   useIsomorphicLayoutEffect(() => {
     const mm = gsap.matchMedia()
 
+    // Desktop: Pin left column + update theme
     mm.add('(min-width: 1024px)', () => {
       // Pin left column while scrolling through all stats
       if (scrollyContainerRef.current && scrollyLeftRef.current) {
@@ -236,7 +237,7 @@ export default function ConcentrateDehydrationServicePage() {
         })
       }
 
-      // Create triggers for each theme section (stats 0-3, 4-7, 8-11)
+      // Create triggers for each theme section (stats 0-3, 4-7)
       statRefs.current.forEach((ref, index) => {
         if (!ref) return
         const themeIndex = Math.floor(index / 4)
@@ -245,6 +246,22 @@ export default function ConcentrateDehydrationServicePage() {
           trigger: ref,
           start: 'top center',
           end: 'bottom center',
+          onEnter: () => setActiveTheme(themeIndex),
+          onEnterBack: () => setActiveTheme(themeIndex)
+        })
+      })
+    })
+
+    // Mobile: Just update theme on scroll (no pinning)
+    mm.add('(max-width: 1023px)', () => {
+      statRefs.current.forEach((ref, index) => {
+        if (!ref) return
+        const themeIndex = Math.floor(index / 4)
+
+        ScrollTrigger.create({
+          trigger: ref,
+          start: 'top 40%',
+          end: 'bottom 40%',
           onEnter: () => setActiveTheme(themeIndex),
           onEnterBack: () => setActiveTheme(themeIndex)
         })
@@ -405,10 +422,28 @@ export default function ConcentrateDehydrationServicePage() {
 
         <div className="max-w-[1400px] mx-auto px-8 py-24 lg:py-32 relative z-10">
 
+          {/* Mobile: Sticky pills at top */}
+          <div className="lg:hidden sticky top-16 z-20 -mx-8 px-8 py-3 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 mb-6">
+            <div className="flex gap-2">
+              {themeContent.map((theme, idx) => (
+                <button
+                  key={idx}
+                  className={`px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                    activeTheme === idx
+                      ? 'bg-emerald-500 text-white'
+                      : 'bg-gray-800 text-gray-500'
+                  }`}
+                >
+                  {t(`themeContent.${theme.key}.label`)}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* SCROLLYTELLING: One sticky left, all stats scroll on right */}
-          <div ref={scrollyContainerRef} className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left - Sticky with dynamic content */}
-            <div ref={scrollyLeftRef} className="lg:pr-8 pt-8">
+          <div ref={scrollyContainerRef} className="lg:grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left - Sticky with dynamic content (desktop only) */}
+            <div ref={scrollyLeftRef} className="hidden lg:block lg:pr-8 pt-8">
               {/* Theme indicator pills */}
               <div className="flex gap-2 mb-6">
                 {themeContent.map((theme, idx) => (
@@ -658,9 +693,9 @@ export default function ConcentrateDehydrationServicePage() {
               Flota de Filtros Prensa
             </h3>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
               {/* Low capacity */}
-              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Baja</div>
@@ -687,7 +722,7 @@ export default function ConcentrateDehydrationServicePage() {
               </div>
 
               {/* Medium capacity */}
-              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Media</div>
@@ -714,7 +749,7 @@ export default function ConcentrateDehydrationServicePage() {
               </div>
 
               {/* High capacity */}
-              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden">
+              <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Alta</div>
