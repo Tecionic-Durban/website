@@ -3594,21 +3594,21 @@
       "annualSavings": "Ahorro anual típico"
     },
     "problem": {
-      "badge": "El Problema",
-      "title": "Un TIF bajo es síntoma de problemas graves en tu orgánico",
-      "description": "Cuando la tensión interfacial cae por debajo de los valores óptimos, tu circuito SX sufre consecuencias en cascada: emulsiones estables, mayor arrastre, pérdida de extractante y degradación acelerada.",
+      "badge": "Por Qué Importa el TIF",
+      "title": "La tensión interfacial es tu indicador de salud del orgánico",
+      "description": "El TIF correlaciona directamente con el rendimiento de separación de fases. Monitorearlo te permite optimizar el momento de tratamientos, extender la vida del extractante y mantener operaciones eficientes.",
       "symptoms": {
         "emulsions": {
-          "title": "Emulsiones persistentes",
-          "description": "Fases que no separan correctamente en los decantadores, reduciendo capacidad de planta."
+          "title": "Eficiencia de separación",
+          "description": "Un TIF óptimo asegura separación limpia de fases en decantadores, maximizando capacidad de planta."
         },
         "losses": {
-          "title": "Pérdidas de extractante",
-          "description": "Arrastres de orgánico hacia las soluciones acuosas que representan $50K-200K/año en pérdidas."
+          "title": "Preservación de extractante",
+          "description": "Mantener niveles saludables de TIF protege tu inventario de orgánico—valorado en $50K-200K/año."
         },
         "stops": {
-          "title": "Paradas de emergencia",
-          "description": "Problemas de separación que fuerzan detenciones no programadas del circuito SX."
+          "title": "Continuidad operacional",
+          "description": "Monitoreo proactivo de TIF te ayuda a planificar tratamientos y evitar intervenciones no programadas."
         }
       },
       "chartTitle": "Escala de Tensión Interfacial",
@@ -3617,14 +3617,14 @@
         "optimal": "Rango óptimo",
         "warning": "Zona de alerta",
         "critical": "Zona crítica",
-        "warningTitle": "¿Por qué baja el TIF?",
-        "warningText": "Compuestos tensioactivos de degradación oxidativa, sílice, arcillas y contaminantes orgánicos reducen la tensión interfacial."
+        "warningTitle": "¿Qué afecta el TIF?",
+        "warningText": "Compuestos tensioactivos de degradación oxidativa, sílice, arcillas y contaminantes orgánicos influyen en los niveles de tensión interfacial."
       }
     },
     "solution": {
-      "badge": "La Solución",
-      "title": "Monitoreo sistemático de TIF para control predictivo",
-      "description": "Nuestro servicio de medición de TIF te permite anticipar problemas, optimizar tratamientos y maximizar la vida útil de tu inventario de orgánico.",
+      "badge": "Nuestro Servicio",
+      "title": "Análisis profesional de TIF para gestión optimizada del orgánico",
+      "description": "Muestreo experto, análisis de laboratorio certificado, y recomendaciones accionables—todo lo que necesitas para optimizar el momento de tratamientos y extender la vida del extractante.",
       "benefits": {
         "earlyDetection": {
           "title": "Detección temprana",
@@ -3730,8 +3730,8 @@
       }
     },
     "cta": {
-      "title": "Conoce el estado real de tu orgánico",
-      "description": "Una medición de TIF te da visibilidad inmediata sobre la salud de tu circuito SX.",
+      "title": "Obtén análisis profesional de TIF",
+      "description": "Medición experta e insights accionables para optimizar tu inventario de orgánico y timing de tratamientos.",
       "timeline": "Resultados en 48 horas. Sin compromiso.",
       "primaryCta": "Solicitar Medición",
       "secondaryCta": "Ver Tratamiento Orgánico",
@@ -3777,21 +3777,21 @@
       "monitoring": "Monitoreo disponible"
     },
     "problem": {
-      "badge": "El Problema",
-      "title": "Un TSF alto paraliza tu operación",
-      "description": "Cuando las fases no se separan rápidamente, tu circuito SX pierde capacidad, aumentan los arrastres y eventualmente debes parar para limpiar emulsiones acumuladas.",
+      "badge": "Por Qué Importa el TSF",
+      "title": "La velocidad de separación de fases impulsa la eficiencia del circuito",
+      "description": "El TSF indica directamente qué tan bien se separan tus fases orgánica y acuosa. Monitorearlo te permite optimizar throughput, planificar tratamientos proactivamente y mantener el rendimiento máximo del circuito.",
       "symptoms": {
         "slowSeparation": {
-          "title": "Separación lenta",
-          "description": "Fases que tardan más de 120 segundos en separarse indican problemas en el orgánico."
+          "title": "Eficiencia de separación",
+          "description": "Un TSF óptimo (<120 segundos) asegura máxima capacidad de decantadores y throughput."
         },
         "emulsions": {
-          "title": "Emulsiones estables",
-          "description": "Capas de crud y emulsión que se acumulan en los decantadores, reduciendo volumen útil."
+          "title": "Control de emulsiones",
+          "description": "Monitorear TSF te ayuda a gestionar la tendencia a emulsiones y mantener separación limpia."
         },
         "capacity": {
-          "title": "Pérdida de capacidad",
-          "description": "Cada segundo adicional de TSF reduce el throughput de tu circuito SX."
+          "title": "Optimización de throughput",
+          "description": "Menor TSF significa ciclos más rápidos y mayor capacidad del circuito."
         }
       },
       "chartTitle": "Escala de Tiempo de Separación",
@@ -3801,12 +3801,12 @@
         "critical": "Crítico",
         "emergency": "Emergencia",
         "insight": "TSF es un indicador adelantado",
-        "insightText": "El TSF sube antes de que aparezcan problemas visibles. Monitorearlo te da tiempo para actuar."
+        "insightText": "Las tendencias de TSF te dan visibilidad temprana para optimizar el timing de tratamientos."
       }
     },
     "solution": {
-      "badge": "La Solución",
-      "title": "Monitoreo de TSF para control preventivo",
+      "badge": "Nuestro Servicio",
+      "title": "Análisis profesional de TSF para separación optimizada",
       "description": "Medimos el tiempo de separación en ambas continuidades (orgánica y acuosa) para darte una visión completa del comportamiento de fases.",
       "benefits": {
         "earlyWarning": {
@@ -3913,8 +3913,8 @@
       }
     },
     "cta": {
-      "title": "Mide la velocidad real de tu circuito",
-      "description": "Una medición de TSF te muestra exactamente cómo se comporta la separación de fases.",
+      "title": "Obtén análisis profesional de TSF",
+      "description": "Medición experta e insights para optimizar el rendimiento de separación de tu circuito.",
       "timeline": "Resultados en 48 horas. Sin compromiso.",
       "primaryCta": "Solicitar Medición",
       "secondaryCta": "Ver Tratamiento Orgánico",

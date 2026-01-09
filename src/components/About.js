@@ -157,19 +157,19 @@ export default function About() {
   // Mobile layout - horizontal carousel
   if (isMobile) {
     return (
-      <section className="py-16 bg-gradient-to-br from-emerald-50/30 via-white to-gray-50">
-        <div className="px-4 mb-8">
-          <h2 className="text-3xl font-black text-gray-900 mb-4 leading-tight">
+      <section className="py-8 bg-gradient-to-br from-emerald-50/30 via-white to-gray-50">
+        <div className="px-4 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-2 leading-tight">
             {t('headline')}
             <span className="block text-emerald-600">{t('headlineSub')}</span>
           </h2>
-          <p className="text-base text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed">
             {t('description')}
           </p>
         </div>
 
         {/* Horizontal scroll carousel with snap lock */}
-        <div className="overflow-x-auto scrollbar-hide -mx-4 scroll-smooth" style={{ scrollSnapType: 'x mandatory' }}>
+        <div className="overflow-x-auto scrollbar-hide scroll-smooth" style={{ scrollSnapType: 'x mandatory' }}>
           <div className="flex gap-4 px-4">
             {cards.map((card, index) => (
               <MobileCard key={index} card={card} />
@@ -189,13 +189,7 @@ export default function About() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-32 left-[5%] w-36 h-36 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-20 animate-float-slow blur-sm"></div>
         <div className="absolute bottom-24 right-[8%] w-28 h-28 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
-        <div className="absolute top-20 right-[12%] opacity-20">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-            <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
+        
       </div>
 
       {/* Sticky viewport container */}

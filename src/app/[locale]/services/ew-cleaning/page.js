@@ -298,8 +298,10 @@ export default function EWCleaningServicePage() {
     <div className="min-h-screen bg-white">
       {/* HERO SECTION - Stripe-style narrative */}
       <section ref={heroRef} className="relative overflow-hidden bg-white">
-        {/* Current Flow Animation Background - subtle, below text */}
-        <CurrentFlowAnimation variant="hero" className="opacity-30" />
+        {/* Current Flow Animation Background - subtle, below text (hidden on mobile) */}
+        <div className="hidden lg:block">
+          <CurrentFlowAnimation variant="hero" className="opacity-30" />
+        </div>
 
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-emerald-50/30 to-white pointer-events-none"></div>
@@ -367,7 +369,14 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Humidity className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.zeroLoss.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.zeroLoss.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.zeroLoss.description')}
               </p>
@@ -385,7 +394,14 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Flash className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.energySavings.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.energySavings.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.energySavings.description')}
               </p>
@@ -403,7 +419,14 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Certificate className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.cathodeQuality.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.cathodeQuality.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.cathodeQuality.description')}
               </p>
@@ -421,7 +444,14 @@ export default function EWCleaningServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Analytics className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.anodeLife.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.anodeLife.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.anodeLife.description')}
               </p>

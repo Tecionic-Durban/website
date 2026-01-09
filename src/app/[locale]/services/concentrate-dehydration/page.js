@@ -258,8 +258,10 @@ export default function ConcentrateDehydrationServicePage() {
     <div className="min-h-screen bg-white">
       {/* HERO SECTION */}
       <section ref={heroRef} className="relative overflow-hidden bg-white">
-        {/* Compression Animation Background - The signature motif */}
-        <CompressionAnimation variant="hero" cycleDuration={10} className="opacity-60" />
+        {/* Compression Animation Background - The signature motif (hidden on mobile) */}
+        <div className="hidden lg:block">
+          <CompressionAnimation variant="hero" cycleDuration={10} className="opacity-60" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">

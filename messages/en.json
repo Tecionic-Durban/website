@@ -3594,21 +3594,21 @@
       "annualSavings": "Typical annual savings"
     },
     "problem": {
-      "badge": "The Problem",
-      "title": "Low IFT is a symptom of serious problems in your organic",
-      "description": "When interfacial tension falls below optimal values, your SX circuit suffers cascading consequences: stable emulsions, increased entrainment, extractant loss and accelerated degradation.",
+      "badge": "Why IFT Matters",
+      "title": "Interfacial tension is your organic health indicator",
+      "description": "IFT directly correlates with phase separation performance. Tracking it lets you optimize treatment timing, extend extractant life, and maintain efficient operations.",
       "symptoms": {
         "emulsions": {
-          "title": "Persistent emulsions",
-          "description": "Phases that don't separate properly in settlers, reducing plant capacity."
+          "title": "Phase separation efficiency",
+          "description": "Optimal IFT ensures clean phase separation in settlers, maximizing plant capacity."
         },
         "losses": {
-          "title": "Extractant losses",
-          "description": "Organic entrainment to aqueous solutions representing $50K-200K/year in losses."
+          "title": "Extractant preservation",
+          "description": "Maintaining healthy IFT levels protects your organic inventory—worth $50K-200K/year."
         },
         "stops": {
-          "title": "Emergency shutdowns",
-          "description": "Separation problems forcing unplanned SX circuit stops."
+          "title": "Operational continuity",
+          "description": "Proactive IFT monitoring helps you plan treatments and avoid unscheduled interventions."
         }
       },
       "chartTitle": "Interfacial Tension Scale",
@@ -3617,14 +3617,14 @@
         "optimal": "Optimal range",
         "warning": "Warning zone",
         "critical": "Critical zone",
-        "warningTitle": "Why does IFT drop?",
-        "warningText": "Surface-active compounds from oxidative degradation, silica, clays and organic contaminants reduce interfacial tension."
+        "warningTitle": "What affects IFT?",
+        "warningText": "Surface-active compounds from oxidative degradation, silica, clays and organic contaminants influence interfacial tension levels."
       }
     },
     "solution": {
-      "badge": "The Solution",
-      "title": "Systematic IFT monitoring for predictive control",
-      "description": "Our IFT measurement service allows you to anticipate problems, optimize treatments and maximize the life of your organic inventory.",
+      "badge": "Our Service",
+      "title": "Professional IFT analysis for optimized organic management",
+      "description": "Expert sampling, certified lab analysis, and actionable recommendations—everything you need to optimize treatment timing and extend extractant life.",
       "benefits": {
         "earlyDetection": {
           "title": "Early detection",
@@ -3730,8 +3730,8 @@
       }
     },
     "cta": {
-      "title": "Know the real state of your organic",
-      "description": "An IFT measurement gives you immediate visibility into your SX circuit health.",
+      "title": "Get professional IFT analysis",
+      "description": "Expert measurement and actionable insights to optimize your organic inventory and treatment timing.",
       "timeline": "Results in 48 hours. No commitment.",
       "primaryCta": "Request Measurement",
       "secondaryCta": "See Organic Treatment",
@@ -3777,21 +3777,21 @@
       "monitoring": "Monitoring available"
     },
     "problem": {
-      "badge": "The Problem",
-      "title": "High PST paralyzes your operation",
-      "description": "When phases don't separate quickly, your SX circuit loses capacity, entrainment increases and eventually you must stop to clean accumulated emulsions.",
+      "badge": "Why PST Matters",
+      "title": "Phase separation speed drives circuit efficiency",
+      "description": "PST directly indicates how well your organic and aqueous phases separate. Tracking it lets you optimize throughput, plan treatments proactively, and maintain peak circuit performance.",
       "symptoms": {
         "slowSeparation": {
-          "title": "Slow separation",
-          "description": "Phases taking more than 120 seconds to separate indicate organic problems."
+          "title": "Separation efficiency",
+          "description": "Optimal PST (<120 seconds) ensures maximum settler capacity and throughput."
         },
         "emulsions": {
-          "title": "Stable emulsions",
-          "description": "Crud and emulsion layers accumulating in settlers, reducing useful volume."
+          "title": "Emulsion control",
+          "description": "Monitoring PST helps you manage emulsion tendency and maintain clean separation."
         },
         "capacity": {
-          "title": "Capacity loss",
-          "description": "Each additional second of PST reduces your SX circuit throughput."
+          "title": "Throughput optimization",
+          "description": "Lower PST means faster cycles and higher circuit capacity."
         }
       },
       "chartTitle": "Phase Separation Time Scale",
@@ -3801,12 +3801,12 @@
         "critical": "Critical",
         "emergency": "Emergency",
         "insight": "PST is a leading indicator",
-        "insightText": "PST rises before visible problems appear. Monitoring it gives you time to act."
+        "insightText": "PST trends give you early visibility to optimize treatment timing."
       }
     },
     "solution": {
-      "badge": "The Solution",
-      "title": "PST monitoring for preventive control",
+      "badge": "Our Service",
+      "title": "Professional PST analysis for optimized separation",
       "description": "We measure separation time in both continuities (organic and aqueous) to give you a complete view of phase behavior.",
       "benefits": {
         "earlyWarning": {
@@ -3913,8 +3913,8 @@
       }
     },
     "cta": {
-      "title": "Measure your circuit's real speed",
-      "description": "A PST measurement shows you exactly how phase separation behaves.",
+      "title": "Get professional PST analysis",
+      "description": "Expert measurement and insights to optimize your circuit's separation performance.",
       "timeline": "Results in 48 hours. No commitment.",
       "primaryCta": "Request Measurement",
       "secondaryCta": "See Organic Treatment",

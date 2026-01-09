@@ -74,26 +74,17 @@ export default function Services() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-32 left-[10%] w-32 h-32 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
         <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
-
-        {/* Strategic three ball accent */}
-        <div className="absolute top-24 right-[8%] opacity-20">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-            <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
       </div>
 
       <div className="max-w-8xl mx-auto px-8 relative">
         {/* Enterprise Header */}
-        <div className="text-center mb-20 progressive-reveal">
-          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
+        <div className="mb-6 lg:mb-20 progressive-reveal">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 lg:mb-6 leading-tight enterprise-slide-up">
             {t('headline')}
-            <span className="block text-emerald-600 gradient-text-animated">{t('headlineSub')}</span>
+            <span className="block text-emerald-600">{t('headlineSub')}</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
+          <p className="text-lg text-gray-600 max-w-4xl leading-relaxed progressive-reveal">
             {t('description')}
           </p>
         </div>
@@ -166,34 +157,25 @@ export default function Services() {
         </div>
 
         {/* Enterprise CTA Section */}
-        <div className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 rounded-3xl p-12 md:p-16 text-white text-center overflow-hidden progressive-reveal">
+        <div className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 rounded-3xl p-6 lg:p-16 text-white text-center overflow-hidden progressive-reveal">
           {/* Sophisticated background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-8 right-12 w-20 h-20 bg-emerald-600/20 rounded-full animate-float-slow blur-sm"></div>
             <div className="absolute bottom-8 left-12 w-16 h-16 bg-emerald-500/25 rounded-full animate-float-medium blur-sm"></div>
-
-            {/* Strategic three ball constellation */}
-            <div className="absolute top-6 left-6 opacity-30">
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-                <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-              </div>
-            </div>
           </div>
 
           <div className="relative z-10">
-            <h3 className="text-4xl lg:text-5xl font-black mb-6 gradient-text-animated">
+            <h3 className="text-2xl lg:text-5xl font-black mb-4 lg:mb-6 gradient-text-animated">
               {t('cta.headline')}
             </h3>
-            <p className="text-xl text-emerald-100 mb-10 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-emerald-100 mb-6 lg:mb-10 max-w-4xl mx-auto leading-relaxed">
               {t('cta.description')} <span className="font-semibold text-emerald-300">{t('cta.flexibility')}</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <button
                 onClick={(e) => handleContactClick(e, router, '/services')}
-                className="group relative bg-white text-emerald-900 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover cursor-pointer"
+                className="group relative bg-white text-emerald-900 px-6 py-3 lg:px-10 lg:py-5 rounded-xl lg:rounded-2xl font-bold text-base lg:text-lg transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover cursor-pointer"
                 suppressHydrationWarning
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-emerald-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
@@ -203,7 +185,7 @@ export default function Services() {
 
               <button
                 onClick={() => router.push('/casos-de-exito')}
-                className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm relative overflow-hidden sophisticated-hover cursor-pointer"
+                className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-6 py-3 lg:px-10 lg:py-5 rounded-xl lg:rounded-2xl font-semibold text-base lg:text-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm relative overflow-hidden sophisticated-hover cursor-pointer"
                 suppressHydrationWarning
               >
                 <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>

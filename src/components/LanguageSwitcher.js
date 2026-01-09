@@ -7,22 +7,11 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 
 const localeConfig = {
-  'es-cl': { name: 'Español', flag: 'CL', shortName: 'ES-CL' },
-  'es-mx': { name: 'Español', flag: 'MX', shortName: 'ES-MX' },
-  'pt-br': { name: 'Português', flag: 'BR', shortName: 'PT-BR' },
-  'en': { name: 'English', flag: 'US', shortName: 'EN' }
+  'es-cl': { name: 'Español (Chile)', code: 'CL' },
+  'es-mx': { name: 'Español (México)', code: 'MX' },
+  'pt-br': { name: 'Português (Brasil)', code: 'BR' },
+  'en': { name: 'English (US)', code: 'US' }
 };
-
-// Simple flag emoji component
-function FlagEmoji({ code }) {
-  const flags = {
-    'CL': '\u{1F1E8}\u{1F1F1}',
-    'MX': '\u{1F1F2}\u{1F1FD}',
-    'BR': '\u{1F1E7}\u{1F1F7}',
-    'US': '\u{1F1FA}\u{1F1F8}'
-  };
-  return <span className="text-base">{flags[code] || code}</span>;
-}
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -59,12 +48,12 @@ export default function LanguageSwitcher() {
         aria-expanded={isOpen}
       >
         <Globe className="w-4 h-4" />
-        <span className="hidden sm:inline">{currentLocale.shortName}</span>
+        <span className="font-bold">{currentLocale.code}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-100 rounded-xl shadow-lg z-50 overflow-hidden">
+        <div className="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-lg z-50 overflow-hidden">
           <div className="py-1">
             {routing.locales.map((loc) => {
               const config = localeConfig[loc];
@@ -80,7 +69,9 @@ export default function LanguageSwitcher() {
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  <FlagEmoji code={config.flag} />
+                  <span className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-xs font-bold text-gray-600">
+                    {config.code}
+                  </span>
                   <span>{config.name}</span>
                   {isActive && (
                     <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">

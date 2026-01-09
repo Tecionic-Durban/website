@@ -98,163 +98,167 @@ export default function EfficiencyComparison() {
   }
 
   return (
-    <section ref={comparisonRef} className="py-16 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
-      {/* Enterprise Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Sophisticated floating elements */}
+    <section ref={comparisonRef} className="py-8 lg:py-16 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
+      {/* Enterprise Background Elements - hidden on mobile */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
         <div className="absolute top-20 left-[10%] w-24 h-24 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
         <div className="absolute bottom-20 right-[15%] w-20 h-20 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
-
-        {/* Strategic three ball accent */}
-        <div className="absolute top-16 right-[8%] opacity-20">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-            <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
+        
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 relative">
-        {/* Compact Enterprise Header */}
-        <div className="text-center mb-12 progressive-reveal">
-          <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4 leading-tight enterprise-slide-up">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative">
+        {/* Header */}
+        <div className="mb-4 lg:mb-12 progressive-reveal">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 lg:mb-4 leading-tight">
             {t('headline')}
-            <span className="block text-emerald-600 gradient-text-animated">{t('headlineSub')}</span>
+            <span className="block text-emerald-600">{t('headlineSub')}</span>
           </h2>
-
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed progressive-reveal">
+          <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
             {t('description')} <span className="font-semibold text-emerald-600">{t('interactiveSlider')}</span> {t('toSeeTransformation')}
           </p>
         </div>
 
-        {/* Compact Comparison Interface */}
-        <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl layered-shadow-hover border border-emerald-100/50 overflow-hidden progressive-reveal">
-          {/* Compact Header */}
-          <div className={`relative ${getColorClass(currentCase.color)} p-6 text-white overflow-hidden`}>
-            {/* Strategic three ball constellation */}
-            <div className="absolute top-3 left-3 opacity-30">
-              <div className="flex items-center space-x-1">
-                <div className="w-1.5 h-1.5 bg-white rounded-full enterprise-pulse"></div>
-                <div className="w-1.5 h-1.5 bg-white/80 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-1.5 h-1.5 bg-white/60 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-              </div>
-            </div>
-
+        {/* Mobile: No card wrapper / Desktop: Card wrapper */}
+        <div className="lg:bg-white/90 lg:backdrop-blur-sm lg:rounded-2xl lg:border lg:border-emerald-100/50 lg:shadow-lg overflow-hidden progressive-reveal">
+          {/* Case Study Header */}
+          <div className={`relative ${getColorClass(currentCase.color)} p-4 lg:p-6 text-white overflow-hidden rounded-xl lg:rounded-none mb-4 lg:mb-0`}>
             <div className="relative z-10">
-              <div>
-                <h3 className="text-2xl font-black">{currentCase.name}</h3>
-                <p className="text-white/75 text-sm font-medium">{currentCase.location}</p>
-              </div>
+              <h3 className="text-xl lg:text-2xl font-bold">{currentCase.name}</h3>
+              <p className="text-white/80 text-sm">{currentCase.location}</p>
             </div>
           </div>
 
-          <div className="p-6">
-
-          {/* Compact Slider Interface */}
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-gray-400/20 rounded-lg flex items-center justify-center">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full enterprise-pulse"></div>
-                </div>
-                <span className="text-gray-500 font-bold text-sm tracking-wide">{t('before')}</span>
+          <div className="lg:p-6">
+            {/* Slider Interface */}
+            <div className="mb-4 lg:mb-8">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-gray-500 font-semibold text-sm">{t('before')}</span>
+                <span className="text-emerald-600 font-semibold text-sm">{t('after')}</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-emerald-600 font-bold text-sm tracking-wide">{t('after')}</span>
-                <div className="w-4 h-4 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse"></div>
-                </div>
+              <div className="relative bg-gray-100 rounded-xl p-4 lg:p-6">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={sliderPosition}
+                  onChange={(e) => setSliderPosition(parseInt(e.target.value))}
+                  className="w-full h-3 bg-transparent rounded-full appearance-none cursor-pointer slider-modern"
+                  style={{
+                    background: `linear-gradient(to right, #10b981 0%, #10b981 ${sliderPosition}%, #d1d5db ${sliderPosition}%, #d1d5db 100%)`,
+                  }}
+                  suppressHydrationWarning
+                />
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-6 border border-emerald-200/30 backdrop-blur-sm shadow-inner">
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={sliderPosition}
-                onChange={(e) => setSliderPosition(parseInt(e.target.value))}
-                className="w-full h-3 bg-transparent rounded-full appearance-none cursor-pointer slider-modern"
-                style={{
-                  background: `linear-gradient(to right, #10b981 0%, #10b981 ${sliderPosition}%, #d1d5db ${sliderPosition}%, #d1d5db 100%)`,
-                }}
-                suppressHydrationWarning
-              />
-            </div>
-          </div>
+            {/* Mobile: Horizontal scroll KPIs */}
+            <div className="lg:hidden overflow-x-auto pb-2 scrollbar-hide" style={{ scrollSnapType: 'x mandatory' }}>
+              <div className="flex gap-3 px-4 lg:px-0" style={{ width: 'max-content' }}>
+                <div className="bg-white rounded-xl p-4 text-center min-w-[140px] border border-gray-200 shadow-sm snap-center">
+                  <Dashboard className={`w-5 h-5 mx-auto mb-2 ${getColorClass(currentCase.color, 'text')}`} />
+                  <div className="text-2xl font-bold text-gray-900">
+                    {animatedMetrics.efficiency || currentCase.before.efficiency}%
+                  </div>
+                  <div className="text-gray-600 text-xs font-medium">{t('metrics.efficiency')}</div>
+                  <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                    {sliderPosition > 80 ? currentCase.improvements.efficiency : '—'}
+                  </div>
+                </div>
 
-          {/* Compact Metrics Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
-            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
-              <div className="relative z-10">
+                <div className="bg-white rounded-xl p-4 text-center min-w-[140px] border border-gray-200 shadow-sm snap-center">
+                  <Growth className="w-5 h-5 text-blue-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900">
+                    {((animatedMetrics.production || currentCase.before.production) / 1000).toFixed(0)}k
+                  </div>
+                  <div className="text-gray-600 text-xs font-medium">{t('metrics.production')}</div>
+                  <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                    {sliderPosition > 80 ? currentCase.improvements.production : '—'}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-4 text-center min-w-[140px] border border-gray-200 shadow-sm snap-center">
+                  <Time className="w-5 h-5 text-yellow-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900">
+                    {animatedMetrics.downtime !== undefined ? animatedMetrics.downtime : currentCase.before.downtime}d
+                  </div>
+                  <div className="text-gray-600 text-xs font-medium">{t('metrics.downtime')}</div>
+                  <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                    {sliderPosition > 80 ? currentCase.improvements.downtime : '—'}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-4 text-center min-w-[140px] border border-gray-200 shadow-sm snap-center">
+                  <ArrowDown className="w-5 h-5 text-purple-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900">
+                    {animatedMetrics.dragLosses || currentCase.before.dragLosses}m³
+                  </div>
+                  <div className="text-gray-600 text-xs font-medium">{t('metrics.dragLosses')}</div>
+                  <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                    {sliderPosition > 80 ? currentCase.improvements.dragLosses : '—'}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-4 text-center min-w-[140px] border border-gray-200 shadow-sm snap-center">
+                  <Currency className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900">
+                    ${((animatedMetrics.savings || currentCase.before.savings) / 1000).toFixed(0)}k
+                  </div>
+                  <div className="text-gray-600 text-xs font-medium">{t('metrics.monthlySavings')}</div>
+                  <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                    {sliderPosition > 80 ? currentCase.improvements.savings : '—'}
+                  </div>
+                </div>
+                <div className="min-w-4"></div>
+              </div>
+            </div>
+
+            {/* Desktop: Grid KPIs */}
+            <div className="hidden lg:grid grid-cols-5 gap-3">
+              <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-100 hover:shadow-md transition-all">
                 <Dashboard className={`w-6 h-6 mx-auto mb-2 ${getColorClass(currentCase.color, 'text')}`} />
-                <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {animatedMetrics.efficiency || currentCase.before.efficiency}%
-                </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.efficiency')}</div>
-                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                <div className="text-xl font-bold text-gray-800">{animatedMetrics.efficiency || currentCase.before.efficiency}%</div>
+                <div className="text-gray-600 text-sm font-medium">{t('metrics.efficiency')}</div>
+                <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.efficiency : '---'}
                 </div>
               </div>
-              <div
-                className={`absolute bottom-0 left-0 transition-all duration-500 ${getColorClass(currentCase.color)}/10`}
-                style={{ width: '100%', height: `${(animatedMetrics.efficiency || currentCase.before.efficiency)}%` }}
-              ></div>
-            </div>
 
-            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
-              <div className="relative z-10">
+              <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-100 hover:shadow-md transition-all">
                 <Growth className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {(animatedMetrics.production || currentCase.before.production).toLocaleString()}
-                </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.production')}</div>
-                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                <div className="text-lg font-bold text-gray-800">{(animatedMetrics.production || currentCase.before.production).toLocaleString()}</div>
+                <div className="text-gray-600 text-sm font-medium">{t('metrics.production')}</div>
+                <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.production : '---'}
                 </div>
               </div>
-            </div>
 
-            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
-              <div className="relative z-10">
+              <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-100 hover:shadow-md transition-all">
                 <Time className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
-                <div className="text-xl font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {animatedMetrics.downtime !== undefined ? animatedMetrics.downtime : currentCase.before.downtime} {t('metrics.downtimeDays')}
-                </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.downtime')}</div>
-                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                <div className="text-xl font-bold text-gray-800">{animatedMetrics.downtime !== undefined ? animatedMetrics.downtime : currentCase.before.downtime} {t('metrics.downtimeDays')}</div>
+                <div className="text-gray-600 text-sm font-medium">{t('metrics.downtime')}</div>
+                <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.downtime : '---'}
                 </div>
               </div>
-            </div>
 
-            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
-              <div className="relative z-10">
+              <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-100 hover:shadow-md transition-all">
                 <ArrowDown className="w-6 h-6 text-purple-600 mx-auto mb-2" />
-                <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
-                  {animatedMetrics.dragLosses || currentCase.before.dragLosses} m³
-                </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.dragLosses')}</div>
-                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                <div className="text-lg font-bold text-gray-800">{animatedMetrics.dragLosses || currentCase.before.dragLosses} m³</div>
+                <div className="text-gray-600 text-sm font-medium">{t('metrics.dragLosses')}</div>
+                <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.dragLosses : '---'}
                 </div>
               </div>
-            </div>
 
-            <div className="bg-gray-50 rounded-lg p-4 text-center relative overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300">
-              <div className="relative z-10">
+              <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-100 hover:shadow-md transition-all">
                 <Currency className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                <div className="text-lg font-bold mb-1 transition-all duration-500 text-gray-800">
-                  ${(animatedMetrics.savings || currentCase.before.savings).toLocaleString()}
-                </div>
-                <div className="text-gray-600 text-sm font-medium mb-1">{t('metrics.monthlySavings')}</div>
-                <div className={`text-xs font-semibold ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
+                <div className="text-lg font-bold text-gray-800">${(animatedMetrics.savings || currentCase.before.savings).toLocaleString()}</div>
+                <div className="text-gray-600 text-sm font-medium">{t('metrics.monthlySavings')}</div>
+                <div className={`text-xs font-semibold mt-1 ${sliderPosition > 80 ? 'text-emerald-600' : 'text-gray-400'}`}>
                   {sliderPosition > 80 ? currentCase.improvements.savings : '---'}
                 </div>
               </div>
             </div>
-          </div>
 
           </div>
         </div>

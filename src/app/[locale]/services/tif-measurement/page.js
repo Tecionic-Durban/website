@@ -280,8 +280,8 @@ export default function TifMeasurementPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left - Problem statement */}
             <div>
-              <span className="inline-flex items-center px-3 py-1 bg-red-100 text-red-700 text-sm font-semibold rounded-full mb-6">
-                <AlertTriangle className="w-4 h-4 mr-2" />
+              <span className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-6">
+                <Chemistry className="w-4 h-4 mr-2" />
                 {t('problem.badge')}
               </span>
 
@@ -294,24 +294,24 @@ export default function TifMeasurementPage() {
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
-                  <TrendingDown className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                  <TrendingUp className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.emulsions.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.emulsions.description')}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
-                  <DollarSign className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                  <DollarSign className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.losses.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.losses.description')}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
-                  <Clock className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.stops.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.stops.description')}</p>

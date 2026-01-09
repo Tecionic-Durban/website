@@ -285,8 +285,8 @@ export default function TurbidityMonitoringPage() {
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-flex items-center px-3 py-1 bg-red-100 text-red-700 text-sm font-semibold rounded-full mb-6">
-                <AlertTriangle className="w-4 h-4 mr-2" />
+              <span className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-6">
+                <Analytics className="w-4 h-4 mr-2" />
                 {t('problem.badge')}
               </span>
 
@@ -299,24 +299,24 @@ export default function TurbidityMonitoringPage() {
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
-                  <Clock className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                  <Droplets className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.labDelay.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.labDelay.description')}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
-                  <Waves className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                  <BarChart3 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.variability.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.variability.description')}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
-                  <Factory className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                  <Target className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.quality.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.quality.description')}</p>

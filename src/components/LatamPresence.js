@@ -2,7 +2,7 @@
 
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { Globe2, ArrowRight } from 'lucide-react'
+import { Globe2, ArrowRight, ChevronRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
@@ -49,28 +49,28 @@ export default function LatamPresence() {
       {/* Mobile: Globe on right as background, content on left (Stripe-style) */}
       <div className="lg:hidden relative min-h-[600px] overflow-hidden">
         {/* Globe positioned on right edge as ambient background */}
-        <div className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-90 pointer-events-none">
+        <div className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60 pointer-events-none">
           <LatamGlobe mobile={true} className="w-full h-full" />
         </div>
 
         {/* Content on left, overlapping globe */}
-        <div className="relative z-10 py-12 px-4">
+        <div className="relative z-10 py-6 px-4">
           {/* Header */}
-          <div className="max-w-[75%] mb-10">
+          <div className="max-w-[75%] mb-5">
             <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
               {t('badge')}
             </span>
-            <h2 className="text-2xl font-bold text-white mb-3">
+            <h2 className="text-4xl font-bold text-white mb-3">
               {t('headline')}<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('headlineSub')}</span>
             </h2>
-            <p className="text-base text-slate-400">
+            <p className="text-lg text-slate-300">
               {t('description')}
             </p>
           </div>
 
           {/* Mobile content - stats style like Stripe */}
-          <div className="space-y-6 max-w-[80%]">
+          <div className="space-y-4 max-w-[80%]">
             {/* Mobile equipment callout */}
             <div className="border-l-2 border-emerald-500 pl-4">
               <p className="text-white text-lg font-bold mb-1">{t('mobileEquipment.title')}</p>
@@ -102,10 +102,10 @@ export default function LatamPresence() {
                   <Link
                     key={index}
                     href={industry.href}
-                    className="flex items-center gap-2 bg-slate-800/50 px-3 py-1.5 rounded-lg group"
+                    className="flex items-center gap-1 bg-slate-800/50 px-3 py-1.5 rounded-lg group"
                   >
-                    <div className={`w-2 h-2 rounded-full ${industry.color}`} />
                     <span className="text-white text-sm group-hover:text-emerald-400 transition-colors">{t(`industries.${industry.key}`)}</span>
+                    <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition-colors" />
                   </Link>
                 ))}
               </div>

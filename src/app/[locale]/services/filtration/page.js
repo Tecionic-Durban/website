@@ -51,8 +51,12 @@ function RecoverySection({ t }) {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Hero stat with title and tabs */}
           <div className="relative">
-            {/* Decorative circle - large, mostly off-page, just showing curvature */}
-            <div className="absolute -bottom-[350px] -left-[300px] w-[900px] h-[900px] bg-gradient-to-br from-emerald-100/50 to-emerald-50/30 rounded-full -z-10"></div>
+            {/* Decorative circle - responsive positioning */}
+            {/* Mobile: covers from header to tabs, Desktop: original off-page curvature */}
+            <div className="absolute
+              -top-20 -left-20 w-[600px] h-[600px]
+              lg:-bottom-[350px] lg:-left-[300px] lg:top-auto lg:w-[900px] lg:h-[900px]
+              bg-gradient-to-br from-emerald-100/50 to-emerald-50/30 rounded-full -z-10"></div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t('recovery.title')}
@@ -220,8 +224,10 @@ export default function FiltrationPage() {
     <div className="min-h-screen bg-white">
       {/* SECTION 1: HERO - Matching organic-treatment style */}
       <section className="relative overflow-hidden bg-white">
-        {/* Borra Separation Animation - The signature motif */}
-        <BorraSeparationAnimation variant="hero" cycleDuration={10} className="opacity-60" />
+        {/* Borra Separation Animation - The signature motif (hidden on mobile) */}
+        <div className="hidden lg:block">
+          <BorraSeparationAnimation variant="hero" cycleDuration={10} className="opacity-60" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
@@ -284,7 +290,14 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Flash className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.efficiency.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.efficiency.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.efficiency.description')}
               </p>
@@ -302,7 +315,14 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Currency className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.value.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.value.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.value.description')}
               </p>
@@ -320,7 +340,14 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Enterprise className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.storage.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.storage.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.storage.description')}
               </p>
@@ -338,7 +365,14 @@ export default function FiltrationPage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <ArrowDownRight className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.costs.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.costs.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.costs.description')}
               </p>
@@ -434,7 +468,8 @@ export default function FiltrationPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          {/* Desktop: Grid layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-8">
             {/* Left: Protection for EW */}
             <div className="bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30">
               <div className="mb-6">
@@ -512,8 +547,65 @@ export default function FiltrationPage() {
             </div>
           </div>
 
-          {/* Result stats */}
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+          {/* Mobile: Horizontal carousel with dots */}
+          <div className="lg:hidden">
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+              {/* Card 1: Electrolito + E1/E2 stats */}
+              <div className="bg-emerald-500/10 rounded-2xl p-6 border border-emerald-500/30 flex-shrink-0 w-[85vw] snap-center">
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold text-white">{t('productQuality.cleanElectrolyte.title')}</h3>
+                  <p className="text-xs text-emerald-300">{t('productQuality.cleanElectrolyte.subtitle')}</p>
+                </div>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.purity.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.purity.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.cells.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.cells.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.extractant.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.extractant.description')}</p></div></div>
+                </div>
+                {/* E1/E2 Stats */}
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-emerald-500/20">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.e1')}</div>
+                    <div className="text-xs text-gray-400">{t('productQuality.stages.clean')}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.e2')}</div>
+                    <div className="text-xs text-gray-400">{t('productQuality.stages.clean')}</div>
+                  </div>
+                </div>
+              </div>
+              {/* Card 2: Refinado + S1/S2 stats */}
+              <div className="bg-emerald-500/10 rounded-2xl p-6 border border-emerald-500/30 flex-shrink-0 w-[85vw] snap-center">
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold text-white">{t('productQuality.cleanRaffinate.title')}</h3>
+                  <p className="text-xs text-emerald-300">{t('productQuality.cleanRaffinate.subtitle')}</p>
+                </div>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.concentrated.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.concentrated.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.heaps.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.heaps.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.kerosene.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.kerosene.description')}</p></div></div>
+                </div>
+                {/* S1/S2 Stats */}
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-emerald-500/20">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.s1')}</div>
+                    <div className="text-xs text-gray-400">{t('productQuality.stages.clean')}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.s2')}</div>
+                    <div className="text-xs text-gray-400">{t('productQuality.stages.clean')}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400/30"></div>
+            </div>
+          </div>
+          {/* Result stats - hidden on mobile, shown in carousel cards */}
+          <div className="hidden lg:grid mt-12 grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-4xl font-bold text-emerald-400 mb-1">{t('productQuality.stages.e1')}</div>
               <div className="text-sm text-gray-400">{t('productQuality.stages.clean')}</div>

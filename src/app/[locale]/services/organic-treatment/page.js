@@ -453,11 +453,15 @@ export default function OrganicTreatmentServicePage() {
     <div className="min-h-screen bg-white">
       {/* SECTION 1: HERO */}
       <section className="relative overflow-hidden bg-white">
-        {/* Interface Line Background - The signature motif */}
-        <InterfaceLineAnimated variant="hero" cycleDuration={10} className="opacity-60" />
+        {/* Interface Line Background - The signature motif (hidden on mobile) */}
+        <div className="hidden lg:block">
+          <InterfaceLineAnimated variant="hero" cycleDuration={10} className="opacity-60" />
+        </div>
 
-        {/* Subtle phase separation background */}
-        <PhaseSeparationBackground variant="light" interfacePosition={55} showInterface={false} />
+        {/* Subtle phase separation background (hidden on mobile) */}
+        <div className="hidden lg:block">
+          <PhaseSeparationBackground variant="light" interfacePosition={55} showInterface={false} />
+        </div>
 
         <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
@@ -521,7 +525,14 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Time className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.lifespan.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.lifespan.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.lifespan.description')}
               </p>
@@ -539,7 +550,14 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <FlashFilled className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.separation.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.separation.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.separation.description')}
               </p>
@@ -557,7 +575,14 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Filter className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.entrainment.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.entrainment.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.entrainment.description')}
               </p>
@@ -575,7 +600,14 @@ export default function OrganicTreatmentServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Chemistry className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.crud.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden flex-col items-center gap-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.crud.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.crud.description')}
               </p>

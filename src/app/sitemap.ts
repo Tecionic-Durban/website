@@ -28,6 +28,11 @@ const routes = [
   { path: '/services/fine-solids', changeFrequency: 'monthly' as const, priority: 0.85 },
   { path: '/services/maintenance', changeFrequency: 'monthly' as const, priority: 0.85 },
 
+  // Analytics & Monitoring services - high priority (new data services)
+  { path: '/services/tif-measurement', changeFrequency: 'monthly' as const, priority: 0.85 },
+  { path: '/services/tsf-monitoring', changeFrequency: 'monthly' as const, priority: 0.85 },
+  { path: '/services/turbidity-monitoring', changeFrequency: 'monthly' as const, priority: 0.85 },
+
   // Case studies - medium-high priority (trust signals)
   { path: '/casos-de-exito', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/casos-de-exito/deshidratacion-concentrados', changeFrequency: 'monthly' as const, priority: 0.7 },

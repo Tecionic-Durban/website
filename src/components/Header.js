@@ -1,20 +1,42 @@
 // src/components/Header.js
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { handleContactClick } from '@/utils/navigation'
-import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, Analytics, ChartLineData, Meter, CertificateCheck } from '@carbon/icons-react'
+import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, Analytics, ChartLineData, Meter, CertificateCheck, ArrowLeft, ChevronRight } from '@carbon/icons-react'
 import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openMobileSection, setOpenMobileSection] = useState(null)
+  const [mobilePanel, setMobilePanel] = useState('main') // 'main', 'services', 'industries', 'resources'
   const [activeServiceTab, setActiveServiceTab] = useState('operaciones')
   const pathname = usePathname()
   const router = useRouter()
+  const locale = useLocale()
   const t = useTranslations()
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMenuOpen])
+
+  // Language config for mobile display
+  const localeConfig = {
+    'es-cl': { name: 'Español (Chile)', flag: '🇨🇱' },
+    'es-mx': { name: 'Español (México)', flag: '🇲🇽' },
+    'pt-br': { name: 'Português (Brasil)', flag: '🇧🇷' },
+    'en': { name: 'English', flag: '🇺🇸' }
+  }
 
   const navigation = [
     { name: t('navigation.services'), href: '/services', key: 'services' },
@@ -25,6 +47,11 @@ export default function Header() {
 
   const toggleMobileSection = (section) => {
     setOpenMobileSection(openMobileSection === section ? null : section)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false)
+    setMobilePanel('main')
   }
 
   return (
@@ -122,16 +149,6 @@ export default function Header() {
                           }`}
                         >
                           {t('header.dataAnalytics')}
-                        </button>
-                        <button
-                          onMouseEnter={() => setActiveServiceTab('calidad')}
-                          className={`w-full text-left px-6 py-3 text-sm font-medium transition-colors ${
-                            activeServiceTab === 'calidad'
-                              ? 'text-emerald-600 bg-emerald-50 border-l-2 border-emerald-600'
-                              : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50 border-l-2 border-transparent'
-                          }`}
-                        >
-                          {t('header.qualityControl')}
                         </button>
                       </div>
 
@@ -231,29 +248,6 @@ export default function Header() {
                           </>
                         )}
 
-                        {/* Control de Calidad Tab Content */}
-                        {activeServiceTab === 'calidad' && (
-                          <>
-                            <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                              <a href="/services/humidity-certification" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
-                                <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-blue-50 to-blue-100 group-hover/item:from-blue-500 group-hover/item:to-blue-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
-                                  <CertificateCheck className="w-5 h-5 text-blue-600 group-hover/item:text-white transition-colors duration-200" />
-                                </div>
-                                <div>
-                                  <div className="font-medium">{t('header.services.humidityCertification.name')}</div>
-                                  <div className="text-xs text-gray-500">{t('header.services.humidityCertification.description')}</div>
-                                </div>
-                              </a>
-                            </div>
-
-                            {/* Coming soon indicator */}
-                            <div className="mt-6 pt-4 border-t border-gray-100">
-                              <p className="text-xs text-gray-400">
-                                {t('header.qualityComingSoon')}
-                              </p>
-                            </div>
-                          </>
-                        )}
                       </div>
                     </div>
                   </div>
@@ -454,164 +448,300 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation - Accordion Style */}
+        {/* Mobile Navigation - Full Screen Slide */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 py-4 max-h-[calc(100vh-80px)] overflow-y-auto">
-            <nav className="flex flex-col space-y-2">
-              {/* Servicios Accordion */}
-              <div>
-                <button
-                  onClick={() => toggleMobileSection('servicios')}
-                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-                >
-                  <span>{t('navigation.services')}</span>
-                  <svg
-                    className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'servicios' ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
-                  </svg>
-                </button>
-                {openMobileSection === 'servicios' && (
-                  <div className="pl-4 pr-2 py-2 bg-gray-50 rounded-lg mt-1">
-                    {/* Servicios Operacionales */}
-                    <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 py-2">
-                      {t('header.operationalServices')}
-                    </div>
-                    <Link href="/services/filtration" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.filtration.name')}
-                    </Link>
-                    <Link href="/services/organic-treatment" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.organicTreatment.name')}
-                    </Link>
-                    <Link href="/services/concentrate-dehydration" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.concentrateDehydration.name')}
-                    </Link>
-                    <Link href="/services/fine-solids" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.fineSolids.name')}
-                    </Link>
-                    <Link href="/services/ew-cleaning" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.ewCleaning.name')}
-                    </Link>
-
-                    {/* Analítica de Datos */}
-                    <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 py-2 mt-3 border-t border-gray-200 pt-3">
-                      {t('header.dataAnalytics')}
-                    </div>
-                    <Link href="/services/turbidity-monitoring" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.turbidityMonitoring.name')}
-                    </Link>
-                    <Link href="/services/tsf-monitoring" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.tsfMonitoring.name')}
-                    </Link>
-                    <Link href="/services/tif-measurement" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-600 hover:bg-white rounded transition-colors">
-                      {t('header.services.tifMeasurement.name')}
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Industrias Accordion */}
-              <div>
-                <button
-                  onClick={() => toggleMobileSection('industrias')}
-                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-                >
-                  <span>{t('navigation.industries')}</span>
-                  <svg
-                    className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'industrias' ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
-                  </svg>
-                </button>
-                {openMobileSection === 'industrias' && (
-                  <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
-                    <Link href="/industries/copper" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">{t('header.industries.copper.name')}</span>
-                      <span className="text-xs text-gray-500 block">{t('header.industries.copper.description')}</span>
-                    </Link>
-                    <Link href="/industries/zinc" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">{t('header.industries.zinc.name')}</span>
-                      <span className="text-xs text-gray-500 block">{t('header.industries.zinc.description')}</span>
-                    </Link>
-                    <Link href="/industries/potassium" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">{t('header.industries.potassium.name')}</span>
-                      <span className="text-xs text-gray-500 block">{t('header.industries.potassium.description')}</span>
-                    </Link>
-                    <Link href="/industries/lithium" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">{t('header.industries.lithium.name')}</span>
-                      <span className="text-xs text-gray-500 block">{t('header.industries.lithium.description')}</span>
-                    </Link>
-                    <Link href="/industries/crude-oil" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      <span className="font-medium">{t('header.industries.crudeOil.name')}</span>
-                      <span className="text-xs text-gray-500 block">{t('header.industries.crudeOil.description')}</span>
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Recursos Accordion */}
-              <div>
-                <button
-                  onClick={() => toggleMobileSection('recursos')}
-                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-                >
-                  <span>{t('navigation.resources')}</span>
-                  <svg
-                    className={`w-5 h-5 transition-transform duration-200 ${openMobileSection === 'recursos' ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
-                  </svg>
-                </button>
-                {openMobileSection === 'recursos' && (
-                  <div className="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
-                    <Link href="/casos-de-exito" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.resourceLinks.caseStudies.name')}
-                    </Link>
-                    <Link href="/tendencias-industria" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:text-emerald-600 hover:bg-white rounded transition-colors">
-                      {t('header.resourceLinks.industryTrends.name')}
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Acerca - Simple link */}
-              <Link
-                href="/about"
-                onClick={() => setIsMenuOpen(false)}
-                className={`px-3 py-3 text-base font-medium rounded-lg transition-colors ${
-                  pathname === '/about'
-                    ? 'text-emerald-600 bg-emerald-50'
-                    : 'text-gray-700 hover:bg-gray-50'
+          <div className="lg:hidden fixed inset-0 top-[88px] bg-white z-50 overflow-hidden">
+            <div className="relative h-full">
+              {/* Main Panel */}
+              <div
+                className={`absolute inset-0 transition-transform duration-300 ease-in-out ${
+                  mobilePanel === 'main' ? 'translate-x-0' : '-translate-x-full'
                 }`}
               >
-                {t('navigation.about')}
-              </Link>
+                <div className="h-full flex flex-col px-4 py-6">
+                  <nav className="flex-1 space-y-2">
+                    {/* Services - with arrow */}
+                    <button
+                      onClick={() => setMobilePanel('services')}
+                      className="w-full flex items-center justify-between px-4 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                    >
+                      <span>{t('navigation.services')}</span>
+                      <ChevronRight className="w-5 h-5 text-gray-400" />
+                    </button>
 
-              {/* Language Switcher - Mobile */}
-              <div className="px-3 py-3">
-                <LanguageSwitcher />
+                    {/* Industries - with arrow */}
+                    <button
+                      onClick={() => setMobilePanel('industries')}
+                      className="w-full flex items-center justify-between px-4 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                    >
+                      <span>{t('navigation.industries')}</span>
+                      <ChevronRight className="w-5 h-5 text-gray-400" />
+                    </button>
+
+                    {/* Resources - with arrow */}
+                    <button
+                      onClick={() => setMobilePanel('resources')}
+                      className="w-full flex items-center justify-between px-4 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                    >
+                      <span>{t('navigation.resources')}</span>
+                      <ChevronRight className="w-5 h-5 text-gray-400" />
+                    </button>
+
+                    {/* About - direct link */}
+                    <Link
+                      href="/about"
+                      onClick={closeMobileMenu}
+                      className="w-full flex items-center justify-between px-4 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                    >
+                      <span>{t('navigation.about')}</span>
+                    </Link>
+
+                    {/* Language Switcher - Improved */}
+                    <div className="pt-4 border-t border-gray-100 mt-4">
+                      <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">{t('languageSwitcher.selectLanguage')}</p>
+                      <LanguageSwitcher />
+                    </div>
+                  </nav>
+
+                  {/* Contact Button */}
+                  <div className="pt-4">
+                    <button
+                      onClick={(e) => {
+                        handleContactClick(e, router, pathname)
+                        closeMobileMenu()
+                      }}
+                      className="w-full bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-4 rounded-xl font-semibold text-lg transition-colors"
+                    >
+                      {t('navigation.contact')}
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              {/* Contact Button */}
-              <button
-                onClick={(e) => {
-                  handleContactClick(e, router, pathname)
-                  setIsMenuOpen(false)
-                }}
-                className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors duration-200 w-full cursor-pointer"
+              {/* Services Panel */}
+              <div
+                className={`absolute inset-0 bg-white transition-transform duration-300 ease-in-out ${
+                  mobilePanel === 'services' ? 'translate-x-0' : 'translate-x-full'
+                }`}
               >
-                {t('navigation.contact')}
-              </button>
-            </nav>
+                <div className="h-full flex flex-col">
+                  {/* Back Header */}
+                  <button
+                    onClick={() => setMobilePanel('main')}
+                    className="flex items-center gap-2 px-4 py-4 text-emerald-600 font-semibold border-b border-gray-100"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    <span>{t('navigation.services')}</span>
+                  </button>
+
+                  {/* Services List */}
+                  <div className="flex-1 overflow-y-auto px-4 py-4 space-y-2">
+                    {/* Operational Services */}
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-2 mb-2">{t('header.operationalServices')}</p>
+
+                    <Link href="/services/filtration" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                        <Filter className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.filtration.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.filtration.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/services/organic-treatment" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                        <Chemistry className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.organicTreatment.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.organicTreatment.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/services/concentrate-dehydration" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                        <Layers className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.concentrateDehydration.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.concentrateDehydration.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/services/fine-solids" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                        <CirclePacking className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.fineSolids.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.fineSolids.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/services/ew-cleaning" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                        <BatteryCharging className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.ewCleaning.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.ewCleaning.description')}</div>
+                      </div>
+                    </Link>
+
+                    {/* Data Analytics */}
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-2 mb-2 mt-6 pt-4 border-t border-gray-100">{t('header.dataAnalytics')}</p>
+
+                    <Link href="/services/turbidity-monitoring" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <Analytics className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.turbidityMonitoring.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.turbidityMonitoring.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/services/tsf-monitoring" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <ChartLineData className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.tsfMonitoring.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.tsfMonitoring.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/services/tif-measurement" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <Meter className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900">{t('header.services.tifMeasurement.name')}</div>
+                        <div className="text-xs text-gray-500">{t('header.services.tifMeasurement.description')}</div>
+                      </div>
+                    </Link>
+
+                  </div>
+                </div>
+              </div>
+
+              {/* Industries Panel */}
+              <div
+                className={`absolute inset-0 bg-white transition-transform duration-300 ease-in-out ${
+                  mobilePanel === 'industries' ? 'translate-x-0' : 'translate-x-full'
+                }`}
+              >
+                <div className="h-full flex flex-col">
+                  {/* Back Header */}
+                  <button
+                    onClick={() => setMobilePanel('main')}
+                    className="flex items-center gap-2 px-4 py-4 text-emerald-600 font-semibold border-b border-gray-100"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    <span>{t('navigation.industries')}</span>
+                  </button>
+
+                  {/* Industries List */}
+                  <div className="flex-1 overflow-y-auto px-4 py-4 space-y-2">
+                    <Link href="/industries/copper" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">Cu</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{t('header.industries.copper.name')}</div>
+                        <div className="text-sm text-gray-500">{t('header.industries.copper.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/industries/zinc" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-12 h-12 bg-gradient-to-br from-slate-400 to-slate-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">Zn</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{t('header.industries.zinc.name')}</div>
+                        <div className="text-sm text-gray-500">{t('header.industries.zinc.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/industries/potassium" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">K</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{t('header.industries.potassium.name')}</div>
+                        <div className="text-sm text-gray-500">{t('header.industries.potassium.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/industries/lithium" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">Li</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{t('header.industries.lithium.name')}</div>
+                        <div className="text-sm text-gray-500">{t('header.industries.lithium.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/industries/crude-oil" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-gray-800 rounded-xl flex items-center justify-center">
+                        <RainDrop className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{t('header.industries.crudeOil.name')}</div>
+                        <div className="text-sm text-gray-500">{t('header.industries.crudeOil.description')}</div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Resources Panel */}
+              <div
+                className={`absolute inset-0 bg-white transition-transform duration-300 ease-in-out ${
+                  mobilePanel === 'resources' ? 'translate-x-0' : 'translate-x-full'
+                }`}
+              >
+                <div className="h-full flex flex-col">
+                  {/* Back Header */}
+                  <button
+                    onClick={() => setMobilePanel('main')}
+                    className="flex items-center gap-2 px-4 py-4 text-emerald-600 font-semibold border-b border-gray-100"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    <span>{t('navigation.resources')}</span>
+                  </button>
+
+                  {/* Resources List */}
+                  <div className="flex-1 overflow-y-auto px-4 py-4 space-y-2">
+                    <Link href="/casos-de-exito" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{t('header.resourceLinks.caseStudies.name')}</div>
+                        <div className="text-sm text-gray-500">{t('header.resourceLinks.caseStudies.description')}</div>
+                      </div>
+                    </Link>
+
+                    <Link href="/tendencias-industria" onClick={closeMobileMenu} className="flex items-center gap-3 px-3 py-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{t('header.resourceLinks.industryTrends.name')}</div>
+                        <div className="text-sm text-gray-500">{t('header.resourceLinks.industryTrends.description')}</div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>

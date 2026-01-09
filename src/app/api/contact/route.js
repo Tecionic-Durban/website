@@ -30,7 +30,7 @@ export async function POST(request) {
 
     // Email to Tecionic
     const emailToTecionic = {
-      from: 'Formulario Web <onboarding@resend.dev>',
+      from: 'Formulario Web <noreply@tsf.cl>',
       to: ['contacto@tsf.cl'],
       subject: `Nueva Consulta: ${service} - ${company}`,
       html: `
@@ -68,7 +68,7 @@ export async function POST(request) {
 
     // Send confirmation to sender
     const emailToSender = {
-      from: 'Tecionic Durban <onboarding@resend.dev>',
+      from: 'Tecionic Durban <noreply@tsf.cl>',
       to: [email],
       subject: 'Hemos recibido su consulta - Tecionic Durban',
       html: `

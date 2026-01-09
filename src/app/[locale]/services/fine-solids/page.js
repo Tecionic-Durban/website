@@ -121,6 +121,15 @@ export default function FineSolidsServicePage() {
   const caseStudiesRef = useRef(null)
   const statsRef = useRef(null)
 
+  // Mobile detection - disable animations on mobile
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   // Carousel state for service models
   const [activeServiceModel, setActiveServiceModel] = useState('emergencia')
   const [carouselKey, setCarouselKey] = useState(0)
@@ -487,8 +496,10 @@ export default function FineSolidsServicePage() {
     <div className="min-h-screen bg-white">
       {/* HERO SECTION - Clean Stripe-style narrative */}
       <section ref={heroRef} className="relative overflow-hidden bg-white">
-        {/* Particle Filtration Animation Background */}
-        <ParticleFiltrationAnimation variant="hero" className="opacity-30" />
+        {/* Particle Filtration Animation Background - hidden on mobile */}
+        <div className="hidden lg:block">
+          <ParticleFiltrationAnimation variant="hero" className="opacity-30" />
+        </div>
 
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-emerald-50/30 to-white pointer-events-none"></div>
@@ -556,7 +567,14 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Dashboard className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.plantInSpec.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden items-center gap-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.plantInSpec.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.plantInSpec.description')}
               </p>
@@ -574,7 +592,14 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <IncreaseLevel className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.componentLife.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden items-center gap-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.componentLife.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.componentLife.description')}
               </p>
@@ -592,7 +617,14 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Exit className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.noInvasive.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden items-center gap-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.noInvasive.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.noInvasive.description')}
               </p>
@@ -610,7 +642,14 @@ export default function FineSolidsServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <ContainerImagePull className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.avoidMembranes.title')}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex lg:hidden items-center gap-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-300"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('keyBenefits.items.avoidMembranes.title')}</h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('keyBenefits.items.avoidMembranes.description')}
               </p>

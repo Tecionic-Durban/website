@@ -145,30 +145,21 @@ export default function Customers() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
         <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
-
-        {/* Strategic three ball constellation */}
-        <div className="absolute top-16 left-[8%] opacity-20">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full enterprise-pulse"></div>
-            <div className="w-2 h-2 bg-emerald-500 rounded-full enterprise-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-emerald-600 rounded-full enterprise-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
       </div>
 
       <div className="max-w-8xl mx-auto px-8 relative">
         {/* Enterprise Header */}
-        <div className="text-center mb-20 progressive-reveal">
-          <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-6 sophisticated-hover">
+        <div className="mb-6 lg:mb-20 progressive-reveal">
+          <div className="inline-flex items-center px-4 py-2 lg:px-5 lg:py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-2 lg:mb-6 sophisticated-hover">
             <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 enterprise-pulse"></div>
             {t('badge')}
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight enterprise-slide-up">
-            {t('headline')} <span className="text-emerald-600 gradient-text-animated">{t('headlineSub')}</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 lg:mb-6 leading-tight enterprise-slide-up">
+            {t('headline')} <span className="text-emerald-600">{t('headlineSub')}</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed progressive-reveal">
+          <p className="text-lg text-gray-600 max-w-4xl leading-relaxed progressive-reveal">
             {t('description')}
           </p>
         </div>
@@ -273,27 +264,27 @@ export default function Customers() {
         </div>
 
         {/* Results Summary */}
-        <div className="bg-emerald-600 rounded-2xl p-8 text-white text-center mb-12">
-          <h3 className="text-2xl font-bold mb-6">{t('resultsTitle')}</h3>
+        <div className="bg-emerald-600 rounded-xl lg:rounded-2xl p-4 lg:p-8 text-white text-center mb-8 lg:mb-12">
+          <h3 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-6">{t('resultsTitle')}</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="flex flex-col items-center">
-              <Growth className="w-8 h-8 mb-3 text-emerald-200" />
-              <div className="text-3xl font-bold mb-2">+22%</div>
+              <Growth className="w-6 h-6 lg:w-8 lg:h-8 mb-2 lg:mb-3 text-emerald-200" />
+              <div className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2">+22%</div>
               <div className="text-emerald-100 text-sm">{t('stats.efficiency')}</div>
             </div>
             <div className="flex flex-col items-center">
-              <Time className="w-8 h-8 mb-3 text-emerald-200" />
-              <div className="text-3xl font-bold mb-2">95%</div>
+              <Time className="w-6 h-6 lg:w-8 lg:h-8 mb-2 lg:mb-3 text-emerald-200" />
+              <div className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2">95%</div>
               <div className="text-emerald-100 text-sm">{t('stats.downtime')}</div>
             </div>
             <div className="flex flex-col items-center">
-              <Currency className="w-8 h-8 mb-3 text-emerald-200" />
-              <div className="text-3xl font-bold mb-2">$500M+</div>
+              <Currency className="w-6 h-6 lg:w-8 lg:h-8 mb-2 lg:mb-3 text-emerald-200" />
+              <div className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2">$500M+</div>
               <div className="text-emerald-100 text-sm">{t('stats.savings')}</div>
             </div>
             <div className="flex flex-col items-center">
-              <Security className="w-8 h-8 mb-3 text-emerald-200" />
-              <div className="text-3xl font-bold mb-2">23+</div>
+              <Security className="w-6 h-6 lg:w-8 lg:h-8 mb-2 lg:mb-3 text-emerald-200" />
+              <div className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2">23+</div>
               <div className="text-emerald-100 text-sm">{t('stats.years')}</div>
             </div>
           </div>

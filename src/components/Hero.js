@@ -86,13 +86,13 @@ export default function Hero() {
       </div>
 
       
-      <div className="relative max-w-7xl mx-auto px-4 py-16 lg:py-20 w-full">
+      <div className="relative max-w-7xl mx-auto px-4 py-8 lg:py-20 w-full">
         {/* Content */}
         <div className="max-w-3xl">
             {/* Eyebrow + Headline Complex */}
-            <div className="space-y-6">
+            <div className="space-y-3 lg:space-y-6">
               {/* Layered Headline Structure */}
-              <div className="space-y-4">
+              <div className="space-y-2 lg:space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-[-0.02em] enterprise-slide-up stagger-1">
                   <span className="gradient-text-animated">{t('optimizeYour')}</span>
                   <span className="block text-emerald-300 font-black relative enterprise-slide-up stagger-2">
@@ -102,7 +102,7 @@ export default function Hero() {
                   <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-100/80 mt-2 enterprise-slide-up stagger-4">{t('withoutStopping')}</span>
                 </h1>
 
-                <div className="space-y-4 max-w-3xl">
+                <div className="space-y-2 lg:space-y-4 max-w-3xl">
                   <p className="text-lg lg:text-xl text-white leading-[1.4] font-medium progressive-reveal">
                     {t('subtitle')}
                   </p>
@@ -116,26 +116,26 @@ export default function Hero() {
             </div>
 
             {/* KPIs Row */}
-            <div className="mt-8 grid grid-cols-3 gap-8">
+            <div className="mt-4 lg:mt-8 grid grid-cols-3 gap-4 lg:gap-8">
               <div className="text-left">
-                <div className="text-4xl font-black text-white">23+</div>
-                <div className="text-sm text-white/70">{t('stats.yearsExperience')}</div>
+                <div className="text-2xl lg:text-4xl font-black text-white">23+</div>
+                <div className="text-xs lg:text-sm text-white/70">{t('stats.yearsExperience')}</div>
               </div>
               <div className="text-left">
-                <div className="text-4xl font-black text-white">120+</div>
-                <div className="text-sm text-white/70">{t('stats.projectsCompleted')}</div>
+                <div className="text-2xl lg:text-4xl font-black text-white">120+</div>
+                <div className="text-xs lg:text-sm text-white/70">{t('stats.projectsCompleted')}</div>
               </div>
               <div className="text-left">
-                <div className="text-4xl font-black text-white">24/7</div>
-                <div className="text-sm text-white/70">{t('stats.operationalSupport')}</div>
+                <div className="text-2xl lg:text-4xl font-black text-white">24/7</div>
+                <div className="text-xs lg:text-sm text-white/70">{t('stats.operationalSupport')}</div>
               </div>
             </div>
 
             {/* CTA Button */}
-            <div className="mt-8">
+            <div className="mt-4 lg:mt-8">
               <button
                 onClick={() => router.push('/services')}
-                className="group bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 inline-flex items-center"
+                className="group bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-base lg:text-lg transition-all duration-300 inline-flex items-center"
               >
                 <span>{t('cta')}</span>
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
