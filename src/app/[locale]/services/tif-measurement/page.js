@@ -150,7 +150,7 @@ export default function TifMeasurementPage() {
 
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
                 {t('hero.title')}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400">
                   {t('hero.titleHighlight')}
                 </span>
               </h1>
@@ -340,7 +340,7 @@ export default function TifMeasurementPage() {
                   <div>
                     <div className="flex justify-between text-sm mb-2">
                       <span className="text-gray-600">{t('problem.chart.optimal')}</span>
-                      <span className="font-semibold text-cyan-600">&gt;23 dinas/cm</span>
+                      <span className="font-semibold text-purple-600">&gt;23 dinas/cm</span>
                     </div>
                     <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
                       <div className="h-full bg-purple-500 rounded-full" style={{ width: '76%' }} />
@@ -387,7 +387,7 @@ export default function TifMeasurementPage() {
       <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
-            <span className="inline-flex items-center px-3 py-1 bg-cyan-100 text-cyan-700 text-sm font-semibold rounded-full mb-6">
+            <span className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-6">
               <Chemistry className="w-4 h-4 mr-2" />
               {t('solution.badge')}
             </span>
@@ -403,13 +403,13 @@ export default function TifMeasurementPage() {
 
           {/* Solution cards - Key benefits */}
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group p-8 bg-gradient-to-br from-cyan-50 to-white rounded-2xl border border-cyan-100 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
-                <Target className="w-6 h-6 text-cyan-600" />
+            <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-lg transition-all">
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                <Target className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.earlyDetection.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.earlyDetection.description')}</p>
-              <div className="text-3xl font-bold text-cyan-600">{t('solution.benefits.earlyDetection.metric')}</div>
+              <div className="text-3xl font-bold text-purple-600">{t('solution.benefits.earlyDetection.metric')}</div>
               <div className="text-sm text-gray-500">{t('solution.benefits.earlyDetection.metricLabel')}</div>
             </div>
 
@@ -596,7 +596,7 @@ export default function TifMeasurementPage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
                     <span className="text-white font-bold">Li</span>
@@ -606,7 +606,7 @@ export default function TifMeasurementPage() {
               <div className="p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{t('industries.lithium.title')}</h3>
                 <p className="text-sm text-gray-600 mb-4">{t('industries.lithium.description')}</p>
-                <div className="text-sm text-cyan-600 font-semibold">{t('industries.lithium.benefit')}</div>
+                <div className="text-sm text-purple-600 font-semibold">{t('industries.lithium.benefit')}</div>
               </div>
             </div>
           </div>
@@ -614,7 +614,7 @@ export default function TifMeasurementPage() {
       </section>
 
       {/* INTEGRATION - Connected services */}
-      <section className="bg-gradient-to-br from-cyan-50 to-white relative overflow-hidden">
+      <section className="bg-gradient-to-br from-purple-50 to-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -687,10 +687,10 @@ export default function TifMeasurementPage() {
                 {/* Simple flow diagram */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Meter className="w-8 h-8 text-cyan-600" />
+                    <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Meter className="w-8 h-8 text-purple-600" />
                     </div>
-                    <div className="flex-1 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded" />
+                    <div className="flex-1 h-1 bg-gradient-to-r from-purple-500 to-purple-500 rounded" />
                     <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
                       <ChartLineData className="w-8 h-8 text-purple-600" />
                     </div>
@@ -720,7 +720,7 @@ export default function TifMeasurementPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-gradient-to-br from-cyan-600 to-cyan-700 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-purple-600 to-purple-700 relative overflow-hidden">
         {/* Clean interface line at top */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
@@ -737,17 +737,17 @@ export default function TifMeasurementPage() {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>
-          <p className="text-xl text-cyan-100 mb-4">
+          <p className="text-xl text-purple-100 mb-4">
             {t('cta.description')}
           </p>
-          <p className="text-lg text-cyan-100 mb-10">
+          <p className="text-lg text-purple-100 mb-10">
             {t('cta.timeline')}
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
             <Link
               href="/contacto"
-              className="inline-flex items-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-lg hover:bg-cyan-50 transition-colors shadow-xl cursor-pointer"
+              className="inline-flex items-center px-8 py-4 bg-white text-purple-700 font-bold rounded-lg hover:bg-purple-50 transition-colors shadow-xl cursor-pointer"
             >
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -761,16 +761,16 @@ export default function TifMeasurementPage() {
             </Link>
           </div>
 
-          <div className="border-t border-cyan-500 pt-8">
-            <div className="text-sm font-semibold text-cyan-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
+          <div className="border-t border-purple-500 pt-8">
+            <div className="text-sm font-semibold text-purple-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
             <div className="grid md:grid-cols-2 gap-6 text-white">
               <div>
                 <div className="font-semibold mb-1">{t('cta.locations.santiago.name')}</div>
-                <div className="text-cyan-100">{t('cta.locations.santiago.address')}</div>
+                <div className="text-purple-100">{t('cta.locations.santiago.address')}</div>
               </div>
               <div>
                 <div className="font-semibold mb-1">{t('cta.locations.calama.name')}</div>
-                <div className="text-cyan-100">{t('cta.locations.calama.address')}</div>
+                <div className="text-purple-100">{t('cta.locations.calama.address')}</div>
               </div>
             </div>
           </div>

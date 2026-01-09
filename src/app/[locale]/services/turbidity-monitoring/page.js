@@ -117,28 +117,28 @@ export default function TurbidityMonitoringPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* HERO SECTION */}
-      <section ref={heroRef} className="relative overflow-hidden bg-gradient-to-br from-amber-950 via-slate-900 to-amber-900">
+      <section ref={heroRef} className="relative overflow-hidden bg-gradient-to-br from-purple-950 via-slate-900 to-purple-900">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgb(251 191 36 / 0.4) 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgb(168 85 247 / 0.4) 1px, transparent 0)`,
             backgroundSize: '48px 48px'
           }} />
         </div>
 
-        <div className="absolute top-20 left-[10%] w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-[10%] w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-[10%] w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-[10%] w-80 h-80 bg-violet-500/10 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-semibold rounded-full mb-6">
+              <span className="inline-flex items-center px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-semibold rounded-full mb-6">
                 <Analytics className="w-4 h-4 mr-2" />
                 {t('hero.badge')}
               </span>
 
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
                 {t('hero.title')}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400">
                   {t('hero.titleHighlight')}
                 </span>
               </h1>
@@ -149,26 +149,26 @@ export default function TurbidityMonitoringPage() {
 
               <div className="grid sm:grid-cols-2 gap-4 mb-10">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-amber-400" />
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
                   </div>
                   <span className="text-slate-300 text-sm">{t('hero.benefits.realTimeControl')}</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-amber-400" />
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
                   </div>
                   <span className="text-slate-300 text-sm">{t('hero.benefits.optimizeFlocculant')}</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-amber-400" />
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
                   </div>
                   <span className="text-slate-300 text-sm">{t('hero.benefits.ensureCompliance')}</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckmarkFilled className="w-4 h-4 text-amber-400" />
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckmarkFilled className="w-4 h-4 text-purple-400" />
                   </div>
                   <span className="text-slate-300 text-sm">{t('hero.benefits.eliminateLabDelay')}</span>
                 </div>
@@ -177,7 +177,7 @@ export default function TurbidityMonitoringPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contacto"
-                  className="inline-flex items-center px-6 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-400 transition-colors cursor-pointer"
+                  className="inline-flex items-center px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-400 transition-colors cursor-pointer"
                 >
                   {t('hero.ctaPrimary')}
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -193,9 +193,9 @@ export default function TurbidityMonitoringPage() {
 
             <div className="lg:col-span-5">
               <div ref={heroImageRef} style={{ opacity: 0 }} className="relative">
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-amber-500/20 shadow-2xl">
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-purple-500/20 shadow-2xl">
                   <div className="text-center mb-6">
-                    <div className="text-sm font-semibold text-amber-400 uppercase tracking-wide mb-2">{t('hero.gaugeLabel')}</div>
+                    <div className="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-2">{t('hero.gaugeLabel')}</div>
                     <div className="text-6xl font-bold text-white mb-1">4.2</div>
                     <div className="text-slate-400">{t('hero.gaugeUnit')}</div>
                   </div>
@@ -206,13 +206,13 @@ export default function TurbidityMonitoringPage() {
                       {[4.1, 4.3, 4.0, 4.2, 4.5, 4.1, 4.2, 4.3, 4.2, 4.1, 4.4, 4.2].map((val, i) => (
                         <div
                           key={i}
-                          className="w-4 bg-gradient-to-t from-amber-500 to-amber-400 rounded-t"
+                          className="w-4 bg-gradient-to-t from-purple-500 to-violet-400 rounded-t"
                           style={{ height: `${(val / 10) * 100}%`, opacity: i === 11 ? 1 : 0.5 + (i * 0.04) }}
                         />
                       ))}
                     </div>
-                    <div className="absolute top-2 right-2 flex items-center gap-1 text-xs text-amber-400">
-                      <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+                    <div className="absolute top-2 right-2 flex items-center gap-1 text-xs text-purple-400">
+                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
                       {t('hero.liveLabel')}
                     </div>
                   </div>
@@ -229,7 +229,7 @@ export default function TurbidityMonitoringPage() {
                         <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
                         <span className="text-sm text-slate-300">{t('hero.statusWithinSpec')}</span>
                       </div>
-                      <span className="text-sm text-amber-400">{t('hero.statusOptimized')}</span>
+                      <span className="text-sm text-purple-400">{t('hero.statusOptimized')}</span>
                     </div>
                   </div>
                 </div>
@@ -338,10 +338,10 @@ export default function TurbidityMonitoringPage() {
                   <div>
                     <div className="flex justify-between text-sm mb-2">
                       <span className="text-gray-600">{t('problem.chart.warning')}</span>
-                      <span className="font-semibold text-amber-600">10-20 NTU</span>
+                      <span className="font-semibold text-purple-600">10-20 NTU</span>
                     </div>
                     <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-amber-500 rounded-full" style={{ width: '75%' }} />
+                      <div className="h-full bg-purple-500 rounded-full" style={{ width: '75%' }} />
                     </div>
                   </div>
 
@@ -356,12 +356,12 @@ export default function TurbidityMonitoringPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 p-4 bg-amber-50 rounded-xl border border-amber-200">
+                <div className="mt-8 p-4 bg-purple-50 rounded-xl border border-purple-200">
                   <div className="flex items-start gap-3">
-                    <Eye className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <Eye className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-sm font-semibold text-amber-800">{t('problem.chart.insight')}</p>
-                      <p className="text-sm text-amber-700 mt-1">{t('problem.chart.insightText')}</p>
+                      <p className="text-sm font-semibold text-purple-800">{t('problem.chart.insight')}</p>
+                      <p className="text-sm text-purple-700 mt-1">{t('problem.chart.insightText')}</p>
                     </div>
                   </div>
                 </div>
@@ -375,7 +375,7 @@ export default function TurbidityMonitoringPage() {
       <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
-            <span className="inline-flex items-center px-3 py-1 bg-amber-100 text-amber-700 text-sm font-semibold rounded-full mb-6">
+            <span className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-6">
               <Analytics className="w-4 h-4 mr-2" />
               {t('solution.badge')}
             </span>
@@ -390,13 +390,13 @@ export default function TurbidityMonitoringPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group p-8 bg-gradient-to-br from-amber-50 to-white rounded-2xl border border-amber-100 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
-                <Eye className="w-6 h-6 text-amber-600" />
+            <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-lg transition-all">
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                <Eye className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.realTime.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.realTime.description')}</p>
-              <div className="text-3xl font-bold text-amber-600">{t('solution.benefits.realTime.metric')}</div>
+              <div className="text-3xl font-bold text-purple-600">{t('solution.benefits.realTime.metric')}</div>
               <div className="text-sm text-gray-500">{t('solution.benefits.realTime.metricLabel')}</div>
             </div>
 
@@ -434,7 +434,7 @@ export default function TurbidityMonitoringPage() {
 
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
           <div className="max-w-3xl mb-16">
-            <span className="inline-flex items-center px-3 py-1 bg-white/10 text-amber-400 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">
+            <span className="inline-flex items-center px-3 py-1 bg-white/10 text-purple-400 text-sm font-semibold rounded-full mb-6 border border-purple-500/30">
               <View className="w-4 h-4 mr-2" />
               {t('howItWorks.badge')}
             </span>
@@ -450,7 +450,7 @@ export default function TurbidityMonitoringPage() {
 
           <div className="grid lg:grid-cols-4 gap-8">
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 1
               </div>
               <div className="bg-slate-800 rounded-2xl p-8 pt-12 border border-slate-700 h-full">
@@ -460,7 +460,7 @@ export default function TurbidityMonitoringPage() {
             </div>
 
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 2
               </div>
               <div className="bg-slate-800 rounded-2xl p-8 pt-12 border border-slate-700 h-full">
@@ -470,7 +470,7 @@ export default function TurbidityMonitoringPage() {
             </div>
 
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 3
               </div>
               <div className="bg-slate-800 rounded-2xl p-8 pt-12 border border-slate-700 h-full">
@@ -480,7 +480,7 @@ export default function TurbidityMonitoringPage() {
             </div>
 
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 4
               </div>
               <div className="bg-slate-800 rounded-2xl p-8 pt-12 border border-slate-700 h-full">
@@ -492,19 +492,19 @@ export default function TurbidityMonitoringPage() {
 
           <div className="mt-16 grid lg:grid-cols-3 gap-8">
             <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-              <div className="text-3xl font-bold text-amber-400 mb-2">{t('howItWorks.specs.range.value')}</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">{t('howItWorks.specs.range.value')}</div>
               <div className="text-white font-semibold mb-1">{t('howItWorks.specs.range.label')}</div>
               <div className="text-slate-400 text-sm">{t('howItWorks.specs.range.detail')}</div>
             </div>
 
             <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-              <div className="text-3xl font-bold text-amber-400 mb-2">{t('howItWorks.specs.frequency.value')}</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">{t('howItWorks.specs.frequency.value')}</div>
               <div className="text-white font-semibold mb-1">{t('howItWorks.specs.frequency.label')}</div>
               <div className="text-slate-400 text-sm">{t('howItWorks.specs.frequency.detail')}</div>
             </div>
 
             <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-              <div className="text-3xl font-bold text-amber-400 mb-2">{t('howItWorks.specs.connectivity.value')}</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">{t('howItWorks.specs.connectivity.value')}</div>
               <div className="text-white font-semibold mb-1">{t('howItWorks.specs.connectivity.label')}</div>
               <div className="text-slate-400 text-sm">{t('howItWorks.specs.connectivity.detail')}</div>
             </div>
@@ -595,7 +595,7 @@ export default function TurbidityMonitoringPage() {
       </section>
 
       {/* INTEGRATION */}
-      <section className="bg-gradient-to-br from-amber-50 to-white relative overflow-hidden">
+      <section className="bg-gradient-to-br from-purple-50 to-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -666,10 +666,10 @@ export default function TurbidityMonitoringPage() {
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Analytics className="w-8 h-8 text-amber-600" />
+                    <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Analytics className="w-8 h-8 text-purple-600" />
                     </div>
-                    <div className="flex-1 h-1 bg-gradient-to-r from-amber-500 to-emerald-500 rounded" />
+                    <div className="flex-1 h-1 bg-gradient-to-r from-purple-500 to-emerald-500 rounded" />
                     <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Activity className="w-8 h-8 text-emerald-600" />
                     </div>
@@ -699,7 +699,7 @@ export default function TurbidityMonitoringPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-gradient-to-br from-amber-600 to-amber-700 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-purple-600 to-purple-700 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -714,40 +714,40 @@ export default function TurbidityMonitoringPage() {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>
-          <p className="text-xl text-amber-100 mb-4">
+          <p className="text-xl text-purple-100 mb-4">
             {t('cta.description')}
           </p>
-          <p className="text-lg text-amber-100 mb-10">
+          <p className="text-lg text-purple-100 mb-10">
             {t('cta.timeline')}
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
             <Link
               href="/contacto"
-              className="inline-flex items-center px-8 py-4 bg-white text-amber-700 font-bold rounded-lg hover:bg-amber-50 transition-colors shadow-xl cursor-pointer"
+              className="inline-flex items-center px-8 py-4 bg-white text-purple-700 font-bold rounded-lg hover:bg-purple-50 transition-colors shadow-xl cursor-pointer"
             >
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <Link
               href="/industries/potassium"
-              className="inline-flex items-center px-8 py-4 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-400 transition-colors cursor-pointer"
+              className="inline-flex items-center px-8 py-4 bg-purple-500 text-white font-bold rounded-lg hover:bg-purple-400 transition-colors cursor-pointer"
             >
               {t('cta.secondaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
 
-          <div className="border-t border-amber-500 pt-8">
-            <div className="text-sm font-semibold text-amber-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
+          <div className="border-t border-purple-500 pt-8">
+            <div className="text-sm font-semibold text-purple-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
             <div className="grid md:grid-cols-2 gap-6 text-white">
               <div>
                 <div className="font-semibold mb-1">{t('cta.locations.santiago.name')}</div>
-                <div className="text-amber-100">{t('cta.locations.santiago.address')}</div>
+                <div className="text-purple-100">{t('cta.locations.santiago.address')}</div>
               </div>
               <div>
                 <div className="font-semibold mb-1">{t('cta.locations.calama.name')}</div>
-                <div className="text-amber-100">{t('cta.locations.calama.address')}</div>
+                <div className="text-purple-100">{t('cta.locations.calama.address')}</div>
               </div>
             </div>
           </div>

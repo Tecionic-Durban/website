@@ -137,7 +137,7 @@ export default function TsfMonitoringPage() {
 
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
                 {t('hero.title')}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400">
                   {t('hero.titleHighlight')}
                 </span>
               </h1>
