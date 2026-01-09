@@ -32,7 +32,7 @@ export default function LatamPresence() {
   ]
 
   return (
-    <section className="relative z-10 py-20 lg:py-40 lg:min-h-[900px] bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-visible">
+    <section className="relative z-10 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       {/* Background grid effect */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
@@ -41,18 +41,96 @@ export default function LatamPresence() {
         }} />
       </div>
 
-      {/* Globe - Stripe-style: extends beyond container, zoomed in */}
+      {/* Desktop: Globe positioned left */}
       <div className="absolute -left-[100px] top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none">
         <LatamGlobe />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4">
+      {/* Mobile: Globe peek at top with content overlapping */}
+      <div className="lg:hidden relative">
+        {/* Globe container - cropped height */}
+        <div className="h-[280px] overflow-hidden -mb-20">
+          <LatamGlobe className="w-full h-[400px]" />
+        </div>
+
+        {/* Content overlapping the globe */}
+        <div className="relative z-10 bg-gradient-to-b from-transparent via-slate-950/95 to-slate-950 pt-8 pb-16 px-4">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
+              {t('badge')}
+            </span>
+            <h2 className="text-2xl font-bold text-white mb-3">
+              {t('headline')}<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('headlineSub')}</span>
+            </h2>
+            <p className="text-base text-slate-400">
+              {t('description')}
+            </p>
+          </div>
+
+          {/* Mobile content */}
+          <div className="space-y-8">
+            {/* Mobile equipment callout */}
+            <div>
+              <div className="border-l-2 border-emerald-500 pl-4">
+                <p className="text-white text-base font-medium mb-1">{t('mobileEquipment.title')}</p>
+                <p className="text-slate-400 text-sm">
+                  {t('mobileEquipment.description')}
+                </p>
+              </div>
+              <Link
+                href="/contacto"
+                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors group mt-3 ml-4 text-sm"
+              >
+                {t('requestEquipment')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
+              </Link>
+            </div>
+
+            {/* Offices */}
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-wider mb-2">{t('operationBases')}</p>
+              <p className="text-white text-sm">
+                <span className="font-medium">Santiago</span>
+                <span className="text-slate-500">, Chile</span>
+                <span className="text-slate-600 mx-2">·</span>
+                <span className="font-medium">Calama</span>
+                <span className="text-slate-500">, Chile</span>
+                <span className="text-slate-600 mx-2">·</span>
+                <span className="font-medium">Lima</span>
+                <span className="text-slate-500">, Perú</span>
+              </p>
+            </div>
+
+            {/* Industries */}
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-wider mb-3">{t('mainIndustries')}</p>
+              <div className="flex flex-wrap gap-2">
+                {industries.map((industry, index) => (
+                  <Link
+                    key={index}
+                    href={industry.href}
+                    className="flex items-center gap-2 bg-slate-800/50 px-3 py-2 rounded-lg group"
+                  >
+                    <div className={`w-2 h-2 rounded-full ${industry.color}`} />
+                    <span className="text-white text-sm group-hover:text-emerald-400 transition-colors">{t(`industries.${industry.key}`)}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop layout */}
+      <div className="hidden lg:block relative max-w-7xl mx-auto px-4 py-40 min-h-[900px]">
         {/* Header */}
-        <div className="text-center lg:text-right lg:ml-auto lg:max-w-xl mb-12 lg:mb-16">
+        <div className="text-right ml-auto max-w-xl mb-16">
           <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
             {t('badge')}
           </span>
-          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-5xl font-bold text-white mb-4">
             {t('headline')}<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('headlineSub')}</span>
           </h2>
@@ -61,13 +139,8 @@ export default function LatamPresence() {
           </p>
         </div>
 
-        {/* Mobile globe */}
-        <div className="lg:hidden mb-8 -mx-4">
-          <LatamGlobe className="w-full h-[450px]" />
-        </div>
-
         {/* Content - positioned on the right */}
-        <div className="lg:ml-auto lg:max-w-lg space-y-10">
+        <div className="ml-auto max-w-lg space-y-10">
           {/* Mobile equipment callout */}
           <div>
             <div className="border-l-2 border-emerald-500 pl-4">

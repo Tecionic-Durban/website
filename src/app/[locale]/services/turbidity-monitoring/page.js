@@ -207,40 +207,72 @@ export default function TurbidityMonitoringPage() {
       </section>
 
       {/* KEY BENEFITS */}
-      <section className="bg-gradient-to-br from-purple-50 to-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-8 py-16">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.realTimeControl')}</h3>
-              </div>
+      <section className="bg-gradient-to-br from-purple-50/50 via-white to-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-purple-600/10 to-purple-700/5 rounded-full opacity-30 blur-sm"></div>
+          <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-purple-500/15 to-purple-600/10 rounded-full opacity-25 blur-sm"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+          <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-0">
+            {/* 3-ball divider - left edge */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-purple-400"></div>
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
             </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
+
+            {/* Benefit 1 */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <Eye className="w-5 h-5 text-purple-600" />
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.optimizeFlocculant')}</h3>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.realTimeControl')}</h3>
             </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.ensureCompliance')}</h3>
-              </div>
+
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-purple-400"></div>
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
             </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-purple-100 shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                <CheckmarkFilled className="w-5 h-5 text-purple-600" />
+
+            {/* Benefit 2 */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <Droplets className="w-5 h-5 text-purple-600" />
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">{t('hero.benefits.eliminateLabDelay')}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.optimizeFlocculant')}</h3>
+            </div>
+
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-purple-400"></div>
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
+            </div>
+
+            {/* Benefit 3 */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <Target className="w-5 h-5 text-purple-600" />
               </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.ensureCompliance')}</h3>
+            </div>
+
+            {/* 3-ball divider */}
+            <div className="hidden lg:flex flex-col items-center gap-2 pt-1">
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-purple-400"></div>
+              <div className="w-2 h-2 rounded-full bg-purple-300"></div>
+            </div>
+
+            {/* Benefit 4 */}
+            <div className="flex-1 lg:px-6">
+              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <Zap className="w-5 h-5 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.eliminateLabDelay')}</h3>
             </div>
           </div>
         </div>
