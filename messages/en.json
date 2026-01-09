@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Tec-Ionic Durban - Specialized LIX/SX/EW Services",
-    "description": "Company with over 18 years of experience in filtration and crud treatment services for LIX/SX/EW areas."
+    "description": "Company with over 123 years of experience in filtration and crud treatment services for LIX/SX/EW areas."
   },
   "navigation": {
     "services": "Services",
@@ -2267,7 +2267,7 @@
     "stats": [
       { "value": "$500M+", "label": "Client savings" },
       { "value": "84%", "label": "Maximum reduction" },
-      { "value": "8+", "label": "Years operating" },
+      { "value": "23+", "label": "Years operating" },
       { "value": "120+", "label": "Completed projects" }
     ],
     "grid": {
@@ -2712,18 +2712,18 @@
       ],
       "overview": [
         { "label": "Operation", "value": "Copper SX Plant" },
-        { "label": "Duration", "value": "8 years of continuous operation" },
+        { "label": "Duration", "value": "23 years of continuous operation" },
         { "label": "Service", "value": "Comprehensive SX plant support" },
         { "label": "Industry", "value": "Copper Mining - SX/EW" }
       ],
       "partnershipTitle": "Long-Term Strategic Partnership",
-      "partnershipDescription": "For over 8 years, TSF has been the strategic partner of this copper operation for maintaining and optimizing their solvent extraction plant, ensuring consistent results year after year.",
+      "partnershipDescription": "For over 23 years, TSF has been the strategic partner of this copper operation for maintaining and optimizing their solvent extraction plant, ensuring consistent results year after year.",
       "collaborationTitle": "Collaboration History",
       "collaborationSteps": [
         { "step": "1", "title": "Operations Start", "description": "Initial contract for filtration and crud removal services at SX plant" },
         { "step": "2", "title": "Service Expansion", "description": "Addition of organic dialysis and scheduled treatment campaigns" },
         { "step": "3", "title": "Comprehensive Support", "description": "Complete service model with continuous monitoring and immediate response" },
-        { "step": "8+", "title": "Today", "description": "8 years of continuous operation with consistent results" }
+        { "step": "23+", "title": "Today", "description": "23 years of continuous operation with consistent results" }
       ],
       "servicesProvidedTitle": "Services Provided",
       "servicesProvided": [
@@ -2758,7 +2758,7 @@
       "replacementDescription": "A low replacement rate indicates minimal losses from chemical degradation and entrainment, significantly reducing operational costs.",
       "valueDeliveredTitle": "Value Delivered",
       "valueItems": [
-        { "title": "Operational Stability", "description": "8 years without major interruptions thanks to preventive maintenance and rapid response to contingencies." },
+        { "title": "Operational Stability", "description": "23 years without major interruptions thanks to preventive maintenance and rapid response to contingencies." },
         { "title": "Cost Reduction", "description": "Organic replacement rate of 2.6% vs. typical industry rate of 5-8%, representing significant input savings." },
         { "title": "Trust Relationship", "description": "Continuous contract renewal year after year, demonstrating client satisfaction with delivered results." }
       ],

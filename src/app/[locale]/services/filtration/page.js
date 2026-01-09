@@ -52,11 +52,12 @@ function RecoverySection({ t }) {
           {/* Left: Hero stat with title and tabs */}
           <div className="relative">
             {/* Decorative circle - responsive positioning */}
-            {/* Mobile: covers from header to tabs, Desktop: original off-page curvature */}
+            {/* Mobile: starts from section top, flows down past tabs with elegant off-center positioning */}
+            {/* Desktop: original off-page curvature anchored at bottom-left */}
             <div className="absolute
-              -top-20 -left-20 w-[600px] h-[600px]
+              -top-32 -left-8 w-[500px] h-[500px]
               lg:-bottom-[350px] lg:-left-[300px] lg:top-auto lg:w-[900px] lg:h-[900px]
-              bg-gradient-to-br from-emerald-100/50 to-emerald-50/30 rounded-full -z-10"></div>
+              bg-gradient-to-br from-emerald-100/60 to-emerald-50/40 rounded-full -z-10"></div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t('recovery.title')}
@@ -561,7 +562,7 @@ export default function FiltrationPage() {
 
           {/* Mobile: Horizontal carousel with dots */}
           <div className="lg:hidden">
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div ref={productCarouselRef} onScroll={handleProductScroll} className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
               {/* Card 1: Electrolito + E1/E2 stats */}
               <div className="bg-emerald-500/10 rounded-2xl p-6 border border-emerald-500/30 flex-shrink-0 w-[85vw] snap-center">
                 <div className="mb-4">
