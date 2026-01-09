@@ -5,12 +5,11 @@ import dynamic from 'next/dynamic'
 import { Globe2, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import LatamMapMobile from './LatamMapMobile'
 
 export default function LatamPresence() {
   const t = useTranslations('latamPresence')
 
-  // Dynamically import the 3D globe to avoid SSR issues (desktop only)
+  // Dynamically import the 3D globe to avoid SSR issues
   const LatamGlobe = dynamic(() => import('./LatamGlobe'), {
     ssr: false,
     loading: () => (
@@ -47,15 +46,15 @@ export default function LatamPresence() {
         <LatamGlobe />
       </div>
 
-      {/* Mobile: Static map with content below */}
+      {/* Mobile: Globe peek at top with content overlapping */}
       <div className="lg:hidden relative">
-        {/* Static Latin America map - optimized for mobile */}
-        <div className="relative px-4 pt-8">
-          <LatamMapMobile className="w-full h-[320px] mx-auto max-w-[300px]" />
+        {/* Globe container - cropped height */}
+        <div className="h-[280px] overflow-hidden -mb-20">
+          <LatamGlobe className="w-full h-[400px]" />
         </div>
 
-        {/* Content below the map */}
-        <div className="relative z-10 pt-4 pb-16 px-4">
+        {/* Content overlapping the globe */}
+        <div className="relative z-10 bg-gradient-to-b from-transparent via-slate-950/95 to-slate-950 pt-8 pb-16 px-4">
           {/* Header */}
           <div className="text-center mb-8">
             <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
