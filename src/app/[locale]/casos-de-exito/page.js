@@ -221,9 +221,9 @@ export default function CasosExitoPage() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-sm text-gray-500 mb-10">{t('clients.title')}</p>
           <div className="flex justify-center items-center gap-12 flex-wrap">
-            {["CODELCO", "ENAP", "Caserones", "Minera Spence", "Cerro Negro"].map((company) => (
-              <span key={company} className="font-mono text-sm text-gray-400 tracking-wider">
-                {company}
+            {["Cobre", "Petróleo", "Zinc", "Potasio", "Litio"].map((industry) => (
+              <span key={industry} className="font-mono text-sm text-gray-400 tracking-wider">
+                {industry}
               </span>
             ))}
           </div>

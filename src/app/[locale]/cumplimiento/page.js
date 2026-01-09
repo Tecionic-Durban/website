@@ -9,7 +9,7 @@ export default function CumplimientoPage() {
       id: 1,
       name: "Registro SICEP",
       category: "Registro Oficial",
-      description: "Registro en el Sistema de Información de Contratistas de ENAP para prestación de servicios en la industria",
+      description: "Registro en el Sistema de Información de Contratistas para prestación de servicios en la industria petrolera y minera",
       status: "Certificado",
       validUntil: "Vigente",
       scope: "Servicios de filtración, deshidratación y tratamiento de sólidos en industria minera y petrolera",
