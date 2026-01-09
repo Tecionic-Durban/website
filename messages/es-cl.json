@@ -3564,5 +3564,554 @@
     "accept": "Aceptar",
     "decline": "Rechazar",
     "close": "Cerrar"
+  },
+  "tifMeasurementService": {
+    "hero": {
+      "badge": "Analítica de Datos",
+      "title": "Predice la degradación del orgánico",
+      "titleHighlight": "antes de que afecte tu operación",
+      "description": "La Tensión Interfacial (TIF) es el indicador más temprano de problemas en tu circuito SX. Detecta contaminantes y degradación 2-3 semanas antes de que se manifiesten en emulsiones, arrastres y pérdidas.",
+      "benefits": {
+        "predictDegradation": "Predice necesidad de tratamiento con arcillas",
+        "reduceEntrainment": "Reduce arrastre de orgánico hasta 52%",
+        "extendExtractant": "Extiende vida útil del extractante (+$150K/año)",
+        "dataDecisions": "Decisiones basadas en datos, no en reacciones"
+      },
+      "ctaPrimary": "Solicitar Evaluación",
+      "ctaSecondary": "Ver Tratamiento Orgánico",
+      "gaugeLabel": "Tensión Interfacial",
+      "gaugeUnit": "dinas/cm",
+      "gaugeLow": "Crítico",
+      "gaugeOptimal": "Óptimo >23",
+      "gaugeHigh": "Fresco",
+      "statusHealthy": "Orgánico saludable",
+      "statusAction": "Sin acción requerida"
+    },
+    "metrics": {
+      "yearsExperience": "Años de experiencia en SX",
+      "entrainmentReduction": "Reducción arrastre promedio",
+      "accuracy": "Precisión de medición",
+      "annualSavings": "Ahorro anual típico"
+    },
+    "problem": {
+      "badge": "El Problema",
+      "title": "Un TIF bajo es síntoma de problemas graves en tu orgánico",
+      "description": "Cuando la tensión interfacial cae por debajo de los valores óptimos, tu circuito SX sufre consecuencias en cascada: emulsiones estables, mayor arrastre, pérdida de extractante y degradación acelerada.",
+      "symptoms": {
+        "emulsions": {
+          "title": "Emulsiones persistentes",
+          "description": "Fases que no separan correctamente en los decantadores, reduciendo capacidad de planta."
+        },
+        "losses": {
+          "title": "Pérdidas de extractante",
+          "description": "Arrastres de orgánico hacia las soluciones acuosas que representan $50K-200K/año en pérdidas."
+        },
+        "stops": {
+          "title": "Paradas de emergencia",
+          "description": "Problemas de separación que fuerzan detenciones no programadas del circuito SX."
+        }
+      },
+      "chartTitle": "Escala de Tensión Interfacial",
+      "chart": {
+        "fresh": "Orgánico fresco",
+        "optimal": "Rango óptimo",
+        "warning": "Zona de alerta",
+        "critical": "Zona crítica",
+        "warningTitle": "¿Por qué baja el TIF?",
+        "warningText": "Compuestos tensioactivos de degradación oxidativa, sílice, arcillas y contaminantes orgánicos reducen la tensión interfacial."
+      }
+    },
+    "solution": {
+      "badge": "La Solución",
+      "title": "Monitoreo sistemático de TIF para control predictivo",
+      "description": "Nuestro servicio de medición de TIF te permite anticipar problemas, optimizar tratamientos y maximizar la vida útil de tu inventario de orgánico.",
+      "benefits": {
+        "earlyDetection": {
+          "title": "Detección temprana",
+          "description": "Identifica degradación 2-3 semanas antes de que aparezcan síntomas operacionales.",
+          "metric": "2-3 sem",
+          "metricLabel": "anticipación promedio"
+        },
+        "reducedLosses": {
+          "title": "Menores pérdidas",
+          "description": "Optimiza el momento del tratamiento para minimizar arrastres y pérdidas de extractante.",
+          "metric": "-52%",
+          "metricLabel": "reducción de arrastre"
+        },
+        "extendedLife": {
+          "title": "Vida extendida",
+          "description": "Mantener TIF óptimo extiende significativamente la vida útil del extractante.",
+          "metric": "$150K+",
+          "metricLabel": "ahorro anual típico"
+        }
+      }
+    },
+    "howItWorks": {
+      "badge": "Cómo Funciona",
+      "title": "Proceso de medición y análisis de TIF",
+      "description": "Un servicio integral que combina muestreo profesional, análisis de laboratorio certificado y recomendaciones accionables para tu operación.",
+      "steps": {
+        "sampling": {
+          "title": "Muestreo Profesional",
+          "description": "Tomamos muestras representativas de tu orgánico en puntos críticos del circuito SX bajo protocolos estandarizados."
+        },
+        "measurement": {
+          "title": "Medición Certificada",
+          "description": "Análisis de tensión interfacial mediante método de gota pendiente en laboratorio con equipo calibrado."
+        },
+        "analysis": {
+          "title": "Análisis de Tendencias",
+          "description": "Comparamos resultados con históricos para identificar patrones de degradación y predecir comportamiento futuro."
+        },
+        "action": {
+          "title": "Recomendaciones",
+          "description": "Entregamos recomendaciones específicas: dosis de arcilla, momento óptimo de tratamiento, o acciones preventivas."
+        }
+      },
+      "specs": {
+        "turnaround": {
+          "value": "48h",
+          "label": "Tiempo de respuesta",
+          "detail": "Resultados en 48 horas desde toma de muestra"
+        },
+        "precision": {
+          "value": "±2%",
+          "label": "Precisión",
+          "detail": "Equipo calibrado con estándares internacionales"
+        },
+        "coverage": {
+          "value": "LATAM",
+          "label": "Cobertura",
+          "detail": "Servicio disponible en toda Latinoamérica"
+        }
+      }
+    },
+    "industries": {
+      "title": "Aplicaciones por industria",
+      "description": "El monitoreo de TIF es crítico para cualquier operación que utilice extracción por solventes.",
+      "copper": {
+        "title": "Cobre SX/EW",
+        "description": "Circuitos de extracción por solventes donde la calidad del orgánico impacta directamente en recuperación y costos.",
+        "benefit": "Reduce crud y arrastres en mezcladores-decantadores"
+      },
+      "zinc": {
+        "title": "Zinc SX",
+        "description": "Procesos de purificación de zinc donde la separación de fases es crítica para calidad de producto.",
+        "benefit": "Optimiza separación en circuitos de purificación"
+      },
+      "lithium": {
+        "title": "Litio SX",
+        "description": "Extracción selectiva de litio desde salmueras donde la pureza del orgánico determina eficiencia.",
+        "benefit": "Maximiza selectividad de extracción"
+      }
+    },
+    "integration": {
+      "badge": "Ecosistema Integrado",
+      "title": "TIF es parte de tu estrategia de control de orgánico",
+      "description": "El monitoreo de TIF se integra con otros servicios de Tecionic para una gestión completa del orgánico.",
+      "services": {
+        "organicTreatment": {
+          "title": "Tratamiento de Orgánico",
+          "description": "Cuando el TIF indica degradación, aplicamos tratamiento con arcilla activada."
+        },
+        "tsfMonitoring": {
+          "title": "Monitoreo de TSF",
+          "description": "Complementa TIF con tiempo de separación de fases para visión completa."
+        },
+        "filtration": {
+          "title": "Filtración de Borras",
+          "description": "Remueve sólidos que causan degradación y reducen el TIF."
+        }
+      },
+      "diagram": {
+        "title": "Flujo de Control Integrado",
+        "subtitle": "TIF + TSF = Decisiones informadas",
+        "result": "Orgánico optimizado"
+      }
+    },
+    "cta": {
+      "title": "Conoce el estado real de tu orgánico",
+      "description": "Una medición de TIF te da visibilidad inmediata sobre la salud de tu circuito SX.",
+      "timeline": "Resultados en 48 horas. Sin compromiso.",
+      "primaryCta": "Solicitar Medición",
+      "secondaryCta": "Ver Tratamiento Orgánico",
+      "contactTitle": "Contacto directo",
+      "locations": {
+        "santiago": {
+          "name": "Santiago, Chile",
+          "address": "Luis Thayer Ojeda 95, of. 312"
+        },
+        "calama": {
+          "name": "Calama, Chile",
+          "address": "Oficina Operaciones Norte"
+        }
+      }
+    }
+  },
+  "tsfMonitoringService": {
+    "hero": {
+      "badge": "Analítica de Datos",
+      "title": "Optimiza la velocidad de tu circuito SX",
+      "titleHighlight": "con control de separación de fases",
+      "description": "El Tiempo de Separación de Fases (TSF) indica qué tan rápido se separan el orgánico y el acuoso. Un TSF alto significa emulsiones persistentes que reducen capacidad y causan arrastres.",
+      "benefits": {
+        "detectEarly": "Detecta degradación 2-3 semanas antes",
+        "optimizeSpeed": "Optimiza velocidad de mezcladores-decantadores",
+        "preventStops": "Elimina paradas de emergencia por separación",
+        "qualityControl": "Control de calidad de borra y emulsiones"
+      },
+      "ctaPrimary": "Solicitar Evaluación",
+      "ctaSecondary": "Ver Filtración de Borras",
+      "gaugeLabel": "Tiempo de Separación",
+      "gaugeUnit": "segundos",
+      "organicContinuity": "Continuidad Orgánica",
+      "aqueousContinuity": "Continuidad Acuosa",
+      "maxAllowed": "Máximo permitido",
+      "statusNormal": "Dentro de norma",
+      "statusRecommendation": "Monitoreo continuo"
+    },
+    "metrics": {
+      "tsfReduction": "Reducción de TSF lograda",
+      "weeksEarly": "Semanas de anticipación",
+      "emergencyStops": "Paradas de emergencia",
+      "monitoring": "Monitoreo disponible"
+    },
+    "problem": {
+      "badge": "El Problema",
+      "title": "Un TSF alto paraliza tu operación",
+      "description": "Cuando las fases no se separan rápidamente, tu circuito SX pierde capacidad, aumentan los arrastres y eventualmente debes parar para limpiar emulsiones acumuladas.",
+      "symptoms": {
+        "slowSeparation": {
+          "title": "Separación lenta",
+          "description": "Fases que tardan más de 120 segundos en separarse indican problemas en el orgánico."
+        },
+        "emulsions": {
+          "title": "Emulsiones estables",
+          "description": "Capas de crud y emulsión que se acumulan en los decantadores, reduciendo volumen útil."
+        },
+        "capacity": {
+          "title": "Pérdida de capacidad",
+          "description": "Cada segundo adicional de TSF reduce el throughput de tu circuito SX."
+        }
+      },
+      "chartTitle": "Escala de Tiempo de Separación",
+      "chart": {
+        "optimal": "Óptimo",
+        "warning": "Alerta",
+        "critical": "Crítico",
+        "emergency": "Emergencia",
+        "insight": "TSF es un indicador adelantado",
+        "insightText": "El TSF sube antes de que aparezcan problemas visibles. Monitorearlo te da tiempo para actuar."
+      }
+    },
+    "solution": {
+      "badge": "La Solución",
+      "title": "Monitoreo de TSF para control preventivo",
+      "description": "Medimos el tiempo de separación en ambas continuidades (orgánica y acuosa) para darte una visión completa del comportamiento de fases.",
+      "benefits": {
+        "earlyWarning": {
+          "title": "Alerta temprana",
+          "description": "Detecta problemas de separación 2-3 semanas antes de que afecten producción.",
+          "metric": "2-3 sem",
+          "metricLabel": "anticipación típica"
+        },
+        "optimizedSpeed": {
+          "title": "Velocidad optimizada",
+          "description": "Ajusta parámetros de mezcladores-decantadores para máxima eficiencia.",
+          "metric": "-65%",
+          "metricLabel": "reducción TSF lograda"
+        },
+        "zeroStops": {
+          "title": "Cero paradas",
+          "description": "Elimina detenciones de emergencia por problemas de separación de fases.",
+          "metric": "0",
+          "metricLabel": "paradas/año"
+        }
+      }
+    },
+    "howItWorks": {
+      "badge": "Cómo Funciona",
+      "title": "Medición estandarizada de tiempo de separación",
+      "description": "Protocolo de medición que entrega resultados comparables y accionables para tu operación.",
+      "steps": {
+        "sampling": {
+          "title": "Muestreo Controlado",
+          "description": "Tomamos muestras de orgánico cargado y descargado en condiciones estandarizadas."
+        },
+        "measurement": {
+          "title": "Medición Dual",
+          "description": "Medimos TSF en continuidad orgánica y acuosa para visión completa."
+        },
+        "analysis": {
+          "title": "Análisis Comparativo",
+          "description": "Comparamos con históricos y benchmarks de la industria para evaluar estado."
+        },
+        "action": {
+          "title": "Plan de Acción",
+          "description": "Recomendamos acciones específicas: filtración, tratamiento químico o ajustes operacionales."
+        }
+      },
+      "specs": {
+        "dualMeasurement": {
+          "value": "2x",
+          "label": "Medición dual",
+          "detail": "Continuidad orgánica + acuosa"
+        },
+        "frequency": {
+          "value": "Semanal",
+          "label": "Frecuencia sugerida",
+          "detail": "Para control preventivo continuo"
+        },
+        "trending": {
+          "value": "Histórico",
+          "label": "Análisis de tendencia",
+          "detail": "Seguimiento de evolución en el tiempo"
+        }
+      }
+    },
+    "industries": {
+      "title": "Aplicaciones por industria",
+      "description": "El TSF es crítico en cualquier proceso de extracción por solventes donde la separación de fases determina eficiencia.",
+      "copper": {
+        "title": "Cobre SX/EW",
+        "description": "Circuitos donde la velocidad de separación determina capacidad de producción.",
+        "benefit": "Maximiza throughput de mezcladores-decantadores"
+      },
+      "zinc": {
+        "title": "Zinc SX",
+        "description": "Procesos de purificación donde emulsiones afectan calidad de producto.",
+        "benefit": "Elimina contaminación por emulsiones"
+      },
+      "lithium": {
+        "title": "Litio SX",
+        "description": "Extracción donde la separación limpia es crítica para selectividad.",
+        "benefit": "Mantiene selectividad de extracción"
+      }
+    },
+    "integration": {
+      "badge": "Ecosistema Integrado",
+      "title": "TSF complementa tu estrategia de monitoreo",
+      "description": "El TSF junto con TIF te da visibilidad completa sobre el estado de tu orgánico.",
+      "services": {
+        "tifMeasurement": {
+          "title": "Medición de TIF",
+          "description": "Tensión interfacial indica causa química de problemas de separación."
+        },
+        "organicTreatment": {
+          "title": "Tratamiento de Orgánico",
+          "description": "Cuando TSF indica degradación, aplicamos tratamiento correctivo."
+        },
+        "filtration": {
+          "title": "Filtración de Borras",
+          "description": "Remueve sólidos finos que estabilizan emulsiones y aumentan TSF."
+        }
+      },
+      "diagram": {
+        "title": "Control Integral de Orgánico",
+        "subtitle": "TIF + TSF = Visibilidad completa",
+        "result": "Separación óptima"
+      }
+    },
+    "cta": {
+      "title": "Mide la velocidad real de tu circuito",
+      "description": "Una medición de TSF te muestra exactamente cómo se comporta la separación de fases.",
+      "timeline": "Resultados en 48 horas. Sin compromiso.",
+      "primaryCta": "Solicitar Medición",
+      "secondaryCta": "Ver Tratamiento Orgánico",
+      "contactTitle": "Contacto directo",
+      "locations": {
+        "santiago": {
+          "name": "Santiago, Chile",
+          "address": "Luis Thayer Ojeda 95, of. 312"
+        },
+        "calama": {
+          "name": "Calama, Chile",
+          "address": "Oficina Operaciones Norte"
+        }
+      }
+    }
+  },
+  "turbidityMonitoringService": {
+    "hero": {
+      "badge": "Analítica de Datos",
+      "title": "Control en tiempo real de partículas",
+      "titleHighlight": "para calidad garantizada",
+      "description": "El monitoreo continuo de turbidez te permite controlar la claridad de tus soluciones en tiempo real, optimizar dosificación de floculantes y asegurar cumplimiento de especificaciones.",
+      "benefits": {
+        "realTimeControl": "Control en tiempo real sin esperar análisis de laboratorio",
+        "optimizeFlocculant": "Optimiza dosificación de floculantes automáticamente",
+        "ensureCompliance": "Asegura cumplimiento de especificaciones de producto",
+        "eliminateLabDelay": "Elimina el retraso de análisis de laboratorio"
+      },
+      "ctaPrimary": "Solicitar Evaluación",
+      "ctaSecondary": "Ver Industria Potasio",
+      "gaugeLabel": "Turbidez Actual",
+      "gaugeUnit": "NTU",
+      "liveLabel": "En vivo",
+      "specLimit": "Límite especificación",
+      "nowLabel": "Ahora",
+      "statusWithinSpec": "Dentro de especificación",
+      "statusOptimized": "Dosificación optimizada"
+    },
+    "metrics": {
+      "continuousMonitoring": "Monitoreo continuo",
+      "achievedClarity": "Claridad alcanzada",
+      "flocculantSavings": "Ahorro en floculantes",
+      "specViolations": "Violaciones de especificación"
+    },
+    "problem": {
+      "badge": "El Problema",
+      "title": "Sin monitoreo continuo, estás operando a ciegas",
+      "description": "Los análisis de laboratorio tienen un retraso de horas. Cuando llegan los resultados, las condiciones ya cambiaron y puedes haber producido producto fuera de especificación.",
+      "symptoms": {
+        "labDelay": {
+          "title": "Retraso de laboratorio",
+          "description": "2-4 horas entre toma de muestra y resultado. Demasiado tarde para corregir."
+        },
+        "variability": {
+          "title": "Variabilidad de proceso",
+          "description": "Condiciones de entrada cambian constantemente. Dosificación fija no funciona."
+        },
+        "quality": {
+          "title": "Rechazos de calidad",
+          "description": "Producto fuera de especificación que debe reprocesarse o descartarse."
+        }
+      },
+      "chartTitle": "Escala de Turbidez",
+      "chart": {
+        "excellent": "Excelente",
+        "acceptable": "Aceptable",
+        "warning": "Alerta",
+        "outOfSpec": "Fuera de especificación",
+        "insight": "La turbidez varía minuto a minuto",
+        "insightText": "Solo el monitoreo continuo captura la variabilidad real del proceso."
+      }
+    },
+    "solution": {
+      "badge": "La Solución",
+      "title": "Monitoreo continuo con control automático",
+      "description": "Sensores en línea que miden turbidez cada segundo y permiten ajustar dosificación en tiempo real.",
+      "benefits": {
+        "realTime": {
+          "title": "Tiempo real",
+          "description": "Medición cada segundo, sin esperas ni muestreo manual.",
+          "metric": "24/7",
+          "metricLabel": "monitoreo continuo"
+        },
+        "flocculant": {
+          "title": "Optimización automática",
+          "description": "Ajusta dosificación de floculantes según demanda real, no por receta fija.",
+          "metric": "-30%",
+          "metricLabel": "ahorro en floculantes"
+        },
+        "compliance": {
+          "title": "Cumplimiento garantizado",
+          "description": "Alertas inmediatas cuando se acerca al límite de especificación.",
+          "metric": "100%",
+          "metricLabel": "dentro de especificación"
+        }
+      }
+    },
+    "howItWorks": {
+      "badge": "Cómo Funciona",
+      "title": "Sistema de monitoreo en línea",
+      "description": "Instalación rápida de sensores conectados a tu sistema de control para visibilidad total del proceso.",
+      "steps": {
+        "installation": {
+          "title": "Instalación Rápida",
+          "description": "Sensores de turbidez en línea instalados en puntos críticos del proceso."
+        },
+        "monitoring": {
+          "title": "Medición Continua",
+          "description": "Lectura cada segundo con transmisión a sistema de control y dashboard."
+        },
+        "alerts": {
+          "title": "Alertas Inteligentes",
+          "description": "Notificaciones cuando se acerca a límites o detecta tendencias anormales."
+        },
+        "optimization": {
+          "title": "Control Automático",
+          "description": "Integración con dosificadores para ajuste automático de floculantes."
+        }
+      },
+      "specs": {
+        "range": {
+          "value": "0-1000",
+          "label": "Rango de medición",
+          "detail": "NTU con auto-calibración"
+        },
+        "frequency": {
+          "value": "1/seg",
+          "label": "Frecuencia de lectura",
+          "detail": "Captura toda la variabilidad"
+        },
+        "connectivity": {
+          "value": "4-20mA",
+          "label": "Conectividad",
+          "detail": "Compatible con cualquier PLC/DCS"
+        }
+      }
+    },
+    "industries": {
+      "title": "Aplicaciones por industria",
+      "description": "El monitoreo de turbidez es esencial donde la claridad del producto o solución determina calidad.",
+      "potassium": {
+        "title": "Potasio",
+        "description": "Cristalización de sales donde la claridad de salmuera determina pureza del producto.",
+        "benefit": "Asegura pureza de KCl comercial"
+      },
+      "lithium": {
+        "title": "Litio DLE",
+        "description": "Protección de membranas de extracción directa que requieren soluciones ultra-claras.",
+        "benefit": "Protege membranas de alto costo"
+      },
+      "copper": {
+        "title": "Cobre PLS",
+        "description": "Clarificación de PLS para prevenir crud en circuitos SX.",
+        "benefit": "Previene formación de crud"
+      }
+    },
+    "integration": {
+      "badge": "Ecosistema Integrado",
+      "title": "Turbidez conecta con tus otros procesos",
+      "description": "El monitoreo de turbidez se integra con servicios de filtración y control de calidad.",
+      "services": {
+        "fineSolids": {
+          "title": "Tratamiento Sólidos Finos",
+          "description": "Cuando turbidez sube, activamos filtración para remover partículas."
+        },
+        "tifMeasurement": {
+          "title": "Medición de TIF",
+          "description": "Sólidos finos afectan TIF. Monitoreo conjunto da visión completa."
+        },
+        "tsfMonitoring": {
+          "title": "Monitoreo de TSF",
+          "description": "Partículas estabilizan emulsiones. Control de turbidez reduce TSF."
+        }
+      },
+      "diagram": {
+        "title": "Control de Calidad Integrado",
+        "subtitle": "Turbidez → Filtración → Calidad",
+        "result": "Especificación garantizada"
+      }
+    },
+    "cta": {
+      "title": "Deja de operar a ciegas",
+      "description": "El monitoreo de turbidez en tiempo real te da control total sobre la calidad de tu proceso.",
+      "timeline": "Instalación en 48 horas. Resultados inmediatos.",
+      "primaryCta": "Solicitar Evaluación",
+      "secondaryCta": "Ver Casos en Potasio",
+      "contactTitle": "Contacto directo",
+      "locations": {
+        "santiago": {
+          "name": "Santiago, Chile",
+          "address": "Luis Thayer Ojeda 95, of. 312"
+        },
+        "calama": {
+          "name": "Calama, Chile",
+          "address": "Oficina Operaciones Norte"
+        }
+      }
+    }
   }
 }

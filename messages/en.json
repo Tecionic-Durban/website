@@ -3564,5 +3564,554 @@
     "accept": "Accept",
     "decline": "Decline",
     "close": "Close"
+  },
+  "tifMeasurementService": {
+    "hero": {
+      "badge": "Data Analytics",
+      "title": "Predict organic degradation",
+      "titleHighlight": "before it affects your operation",
+      "description": "Interfacial Tension (IFT) is the earliest indicator of problems in your SX circuit. Detect contaminants and degradation 2-3 weeks before they manifest in emulsions, entrainment and losses.",
+      "benefits": {
+        "predictDegradation": "Predict clay treatment needs",
+        "reduceEntrainment": "Reduce organic entrainment up to 52%",
+        "extendExtractant": "Extend extractant life (+$150K/year)",
+        "dataDecisions": "Data-driven decisions, not reactions"
+      },
+      "ctaPrimary": "Request Evaluation",
+      "ctaSecondary": "See Organic Treatment",
+      "gaugeLabel": "Interfacial Tension",
+      "gaugeUnit": "dynes/cm",
+      "gaugeLow": "Critical",
+      "gaugeOptimal": "Optimal >23",
+      "gaugeHigh": "Fresh",
+      "statusHealthy": "Healthy organic",
+      "statusAction": "No action required"
+    },
+    "metrics": {
+      "yearsExperience": "Years of SX experience",
+      "entrainmentReduction": "Average entrainment reduction",
+      "accuracy": "Measurement accuracy",
+      "annualSavings": "Typical annual savings"
+    },
+    "problem": {
+      "badge": "The Problem",
+      "title": "Low IFT is a symptom of serious problems in your organic",
+      "description": "When interfacial tension falls below optimal values, your SX circuit suffers cascading consequences: stable emulsions, increased entrainment, extractant loss and accelerated degradation.",
+      "symptoms": {
+        "emulsions": {
+          "title": "Persistent emulsions",
+          "description": "Phases that don't separate properly in settlers, reducing plant capacity."
+        },
+        "losses": {
+          "title": "Extractant losses",
+          "description": "Organic entrainment to aqueous solutions representing $50K-200K/year in losses."
+        },
+        "stops": {
+          "title": "Emergency shutdowns",
+          "description": "Separation problems forcing unplanned SX circuit stops."
+        }
+      },
+      "chartTitle": "Interfacial Tension Scale",
+      "chart": {
+        "fresh": "Fresh organic",
+        "optimal": "Optimal range",
+        "warning": "Warning zone",
+        "critical": "Critical zone",
+        "warningTitle": "Why does IFT drop?",
+        "warningText": "Surface-active compounds from oxidative degradation, silica, clays and organic contaminants reduce interfacial tension."
+      }
+    },
+    "solution": {
+      "badge": "The Solution",
+      "title": "Systematic IFT monitoring for predictive control",
+      "description": "Our IFT measurement service allows you to anticipate problems, optimize treatments and maximize the life of your organic inventory.",
+      "benefits": {
+        "earlyDetection": {
+          "title": "Early detection",
+          "description": "Identify degradation 2-3 weeks before operational symptoms appear.",
+          "metric": "2-3 wks",
+          "metricLabel": "average anticipation"
+        },
+        "reducedLosses": {
+          "title": "Reduced losses",
+          "description": "Optimize treatment timing to minimize entrainment and extractant losses.",
+          "metric": "-52%",
+          "metricLabel": "entrainment reduction"
+        },
+        "extendedLife": {
+          "title": "Extended life",
+          "description": "Maintaining optimal IFT significantly extends extractant life.",
+          "metric": "$150K+",
+          "metricLabel": "typical annual savings"
+        }
+      }
+    },
+    "howItWorks": {
+      "badge": "How It Works",
+      "title": "IFT measurement and analysis process",
+      "description": "A comprehensive service combining professional sampling, certified laboratory analysis and actionable recommendations for your operation.",
+      "steps": {
+        "sampling": {
+          "title": "Professional Sampling",
+          "description": "We take representative samples of your organic at critical points in the SX circuit under standardized protocols."
+        },
+        "measurement": {
+          "title": "Certified Measurement",
+          "description": "Interfacial tension analysis using pendant drop method in laboratory with calibrated equipment."
+        },
+        "analysis": {
+          "title": "Trend Analysis",
+          "description": "We compare results with historical data to identify degradation patterns and predict future behavior."
+        },
+        "action": {
+          "title": "Recommendations",
+          "description": "We deliver specific recommendations: clay dosage, optimal treatment timing, or preventive actions."
+        }
+      },
+      "specs": {
+        "turnaround": {
+          "value": "48h",
+          "label": "Turnaround time",
+          "detail": "Results within 48 hours of sampling"
+        },
+        "precision": {
+          "value": "±2%",
+          "label": "Precision",
+          "detail": "Equipment calibrated to international standards"
+        },
+        "coverage": {
+          "value": "LATAM",
+          "label": "Coverage",
+          "detail": "Service available throughout Latin America"
+        }
+      }
+    },
+    "industries": {
+      "title": "Industry applications",
+      "description": "IFT monitoring is critical for any operation using solvent extraction.",
+      "copper": {
+        "title": "Copper SX/EW",
+        "description": "Solvent extraction circuits where organic quality directly impacts recovery and costs.",
+        "benefit": "Reduces crud and entrainment in mixer-settlers"
+      },
+      "zinc": {
+        "title": "Zinc SX",
+        "description": "Zinc purification processes where phase separation is critical for product quality.",
+        "benefit": "Optimizes separation in purification circuits"
+      },
+      "lithium": {
+        "title": "Lithium SX",
+        "description": "Selective lithium extraction from brines where organic purity determines efficiency.",
+        "benefit": "Maximizes extraction selectivity"
+      }
+    },
+    "integration": {
+      "badge": "Integrated Ecosystem",
+      "title": "IFT is part of your organic control strategy",
+      "description": "IFT monitoring integrates with other Tecionic services for complete organic management.",
+      "services": {
+        "organicTreatment": {
+          "title": "Organic Treatment",
+          "description": "When IFT indicates degradation, we apply activated clay treatment."
+        },
+        "tsfMonitoring": {
+          "title": "TSF Monitoring",
+          "description": "Complements IFT with phase separation time for complete visibility."
+        },
+        "filtration": {
+          "title": "Sludge Filtration",
+          "description": "Removes solids that cause degradation and reduce IFT."
+        }
+      },
+      "diagram": {
+        "title": "Integrated Control Flow",
+        "subtitle": "IFT + TSF = Informed decisions",
+        "result": "Optimized organic"
+      }
+    },
+    "cta": {
+      "title": "Know the real state of your organic",
+      "description": "An IFT measurement gives you immediate visibility into your SX circuit health.",
+      "timeline": "Results in 48 hours. No commitment.",
+      "primaryCta": "Request Measurement",
+      "secondaryCta": "See Organic Treatment",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": {
+          "name": "Santiago, Chile",
+          "address": "Luis Thayer Ojeda 95, of. 312"
+        },
+        "calama": {
+          "name": "Calama, Chile",
+          "address": "Northern Operations Office"
+        }
+      }
+    }
+  },
+  "tsfMonitoringService": {
+    "hero": {
+      "badge": "Data Analytics",
+      "title": "Optimize your SX circuit speed",
+      "titleHighlight": "with phase separation control",
+      "description": "Phase Separation Time (PST) indicates how quickly organic and aqueous separate. High PST means persistent emulsions that reduce capacity and cause entrainment.",
+      "benefits": {
+        "detectEarly": "Detect degradation 2-3 weeks early",
+        "optimizeSpeed": "Optimize mixer-settler speed",
+        "preventStops": "Eliminate emergency stops from separation issues",
+        "qualityControl": "Quality control of sludge and emulsions"
+      },
+      "ctaPrimary": "Request Evaluation",
+      "ctaSecondary": "See Sludge Filtration",
+      "gaugeLabel": "Separation Time",
+      "gaugeUnit": "seconds",
+      "organicContinuity": "Organic Continuity",
+      "aqueousContinuity": "Aqueous Continuity",
+      "maxAllowed": "Maximum allowed",
+      "statusNormal": "Within spec",
+      "statusRecommendation": "Continuous monitoring"
+    },
+    "metrics": {
+      "tsfReduction": "PST reduction achieved",
+      "weeksEarly": "Weeks of anticipation",
+      "emergencyStops": "Emergency stops",
+      "monitoring": "Monitoring available"
+    },
+    "problem": {
+      "badge": "The Problem",
+      "title": "High PST paralyzes your operation",
+      "description": "When phases don't separate quickly, your SX circuit loses capacity, entrainment increases and eventually you must stop to clean accumulated emulsions.",
+      "symptoms": {
+        "slowSeparation": {
+          "title": "Slow separation",
+          "description": "Phases taking more than 120 seconds to separate indicate organic problems."
+        },
+        "emulsions": {
+          "title": "Stable emulsions",
+          "description": "Crud and emulsion layers accumulating in settlers, reducing useful volume."
+        },
+        "capacity": {
+          "title": "Capacity loss",
+          "description": "Each additional second of PST reduces your SX circuit throughput."
+        }
+      },
+      "chartTitle": "Phase Separation Time Scale",
+      "chart": {
+        "optimal": "Optimal",
+        "warning": "Warning",
+        "critical": "Critical",
+        "emergency": "Emergency",
+        "insight": "PST is a leading indicator",
+        "insightText": "PST rises before visible problems appear. Monitoring it gives you time to act."
+      }
+    },
+    "solution": {
+      "badge": "The Solution",
+      "title": "PST monitoring for preventive control",
+      "description": "We measure separation time in both continuities (organic and aqueous) to give you a complete view of phase behavior.",
+      "benefits": {
+        "earlyWarning": {
+          "title": "Early warning",
+          "description": "Detect separation problems 2-3 weeks before they affect production.",
+          "metric": "2-3 wks",
+          "metricLabel": "typical anticipation"
+        },
+        "optimizedSpeed": {
+          "title": "Optimized speed",
+          "description": "Adjust mixer-settler parameters for maximum efficiency.",
+          "metric": "-65%",
+          "metricLabel": "PST reduction achieved"
+        },
+        "zeroStops": {
+          "title": "Zero stops",
+          "description": "Eliminate emergency shutdowns from phase separation problems.",
+          "metric": "0",
+          "metricLabel": "stops/year"
+        }
+      }
+    },
+    "howItWorks": {
+      "badge": "How It Works",
+      "title": "Standardized separation time measurement",
+      "description": "Measurement protocol delivering comparable and actionable results for your operation.",
+      "steps": {
+        "sampling": {
+          "title": "Controlled Sampling",
+          "description": "We take samples of loaded and stripped organic under standardized conditions."
+        },
+        "measurement": {
+          "title": "Dual Measurement",
+          "description": "We measure PST in organic and aqueous continuity for complete visibility."
+        },
+        "analysis": {
+          "title": "Comparative Analysis",
+          "description": "We compare with historical data and industry benchmarks to evaluate status."
+        },
+        "action": {
+          "title": "Action Plan",
+          "description": "We recommend specific actions: filtration, chemical treatment or operational adjustments."
+        }
+      },
+      "specs": {
+        "dualMeasurement": {
+          "value": "2x",
+          "label": "Dual measurement",
+          "detail": "Organic + aqueous continuity"
+        },
+        "frequency": {
+          "value": "Weekly",
+          "label": "Suggested frequency",
+          "detail": "For continuous preventive control"
+        },
+        "trending": {
+          "value": "Historical",
+          "label": "Trend analysis",
+          "detail": "Evolution tracking over time"
+        }
+      }
+    },
+    "industries": {
+      "title": "Industry applications",
+      "description": "PST is critical in any solvent extraction process where phase separation determines efficiency.",
+      "copper": {
+        "title": "Copper SX/EW",
+        "description": "Circuits where separation speed determines production capacity.",
+        "benefit": "Maximizes mixer-settler throughput"
+      },
+      "zinc": {
+        "title": "Zinc SX",
+        "description": "Purification processes where emulsions affect product quality.",
+        "benefit": "Eliminates emulsion contamination"
+      },
+      "lithium": {
+        "title": "Lithium SX",
+        "description": "Extraction where clean separation is critical for selectivity.",
+        "benefit": "Maintains extraction selectivity"
+      }
+    },
+    "integration": {
+      "badge": "Integrated Ecosystem",
+      "title": "PST complements your monitoring strategy",
+      "description": "PST together with IFT gives you complete visibility into your organic status.",
+      "services": {
+        "tifMeasurement": {
+          "title": "IFT Measurement",
+          "description": "Interfacial tension indicates chemical cause of separation problems."
+        },
+        "organicTreatment": {
+          "title": "Organic Treatment",
+          "description": "When PST indicates degradation, we apply corrective treatment."
+        },
+        "filtration": {
+          "title": "Sludge Filtration",
+          "description": "Removes fine solids that stabilize emulsions and increase PST."
+        }
+      },
+      "diagram": {
+        "title": "Integral Organic Control",
+        "subtitle": "IFT + PST = Complete visibility",
+        "result": "Optimal separation"
+      }
+    },
+    "cta": {
+      "title": "Measure your circuit's real speed",
+      "description": "A PST measurement shows you exactly how phase separation behaves.",
+      "timeline": "Results in 48 hours. No commitment.",
+      "primaryCta": "Request Measurement",
+      "secondaryCta": "See Organic Treatment",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": {
+          "name": "Santiago, Chile",
+          "address": "Luis Thayer Ojeda 95, of. 312"
+        },
+        "calama": {
+          "name": "Calama, Chile",
+          "address": "Northern Operations Office"
+        }
+      }
+    }
+  },
+  "turbidityMonitoringService": {
+    "hero": {
+      "badge": "Data Analytics",
+      "title": "Real-time particle control",
+      "titleHighlight": "for guaranteed quality",
+      "description": "Continuous turbidity monitoring lets you control solution clarity in real-time, optimize flocculant dosing and ensure specification compliance.",
+      "benefits": {
+        "realTimeControl": "Real-time control without waiting for lab analysis",
+        "optimizeFlocculant": "Automatically optimize flocculant dosing",
+        "ensureCompliance": "Ensure product specification compliance",
+        "eliminateLabDelay": "Eliminate lab analysis delays"
+      },
+      "ctaPrimary": "Request Evaluation",
+      "ctaSecondary": "See Potassium Industry",
+      "gaugeLabel": "Current Turbidity",
+      "gaugeUnit": "NTU",
+      "liveLabel": "Live",
+      "specLimit": "Spec limit",
+      "nowLabel": "Now",
+      "statusWithinSpec": "Within specification",
+      "statusOptimized": "Dosing optimized"
+    },
+    "metrics": {
+      "continuousMonitoring": "Continuous monitoring",
+      "achievedClarity": "Achieved clarity",
+      "flocculantSavings": "Flocculant savings",
+      "specViolations": "Spec violations"
+    },
+    "problem": {
+      "badge": "The Problem",
+      "title": "Without continuous monitoring, you're operating blind",
+      "description": "Lab analyses have hours of delay. By the time results arrive, conditions have changed and you may have produced out-of-spec product.",
+      "symptoms": {
+        "labDelay": {
+          "title": "Lab delay",
+          "description": "2-4 hours between sampling and result. Too late to correct."
+        },
+        "variability": {
+          "title": "Process variability",
+          "description": "Input conditions constantly change. Fixed dosing doesn't work."
+        },
+        "quality": {
+          "title": "Quality rejections",
+          "description": "Out-of-spec product that must be reprocessed or discarded."
+        }
+      },
+      "chartTitle": "Turbidity Scale",
+      "chart": {
+        "excellent": "Excellent",
+        "acceptable": "Acceptable",
+        "warning": "Warning",
+        "outOfSpec": "Out of specification",
+        "insight": "Turbidity varies minute by minute",
+        "insightText": "Only continuous monitoring captures real process variability."
+      }
+    },
+    "solution": {
+      "badge": "The Solution",
+      "title": "Continuous monitoring with automatic control",
+      "description": "In-line sensors measuring turbidity every second, enabling real-time dosing adjustment.",
+      "benefits": {
+        "realTime": {
+          "title": "Real-time",
+          "description": "Measurement every second, no waiting or manual sampling.",
+          "metric": "24/7",
+          "metricLabel": "continuous monitoring"
+        },
+        "flocculant": {
+          "title": "Automatic optimization",
+          "description": "Adjust flocculant dosing based on real demand, not fixed recipe.",
+          "metric": "-30%",
+          "metricLabel": "flocculant savings"
+        },
+        "compliance": {
+          "title": "Guaranteed compliance",
+          "description": "Immediate alerts when approaching specification limits.",
+          "metric": "100%",
+          "metricLabel": "within specification"
+        }
+      }
+    },
+    "howItWorks": {
+      "badge": "How It Works",
+      "title": "In-line monitoring system",
+      "description": "Quick installation of sensors connected to your control system for total process visibility.",
+      "steps": {
+        "installation": {
+          "title": "Quick Installation",
+          "description": "In-line turbidity sensors installed at critical process points."
+        },
+        "monitoring": {
+          "title": "Continuous Measurement",
+          "description": "Reading every second with transmission to control system and dashboard."
+        },
+        "alerts": {
+          "title": "Smart Alerts",
+          "description": "Notifications when approaching limits or detecting abnormal trends."
+        },
+        "optimization": {
+          "title": "Automatic Control",
+          "description": "Integration with dosing systems for automatic flocculant adjustment."
+        }
+      },
+      "specs": {
+        "range": {
+          "value": "0-1000",
+          "label": "Measurement range",
+          "detail": "NTU with auto-calibration"
+        },
+        "frequency": {
+          "value": "1/sec",
+          "label": "Reading frequency",
+          "detail": "Captures all variability"
+        },
+        "connectivity": {
+          "value": "4-20mA",
+          "label": "Connectivity",
+          "detail": "Compatible with any PLC/DCS"
+        }
+      }
+    },
+    "industries": {
+      "title": "Industry applications",
+      "description": "Turbidity monitoring is essential where product or solution clarity determines quality.",
+      "potassium": {
+        "title": "Potassium",
+        "description": "Salt crystallization where brine clarity determines product purity.",
+        "benefit": "Ensures commercial KCl purity"
+      },
+      "lithium": {
+        "title": "Lithium DLE",
+        "description": "Protection of direct extraction membranes requiring ultra-clear solutions.",
+        "benefit": "Protects high-cost membranes"
+      },
+      "copper": {
+        "title": "Copper PLS",
+        "description": "PLS clarification to prevent crud in SX circuits.",
+        "benefit": "Prevents crud formation"
+      }
+    },
+    "integration": {
+      "badge": "Integrated Ecosystem",
+      "title": "Turbidity connects with your other processes",
+      "description": "Turbidity monitoring integrates with filtration and quality control services.",
+      "services": {
+        "fineSolids": {
+          "title": "Fine Solids Treatment",
+          "description": "When turbidity rises, we activate filtration to remove particles."
+        },
+        "tifMeasurement": {
+          "title": "IFT Measurement",
+          "description": "Fine solids affect IFT. Joint monitoring gives complete visibility."
+        },
+        "tsfMonitoring": {
+          "title": "PST Monitoring",
+          "description": "Particles stabilize emulsions. Turbidity control reduces PST."
+        }
+      },
+      "diagram": {
+        "title": "Integrated Quality Control",
+        "subtitle": "Turbidity → Filtration → Quality",
+        "result": "Guaranteed specification"
+      }
+    },
+    "cta": {
+      "title": "Stop operating blind",
+      "description": "Real-time turbidity monitoring gives you total control over your process quality.",
+      "timeline": "Installation in 48 hours. Immediate results.",
+      "primaryCta": "Request Evaluation",
+      "secondaryCta": "See Potassium Cases",
+      "contactTitle": "Direct contact",
+      "locations": {
+        "santiago": {
+          "name": "Santiago, Chile",
+          "address": "Luis Thayer Ojeda 95, of. 312"
+        },
+        "calama": {
+          "name": "Calama, Chile",
+          "address": "Northern Operations Office"
+        }
+      }
+    }
   }
 }

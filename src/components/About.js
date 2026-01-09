@@ -118,7 +118,7 @@ export default function About() {
 
       {/* Sticky viewport container */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 w-full relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
 
           {/* Left Side - Static Text */}
@@ -134,15 +134,15 @@ export default function About() {
           </div>
 
           {/* Right Side - Card Track */}
-          <div className="lg:w-3/5 relative" style={{ minHeight: '450px', perspective: '1200px' }}>
+          <div className="w-full lg:w-3/5 relative" style={{ minHeight: '350px', perspective: '1200px' }}>
             {cards.map((card, index) => (
               <div
                 key={index}
                 ref={(el) => (cardsRef.current[index] = el)}
-                className="absolute top-1/2 left-0 right-0 -translate-y-1/2 will-change-transform transition-all duration-500 ease-out"
-                style={{ transformOrigin: 'center center' }}
+                className="absolute top-1/2 left-0 right-0 -translate-y-1/2 will-change-transform transition-all duration-500 ease-out mx-auto px-4 sm:px-0"
+                style={{ transformOrigin: 'center center', maxWidth: '100%' }}
               >
-                <div className="group relative bg-white rounded-2xl p-8 border border-emerald-300/50 shadow-2xl overflow-hidden transition-shadow duration-500"
+                <div className="group relative bg-white rounded-2xl p-5 sm:p-8 border border-emerald-300/50 shadow-2xl overflow-hidden transition-shadow duration-500"
                   style={{
                     boxShadow: '0 20px 60px -15px rgba(16, 185, 129, 0.15), 0 10px 30px -10px rgba(0, 0, 0, 0.1)'
                   }}
@@ -150,18 +150,18 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <div className="relative z-10">
-                    <div className="flex items-start space-x-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                        <card.icon className="w-8 h-8 text-white" />
+                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <card.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-4">
-                          <h3 className="font-bold text-2xl text-gray-900">{t(`cards.${card.key}.title`)}</h3>
-                          <span className="text-sm font-semibold px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3 sm:mb-4">
+                          <h3 className="font-bold text-xl sm:text-2xl text-gray-900">{t(`cards.${card.key}.title`)}</h3>
+                          <span className="text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-100 text-emerald-700 rounded-full w-fit">
                             {t(`cards.${card.key}.metric`)}
                           </span>
                         </div>
-                        <p className="text-gray-600 text-lg leading-relaxed">{t(`cards.${card.key}.description`)}</p>
+                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed">{t(`cards.${card.key}.description`)}</p>
                       </div>
                     </div>
                   </div>

@@ -7,9 +7,9 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 
 const localeConfig = {
-  'es-cl': { name: 'Espanol (CL)', flag: 'CL', shortName: 'ES-CL' },
-  'es-mx': { name: 'Espanol (MX)', flag: 'MX', shortName: 'ES-MX' },
-  'pt-br': { name: 'Portugues', flag: 'BR', shortName: 'PT-BR' },
+  'es-cl': { name: 'Español', flag: 'CL', shortName: 'ES-CL' },
+  'es-mx': { name: 'Español', flag: 'MX', shortName: 'ES-MX' },
+  'pt-br': { name: 'Português', flag: 'BR', shortName: 'PT-BR' },
   'en': { name: 'English', flag: 'US', shortName: 'EN' }
 };
 

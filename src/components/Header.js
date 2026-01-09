@@ -228,13 +228,6 @@ export default function Header() {
                                 </div>
                               </a>
                             </div>
-
-                            {/* Coming soon indicator */}
-                            <div className="mt-6 pt-4 border-t border-gray-100">
-                              <p className="text-xs text-gray-400">
-                                {t('header.analyticsComingSoon')}
-                              </p>
-                            </div>
                           </>
                         )}
 

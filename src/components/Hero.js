@@ -60,7 +60,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative min-h-screen text-white overflow-hidden flex flex-col justify-center">
+    <section ref={heroRef} className="relative h-[calc(100vh-112px)] text-white overflow-hidden flex flex-col justify-center">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -86,7 +86,7 @@ export default function Hero() {
       </div>
 
       
-      <div className="relative max-w-7xl mx-auto px-4 py-20 lg:py-32 w-full">
+      <div className="relative max-w-7xl mx-auto px-4 py-16 lg:py-20 w-full">
         {/* Content */}
         <div className="max-w-3xl">
             {/* Eyebrow + Headline Complex */}
@@ -116,7 +116,7 @@ export default function Hero() {
             </div>
 
             {/* KPIs Row */}
-            <div className="mt-10 grid grid-cols-3 gap-8">
+            <div className="mt-8 grid grid-cols-3 gap-8">
               <div className="text-left">
                 <div className="text-4xl font-black text-white">23+</div>
                 <div className="text-sm text-white/70">{t('stats.yearsExperience')}</div>
@@ -132,7 +132,7 @@ export default function Hero() {
             </div>
 
             {/* CTA Button */}
-            <div className="mt-10">
+            <div className="mt-8">
               <button
                 onClick={() => router.push('/services')}
                 className="group bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 inline-flex items-center"
@@ -142,13 +142,6 @@ export default function Hero() {
               </button>
             </div>
         </div>
-      </div>
-
-      {/* Bottom wave transition */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgb(255,255,255)"></path>
-        </svg>
       </div>
     </section>
   )
