@@ -2286,7 +2286,7 @@
         "services": ["Filtrado", "Arcilla"]
       },
       {
-        "slug": "enap-lodos-petroleros",
+        "slug": "lodos-petroleros",
         "industry": "Petróleo",
         "headlineMetric": "84",
         "metricUnit": "%",
@@ -2434,7 +2434,7 @@
       "ctaTitle": "¿Enfrenta desafíos similares en su planta SX?",
       "ctaDescription": "Nuestro equipo de especialistas puede ayudarle a optimizar su proceso y lograr resultados medibles."
     },
-    "enapLodosPetroleros": {
+    "lodosPetroleros": {
       "tagline": "Validación Técnica · Hidrocarburos",
       "title": "35-85% Reducción Volumétrica",
       "headline": "Deshidratación de Lodos Petroleros - Refinería en Chile Central",

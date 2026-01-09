@@ -36,7 +36,7 @@ const routes = [
   // Case studies - medium-high priority (trust signals)
   { path: '/casos-de-exito', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/casos-de-exito/deshidratacion-concentrados', changeFrequency: 'monthly' as const, priority: 0.7 },
-  { path: '/casos-de-exito/enap-lodos-petroleros', changeFrequency: 'monthly' as const, priority: 0.7 },
+  { path: '/casos-de-exito/lodos-petroleros', changeFrequency: 'monthly' as const, priority: 0.7 },
   { path: '/casos-de-exito/limpieza-celdas-ew', changeFrequency: 'monthly' as const, priority: 0.7 },
   { path: '/casos-de-exito/solidos-finos-yoduro', changeFrequency: 'monthly' as const, priority: 0.7 },
   { path: '/casos-de-exito/soporte-sx-dgm', changeFrequency: 'monthly' as const, priority: 0.7 },
@@ -45,8 +45,7 @@ const routes = [
   // Resources - medium priority
   { path: '/resources', changeFrequency: 'weekly' as const, priority: 0.7 },
   { path: '/white-papers', changeFrequency: 'monthly' as const, priority: 0.7 },
-  { path: '/historias-de-clientes', changeFrequency: 'monthly' as const, priority: 0.7 },
-  { path: '/tendencias-industria', changeFrequency: 'weekly' as const, priority: 0.7 },
+    { path: '/tendencias-industria', changeFrequency: 'weekly' as const, priority: 0.7 },
 
   // Technical pages - medium priority
   { path: '/especificaciones-tecnicas', changeFrequency: 'monthly' as const, priority: 0.6 },

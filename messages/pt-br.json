@@ -2286,7 +2286,7 @@
         "services": ["Filtragem", "Argila"]
       },
       {
-        "slug": "enap-lodos-petroleros",
+        "slug": "lodos-petroleros",
         "industry": "Petróleo",
         "headlineMetric": "84",
         "metricUnit": "%",
@@ -2434,7 +2434,7 @@
       "ctaTitle": "Enfrenta desafios similares em sua planta SX?",
       "ctaDescription": "Nossa equipe de especialistas pode ajudá-lo a otimizar seu processo e alcançar resultados mensuráveis."
     },
-    "enapLodosPetroleros": {
+    "lodosPetroleros": {
       "tagline": "Validação Técnica · Hidrocarbonetos",
       "title": "35-85% Redução Volumétrica",
       "headline": "Desidratação de Lodos de Petróleo - Refinaria no Chile Central",

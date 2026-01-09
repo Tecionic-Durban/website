@@ -3,9 +3,9 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
-export default function ENAPLodosPetroleroCase() {
+export default function LodosPetrolerosCase() {
   const tc = useTranslations('caseStudyDetail.common')
-  const ts = useTranslations('caseStudyDetail.enapLodosPetroleros')
+  const ts = useTranslations('caseStudyDetail.lodosPetroleros')
 
   return (
     <div className="min-h-screen bg-gray-50">

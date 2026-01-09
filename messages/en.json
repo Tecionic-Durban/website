@@ -2286,7 +2286,7 @@
         "services": ["Filtration", "Clay"]
       },
       {
-        "slug": "enap-lodos-petroleros",
+        "slug": "lodos-petroleros",
         "industry": "Oil",
         "headlineMetric": "84",
         "metricUnit": "%",
@@ -2434,7 +2434,7 @@
       "ctaTitle": "Facing similar challenges in your SX plant?",
       "ctaDescription": "Our team of specialists can help you optimize your process and achieve measurable results."
     },
-    "enapLodosPetroleros": {
+    "lodosPetroleros": {
       "tagline": "Technical Validation · Hydrocarbons",
       "title": "35-85% Volume Reduction",
       "headline": "Oil Sludge Dewatering - Central Chile Refinery",

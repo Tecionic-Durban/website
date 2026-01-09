@@ -219,6 +219,17 @@ function EquipmentBenefits({ t }) {
 
 export default function FiltrationPage() {
   const t = useTranslations('filtrationService')
+  const [activeProductCard, setActiveProductCard] = useState(0)
+  const productCarouselRef = useRef(null)
+
+  // Handle scroll to update active dot
+  const handleProductScroll = () => {
+    if (!productCarouselRef.current) return
+    const scrollLeft = productCarouselRef.current.scrollLeft
+    const cardWidth = productCarouselRef.current.offsetWidth * 0.85 + 16
+    const activeIndex = Math.round(scrollLeft / cardWidth)
+    setActiveProductCard(activeIndex)
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -600,8 +611,8 @@ export default function FiltrationPage() {
             </div>
             {/* Dot indicators */}
             <div className="flex justify-center gap-2 mt-4">
-              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-              <div className="w-2 h-2 rounded-full bg-emerald-400/30"></div>
+              <div className={`w-2 h-2 rounded-full transition-colors ${activeProductCard === 0 ? "bg-emerald-400" : "bg-emerald-400/30"}`}></div>
+              <div className={`w-2 h-2 rounded-full transition-colors ${activeProductCard === 1 ? "bg-emerald-400" : "bg-emerald-400/30"}`}></div>
             </div>
           </div>
           {/* Result stats - hidden on mobile, shown in carousel cards */}
