@@ -55,7 +55,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50 steel-gradient">
+    <header className="bg-white shadow-lg sticky top-0 z-50 steel-gradient" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -450,7 +450,7 @@ export default function Header() {
 
         {/* Mobile Navigation - Full Screen Slide */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-[88px] bg-white z-50 overflow-hidden">
+          <div className="lg:hidden fixed inset-0 bg-white z-50 overflow-hidden" style={{ top: 'calc(88px + env(safe-area-inset-top, 0px))' }}>
             <div className="relative h-full">
               {/* Main Panel */}
               <div

@@ -115,7 +115,7 @@ export default function LatamPresence() {
       </div>
 
       {/* Desktop layout */}
-      <div className="hidden lg:block relative max-w-7xl mx-auto px-4 py-40 min-h-[900px]">
+      <div className="hidden lg:block relative max-w-7xl mx-auto px-4 lg:px-8 py-40 min-h-[900px]">
         {/* Header */}
         <div className="text-right ml-auto max-w-xl mb-16">
           <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">

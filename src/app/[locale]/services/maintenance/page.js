@@ -93,7 +93,7 @@ export default function MaintenanceServicePage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-900 to-gray-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex items-center mb-6">
             <div className="w-16 h-16 bg-gray-800/50 rounded-xl flex items-center justify-center mr-4">
               <Settings className="w-8 h-8" />
@@ -139,7 +139,7 @@ export default function MaintenanceServicePage() {
 
       {/* Navigation Tabs */}
       <section className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <nav className="flex space-x-8">
             {[
               { id: 'overview', label: 'Descripción General' },
@@ -165,7 +165,7 @@ export default function MaintenanceServicePage() {
 
       {/* Content Sections */}
       <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           {activeTab === 'overview' && (
             <div className="prose max-w-4xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Soporte Técnico Especializado en Hidrometalurgia</h2>

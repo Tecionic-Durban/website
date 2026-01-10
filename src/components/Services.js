@@ -76,7 +76,7 @@ export default function Services() {
         <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
       </div>
 
-      <div className="max-w-8xl mx-auto px-8 relative">
+      <div className="max-w-8xl mx-auto px-4 lg:px-8 relative">
         {/* Enterprise Header */}
         <div className="mb-6 lg:mb-20 progressive-reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 lg:mb-6 leading-tight enterprise-slide-up">

@@ -27,7 +27,7 @@ export default function CrudeOilIndustryPage() {
           background: 'radial-gradient(circle, rgba(55, 65, 81, 0.15) 0%, rgba(75, 85, 99, 0.08) 40%, transparent 70%)'
         }}></div>
 
-        <div className="relative max-w-[1400px] mx-auto px-8 py-12 lg:py-16">
+        <div className="relative max-w-[1400px] mx-auto px-4 lg:px-8 py-12 lg:py-16">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             {/* Left - Content */}
@@ -61,7 +61,7 @@ export default function CrudeOilIndustryPage() {
 
       {/* Challenge Section - Featured card + breakdown */}
       <section className="py-24 bg-white">
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -166,7 +166,7 @@ export default function CrudeOilIndustryPage() {
 
       {/* Core Capabilities - Bento Box Layout */}
       <section className="py-24 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
 
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-6">
@@ -273,7 +273,7 @@ export default function CrudeOilIndustryPage() {
 
       {/* Lab Results Validation Section */}
       <section className="py-24 bg-white">
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -363,7 +363,7 @@ export default function CrudeOilIndustryPage() {
 
       {/* 5 Application Areas Section */}
       <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
 
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black mb-4">
@@ -467,7 +467,7 @@ export default function CrudeOilIndustryPage() {
 
       {/* Benefits Section - Clean card design */}
       <section className="py-24 bg-white">
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
 
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{t('benefits.sectionLabel')}</span>
@@ -608,7 +608,7 @@ export default function CrudeOilIndustryPage() {
 
       {/* Comparison Section - Side-by-side layout */}
       <section className="py-24 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
 
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4">
@@ -687,7 +687,7 @@ export default function CrudeOilIndustryPage() {
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white">
-        <div className="max-w-4xl mx-auto px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-black mb-6">
             {t('cta.title')}
           </h2>

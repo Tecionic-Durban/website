@@ -103,7 +103,7 @@ export default function ResourcesPage() {
       <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Centro de Recursos</h1>
           <div className="w-24 h-1 bg-emerald-400 mx-auto mb-6"></div>
           <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
@@ -115,7 +115,7 @@ export default function ResourcesPage() {
 
       {/* Resource Categories */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           {resources.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-16">
               <div className="flex items-center mb-8">
@@ -164,7 +164,7 @@ export default function ResourcesPage() {
 
       {/* Webinars Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Webinars y Eventos</h2>
             <p className="text-lg text-gray-600">
@@ -221,7 +221,7 @@ export default function ResourcesPage() {
 
       {/* Newsletter Signup */}
       <section className="py-16 bg-emerald-600">
-        <div className="max-w-4xl mx-auto px-4 text-center text-white">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Manténgase Actualizado</h2>
           <p className="text-xl text-emerald-100 mb-8">
             Suscríbase a nuestro boletín técnico para recibir los últimos recursos, 

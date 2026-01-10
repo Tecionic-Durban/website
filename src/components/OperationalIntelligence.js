@@ -165,18 +165,18 @@ export default function OperationalIntelligence() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-slate-800/50 rounded-xl">
-                  <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                  <div className="text-slate-500 text-sm">{t('labSection.stats.monitoring')}</div>
+              <div className="grid grid-cols-3 gap-2 lg:gap-4">
+                <div className="text-center p-3 lg:p-4 bg-slate-800/50 rounded-xl">
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-slate-500 text-xs lg:text-sm">{t('labSection.stats.monitoring')}</div>
                 </div>
-                <div className="text-center p-4 bg-slate-800/50 rounded-xl">
-                  <div className="text-3xl font-bold text-white mb-1">48h</div>
-                  <div className="text-slate-500 text-sm">{t('labSection.stats.turnaround')}</div>
+                <div className="text-center p-3 lg:p-4 bg-slate-800/50 rounded-xl">
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-1">48h</div>
+                  <div className="text-slate-500 text-xs lg:text-sm">{t('labSection.stats.turnaround')}</div>
                 </div>
-                <div className="text-center p-4 bg-slate-800/50 rounded-xl">
-                  <div className="text-3xl font-bold text-white mb-1">±2%</div>
-                  <div className="text-slate-500 text-sm">{t('labSection.stats.accuracy')}</div>
+                <div className="text-center p-3 lg:p-4 bg-slate-800/50 rounded-xl">
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-1">±2%</div>
+                  <div className="text-slate-500 text-xs lg:text-sm">{t('labSection.stats.accuracy')}</div>
                 </div>
               </div>
             </div>

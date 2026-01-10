@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import { ArrowRight, Zap, Activity, Globe } from 'lucide-react'
+import { ArrowRight, Flash, Earth } from '@carbon/icons-react'
 
 // Animated Counter Component
 function AnimatedCounter({ value, suffix = '', duration = 2000 }) {
@@ -188,7 +188,7 @@ export default function TendenciasIndustriaPage() {
         {/* Glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/20 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-24 md:py-32">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 lg:px-8 py-24 md:py-32">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-[family-name:var(--font-family-headings)]">
               {tl('heroTitle')}
@@ -202,7 +202,7 @@ export default function TendenciasIndustriaPage() {
 
       {/* Market Dashboard Section */}
       <section className="relative py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 font-[family-name:var(--font-family-headings)]">
               {tl('marketTitle')}
@@ -228,7 +228,7 @@ export default function TendenciasIndustriaPage() {
 
       {/* Trends Grid Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 font-[family-name:var(--font-family-headings)]">
@@ -278,7 +278,7 @@ export default function TendenciasIndustriaPage() {
 
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full mb-6">
-            <Zap className="w-4 h-4 text-emerald-400" />
+            <Flash className="w-4 h-4 text-emerald-400" />
             <span className="text-emerald-400 text-sm font-semibold">{tl('ctaBadge')}</span>
           </div>
 
@@ -306,14 +306,10 @@ export default function TendenciasIndustriaPage() {
             </button>
           </form>
 
-          {/* Secondary CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* Secondary CTA */}
+          <div className="flex justify-center">
             <button className="px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-              <Activity className="w-4 h-4" />
-              {tl('downloadReportButton')}
-            </button>
-            <button className="px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-              <Globe className="w-4 h-4" />
+              <Earth className="w-4 h-4" />
               {tl('consultingButton')}
             </button>
           </div>

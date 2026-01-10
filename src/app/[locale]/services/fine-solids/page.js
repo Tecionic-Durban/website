@@ -135,6 +135,7 @@ export default function FineSolidsServicePage() {
   const [carouselKey, setCarouselKey] = useState(0)
   const [timerKey, setTimerKey] = useState(0)
   const carouselCardRef = useRef(null)
+  const mobileServiceCarouselRef = useRef(null)
   const timerRef = useRef(null)
   const CAROUSEL_DURATION = 6000 // 6 seconds
 
@@ -306,6 +307,40 @@ export default function FineSolidsServicePage() {
       }
     }
   }, [])
+
+  // Sync mobile carousel scroll with activeServiceModel (when state changes, scroll to card)
+  useEffect(() => {
+    if (!mobileServiceCarouselRef.current) return
+    const models = ['emergencia', 'preventivo', 'continuo']
+    const index = models.indexOf(activeServiceModel)
+    const scrollContainer = mobileServiceCarouselRef.current
+    const cardWidth = scrollContainer.firstElementChild?.offsetWidth || 0
+    const gap = 16
+    const scrollPosition = index * (cardWidth + gap)
+    scrollContainer.scrollTo({ left: scrollPosition, behavior: 'smooth' })
+  }, [activeServiceModel])
+
+  // Detect mobile carousel scroll and update activeServiceModel
+  useEffect(() => {
+    const container = mobileServiceCarouselRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const models = ['emergencia', 'preventivo', 'continuo']
+      const cardWidth = container.firstElementChild?.offsetWidth || 0
+      const gap = 16
+      const scrollPosition = container.scrollLeft
+      const newIndex = Math.round(scrollPosition / (cardWidth + gap))
+      const newModel = models[newIndex]
+      if (newModel && newModel !== activeServiceModel) {
+        setActiveServiceModel(newModel)
+        setTimerKey(k => k + 1) // Reset progress animation
+      }
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [activeServiceModel])
 
   const processSteps = [
     {
@@ -504,7 +539,7 @@ export default function FineSolidsServicePage() {
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-emerald-50/30 to-white pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-6">
@@ -547,7 +582,7 @@ export default function FineSolidsServicePage() {
           <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
               {t('keyBenefits.title')}
@@ -672,7 +707,7 @@ export default function FineSolidsServicePage() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image on left */}
             <div className="relative">
@@ -775,54 +810,89 @@ export default function FineSolidsServicePage() {
 
       {/* SECTION 5: EQUIPMENT & DEHYDRATION BENEFITS */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           {/* Water/Disposal Card */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[500px] mb-24">
-            {/* Left half - darker emerald */}
-            <div className="absolute inset-y-0 left-0 w-1/2 bg-emerald-700"></div>
-            {/* Right half - lighter emerald */}
-            <div className="absolute inset-y-0 right-0 w-1/2 bg-emerald-200"></div>
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl lg:min-h-[500px] mb-24">
+            {/* Desktop: Left half - darker emerald */}
+            <div className="absolute inset-y-0 left-0 w-1/2 bg-emerald-700 hidden lg:block"></div>
 
-            {/* Subtle grid texture overlay */}
-            <div className="absolute inset-0 opacity-[0.03]" style={{
+            {/* Desktop: Right half - Full bleed image */}
+            <div className="absolute inset-y-0 right-0 w-1/2 hidden lg:block">
+              <Image
+                src="/filtro_prensa_1200_drone_view.png"
+                alt="Torta seca de filtro prensa lista para disposición"
+                fill
+                className="object-cover"
+              />
+              {/* Subtle gradient overlay for depth */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-700/30 via-transparent to-transparent"></div>
+            </div>
+
+            {/* Desktop: Subtle grid texture overlay on left */}
+            <div className="absolute inset-y-0 left-0 w-1/2 opacity-[0.03] hidden lg:block" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }}></div>
 
-            {/* Diagonal line accent */}
-            <div className="absolute top-0 left-1/2 w-px h-full bg-white/10 transform -skew-x-12 origin-top"></div>
+            {/* Mobile: Image on top */}
+            <div className="relative h-56 lg:hidden">
+              <Image
+                src="/filtro_prensa_1200_drone_view.png"
+                alt="Torta seca de filtro prensa lista para disposición"
+                fill
+                className="object-cover"
+              />
+              {/* Subtle gradient at bottom for smooth transition */}
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-emerald-700 to-transparent"></div>
+            </div>
 
-            {/* Content */}
-            <div className="relative z-10 grid lg:grid-cols-2 gap-12 p-10 lg:p-16 items-center min-h-[500px]">
-              {/* Left: The argument */}
-              <div>
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            {/* Mobile: Content background */}
+            <div className="bg-emerald-700 lg:hidden">
+              {/* Grid texture */}
+              <div className="absolute inset-0 opacity-[0.03]" style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}></div>
+              <div className="relative z-10 p-8">
+                <h2 className="text-3xl font-bold text-white mb-4 leading-tight">
                   {t('dehydrationBenefits.title')}
                 </h2>
-                <p className="text-lg text-emerald-100 leading-relaxed">
+                <p className="text-base text-emerald-100 leading-relaxed mb-6">
                   {t('dehydrationBenefits.description')}
                 </p>
-              </div>
-
-              {/* Right: Image with overlapping stat card */}
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/filtro_prensa_1200_drone_view.png"
-                    alt="Torta seca de filtro prensa lista para disposición"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                {/* Overlapping stat card */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-6">
-                  <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-5xl font-bold text-emerald-600">{t('dehydrationBenefits.statValue')}</span>
-                    <span className="text-lg text-gray-500">{t('dehydrationBenefits.statLabel')}</span>
+                {/* KPI */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 inline-block">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-white">{t('dehydrationBenefits.statValue')}</span>
+                    <span className="text-lg text-emerald-200 font-medium">{t('dehydrationBenefits.statLabel')}</span>
                   </div>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-emerald-200 text-sm mt-1">
                     {t('dehydrationBenefits.statDescription')}
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop: Content */}
+            <div className="relative z-10 hidden lg:grid lg:grid-cols-2 gap-0 min-h-[500px]">
+              {/* Left: The argument */}
+              <div className="flex flex-col justify-center p-16">
+                <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+                  {t('dehydrationBenefits.title')}
+                </h2>
+                <p className="text-lg text-emerald-100 leading-relaxed mb-8">
+                  {t('dehydrationBenefits.description')}
+                </p>
+
+                {/* KPI integrated into content flow */}
+                <div className="flex items-center gap-6">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-5 border border-white/20">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-5xl font-bold text-white">{t('dehydrationBenefits.statValue')}</span>
+                      <span className="text-xl text-emerald-200 font-medium">{t('dehydrationBenefits.statLabel')}</span>
+                    </div>
+                    <p className="text-emerald-200 text-sm mt-1">
+                      {t('dehydrationBenefits.statDescription')}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -838,7 +908,7 @@ export default function FineSolidsServicePage() {
           <div className="absolute bottom-32 left-[8%] w-40 h-40 bg-gradient-to-br from-cyan-400/15 to-cyan-500/10 rounded-full opacity-30 blur-sm"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left: Header */}
             <div>
@@ -990,7 +1060,7 @@ export default function FineSolidsServicePage() {
 
       {/* EQUIPMENT BENEFITS */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
             {t('equipmentBenefits.title')}
           </h2>
@@ -1001,7 +1071,7 @@ export default function FineSolidsServicePage() {
 
       {/* SECTION 8: INDUSTRY BREADTH - Horizontal Scrolling Carousel */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t('industries.title')}
@@ -1210,7 +1280,7 @@ export default function FineSolidsServicePage() {
 
       {/* SECTION 9: CASE STUDY */}
       <section className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
@@ -1249,18 +1319,18 @@ export default function FineSolidsServicePage() {
               {/* Right - Content */}
               <div className="lg:col-span-3 p-6 lg:p-8">
                 {/* Metrics row */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.stoppages.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.stoppages.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.stoppages.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.stoppages.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.monitoring.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.monitoring.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.monitoring.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.monitoring.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.capacity.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.capacity.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.capacity.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.capacity.label')}</div>
                   </div>
                 </div>
 
@@ -1282,7 +1352,7 @@ export default function FineSolidsServicePage() {
 
       {/* SECTION 9: SERVICE MODELS - Auto-cycling Carousel */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="flex items-end justify-between mb-12">
             <div className="max-w-3xl">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -1351,8 +1421,121 @@ export default function FineSolidsServicePage() {
             </div>
           </div>
 
-          {/* Carousel container */}
-          <div className="relative">
+          {/* Mobile: Swipeable cards carousel */}
+          <div className="md:hidden">
+            <div
+              ref={mobileServiceCarouselRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            >
+              {/* Emergencia Card */}
+              <div className="flex-shrink-0 w-[85vw] snap-start bg-white rounded-2xl border border-gray-200 p-6">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-gray-900">{t('serviceModels.emergencia.title')}</h3>
+                  <p className="text-gray-500 text-sm">{t('serviceModels.emergencia.subtitle')}</p>
+                </div>
+                <div className="space-y-3 mb-4">
+                  {t.raw('serviceModels.emergencia.features').slice(0, 3).map((feature, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-red-50 rounded-xl p-4">
+                  <div className="text-xs font-semibold text-red-800 uppercase tracking-wide mb-1">{t('serviceModels.emergencia.durationLabel')}</div>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-red-600">{t('serviceModels.emergencia.durationValue')}</span>
+                    <span className="text-sm text-gray-600">{t('serviceModels.emergencia.durationUnit')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Preventivo Card */}
+              <div className="flex-shrink-0 w-[85vw] snap-start bg-white rounded-2xl border border-gray-200 p-6">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-gray-900">{t('serviceModels.preventivo.title')}</h3>
+                  <p className="text-gray-500 text-sm">{t('serviceModels.preventivo.subtitle')}</p>
+                </div>
+                <div className="space-y-3 mb-4">
+                  {t.raw('serviceModels.preventivo.features').slice(0, 3).map((feature, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-emerald-50 rounded-xl p-4">
+                  <div className="text-xs font-semibold text-emerald-800 uppercase tracking-wide mb-1">{t('serviceModels.preventivo.resultLabel')}</div>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-emerald-600">{t('serviceModels.preventivo.resultValue')}</span>
+                    <span className="text-sm text-gray-600">{t('serviceModels.preventivo.resultUnit')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Continuo Card */}
+              <div className="flex-shrink-0 w-[85vw] snap-start bg-white rounded-2xl border border-gray-200 p-6">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-gray-900">{t('serviceModels.continuo.title')}</h3>
+                  <p className="text-gray-500 text-sm">{t('serviceModels.continuo.subtitle')}</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold">{t('serviceModels.continuo.steps.evaluation.number')}</div>
+                      <h4 className="font-semibold text-gray-900 text-sm">{t('serviceModels.continuo.steps.evaluation.title')}</h4>
+                    </div>
+                  </div>
+                  <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-5 h-5 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xs font-bold">{t('serviceModels.continuo.steps.installation.number')}</div>
+                      <h4 className="font-semibold text-gray-900 text-sm">{t('serviceModels.continuo.steps.installation.title')}</h4>
+                    </div>
+                  </div>
+                  <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">{t('serviceModels.continuo.steps.operation.number')}</div>
+                      <h4 className="font-semibold text-gray-900 text-sm">{t('serviceModels.continuo.steps.operation.title')}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile dots indicator */}
+            <div className="flex justify-center gap-2 mt-4">
+              {['emergencia', 'preventivo', 'continuo'].map((model) => (
+                <button
+                  key={model}
+                  onClick={() => {
+                    setActiveServiceModel(model)
+                    setCarouselKey(k => k + 1)
+                    setTimerKey(k => k + 1)
+                  }}
+                  className={`h-2 rounded-full transition-all cursor-pointer relative overflow-hidden ${
+                    activeServiceModel === model
+                      ? 'bg-gray-300 w-6'
+                      : 'bg-gray-300 hover:bg-gray-400 w-2'
+                  }`}
+                  aria-label={`Ir a ${model}`}
+                >
+                  {activeServiceModel === model && (
+                    <span
+                      key={timerKey}
+                      className="absolute inset-0 bg-emerald-600 rounded-full origin-left"
+                      style={{
+                        animation: `fillProgress ${CAROUSEL_DURATION}ms linear forwards`
+                      }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Carousel container */}
+          <div className="hidden md:block relative">
             <div className="overflow-hidden">
               <div ref={carouselCardRef} className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 min-h-[400px]">
 
@@ -1480,7 +1663,7 @@ export default function FineSolidsServicePage() {
             className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
           />
         </div>
-        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>
@@ -1491,29 +1674,11 @@ export default function FineSolidsServicePage() {
             {t('cta.timeline')}
           </p>
 
-          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
-            <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
+          <div className="flex items-center justify-center">
+            <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
-            <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
-              {t('cta.secondaryCta')}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="border-t border-emerald-500 pt-8">
-            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
-            <div className="grid md:grid-cols-2 gap-6 text-white">
-              <div>
-                <div className="font-semibold mb-1">{t('cta.locations.santiago.name')}</div>
-                <div className="text-emerald-100">{t('cta.locations.santiago.address')}</div>
-              </div>
-              <div>
-                <div className="font-semibold mb-1">{t('cta.locations.calama.name')}</div>
-                <div className="text-emerald-100">{t('cta.locations.calama.address')}</div>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

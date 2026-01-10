@@ -49,7 +49,7 @@ export default function ArticleContent({ slug }) {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className={`bg-gradient-to-r ${color} text-white py-16`}>
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8">
           <Link
             href="/tendencias-industria"
             className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
@@ -84,7 +84,7 @@ export default function ArticleContent({ slug }) {
 
       {/* Article Content */}
       <article className="py-12">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8">
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-12">
             {article.tags && article.tags.map((tag, index) => (

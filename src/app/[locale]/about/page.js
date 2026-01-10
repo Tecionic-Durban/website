@@ -41,7 +41,7 @@ export default function AboutPage() {
             <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
         {/* Mission & Vision with Phase 2: Micro-animations */}
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
                 <Flash className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
@@ -107,7 +107,7 @@ export default function AboutPage() {
 
         {/* Statistics with Phase 1: Real-time updates */}
         <section className="py-16 bg-gradient-to-r from-emerald-600 to-emerald-700 steel-gradient">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4">{t('stats.title')}</h2>
               <p className="text-xl text-emerald-100">
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
         {/* Company Values with Phase 2: Gradient backgrounds */}
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('values.title')}</h2>
               <p className="text-xl text-gray-600">
@@ -176,7 +176,7 @@ export default function AboutPage() {
 
         {/* Timeline with Enhanced Professional Design */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="max-w-5xl mx-auto px-4">
+          <div className="max-w-5xl mx-auto px-4 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('timeline.title')}</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -231,9 +231,20 @@ export default function AboutPage() {
               </div>
 
               {/* Timeline completion indicator */}
-              <div className="flex justify-center mt-12">
-                <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-3 rounded-full shadow-lg">
-                  <span className="font-semibold">{t('timeline.completion')}</span>
+              <div className="relative flex items-start mt-8">
+                {/* Final timeline node */}
+                <div className="relative z-10">
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                    <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+                {/* Completion pill */}
+                <div className="ml-6 md:ml-8">
+                  <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-3 rounded-full shadow-lg">
+                    <span className="font-semibold">{t('timeline.completion')}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -245,7 +256,7 @@ export default function AboutPage() {
           {/* Phase 2: Industrial pattern overlay */}
           <div className="absolute inset-0 opacity-5 industrial-pattern"></div>
 
-          <div className="max-w-4xl mx-auto px-4 text-center text-white relative z-10">
+          <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-white relative z-10">
             <h2 className="text-4xl font-bold mb-4">{t('cta.title')}</h2>
             <p className="text-xl text-gray-300 mb-8">
               {t('cta.description')}

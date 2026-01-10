@@ -20,7 +20,7 @@ export default function CasosExitoPage() {
           backgroundSize: '40px 40px'
         }} />
 
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             {/* Technical label */}
             <div className="flex items-center gap-3 mb-8">
@@ -61,7 +61,7 @@ export default function CasosExitoPage() {
 
       {/* Case Studies Grid */}
       <section id="casos" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           {/* Section Header */}
           <div className="flex items-end justify-between mb-12">
             <div>
@@ -136,7 +136,7 @@ export default function CasosExitoPage() {
 
       {/* Featured Case - Technical Document Style */}
       <section className="py-20 bg-gray-50 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Content */}
             <div>
@@ -216,23 +216,9 @@ export default function CasosExitoPage() {
         </div>
       </section>
 
-      {/* Client Logos - Minimal */}
-      <section className="py-16 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-sm text-gray-500 mb-10">{t('clients.title')}</p>
-          <div className="flex justify-center items-center gap-12 flex-wrap">
-            {["Cobre", "Petróleo", "Zinc", "Potasio", "Litio"].map((industry) => (
-              <span key={industry} className="font-mono text-sm text-gray-400 tracking-wider">
-                {industry}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl font-semibold text-white mb-4">
             {t('cta.title')}
           </h2>

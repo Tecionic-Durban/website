@@ -46,7 +46,7 @@ function RecoverySection({ t }) {
 
   return (
     <section className="py-20 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
         {/* Atlassian-style two column layout */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Hero stat with title and tabs */}
@@ -241,7 +241,7 @@ export default function FiltrationPage() {
           <BorraSeparationAnimation variant="hero" cycleDuration={10} className="opacity-60" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
@@ -282,7 +282,7 @@ export default function FiltrationPage() {
           <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
               {t('keyBenefits.title')}
@@ -407,7 +407,7 @@ export default function FiltrationPage() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
           {/* Side by side: Header left, 4 items right */}
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left: Header content */}
@@ -467,7 +467,7 @@ export default function FiltrationPage() {
 
       {/* THEME 2: PROTEGE TU EW */}
       <section className="border-b border-gray-200 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-full mb-6">
               {t('productQuality.badge')}
@@ -643,7 +643,7 @@ export default function FiltrationPage() {
 
       {/* THEME 4: EXTRACCIÓN PRECISA */}
       <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Header + Benefits */}
             <div>
@@ -696,7 +696,7 @@ export default function FiltrationPage() {
 
       {/* THEME 5: CADA METRO CÚBICO CUENTA */}
       <section className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-6">
               {t('everyMeterCounts.badge')}
@@ -786,7 +786,7 @@ export default function FiltrationPage() {
 
       {/* EQUIPMENT SECTION */}
       <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
               {t('equipment.title')}
@@ -858,7 +858,7 @@ export default function FiltrationPage() {
 
       {/* SECTION: INDUSTRIES */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t('industries.title')}
@@ -968,7 +968,7 @@ export default function FiltrationPage() {
 
       {/* CASE STUDY */}
       <section className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-amber-100 text-amber-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
@@ -1007,18 +1007,18 @@ export default function FiltrationPage() {
               {/* Right - Content */}
               <div className="lg:col-span-3 p-6 lg:p-8">
                 {/* Metrics row */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.volume.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.volume.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.volume.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.volume.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.hc.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.hc.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.hc.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.hc.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.compliance.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.compliance.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-amber-600">{t('caseStudy.metrics.compliance.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.compliance.label')}</div>
                   </div>
                 </div>
 
@@ -1051,7 +1051,7 @@ export default function FiltrationPage() {
             className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
           />
         </div>
-        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>

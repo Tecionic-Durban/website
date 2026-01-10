@@ -138,7 +138,7 @@ export default function TifMeasurementPage() {
         <div className="absolute top-20 left-[10%] w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-[10%] w-80 h-80 bg-violet-500/10 rounded-full blur-3xl" />
 
-        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-7">
@@ -248,7 +248,7 @@ export default function TifMeasurementPage() {
 
       {/* TRUST METRICS - Social proof */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <div className="text-center">
               <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
@@ -276,7 +276,7 @@ export default function TifMeasurementPage() {
 
       {/* THE PROBLEM - Why TIF matters */}
       <section className="bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left - Problem statement */}
             <div>
@@ -385,7 +385,7 @@ export default function TifMeasurementPage() {
 
       {/* THE SOLUTION - What TIF monitoring provides */}
       <section className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <span className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-6">
               <Chemistry className="w-4 h-4 mr-2" />
@@ -446,7 +446,7 @@ export default function TifMeasurementPage() {
           }} />
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
           <div className="max-w-3xl mb-16">
             <span className="inline-flex items-center px-3 py-1 bg-white/10 text-purple-400 text-sm font-semibold rounded-full mb-6 border border-purple-500/30">
               <Meter className="w-4 h-4 mr-2" />
@@ -530,7 +530,7 @@ export default function TifMeasurementPage() {
 
       {/* INDUSTRY APPLICATIONS */}
       <section className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               {t('industries.title')}
@@ -615,7 +615,7 @@ export default function TifMeasurementPage() {
 
       {/* INTEGRATION - Connected services */}
       <section className="bg-gradient-to-br from-purple-50 to-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-6">
@@ -733,7 +733,7 @@ export default function TifMeasurementPage() {
           />
         </div>
 
-        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>
@@ -744,35 +744,14 @@ export default function TifMeasurementPage() {
             {t('cta.timeline')}
           </p>
 
-          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
+          <div className="flex items-center justify-center">
             <Link
               href="/contacto"
-              className="inline-flex items-center px-8 py-4 bg-white text-purple-700 font-bold rounded-lg hover:bg-purple-50 transition-colors shadow-xl cursor-pointer"
+              className="inline-flex items-center px-8 py-4 bg-white text-purple-700 font-bold rounded-lg hover:bg-purple-50 transition-colors shadow-xl"
             >
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
-            <Link
-              href="/services/organic-treatment"
-              className="inline-flex items-center px-8 py-4 bg-purple-500 text-white font-bold rounded-lg hover:bg-purple-400 transition-colors cursor-pointer"
-            >
-              {t('cta.secondaryCta')}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
-
-          <div className="border-t border-purple-500 pt-8">
-            <div className="text-sm font-semibold text-purple-100 uppercase tracking-wide mb-4">{t('cta.contactTitle')}</div>
-            <div className="grid md:grid-cols-2 gap-6 text-white">
-              <div>
-                <div className="font-semibold mb-1">{t('cta.locations.santiago.name')}</div>
-                <div className="text-purple-100">{t('cta.locations.santiago.address')}</div>
-              </div>
-              <div>
-                <div className="font-semibold mb-1">{t('cta.locations.calama.name')}</div>
-                <div className="text-purple-100">{t('cta.locations.calama.address')}</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

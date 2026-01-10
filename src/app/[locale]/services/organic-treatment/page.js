@@ -160,9 +160,18 @@ function EquipmentBenefits({ t }) {
 }
 
 // Two Methods Component - Bypass vs Batch
-function TreatmentMethods({ t }) {
+function TreatmentMethods({ t, carouselRef, activeIndex, setActiveIndex }) {
+  const scrollToCard = (index) => {
+    if (!carouselRef.current) return
+    const cardWidth = carouselRef.current.firstElementChild?.offsetWidth || 0
+    const gap = 16
+    carouselRef.current.scrollTo({ left: index * (cardWidth + gap), behavior: 'smooth' })
+    setActiveIndex(index)
+  }
+
   return (
-    <div className="flex lg:grid lg:grid-cols-2 gap-4 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory -mx-8 px-8 lg:mx-0 lg:px-0 pb-4 lg:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+    <div>
+      <div ref={carouselRef} className="flex lg:grid lg:grid-cols-2 gap-4 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory -mx-8 px-8 lg:mx-0 lg:px-0 pb-4 lg:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
       {/* Method 1: Bypass */}
       <div className="rounded-2xl border border-gray-700 bg-gray-800/50 flex-shrink-0 w-[85vw] lg:w-auto snap-start">
         <div className="p-6 lg:p-8">
@@ -248,6 +257,21 @@ function TreatmentMethods({ t }) {
           </div>
         </div>
       </div>
+      </div>
+
+      {/* Mobile dots indicator */}
+      <div className="flex lg:hidden justify-center gap-2 mt-4">
+        {[0, 1].map((index) => (
+          <button
+            key={index}
+            onClick={() => scrollToCard(index)}
+            className={`h-2 rounded-full transition-all cursor-pointer ${
+              activeIndex === index ? 'bg-emerald-500 w-6' : 'bg-gray-600 w-2'
+            }`}
+            aria-label={`Go to card ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   )
 }
@@ -265,6 +289,17 @@ export default function OrganicTreatmentServicePage() {
   const timerRef = useRef(null)
   const [autoCycleEnabled, setAutoCycleEnabled] = useState(true)
   const CAROUSEL_DURATION = 10000 // 10 seconds
+
+  // TreatmentMethods carousel state
+  const [activeTreatmentMethod, setActiveTreatmentMethod] = useState(0)
+  const treatmentMethodsRef = useRef(null)
+
+  // Technologies carousel state
+  const [activeTechnology, setActiveTechnology] = useState(0)
+  const technologiesCarouselRef = useRef(null)
+
+  // Piloto mobile carousel state
+  const [activePilotoCard, setActivePilotoCard] = useState(0)
 
   // Register GSAP plugins on mount
   useEffect(() => {
@@ -471,6 +506,63 @@ export default function OrganicTreatmentServicePage() {
     scrollContainer.scrollTo({ left: scrollPosition, behavior: 'smooth' })
   }, [activeBusinessModel])
 
+  // Sync TreatmentMethods carousel scroll position with state
+  useEffect(() => {
+    const container = treatmentMethodsRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const cardWidth = container.firstElementChild?.offsetWidth || 0
+      const gap = 16
+      const scrollPosition = container.scrollLeft
+      const newIndex = Math.round(scrollPosition / (cardWidth + gap))
+      if (newIndex !== activeTreatmentMethod && newIndex >= 0 && newIndex < 2) {
+        setActiveTreatmentMethod(newIndex)
+      }
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [activeTreatmentMethod])
+
+  // Sync Technologies carousel scroll position with state
+  useEffect(() => {
+    const container = technologiesCarouselRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const cardWidth = container.firstElementChild?.offsetWidth || 0
+      const gap = 16
+      const scrollPosition = container.scrollLeft
+      const newIndex = Math.round(scrollPosition / (cardWidth + gap))
+      if (newIndex !== activeTechnology && newIndex >= 0 && newIndex < 3) {
+        setActiveTechnology(newIndex)
+      }
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [activeTechnology])
+
+  // Sync Piloto mobile carousel scroll position with state
+  useEffect(() => {
+    const container = mobileCarouselRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const cardWidth = container.firstElementChild?.offsetWidth || 0
+      const gap = 16
+      const scrollPosition = container.scrollLeft
+      const newIndex = Math.round(scrollPosition / (cardWidth + gap))
+      if (newIndex !== activePilotoCard && newIndex >= 0 && newIndex < 3) {
+        setActivePilotoCard(newIndex)
+      }
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [activePilotoCard])
+
   return (
     <div className="min-h-screen bg-white">
       {/* SECTION 1: HERO */}
@@ -485,7 +577,7 @@ export default function OrganicTreatmentServicePage() {
           <PhaseSeparationBackground variant="light" interfacePosition={55} showInterface={false} />
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
@@ -527,7 +619,7 @@ export default function OrganicTreatmentServicePage() {
           <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
               {t('keyBenefits.title')}
@@ -652,7 +744,7 @@ export default function OrganicTreatmentServicePage() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
               {t('treatmentMethods.title')}
@@ -662,7 +754,7 @@ export default function OrganicTreatmentServicePage() {
             </p>
           </div>
 
-          <TreatmentMethods t={t} />
+          <TreatmentMethods t={t} carouselRef={treatmentMethodsRef} activeIndex={activeTreatmentMethod} setActiveIndex={setActiveTreatmentMethod} />
 
           {/* Simplicidad Operacional - stats */}
           <div className="mt-24 pt-16 border-t border-gray-700">
@@ -709,7 +801,7 @@ export default function OrganicTreatmentServicePage() {
 
       {/* SECTION 3.7: EQUIPMENT */}
       <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
               {t('equipment.title')}
@@ -828,7 +920,7 @@ export default function OrganicTreatmentServicePage() {
 
       {/* SECTION 4: TREATMENT SOLUTIONS */}
       <section className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t('technologies.title')}
@@ -839,9 +931,9 @@ export default function OrganicTreatmentServicePage() {
           </div>
 
           {/* Treatment cards - 3 column grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+          <div ref={technologiesCarouselRef} className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Card 1: Arcilla Activada */}
-            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col">
+            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col flex-shrink-0 w-[80vw] md:w-auto snap-start">
               <div className="p-6 flex-1">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
@@ -886,7 +978,7 @@ export default function OrganicTreatmentServicePage() {
             </div>
 
             {/* Card 2: Recuperación de Crud */}
-            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col">
+            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col flex-shrink-0 w-[80vw] md:w-auto snap-start">
               <div className="p-6 flex-1">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -931,7 +1023,7 @@ export default function OrganicTreatmentServicePage() {
             </div>
 
             {/* Card 3: Diálisis Continua */}
-            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col">
+            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col flex-shrink-0 w-[80vw] md:w-auto snap-start">
               <div className="p-6 flex-1">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
@@ -975,12 +1067,32 @@ export default function OrganicTreatmentServicePage() {
               </div>
             </div>
           </div>
+
+          {/* Mobile dots indicator */}
+          <div className="flex md:hidden justify-center gap-2 mt-4">
+            {[0, 1, 2].map((index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (!technologiesCarouselRef.current) return
+                  const cardWidth = technologiesCarouselRef.current.firstElementChild?.offsetWidth || 0
+                  const gap = 16
+                  technologiesCarouselRef.current.scrollTo({ left: index * (cardWidth + gap), behavior: 'smooth' })
+                  setActiveTechnology(index)
+                }}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  activeTechnology === index ? 'bg-emerald-600 w-6' : 'bg-gray-300 w-2'
+                }`}
+                aria-label={`Go to technology ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* SECTION 5: INDUSTRY BREADTH */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Probado en múltiples industrias
@@ -1090,7 +1202,7 @@ export default function OrganicTreatmentServicePage() {
 
       {/* SECTION 6: CASE STUDY */}
       <section className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
@@ -1129,18 +1241,18 @@ export default function OrganicTreatmentServicePage() {
               {/* Right - Content */}
               <div className="lg:col-span-3 p-6 lg:p-8">
                 {/* Metrics row */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">-52%</div>
-                    <div className="text-sm text-gray-600">Arrastre orgánico</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">-52%</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Arrastre orgánico</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">-66%</div>
-                    <div className="text-sm text-gray-600">Tiempo separación</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">-66%</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Tiempo separación</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">$260K</div>
-                    <div className="text-sm text-gray-600">Ahorro mensual</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">$260K</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Ahorro mensual</div>
                   </div>
                 </div>
 
@@ -1162,7 +1274,7 @@ export default function OrganicTreatmentServicePage() {
 
       {/* SECTION 7: BUSINESS MODELS - Auto-cycling Carousel */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="flex items-end justify-between mb-12">
             <div className="max-w-3xl">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -1342,6 +1454,37 @@ export default function OrganicTreatmentServicePage() {
             </div>
           </div>
 
+          {/* Mobile dots indicator with progress */}
+          <div className="flex md:hidden justify-center gap-2 mt-4">
+            {[0, 1, 2].map((index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  const models = ['preventivo', 'crisis', 'piloto']
+                  changeCarouselModel(models[index])
+                  setActivePilotoCard(index)
+                }}
+                className={`h-2 rounded-full transition-all cursor-pointer relative overflow-hidden ${
+                  activePilotoCard === index ? 'bg-gray-300 w-8' : 'bg-gray-300 w-2'
+                }`}
+                aria-label={`Go to card ${index + 1}`}
+              >
+                {activePilotoCard === index && autoCycleEnabled && (
+                  <span
+                    key={timerKey}
+                    className="absolute inset-0 bg-emerald-600 rounded-full origin-left"
+                    style={{
+                      animation: `fillProgress ${CAROUSEL_DURATION}ms linear forwards`
+                    }}
+                  />
+                )}
+                {activePilotoCard === index && !autoCycleEnabled && (
+                  <span className="absolute inset-0 bg-emerald-600 rounded-full" />
+                )}
+              </button>
+            ))}
+          </div>
+
           {/* Desktop: Auto-cycling carousel */}
           <div className="hidden md:block relative">
             <div className="overflow-hidden">
@@ -1505,7 +1648,7 @@ export default function OrganicTreatmentServicePage() {
             className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
           />
         </div>
-        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Evalúa la solución para tu planta
           </h2>
@@ -1516,29 +1659,11 @@ export default function OrganicTreatmentServicePage() {
             En 5 días hábiles recibes diagnóstico técnico completo, recomendación de tratamiento, estimación de resultados, y propuesta económica sin CAPEX
           </p>
 
-          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
-            <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
+          <div className="flex items-center justify-center">
+            <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               Solicitar Evaluación Técnica
               <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
-            <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
-              Descargar Caso Completo
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="border-t border-emerald-500 pt-8">
-            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">Contacto directo</div>
-            <div className="grid md:grid-cols-2 gap-6 text-white">
-              <div>
-                <div className="font-semibold mb-1">Santiago:</div>
-                <div className="text-emerald-100">Luis Thayer Ojeda 95, of. 312</div>
-              </div>
-              <div>
-                <div className="font-semibold mb-1">Calama:</div>
-                <div className="text-emerald-100">Miraflores 1260 B</div>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

@@ -28,7 +28,7 @@ export default function TratamientoOrganicoCase() {
         <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-emerald-500/30"></div>
         <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-emerald-500/30"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 py-20">
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-20">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-8 font-mono text-sm">
             <Link href="/casos-de-exito" className="text-slate-400 hover:text-emerald-400 transition-colors">
@@ -77,7 +77,7 @@ export default function TratamientoOrganicoCase() {
 
       {/* Project Overview - Technical Specs */}
       <section className="py-8 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {ts.raw('overview').map((item, i) => (
               <div key={i} className="flex items-start gap-3">
@@ -94,7 +94,7 @@ export default function TratamientoOrganicoCase() {
 
       {/* El Desafío */}
       <section className="py-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-300"></div>
@@ -133,7 +133,7 @@ export default function TratamientoOrganicoCase() {
 
       {/* La Solución */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-300"></div>
@@ -176,7 +176,7 @@ export default function TratamientoOrganicoCase() {
 
       {/* Results - Technical Data */}
       <section className="py-16 bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-600"></div>
@@ -264,7 +264,7 @@ export default function TratamientoOrganicoCase() {
 
       {/* Technical Summary */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-12 h-px bg-slate-300"></div>
@@ -309,7 +309,7 @@ export default function TratamientoOrganicoCase() {
         <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-emerald-500/50"></div>
         <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-emerald-500/50"></div>
 
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
+        <div className="relative max-w-4xl mx-auto px-4 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">

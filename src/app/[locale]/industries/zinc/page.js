@@ -53,7 +53,7 @@ export default function ZincIndustryPage() {
             background: 'radial-gradient(circle, rgba(100, 116, 139, 0.12) 0%, rgba(148, 163, 184, 0.06) 40%, transparent 70%)'
           }}></div>
 
-          <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-16">
+          <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-12 lg:py-16">
             {/* Industry badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 mb-8">
               <div className="w-2 h-2 bg-slate-500 rounded-full"></div>
@@ -99,7 +99,7 @@ export default function ZincIndustryPage() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-30"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-50 rounded-full blur-3xl opacity-30"></div>
 
-          <div className="relative max-w-7xl mx-auto px-6">
+          <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
             {/* Section Header */}
             <div className="text-center max-w-3xl mx-auto mb-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 mb-6">
@@ -213,7 +213,7 @@ export default function ZincIndustryPage() {
 
         {/* TSF Solutions - Premium service cards */}
         <section className="py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">{t('services.badge')}</div>
               <h2 className="text-4xl font-black text-gray-900 mb-4">
@@ -269,7 +269,7 @@ export default function ZincIndustryPage() {
 
         {/* Cajamarquilla Reference - Premium callout */}
         <section className="py-24 bg-gradient-to-br from-slate-50 to-gray-50">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="relative overflow-hidden bg-gradient-to-br from-slate-600 to-slate-700 rounded-3xl p-12 shadow-xl">
               <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
 
@@ -323,7 +323,7 @@ export default function ZincIndustryPage() {
 
         {/* Before/After Comparison */}
         <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">{t('results.badge')}</div>
               <h2 className="text-4xl font-black text-gray-900 mb-4">
@@ -382,7 +382,7 @@ export default function ZincIndustryPage() {
 
         {/* Why Mobile for Zinc Smelters */}
         <section className="py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">{t('whyMobile.badge')}</div>
@@ -436,7 +436,7 @@ export default function ZincIndustryPage() {
             }}></div>
           </div>
 
-          <div className="relative max-w-4xl mx-auto px-6 text-center">
+          <div className="relative max-w-4xl mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
               {t('cta.title')}
             </h2>

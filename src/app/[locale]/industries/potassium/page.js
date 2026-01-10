@@ -57,7 +57,7 @@ export default function PotassiumIndustryPage() {
             background: 'radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(168, 85, 247, 0.08) 40%, transparent 70%)'
           }}></div>
 
-          <div className="relative max-w-[1400px] mx-auto px-8 py-12 lg:py-16">
+          <div className="relative max-w-[1400px] mx-auto px-4 lg:px-8 py-12 lg:py-16">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
 
               {/* Left - Value Proposition */}
@@ -90,7 +90,7 @@ export default function PotassiumIndustryPage() {
 
         {/* The Industry Challenge - Solid accumulation problem */}
         <section className="py-24 bg-white">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="inline-flex items-center px-3 py-1 bg-red-100 rounded-full mb-6">
                 <AlertTriangle className="w-4 h-4 text-red-700 mr-2" />
@@ -175,7 +175,7 @@ export default function PotassiumIndustryPage() {
 
         {/* How Tecionic Solves It - Clean minimal workflow */}
         <section id="how-it-works" className="py-24 bg-white">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-20">
               <div className="inline-flex items-center px-3 py-1 bg-emerald-100 rounded-full mb-6">
                 <Shield className="w-4 h-4 text-emerald-700 mr-2" />
@@ -326,7 +326,7 @@ export default function PotassiumIndustryPage() {
 
         {/* Operational Benefits - The Tecionic Advantage */}
         <section className="py-24 bg-white">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="text-purple-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 BENEFICIOS OPERACIONALES
@@ -442,7 +442,7 @@ export default function PotassiumIndustryPage() {
 
         {/* Additional Services - Beyond core filtration */}
         <section className="py-24 bg-white">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="text-purple-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 SERVICIOS COMPLEMENTARIOS
@@ -498,7 +498,7 @@ export default function PotassiumIndustryPage() {
 
         {/* Why Tecionic - Strategic positioning */}
         <section className="py-24 bg-gray-50">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="text-emerald-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 POR QUÉ TECIONIC
@@ -615,7 +615,7 @@ export default function PotassiumIndustryPage() {
 
         {/* Final CTA */}
         <section className="py-20 bg-gray-900 text-white">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-bold mb-6">
                 Mantén producción potasio sin paradas por sólidos

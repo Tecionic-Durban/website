@@ -11,7 +11,7 @@ export default function SolidosFinosYoduroCase() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-cyan-900 to-cyan-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-8">
             <div className="inline-block bg-cyan-500/20 text-cyan-200 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               {ts('tagline')}
@@ -38,7 +38,7 @@ export default function SolidosFinosYoduroCase() {
 
       {/* Project Overview */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             {ts.raw('overview').map((item, i) => (
               <div key={i}>
@@ -52,7 +52,7 @@ export default function SolidosFinosYoduroCase() {
 
       {/* The Challenge */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">{tc('challengeTitle')}</h2>
             <div className="w-24 h-1 bg-cyan-600 mx-auto mb-6"></div>
@@ -105,7 +105,7 @@ export default function SolidosFinosYoduroCase() {
 
       {/* The Solution */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">{ts('solutionTitle')}</h2>
             <div className="w-24 h-1 bg-cyan-600 mx-auto mb-6"></div>
@@ -163,7 +163,7 @@ export default function SolidosFinosYoduroCase() {
 
       {/* Results */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">{ts('resultsTitle')}</h2>
             <div className="w-24 h-1 bg-cyan-600 mx-auto mb-6"></div>
@@ -199,7 +199,7 @@ export default function SolidosFinosYoduroCase() {
 
       {/* Value for Chemical Industry */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="bg-gradient-to-br from-cyan-900 to-cyan-700 rounded-2xl p-8 md:p-12 text-white">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -231,7 +231,7 @@ export default function SolidosFinosYoduroCase() {
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-cyan-900 to-cyan-700">
-        <div className="max-w-4xl mx-auto px-4 text-center text-white">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">{ts('ctaTitle')}</h2>
           <p className="text-xl text-cyan-100 mb-8">{ts('ctaDescription')}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

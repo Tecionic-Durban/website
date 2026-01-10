@@ -53,7 +53,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 relative">
+      <div className="max-w-6xl mx-auto px-4 lg:px-8 relative">
         {/* Editorial Header */}
         <div className="text-center mb-8 lg:mb-16 progressive-reveal">
           <h2 className="text-3xl lg:text-6xl font-black text-white mb-4 lg:mb-6 leading-tight">

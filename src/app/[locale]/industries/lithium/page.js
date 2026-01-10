@@ -213,7 +213,7 @@ export default function LithiumIndustryPage() {
             background: 'radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(14, 165, 233, 0.06) 40%, transparent 70%)'
           }}></div>
 
-          <div className="relative max-w-[1400px] mx-auto px-8 py-12 lg:py-16">
+          <div className="relative max-w-[1400px] mx-auto px-4 lg:px-8 py-12 lg:py-16">
             <div className="max-w-4xl">
               <div className="space-y-8">
                 {/* Badge */}
@@ -264,7 +264,7 @@ export default function LithiumIndustryPage() {
 
         {/* The Opportunity - Industry Challenge + Tecionic Solution */}
         <section ref={tableRef} className="py-24 bg-gray-50 relative overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-8 relative">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative">
             <div className="grid lg:grid-cols-5 gap-12 items-start">
               {/* Left Column - Content (40%) */}
               <div className="lg:col-span-2">
@@ -480,7 +480,7 @@ export default function LithiumIndustryPage() {
 
         {/* Where Tecionic Fits - 3 Critical Touchpoints */}
         <section className="py-32 bg-white relative overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-cyan-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 Aplicaciones Tecionic
@@ -618,7 +618,7 @@ export default function LithiumIndustryPage() {
 
         {/* Why Tecionic - Modern Bento Box */}
         <section className="py-24 bg-white relative overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-cyan-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 Por qué Tecionic
@@ -706,7 +706,7 @@ export default function LithiumIndustryPage() {
 
         {/* Services for Lithium */}
         <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="text-center mb-16">
               <div className="text-cyan-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 Capacidades Tecionic
@@ -763,7 +763,7 @@ export default function LithiumIndustryPage() {
 
         {/* Case Studies with Before/After */}
         <section className="py-20 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Tecionic en operaciones litio LatAm
@@ -850,7 +850,7 @@ export default function LithiumIndustryPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
 
-          <div className="max-w-5xl mx-auto px-8 text-center text-white relative">
+          <div className="max-w-5xl mx-auto px-4 lg:px-8 text-center text-white relative">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
               <CheckCircle className="w-4 h-4 text-emerald-400" />

@@ -194,7 +194,7 @@ export default function About() {
 
       {/* Sticky viewport container */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 w-full relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full relative z-10">
           <div className="flex gap-16 items-center">
             {/* Left Side - Static Text */}
             <div className="w-2/5 flex-shrink-0">

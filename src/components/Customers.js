@@ -147,7 +147,7 @@ export default function Customers() {
         <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
       </div>
 
-      <div className="max-w-8xl mx-auto px-8 relative">
+      <div className="max-w-8xl mx-auto px-4 lg:px-8 relative">
         {/* Enterprise Header */}
         <div className="mb-6 lg:mb-20 progressive-reveal">
           <div className="inline-flex items-center px-4 py-2 lg:px-5 lg:py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-400/5 rounded-full text-emerald-700 text-sm font-semibold border border-emerald-400/20 backdrop-blur-sm mb-2 lg:mb-6 sophisticated-hover">

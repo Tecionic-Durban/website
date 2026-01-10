@@ -86,7 +86,7 @@ export default function Hero() {
       </div>
 
       
-      <div className="relative max-w-7xl mx-auto px-4 py-8 lg:py-20 w-full">
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-8 lg:py-20 w-full">
         {/* Content */}
         <div className="max-w-3xl">
             {/* Eyebrow + Headline Complex */}

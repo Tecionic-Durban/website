@@ -315,7 +315,7 @@ export default function CalculadoraPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-6">
               <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
@@ -357,7 +357,7 @@ export default function CalculadoraPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Calculator Form */}
           <div className="lg:col-span-2">

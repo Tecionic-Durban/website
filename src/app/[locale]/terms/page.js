@@ -10,7 +10,7 @@ export default function TermsPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section - Clean Tecionic style */}
       <section className="bg-gradient-to-br from-gray-50 via-white to-gray-100 py-16 lg:py-20 border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8">
           <p className="text-sm font-medium text-emerald-600 uppercase tracking-wide mb-3">
             {t('lastUpdated')}: 3 de enero de 2025
           </p>
@@ -25,7 +25,7 @@ export default function TermsPage() {
 
       {/* Content */}
       <section className="py-12 lg:py-16">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8">
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 lg:p-12 space-y-10">
 
             {/* Introduction */}

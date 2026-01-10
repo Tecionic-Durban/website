@@ -186,7 +186,7 @@ export default function CumplimientoPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">Cumplimiento y Certificaciones</h1>
             <div className="w-24 h-1 bg-emerald-400 mx-auto mb-6"></div>
@@ -200,7 +200,7 @@ export default function CumplimientoPage() {
 
       {/* Compliance Metrics */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             {complianceMetrics.map((metric, index) => (
               <div key={index} className="text-center p-6 bg-emerald-50 rounded-xl">
@@ -216,7 +216,7 @@ export default function CumplimientoPage() {
 
       {/* Certifications */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestras Certificaciones</h2>
             <p className="text-lg text-gray-600">
@@ -272,7 +272,7 @@ export default function CumplimientoPage() {
 
       {/* Regulatory Compliance */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Cumplimiento Normativo</h2>
             <p className="text-lg text-gray-600">
@@ -336,7 +336,7 @@ export default function CumplimientoPage() {
 
       {/* Compliance Process */}
       <section className="py-16 bg-emerald-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestro Proceso de Cumplimiento</h2>
             <p className="text-lg text-gray-600">
@@ -390,7 +390,7 @@ export default function CumplimientoPage() {
 
       {/* CTA Section */}
       <section className="py-16 bg-emerald-600">
-        <div className="max-w-4xl mx-auto px-4 text-center text-white">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-6">¿Necesitas Asegurar el Cumplimiento de tu Proyecto?</h2>
           <p className="text-xl text-emerald-100 mb-8">
             Nuestro equipo de expertos en cumplimiento puede ayudarte a navegar

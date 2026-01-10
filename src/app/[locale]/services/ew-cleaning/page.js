@@ -126,6 +126,7 @@ export default function EWCleaningServicePage() {
   const [carouselKey, setCarouselKey] = useState(0)
   const [timerKey, setTimerKey] = useState(0)
   const carouselCardRef = useRef(null)
+  const mobileCarouselRef = useRef(null)
   const timerRef = useRef(null)
   const CAROUSEL_DURATION = 6000 // 6 seconds
 
@@ -215,6 +216,40 @@ export default function EWCleaningServicePage() {
       }
     }
   }, [])
+
+  // Sync mobile carousel scroll with activeCard (when state changes, scroll to card)
+  useEffect(() => {
+    if (!mobileCarouselRef.current) return
+    const cards = ['validacion', 'trazabilidad', 'escalabilidad']
+    const index = cards.indexOf(activeCard)
+    const scrollContainer = mobileCarouselRef.current
+    const cardWidth = scrollContainer.firstElementChild?.offsetWidth || 0
+    const gap = 16
+    const scrollPosition = index * (cardWidth + gap)
+    scrollContainer.scrollTo({ left: scrollPosition, behavior: 'smooth' })
+  }, [activeCard])
+
+  // Detect mobile carousel scroll and update activeCard
+  useEffect(() => {
+    const container = mobileCarouselRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const cards = ['validacion', 'trazabilidad', 'escalabilidad']
+      const cardWidth = container.firstElementChild?.offsetWidth || 0
+      const gap = 16
+      const scrollPosition = container.scrollLeft
+      const newIndex = Math.round(scrollPosition / (cardWidth + gap))
+      const newCard = cards[newIndex]
+      if (newCard && newCard !== activeCard) {
+        setActiveCard(newCard)
+        setTimerKey(k => k + 1) // Reset progress animation
+      }
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [activeCard])
 
   // Hero image entrance animation
   useIsomorphicLayoutEffect(() => {
@@ -306,7 +341,7 @@ export default function EWCleaningServicePage() {
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-emerald-50/30 to-white pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-6">
@@ -349,7 +384,7 @@ export default function EWCleaningServicePage() {
           <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
               {t('keyBenefits.title')}
@@ -474,7 +509,7 @@ export default function EWCleaningServicePage() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
           {/* Section Header */}
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
@@ -628,7 +663,7 @@ export default function EWCleaningServicePage() {
       {/* SECTION 4: SAFETY - Light section */}
       <section ref={processRef} className="py-24 bg-white relative overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em] mb-6">
               {t('safety.title')}
@@ -734,7 +769,7 @@ export default function EWCleaningServicePage() {
 
       {/* SECTION 5: EQUIPMENT - EW-specific features */}
       <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
               {t('equipmentBenefits.title')}
@@ -748,7 +783,7 @@ export default function EWCleaningServicePage() {
 
       {/* SECTION 6: INDUSTRIES */}
       <section className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t('industries.title')}
@@ -827,7 +862,7 @@ export default function EWCleaningServicePage() {
 
       {/* SECTION 5: CASE STUDY */}
       <section ref={caseStudiesRef} className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
@@ -866,18 +901,18 @@ export default function EWCleaningServicePage() {
               {/* Right - Content */}
               <div className="lg:col-span-3 p-6 lg:p-8">
                 {/* Metrics row */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.removal.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.removal.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.removal.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.removal.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.incidents.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.incidents.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.incidents.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.incidents.label')}</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.quality.value')}</div>
-                    <div className="text-sm text-gray-600">{t('caseStudy.metrics.quality.label')}</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.quality.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.quality.label')}</div>
                   </div>
                 </div>
 
@@ -899,7 +934,7 @@ export default function EWCleaningServicePage() {
 
       {/* SECTION 7: PILOTO SIN RIESGOS - Auto-cycling Carousel */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="flex items-end justify-between mb-12">
             <div className="max-w-3xl">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -968,8 +1003,129 @@ export default function EWCleaningServicePage() {
             </div>
           </div>
 
-          {/* Carousel container */}
-          <div className="relative">
+          {/* Mobile: Swipeable cards carousel */}
+          <div className="md:hidden">
+            <div
+              ref={mobileCarouselRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            >
+              {/* Validación Card */}
+              <div className="flex-shrink-0 w-[85vw] snap-start bg-white rounded-2xl border border-gray-200 p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
+                    <CheckmarkFilled className="w-5 h-5 text-emerald-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900">{t('pilotProgram.cards.validation.title')}</h3>
+                    <p className="text-xs text-gray-500">{t('pilotProgram.cards.validation.subtitle')}</p>
+                  </div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  {t.raw('pilotProgram.cards.validation.features').slice(0, 3).map((feature, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                  <div className="text-xs font-semibold text-emerald-800 uppercase tracking-wide mb-1">{t('pilotProgram.cards.validation.highlight.title')}</div>
+                  <div className="text-lg font-bold text-emerald-600">{t('pilotProgram.cards.validation.highlight.tagline')}</div>
+                </div>
+              </div>
+
+              {/* Trazabilidad Card */}
+              <div className="flex-shrink-0 w-[85vw] snap-start bg-white rounded-2xl border border-gray-200 p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Analytics className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900">{t('pilotProgram.cards.traceability.title')}</h3>
+                    <p className="text-xs text-gray-500">{t('pilotProgram.cards.traceability.subtitle')}</p>
+                  </div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  {t.raw('pilotProgram.cards.traceability.features').slice(0, 3).map((feature, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                  <div className="text-xs font-semibold text-blue-800 uppercase tracking-wide mb-1">{t('pilotProgram.cards.traceability.highlight.title')}</div>
+                  <div className="flex items-center gap-2">
+                    <Dashboard className="w-4 h-4 text-blue-600" />
+                    <span className="text-blue-600 font-semibold text-sm">{t('pilotProgram.cards.traceability.highlight.tagline')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Escalabilidad Card */}
+              <div className="flex-shrink-0 w-[85vw] snap-start bg-white rounded-2xl border border-gray-200 p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                    <ChartLine className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900">{t('pilotProgram.cards.scalability.title')}</h3>
+                    <p className="text-xs text-gray-500">{t('pilotProgram.cards.scalability.subtitle')}</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                      <span className="font-semibold text-gray-900 text-sm">{t('pilotProgram.cards.scalability.steps.pilot.title')}</span>
+                    </div>
+                  </div>
+                  <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-5 h-5 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                      <span className="font-semibold text-gray-900 text-sm">{t('pilotProgram.cards.scalability.steps.contract.title')}</span>
+                    </div>
+                  </div>
+                  <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                      <span className="font-semibold text-gray-900 text-sm">{t('pilotProgram.cards.scalability.steps.dedicated.title')}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile dots indicator with progress */}
+            <div className="flex justify-center gap-2 mt-4">
+              {['validacion', 'trazabilidad', 'escalabilidad'].map((card) => (
+                <button
+                  key={card}
+                  onClick={() => {
+                    changeCarouselCard(card)
+                  }}
+                  className={`h-2 rounded-full transition-all cursor-pointer relative overflow-hidden ${
+                    activeCard === card ? 'bg-gray-300 w-8' : 'bg-gray-300 w-2'
+                  }`}
+                  aria-label={`Go to ${card}`}
+                >
+                  {activeCard === card && (
+                    <span
+                      key={timerKey}
+                      className="absolute inset-0 bg-emerald-600 rounded-full origin-left"
+                      style={{
+                        animation: `fillProgress ${CAROUSEL_DURATION}ms linear forwards`
+                      }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Carousel container */}
+          <div className="hidden md:block relative">
             <div className="overflow-hidden">
               <div ref={carouselCardRef} className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 min-h-[400px]">
 
@@ -1110,7 +1266,7 @@ export default function EWCleaningServicePage() {
             className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
           />
         </div>
-        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>
@@ -1121,29 +1277,11 @@ export default function EWCleaningServicePage() {
             {t('cta.description')}
           </p>
 
-          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
-            <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
+          <div className="flex items-center justify-center">
+            <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.requestPilot')}
               <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
-            <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
-              <Phone className="mr-2 w-5 h-5" />
-              {t('cta.talkToSales')}
-            </button>
-          </div>
-
-          <div className="border-t border-emerald-500 pt-8">
-            <div className="text-sm font-semibold text-emerald-100 uppercase tracking-wide mb-4">{t('cta.contact.title')}</div>
-            <div className="grid md:grid-cols-2 gap-6 text-white">
-              <div>
-                <div className="font-semibold mb-1">{t('cta.contact.santiago.label')}</div>
-                <div className="text-emerald-100">{t('cta.contact.santiago.address')}</div>
-              </div>
-              <div>
-                <div className="font-semibold mb-1">{t('cta.contact.calama.label')}</div>
-                <div className="text-emerald-100">{t('cta.contact.calama.address')}</div>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

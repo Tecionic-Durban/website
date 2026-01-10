@@ -17,6 +17,15 @@ export const dynamicParams = false;
 
 const baseUrl = 'https://tecionic.com';
 
+// Viewport configuration for safe area support (notched devices)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
+  themeColor: '#059669',
+};
+
 // Generate static params for all locales
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -242,7 +251,7 @@ export default async function LocaleLayout({children, params}) {
           }}
         />
       </head>
-      <body className="min-h-screen bg-white" style={{fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'}}>
+      <body className="min-h-screen bg-white overflow-x-hidden" style={{fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'}}>
         <PostHogProvider>
           <NextIntlClientProvider messages={messages}>
             <BreadcrumbSchema />

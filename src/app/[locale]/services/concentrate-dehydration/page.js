@@ -320,7 +320,7 @@ export default function ConcentrateDehydrationServicePage() {
           <CompressionAnimation variant="hero" cycleDuration={10} className="opacity-60" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-6">
@@ -363,7 +363,7 @@ export default function ConcentrateDehydrationServicePage() {
           <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
               Valor en cada gota que eliminamos
@@ -460,7 +460,7 @@ export default function ConcentrateDehydrationServicePage() {
           ))}
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-8 py-24 lg:py-32 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
 
           {/* Mobile: Sticky pills at top */}
           <div className="lg:hidden sticky top-16 z-20 -mx-8 px-8 py-3 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 mb-6">
@@ -572,7 +572,7 @@ export default function ConcentrateDehydrationServicePage() {
 
       {/* SECTION 3b: CAPABILITIES - What you can now do */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em] mb-6">
               Capacidad de filtración para cualquier escenario
@@ -663,7 +663,7 @@ export default function ConcentrateDehydrationServicePage() {
 
       {/* SECTION 3c: RELIEF - What you no longer manage */}
       <section className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div ref={statsRef} className="pt-0">
             <div className="max-w-3xl mb-12">
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
@@ -717,7 +717,7 @@ export default function ConcentrateDehydrationServicePage() {
 
       {/* SECTION 4: EQUIPMENT */}
       <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
               Filtración de alta presión, lista para operar
@@ -821,7 +821,7 @@ export default function ConcentrateDehydrationServicePage() {
 
       {/* SECTION 5: INDUSTRY BREADTH */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Probado en múltiples industrias
@@ -900,7 +900,7 @@ export default function ConcentrateDehydrationServicePage() {
 
       {/* SECTION 6: CASE STUDY - Planta Concentradora */}
       <section ref={caseStudiesRef} className="border-b border-gray-200 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
@@ -939,18 +939,18 @@ export default function ConcentrateDehydrationServicePage() {
               {/* Right - Content */}
               <div className="lg:col-span-3 p-6 lg:p-8">
                 {/* Metrics row */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">50:1</div>
-                    <div className="text-sm text-gray-600">Beneficio/Costo</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">50:1</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Beneficio/Costo</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">&lt;1 día</div>
-                    <div className="text-sm text-gray-600">Payback</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">&lt;1 día</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Payback</div>
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-bold text-emerald-600">75%</div>
-                    <div className="text-sm text-gray-600">Capacidad mantenida</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">75%</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Capacidad mantenida</div>
                   </div>
                 </div>
 
@@ -972,7 +972,7 @@ export default function ConcentrateDehydrationServicePage() {
 
       {/* SECTION 7: Engagement Journey */}
       <section className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Empieza pequeño, escala según resultados
@@ -1127,7 +1127,7 @@ export default function ConcentrateDehydrationServicePage() {
             className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
           />
         </div>
-        <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>

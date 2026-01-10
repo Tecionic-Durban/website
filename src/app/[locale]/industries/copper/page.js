@@ -81,7 +81,7 @@ export default function CopperIndustryPage() {
             background: 'radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(251, 146, 60, 0.08) 40%, transparent 70%)'
           }}></div>
 
-          <div className="relative max-w-[1400px] mx-auto px-8 py-12 lg:py-16">
+          <div className="relative max-w-[1400px] mx-auto px-4 lg:px-8 py-12 lg:py-16">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
 
               {/* Left - Content */}
@@ -127,7 +127,7 @@ export default function CopperIndustryPage() {
 
         {/* Sticky scroll - simple */}
         <section ref={stickyScrollRef} className="bg-gray-50 py-20 transition-colors">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
 
               {/* Left - Sticky */}
@@ -150,42 +150,42 @@ export default function CopperIndustryPage() {
                 <div>
                   <div className="text-lg font-bold text-gray-600 uppercase tracking-wider mb-8">{t('stickyScroll.traditional.label')}</div>
 
-                  <div className="space-y-12">
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.capex.value')}</div>
+                  <div className="space-y-8 md:space-y-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-gray-300">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.capex.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.capex.label')}</div>
                         <p className="text-gray-600">{t('stickyScroll.traditional.items.capex.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.implementation.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-gray-300">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.implementation.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.implementation.label')}</div>
                         <p className="text-gray-600">{t('stickyScroll.traditional.items.implementation.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.maintenance.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-gray-300">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.maintenance.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.maintenance.label')}</div>
                         <p className="text-gray-600">{t('stickyScroll.traditional.items.maintenance.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-gray-300">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.sizing.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-gray-300">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.traditional.items.sizing.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">{t('stickyScroll.traditional.items.sizing.label')}</div>
                         <p className="text-gray-600">{t('stickyScroll.traditional.items.sizing.description')}</p>
                       </div>
@@ -197,62 +197,62 @@ export default function CopperIndustryPage() {
                 <div className="pt-16">
                   <div className="text-lg font-bold text-emerald-900 uppercase tracking-wider mb-8">{t('stickyScroll.tecionic.label')}</div>
 
-                  <div className="space-y-12">
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.capex.value')}</div>
+                  <div className="space-y-8 md:space-y-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-emerald-200">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.capex.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.capex.label')}</div>
                         <p className="text-gray-700">{t('stickyScroll.tecionic.items.capex.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.mobilization.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-emerald-200">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.mobilization.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.mobilization.label')}</div>
                         <p className="text-gray-700">{t('stickyScroll.tecionic.items.mobilization.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.maintenance.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-emerald-200">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.maintenance.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.maintenance.label')}</div>
                         <p className="text-gray-700">{t('stickyScroll.tecionic.items.maintenance.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.technology.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-emerald-200">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.technology.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.technology.label')}</div>
                         <p className="text-gray-700">{t('stickyScroll.tecionic.items.technology.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 pb-12 border-b border-emerald-200">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.scalability.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 pb-8 md:pb-12 border-b border-emerald-200">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.scalability.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.scalability.label')}</div>
                         <p className="text-gray-700">{t('stickyScroll.tecionic.items.scalability.description')}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8">
-                      <div className="col-span-1">
-                        <div className="text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.operation.value')}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8">
+                      <div>
+                        <div className="text-2xl md:text-3xl font-bold text-gray-900">{t('stickyScroll.tecionic.items.operation.value')}</div>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <div className="text-sm text-emerald-700 uppercase tracking-wide mb-2">{t('stickyScroll.tecionic.items.operation.label')}</div>
                         <p className="text-gray-700">{t('stickyScroll.tecionic.items.operation.description')}</p>
                       </div>
@@ -267,7 +267,7 @@ export default function CopperIndustryPage() {
 
         {/* Why TSF - Strategic partner positioning */}
         <section className="py-20 bg-white border-t border-gray-100">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-emerald-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 {t('whyTecionic.badge')}
@@ -332,7 +332,7 @@ export default function CopperIndustryPage() {
 
         {/* Services - Clean visual layout */}
         <section id="services" className="py-20 bg-gray-50">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-gray-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 {t('services.badge')}
@@ -345,11 +345,11 @@ export default function CopperIndustryPage() {
               </p>
             </div>
 
-            {/* Service grid - Compact with subtle visual distinction */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* Service grid - Horizontal carousel on mobile, grid on desktop */}
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
 
               {/* Service 1 - Blue accent */}
-              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Subtle corner decoration */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-50 rounded-bl-full opacity-50"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-500/5 rounded-tr-full"></div>
@@ -377,8 +377,8 @@ export default function CopperIndustryPage() {
                 </div>
               </div>
 
-              {/* Service 2 - Amber accent, slightly offset down */}
-              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden lg:translate-y-4">
+              {/* Service 2 - Amber accent */}
+              <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start lg:translate-y-4">
                 {/* Subtle corner decoration */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-amber-100 to-orange-50 rounded-br-full opacity-50"></div>
                 <div className="absolute bottom-0 right-0 w-24 h-24 bg-amber-500/5 rounded-tl-full"></div>
@@ -407,7 +407,7 @@ export default function CopperIndustryPage() {
               </div>
 
               {/* Service 3 - Purple accent */}
-              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Subtle corner decoration */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-violet-50 rounded-bl-full opacity-50"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-500/5 rounded-tr-full"></div>
@@ -435,8 +435,8 @@ export default function CopperIndustryPage() {
                 </div>
               </div>
 
-              {/* Service 4 - Teal accent, slightly offset down */}
-              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden lg:translate-y-4">
+              {/* Service 4 - Teal accent */}
+              <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start lg:translate-y-4">
                 {/* Subtle corner decoration */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-teal-100 to-emerald-50 rounded-br-full opacity-50"></div>
                 <div className="absolute bottom-0 right-0 w-24 h-24 bg-teal-500/5 rounded-tl-full"></div>
@@ -460,8 +460,8 @@ export default function CopperIndustryPage() {
                 </div>
               </div>
 
-              {/* Service 5 - Slate accent, slightly offset down */}
-              <div className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden lg:translate-y-4">
+              {/* Service 5 - Slate accent */}
+              <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start lg:translate-y-4">
                 {/* Subtle corner decoration */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-slate-100 to-gray-50 rounded-br-full opacity-50"></div>
                 <div className="absolute bottom-0 right-0 w-24 h-24 bg-slate-500/5 rounded-tl-full"></div>
@@ -484,6 +484,16 @@ export default function CopperIndustryPage() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Mobile dots indicator */}
+            <div className="flex md:hidden justify-center gap-2 mb-8">
+              {[0, 1, 2, 3, 4].map((index) => (
+                <div
+                  key={index}
+                  className="w-2 h-2 rounded-full bg-gray-300"
+                />
+              ))}
             </div>
 
             {/* Backup for planned maintenance callout */}
@@ -526,7 +536,7 @@ export default function CopperIndustryPage() {
 
         {/* Split section - EW Cell cleaning with photo */}
         <section className="bg-gray-50 py-20">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
 
               {/* Left - Image */}
@@ -578,7 +588,7 @@ export default function CopperIndustryPage() {
 
         {/* Radomiro Tomic Case Study - Visual with data */}
         <section className="py-20 bg-white">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-blue-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 {t('caseStudy.badge')}
@@ -643,7 +653,7 @@ export default function CopperIndustryPage() {
 
         {/* Mobile vs Fixed comparison */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
               <div className="text-gray-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 {t('mobileVsFixed.badge')}
@@ -701,7 +711,7 @@ export default function CopperIndustryPage() {
 
         {/* CTA Section */}
         <section className="py-20 bg-gray-900 text-white">
-          <div className="max-w-[1400px] mx-auto px-8">
+          <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-bold mb-6">
                 {t('cta.title')}
