@@ -16,12 +16,22 @@ import {
   Renew,
   Flash,
   View,
-  DataVis_2,
-  RainDrop,
-  ChartBar,
-  ChartBarTarget,
-  Explore
+  DataVis_2
 } from '@carbon/icons-react'
+import {
+  CheckCircle,
+  TrendingUp,
+  TrendingDown,
+  Clock,
+  Zap,
+  Target,
+  AlertTriangle,
+  Waves,
+  BarChart3,
+  Eye,
+  Factory,
+  Droplets
+} from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -232,7 +242,7 @@ export default function TurbidityMonitoringPage() {
             {/* Benefit 2 */}
             <div className="flex-1 lg:px-6">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <RainDrop size={20} className="text-purple-600" />
+                <Droplets className="w-5 h-5 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.optimizeFlocculant')}</h3>
             </div>
@@ -247,7 +257,7 @@ export default function TurbidityMonitoringPage() {
             {/* Benefit 3 */}
             <div className="flex-1 lg:px-6">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <ChartBar size={20} className="text-purple-600" />
+                <BarChart3 className="w-5 h-5 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.ensureCompliance')}</h3>
             </div>
@@ -262,7 +272,7 @@ export default function TurbidityMonitoringPage() {
             {/* Benefit 4 */}
             <div className="flex-1 lg:px-6">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <CheckmarkFilled size={20} className="text-purple-600" />
+                <CheckCircle className="w-5 h-5 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('hero.benefits.eliminateLabDelay')}</h3>
             </div>
@@ -290,7 +300,7 @@ export default function TurbidityMonitoringPage() {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <RainDrop size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <Droplets className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.labDelay.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.labDelay.description')}</p>
@@ -298,7 +308,7 @@ export default function TurbidityMonitoringPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <ChartBar size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <BarChart3 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.variability.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.variability.description')}</p>
@@ -306,7 +316,7 @@ export default function TurbidityMonitoringPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <ChartBarTarget size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <Target className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.quality.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.quality.description')}</p>
@@ -363,7 +373,7 @@ export default function TurbidityMonitoringPage() {
 
                 <div className="mt-8 p-4 bg-purple-50 rounded-xl border border-purple-200">
                   <div className="flex items-start gap-3">
-                    <Explore size={20} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                    <Eye className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm font-semibold text-purple-800">{t('problem.chart.insight')}</p>
                       <p className="text-sm text-purple-700 mt-1">{t('problem.chart.insightText')}</p>
@@ -397,7 +407,7 @@ export default function TurbidityMonitoringPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                <Explore size={24} className="text-purple-600" />
+                <Eye className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.realTime.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.realTime.description')}</p>
@@ -407,7 +417,7 @@ export default function TurbidityMonitoringPage() {
 
             <div className="group p-8 bg-gradient-to-br from-emerald-50 to-white rounded-2xl border border-emerald-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                <RainDrop size={24} className="text-emerald-600" />
+                <Droplets className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.flocculant.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.flocculant.description')}</p>
@@ -417,7 +427,7 @@ export default function TurbidityMonitoringPage() {
 
             <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                <ChartBarTarget size={24} className="text-purple-600" />
+                <Target className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.compliance.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.compliance.description')}</p>
@@ -686,7 +696,7 @@ export default function TurbidityMonitoringPage() {
 
                   <div className="flex items-center justify-center gap-4">
                     <div className="w-20 h-20 bg-purple-100 rounded-xl flex items-center justify-center">
-                      <ChartBarTarget size={40} className="text-purple-600" />
+                      <Target className="w-10 h-10 text-purple-600" />
                     </div>
                   </div>
 

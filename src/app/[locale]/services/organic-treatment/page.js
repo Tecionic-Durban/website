@@ -5,7 +5,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Chemistry, Renew, Filter, CheckmarkFilled, Collaborate, Security, Time, FlashFilled, WarningAltFilled, Delivery, License, ArrowRight, Currency, Growth, ChevronLeft, ChevronRight } from '@carbon/icons-react'
+import { Chemistry, Renew, Filter, CheckmarkFilled, Collaborate, Security, Time, FlashFilled, WarningAltFilled, Delivery, License } from '@carbon/icons-react'
+import { ArrowRight, DollarSign, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react'
 import BypassAnimation from '@/components/BypassAnimation'
 import InterfaceLine, { InterfaceLineAnimated, PhaseSeparationBackground } from '@/components/InterfaceLine'
 import { useTranslations } from 'next-intl'
@@ -589,7 +590,7 @@ export default function OrganicTreatmentServicePage() {
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
                 {t('hero.cta')}
-                <ArrowRight size={16} className="ml-2" />
+                <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
 
@@ -840,7 +841,7 @@ export default function OrganicTreatmentServicePage() {
                 </ul>
                 <Link href="/contacto?equipo=filtro-70ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
                   {t('equipment.lowCapacity.cta')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
@@ -867,7 +868,7 @@ export default function OrganicTreatmentServicePage() {
                 </ul>
                 <Link href="/contacto?equipo=filtro-130ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
                   {t('equipment.mediumCapacity.cta')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
@@ -894,7 +895,7 @@ export default function OrganicTreatmentServicePage() {
                 </ul>
                 <Link href="/contacto?equipo=filtro-400ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
                   {t('equipment.highCapacity.cta')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -1123,12 +1124,12 @@ export default function OrganicTreatmentServicePage() {
                 <p className="text-sm text-gray-600">Tratamiento orgánico, filtración borras, limpieza EW</p>
                 <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   Ver detalles
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1154,12 +1155,12 @@ export default function OrganicTreatmentServicePage() {
                 <p className="text-sm text-gray-600">Sales minerales y cumplimiento ambiental</p>
                 <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   Ver detalles
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1185,12 +1186,12 @@ export default function OrganicTreatmentServicePage() {
                 <p className="text-sm text-gray-600">Tratamiento salmueras y sólidos finos</p>
                 <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   Ver detalles
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1263,7 +1264,7 @@ export default function OrganicTreatmentServicePage() {
                 {/* CTA */}
                 <Link href="/casos-de-exito/tratamiento-organico-sx" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
                   Ver caso completo
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -1298,7 +1299,7 @@ export default function OrganicTreatmentServicePage() {
                   className="w-12 h-12 bg-white rounded-full shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors cursor-pointer"
                   aria-label="Previous"
                 >
-                  <ChevronLeft size={24} className="text-gray-600" />
+                  <ChevronLeft className="w-6 h-6 text-gray-600" />
                 </button>
 
                 <button
@@ -1312,7 +1313,7 @@ export default function OrganicTreatmentServicePage() {
                   className="w-12 h-12 bg-white rounded-full shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors cursor-pointer"
                   aria-label="Next"
                 >
-                  <ChevronRight size={24} className="text-gray-600" />
+                  <ChevronRight className="w-6 h-6 text-gray-600" />
                 </button>
               </div>
 
@@ -1420,7 +1421,7 @@ export default function OrganicTreatmentServicePage() {
             <div className="bg-white rounded-2xl border border-gray-200 p-6 flex-shrink-0 w-[85vw] snap-start">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <Growth size={20} className="text-blue-600" />
+                  <TrendingUp className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">Escalabilidad Probada</h3>
@@ -1587,7 +1588,7 @@ export default function OrganicTreatmentServicePage() {
                 <div className="carousel-content">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Growth size={24} className="text-blue-600" />
+                      <TrendingUp className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900">Escalabilidad Probada</h3>
@@ -1661,7 +1662,7 @@ export default function OrganicTreatmentServicePage() {
           <div className="flex items-center justify-center">
             <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               Solicitar Evaluación Técnica
-              <ArrowRight size={20} className="ml-2" />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </div>
         </div>

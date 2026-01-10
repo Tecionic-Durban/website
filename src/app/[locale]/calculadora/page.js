@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Calculator, ChevronLeft, ChevronRight, Growth, ChartBar, ChartBarTarget, Currency } from '@carbon/icons-react'
-import ThreeBallLoader from '@/components/ThreeBallLoader'
+import { Calculator, ChevronLeft, ChevronRight, TrendingUp, BarChart3, Target, DollarSign } from 'lucide-react'
 
 export default function CalculadoraPage() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -234,6 +233,15 @@ export default function CalculadoraPage() {
     }
   }
 
+  // Three-Ball Loading Component
+  const ThreeBallLoader = () => (
+    <div className="flex items-center justify-center space-x-1 py-4">
+      <div className="w-3 h-3 bg-emerald-600 rounded-full animate-float-up-1"></div>
+      <div className="w-3 h-3 bg-emerald-500 rounded-full animate-float-up-2"></div>
+      <div className="w-3 h-3 bg-emerald-400 rounded-full animate-float-up-3"></div>
+    </div>
+  )
+
   const performCalculation = async () => {
     setIsCalculating(true)
     setAnimateResults(false)
@@ -311,7 +319,7 @@ export default function CalculadoraPage() {
           <div className="text-center mb-8">
             <div className="flex justify-center mb-6">
               <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
-                <Calculator size={32} className="text-white" />
+                <Calculator className="w-8 h-8 text-white" />
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">Calculadora de Optimización</h1>
@@ -463,7 +471,7 @@ export default function CalculadoraPage() {
                   }`}
                   suppressHydrationWarning
                 >
-                  <ChevronLeft size={16} className="mr-2" />
+                  <ChevronLeft className="w-4 h-4 mr-2" />
                   Anterior
                 </button>
 
@@ -488,7 +496,7 @@ export default function CalculadoraPage() {
                       suppressHydrationWarning
                     >
                       Siguiente
-                      <ChevronRight size={16} className="ml-2" />
+                      <ChevronRight className="w-4 h-4 ml-2" />
                     </button>
                   ) : (
                     <button
@@ -502,10 +510,10 @@ export default function CalculadoraPage() {
                       suppressHydrationWarning
                     >
                       {isCalculating ? (
-                        <div className="flex items-center justify-center">
-                          <ThreeBallLoader size="sm" />
-                          <span className="ml-3">Calculando...</span>
-                        </div>
+                        <>
+                          <ThreeBallLoader />
+                          <span className="ml-2">Calculando...</span>
+                        </>
                       ) : (
                         'Calcular Optimización'
                       )}
@@ -531,7 +539,7 @@ export default function CalculadoraPage() {
                 </div>
               ) : !results ? (
                 <div className="text-center text-gray-500 py-8">
-                  <Calculator size={48} className="mx-auto mb-4 text-gray-300" />
+                  <Calculator className="w-12 h-12 mx-auto mb-4 text-gray-300" />
                   <p>Complete todos los parámetros para ver los resultados de optimización</p>
                 </div>
               ) : (
@@ -545,7 +553,7 @@ export default function CalculadoraPage() {
                     'bg-red-50 border-red-500'
                   }`}>
                     <div className="flex items-center space-x-2">
-                      <ChartBarTarget size={20} />
+                      <Target className="w-5 h-5" />
                       <span className="font-semibold">Clasificación: {results.performanceRating}</span>
                     </div>
                   </div>
@@ -553,7 +561,7 @@ export default function CalculadoraPage() {
                   {/* Industry Benchmark Visualization */}
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <ChartBar size={16} className="mr-2" />
+                      <BarChart3 className="w-4 h-4 mr-2" />
                       Comparación Industrial
                     </h4>
                     <div className="space-y-3">
@@ -595,7 +603,7 @@ export default function CalculadoraPage() {
                   {results.roi && (
                     <div className="bg-gradient-to-r from-emerald-50 to-blue-50 p-4 rounded-lg">
                       <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                        <Currency size={16} className="mr-2" />
+                        <DollarSign className="w-4 h-4 mr-2" />
                         Análisis de ROI
                       </h4>
                       <div className="grid grid-cols-2 gap-4">
@@ -622,7 +630,7 @@ export default function CalculadoraPage() {
                   {/* Production Impact with Progress Animation */}
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <Growth size={16} className="mr-2" />
+                      <TrendingUp className="w-4 h-4 mr-2" />
                       Impacto en Producción
                     </h4>
                     <div className="space-y-4">

@@ -1,10 +1,11 @@
 'use client'
 
 // src/app/industries/copper/page.js - Stripe-inspired visual design
-import { useEffect, useRef } from 'react'
-import { Chemistry, Flash, Filter as FilterCarbon, Humidity, Settings as SettingsCarbon, Security, ArrowRight, Download, CheckmarkFilled } from '@carbon/icons-react'
-import { useTranslations } from 'next-intl'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
+import { Chemistry, Flash, Filter as FilterCarbon, Humidity, Settings as SettingsCarbon, Security } from '@carbon/icons-react'
+import { Wrench, ArrowRight, Download, CheckCircle, TrendingUp, Factory } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { handleContactClick } from '@/utils/navigation'
 import Image from 'next/image'
 import gsap from 'gsap'
@@ -18,8 +19,13 @@ export default function CopperIndustryPage() {
   const t = useTranslations('copperIndustry')
   const router = useRouter()
   const pathname = usePathname()
+  const [isLoading, setIsLoading] = useState(true)
   const stickyScrollRef = useRef(null)
   const scrollContentRef = useRef(null)
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 800)
+  }, [])
 
   useEffect(() => {
     if (typeof window === 'undefined' || !stickyScrollRef.current || !scrollContentRef.current) return
@@ -37,7 +43,27 @@ export default function CopperIndustryPage() {
     })
 
     return () => ctx.revert()
-  }, [])
+  }, [isLoading])
+
+
+  const ThreeBallLoader = () => (
+    <div className="flex space-x-2 justify-center items-center">
+      <div className="w-4 h-4 bg-emerald-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+      <div className="w-4 h-4 bg-emerald-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+      <div className="w-4 h-4 bg-emerald-600 rounded-full animate-bounce"></div>
+    </div>
+  )
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <ThreeBallLoader />
+          <p className="mt-6 text-gray-600 font-medium">{t('loading')}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -294,7 +320,7 @@ export default function CopperIndustryPage() {
                 <div className="space-y-3">
                   {t.raw('whyTecionic.keyDifference.benefits').map((benefit, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <CheckmarkFilled size={20} className="text-emerald-600 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                       <span className="text-gray-700">{benefit}</span>
                     </div>
                   ))}
@@ -538,7 +564,7 @@ export default function CopperIndustryPage() {
                 <div className="space-y-4 mb-8">
                   {['cells', 'return', 'altitude'].map((key) => (
                     <div key={key} className="flex items-start gap-3">
-                      <CheckmarkFilled size={24} className="text-emerald-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" />
                       <div>
                         <div className="font-semibold text-gray-900">{t(`ewSection.benefits.${key}.title`)}</div>
                         <div className="text-gray-600">{t(`ewSection.benefits.${key}.description`)}</div>
@@ -553,7 +579,7 @@ export default function CopperIndustryPage() {
                   className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:gap-3 shadow-lg shadow-amber-600/20"
                 >
                   {t('ewSection.cta')}
-                  <ArrowRight size={20} />
+                  <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -669,7 +695,7 @@ export default function CopperIndustryPage() {
                       <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-200/30 rounded-bl-full"></div>
 
                       <div className="relative w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                        <CheckmarkFilled size={20} className="text-white" />
+                        <CheckCircle className="w-5 h-5 text-white" />
                       </div>
                       <div className="relative">
                         <div className="font-bold text-emerald-900 text-lg mb-1">{item.metric}</div>
@@ -703,7 +729,7 @@ export default function CopperIndustryPage() {
                 </button>
                 <button className="px-8 py-4 bg-white/10 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors">
                   <div className="flex items-center gap-2 justify-center">
-                    <Download size={20} />
+                    <Download className="w-5 h-5" />
                     {t('cta.secondaryCta')}
                   </div>
                 </button>

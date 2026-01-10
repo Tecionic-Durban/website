@@ -4,7 +4,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { CheckmarkFilled, ArrowRight } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 // Hero background images for cycling carousel - TSF equipment focused
@@ -108,7 +108,7 @@ export default function Hero() {
                   </p>
 
                   <div className="inline-flex items-center px-4 py-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 shadow-lg progressive-reveal">
-                    <CheckmarkFilled size={16} className="text-emerald-400 mr-2" />
+                    <CheckCircle className="w-4 h-4 text-emerald-400 mr-2" />
                     <span className="text-white font-semibold text-sm tracking-wide">{t('tagline')}</span>
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function Hero() {
                 className="group bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-base lg:text-lg transition-all duration-300 inline-flex items-center"
               >
                 <span>{t('cta')}</span>
-                <ArrowRight size={20} className="ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
             </div>
         </div>

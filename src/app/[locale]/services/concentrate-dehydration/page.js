@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckmarkFilled, Delivery, DeliveryTruck, CertificateCheck, ChartLine, Enterprise, ArrowRight, Time, Currency, AppConnectivity, License, WorkflowAutomation } from '@carbon/icons-react'
+import { Humidity, CheckmarkFilled, Delivery, Mountain, DeliveryTruck, Certificate, CertificateCheck, Security, ChartLine, Enterprise, ArrowRight as ArrowRightCarbon, ChevronLeft, ChevronRight, Phone, Currency, AppConnectivity, Minimize, License, WorkflowAutomation } from '@carbon/icons-react'
+import { CheckCircle, DollarSign, TrendingUp, Clock, ArrowRight } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import CompressionAnimation from '@/components/CompressionAnimation'
@@ -333,7 +334,7 @@ export default function ConcentrateDehydrationServicePage() {
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
                 {t('hero.cta')}
-                <ArrowRight size={16} className="ml-2" />
+                <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
 
@@ -638,7 +639,7 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="absolute -top-12 -left-12 w-[140px] h-[140px] rounded-full pointer-events-none border-2 border-purple-400"></div>
               <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <Time size={24} className="text-purple-600" />
+                  <Clock className="w-6 h-6 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Despliega en 48 horas, no en meses</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -756,7 +757,7 @@ export default function ConcentrateDehydrationServicePage() {
                 </ul>
                 <Link href="/contacto?equipo=filtro-70ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
                   Consultar disponibilidad
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
@@ -783,7 +784,7 @@ export default function ConcentrateDehydrationServicePage() {
                 </ul>
                 <Link href="/contacto?equipo=filtro-130ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
                   Consultar disponibilidad
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
@@ -810,7 +811,7 @@ export default function ConcentrateDehydrationServicePage() {
                 </ul>
                 <Link href="/contacto?equipo=filtro-400ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
                   Consultar disponibilidad
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -852,12 +853,12 @@ export default function ConcentrateDehydrationServicePage() {
                 <p className="text-sm text-gray-600">Deshidratación de concentrados, humedad ≤9%</p>
                 <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   Ver detalles
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -883,12 +884,12 @@ export default function ConcentrateDehydrationServicePage() {
                 <p className="text-sm text-gray-600">Control preciso para fundición</p>
                 <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   Ver detalles
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     Ver detalles
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -961,7 +962,7 @@ export default function ConcentrateDehydrationServicePage() {
                 {/* CTA */}
                 <Link href="/casos-de-exito" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
                   Ver caso completo
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -1056,7 +1057,7 @@ export default function ConcentrateDehydrationServicePage() {
               </div>
               {/* Arrow connector */}
               <div className="absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                <ArrowRight size={24} className="text-gray-300" />
+                <ArrowRightCarbon className="w-6 h-6 text-gray-300" />
               </div>
             </div>
 
@@ -1083,7 +1084,7 @@ export default function ConcentrateDehydrationServicePage() {
               </div>
               {/* Arrow connector */}
               <div className="absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                <ArrowRight size={24} className="text-gray-300" />
+                <ArrowRightCarbon className="w-6 h-6 text-gray-300" />
               </div>
             </div>
 
@@ -1140,7 +1141,7 @@ export default function ConcentrateDehydrationServicePage() {
           <div className="flex items-center justify-center">
             <Link href="/contacto" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.primaryCta')}
-              <ArrowRight size={20} className="ml-2" />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
         </div>

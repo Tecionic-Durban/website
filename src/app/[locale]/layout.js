@@ -172,7 +172,45 @@ function OrganizationSchema() {
     sameAs: [
       // Add social media URLs when available
       // 'https://www.linkedin.com/company/tecionic',
-    ]
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Filtración Móvil',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Tratamiento Orgánico SX',
+            description: 'Eliminación de degradados orgánicos en circuitos de extracción por solventes'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Limpieza Celdas EW',
+            description: 'Limpieza especializada de celdas de electrowinning'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Deshidratación de Concentrados',
+            description: 'Equipos móviles para deshidratación de concentrados de cobre'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Tratamiento de Sólidos Finos',
+            description: 'Filtración de partículas finas en procesos hidrometalúrgicos'
+          }
+        }
+      ]
+    }
   };
 
   return (

@@ -16,11 +16,21 @@ import {
   WarningAlt,
   Renew,
   Flash,
-  Hourglass,
-  Growth,
-  ChartBarTarget,
-  Layers
+  Hourglass
 } from '@carbon/icons-react'
+import {
+  CheckCircle,
+  TrendingUp,
+  TrendingDown,
+  Clock,
+  Zap,
+  Target,
+  AlertTriangle,
+  Timer,
+  BarChart3,
+  Layers,
+  Factory
+} from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -278,7 +288,7 @@ export default function TsfMonitoringPage() {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <Hourglass size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <Timer className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.slowSeparation.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.slowSeparation.description')}</p>
@@ -286,7 +296,7 @@ export default function TsfMonitoringPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <Layers size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <Layers className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.emulsions.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.emulsions.description')}</p>
@@ -294,7 +304,7 @@ export default function TsfMonitoringPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <Growth size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <TrendingUp className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.capacity.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.capacity.description')}</p>
@@ -385,7 +395,7 @@ export default function TsfMonitoringPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                <ChartBarTarget size={24} className="text-purple-600" />
+                <Target className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.earlyWarning.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.earlyWarning.description')}</p>
@@ -395,7 +405,7 @@ export default function TsfMonitoringPage() {
 
             <div className="group p-8 bg-gradient-to-br from-emerald-50 to-white rounded-2xl border border-emerald-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                <Flash size={24} className="text-emerald-600" />
+                <Zap className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.optimizedSpeed.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.optimizedSpeed.description')}</p>
@@ -405,7 +415,7 @@ export default function TsfMonitoringPage() {
 
             <div className="group p-8 bg-gradient-to-br from-cyan-50 to-white rounded-2xl border border-cyan-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
-                <Analytics size={24} className="text-cyan-600" />
+                <BarChart3 className="w-6 h-6 text-cyan-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.zeroStops.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.zeroStops.description')}</p>

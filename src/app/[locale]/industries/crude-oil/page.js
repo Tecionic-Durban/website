@@ -2,7 +2,7 @@
 
 // src/app/industries/crude-oil/page.js - Redesigned with better component/layout design
 import { useRouter, usePathname } from 'next/navigation'
-import { RainDrop, Enterprise, Security, CheckmarkFilled, Growth, ArrowRight, Renew, Currency, WarningAlt, Delivery, Settings } from '@carbon/icons-react'
+import { Droplets, Factory, Shield, CheckCircle, TrendingUp, ArrowRight, Recycle, DollarSign, AlertTriangle, Truck, Settings } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -66,7 +66,7 @@ export default function CrudeOilIndustryPage() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-200 rounded-full mb-6">
-              <WarningAlt size={16} />
+              <AlertTriangle className="w-4 h-4 text-red-600" />
               <span className="text-red-700 font-semibold text-sm uppercase tracking-wide">{t('challenge.badge')}</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4">
@@ -83,7 +83,7 @@ export default function CrudeOilIndustryPage() {
             {/* Problem 1: Capacity Loss */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
               <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                <Enterprise size={28} />
+                <Factory className="w-7 h-7 text-red-600" />
               </div>
               <div className="text-4xl font-black text-gray-900 mb-3">{t('challenge.problems.capacity.value')}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -101,7 +101,7 @@ export default function CrudeOilIndustryPage() {
             {/* Problem 2: Lost Hydrocarbons */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
               <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                <RainDrop size={28} />
+                <Droplets className="w-7 h-7 text-orange-600" />
               </div>
               <div className="text-4xl font-black text-gray-900 mb-3">{t('challenge.problems.hydrocarbons.value')}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -119,7 +119,7 @@ export default function CrudeOilIndustryPage() {
             {/* Problem 3: Disposal Costs */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
               <div className="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
-                <Currency size={28} />
+                <DollarSign className="w-7 h-7 text-yellow-600" />
               </div>
               <div className="text-4xl font-black text-gray-900 mb-3">{t('challenge.problems.disposal.value')}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -170,7 +170,7 @@ export default function CrudeOilIndustryPage() {
 
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-6">
-              <Security size={16} />
+              <Shield className="w-4 h-4 text-emerald-600" />
               <span className="text-emerald-700 font-semibold text-sm uppercase tracking-wide">{t('capabilities.badge')}</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4">
@@ -234,7 +234,7 @@ export default function CrudeOilIndustryPage() {
               </p>
               <div className="flex items-center gap-6 bg-white rounded-2xl p-6 border-2 border-emerald-200">
                 <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Delivery size={28} />
+                  <Truck className="w-7 h-7 text-emerald-600" />
                 </div>
                 <div>
                   <div className="text-3xl font-black text-gray-900">{t('capabilities.speed.value')}</div>
@@ -257,9 +257,9 @@ export default function CrudeOilIndustryPage() {
               <div className="grid grid-cols-3 gap-4">
                 {t.raw('capabilities.compliance.certifications').map((cert, idx) => (
                   <div key={idx} className="bg-white rounded-xl p-5 border-2 border-blue-200 text-center">
-                    {idx === 0 && <div className="text-blue-600 flex justify-center mb-3"><Security size={40} /></div>}
-                    {idx === 1 && <div className="text-blue-600 flex justify-center mb-3"><CheckmarkFilled size={40} /></div>}
-                    {idx === 2 && <div className="text-blue-600 flex justify-center mb-3"><Settings size={40} /></div>}
+                    {idx === 0 && <Shield className="w-10 h-10 text-blue-600 mx-auto mb-3" />}
+                    {idx === 1 && <CheckCircle className="w-10 h-10 text-blue-600 mx-auto mb-3" />}
+                    {idx === 2 && <Settings className="w-10 h-10 text-blue-600 mx-auto mb-3" />}
                     <div className="text-sm font-bold text-gray-900">{cert}</div>
                   </div>
                 ))}
@@ -278,7 +278,7 @@ export default function CrudeOilIndustryPage() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full mb-6">
-              <CheckmarkFilled size={16} />
+              <CheckCircle className="w-4 h-4 text-blue-600" />
               <span className="text-blue-700 font-semibold text-sm uppercase tracking-wide">{t('labResults.badge')}</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4">
@@ -329,7 +329,7 @@ export default function CrudeOilIndustryPage() {
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <CheckmarkFilled size={32} />
+                <CheckCircle className="w-8 h-8 text-emerald-600" />
               </div>
               <h4 className="font-bold text-lg text-gray-900 mb-2">{t('labResults.benefits.validation.title')}</h4>
               <p className="text-gray-600">
@@ -339,7 +339,7 @@ export default function CrudeOilIndustryPage() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <RainDrop size={32} />
+                <Droplets className="w-8 h-8 text-blue-600" />
               </div>
               <h4 className="font-bold text-lg text-gray-900 mb-2">{t('labResults.benefits.applications.title')}</h4>
               <p className="text-gray-600">
@@ -349,7 +349,7 @@ export default function CrudeOilIndustryPage() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Security size={32} />
+                <Shield className="w-8 h-8 text-purple-600" />
               </div>
               <h4 className="font-bold text-lg text-gray-900 mb-2">{t('labResults.benefits.certification.title')}</h4>
               <p className="text-gray-600">
@@ -379,7 +379,7 @@ export default function CrudeOilIndustryPage() {
             {/* Area 1: Delayed Coker */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
               <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-5">
-                <Enterprise size={24} />
+                <Factory className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('applications.areas.coker.title')}</h3>
               <p className="text-gray-300 mb-4">
@@ -393,7 +393,7 @@ export default function CrudeOilIndustryPage() {
             {/* Area 2: FCC Wet Gas Scrubber */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
               <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-5">
-                <RainDrop size={24} />
+                <Droplets className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('applications.areas.fcc.title')}</h3>
               <p className="text-gray-300 mb-4">
@@ -407,7 +407,7 @@ export default function CrudeOilIndustryPage() {
             {/* Area 3: Tank Cleaning */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
               <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-5">
-                <Renew size={24} />
+                <Recycle className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('applications.areas.tanks.title')}</h3>
               <p className="text-gray-300 mb-4">
@@ -421,7 +421,7 @@ export default function CrudeOilIndustryPage() {
             {/* Area 4: Effluent Treatment */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
               <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center mb-5">
-                <Growth size={24} />
+                <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('applications.areas.effluent.title')}</h3>
               <p className="text-gray-300 mb-4">
@@ -435,7 +435,7 @@ export default function CrudeOilIndustryPage() {
             {/* Area 5: API Separators */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
               <div className="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center mb-5">
-                <Settings size={24} />
+                <Settings className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('applications.areas.api.title')}</h3>
               <p className="text-gray-300 mb-4">
@@ -449,7 +449,7 @@ export default function CrudeOilIndustryPage() {
             {/* Area 6: Other Applications */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors md:col-span-2 lg:col-span-1">
               <div className="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mb-5">
-                <CheckmarkFilled size={24} />
+                <CheckCircle className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('applications.areas.other.title')}</h3>
               <p className="text-gray-300 mb-4">
@@ -487,7 +487,7 @@ export default function CrudeOilIndustryPage() {
               <div className="bg-gradient-to-br from-emerald-50 to-white p-10 border-b border-gray-200">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Renew size={28} />
+                    <Recycle className="w-7 h-7 text-white" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">
@@ -503,7 +503,7 @@ export default function CrudeOilIndustryPage() {
                 <ul className="space-y-4 mb-8">
                   {t.raw('benefits.primary.hcRecovery.items').map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckmarkFilled size={20} className="flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">
                         <strong className="text-gray-900">{item.highlight}</strong> {item.text}
                       </span>
@@ -525,7 +525,7 @@ export default function CrudeOilIndustryPage() {
               <div className="bg-gradient-to-br from-blue-50 to-white p-10 border-b border-gray-200">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Growth size={28} />
+                    <TrendingUp className="w-7 h-7 text-white" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">
@@ -541,7 +541,7 @@ export default function CrudeOilIndustryPage() {
                 <ul className="space-y-4 mb-8">
                   {t.raw('benefits.primary.costReduction.items').map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckmarkFilled size={20} className="flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">
                         <strong className="text-gray-900">{item.highlight}</strong> {item.text}
                       </span>
@@ -566,7 +566,7 @@ export default function CrudeOilIndustryPage() {
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Delivery size={24} />
+                  <Truck className="w-6 h-6 text-purple-600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{t('benefits.secondary.mobile.title')}</h3>
@@ -577,7 +577,7 @@ export default function CrudeOilIndustryPage() {
                 {t('benefits.secondary.mobile.description')}
               </p>
               <div className="flex items-center gap-2 text-sm font-semibold text-purple-600">
-                <CheckmarkFilled size={16} />
+                <CheckCircle className="w-4 h-4" />
                 <span>{t('benefits.secondary.mobile.cta')}</span>
               </div>
             </div>
@@ -585,7 +585,7 @@ export default function CrudeOilIndustryPage() {
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Security size={24} />
+                  <Shield className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{t('benefits.secondary.exproof.title')}</h3>
@@ -596,7 +596,7 @@ export default function CrudeOilIndustryPage() {
                 {t('benefits.secondary.exproof.description')}
               </p>
               <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
-                <CheckmarkFilled size={16} />
+                <CheckCircle className="w-4 h-4" />
                 <span>{t('benefits.secondary.exproof.cta')}</span>
               </div>
             </div>
@@ -625,7 +625,7 @@ export default function CrudeOilIndustryPage() {
             <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-300">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center">
-                  <Enterprise size={24} />
+                  <Factory className="w-6 h-6 text-gray-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">{t('comparison.traditional.title')}</h3>
               </div>
@@ -655,7 +655,7 @@ export default function CrudeOilIndustryPage() {
             <div className="bg-gradient-to-br from-emerald-50 to-white rounded-3xl p-10 border-2 border-emerald-300 shadow-lg">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
-                  <Delivery size={24} />
+                  <Truck className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">{t('comparison.mobile.title')}</h3>
               </div>
@@ -663,7 +663,7 @@ export default function CrudeOilIndustryPage() {
               <div className="space-y-5 mb-8">
                 {t.raw('comparison.mobile.items').map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <CheckmarkFilled size={24} className="flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-gray-900 mb-1">{item.title}</div>
                       <div className="text-sm text-gray-700">{item.description}</div>
@@ -699,7 +699,7 @@ export default function CrudeOilIndustryPage() {
             className="inline-flex items-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl"
           >
             {t('cta.button')}
-            <ArrowRight size={20} />
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </section>

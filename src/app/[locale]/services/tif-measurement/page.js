@@ -17,10 +17,25 @@ import {
   Renew,
   Time,
   Currency,
-  ChemistryReference,
-  Growth,
-  ChartBarTarget
+  ChemistryReference
 } from '@carbon/icons-react'
+import {
+  CheckCircle,
+  TrendingUp,
+  TrendingDown,
+  Shield,
+  Clock,
+  Zap,
+  Target,
+  Beaker,
+  AlertTriangle,
+  DollarSign,
+  BarChart3,
+  Gauge,
+  FlaskConical,
+  Droplets,
+  Factory
+} from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -280,7 +295,7 @@ export default function TifMeasurementPage() {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <Growth size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <TrendingUp className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.emulsions.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.emulsions.description')}</p>
@@ -288,7 +303,7 @@ export default function TifMeasurementPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <Currency size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <DollarSign className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.losses.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.losses.description')}</p>
@@ -296,7 +311,7 @@ export default function TifMeasurementPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                  <CheckmarkFilled size={24} className="text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{t('problem.symptoms.stops.title')}</h4>
                     <p className="text-sm text-gray-600">{t('problem.symptoms.stops.description')}</p>
@@ -390,7 +405,7 @@ export default function TifMeasurementPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                <ChartBarTarget size={24} className="text-purple-600" />
+                <Target className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.earlyDetection.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.earlyDetection.description')}</p>
@@ -400,7 +415,7 @@ export default function TifMeasurementPage() {
 
             <div className="group p-8 bg-gradient-to-br from-emerald-50 to-white rounded-2xl border border-emerald-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                <Growth size={24} className="text-emerald-600" />
+                <TrendingUp className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{t('solution.benefits.reducedLosses.title')}</h3>
               <p className="text-gray-600 mb-4">{t('solution.benefits.reducedLosses.description')}</p>

@@ -2,7 +2,8 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, CheckmarkFilled, ArrowRight } from '@carbon/icons-react'
+import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 import { useTranslations } from 'next-intl'
 
@@ -115,7 +116,7 @@ export default function Services() {
                     className="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300 cursor-pointer"
                   >
                     <span className="text-sm">{t('moreInfo')}</span>
-                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
               </div>
@@ -147,7 +148,7 @@ export default function Services() {
                     className="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300 cursor-pointer"
                   >
                     <span className="text-sm">{t('moreInfo')}</span>
-                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
               </div>
@@ -179,7 +180,7 @@ export default function Services() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-emerald-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 <span className="relative z-10">{t('cta.requestConsultation')}</span>
-                <ArrowRight size={20} className="relative z-10 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
 
               <button
@@ -189,7 +190,7 @@ export default function Services() {
               >
                 <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 <span className="relative z-10">{t('cta.viewCaseStudies')}</span>
-                <CheckmarkFilled size={20} className="relative z-10 ml-3 enterprise-pulse" />
+                <CheckCircle className="relative z-10 w-5 h-5 ml-3 enterprise-pulse" />
               </button>
             </div>
           </div>

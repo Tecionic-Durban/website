@@ -4,7 +4,8 @@ import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard, Delivery, Mountain, Certificate, CertificateCheck, Security, Flash, FlashFilled, ChevronLeft, ChevronRight, Loop, Construction, Renew, Time, IncreaseLevel, Exit, ContainerImagePull, RainDrop, ArrowRight, Group } from '@carbon/icons-react'
+import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard, Delivery, Mountain, Certificate, CertificateCheck, Security, Flash, FlashFilled, ChevronLeft, ChevronRight, Loop, Construction, Renew, Time, IncreaseLevel, Exit, ContainerImagePull, RainDrop } from '@carbon/icons-react'
+import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, TrendingUp, Droplets } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ParticleFiltrationAnimation from '@/components/ParticleFiltrationAnimation'
@@ -552,7 +553,7 @@ export default function FineSolidsServicePage() {
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
                 {t('hero.cta')}
-                <ArrowRight size={16} className="ml-2" />
+                <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
 
@@ -912,7 +913,7 @@ export default function FineSolidsServicePage() {
             {/* Left: Header */}
             <div>
               <div className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-700 text-sm font-semibold px-3 py-1.5 rounded-full mb-6">
-                <RainDrop size={16} />
+                <Droplets className="w-4 h-4" />
                 {t('waterClarification.badge')}
               </div>
 
@@ -939,7 +940,7 @@ export default function FineSolidsServicePage() {
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Group size={20} className="text-cyan-600" />
+                  <Users className="w-5 h-5 text-cyan-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">{t('waterClarification.benefits.dryCake.title')}</h3>
@@ -1103,12 +1104,12 @@ export default function FineSolidsServicePage() {
                 <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
                 <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1135,12 +1136,12 @@ export default function FineSolidsServicePage() {
                 <p className="text-sm text-gray-600">{t('industries.items.gold.description')}</p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mt-3 md:hidden">
                   {t('industries.consult')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </span>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mt-3">
                     {t('industries.consult')}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </div>
@@ -1167,12 +1168,12 @@ export default function FineSolidsServicePage() {
                 <p className="text-sm text-gray-600">{t('industries.items.lithium.description')}</p>
                 <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1199,12 +1200,12 @@ export default function FineSolidsServicePage() {
                 <p className="text-sm text-gray-600">{t('industries.items.potassium.description')}</p>
                 <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1231,12 +1232,12 @@ export default function FineSolidsServicePage() {
                 <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
                 <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1263,12 +1264,12 @@ export default function FineSolidsServicePage() {
                 <p className="text-sm text-gray-600">{t('industries.items.oil.description')}</p>
                 <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1341,7 +1342,7 @@ export default function FineSolidsServicePage() {
                 {/* CTA */}
                 <Link href="/casos-de-exito/filtracion-yoduro" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
                   {t('caseStudy.cta')}
-                  <ArrowRight size={16} />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -1676,7 +1677,7 @@ export default function FineSolidsServicePage() {
           <div className="flex items-center justify-center">
             <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.primaryCta')}
-              <ArrowRight size={20} className="ml-2" />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </div>
         </div>

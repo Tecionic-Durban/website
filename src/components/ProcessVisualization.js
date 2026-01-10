@@ -1,7 +1,7 @@
 // src/components/ProcessVisualization.js
 'use client'
 import { useState, useEffect } from 'react'
-import { Chemistry, ArrowRight, ArrowDown, Flash, RainDrop, Enterprise, ChevronRight } from '@carbon/icons-react'
+import { Beaker, ArrowRight, ArrowDown, Zap, Droplets, Factory, ChevronRight } from 'lucide-react'
 
 export default function ProcessVisualization() {
   const [activeProcess, setActiveProcess] = useState('lix')
@@ -14,9 +14,9 @@ export default function ProcessVisualization() {
       color: 'emerald',
       description: 'Proceso de disolución selectiva de minerales mediante soluciones acuosas',
       steps: [
-        { id: 'crushing', name: 'Trituración', icon: Enterprise, detail: 'Reducción de tamaño del mineral' },
-        { id: 'heap', name: 'Formación de Pilas', icon: Chemistry, detail: 'Apilamiento estratificado del mineral' },
-        { id: 'irrigation', name: 'Irrigación', icon: RainDrop, detail: 'Aplicación de solución lixiviante' },
+        { id: 'crushing', name: 'Trituración', icon: Factory, detail: 'Reducción de tamaño del mineral' },
+        { id: 'heap', name: 'Formación de Pilas', icon: Beaker, detail: 'Apilamiento estratificado del mineral' },
+        { id: 'irrigation', name: 'Irrigación', icon: Droplets, detail: 'Aplicación de solución lixiviante' },
         { id: 'collection', name: 'Recolección', icon: ArrowDown, detail: 'Captación de solución rica' }
       ]
     },
@@ -25,10 +25,10 @@ export default function ProcessVisualization() {
       color: 'blue',
       description: 'Separación y concentración de metales mediante solventes orgánicos',
       steps: [
-        { id: 'extraction', name: 'Extracción', icon: Chemistry, detail: 'Transferencia metal a fase orgánica' },
+        { id: 'extraction', name: 'Extracción', icon: Beaker, detail: 'Transferencia metal a fase orgánica' },
         { id: 'separation', name: 'Separación', icon: ArrowRight, detail: 'Separación de fases acuosa-orgánica' },
-        { id: 'stripping', name: 'Re-extracción', icon: RainDrop, detail: 'Transferencia a electrolito rico' },
-        { id: 'regeneration', name: 'Regeneración', icon: Enterprise, detail: 'Recuperación de solvente orgánico' }
+        { id: 'stripping', name: 'Re-extracción', icon: Droplets, detail: 'Transferencia a electrolito rico' },
+        { id: 'regeneration', name: 'Regeneración', icon: Factory, detail: 'Recuperación de solvente orgánico' }
       ]
     },
     ew: {
@@ -36,10 +36,10 @@ export default function ProcessVisualization() {
       color: 'purple',
       description: 'Deposición electrolítica de metales de alta pureza',
       steps: [
-        { id: 'electrolyte', name: 'Electrolito', icon: Chemistry, detail: 'Preparación de solución rica' },
-        { id: 'electrolysis', name: 'Electrólisis', icon: Flash, detail: 'Aplicación de corriente eléctrica' },
+        { id: 'electrolyte', name: 'Electrolito', icon: Beaker, detail: 'Preparación de solución rica' },
+        { id: 'electrolysis', name: 'Electrólisis', icon: Zap, detail: 'Aplicación de corriente eléctrica' },
         { id: 'deposition', name: 'Deposición', icon: ArrowDown, detail: 'Formación de cátodos metálicos' },
-        { id: 'harvesting', name: 'Cosecha', icon: Enterprise, detail: 'Recolección del metal puro' }
+        { id: 'harvesting', name: 'Cosecha', icon: Factory, detail: 'Recolección del metal puro' }
       ]
     }
   }
@@ -149,7 +149,7 @@ export default function ProcessVisualization() {
                     }`}>
                       <div className="text-center">
                         <div className="mb-3">
-                          <IconComponent size={32} />
+                          <IconComponent className="w-8 h-8 mx-auto" />
                         </div>
                         <div className="font-semibold text-sm mb-1">{step.name}</div>
                       </div>
@@ -167,8 +167,8 @@ export default function ProcessVisualization() {
                     <div className={`mx-4 transition-all duration-300 ${
                       getArrowColor(processes[activeProcess].color, index)
                     }`}>
-                      <ChevronRight size={24} className="lg:block hidden" />
-                      <ArrowDown size={24} className="lg:hidden block" />
+                      <ChevronRight className="w-6 h-6 lg:block hidden" />
+                      <ArrowDown className="w-6 h-6 lg:hidden block" />
                     </div>
                   )}
                 </div>
@@ -197,7 +197,7 @@ export default function ProcessVisualization() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
             <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Enterprise size={24} className="text-emerald-600" />
+              <Factory className="w-6 h-6 text-emerald-600" />
             </div>
             <h4 className="text-lg font-semibold mb-2">Optimización Continua</h4>
             <p className="text-gray-600">Monitoreo y ajuste en tiempo real para máxima eficiencia operacional</p>
@@ -205,7 +205,7 @@ export default function ProcessVisualization() {
           
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Chemistry size={24} className="text-blue-600" />
+              <Beaker className="w-6 h-6 text-blue-600" />
             </div>
             <h4 className="text-lg font-semibold mb-2">Control de Calidad</h4>
             <p className="text-gray-600">Análisis químico avanzado en cada etapa del proceso</p>
@@ -213,7 +213,7 @@ export default function ProcessVisualization() {
           
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
             <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Flash size={24} className="text-purple-600" />
+              <Zap className="w-6 h-6 text-purple-600" />
             </div>
             <h4 className="text-lg font-semibold mb-2">Eficiencia Energética</h4>
             <p className="text-gray-600">Reducción del consumo energético mediante tecnología avanzada</p>
