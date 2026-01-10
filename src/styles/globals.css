@@ -39,9 +39,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
   }
-  
+
   body {
     font-family: var(--font-family-body);
     line-height: 1.6;

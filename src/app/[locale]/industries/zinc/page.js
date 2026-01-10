@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { Filter, Droplets, Zap, Recycle, CheckCircle, ArrowRight, Factory, Beaker, Shield } from 'lucide-react'
 import Image from 'next/image'
@@ -15,32 +15,8 @@ if (typeof window !== 'undefined') {
 export default function ZincIndustryPage() {
   const router = useRouter()
   const pathname = usePathname()
-  const [isLoading, setIsLoading] = useState(true)
   const stickyRef = useRef(null)
   const cardsRef = useRef(null)
-
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 800)
-  }, [])
-
-  const ThreeBallLoader = () => (
-    <div className="flex space-x-2 justify-center items-center">
-      <div className="w-4 h-4 bg-slate-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-      <div className="w-4 h-4 bg-slate-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-      <div className="w-4 h-4 bg-slate-500 rounded-full animate-bounce"></div>
-    </div>
-  )
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <ThreeBallLoader />
-          <p className="mt-6 text-gray-600 font-medium">Cargando...</p>
-        </div>
-      </div>
-    )
-  }
 
   const useCases = [
     {
@@ -241,7 +217,7 @@ export default function ZincIndustryPage() {
               <h4 className="text-xl font-bold text-white mb-2">Equipamiento especializado</h4>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-slate-300">
                 {[
-                  'Filtros prensa hasta 130 ton/día',
+                  'Filtros prensa hasta 400 ton/día',
                   'Centrífugas decanter',
                   'Certificación Ex-Proof',
                   'Operación incluida'
@@ -250,6 +226,120 @@ export default function ZincIndustryPage() {
                     <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
                     {item}
                   </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Backup / Contingencia */}
+      <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-700">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Tu plan B cuando la infraestructura fija falla
+              </h2>
+              <p className="text-xl text-emerald-50 leading-relaxed mb-8">
+                Mantenciones programadas, fallas imprevistas, o peaks de demanda—desplegamos capacidad de filtración en 24-48 horas para que tu producción no se detenga.
+              </p>
+              <div className="space-y-4">
+                {[
+                  'Movilización de emergencia en 24-48 horas',
+                  'Equipos certificados y operadores capacitados',
+                  'Sin compromiso de largo plazo—usa solo cuando lo necesites'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 text-emerald-50">
+                    <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="text-xl font-bold text-white mb-6">Escenarios donde Tecionic te respalda</h3>
+              <div className="space-y-4">
+                {[
+                  { title: 'Mantención programada', desc: 'Capacidad temporal mientras tus equipos están en servicio' },
+                  { title: 'Falla de equipos', desc: 'Respuesta rápida para minimizar downtime' },
+                  { title: 'Aumento de producción', desc: 'Capacidad adicional sin inversión permanente' },
+                  { title: 'Pruebas de proceso', desc: 'Validación antes de invertir en infraestructura fija' }
+                ].map((item, i) => (
+                  <div key={i} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                    <div className="font-semibold text-white">{item.title}</div>
+                    <div className="text-sm text-emerald-100">{item.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cómo trabajamos - 3 steps */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <div className="text-slate-600 text-sm font-semibold mb-4 uppercase tracking-wider">
+              Cómo trabajamos
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              De la evaluación a la operación en semanas
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Un proceso simple para integrar capacidad de separación sólido-líquido a tu operación, sin la complejidad de un proyecto de capital.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div>
+              <div className="text-6xl font-bold text-emerald-600 mb-4">01</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnóstico</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Evaluamos tu proceso, identificamos puntos críticos de separación, y dimensionamos la solución adecuada.
+              </p>
+              <div className="text-sm text-gray-500">1-2 semanas</div>
+            </div>
+
+            <div>
+              <div className="text-6xl font-bold text-emerald-600 mb-4">02</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Movilización</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Trasladamos equipos a tu sitio, realizamos conexiones, y validamos operación con tu equipo técnico.
+              </p>
+              <div className="text-sm text-gray-500">24-48 horas</div>
+            </div>
+
+            <div>
+              <div className="text-6xl font-bold text-emerald-600 mb-4">03</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Operación</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Operamos y mantenemos los equipos. Tú te enfocas en producir zinc—nosotros en la separación sólido-líquido.
+              </p>
+              <div className="text-sm text-gray-500">Servicio continuo</div>
+            </div>
+          </div>
+
+          <div className="mt-12 p-8 bg-gray-50 rounded-2xl">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">La diferencia clave</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  No vendemos equipos—entregamos resultados. Nuestro éxito se mide en tu recuperación de zinc y continuidad operacional.
+                </p>
+              </div>
+              <div className="space-y-3">
+                {[
+                  'Sin licitación de equipos',
+                  'Sin gestión de proyecto',
+                  'Sin contratación de operadores',
+                  'Sin mantención por tu cuenta'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
+                  </div>
                 ))}
               </div>
             </div>

@@ -1,9 +1,9 @@
 'use client'
 
 // src/app/industries/lithium/page.js
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { Beaker, Zap, Factory, Microscope, CheckCircle, TrendingUp, ArrowUp, Battery, ArrowRight, Droplets, Filter } from 'lucide-react'
+import { Beaker, Zap, Factory, Microscope, CheckCircle, Battery, ArrowRight, Droplets, Filter } from 'lucide-react'
 import { handleContactClick } from '@/utils/navigation'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -15,16 +15,10 @@ if (typeof window !== 'undefined') {
 export default function LithiumIndustryPage() {
   const router = useRouter()
   const pathname = usePathname()
-  const [isLoading, setIsLoading] = useState(true)
   const tableRef = useRef(null)
 
   useEffect(() => {
-    // Simulate initial loading
-    setTimeout(() => setIsLoading(false), 1000)
-  }, [])
-
-  useEffect(() => {
-    if (!tableRef.current || isLoading) return
+    if (!tableRef.current) return
 
     const ctx = gsap.context(() => {
       // Blueprint animation for the comparison table
@@ -131,72 +125,6 @@ export default function LithiumIndustryPage() {
       completionTime: "Escalable según demanda"
     }
   ]
-
-  const caseStudies = [
-    {
-      client: "Operación Salar de Atacama",
-      challenge: "Protección de membranas DLE ($1.5M inversión) contra fouling por arcillas y sólidos suspendidos en salmueras. Vida útil original: 18 meses con reemplazos frecuentes.",
-      solution: "Tecionic desplegó centrífugas decanter (2-4 semanas movilización) para clarificación pre-DLE. Turbidez reducida <10 NTU antes de membranas adsorbentes.",
-      results: ["300% extensión vida membranas", "$500K+ ahorro anual reemplazos", "Uptime DLE 99.2%"],
-      timeline: "Operación continua 24 meses",
-      savings: "$500K+/año",
-      before: { membraneLife: 18, turbidity: 120, uptime: 87 },
-      after: { membraneLife: 54, turbidity: 8, uptime: 99.2 }
-    },
-    {
-      client: "Proyecto DLE Piloto LatAm",
-      challenge: "Proyecto piloto DLE requería infraestructura filtración para validar proceso antes de CAPEX permanente. Presupuesto limitado, timeline agresivo (6 meses prueba).",
-      solution: "Tecionic: $0 CAPEX. Filtros prensa móviles + centrífugas desplegados en 3 semanas. Opex mensual vs $2.5M infraestructura fija. Permitió validar proceso sin comprometer capital.",
-      results: ["99.6% pureza Li₂CO₃ alcanzada", "Piloto completado bajo presupuesto", "Transición a producción sin delays"],
-      timeline: "6 meses piloto + 12 meses producción",
-      savings: "$2.5M CAPEX evitado",
-      before: { capexRequired: 2.5, timeline: 18, riskLevel: 85 },
-      after: { capexRequired: 0, timeline: 6, riskLevel: 15 }
-    }
-  ]
-
-  // Three Ball Loader Component
-  const ThreeBallLoader = () => (
-    <div className="flex space-x-2 justify-center items-center">
-      <div className="w-4 h-4 bg-cyan-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-      <div className="w-4 h-4 bg-cyan-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-      <div className="w-4 h-4 bg-cyan-500 rounded-full animate-bounce"></div>
-    </div>
-  )
-
-  // TEMPORARILY DISABLED: Decorative elements per stakeholder request
-  // const FloatingElements = () => (
-  //   <>
-  //     {/* Decorative floating elements */}
-  //   </>
-  // )
-
-  const BeforeAfterComparison = ({ before, after, labels }) => (
-    <div className="grid grid-cols-3 gap-4 mt-4">
-      {Object.keys(before).map((key, idx) => (
-        <div key={key} className="text-center">
-          <div className="text-xs text-gray-500 mb-1">{labels[key]}</div>
-          <div className="flex items-center justify-center space-x-2">
-            <div className="text-sm text-red-600 font-semibold">{before[key]}</div>
-            <ArrowUp className="w-3 h-3 text-emerald-500" />
-            <div className="text-sm text-emerald-600 font-bold">{after[key]}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center">
-        <div className="text-center">
-          <ThreeBallLoader />
-          <p className="mt-4 text-cyan-800 font-medium">Cargando datos de litio...</p>
-        </div>
-      </div>
-    )
-  }
-
 
   return (
     <>
@@ -753,89 +681,6 @@ export default function LithiumIndustryPage() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Case Studies with Before/After */}
-        <section className="py-20 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Tecionic en operaciones litio LatAm
-              </h2>
-              <div className="w-20 h-1 bg-cyan-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600">
-                Resultados validados: 300% extensión vida membranas, $0 CAPEX, operación en semanas
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {caseStudies.map((study, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-500 group">
-                  <div className="bg-cyan-600 text-white p-6 steel-gradient">
-                    <h3 className="text-xl font-bold mb-2">{study.client}</h3>
-                    <p className="text-cyan-200">Proyecto de optimización litio</p>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Desafío:</h4>
-                      <p className="text-gray-600 text-sm">{study.challenge}</p>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Solución:</h4>
-                      <p className="text-gray-600 text-sm">{study.solution}</p>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-3">Resultados:</h4>
-                      <ul className="space-y-2">
-                        {study.results.map((result, idx) => (
-                          <li key={idx} className="flex items-center text-sm">
-                            <TrendingUp className="w-4 h-4 text-emerald-500 mr-2 micro-bounce" />
-                            <span className="text-gray-700">{result}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Before/After Comparison */}
-                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-semibold text-gray-900 mb-3 text-center">Antes vs Después Tecionic</h5>
-                      <BeforeAfterComparison
-                        before={study.before}
-                        after={study.after}
-                        labels={
-                          index === 0
-                            ? {
-                                membraneLife: "Vida membranas (meses)",
-                                turbidity: "Turbidez (NTU)",
-                                uptime: "Uptime DLE (%)"
-                              }
-                            : {
-                                capexRequired: "CAPEX requerido ($M)",
-                                timeline: "Timeline (meses)",
-                                riskLevel: "Nivel riesgo (%)"
-                              }
-                        }
-                      />
-                    </div>
-                    
-                    <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-cyan-600">{study.timeline}</div>
-                        <div className="text-xs text-gray-500">Implementación</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-emerald-600">{study.savings}</div>
-                        <div className="text-xs text-gray-500">Ahorro anual</div>
-                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Calculator, ChevronLeft, ChevronRight, TrendingUp, BarChart3, Target, DollarSign } from 'lucide-react'
+import ThreeBallLoader from '@/components/ThreeBallLoader'
 
 export default function CalculadoraPage() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -232,15 +233,6 @@ export default function CalculadoraPage() {
       ...specificMetrics
     }
   }
-
-  // Three-Ball Loading Component
-  const ThreeBallLoader = () => (
-    <div className="flex items-center justify-center space-x-1 py-4">
-      <div className="w-3 h-3 bg-emerald-600 rounded-full animate-float-up-1"></div>
-      <div className="w-3 h-3 bg-emerald-500 rounded-full animate-float-up-2"></div>
-      <div className="w-3 h-3 bg-emerald-400 rounded-full animate-float-up-3"></div>
-    </div>
-  )
 
   const performCalculation = async () => {
     setIsCalculating(true)

@@ -1,7 +1,7 @@
 'use client'
 
 // src/app/industries/copper/page.js - Stripe-inspired visual design
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { Chemistry, Flash, Filter as FilterCarbon, Humidity, Settings as SettingsCarbon, Security } from '@carbon/icons-react'
 import { Wrench, ArrowRight, Download, CheckCircle, TrendingUp, Factory } from 'lucide-react'
@@ -19,13 +19,8 @@ export default function CopperIndustryPage() {
   const t = useTranslations('copperIndustry')
   const router = useRouter()
   const pathname = usePathname()
-  const [isLoading, setIsLoading] = useState(true)
   const stickyScrollRef = useRef(null)
   const scrollContentRef = useRef(null)
-
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 800)
-  }, [])
 
   useEffect(() => {
     if (typeof window === 'undefined' || !stickyScrollRef.current || !scrollContentRef.current) return
@@ -43,27 +38,7 @@ export default function CopperIndustryPage() {
     })
 
     return () => ctx.revert()
-  }, [isLoading])
-
-
-  const ThreeBallLoader = () => (
-    <div className="flex space-x-2 justify-center items-center">
-      <div className="w-4 h-4 bg-emerald-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-      <div className="w-4 h-4 bg-emerald-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-      <div className="w-4 h-4 bg-emerald-600 rounded-full animate-bounce"></div>
-    </div>
-  )
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <ThreeBallLoader />
-          <p className="mt-6 text-gray-600 font-medium">{t('loading')}</p>
-        </div>
-      </div>
-    )
-  }
+  }, [])
 
   return (
     <>
