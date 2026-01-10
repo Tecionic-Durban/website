@@ -3,8 +3,7 @@
 import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Flash, Enterprise, Launch, Apps, Connect, Filter as FilterCarbon, Renew, Currency, ArrowDownRight, Chemistry, RainDrop, Humidity, DeliveryTruck, Pipelines, Power } from '@carbon/icons-react'
-import { CheckCircle, ArrowRight } from 'lucide-react'
+import { Flash, Enterprise, Launch, Apps, Connect, Filter as FilterCarbon, Renew, Currency, ArrowDownRight, Chemistry, RainDrop, Humidity, DeliveryTruck, Pipelines, Power, CheckmarkFilled, ArrowRight } from '@carbon/icons-react'
 import BorraSeparationAnimation from '@/components/BorraSeparationAnimation'
 import { useTranslations } from 'next-intl'
 
@@ -254,7 +253,7 @@ export default function FiltrationPage() {
 
               <button className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
                 {t('hero.cta')}
-                <ArrowRight className="ml-2 w-4 h-4" />
+                <ArrowRight size={16} />
               </button>
             </div>
 
@@ -492,7 +491,7 @@ export default function FiltrationPage() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400" />
+                    <CheckmarkFilled size={12} className="text-emerald-400" />
                   </div>
                   <div>
                     <span className="text-white font-medium">{t('productQuality.cleanElectrolyte.items.purity.title')}</span>
@@ -501,7 +500,7 @@ export default function FiltrationPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400" />
+                    <CheckmarkFilled size={12} className="text-emerald-400" />
                   </div>
                   <div>
                     <span className="text-white font-medium">{t('productQuality.cleanElectrolyte.items.cells.title')}</span>
@@ -510,7 +509,7 @@ export default function FiltrationPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400" />
+                    <CheckmarkFilled size={12} className="text-emerald-400" />
                   </div>
                   <div>
                     <span className="text-white font-medium">{t('productQuality.cleanElectrolyte.items.extractant.title')}</span>
@@ -530,7 +529,7 @@ export default function FiltrationPage() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400" />
+                    <CheckmarkFilled size={12} className="text-emerald-400" />
                   </div>
                   <div>
                     <span className="text-white font-medium">{t('productQuality.cleanRaffinate.items.concentrated.title')}</span>
@@ -539,7 +538,7 @@ export default function FiltrationPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400" />
+                    <CheckmarkFilled size={12} className="text-emerald-400" />
                   </div>
                   <div>
                     <span className="text-white font-medium">{t('productQuality.cleanRaffinate.items.heaps.title')}</span>
@@ -548,7 +547,7 @@ export default function FiltrationPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400" />
+                    <CheckmarkFilled size={12} className="text-emerald-400" />
                   </div>
                   <div>
                     <span className="text-white font-medium">{t('productQuality.cleanRaffinate.items.kerosene.title')}</span>
@@ -570,9 +569,9 @@ export default function FiltrationPage() {
                   <p className="text-xs text-emerald-300">{t('productQuality.cleanElectrolyte.subtitle')}</p>
                 </div>
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.purity.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.purity.description')}</p></div></div>
-                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.cells.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.cells.description')}</p></div></div>
-                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.extractant.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.extractant.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckmarkFilled size={10} className="text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.purity.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.purity.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckmarkFilled size={10} className="text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.cells.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.cells.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckmarkFilled size={10} className="text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanElectrolyte.items.extractant.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanElectrolyte.items.extractant.description')}</p></div></div>
                 </div>
                 {/* E1/E2 Stats */}
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-emerald-500/20">
@@ -593,9 +592,9 @@ export default function FiltrationPage() {
                   <p className="text-xs text-emerald-300">{t('productQuality.cleanRaffinate.subtitle')}</p>
                 </div>
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.concentrated.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.concentrated.description')}</p></div></div>
-                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.heaps.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.heaps.description')}</p></div></div>
-                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckCircle className="w-2.5 h-2.5 text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.kerosene.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.kerosene.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckmarkFilled size={10} className="text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.concentrated.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.concentrated.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckmarkFilled size={10} className="text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.heaps.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.heaps.description')}</p></div></div>
+                  <div className="flex items-start gap-2"><div className="w-5 h-5 bg-emerald-500/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><CheckmarkFilled size={10} className="text-emerald-400" /></div><div><span className="text-white font-medium text-sm">{t('productQuality.cleanRaffinate.items.kerosene.title')}</span><p className="text-gray-400 text-xs">{t('productQuality.cleanRaffinate.items.kerosene.description')}</p></div></div>
                 </div>
                 {/* S1/S2 Stats */}
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-emerald-500/20">
@@ -657,21 +656,21 @@ export default function FiltrationPage() {
               {/* Three benefits - clean list */}
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <CheckmarkFilled size={20} className="text-emerald-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <span className="font-semibold text-gray-900">{t('thermalImpact.benefits.selective.title')}</span>
                     <span className="text-gray-600">{t('thermalImpact.benefits.selective.description')}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <CheckmarkFilled size={20} className="text-emerald-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <span className="font-semibold text-gray-900">{t('thermalImpact.benefits.minimal.title')}</span>
                     <span className="text-gray-600">{t('thermalImpact.benefits.minimal.description')}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <CheckmarkFilled size={20} className="text-emerald-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <span className="font-semibold text-gray-900">{t('thermalImpact.benefits.immediate.title')}</span>
                     <span className="text-gray-600">{t('thermalImpact.benefits.immediate.description')}</span>
@@ -890,12 +889,12 @@ export default function FiltrationPage() {
                 <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
                 <a href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight size={16} />
                 </a>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <a href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -921,12 +920,12 @@ export default function FiltrationPage() {
                 <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
                 <a href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight size={16} />
                 </a>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <a href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -952,12 +951,12 @@ export default function FiltrationPage() {
                 <p className="text-sm text-gray-600">{t('industries.items.crudeOil.description')}</p>
                 <a href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight size={16} />
                 </a>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <a href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -1030,7 +1029,7 @@ export default function FiltrationPage() {
                 {/* CTA */}
                 <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 transition-colors">
                   {t('caseStudy.cta')}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight size={16} />
                 </Link>
               </div>
             </div>
@@ -1065,7 +1064,7 @@ export default function FiltrationPage() {
           <div className="flex items-center justify-center">
             <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.primaryCta')}
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight size={20} className="ml-2" />
             </a>
           </div>
         </div>

@@ -87,19 +87,27 @@ export default function AboutPage() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
-                <Flash className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('mission.title')}</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('mission.description')}
-                </p>
+              <div className="relative bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer overflow-hidden">
+                {/* Quarter circle motif - top right */}
+                <div className="absolute -top-16 -right-16 w-32 h-32 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full opacity-60"></div>
+                <div className="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-emerald-200 to-emerald-300 rounded-full opacity-40"></div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('mission.title')}</h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t('mission.description')}
+                  </p>
+                </div>
               </div>
-              <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer">
-                <Growth className="w-12 h-12 text-emerald-600 mb-6 animate-pulse" />
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('vision.title')}</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('vision.description')}
-                </p>
+              <div className="relative bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 industrial-shimmer overflow-hidden">
+                {/* Quarter circle motif - top right */}
+                <div className="absolute -top-16 -right-16 w-32 h-32 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full opacity-60"></div>
+                <div className="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-emerald-200 to-emerald-300 rounded-full opacity-40"></div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('vision.title')}</h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t('vision.description')}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -262,21 +270,9 @@ export default function AboutPage() {
               {t('cta.description')}
             </p>
 
-            {/* Phase 1: Three-ball decoration */}
-            <div className="flex justify-center mb-8">
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 bg-emerald-600 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
-                <div className="w-3 h-3 bg-emerald-500 rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
-                <div className="w-3 h-3 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/contact" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 precision-click">
                 {t('cta.contactButton')}
-              </Link>
-              <Link href="/services" className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                {t('cta.servicesButton')}
               </Link>
             </div>
           </div>

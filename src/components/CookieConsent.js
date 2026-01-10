@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import posthog from 'posthog-js'
-import { X } from 'lucide-react'
+import { Close } from '@carbon/icons-react'
 import Link from 'next/link'
 
 export default function CookieConsent() {
@@ -68,7 +68,7 @@ export default function CookieConsent() {
             className="absolute top-2 right-2 sm:hidden text-gray-400 hover:text-white"
             aria-label={t('close')}
           >
-            <X className="w-5 h-5" />
+            <Close size={20} />
           </button>
         </div>
       </div>

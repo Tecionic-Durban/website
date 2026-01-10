@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown, Earth } from '@carbon/icons-react';
 
 const localeConfig = {
   'es-cl': { name: 'Español (Chile)', code: 'CL' },
@@ -47,9 +47,9 @@ export default function LanguageSwitcher() {
         aria-label={t('selectLanguage')}
         aria-expanded={isOpen}
       >
-        <Globe className="w-4 h-4" />
+        <Earth size={16} />
         <span className="font-bold">{currentLocale.code}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown size={16} className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (

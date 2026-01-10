@@ -2,7 +2,7 @@
 
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { Globe2, ArrowRight, ChevronRight } from 'lucide-react'
+import { Earth, ArrowRight, ChevronRight } from '@carbon/icons-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
@@ -15,7 +15,7 @@ export default function LatamPresence() {
     loading: () => (
       <div className="w-full h-[500px] bg-slate-900/50 rounded-2xl flex items-center justify-center">
         <div className="text-emerald-400 animate-pulse flex items-center gap-2">
-          <Globe2 className="w-6 h-6 animate-spin" />
+          <Earth size={24} className="animate-spin" />
           <span>{t('loadingMap')}</span>
         </div>
       </div>
@@ -82,7 +82,7 @@ export default function LatamPresence() {
                 className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors group mt-2 text-sm"
               >
                 {t('requestEquipment')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform shrink-0" />
               </Link>
             </div>
 
@@ -105,7 +105,7 @@ export default function LatamPresence() {
                     className="flex items-center gap-1 bg-slate-800/50 px-3 py-1.5 rounded-lg group"
                   >
                     <span className="text-white text-sm group-hover:text-emerald-400 transition-colors">{t(`industries.${industry.key}`)}</span>
-                    <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition-colors" />
+                    <ChevronRight size={16} className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
                   </Link>
                 ))}
               </div>
@@ -145,7 +145,7 @@ export default function LatamPresence() {
               className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors group mt-3 ml-4"
             >
               {t('requestEquipment')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform shrink-0" />
             </Link>
           </div>
 
@@ -176,7 +176,7 @@ export default function LatamPresence() {
                 >
                   <div className={`w-1 h-6 rounded-full ${industry.color}`} />
                   <span className="text-white group-hover:text-emerald-400 transition-colors">{t(`industries.${industry.key}`)}</span>
-                  <ArrowRight className="w-4 h-4 text-slate-600 opacity-0 group-hover:opacity-100 group-hover:text-emerald-400 -translate-x-2 group-hover:translate-x-0 transition-all shrink-0" />
+                  <ArrowRight size={16} className="text-slate-600 opacity-0 group-hover:opacity-100 group-hover:text-emerald-400 -translate-x-2 group-hover:translate-x-0 transition-all shrink-0" />
                 </Link>
               ))}
             </div>

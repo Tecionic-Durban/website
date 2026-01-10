@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Factory, Droplets, FlaskConical, Shield, Clock } from 'lucide-react'
+import { ArrowRight, Enterprise, RainDrop, Chemistry, Security, Time } from '@carbon/icons-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
@@ -8,7 +8,7 @@ export default function CasosExitoPage() {
   const t = useTranslations('caseStudies')
 
   // Icons for each case study (order matches JSON array)
-  const caseIcons = [Factory, Droplets, Factory, Shield, Clock, FlaskConical]
+  const caseIcons = [Enterprise, RainDrop, Enterprise, Security, Time, Chemistry]
 
   return (
     <main className="min-h-screen bg-white">
@@ -92,7 +92,7 @@ export default function CasosExitoPage() {
 
                   {/* Industry indicator */}
                   <div className="flex items-center gap-2 mb-6">
-                    <IconComponent className="w-4 h-4 text-gray-400" />
+                    <IconComponent size={16} className="text-gray-400" />
                     <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">{study.industry}</span>
                   </div>
 
@@ -125,7 +125,7 @@ export default function CasosExitoPage() {
                   {/* Read link */}
                   <div className="flex items-center text-sm font-medium text-emerald-600 group-hover:text-emerald-700">
                     <span>{t('grid.readCase')}</span>
-                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               )
@@ -164,7 +164,7 @@ export default function CasosExitoPage() {
                       ) : (
                         <div className="flex items-center gap-2">
                           <span className="font-mono text-gray-400">{item.before}</span>
-                          <ArrowRight className="w-3 h-3 text-emerald-600" />
+                          <ArrowRight size={12} className="text-emerald-600" />
                           <span className="font-mono font-semibold text-gray-900">{item.after}</span>
                           <span className="font-mono text-xs text-emerald-600">{item.change}</span>
                         </div>
@@ -179,7 +179,7 @@ export default function CasosExitoPage() {
                 className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
               >
                 {t('featured.button')}
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight size={16} />
               </Link>
             </div>
 
@@ -231,7 +231,7 @@ export default function CasosExitoPage() {
               className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
             >
               {t('cta.contactButton')}
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight size={16} />
             </Link>
             <Link
               href="/servicios"

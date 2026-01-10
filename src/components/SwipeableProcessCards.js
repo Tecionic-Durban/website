@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { ChevronLeft, ChevronRight, Beaker, Zap, Factory, Recycle, ArrowRight, TrendingUp, Clock, Shield } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Chemistry, Flash, Enterprise, Renew, ArrowRight, Growth, Time, Security } from '@carbon/icons-react'
 
 export default function SwipeableProcessCards() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -14,7 +14,7 @@ export default function SwipeableProcessCards() {
       id: 'filtration-dehydration',
       title: 'Filtración y Deshidratación',
       subtitle: 'Borras y sólidos en SX',
-      icon: Beaker,
+      icon: Chemistry,
       color: 'from-orange-500 to-red-600',
       description: 'Filtros prensa móviles con placas intercambiables y sistemas auxiliares automatizados. Montaje rápido sin fundaciones permanentes, certificados ex.proof para ambientes explosivos. Operación continua 24/7 con preparación y descarga automatizada para máxima eficiencia.',
       keyMetrics: {
@@ -40,7 +40,7 @@ export default function SwipeableProcessCards() {
       id: 'organic-treatment',
       title: 'Tratamiento de Orgánico SX',
       subtitle: 'Recuperación y optimización',
-      icon: Factory,
+      icon: Enterprise,
       color: 'from-emerald-500 to-teal-600',
       description: 'Sistemas de coalescencia y separación para recuperación 90-95% orgánico con reducción 60% pérdidas solvente. Proceso completo: caracterización composición → coalescencia fases → purificación selectiva contaminantes → reintegración circuito SX para optimización continua.',
       keyMetrics: {
@@ -66,7 +66,7 @@ export default function SwipeableProcessCards() {
       id: 'concentrate-dehydration',
       title: 'Deshidratación Concentrados',
       subtitle: 'Filtros prensa alta capacidad',
-      icon: Zap,
+      icon: Flash,
       color: 'from-blue-500 to-purple-600',
       description: 'Filtros prensa automáticos con sistema de lavado contracorriente para concentrados de cobre. Secuencia optimizada para máxima recuperación de valores: filtración inicial → lavado ácido para remoción impurezas solubles → compresión membrana para deshidratación &lt;8% humedad → descarga automatizada.',
       keyMetrics: {
@@ -92,7 +92,7 @@ export default function SwipeableProcessCards() {
       id: 'fine-solids-water',
       title: 'Sólidos Finos y Clarificación',
       subtitle: 'Centrífugas y clarificadores',
-      icon: Recycle,
+      icon: Renew,
       color: 'from-green-500 to-emerald-600',
       description: 'Centrífugas decanter para separación de sólidos finos &lt;10μm que causan crud formation y pérdidas orgánicas. Sistema integrado: centrifugación → coagulación-floculación → sedimentación lamelar → flotación DAF. Crítico para estabilidad operacional SX y cumplimiento ambiental descargas.',
       keyMetrics: {
@@ -187,7 +187,7 @@ export default function SwipeableProcessCards() {
             className="hidden lg:flex absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
             suppressHydrationWarning
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
+            <ChevronLeft size={24} className="text-gray-600" />
           </button>
 
           <button
@@ -196,7 +196,7 @@ export default function SwipeableProcessCards() {
             className="hidden lg:flex absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
             suppressHydrationWarning
           >
-            <ChevronRight className="w-6 h-6 text-gray-600" />
+            <ChevronRight size={24} className="text-gray-600" />
           </button>
 
           {/* Swipeable Card Container */}
@@ -226,7 +226,7 @@ export default function SwipeableProcessCards() {
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center space-x-3">
                             <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                              <process.icon className="w-5 h-5 text-white" />
+                              <process.icon size={20} className="text-white" />
                             </div>
                             <div>
                               <h3 className="text-xl font-bold">{process.title}</h3>
@@ -244,7 +244,7 @@ export default function SwipeableProcessCards() {
                       {/* Background Pattern */}
                       <div className="absolute top-0 right-0 opacity-10">
                         <div className="w-24 h-24 transform rotate-12">
-                          <process.icon className="w-full h-full" />
+                          <process.icon size={96} />
                         </div>
                       </div>
                     </div>
@@ -254,7 +254,7 @@ export default function SwipeableProcessCards() {
                       {/* Key Metrics */}
                       <div className="mb-6">
                         <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                          <TrendingUp className="w-4 h-4 text-emerald-600 mr-2" />
+                          <Growth size={16} className="text-emerald-600 mr-2" />
                           Métricas Clave
                         </h4>
                         <div className="grid grid-cols-3 gap-3">
@@ -270,7 +270,7 @@ export default function SwipeableProcessCards() {
                       {/* Process Steps - More Visual */}
                       <div className="mb-6">
                         <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                          <Clock className="w-4 h-4 text-emerald-600 mr-2" />
+                          <Time size={16} className="text-emerald-600 mr-2" />
                           Pasos del Proceso
                         </h4>
                         <div className="relative">
@@ -287,7 +287,7 @@ export default function SwipeableProcessCards() {
                                   <span className="text-gray-700 text-sm font-medium">{step}</span>
                                   {idx < process.steps.length - 1 && (
                                     <div className="hidden lg:block absolute -right-2 top-1/2 transform -translate-y-1/2">
-                                      <ArrowRight className="w-4 h-4 text-emerald-400" />
+                                      <ArrowRight size={16} className="text-emerald-400" />
                                     </div>
                                   )}
                                 </div>
@@ -301,7 +301,7 @@ export default function SwipeableProcessCards() {
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                            <Shield className="w-4 h-4 text-emerald-600 mr-2" />
+                            <Security size={16} className="text-emerald-600 mr-2" />
                             Aplicaciones
                           </h4>
                           <div className="flex flex-wrap gap-2">
@@ -315,7 +315,7 @@ export default function SwipeableProcessCards() {
 
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                            <ArrowRight className="w-4 h-4 text-emerald-600 mr-2" />
+                            <ArrowRight size={16} className="text-emerald-600 mr-2" />
                             Beneficios
                           </h4>
                           <ul className="space-y-1">

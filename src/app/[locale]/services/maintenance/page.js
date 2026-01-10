@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Settings, CheckCircle, ArrowRight, Truck, Shield, Clock, BarChart3, TrendingUp, Wrench, AlertCircle, Users } from 'lucide-react'
+import { Settings, CheckmarkFilled, ArrowRight, Delivery, Security, Time, ChartBar, Growth, Tools, WarningAlt, UserMultiple } from '@carbon/icons-react'
 
 export default function MaintenanceServicePage() {
   const [activeTab, setActiveTab] = useState('overview')
@@ -17,7 +17,7 @@ export default function MaintenanceServicePage() {
     {
       type: 'Mantenimiento Preventivo',
       description: 'Programas estructurados para maximizar uptime',
-      icon: Clock,
+      icon: Time,
       features: [
         'Inspecciones programadas mensuales',
         'Análisis predictivo vibración y temperatura',
@@ -28,7 +28,7 @@ export default function MaintenanceServicePage() {
     {
       type: 'Mantenimiento Correctivo',
       description: 'Reparaciones especializadas emergencias',
-      icon: AlertCircle,
+      icon: WarningAlt,
       features: [
         'Respuesta &lt;4 horas emergencias',
         'Diagnóstico avanzado fallas',
@@ -39,7 +39,7 @@ export default function MaintenanceServicePage() {
     {
       type: 'Mantenimiento Predictivo',
       description: 'Tecnología IoT para anticipar fallas',
-      icon: TrendingUp,
+      icon: Growth,
       features: [
         'Sensores IoT monitoreo continuo',
         'Analytics AI predicción fallas',
@@ -96,7 +96,7 @@ export default function MaintenanceServicePage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex items-center mb-6">
             <div className="w-16 h-16 bg-gray-800/50 rounded-xl flex items-center justify-center mr-4">
-              <Settings className="w-8 h-8" />
+              <Settings size={32} />
             </div>
             <div>
               <h1 className="text-4xl font-bold">Mantenimiento y Soporte Técnico</h1>
@@ -107,28 +107,28 @@ export default function MaintenanceServicePage() {
           <div className="grid md:grid-cols-4 gap-6 mt-12">
             <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <div className="flex items-center mb-2">
-                <Clock className="w-5 h-5 text-gray-300 mr-2" />
+                <Time size={20} className="text-gray-300 mr-2" />
                 <span className="text-lg font-bold">24/7</span>
               </div>
               <p className="text-gray-200 text-sm">Soporte técnico</p>
             </div>
             <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <div className="flex items-center mb-2">
-                <TrendingUp className="w-5 h-5 text-gray-300 mr-2" />
+                <Growth size={20} className="text-gray-300 mr-2" />
                 <span className="text-lg font-bold">95%</span>
               </div>
               <p className="text-gray-200 text-sm">Disponibilidad equipos</p>
             </div>
             <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <div className="flex items-center mb-2">
-                <AlertCircle className="w-5 h-5 text-gray-300 mr-2" />
+                <WarningAlt size={20} className="text-gray-300 mr-2" />
                 <span className="text-lg font-bold">&lt;4h</span>
               </div>
               <p className="text-gray-200 text-sm">Respuesta emergencias</p>
             </div>
             <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <div className="flex items-center mb-2">
-                <Users className="w-5 h-5 text-gray-300 mr-2" />
+                <UserMultiple size={20} className="text-gray-300 mr-2" />
                 <span className="text-lg font-bold">15+</span>
               </div>
               <p className="text-gray-200 text-sm">Años experiencia</p>
@@ -194,19 +194,19 @@ export default function MaintenanceServicePage() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Servicios Incluidos</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-gray-600 mr-2" />
+                      <CheckmarkFilled size={16} className="text-gray-600 mr-2" />
                       Mantenimiento preventivo programado
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-gray-600 mr-2" />
+                      <CheckmarkFilled size={16} className="text-gray-600 mr-2" />
                       Soporte emergencias 24/7
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-gray-600 mr-2" />
+                      <CheckmarkFilled size={16} className="text-gray-600 mr-2" />
                       Monitoreo predictivo IoT
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-gray-600 mr-2" />
+                      <CheckmarkFilled size={16} className="text-gray-600 mr-2" />
                       Gestión inventario repuestos
                     </li>
                   </ul>
@@ -216,19 +216,19 @@ export default function MaintenanceServicePage() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Equipos Cubiertos</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center text-gray-700">
-                      <Wrench className="w-4 h-4 text-gray-600 mr-2" />
+                      <Tools size={16} className="text-gray-600 mr-2" />
                       Filtros prensa móviles
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <Wrench className="w-4 h-4 text-gray-600 mr-2" />
+                      <Tools size={16} className="text-gray-600 mr-2" />
                       Centrífugas industriales
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <Wrench className="w-4 h-4 text-gray-600 mr-2" />
+                      <Tools size={16} className="text-gray-600 mr-2" />
                       Sistemas clarificación
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <Wrench className="w-4 h-4 text-gray-600 mr-2" />
+                      <Tools size={16} className="text-gray-600 mr-2" />
                       Equipos tratamiento orgánico
                     </li>
                   </ul>
@@ -246,7 +246,7 @@ export default function MaintenanceServicePage() {
                   <div key={index} className="bg-white rounded-xl shadow-lg p-8">
                     <div className="flex items-start mb-6">
                       <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
-                        <service.icon className="w-8 h-8 text-gray-600" />
+                        <service.icon size={32} className="text-gray-600" />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.type}</h3>
@@ -257,7 +257,7 @@ export default function MaintenanceServicePage() {
                     <div className="grid md:grid-cols-2 gap-4">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center">
-                          <CheckCircle className="w-4 h-4 text-gray-600 mr-2 flex-shrink-0" />
+                          <CheckmarkFilled size={16} className="text-gray-600 mr-2 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{feature}</span>
                         </div>
                       ))}
@@ -274,7 +274,7 @@ export default function MaintenanceServicePage() {
                     <div className="space-y-3">
                       {Object.entries(specifications).map(([key, value]) => (
                         <div key={key} className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-gray-600 mr-3 mt-0.5" />
+                          <CheckmarkFilled size={20} className="text-gray-600 mr-3 mt-0.5" />
                           <span className="text-gray-700">{value}</span>
                         </div>
                       ))}
@@ -284,21 +284,21 @@ export default function MaintenanceServicePage() {
                     <h4 className="font-semibold text-gray-900 mb-4">KPIs de Servicio</h4>
                     <div className="space-y-3">
                       <div className="flex items-start">
-                        <BarChart3 className="w-5 h-5 text-gray-600 mr-3 mt-0.5" />
+                        <ChartBar size={20} className="text-gray-600 mr-3 mt-0.5" />
                         <div>
                           <div className="font-medium text-gray-900">Disponibilidad Equipos</div>
                           <div className="text-sm text-gray-600">&gt;95% uptime garantizado</div>
                         </div>
                       </div>
                       <div className="flex items-start">
-                        <Clock className="w-5 h-5 text-gray-600 mr-3 mt-0.5" />
+                        <Time size={20} className="text-gray-600 mr-3 mt-0.5" />
                         <div>
                           <div className="font-medium text-gray-900">MTBF (Mean Time Between Failures)</div>
                           <div className="text-sm text-gray-600">Incremento 40-60% vs. baseline</div>
                         </div>
                       </div>
                       <div className="flex items-start">
-                        <AlertCircle className="w-5 h-5 text-gray-600 mr-3 mt-0.5" />
+                        <WarningAlt size={20} className="text-gray-600 mr-3 mt-0.5" />
                         <div>
                           <div className="font-medium text-gray-900">MTTR (Mean Time To Repair)</div>
                           <div className="text-sm text-gray-600">Reducción 50% tiempo reparación</div>
@@ -321,7 +321,7 @@ export default function MaintenanceServicePage() {
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center">
                         <div className="w-12 h-12 bg-gray-500 rounded-lg flex items-center justify-center mr-4">
-                          <Settings className="w-6 h-6 text-white" />
+                          <Settings size={24} className="text-white" />
                         </div>
                         <div>
                           <h3 className="text-xl font-semibold text-gray-900">{program.program}</h3>
@@ -405,7 +405,7 @@ export default function MaintenanceServicePage() {
                   <div className="space-y-4">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
+                        <CheckmarkFilled size={20} className="text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{benefit}</span>
                       </div>
                     ))}
@@ -487,7 +487,7 @@ export default function MaintenanceServicePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-gray-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center">
               Evaluación Mantenimiento
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight size={16} className="ml-2" />
             </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-600 transition-all duration-300">
               Programas Disponibles

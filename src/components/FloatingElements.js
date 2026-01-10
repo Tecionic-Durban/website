@@ -1,7 +1,7 @@
 // src/components/FloatingElements.js
 'use client'
 import { useState, useEffect } from 'react'
-import { CheckCircle, Clock, Wrench, Zap, X, Wifi, WifiOff, Cloud, CloudOff, RefreshCw, ChevronUp, ChevronDown, LogIn, LogOut, MessageCircle, Send, Bot } from 'lucide-react'
+import { CheckmarkFilled, Time, Tools, Flash, Close, Wifi, WifiOff, Cloud, CloudOffline, Renew, ChevronUp, ChevronDown, Login, Logout, Chat, Send, Bot } from '@carbon/icons-react'
 
 export default function FloatingElements() {
   const [showChat, setShowChat] = useState(false)
@@ -107,10 +107,10 @@ export default function FloatingElements() {
 
   const getStatusIcon = (status) => {
     switch(status) {
-      case 'operational': return CheckCircle
-      case 'maintenance': return Wrench
+      case 'operational': return CheckmarkFilled
+      case 'maintenance': return Tools
       case 'critical': return AlertTriangle
-      default: return Clock
+      default: return Time
     }
   }
 
@@ -121,9 +121,9 @@ export default function FloatingElements() {
 
   const getSyncIcon = () => {
     switch(syncStatus) {
-      case 'syncing': return RefreshCw
+      case 'syncing': return Renew
       case 'synced': return Cloud
-      case 'failed': return CloudOff
+      case 'failed': return CloudOffline
       default: return Cloud
     }
   }
@@ -212,7 +212,7 @@ export default function FloatingElements() {
           className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-xl transition-all duration-300 transform hover:scale-110 precision-click"
           suppressHydrationWarning
         >
-          <LogIn className="w-6 h-6" />
+          <Login size={24} />
         </button>
       )}
 
@@ -221,7 +221,7 @@ export default function FloatingElements() {
         <div className="bg-white rounded-xl shadow-xl border border-gray-200 p-4 w-80 transform transition-all duration-300 hover:scale-105 steel-gradient">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-2">
-            <Zap className="w-5 h-5 text-emerald-600" />
+            <Flash size={20} className="text-emerald-600" />
             <span className="font-semibold text-gray-900 text-sm">Estado de Equipos</span>
           </div>
           <div className="flex items-center space-x-2">
@@ -231,7 +231,7 @@ export default function FloatingElements() {
               className="text-gray-400 hover:text-gray-600 transition-colors"
               suppressHydrationWarning
             >
-              {isEquipmentCollapsed ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
+              {isEquipmentCollapsed ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
             </button>
           </div>
         </div>
@@ -244,7 +244,7 @@ export default function FloatingElements() {
                 return (
                   <div key={equipment.id} className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
-                      <StatusIcon className={`w-4 h-4 ${getStatusColor(equipment.status)}`} />
+                      <StatusIcon size={16} className={getStatusColor(equipment.status)} />
                       <span className="text-sm font-medium text-gray-700">{equipment.name}</span>
                     </div>
                     <div className="text-xs text-gray-500">{equipment.lastUpdate}</div>
@@ -271,11 +271,11 @@ export default function FloatingElements() {
               <div className="flex items-center space-x-1">
                 {(() => {
                   const NetworkIcon = getNetworkIcon()
-                  return <NetworkIcon className={`w-5 h-5 ${isOnline ? 'text-emerald-600' : 'text-red-500'}`} />
+                  return <NetworkIcon size={20} className={isOnline ? 'text-emerald-600' : 'text-red-500'} />
                 })()}
                 {(() => {
                   const SyncIcon = getSyncIcon()
-                  return <SyncIcon className={`w-4 h-4 ${getSyncColor()} ${syncStatus === 'syncing' ? 'animate-spin' : ''}`} />
+                  return <SyncIcon size={16} className={`${getSyncColor()} ${syncStatus === 'syncing' ? 'animate-spin' : ''}`} />
                 })()}
               </div>
               <span className="font-semibold text-gray-900 text-sm">
@@ -289,7 +289,7 @@ export default function FloatingElements() {
                 className="text-gray-400 hover:text-gray-600 transition-colors"
                 suppressHydrationWarning
               >
-                {isNetworkCollapsed ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
+                {isNetworkCollapsed ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
               </button>
             </div>
           </div>
@@ -367,7 +367,7 @@ export default function FloatingElements() {
           className="bg-gray-600 hover:bg-gray-700 text-white rounded-full p-4 shadow-xl transition-all duration-300 transform hover:scale-110 precision-click"
           suppressHydrationWarning
         >
-          <LogOut className="w-6 h-6" />
+          <Logout size={24} />
         </button>
       )}
 
@@ -377,7 +377,7 @@ export default function FloatingElements() {
         className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-4 shadow-xl transition-all duration-300 transform hover:scale-110 precision-click"
         suppressHydrationWarning
       >
-        <MessageCircle className="w-6 h-6" />
+        <Chat size={24} />
       </button>
 
       {/* Chat Assistant Modal */}
@@ -404,7 +404,7 @@ export default function FloatingElements() {
                 className="text-emerald-200 hover:text-white transition-colors"
                 suppressHydrationWarning
               >
-                <X className="w-6 h-6" />
+                <Close size={24} />
               </button>
             </div>
 
@@ -459,7 +459,7 @@ export default function FloatingElements() {
                   className="bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-300 text-white rounded-full p-2 transition-colors"
                   suppressHydrationWarning
                 >
-                  <Send className="w-5 h-5" />
+                  <Send size={20} />
                 </button>
               </div>
               

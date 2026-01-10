@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Location, Email, Time } from '@carbon/icons-react'
-import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react'
+import { Location, Email, Time, WarningAlt, CheckmarkFilled } from '@carbon/icons-react'
 import posthog from 'posthog-js'
 
 export default function ContactPage() {
@@ -257,7 +256,7 @@ export default function ContactPage() {
                 {submitStatus === 'success' && (
                   <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
                     <div className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-emerald-600 mr-2" />
+                      <CheckmarkFilled size={20} className="text-emerald-600 mr-2" />
                       <div>
                         <p className="font-semibold text-emerald-800">¡Consulta enviada exitosamente!</p>
                         <p className="text-sm text-emerald-600">Recibirá una confirmación en su correo. Le responderemos dentro de 24 horas hábiles.</p>
@@ -270,7 +269,7 @@ export default function ContactPage() {
                 {submitStatus === 'error' && (
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                     <div className="flex items-center">
-                      <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
+                      <WarningAlt size={20} className="text-red-600 mr-2" />
                       <div>
                         <p className="font-semibold text-red-800">Error al enviar la consulta</p>
                         <p className="text-sm text-red-600">Por favor intente nuevamente o contáctenos directamente a contacto@tsf.cl</p>
@@ -294,17 +293,17 @@ export default function ContactPage() {
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
-                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
                         Enviando...
                       </div>
                     ) : getFormProgress() >= 100 ? (
                       <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 mr-2" />
+                        <CheckmarkFilled size={20} className="mr-2" />
                         Enviar Consulta Técnica
                       </div>
                     ) : (
                       <div className="flex items-center justify-center">
-                        <AlertCircle className="w-5 h-5 mr-2" />
+                        <WarningAlt size={20} className="mr-2" />
                         Complete campos requeridos
                       </div>
                     )}

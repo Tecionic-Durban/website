@@ -1,10 +1,8 @@
 'use client'
 
 // src/app/industries/lithium/page.js
-import { useState, useEffect, useRef } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
-import { Beaker, Zap, Factory, Microscope, CheckCircle, TrendingUp, ArrowUp, Battery, ArrowRight, Droplets, Filter } from 'lucide-react'
-import { handleContactClick } from '@/utils/navigation'
+import { useEffect, useRef } from 'react'
+import { Chemistry, Enterprise, CheckmarkFilled, BatteryFull, RainDrop, Filter } from '@carbon/icons-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -13,18 +11,10 @@ if (typeof window !== 'undefined') {
 }
 
 export default function LithiumIndustryPage() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const [isLoading, setIsLoading] = useState(true)
   const tableRef = useRef(null)
 
   useEffect(() => {
-    // Simulate initial loading
-    setTimeout(() => setIsLoading(false), 1000)
-  }, [])
-
-  useEffect(() => {
-    if (!tableRef.current || isLoading) return
+    if (!tableRef.current) return
 
     const ctx = gsap.context(() => {
       // Blueprint animation for the comparison table
@@ -95,13 +85,13 @@ export default function LithiumIndustryPage() {
     }, tableRef)
 
     return () => ctx.revert()
-  }, [isLoading])
+  }, [])
 
   const services = [
     {
       title: "Clarificación Salmueras Pre-DLE",
       description: "Centrífugas decanter móviles eliminan arcillas y sólidos suspendidos antes de membranas DLE. Protección crítica de inversión $500K-$2M+ en adsorbentes. 300% extensión vida útil validada.",
-      icon: Droplets,
+      icon: RainDrop,
       benefits: ["Protege membranas DLE costosas", "300% extensión vida útil", "Turbidez <10 NTU garantizada"],
       rating: 4.9,
       completionTime: "2-4 semanas movilización"
@@ -109,7 +99,7 @@ export default function LithiumIndustryPage() {
     {
       title: "Filtración Precipitados Mg/Ca/B",
       description: "Filtros prensa móviles (hasta 130 ton/día) procesan precipitados gelatinosos de Mg, Ca, boro. Esencial para salmueras LatAm con Mg/Li 58:1. Sin CAPEX en infraestructura fija.",
-      icon: Factory,
+      icon: Enterprise,
       benefits: ["130 ton/día capacidad", "Sin inversión CAPEX", "Manejo precipitados gelatinosos"],
       rating: 4.8,
       completionTime: "Operación continua 24/7"
@@ -117,7 +107,7 @@ export default function LithiumIndustryPage() {
     {
       title: "Purificación Li₂CO₃ Grado Batería",
       description: "Lavado y filtración de tortas Li₂CO₃ para alcanzar >99.95% pureza grado batería. Control <100 ppm impurezas metálicas. Reducción 60-70% humedad para transporte eficiente.",
-      icon: Battery,
+      icon: BatteryFull,
       benefits: ["99.95%+ pureza comprobada", "<100 ppm impurezas metálicas", "60-70% reducción humedad"],
       rating: 4.9,
       completionTime: "Integrado proceso"
@@ -125,78 +115,12 @@ export default function LithiumIndustryPage() {
     {
       title: "Clarificación Agua Proceso",
       description: "Recuperación y clarificación de aguas de proceso (hasta 120 m³/día). Cierre de circuitos para cumplimiento ambiental. Reduce consumo agua fresca hasta 40% en operaciones DLE.",
-      icon: Microscope,
+      icon: Chemistry,
       benefits: ["120 m³/día clarificación", "Cierre circuitos agua", "40% reducción agua fresca"],
       rating: 4.7,
       completionTime: "Escalable según demanda"
     }
   ]
-
-  const caseStudies = [
-    {
-      client: "Operación Salar de Atacama",
-      challenge: "Protección de membranas DLE ($1.5M inversión) contra fouling por arcillas y sólidos suspendidos en salmueras. Vida útil original: 18 meses con reemplazos frecuentes.",
-      solution: "Tecionic desplegó centrífugas decanter (2-4 semanas movilización) para clarificación pre-DLE. Turbidez reducida <10 NTU antes de membranas adsorbentes.",
-      results: ["300% extensión vida membranas", "$500K+ ahorro anual reemplazos", "Uptime DLE 99.2%"],
-      timeline: "Operación continua 24 meses",
-      savings: "$500K+/año",
-      before: { membraneLife: 18, turbidity: 120, uptime: 87 },
-      after: { membraneLife: 54, turbidity: 8, uptime: 99.2 }
-    },
-    {
-      client: "Proyecto DLE Piloto LatAm",
-      challenge: "Proyecto piloto DLE requería infraestructura filtración para validar proceso antes de CAPEX permanente. Presupuesto limitado, timeline agresivo (6 meses prueba).",
-      solution: "Tecionic: $0 CAPEX. Filtros prensa móviles + centrífugas desplegados en 3 semanas. Opex mensual vs $2.5M infraestructura fija. Permitió validar proceso sin comprometer capital.",
-      results: ["99.6% pureza Li₂CO₃ alcanzada", "Piloto completado bajo presupuesto", "Transición a producción sin delays"],
-      timeline: "6 meses piloto + 12 meses producción",
-      savings: "$2.5M CAPEX evitado",
-      before: { capexRequired: 2.5, timeline: 18, riskLevel: 85 },
-      after: { capexRequired: 0, timeline: 6, riskLevel: 15 }
-    }
-  ]
-
-  // Three Ball Loader Component
-  const ThreeBallLoader = () => (
-    <div className="flex space-x-2 justify-center items-center">
-      <div className="w-4 h-4 bg-cyan-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-      <div className="w-4 h-4 bg-cyan-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-      <div className="w-4 h-4 bg-cyan-500 rounded-full animate-bounce"></div>
-    </div>
-  )
-
-  // TEMPORARILY DISABLED: Decorative elements per stakeholder request
-  // const FloatingElements = () => (
-  //   <>
-  //     {/* Decorative floating elements */}
-  //   </>
-  // )
-
-  const BeforeAfterComparison = ({ before, after, labels }) => (
-    <div className="grid grid-cols-3 gap-4 mt-4">
-      {Object.keys(before).map((key, idx) => (
-        <div key={key} className="text-center">
-          <div className="text-xs text-gray-500 mb-1">{labels[key]}</div>
-          <div className="flex items-center justify-center space-x-2">
-            <div className="text-sm text-red-600 font-semibold">{before[key]}</div>
-            <ArrowUp className="w-3 h-3 text-emerald-500" />
-            <div className="text-sm text-emerald-600 font-bold">{after[key]}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center">
-        <div className="text-center">
-          <ThreeBallLoader />
-          <p className="mt-4 text-cyan-800 font-medium">Cargando datos de litio...</p>
-        </div>
-      </div>
-    )
-  }
-
 
   return (
     <>
@@ -218,7 +142,7 @@ export default function LithiumIndustryPage() {
               <div className="space-y-8">
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 border border-cyan-100">
-                  <Battery className="w-4 h-4 text-cyan-600" />
+                  <BatteryFull size={16} className="text-cyan-600" />
                   <span className="text-sm font-semibold text-cyan-700">Industria del Litio</span>
                 </div>
 
@@ -502,7 +426,7 @@ export default function LithiumIndustryPage() {
                 </div>
 
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                  <Droplets className="w-7 h-7 text-white" />
+                  <RainDrop size={28} className="text-white" />
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Protección Membranas DLE</h3>
@@ -525,7 +449,7 @@ export default function LithiumIndustryPage() {
                 </div>
 
                 <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                  <Filter className="w-7 h-7 text-white" />
+                  <Filter size={28} className="text-white" />
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Remoción Impurezas (Mg, Ca, B)</h3>
@@ -548,7 +472,7 @@ export default function LithiumIndustryPage() {
                 </div>
 
                 <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                  <Battery className="w-7 h-7 text-white" />
+                  <BatteryFull size={28} className="text-white" />
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Li₂CO₃ Grado Batería</h3>
@@ -576,13 +500,13 @@ export default function LithiumIndustryPage() {
                 <div className="inline-flex items-center gap-3 mb-6">
                   <div className="flex -space-x-2">
                     <div className="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center border-2 border-cyan-900">
-                      <Droplets className="w-5 h-5 text-white" />
+                      <RainDrop size={20} className="text-white" />
                     </div>
                     <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center border-2 border-cyan-900">
-                      <Microscope className="w-5 h-5 text-white" />
+                      <Chemistry size={20} className="text-white" />
                     </div>
                     <div className="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center border-2 border-cyan-900">
-                      <Battery className="w-5 h-5 text-white" />
+                      <BatteryFull size={20} className="text-white" />
                     </div>
                   </div>
                 </div>
@@ -668,7 +592,7 @@ export default function LithiumIndustryPage() {
               <div className="lg:col-span-2 bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:border-emerald-300 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-7 h-7 text-white" />
+                    <CheckmarkFilled size={28} className="text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">Flota especializada DLE</h3>
@@ -682,7 +606,7 @@ export default function LithiumIndustryPage() {
               {/* Feature card */}
               <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:border-emerald-300 hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4">
-                  <CheckCircle className="w-7 h-7 text-white" />
+                  <CheckmarkFilled size={28} className="text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Escalabilidad total</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -693,7 +617,7 @@ export default function LithiumIndustryPage() {
               {/* Feature card */}
               <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:border-emerald-300 hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4">
-                  <CheckCircle className="w-7 h-7 text-white" />
+                  <CheckmarkFilled size={28} className="text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Servicio integral</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -736,7 +660,7 @@ export default function LithiumIndustryPage() {
                   
                   <div className="relative z-10">
                     <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-200 transition-colors duration-300">
-                      <service.icon className="w-6 h-6 text-cyan-600 group-hover:text-cyan-700" />
+                      <service.icon size={24} className="text-cyan-600 group-hover:text-cyan-700" />
                     </div>
                     
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
@@ -748,94 +672,11 @@ export default function LithiumIndustryPage() {
                       <ul className="space-y-2">
                         {service.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-cyan-500 mr-2 micro-bounce" />
+                            <CheckmarkFilled size={16} className="text-cyan-500 mr-2 micro-bounce" />
                             {benefit}
                           </li>
                         ))}
                       </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Case Studies with Before/After */}
-        <section className="py-20 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Tecionic en operaciones litio LatAm
-              </h2>
-              <div className="w-20 h-1 bg-cyan-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600">
-                Resultados validados: 300% extensión vida membranas, $0 CAPEX, operación en semanas
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {caseStudies.map((study, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-500 group">
-                  <div className="bg-cyan-600 text-white p-6 steel-gradient">
-                    <h3 className="text-xl font-bold mb-2">{study.client}</h3>
-                    <p className="text-cyan-200">Proyecto de optimización litio</p>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Desafío:</h4>
-                      <p className="text-gray-600 text-sm">{study.challenge}</p>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Solución:</h4>
-                      <p className="text-gray-600 text-sm">{study.solution}</p>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-3">Resultados:</h4>
-                      <ul className="space-y-2">
-                        {study.results.map((result, idx) => (
-                          <li key={idx} className="flex items-center text-sm">
-                            <TrendingUp className="w-4 h-4 text-emerald-500 mr-2 micro-bounce" />
-                            <span className="text-gray-700">{result}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Before/After Comparison */}
-                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                      <h5 className="font-semibold text-gray-900 mb-3 text-center">Antes vs Después Tecionic</h5>
-                      <BeforeAfterComparison
-                        before={study.before}
-                        after={study.after}
-                        labels={
-                          index === 0
-                            ? {
-                                membraneLife: "Vida membranas (meses)",
-                                turbidity: "Turbidez (NTU)",
-                                uptime: "Uptime DLE (%)"
-                              }
-                            : {
-                                capexRequired: "CAPEX requerido ($M)",
-                                timeline: "Timeline (meses)",
-                                riskLevel: "Nivel riesgo (%)"
-                              }
-                        }
-                      />
-                    </div>
-                    
-                    <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-cyan-600">{study.timeline}</div>
-                        <div className="text-xs text-gray-500">Implementación</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-emerald-600">{study.savings}</div>
-                        <div className="text-xs text-gray-500">Ahorro anual</div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -853,7 +694,7 @@ export default function LithiumIndustryPage() {
           <div className="max-w-5xl mx-auto px-4 lg:px-8 text-center text-white relative">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
-              <CheckCircle className="w-4 h-4 text-emerald-400" />
+              <CheckmarkFilled size={16} className="text-emerald-400" />
               <span className="text-sm font-semibold text-emerald-400">Validado en Salar de Atacama</span>
             </div>
 
