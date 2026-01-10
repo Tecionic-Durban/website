@@ -568,7 +568,7 @@ export default function TifMeasurementPage() {
             <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all">
               <div className="h-48 relative overflow-hidden">
                 <Image
-                  src="/zinc_processing_plant.jpg"
+                  src="/zinc_factory.jpg"
                   alt={t('industries.zinc.title')}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"

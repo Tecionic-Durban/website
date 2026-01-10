@@ -1041,7 +1041,7 @@ export default function FineSolidsServicePage() {
               <div className="flex-shrink-0 w-[80vw] md:w-[320px] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
                 <div className="h-40 relative overflow-hidden">
                   <Image
-                    src="/zinc_processing_plant.jpg"
+                    src="/zinc_factory.jpg"
                     alt={t('waterClarification.applications.metals.title')}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1215,7 +1215,7 @@ export default function FineSolidsServicePage() {
             <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
-                  src="/zinc_processing_plant.jpg"
+                  src="/zinc_factory.jpg"
                   alt={t('industries.items.zinc.name')}
                   fill
                   sizes="(max-width: 768px) 80vw, 320px"

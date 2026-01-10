@@ -830,7 +830,7 @@ export default function EWCleaningServicePage() {
             <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-slate-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
-                  src="/zinc_processing_plant.jpg"
+                  src="/zinc_factory.jpg"
                   alt={t('industries.zinc.imageAlt')}
                   fill
                   className="object-cover"
