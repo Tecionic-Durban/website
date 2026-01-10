@@ -115,11 +115,51 @@ export default function ConcentrateDehydrationServicePage() {
   const statRefs = useRef([])
   const [activeTheme, setActiveTheme] = useState(0)
 
+  // Refs for journey carousel
+  const journeyCarouselRef = useRef(null)
+  const [activeJourneyStep, setActiveJourneyStep] = useState(0)
+
   // Theme content for left column
   const themeContent = [
     { key: 'costs' },
     { key: 'compliance' }
   ]
+
+  // Journey steps data
+  const journeySteps = [
+    { id: 'piloto', color: 'blue', number: 1, title: 'Piloto', description: 'Prueba el servicio en tu faena. Valida resultados con tu equipo antes de comprometerte.', benefits: ['Sin inversión inicial', 'Resultados medibles', 'Sin compromiso de continuidad'] },
+    { id: 'contrato', color: 'emerald', number: 2, title: 'Contrato de Servicio', description: 'Programa mensual con equipos y operadores dedicados. Pago por servicio, no por activo.', benefits: ['Operación 24/7 incluida', 'KPIs garantizados', 'Flexibilidad para ajustar capacidad'] },
+    { id: 'dedicado', color: 'purple', number: 3, title: 'Capacidad Dedicada', description: 'Flota exclusiva para tu operación. Contrato largo plazo con condiciones preferenciales.', benefits: ['Equipos reservados para ti', 'Prioridad de despliegue', 'Tarifas preferenciales'] }
+  ]
+
+  // Sync journey carousel scroll with active step
+  useEffect(() => {
+    if (!journeyCarouselRef.current) return
+    const scrollContainer = journeyCarouselRef.current
+    const cardWidth = scrollContainer.firstElementChild?.offsetWidth || 0
+    const gap = 16
+    const scrollPosition = activeJourneyStep * (cardWidth + gap)
+    scrollContainer.scrollTo({ left: scrollPosition, behavior: 'smooth' })
+  }, [activeJourneyStep])
+
+  // Update active step on scroll
+  useEffect(() => {
+    const scrollContainer = journeyCarouselRef.current
+    if (!scrollContainer) return
+
+    const handleScroll = () => {
+      const cardWidth = scrollContainer.firstElementChild?.offsetWidth || 0
+      const gap = 16
+      const scrollLeft = scrollContainer.scrollLeft
+      const newIndex = Math.round(scrollLeft / (cardWidth + gap))
+      if (newIndex !== activeJourneyStep && newIndex >= 0 && newIndex < journeySteps.length) {
+        setActiveJourneyStep(newIndex)
+      }
+    }
+
+    scrollContainer.addEventListener('scroll', handleScroll, { passive: true })
+    return () => scrollContainer.removeEventListener('scroll', handleScroll)
+  }, [activeJourneyStep, journeySteps.length])
 
 
 
@@ -942,7 +982,58 @@ export default function ConcentrateDehydrationServicePage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          {/* Mobile: Carousel with dots */}
+          <div className="lg:hidden">
+            <div
+              ref={journeyCarouselRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-6"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            >
+              {journeySteps.map((step, index) => (
+                <div key={step.id} className="flex-shrink-0 w-[85vw] snap-start">
+                  <div className="bg-gray-50 rounded-2xl p-6 h-full">
+                    <div className={`w-12 h-12 bg-${step.color}-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-6`}
+                      style={{ backgroundColor: step.color === 'blue' ? '#2563eb' : step.color === 'emerald' ? '#059669' : '#9333ea' }}
+                    >
+                      {step.number}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                    <p className="text-gray-600 mb-6">{step.description}</p>
+                    <ul className="space-y-3 text-sm text-gray-600">
+                      {step.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <CheckmarkFilled
+                            className="w-4 h-4 flex-shrink-0"
+                            style={{ color: step.color === 'blue' ? '#3b82f6' : step.color === 'emerald' ? '#10b981' : '#a855f7' }}
+                          />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Dots indicator */}
+            <div className="flex justify-center gap-2 mt-2">
+              {journeySteps.map((step, index) => (
+                <button
+                  key={step.id}
+                  onClick={() => setActiveJourneyStep(index)}
+                  className={`h-2 rounded-full transition-all cursor-pointer ${
+                    activeJourneyStep === index
+                      ? 'bg-emerald-600 w-6'
+                      : 'bg-gray-300 hover:bg-gray-400 w-2'
+                  }`}
+                  aria-label={`Go to step ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Grid layout */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
             {/* Step 1: Piloto */}
             <div className="relative">
               <div className="bg-gray-50 rounded-2xl p-8 h-full">
@@ -965,7 +1056,7 @@ export default function ConcentrateDehydrationServicePage() {
                 </ul>
               </div>
               {/* Arrow connector */}
-              <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+              <div className="absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
                 <ArrowRightCarbon className="w-6 h-6 text-gray-300" />
               </div>
             </div>
@@ -992,7 +1083,7 @@ export default function ConcentrateDehydrationServicePage() {
                 </ul>
               </div>
               {/* Arrow connector */}
-              <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+              <div className="absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
                 <ArrowRightCarbon className="w-6 h-6 text-gray-300" />
               </div>
             </div>
@@ -1038,37 +1129,20 @@ export default function ConcentrateDehydrationServicePage() {
         </div>
         <div className="max-w-4xl mx-auto px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Recupera más valor de tu operación
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-emerald-100 mb-4">
-            Deshidratación de alta presión para concentrados y lodos industriales. Cumple especificaciones, reduce costos, protege tu producción.
+            {t('cta.description')}
           </p>
           <p className="text-lg text-emerald-100 mb-10">
-            Servicio llave en mano: equipos, operadores certificados 24/7, y soporte técnico incluido. Sin CAPEX, sin riesgo operacional.
+            {t('cta.timeline')}
           </p>
 
-          <div className="flex items-center justify-center gap-4 flex-wrap mb-12">
-            <button className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl cursor-pointer">
-              Solicitar Evaluación
+          <div className="flex items-center justify-center">
+            <Link href="/contacto" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
+              {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
-            <button className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-400 transition-colors cursor-pointer">
-              <Phone className="mr-2 w-5 h-5" />
-              Hablar con Ventas
-            </button>
-          </div>
-
-          <div className="border-t border-emerald-500 pt-8">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-emerald-100">
-              <div className="flex items-center gap-2">
-                <Phone className="w-5 h-5" />
-                <span>+56 2 2345 6789</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Enterprise className="w-5 h-5" />
-                <span>Santiago • Calama • Antofagasta</span>
-              </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
