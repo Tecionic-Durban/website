@@ -171,7 +171,7 @@ function TreatmentMethods({ t, carouselRef, activeIndex, setActiveIndex }) {
 
   return (
     <div>
-      <div ref={carouselRef} className="flex lg:grid lg:grid-cols-2 gap-4 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory -mx-8 px-8 lg:mx-0 lg:px-0 pb-4 lg:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+      <div ref={carouselRef} className="flex lg:grid lg:grid-cols-2 gap-4 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory -mx-4 px-4 lg:mx-0 lg:px-0 pb-4 lg:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
       {/* Method 1: Bypass */}
       <div className="rounded-2xl border border-gray-700 bg-gray-800/50 flex-shrink-0 w-[85vw] lg:w-auto snap-start">
         <div className="p-6 lg:p-8">
@@ -817,7 +817,7 @@ export default function OrganicTreatmentServicePage() {
               {t('equipment.filterPressFleet')}
             </h3>
 
-            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
               {/* Low capacity */}
               <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
@@ -931,7 +931,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
 
           {/* Treatment cards - 3 column grid */}
-          <div ref={technologiesCarouselRef} className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+          <div ref={technologiesCarouselRef} className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Card 1: Arcilla Activada */}
             <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col flex-shrink-0 w-[80vw] md:w-auto snap-start">
               <div className="p-6 flex-1">
@@ -1103,7 +1103,7 @@ export default function OrganicTreatmentServicePage() {
           </div>
 
           {/* Mobile: Horizontal carousel with peeking | Desktop: Grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Copper */}
             <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
@@ -1348,7 +1348,7 @@ export default function OrganicTreatmentServicePage() {
           {/* Mobile: Horizontal carousel with auto-scroll | Desktop: Auto-cycling carousel */}
 
           {/* Mobile carousel - swipeable cards with auto-scroll */}
-          <div ref={mobileCarouselRef} className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+          <div ref={mobileCarouselRef} className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Preventivo Card */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6 flex-shrink-0 w-[85vw] snap-start">
               <div className="flex items-center gap-3 mb-4">

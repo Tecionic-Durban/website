@@ -968,7 +968,7 @@ export default function FineSolidsServicePage() {
                 <span>→</span>
               </div>
             </div>
-            <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
               {/* Tailings Reprocessing */}
               <div className="flex-shrink-0 w-[80vw] md:w-[320px] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
                 <div className="h-40 relative overflow-hidden">
@@ -1082,7 +1082,7 @@ export default function FineSolidsServicePage() {
           </div>
 
           {/* Mobile: Horizontal carousel with peeking | Desktop: Horizontal carousel */}
-          <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+          <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
             {/* Copper */}
             <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-orange-300 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-[320px] snap-start">
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
@@ -1425,7 +1425,7 @@ export default function FineSolidsServicePage() {
           <div className="md:hidden">
             <div
               ref={mobileServiceCarouselRef}
-              className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-8 px-8 pb-4"
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
             >
               {/* Emergencia Card */}
