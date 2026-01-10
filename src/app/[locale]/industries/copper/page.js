@@ -4,7 +4,7 @@
 import { useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { Chemistry, Flash, Filter as FilterCarbon, Humidity, Settings as SettingsCarbon, Security } from '@carbon/icons-react'
-import { Wrench, ArrowRight, Download, CheckCircle, TrendingUp, Factory } from 'lucide-react'
+import { Wrench, ArrowRight, CheckCircle, TrendingUp, Factory } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { handleContactClick } from '@/utils/navigation'
 import Image from 'next/image'
@@ -701,12 +701,6 @@ export default function CopperIndustryPage() {
                   className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   {t('cta.primaryCta')}
-                </button>
-                <button className="px-8 py-4 bg-white/10 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors">
-                  <div className="flex items-center gap-2 justify-center">
-                    <Download className="w-5 h-5" />
-                    {t('cta.secondaryCta')}
-                  </div>
                 </button>
               </div>
 
