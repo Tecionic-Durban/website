@@ -61,10 +61,6 @@ export default function CopperIndustryPage() {
 
               {/* Left - Content */}
               <div className="max-w-xl">
-                <div className="inline-block px-3 py-1 bg-orange-50 border border-orange-200 rounded-full mb-6">
-                  <span className="text-sm font-semibold text-orange-900">{t('hero.badge')}</span>
-                </div>
-
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-[1.1]">
                   {t('hero.title')}
                 </h1>
@@ -72,18 +68,6 @@ export default function CopperIndustryPage() {
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                   {t('hero.subtitle')}
                 </p>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <div className="text-3xl font-bold text-gray-900">{t('hero.stats.years.value')}</div>
-                    <div className="text-sm text-gray-600">{t('hero.stats.years.label')}</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-gray-900">{t('hero.stats.capex.value')}</div>
-                    <div className="text-sm text-gray-600">{t('hero.stats.capex.label')}</div>
-                  </div>
-                </div>
               </div>
 
               {/* Right - Large equipment photo */}

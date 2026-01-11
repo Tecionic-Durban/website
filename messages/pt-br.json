@@ -2016,184 +2016,185 @@
   },
   "crudeOilIndustry": {
     "hero": {
-      "badge": "Refinarias e Terminais de Petróleo",
-      "title": "Transforme seus lodos oleosos em hidrocarbonetos recuperáveis",
-      "description": "Reduzimos até 84% do volume de borra e lodos de tanques com equipamentos móveis certificados, sem investimento CAPEX.",
-      "descriptionHighlight": "Recupere hidrocarbonetos valiosos enquanto reduz custos de disposição.",
+      "statLabel": "menos volume para dispor",
+      "title": "Recuperamos o valor preso nos seus lodos oleosos",
+      "description": "Separamos borras de refinaria em hidrocarbonetos recuperáveis e torta seca. Sem investimento de capital. Sem obra civil. Nós operamos, você recupera valor.",
+      "badges": {
+        "zeroCAPEX": "$0 investimento inicial",
+        "exProof": "Equipamentos Ex-Proof certificados",
+        "deployment": "Implantação em 48 horas"
+      },
       "imageAlt": "Filtro prensa móvel Tecionic para refinarias"
     },
-    "challenge": {
-      "badge": "O Desafio Operacional",
-      "title": "Lodos de tanques custam milhões em perdas",
-      "subtitle": "Borra oleosa acumulada gera perdas operacionais massivas e custos de disposição crescentes",
-      "problems": {
-        "capacity": {
-          "value": "15-25%",
-          "title": "Perda de capacidade de armazenamento",
-          "description": "Borra acumulada reduz capacidade efetiva de tanques.",
-          "costLabel": "Custo de limpeza",
-          "costValue": "$500K-$2M"
+    "benefits": {
+      "title": "Benefícios de eliminar a borra",
+      "items": {
+        "recovery": {
+          "title": "Recupere hidrocarbonetos",
+          "description": "60-75% do conteúdo em borras pode retornar ao processo como combustível."
         },
-        "hydrocarbons": {
-          "value": "60-75%",
-          "title": "HC recuperáveis perdidos",
-          "description": "Hidrocarbonetos valiosos na borra se perdem como resíduo.",
-          "costLabel": "Valor perdido anual",
-          "costValue": "$1M-$2M"
+        "capacity": {
+          "title": "Recupere capacidade",
+          "description": "Elimine acumulação em tanques e recupere volume de armazenamento."
         },
         "disposal": {
-          "value": "$300-600",
-          "title": "Disposição de resíduos perigosos",
-          "description": "Custo por tonelada para disposição certificada de borra.",
-          "costLabel": "Custo anual típico",
-          "costValue": "$0.6-3M"
-        }
-      },
-      "industryScope": {
-        "title": "Magnitude do desafio no setor",
-        "subtitle": "Baseado em análise de refinarias latino-americanas",
-        "stats": {
-          "waste": { "value": "4,5M+", "label": "kg de resíduos anuais por refinaria típica" },
-          "areas": { "value": "5", "label": "Áreas críticas de geração de lodos" },
-          "recovery": { "value": "$2M+", "label": "Potencial de recuperação anual por site" }
+          "title": "Reduza disposição",
+          "description": "Até 84% menos volume de resíduo perigoso para dispor."
+        },
+        "compliance": {
+          "title": "Conformidade garantida",
+          "description": "Equipamentos certificados para áreas classificadas. Zero risco normativo."
         }
       }
     },
-    "capabilities": {
-      "badge": "Capacidades Críticas",
-      "title": "Infraestrutura que se paga sozinha",
-      "subtitle": "Quatro capacidades críticas que transformam sua borra de passivo a ativo valioso",
-      "zeroCAPEX": {
-        "label": "Modelo Financeiro",
-        "title": "$0 investimento inicial",
-        "description": "Serviço 100% OPEX. Sem compra de equipamentos, sem instalações permanentes, sem risco de capital.",
-        "value": "$0",
-        "valueLabel": "CAPEX requerido"
-      },
-      "volumeReduction": {
-        "label": "Redução de Volume",
-        "title": "Até 84% de redução",
-        "description": "Redução certificada de volume de lodos oleosos desidratados.",
-        "value": "84%",
-        "valueLabel": "Comprovado em laboratório certificado"
-      },
-      "speed": {
-        "label": "Velocidade",
-        "title": "Implantação em 48 horas",
-        "description": "Equipamentos móveis certificados prontos para operar.",
-        "value": "2 dias",
-        "valueLabel": "instalação completa"
-      },
-      "compliance": {
-        "label": "Conformidade",
-        "title": "Certificação completa incluída",
-        "description": "Todas as licenças ambientais, segurança operacional e conformidade regulatória garantidas.",
-        "certifications": ["Certificado Ex-Proof", "Conformidade Ambiental", "Manutenção Incluída"]
+    "opportunity": {
+      "badge": "O problema real",
+      "title": "Seus lodos custam milhões. Deveriam gerá-los.",
+      "description": "Cada tonelada de borra que você envia para disposição contém hidrocarbonetos valiosos. O modelo tradicional os descarta. Nós os recuperamos.",
+      "subdescription": "As refinarias latino-americanas gastam milhões anuais em dispor resíduos que contêm valor recuperável. É dinheiro enterrado.",
+      "stats": {
+        "waste": { "value": "30K+", "label": "toneladas de lodos por refinaria típica ao ano" },
+        "hc": { "value": "60-75%", "label": "hidrocarbonetos recuperáveis em cada borra" },
+        "cost": { "value": "$700+", "label": "custo por tonelada de disposição evitável" }
       }
     },
-    "labResults": {
-      "badge": "Validação Técnica",
-      "title": "Tecnologia validada para lodos de refinaria",
-      "subtitle": "Testes de laboratório certificados confirmam efetividade em múltiplos tipos de resíduos oleosos do setor de refino",
-      "tableTitle": "Resultados de testes certificados",
-      "tableHeaders": {
-        "type": "Tipo de lodo",
-        "initialMoisture": "Umidade inicial",
-        "finalMoisture": "Umidade final",
-        "volumeReduction": "Redução de volume"
+    "comparison": {
+      "title": "De infraestrutura fixa a móvel",
+      "description": "Refinarias enfrentam o mesmo dilema: investir milhões em equipamentos próprios ou pagar disposição cara. Tecionic muda essa equação.",
+      "subdescription": "Levamos a infraestrutura pronta para operar. Você só fornece o ponto de extração.",
+      "traditional": {
+        "label": "Modelo tradicional",
+        "items": {
+          "capex": {
+            "value": "$2-5M",
+            "label": "Investimento de capital",
+            "description": "Filtros, bombas, obras civis, instalação. Capital imobilizado por anos."
+          },
+          "timeline": {
+            "value": "6-12 meses",
+            "label": "Tempo de implementação",
+            "description": "Engenharia, licenças, construção. Longa espera antes de ver resultados."
+          },
+          "risk": {
+            "value": "100%",
+            "label": "Risco operacional seu",
+            "description": "Pessoal próprio, manutenção, peças. Se falhar, é problema seu."
+          }
+        }
       },
-      "rows": [
-        { "type": "Lodos fenólicos", "initial": "92,59%", "final": "53%", "reduction": "84,23%" },
-        { "type": "Lodos de fenol", "initial": "90,02%", "final": "56%", "reduction": "77,31%" },
-        { "type": "Lodos de processo", "initial": "70,37%", "final": "55,8%", "reduction": "32,96%" }
-      ],
-      "benefits": {
-        "validation": { "title": "Validação técnica", "description": "Testes em condições reais de refinaria confirmam viabilidade do processo" },
-        "applications": { "title": "Múltiplas aplicações", "description": "Efetivo em lodos fenólicos, de fenol e de processo - cobertura integral" },
-        "certification": { "title": "Certificação independente", "description": "Resultados validados por laboratório especializado externo" }
+      "tecionic": {
+        "label": "Modelo Tecionic móvel",
+        "items": {
+          "capex": {
+            "value": "$0",
+            "label": "Zero investimento inicial",
+            "description": "100% OPEX. Sem compra de equipamentos, sem obras, sem capital imobilizado."
+          },
+          "deployment": {
+            "value": "48 horas",
+            "label": "Mobilização para obra",
+            "description": "Equipamentos chegam prontos. Início imediato. Resultados desde o dia um."
+          },
+          "maintenance": {
+            "value": "Incluído",
+            "label": "Manutenção integral",
+            "description": "Operadores, peças, preventiva e corretiva. Tudo na tarifa."
+          },
+          "exproof": {
+            "value": "Certificado",
+            "label": "Ex-Proof completo",
+            "description": "Todos os equipamentos certificados para áreas classificadas de refinaria."
+          },
+          "scalability": {
+            "value": "Flexível",
+            "label": "Capacidade escalável",
+            "description": "Mais equipamentos quando precisar. Menos quando não. Sem CAPEX adicional."
+          }
+        }
       }
     },
     "applications": {
       "title": "Aplicações em refinaria",
       "subtitle": "Tecnologia móvel aplicável em múltiplos pontos críticos de geração de lodos oleosos em refinarias de petróleo",
       "areas": {
-        "coker": { "title": "Delayed Coker", "description": "Piscinas decantadoras com fluxos de 250-300 m³/hora geram lodos de alta densidade com hidrocarbonetos recuperáveis", "cta": "→ Filtração contínua, sem parada" },
-        "fcc": { "title": "FCC Wet Gas Scrubber", "description": "Plantas de clarificação (14,4 m³/h) acumulam sólidos finos em recirculação que requerem purga contínua", "cta": "→ Clarificação otimizada" },
-        "tanks": { "title": "Limpeza de tanques", "description": "Tanques de petróleo bruto e produtos acumulam lodos de fundo com alto teor de hidrocarbonetos", "cta": "→ Recuperação de capacidade" },
+        "coker": { "title": "Delayed Coker", "description": "Lagoas de decantação com fluxos de 250-300 m³/hora geram lodos de alta densidade com hidrocarbonetos recuperáveis", "cta": "→ Filtração contínua, sem parada" },
+        "fcc": { "title": "FCC Wet Gas Scrubber", "description": "Plantas de clarificação (14.4 m³/h) acumulam sólidos finos em recirculação que requerem purga contínua", "cta": "→ Clarificação otimizada" },
+        "tanks": { "title": "Limpeza de tanques", "description": "Tanques de petróleo e produtos acumulam lodos de fundo com alto teor de hidrocarbonetos", "cta": "→ Recuperação de capacidade" },
         "effluent": { "title": "Tratamento de efluentes", "description": "Plantas de tratamento industrial geram lodos com conteúdo orgânico que requerem desidratação", "cta": "→ Redução de volume 70-84%" },
-        "api": { "title": "Separadores API e DAF", "description": "Sistemas API e DAF acumulam gorduras e sólidos flotantes que se tornam resíduo perigoso", "cta": "→ Conversão em torta sólida" },
-        "other": { "title": "Outras aplicações", "description": "Dessalgadores, filtros de processo, limpeza de equipamentos - qualquer ponto de geração de lodos oleosos", "cta": "→ Solução integral" }
+        "api": { "title": "Separadores API e DAF", "description": "Sistemas API e DAF acumulam gorduras e sólidos flutuantes que se tornam resíduo perigoso", "cta": "→ Conversão em torta sólida" },
+        "other": { "title": "Outras aplicações", "description": "Dessalinizadores, filtros de processo, limpeza de equipamentos - qualquer ponto de geração de lodos oleosos", "cta": "→ Solução integral" }
       }
     },
-    "benefits": {
-      "sectionLabel": "Benefícios Operacionais",
-      "title": "Benefícios para o setor de refino",
-      "subtitle": "Tecnologia móvel certificada transforma resíduos em ativos recuperáveis",
-      "primary": {
-        "hcRecovery": {
-          "title": "Recuperação máxima de HC",
-          "tagline": "Captura valor perdido na borra",
-          "items": [
-            { "highlight": "84% de redução de volume", "text": "em lodos oleosos desidratados" },
-            { "highlight": "Hidrocarbonetos recuperáveis", "text": "retornam ao processo para monetização" },
-            { "highlight": "Processamento contínuo", "text": "sem parada de operações" }
-          ],
-          "metric": { "value": "$2M+", "label": "Potencial de recuperação anual por site", "note": "Baseado em 4,5M+ kg resíduos/ano × valor HC" }
+    "continuity": {
+      "badge": "Operação sem interrupções",
+      "title": "Sua refinaria continua operando enquanto nós cuidamos do resto",
+      "description": "Nossa equipe trabalha em paralelo à sua operação. Sem paradas, sem interferências, sem surpresas.",
+      "features": {
+        "staff": {
+          "title": "Pessoal especializado",
+          "description": "Operadores certificados com experiência em ambientes de refinaria e áreas classificadas."
         },
-        "costReduction": {
-          "title": "Redução de custos de disposição",
-          "tagline": "Menos resíduos = menos gasto",
-          "items": [
-            { "highlight": "Até 84% de redução", "text": "de volume de resíduos pós-desidratação" },
-            { "highlight": "Tortas sólidas secas", "text": "com umidade reduzida para disposição econômica" },
-            { "highlight": "Conformidade ambiental", "text": "garantida com manejo certificado" }
-          ],
-          "metric": { "value": "$0.6-3M", "label": "Redução de custos de disposição/ano", "note": "84% menos volume @ $300-600/ton" }
-        }
-      },
-      "secondary": {
-        "mobile": {
-          "title": "Infraestrutura móvel sem CAPEX",
-          "tagline": "Modelo OPEX previsível",
-          "description": "Equipamentos móveis incluem filtros prensa, bombas e sistemas completos. Sem investimento permanente da refinaria.",
-          "cta": "Implantação em 1-2 semanas"
+        "monitoring": {
+          "title": "Monitoramento 24/7",
+          "description": "Supervisão contínua do processo. Detectamos e resolvemos antes que afete sua operação."
         },
-        "exproof": {
-          "title": "Certificação à prova de explosão",
-          "tagline": "Áreas classificadas",
-          "description": "Equipamentos certificados para operar em Classe I, Div 1. Conformidade normativa total para refinarias.",
-          "cta": "100% equipamentos certificados"
+        "maintenance": {
+          "title": "Manutenção incluída",
+          "description": "Preventiva, corretiva, peças. Tudo está em nossa tarifa. Zero custos surpresa."
+        },
+        "support": {
+          "title": "Suporte dedicado",
+          "description": "Engenheiro de projeto designado. Um único ponto de contato para tudo."
         }
       }
     },
-    "comparison": {
-      "title": "Infraestrutura fixa vs tecnologia móvel certificada",
-      "subtitle": "Comparação de investimento, tempo de implementação e flexibilidade operacional",
-      "traditional": {
-        "title": "Modelo Tradicional",
-        "items": [
-          { "title": "CAPEX $2M-$5M infraestrutura", "description": "Filtros, bombas, obras civis, instalação" },
-          { "title": "6-12 meses de instalação", "description": "Longa espera antes de processar borra" },
-          { "title": "Equipamentos ociosos entre campanhas", "description": "Capital imobilizado sem gerar valor" },
-          { "title": "Pessoal próprio + manutenção", "description": "OPEX fixo + risco técnico interno" }
-        ],
-        "total": { "label": "Investimento total típico", "value": "$2M-$5M", "note": "CAPEX + instalação + licenças" }
+    "validation": {
+      "badge": "Resultados comprovados",
+      "title": "Tecnologia validada em refinaria de petróleo",
+      "description": "Testes de laboratório certificados em três tipos de lodos. Resultados reais, não promessas.",
+      "results": {
+        "phenolic": {
+          "title": "Lodos planta fenólica",
+          "description": "Umidade inicial 92,6% → final 53%. A maior redução alcançada."
+        },
+        "phenol": {
+          "title": "Lodos planta fenóis",
+          "description": "Umidade inicial 90% → final 56%. Recuperação consistente."
+        },
+        "process": {
+          "title": "Lodos de processo",
+          "description": "Umidade inicial 70% → final 56%. Até lodos densos melhoram."
+        }
       },
-      "mobile": {
-        "title": "Tecnologia Móvel",
-        "items": [
-          { "title": "Zero CAPEX para refinaria", "description": "Modelo OPEX cobre equipamentos, operação e manutenção integral" },
-          { "title": "1-2 semanas de implantação", "description": "Início rápido, recuperação de HC imediata" },
-          { "title": "Capacidade flexível e escalável", "description": "Ajuste de equipamentos conforme volume sem CAPEX adicional" },
-          { "title": "Pessoal especializado incluído", "description": "Operação 24/7 com expertise certificado, zero risco técnico" }
-        ],
-        "total": { "label": "Investimento do cliente", "value": "$0", "note": "Capital disponível para core business" }
+      "impact": {
+        "title": "O que isso significa para sua operação",
+        "items": {
+          "volume": "35-84% menos volume de resíduo para dispor",
+          "transport": "Redução proporcional em custos de transporte",
+          "water": "Líquido filtrado recuperável para reutilização"
+        }
       }
+    },
+    "caseStudy": {
+      "badge": "Caso de sucesso",
+      "title": "Validação técnica em refinaria de petróleo",
+      "imageAlt": "Operação de filtração em refinaria",
+      "location": "Refinaria · Chile Central",
+      "metrics": {
+        "reduction": "Redução volume",
+        "types": "Tipos de lodo",
+        "investment": "Investimento cliente"
+      },
+      "description": "Realizamos testes de laboratório certificados em três correntes críticas de lodos de refinaria, demonstrando viabilidade técnica e econômica sem custo para o cliente.",
+      "cta": "Ver caso completo →"
     },
     "cta": {
-      "title": "Recupere valor de sua borra oleosa",
-      "description": "Nossos engenheiros podem avaliar sua operação e projetar solução móvel para máxima recuperação de hidrocarbonetos e mínimos custos de disposição",
-      "button": "Solicitar avaliação técnica"
+      "title": "Avalie o potencial da sua refinaria",
+      "description": "Nossos engenheiros analisam suas correntes e estimam a economia potencial. Sem custo, sem compromisso.",
+      "button": "Solicitar avaliação técnica",
+      "response": "Resposta em 24-48h",
+      "coverage": "Cobertura América Latina",
+      "certification": "Equipamentos Ex-Proof certificados"
     }
   },
   "aboutPage": {

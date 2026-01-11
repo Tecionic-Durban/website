@@ -95,10 +95,6 @@ export default function PotassiumIndustryPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Content */}
             <div>
-              <div className="inline-block px-3 py-1 bg-purple-50 border border-purple-200 rounded-full mb-6">
-                <span className="text-sm font-semibold text-purple-900">Producción de Yodo y Potasio</span>
-              </div>
-
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-[1.1]">
                 100% continuidad operacional en tu proceso SX
               </h1>

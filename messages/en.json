@@ -2016,184 +2016,185 @@
   },
   "crudeOilIndustry": {
     "hero": {
-      "badge": "Refineries and Petroleum Terminals",
-      "title": "Transform your oily sludge into recoverable hydrocarbons",
-      "description": "We reduce up to 84% of tank sludge and bottom volume with certified mobile equipment, no CAPEX investment.",
-      "descriptionHighlight": "Recover valuable hydrocarbons while reducing disposal costs.",
+      "statLabel": "less volume to dispose",
+      "title": "We recover the value trapped in your oily sludge",
+      "description": "We separate refinery sludge into recoverable hydrocarbons and dry cake. No capital investment. No civil works. We operate, you recover value.",
+      "badges": {
+        "zeroCAPEX": "$0 initial investment",
+        "exProof": "Ex-Proof certified equipment",
+        "deployment": "48-hour deployment"
+      },
       "imageAlt": "Tecionic mobile filter press for refineries"
     },
-    "challenge": {
-      "badge": "The Operational Challenge",
-      "title": "Tank sludge costs millions in losses",
-      "subtitle": "Accumulated oily sludge generates massive operational losses and increasing disposal costs",
-      "problems": {
-        "capacity": {
-          "value": "15-25%",
-          "title": "Storage capacity loss",
-          "description": "Accumulated sludge reduces effective tank capacity.",
-          "costLabel": "Cleaning cost",
-          "costValue": "$500K-$2M"
+    "benefits": {
+      "title": "Benefits of eliminating sludge",
+      "items": {
+        "recovery": {
+          "title": "Recover hydrocarbons",
+          "description": "60-75% of sludge content can return to process as fuel."
         },
-        "hydrocarbons": {
-          "value": "60-75%",
-          "title": "Recoverable HC lost",
-          "description": "Valuable hydrocarbons in sludge are lost as waste.",
-          "costLabel": "Annual lost value",
-          "costValue": "$1M-$2M"
+        "capacity": {
+          "title": "Recover capacity",
+          "description": "Eliminate tank accumulation and recover storage volume."
         },
         "disposal": {
-          "value": "$300-600",
-          "title": "Hazardous waste disposal",
-          "description": "Cost per ton for certified sludge disposal.",
-          "costLabel": "Typical annual cost",
-          "costValue": "$0.6-3M"
-        }
-      },
-      "industryScope": {
-        "title": "Magnitude of the sector challenge",
-        "subtitle": "Based on Latin American refinery analysis",
-        "stats": {
-          "waste": { "value": "4.5M+", "label": "kg of annual waste per typical refinery" },
-          "areas": { "value": "5", "label": "Critical areas of sludge generation" },
-          "recovery": { "value": "$2M+", "label": "Annual recovery potential per site" }
+          "title": "Reduce disposal",
+          "description": "Up to 84% less hazardous waste volume to dispose."
+        },
+        "compliance": {
+          "title": "Guaranteed compliance",
+          "description": "Equipment certified for classified zones. Zero regulatory risk."
         }
       }
     },
-    "capabilities": {
-      "badge": "Critical Capabilities",
-      "title": "Infrastructure that pays for itself",
-      "subtitle": "Four critical capabilities that transform your sludge from liability to valuable asset",
-      "zeroCAPEX": {
-        "label": "Financial Model",
-        "title": "$0 initial investment",
-        "description": "100% OPEX service. No equipment purchase, no permanent installations, no capital risk.",
-        "value": "$0",
-        "valueLabel": "CAPEX required"
-      },
-      "volumeReduction": {
-        "label": "Volume Reduction",
-        "title": "Up to 84% reduction",
-        "description": "Certified volume reduction of dewatered oily sludge.",
-        "value": "84%",
-        "valueLabel": "Proven in certified laboratory"
-      },
-      "speed": {
-        "label": "Speed",
-        "title": "48-hour deployment",
-        "description": "Certified mobile equipment ready to operate.",
-        "value": "2 days",
-        "valueLabel": "complete installation"
-      },
-      "compliance": {
-        "label": "Compliance",
-        "title": "Complete certification included",
-        "description": "All environmental permits, operational safety, and regulatory compliance guaranteed.",
-        "certifications": ["Ex-Proof Certified", "Environmental Compliance", "Maintenance Included"]
+    "opportunity": {
+      "badge": "The real problem",
+      "title": "Your sludge costs millions. It should generate them.",
+      "description": "Every ton of sludge you send to disposal contains valuable hydrocarbons. The traditional model discards them. We recover them.",
+      "subdescription": "Latin American refineries spend millions annually disposing of waste that contains recoverable value. It's buried money.",
+      "stats": {
+        "waste": { "value": "30K+", "label": "tons of sludge per typical refinery per year" },
+        "hc": { "value": "60-75%", "label": "recoverable hydrocarbons in every sludge" },
+        "cost": { "value": "$700+", "label": "avoidable disposal cost per ton" }
       }
     },
-    "labResults": {
-      "badge": "Technical Validation",
-      "title": "Technology validated for refinery sludge",
-      "subtitle": "Certified laboratory tests confirm effectiveness on multiple types of oily waste from the refining sector",
-      "tableTitle": "Certified test results",
-      "tableHeaders": {
-        "type": "Sludge type",
-        "initialMoisture": "Initial moisture",
-        "finalMoisture": "Final moisture",
-        "volumeReduction": "Volume reduction"
+    "comparison": {
+      "title": "From fixed infrastructure to mobile",
+      "description": "Refineries face the same dilemma: invest millions in their own equipment or pay expensive disposal. Tecionic changes that equation.",
+      "subdescription": "We bring the infrastructure ready to operate. You just provide the extraction point.",
+      "traditional": {
+        "label": "Traditional model",
+        "items": {
+          "capex": {
+            "value": "$2-5M",
+            "label": "Capital investment",
+            "description": "Filters, pumps, civil works, installation. Capital tied up for years."
+          },
+          "timeline": {
+            "value": "6-12 months",
+            "label": "Implementation time",
+            "description": "Engineering, permits, construction. Long wait before seeing results."
+          },
+          "risk": {
+            "value": "100%",
+            "label": "Your operational risk",
+            "description": "Your own personnel, maintenance, spare parts. If it fails, it's your problem."
+          }
+        }
       },
-      "rows": [
-        { "type": "Phenolic sludge", "initial": "92.59%", "final": "53%", "reduction": "84.23%" },
-        { "type": "Phenol sludge", "initial": "90.02%", "final": "56%", "reduction": "77.31%" },
-        { "type": "Process sludge", "initial": "70.37%", "final": "55.8%", "reduction": "32.96%" }
-      ],
-      "benefits": {
-        "validation": { "title": "Technical validation", "description": "Tests under real refinery conditions confirm process viability" },
-        "applications": { "title": "Multiple applications", "description": "Effective on phenolic, phenol and process sludge - comprehensive coverage" },
-        "certification": { "title": "Independent certification", "description": "Results validated by external specialized laboratory" }
+      "tecionic": {
+        "label": "Tecionic mobile model",
+        "items": {
+          "capex": {
+            "value": "$0",
+            "label": "Zero initial investment",
+            "description": "100% OPEX. No equipment purchase, no works, no tied-up capital."
+          },
+          "deployment": {
+            "value": "48 hours",
+            "label": "Site mobilization",
+            "description": "Equipment arrives ready. Immediate start. Results from day one."
+          },
+          "maintenance": {
+            "value": "Included",
+            "label": "Comprehensive maintenance",
+            "description": "Operators, spare parts, preventive and corrective. All in the rate."
+          },
+          "exproof": {
+            "value": "Certified",
+            "label": "Full Ex-Proof",
+            "description": "All equipment certified for refinery classified zones."
+          },
+          "scalability": {
+            "value": "Flexible",
+            "label": "Scalable capacity",
+            "description": "More equipment when you need it. Less when you don't. No additional CAPEX."
+          }
+        }
       }
     },
     "applications": {
       "title": "Refinery applications",
-      "subtitle": "Mobile technology applicable at multiple critical points of oily sludge generation in petroleum refineries",
+      "subtitle": "Mobile technology applicable at multiple critical oily sludge generation points in petroleum refineries",
       "areas": {
         "coker": { "title": "Delayed Coker", "description": "Settling ponds with flows of 250-300 m³/hour generate high-density sludge with recoverable hydrocarbons", "cta": "→ Continuous filtration, no shutdown" },
-        "fcc": { "title": "FCC Wet Gas Scrubber", "description": "Clarification plants (14.4 m³/h) accumulate fine solids in recirculation requiring continuous purging", "cta": "→ Optimized clarification" },
+        "fcc": { "title": "FCC Wet Gas Scrubber", "description": "Clarification plants (14.4 m³/h) accumulate fine solids in recirculation that require continuous purging", "cta": "→ Optimized clarification" },
         "tanks": { "title": "Tank cleaning", "description": "Crude and product tanks accumulate bottom sludge with high hydrocarbon content", "cta": "→ Capacity recovery" },
         "effluent": { "title": "Effluent treatment", "description": "Industrial treatment plants generate sludge with organic content requiring dewatering", "cta": "→ 70-84% volume reduction" },
-        "api": { "title": "API and DAF separators", "description": "API and DAF systems accumulate grease and floating solids that become hazardous waste", "cta": "→ Conversion to solid cake" },
+        "api": { "title": "API and DAF separators", "description": "API and DAF systems accumulate floating fats and solids that become hazardous waste", "cta": "→ Conversion to solid cake" },
         "other": { "title": "Other applications", "description": "Desalters, process filters, equipment cleaning - any oily sludge generation point", "cta": "→ Comprehensive solution" }
       }
     },
-    "benefits": {
-      "sectionLabel": "Operational Benefits",
-      "title": "Benefits for the refining sector",
-      "subtitle": "Certified mobile technology transforms waste into recoverable assets",
-      "primary": {
-        "hcRecovery": {
-          "title": "Maximum HC recovery",
-          "tagline": "Capture value lost in sludge",
-          "items": [
-            { "highlight": "84% volume reduction", "text": "in dewatered oily sludge" },
-            { "highlight": "Recoverable hydrocarbons", "text": "return to process for monetization" },
-            { "highlight": "Continuous processing", "text": "without operation shutdown" }
-          ],
-          "metric": { "value": "$2M+", "label": "Annual recovery potential per site", "note": "Based on 4.5M+ kg waste/year × HC value" }
+    "continuity": {
+      "badge": "Uninterrupted operation",
+      "title": "Your refinery keeps running while we take care of the rest",
+      "description": "Our team works in parallel with your operation. No shutdowns, no interference, no surprises.",
+      "features": {
+        "staff": {
+          "title": "Specialized personnel",
+          "description": "Certified operators with experience in refinery environments and classified zones."
         },
-        "costReduction": {
-          "title": "Disposal cost reduction",
-          "tagline": "Less waste = less spending",
-          "items": [
-            { "highlight": "Up to 84% reduction", "text": "in post-dewatering waste volume" },
-            { "highlight": "Dry solid cakes", "text": "with reduced moisture for economical disposal" },
-            { "highlight": "Environmental compliance", "text": "guaranteed with certified handling" }
-          ],
-          "metric": { "value": "$0.6-3M", "label": "Disposal cost reduction/year", "note": "84% less volume @ $300-600/ton" }
-        }
-      },
-      "secondary": {
-        "mobile": {
-          "title": "Mobile infrastructure without CAPEX",
-          "tagline": "Predictable OPEX model",
-          "description": "Mobile equipment includes filter presses, pumps and complete systems. No permanent refinery investment.",
-          "cta": "Deployment in 1-2 weeks"
+        "monitoring": {
+          "title": "24/7 monitoring",
+          "description": "Continuous process supervision. We detect and resolve before it affects your operation."
         },
-        "exproof": {
-          "title": "Explosion-proof certification",
-          "tagline": "Classified areas",
-          "description": "Equipment certified to operate in Class I, Div 1. Full regulatory compliance for refineries.",
-          "cta": "100% certified equipment"
+        "maintenance": {
+          "title": "Maintenance included",
+          "description": "Preventive, corrective, spare parts. Everything is in our rate. Zero surprise costs."
+        },
+        "support": {
+          "title": "Dedicated support",
+          "description": "Assigned project engineer. A single point of contact for everything."
         }
       }
     },
-    "comparison": {
-      "title": "Fixed infrastructure vs certified mobile technology",
-      "subtitle": "Comparison of investment, implementation time and operational flexibility",
-      "traditional": {
-        "title": "Traditional Model",
-        "items": [
-          { "title": "$2M-$5M infrastructure CAPEX", "description": "Filters, pumps, civil works, installation" },
-          { "title": "6-12 months installation", "description": "Long wait before processing sludge" },
-          { "title": "Idle equipment between campaigns", "description": "Immobilized capital not generating value" },
-          { "title": "Own personnel + maintenance", "description": "Fixed OPEX + internal technical risk" }
-        ],
-        "total": { "label": "Typical total investment", "value": "$2M-$5M", "note": "CAPEX + installation + permits" }
+    "validation": {
+      "badge": "Proven results",
+      "title": "Technology validated at petroleum refinery",
+      "description": "Certified laboratory tests on three sludge types. Real results, not promises.",
+      "results": {
+        "phenolic": {
+          "title": "Phenolic plant sludge",
+          "description": "Initial moisture 92.6% → final 53%. The highest reduction achieved."
+        },
+        "phenol": {
+          "title": "Phenol plant sludge",
+          "description": "Initial moisture 90% → final 56%. Consistent recovery."
+        },
+        "process": {
+          "title": "Process sludge",
+          "description": "Initial moisture 70% → final 56%. Even dense sludge improves."
+        }
       },
-      "mobile": {
-        "title": "Mobile Technology",
-        "items": [
-          { "title": "Zero CAPEX for refinery", "description": "OPEX model covers equipment, operation and comprehensive maintenance" },
-          { "title": "1-2 weeks deployment", "description": "Quick start, immediate HC recovery" },
-          { "title": "Flexible and scalable capacity", "description": "Equipment adjustment per volume without additional CAPEX" },
-          { "title": "Specialized personnel included", "description": "24/7 operation with certified expertise, zero technical risk" }
-        ],
-        "total": { "label": "Client investment", "value": "$0", "note": "Capital available for core business" }
+      "impact": {
+        "title": "What this means for your operation",
+        "items": {
+          "volume": "35-84% less waste volume to dispose",
+          "transport": "Proportional reduction in transport costs",
+          "water": "Recoverable filtrate for reuse"
+        }
       }
+    },
+    "caseStudy": {
+      "badge": "Success story",
+      "title": "Technical validation at petroleum refinery",
+      "imageAlt": "Filtration operation at refinery",
+      "location": "Refinery · Central Chile",
+      "metrics": {
+        "reduction": "Volume reduction",
+        "types": "Sludge types",
+        "investment": "Client investment"
+      },
+      "description": "We performed certified laboratory tests on three critical refinery sludge streams, demonstrating technical and economic viability at no cost to the client.",
+      "cta": "View full case →"
     },
     "cta": {
-      "title": "Recover value from your oily sludge",
-      "description": "Our engineers can evaluate your operation and design a mobile solution for maximum hydrocarbon recovery and minimum disposal costs",
-      "button": "Request technical evaluation"
+      "title": "Evaluate your refinery's potential",
+      "description": "Our engineers analyze your streams and estimate potential savings. No cost, no commitment.",
+      "button": "Request technical evaluation",
+      "response": "Response in 24-48h",
+      "coverage": "Latin America coverage",
+      "certification": "Ex-Proof certified equipment"
     }
   },
   "aboutPage": {
