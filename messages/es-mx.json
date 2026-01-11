@@ -2197,6 +2197,122 @@
       "certification": "Equipos Ex-Proof certificados"
     }
   },
+  "lithiumIndustry": {
+    "hero": {
+      "title": "Tu piloto DLE no puede esperar 18 meses por filtración",
+      "subtitle": "La carrera del litio se gana con velocidad. Mientras otros esperan obra civil, permisos y comisionamiento, tú podrías estar generando datos de proceso reales. Tecionic llega en semanas con todo lo necesario para operar.",
+      "imageAlt": "Equipos móviles de filtración Tecionic"
+    },
+    "stakes": {
+      "title": "DLE va a ganar. Pero DLE exige salmuera impecable.",
+      "description": "La extracción directa de litio está reemplazando las pozas de evaporación. Reduce meses a días, consume menos agua, tiene menor huella. Los proyectos que dominen DLE van a liderar el mercado.",
+      "subdescription": "Pero hay un problema: las membranas y adsorbentes DLE son sensibles. Arcillas, sólidos suspendidos, precipitados de magnesio - cualquier contaminante reduce eficiencia y acorta vida útil de equipos que cuestan una fortuna.",
+      "conclusion": "La separación sólido-líquido no es opcional. Es el habilitador de tu proceso DLE.",
+      "problems": {
+        "traditional": { "title": "El problema tradicional", "description": "Construir infraestructura de filtración fija toma 12-18 meses y varios millones de dólares. Tu piloto queda en pausa. Tu ventana de oportunidad se cierra." },
+        "scale": { "title": "El problema de escala", "description": "Dimensionas para tu capacidad futura y pagas por equipos que no usas. O dimensionas para hoy y quedas corto cuando escalas." },
+        "capital": { "title": "El problema de capital", "description": "Cada dólar que inviertes en filtración es un dólar que no va a capacidad extractiva. Tu directorio quiere ver litio producido, no fierro instalado." }
+      }
+    },
+    "answer": { "title": "Tecionic elimina estos tres problemas de un golpe", "description": "Llegamos con equipos listos, personal que los opera, mantención incluida, y escalamos contigo. Tú pagas una tarifa mensual por capacidad de filtración funcionando. Cero CAPEX. Cero espera. Cero rigidez." },
+    "valueProps": {
+      "title": "Lo que significa trabajar con Tecionic",
+      "speed": { "title": "Arrancas en semanas, no en años", "description": "Tus competidores están esperando permisos de construcción. Tú ya tienes centrífugas clarificando salmuera." },
+      "capital": { "title": "Tu capital produce litio, no fierro", "description": "En vez de inmovilizar millones en equipos de filtración, ese capital va a expandir tu capacidad extractiva." },
+      "flexibility": { "title": "Escalas cuando quieres, no cuando puedes", "description": "Tu proyecto crece de piloto a demostración a comercial. ¿Necesitas más capacidad? Agregamos equipos." },
+      "focus": { "title": "Te enfocas en litio, nosotros en filtración", "description": "Nuestro equipo opera los equipos, hace la mantención, resuelve los problemas." }
+    },
+    "howWeWork": {
+      "title": "No vendemos equipos. Vendemos capacidad de filtración operando.",
+      "description": "Después de 23 años en minería entendimos algo: los clientes no quieren comprar fierro.",
+      "subdescription": "Más del 70% de la minería de cobre en Chile trabaja con nosotros bajo este modelo.",
+      "steps": {
+        "step1": { "number": "01", "title": "Evaluamos tu proceso juntos", "description": "Entendemos qué necesitas filtrar, qué volúmenes manejas, qué calidad requieres." },
+        "step2": { "number": "02", "title": "Movilizamos en semanas", "description": "Equipos llegan a tu salar listos. Centrífugas, filtros prensa, lo que necesites." },
+        "step3": { "number": "03", "title": "Operamos con nuestro equipo", "description": "Personal Tecionic corre los equipos. Mantención incluida." },
+        "step4": { "number": "04", "title": "Escalamos contigo", "description": "¿Tu piloto funcionó y necesitas más capacidad? Agregamos equipos." }
+      }
+    },
+    "applications": {
+      "badge": "Dónde entramos",
+      "title": "Cada paso de tu proceso tiene un punto donde la filtración marca la diferencia",
+      "description": "No importa si usas DLE, evaporación tradicional, o un híbrido.",
+      "items": {
+        "preDle": { "title": "Antes de DLE", "description": "Tus membranas y adsorbentes cuestan una fortuna y son sensibles a sólidos.", "result": "Protección de inversión DLE" },
+        "precipitation": { "title": "Remoción de impurezas", "description": "Las salmueras de LATAM vienen cargadas de magnesio, calcio, boro.", "result": "Manejo de precipitados complejos" },
+        "carbonate": { "title": "Carbonato de litio", "description": "Tu Li₂CO₃ necesita lavado para remover impurezas solubles.", "result": "Producto que cumple especificación" },
+        "water": { "title": "Cierre de circuitos", "description": "El agua en el salar es oro. Los permisos ambientales exigen minimizar consumo.", "result": "Cumplimiento ambiental" },
+        "pilots": { "title": "Validación de proceso", "description": "Antes de comprometer capital en planta comercial necesitas datos reales.", "result": "Datos reales sin CAPEX" }
+      }
+    },
+    "trackRecord": {
+      "badge": "Por qué confiar en Tecionic",
+      "title": "23 años. Más de 70% del cobre chileno. Ahora litio.",
+      "description": "Comenzamos en 2002 resolviendo separación sólido-líquido para procesos SX/EW de cobre.",
+      "subdescription": "En 2020 expandimos a litio y potasio.",
+      "conclusion": "No estás experimentando con nosotros.",
+      "stats": {
+        "years": { "value": "23", "label": "Años en minería", "sublabel": "Desde 2002 operando en faenas" },
+        "copper": { "value": "70%", "label": "Del cobre chileno", "sublabel": "Trabaja con nuestro modelo" },
+        "lithium": { "value": "2020", "label": "Expansión a litio", "sublabel": "Misma expertise, nuevo mercado" },
+        "latam": { "value": "LATAM", "label": "Cobertura regional", "sublabel": "Chile, Perú, Argentina y más" }
+      }
+    },
+    "cta": {
+      "title": "Tu competencia está esperando permisos.",
+      "titleHighlight": "Tú podrías estar operando.",
+      "description": "Cuéntanos sobre tu proyecto.",
+      "button": "Conversemos sobre tu proyecto",
+      "footer": { "response": "Respuesta en 24-48 horas", "coverage": "Cobertura en todo el Triángulo del Litio", "commitment": "Sin compromiso" }
+    }
+  },
+  "potassiumIndustry": {
+    "hero": { "title": "100% continuidad operacional en tu proceso SX", "subtitle": "Filtración móvil que opera en cada etapa de extracción por solventes.", "imageAlt": "Infraestructura móvil Tecionic" },
+    "opportunity": {
+      "title": "Donde el kerosene se mezcla con salmuera, la limpieza define tu producción",
+      "description": "En plantas de yoduro, cada etapa del proceso SX acumula material particulado.",
+      "cards": {
+        "extraction": { "title": "Etapas de Extracción", "description": "En E1 y E2, el kerosene extrae yodo libre de la cortadura." },
+        "separation": { "title": "Separación y Coalescencia", "description": "En S1 y coalescedores, kerosene y yoduro se separan." },
+        "filtration": { "title": "Yoduro a Filtrado", "description": "El yoduro enviado a filtrado de compañía llega con carga de sólidos." }
+      }
+    },
+    "applications": {
+      "title": "Intervención en cada etapa de tu proceso SX",
+      "description": "Desde la primera etapa de extracción hasta coalescencia.",
+      "useCases": {
+        "extraction": { "title": "Filtración en Etapas de Extracción", "description": "Remoción continua de sólidos en E1, E2.", "result": "Cero paradas por acumulación." },
+        "separation": { "title": "Limpieza en Separación y Coalescencia", "description": "Removemos sólidos arrastrados que afectan la recuperación de kerosene.", "result": "Máxima recuperación de kerosene." },
+        "dialysis": { "title": "Diálisis de Estanques y Piscinas", "description": "Limpieza programada de estanques gemelos, settlers.", "result": "Capacidad de almacenamiento íntegra." },
+        "floors": { "title": "Limpieza de Lozas por Acumulación", "description": "Retiro de soluciones acumuladas en lozas de proceso.", "result": "Proceso limpio." }
+      },
+      "capabilities": { "title": "Control de efectividad diario", "items": ["Medición turbidez entrada/salida", "Reporte KPIs a jefe de planta", "Bomba S30 + filtro móvil", "Operación 24/7"] }
+    },
+    "backup": {
+      "title": "Tu plan B cuando la infraestructura fija falla",
+      "description": "Mantenciones programadas, fallas imprevistas, o peaks de producción.",
+      "features": ["Movilización de emergencia en 24-48 horas", "Equipos certificados y operadores capacitados", "Sin compromiso de largo plazo"],
+      "scenarios": { "title": "Escenarios donde Tecionic te respalda", "items": [{ "title": "Mantención programada", "description": "Capacidad temporal" }, { "title": "Acumulación excesiva", "description": "Refuerzo rápido" }, { "title": "Aumento de producción", "description": "Capacidad adicional" }, { "title": "Pruebas de proceso", "description": "Validación antes de invertir" }] }
+    },
+    "howWeWork": {
+      "badge": "Cómo trabajamos",
+      "title": "De la evaluación a la operación en semanas",
+      "description": "Un proceso simple para integrar capacidad de filtración a tu planta SX.",
+      "steps": {
+        "diagnosis": { "number": "01", "title": "Diagnóstico", "description": "Evaluamos tu proceso SX.", "timeline": "1-2 semanas" },
+        "mobilization": { "number": "02", "title": "Movilización", "description": "Trasladamos equipos a tu sitio.", "timeline": "24-48 horas" },
+        "operation": { "number": "03", "title": "Operación", "description": "Operamos y mantenemos los equipos.", "timeline": "Servicio continuo" }
+      },
+      "keyDifference": { "title": "La diferencia clave", "description": "No vendemos equipos—entregamos continuidad operacional.", "benefits": ["Sin licitación de equipos", "Sin gestión de proyecto", "Sin contratación de operadores", "Sin mantención por tu cuenta"] }
+    },
+    "model": {
+      "title": "Infraestructura sin compromiso de capital",
+      "description": "El mismo modelo validado en operaciones de cobre y zinc.",
+      "stats": { "capex": { "value": "$0", "label": "CAPEX inicial" }, "mobilization": { "value": "24-48h", "label": "Movilización" }, "continuity": { "value": "100%", "label": "Continuidad operacional" }, "maintenance": { "value": "Incluida", "label": "Mantención y operación" } },
+      "comparison": { "fixed": { "label": "Infraestructura Permanente", "items": ["$1M-3M+ inversión inicial", "12-18 meses implementación", "Mantención por cuenta propia", "Capacidad fija"] }, "tecionic": { "label": "Modelo Tecionic", "items": ["OPEX mensual predecible", "Operación en semanas", "Servicio integral incluido", "Escala según demanda"] } }
+    },
+    "cta": { "title": "Evaluemos tu proceso SX", "description": "Análisis técnico sin costo.", "button": "Solicitar evaluación técnica", "contact": "contacto@tecionic.com", "subtitle": "Operaciones activas en plantas SX" }
+  },
   "aboutPage": {
     "hero": {
       "titleLine1": "Acerca de",

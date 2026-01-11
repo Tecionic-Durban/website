@@ -2,7 +2,8 @@
 
 import { useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { Filter, Droplets, Zap, Recycle, CheckCircle, ArrowRight, Factory, Beaker, Shield } from 'lucide-react'
+import { Filter as FilterCarbon, Humidity, Flash, Recycle as RecycleCarbon, CheckmarkFilled, ArrowRight, Industry, Chemistry, Security } from '@carbon/icons-react'
+import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { handleContactClick } from '@/utils/navigation'
 import gsap from 'gsap'
@@ -20,32 +21,32 @@ export default function ZincIndustryPage() {
 
   const useCases = [
     {
-      icon: Filter,
+      icon: FilterCarbon,
       title: 'Filtración de Residuos de Hierro',
       description: 'Jarosita y goethita requieren filtración eficiente para maximizar recuperación de zinc y minimizar volumen de residuos peligrosos. Nuestros filtros prensa procesan el flujo de precipitación sin interrumpir tu circuito de remoción de hierro.',
       result: 'Mejor recuperación de zinc, menor costo de disposición de residuos.',
       color: 'blue'
     },
     {
-      icon: Droplets,
+      icon: Humidity,
       title: 'Deshidratación de Residuos de Lixiviación',
       description: 'Los residuos de lixiviación contienen valores concentrados de Au, Ag, y Pb. Deshidratación efectiva reduce peso y volumen para transporte, y prepara el material para procesamiento posterior.',
       result: 'Reducción 60-70% de humedad, manejo más eficiente de residuos valiosos.',
       color: 'amber'
     },
     {
-      icon: Zap,
+      icon: Flash,
       title: 'Desborre de Celdas de Electroobtención',
       description: 'Las plantas de zinc electrolítico operan cientos de celdas. La acumulación de depósitos reduce eficiencia de corriente y calidad de cátodos. Limpieza programada mantiene tu tankhouse operando a capacidad.',
       result: 'Eficiencia de corriente sostenida, calidad de zinc consistente.',
       color: 'purple'
     },
     {
-      icon: Recycle,
+      icon: RecycleCarbon,
       title: 'Clarificación de Aguas de Proceso',
       description: 'Recuperación y clarificación de aguas de proceso para recirculación. Cierre de circuitos para cumplimiento ambiental y reducción de consumo de agua fresca.',
       result: 'Hasta 120 m³/día de clarificación, circuitos cerrados.',
-      color: 'emerald'
+      color: 'slate'
     }
   ]
 
@@ -71,12 +72,12 @@ export default function ZincIndustryPage() {
       text: 'text-purple-700',
       result: 'bg-purple-100 text-purple-800'
     },
-    emerald: {
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-200',
-      icon: 'from-emerald-500 to-emerald-600',
-      text: 'text-emerald-700',
-      result: 'bg-emerald-100 text-emerald-800'
+    slate: {
+      bg: 'bg-slate-50',
+      border: 'border-slate-200',
+      icon: 'from-slate-500 to-slate-600',
+      text: 'text-slate-700',
+      result: 'bg-slate-100 text-slate-800'
     }
   }
 
@@ -136,7 +137,7 @@ export default function ZincIndustryPage() {
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6">
-                <Factory className="w-6 h-6 text-white" />
+                <Industry size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Remoción de Hierro</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -146,7 +147,7 @@ export default function ZincIndustryPage() {
 
             <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6">
-                <Beaker className="w-6 h-6 text-white" />
+                <Chemistry size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Residuos de Lixiviación</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -156,7 +157,7 @@ export default function ZincIndustryPage() {
 
             <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6 text-white" />
+                <Security size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Electrolito Limpio</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -192,7 +193,7 @@ export default function ZincIndustryPage() {
 
                   <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
                     <div className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-6`}>
-                      <useCase.icon className={`w-6 h-6 ${colors.text}`} />
+                      <useCase.icon size={24} className={colors.text} />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -223,7 +224,7 @@ export default function ZincIndustryPage() {
                   'Operación incluida'
                 ].map((item, i) => (
                   <span key={i} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    <span className="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
                     {item}
                   </span>
                 ))}
@@ -234,14 +235,14 @@ export default function ZincIndustryPage() {
       </section>
 
       {/* Backup / Contingencia */}
-      <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-700">
+      <section className="py-20 bg-gradient-to-br from-slate-600 to-slate-700">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-white mb-6">
                 Tu plan B cuando la infraestructura fija falla
               </h2>
-              <p className="text-xl text-emerald-50 leading-relaxed mb-8">
+              <p className="text-xl text-slate-50 leading-relaxed mb-8">
                 Mantenciones programadas, fallas imprevistas, o peaks de demanda—desplegamos capacidad de filtración en 24-48 horas para que tu producción no se detenga.
               </p>
               <div className="space-y-4">
@@ -250,7 +251,7 @@ export default function ZincIndustryPage() {
                   'Equipos certificados y operadores capacitados',
                   'Sin compromiso de largo plazo—usa solo cuando lo necesites'
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-emerald-50">
+                  <div key={i} className="flex items-center gap-3 text-slate-50">
                     <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
                     {item}
                   </div>
@@ -268,7 +269,7 @@ export default function ZincIndustryPage() {
                 ].map((item, i) => (
                   <div key={i} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
                     <div className="font-semibold text-white">{item.title}</div>
-                    <div className="text-sm text-emerald-100">{item.desc}</div>
+                    <div className="text-sm text-slate-100">{item.desc}</div>
                   </div>
                 ))}
               </div>
@@ -294,7 +295,7 @@ export default function ZincIndustryPage() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             <div>
-              <div className="text-6xl font-bold text-emerald-600 mb-4">01</div>
+              <div className="text-6xl font-bold text-slate-600 mb-4">01</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnóstico</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Evaluamos tu proceso, identificamos puntos críticos de separación, y dimensionamos la solución adecuada.
@@ -303,7 +304,7 @@ export default function ZincIndustryPage() {
             </div>
 
             <div>
-              <div className="text-6xl font-bold text-emerald-600 mb-4">02</div>
+              <div className="text-6xl font-bold text-slate-600 mb-4">02</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Movilización</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Trasladamos equipos a tu sitio, realizamos conexiones, y validamos operación con tu equipo técnico.
@@ -312,7 +313,7 @@ export default function ZincIndustryPage() {
             </div>
 
             <div>
-              <div className="text-6xl font-bold text-emerald-600 mb-4">03</div>
+              <div className="text-6xl font-bold text-slate-600 mb-4">03</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Operación</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Operamos y mantenemos los equipos. Tú te enfocas en producir zinc—nosotros en la separación sólido-líquido.
@@ -337,7 +338,7 @@ export default function ZincIndustryPage() {
                   'Sin mantención por tu cuenta'
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-slate-600 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
@@ -393,8 +394,8 @@ export default function ZincIndustryPage() {
               </div>
             </div>
 
-            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-8">
-              <div className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-6">Modelo Tecionic</div>
+            <div className="bg-slate-500/10 border border-slate-500/30 rounded-2xl p-8">
+              <div className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-6">Modelo Tecionic</div>
               <div className="space-y-4">
                 {[
                   'OPEX mensual predecible',
@@ -402,8 +403,8 @@ export default function ZincIndustryPage() {
                   'Servicio integral incluido',
                   'Escala según demanda'
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-emerald-100">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <div key={i} className="flex items-center gap-3 text-slate-100">
+                    <CheckCircle className="w-4 h-4 text-slate-300 flex-shrink-0" />
                     {item}
                   </div>
                 ))}

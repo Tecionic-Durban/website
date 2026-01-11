@@ -2197,6 +2197,250 @@
       "certification": "Ex-Proof certified equipment"
     }
   },
+  "lithiumIndustry": {
+    "hero": {
+      "title": "Your DLE pilot can't wait 18 months for filtration",
+      "subtitle": "The lithium race is won with speed. While others wait for civil works, permits and commissioning, you could be generating real process data. Tecionic arrives in weeks with everything needed to operate.",
+      "imageAlt": "Tecionic mobile filtration equipment"
+    },
+    "stakes": {
+      "title": "DLE will win. But DLE demands impeccable brine.",
+      "description": "Direct lithium extraction is replacing evaporation ponds. It reduces months to days, consumes less water, has smaller footprint. Projects that master DLE will lead the market.",
+      "subdescription": "But there's a problem: DLE membranes and adsorbents are sensitive. Clays, suspended solids, magnesium precipitates - any contaminant reduces efficiency and shortens equipment life that costs a fortune.",
+      "conclusion": "Solid-liquid separation isn't optional. It's the enabler of your DLE process.",
+      "problems": {
+        "traditional": {
+          "title": "The traditional problem",
+          "description": "Building fixed filtration infrastructure takes 12-18 months and several million dollars. Your pilot is on pause. Your window of opportunity closes."
+        },
+        "scale": {
+          "title": "The scale problem",
+          "description": "You size for future capacity and pay for equipment you don't use. Or you size for today and come up short when you scale."
+        },
+        "capital": {
+          "title": "The capital problem",
+          "description": "Every dollar you invest in filtration is a dollar that doesn't go to extractive capacity. Your board wants to see lithium produced, not iron installed."
+        }
+      }
+    },
+    "answer": {
+      "title": "Tecionic eliminates these three problems at once",
+      "description": "We arrive with ready equipment, personnel who operate them, maintenance included, and we scale with you. You pay a monthly fee for working filtration capacity. Zero CAPEX. Zero waiting. Zero rigidity."
+    },
+    "valueProps": {
+      "title": "What working with Tecionic means",
+      "speed": {
+        "title": "Start in weeks, not years",
+        "description": "Your competitors are waiting for construction permits. You already have centrifuges clarifying brine. Your pilot generates data while others are still in detailed engineering. That time advantage can define who leads the market."
+      },
+      "capital": {
+        "title": "Your capital produces lithium, not iron",
+        "description": "Instead of immobilizing millions in filtration equipment, that capital goes to expand your extractive capacity. Tecionic solves filtration with predictable OPEX. Your balance sheet stays clean, your board sees investment in production."
+      },
+      "flexibility": {
+        "title": "Scale when you want, not when you can",
+        "description": "Your project grows from pilot to demonstration to commercial. Need more capacity? We add equipment. Plan changed? We adjust. No oversized iron eating depreciation, no insufficient infrastructure slowing your growth."
+      },
+      "focus": {
+        "title": "You focus on lithium, we focus on filtration",
+        "description": "Our team operates the equipment, does maintenance, solves problems. Your people focus on what they know: optimizing extraction, not learning about centrifuges. 23 years doing this gave us the experience you don't need to develop."
+      }
+    },
+    "howWeWork": {
+      "title": "We don't sell equipment. We sell operating filtration capacity.",
+      "description": "After 23 years in mining we understood something: clients don't want to buy iron. They want their process to work. That's what we deliver.",
+      "subdescription": "Over 70% of Chilean copper mining works with us under this model. The same logic applies to lithium: you produce, we filter.",
+      "steps": {
+        "step1": {
+          "number": "01",
+          "title": "We evaluate your process together",
+          "description": "We understand what you need to filter, what volumes you handle, what quality you require. We define the equipment configuration that solves your specific problem."
+        },
+        "step2": {
+          "number": "02",
+          "title": "We mobilize in weeks",
+          "description": "Equipment arrives at your salar ready. Centrifuges, filter presses, whatever you need. No civil works, no construction permits, no waiting months."
+        },
+        "step3": {
+          "number": "03",
+          "title": "We operate with our team",
+          "description": "Tecionic personnel run the equipment. They know the machines, understand the processes, solve problems without you having to intervene. Maintenance included."
+        },
+        "step4": {
+          "number": "04",
+          "title": "We scale with you",
+          "description": "Your pilot worked and you need more capacity? We add equipment. Strategy changed? We adjust or withdraw. Total flexibility."
+        }
+      }
+    },
+    "applications": {
+      "badge": "Where we fit in",
+      "title": "Every step of your process has a point where filtration makes the difference",
+      "description": "Whether you use DLE, traditional evaporation, or a hybrid. Solid-liquid separation appears in multiple stages. These are the points where Tecionic adds value.",
+      "items": {
+        "preDle": {
+          "title": "Pre-DLE",
+          "description": "Your membranes and adsorbents cost a fortune and are sensitive to solids. Tecionic centrifuges deliver clarified brine that protects your DLE investment and maximizes critical equipment life.",
+          "result": "DLE investment protection"
+        },
+        "precipitation": {
+          "title": "Impurity removal",
+          "description": "LATAM brines come loaded with magnesium, calcium, boron. Their precipitation generates gelatinous sludges that are a nightmare. Tecionic filter presses handle these difficult materials without drama.",
+          "result": "Complex precipitate handling"
+        },
+        "carbonate": {
+          "title": "Lithium carbonate",
+          "description": "Your Li₂CO₃ needs washing to remove soluble impurities and filtration to reduce moisture. Controlled wash and compression cycles that deliver product ready for drying.",
+          "result": "Product that meets specification"
+        },
+        "water": {
+          "title": "Circuit closure",
+          "description": "Water in the salar is gold. Environmental permits require minimizing consumption. Process water clarification for recirculation. You reduce freshwater dependence and comply with regulations that get stricter every year.",
+          "result": "Environmental compliance"
+        },
+        "pilots": {
+          "title": "Process validation",
+          "description": "Before committing capital to commercial plant you need real data. Mobile equipment that supports your pilot, generates the information you need, and leaves when you're done. No permanent investment for a temporary phase.",
+          "result": "Real data without CAPEX"
+        }
+      }
+    },
+    "trackRecord": {
+      "badge": "Why trust Tecionic",
+      "title": "23 years. Over 70% of Chilean copper. Now lithium.",
+      "description": "We started in 2002 solving solid-liquid separation for copper SX/EW processes. Today most of Chile's major miners work with us.",
+      "subdescription": "In 2020 we expanded to lithium and potassium. The physics of separation is the same. What changes is the chemistry, and for that we adapt configurations and materials.",
+      "conclusion": "You're not experimenting with us. You're working with people who have been doing exactly this for decades.",
+      "stats": {
+        "years": { "value": "23", "label": "Years in mining", "sublabel": "Since 2002 operating at mines" },
+        "copper": { "value": "70%", "label": "Of Chilean copper", "sublabel": "Works with our model" },
+        "lithium": { "value": "2020", "label": "Lithium expansion", "sublabel": "Same expertise, new market" },
+        "latam": { "value": "LATAM", "label": "Regional coverage", "sublabel": "Chile, Peru, Argentina and more" }
+      }
+    },
+    "cta": {
+      "title": "Your competition is waiting for permits.",
+      "titleHighlight": "You could be operating.",
+      "description": "Tell us about your project. We'll show you how Tecionic can accelerate your timeline and free up capital for what really matters.",
+      "button": "Let's talk about your project",
+      "footer": {
+        "response": "Response in 24-48 hours",
+        "coverage": "Coverage across the Lithium Triangle",
+        "commitment": "No commitment"
+      }
+    }
+  },
+  "potassiumIndustry": {
+    "hero": {
+      "title": "100% operational continuity in your SX process",
+      "subtitle": "Mobile filtration that operates at every stage of solvent extraction—from E1 to coalescence—without stopping production.",
+      "imageAlt": "Tecionic mobile infrastructure for iodine production"
+    },
+    "opportunity": {
+      "title": "Where kerosene mixes with brine, cleanliness defines your production",
+      "description": "In iodide plants, every stage of the SX process accumulates particulate material. Keeping solutions clean means higher quality iodide and greater filtration capacity downstream.",
+      "cards": {
+        "extraction": {
+          "title": "Extraction Stages",
+          "description": "In E1 and E2, kerosene extracts free iodine from the cutting solution. Accumulated solids reduce contact efficiency and contaminate loaded kerosene."
+        },
+        "separation": {
+          "title": "Separation and Coalescence",
+          "description": "In S1 and coalescers, kerosene and iodide separate. Entrained solids make separation difficult and cause loss of valuable kerosene."
+        },
+        "filtration": {
+          "title": "Iodide to Filtration",
+          "description": "Iodide sent to company filtration arrives with solids load. Fewer solids means greater filtration and crystallization capacity."
+        }
+      }
+    },
+    "applications": {
+      "title": "Intervention at every stage of your SX process",
+      "description": "From the first extraction stage to coalescence, Tecionic filters where you need it—according to priorities informed by the plant manager.",
+      "useCases": {
+        "extraction": {
+          "title": "Filtration in Extraction Stages",
+          "description": "Continuous solids removal in E1, E2, and extraction stages without stopping kerosene flow. S30 pump suctions solution, filters solids, returns it clean to the stage.",
+          "result": "Zero stops due to particulate material accumulation."
+        },
+        "separation": {
+          "title": "Cleaning in Separation and Coalescence",
+          "description": "In S1 stages and coalescers (C), where kerosene and iodide separate, we remove entrained solids that affect kerosene micro-droplet recovery.",
+          "result": "Maximum kerosene recovery, less solvent loss."
+        },
+        "dialysis": {
+          "title": "Tank and Pool Dialysis",
+          "description": "Scheduled cleaning of twin tanks, settlers, and accumulation pools. Sediment removal without emptying or stopping circuit operation.",
+          "result": "Full storage capacity, no major stops."
+        },
+        "floors": {
+          "title": "Floor Cleaning from Accumulation",
+          "description": "Removal of accumulated solutions on process floors. Prevention of spills and cross-contamination between SX circuit stages.",
+          "result": "Clean process, contamination risk eliminated."
+        }
+      },
+      "capabilities": {
+        "title": "Daily effectiveness control",
+        "items": ["Inlet/outlet turbidity measurement", "KPI reports to plant manager", "S30 pump + mobile filter", "24/7 operation"]
+      }
+    },
+    "backup": {
+      "title": "Your plan B when fixed infrastructure fails",
+      "description": "Scheduled maintenance, unexpected failures, or production peaks—we deploy filtration capacity in 24-48 hours so your plant doesn't stop.",
+      "features": ["Emergency mobilization in 24-48 hours", "Certified equipment and trained operators", "No long-term commitment—use only when you need it"],
+      "scenarios": {
+        "title": "Scenarios where Tecionic backs you up",
+        "items": [
+          { "title": "Scheduled maintenance", "description": "Temporary capacity while your equipment is in service" },
+          { "title": "Excessive accumulation", "description": "Quick reinforcement when solids load increases" },
+          { "title": "Production increase", "description": "Additional capacity without permanent investment" },
+          { "title": "Process testing", "description": "Validation before investing in fixed infrastructure" }
+        ]
+      }
+    },
+    "howWeWork": {
+      "badge": "How we work",
+      "title": "From evaluation to operation in weeks",
+      "description": "A simple process to integrate filtration capacity into your SX plant, without the complexity of a capital project.",
+      "steps": {
+        "diagnosis": { "number": "01", "title": "Diagnosis", "description": "We evaluate your SX process, identify critical stages with the plant manager, and size the solution.", "timeline": "1-2 weeks" },
+        "mobilization": { "number": "02", "title": "Mobilization", "description": "We move equipment to your site, connect pump and filter to defined stages, and validate operation.", "timeline": "24-48 hours" },
+        "operation": { "number": "03", "title": "Operation", "description": "We operate and maintain the equipment. Daily turbidity measurement, reports to plant manager, adjustments as needed.", "timeline": "Continuous service" }
+      },
+      "keyDifference": {
+        "title": "The key difference",
+        "description": "We don't sell equipment—we deliver operational continuity. Our success is measured in zero stops and greater filtration capacity downstream.",
+        "benefits": ["No equipment bidding", "No project management", "No operator hiring", "No maintenance on your end"]
+      }
+    },
+    "model": {
+      "title": "Infrastructure without capital commitment",
+      "description": "The same model validated in copper and zinc operations applies to your iodide plant. Mobile equipment, specialized operation, predictable OPEX.",
+      "stats": {
+        "capex": { "value": "$0", "label": "Initial CAPEX" },
+        "mobilization": { "value": "24-48h", "label": "Mobilization" },
+        "continuity": { "value": "100%", "label": "Operational continuity" },
+        "maintenance": { "value": "Included", "label": "Maintenance and operation" }
+      },
+      "comparison": {
+        "fixed": {
+          "label": "Permanent Infrastructure",
+          "items": ["$1M-3M+ initial investment", "12-18 months implementation", "Maintenance on your own", "Fixed non-scalable capacity"]
+        },
+        "tecionic": {
+          "label": "Tecionic Model",
+          "items": ["Predictable monthly OPEX", "Operation in weeks", "Comprehensive service included", "Scales according to demand"]
+        }
+      }
+    },
+    "cta": {
+      "title": "Let's evaluate your SX process",
+      "description": "No-cost technical analysis to identify where mobile filtration adds value in your iodide or potassium plant.",
+      "button": "Request technical evaluation",
+      "contact": "contacto@tecionic.com",
+      "subtitle": "Active operations in SX plants"
+    }
+  },
   "aboutPage": {
     "hero": {
       "titleLine1": "About",

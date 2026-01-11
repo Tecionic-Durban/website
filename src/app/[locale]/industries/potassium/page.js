@@ -1,7 +1,8 @@
 'use client'
 
 import { useRouter, usePathname } from 'next/navigation'
-import { Filter, Droplets, Beaker, Layers, CheckCircle, ArrowRight, Shield, Play, RefreshCw } from 'lucide-react'
+import { Filter as FilterCarbon, Chemistry, Humidity, Layers as LayersCarbon, CheckmarkFilled, ArrowRight, Security, RenewableEnergy } from '@carbon/icons-react'
+import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { handleContactClick } from '@/utils/navigation'
 import gsap from 'gsap'
@@ -17,32 +18,32 @@ export default function PotassiumIndustryPage() {
 
   const useCases = [
     {
-      icon: Beaker,
+      icon: Chemistry,
       title: 'Filtración en Etapas de Extracción',
       description: 'Remoción continua de sólidos en E1, E2, y etapas de extracción sin detener el flujo de kerosene. Bomba S30 succiona solución, filtra sólidos, retorna limpia a la etapa.',
       result: 'Cero paradas por acumulación de material particulado.',
       color: 'purple'
     },
     {
-      icon: Layers,
+      icon: LayersCarbon,
       title: 'Limpieza en Separación y Coalescencia',
       description: 'En etapas S1 y coalescedores (C), donde kerosene y yoduro se separan, removemos sólidos arrastrados que afectan la recuperación de micro-gotas de kerosene.',
       result: 'Máxima recuperación de kerosene, menor pérdida de solvente.',
       color: 'blue'
     },
     {
-      icon: Droplets,
+      icon: Humidity,
       title: 'Diálisis de Estanques y Piscinas',
       description: 'Limpieza programada de estanques gemelos, settlers, y piscinas de acumulación. Remoción de sedimentos sin vaciar ni detener operación del circuito.',
       result: 'Capacidad de almacenamiento íntegra, sin paradas mayores.',
       color: 'amber'
     },
     {
-      icon: Filter,
+      icon: FilterCarbon,
       title: 'Limpieza de Lozas por Acumulación',
       description: 'Retiro de soluciones acumuladas en lozas de proceso. Prevención de derrames y contaminación cruzada entre etapas del circuito SX.',
       result: 'Proceso limpio, riesgo de contaminación eliminado.',
-      color: 'emerald'
+      color: 'violet'
     }
   ]
 
@@ -68,12 +69,12 @@ export default function PotassiumIndustryPage() {
       text: 'text-amber-700',
       result: 'bg-amber-100 text-amber-800'
     },
-    emerald: {
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-200',
-      icon: 'from-emerald-500 to-emerald-600',
-      text: 'text-emerald-700',
-      result: 'bg-emerald-100 text-emerald-800'
+    violet: {
+      bg: 'bg-violet-50',
+      border: 'border-violet-200',
+      icon: 'from-violet-500 to-violet-600',
+      text: 'text-violet-700',
+      result: 'bg-violet-100 text-violet-800'
     }
   }
 
@@ -133,7 +134,7 @@ export default function PotassiumIndustryPage() {
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-purple-800 rounded-xl flex items-center justify-center mb-6">
-                <Beaker className="w-6 h-6 text-white" />
+                <Chemistry size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Etapas de Extracción</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -143,7 +144,7 @@ export default function PotassiumIndustryPage() {
 
             <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-purple-800 rounded-xl flex items-center justify-center mb-6">
-                <Layers className="w-6 h-6 text-white" />
+                <LayersCarbon size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Separación y Coalescencia</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -153,7 +154,7 @@ export default function PotassiumIndustryPage() {
 
             <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-purple-800 rounded-xl flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6 text-white" />
+                <Security size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Yoduro a Filtrado</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -189,7 +190,7 @@ export default function PotassiumIndustryPage() {
 
                   <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
                     <div className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-6`}>
-                      <useCase.icon className={`w-6 h-6 ${colors.text}`} />
+                      <useCase.icon size={24} className={colors.text} />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -220,7 +221,7 @@ export default function PotassiumIndustryPage() {
                   'Operación 24/7'
                 ].map((item, i) => (
                   <span key={i} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    <span className="w-1.5 h-1.5 bg-purple-300 rounded-full"></span>
                     {item}
                   </span>
                 ))}
@@ -231,14 +232,14 @@ export default function PotassiumIndustryPage() {
       </section>
 
       {/* Backup / Contingencia */}
-      <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-700">
+      <section className="py-20 bg-gradient-to-br from-purple-600 to-purple-700">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-white mb-6">
                 Tu plan B cuando la infraestructura fija falla
               </h2>
-              <p className="text-xl text-emerald-50 leading-relaxed mb-8">
+              <p className="text-xl text-purple-50 leading-relaxed mb-8">
                 Mantenciones programadas, fallas imprevistas, o peaks de producción—desplegamos capacidad de filtración en 24-48 horas para que tu planta no pare.
               </p>
               <div className="space-y-4">
@@ -247,7 +248,7 @@ export default function PotassiumIndustryPage() {
                   'Equipos certificados y operadores capacitados',
                   'Sin compromiso de largo plazo—usa solo cuando lo necesites'
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-emerald-50">
+                  <div key={i} className="flex items-center gap-3 text-purple-50">
                     <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
                     {item}
                   </div>
@@ -265,7 +266,7 @@ export default function PotassiumIndustryPage() {
                 ].map((item, i) => (
                   <div key={i} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
                     <div className="font-semibold text-white">{item.title}</div>
-                    <div className="text-sm text-emerald-100">{item.desc}</div>
+                    <div className="text-sm text-purple-100">{item.desc}</div>
                   </div>
                 ))}
               </div>
@@ -291,7 +292,7 @@ export default function PotassiumIndustryPage() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             <div>
-              <div className="text-6xl font-bold text-emerald-600 mb-4">01</div>
+              <div className="text-6xl font-bold text-purple-600 mb-4">01</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnóstico</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Evaluamos tu proceso SX, identificamos etapas críticas con el jefe de planta, y dimensionamos la solución.
@@ -300,7 +301,7 @@ export default function PotassiumIndustryPage() {
             </div>
 
             <div>
-              <div className="text-6xl font-bold text-emerald-600 mb-4">02</div>
+              <div className="text-6xl font-bold text-purple-600 mb-4">02</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Movilización</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Trasladamos equipos a tu sitio, conectamos bomba y filtro a las etapas definidas, y validamos operación.
@@ -309,7 +310,7 @@ export default function PotassiumIndustryPage() {
             </div>
 
             <div>
-              <div className="text-6xl font-bold text-emerald-600 mb-4">03</div>
+              <div className="text-6xl font-bold text-purple-600 mb-4">03</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Operación</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Operamos y mantenemos los equipos. Medición diaria de turbidez, reportes a jefe de planta, ajustes según necesidad.
@@ -334,7 +335,7 @@ export default function PotassiumIndustryPage() {
                   'Sin mantención por tu cuenta'
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
@@ -390,8 +391,8 @@ export default function PotassiumIndustryPage() {
               </div>
             </div>
 
-            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-8">
-              <div className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-6">Modelo Tecionic</div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-8">
+              <div className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-6">Modelo Tecionic</div>
               <div className="space-y-4">
                 {[
                   'OPEX mensual predecible',
@@ -399,8 +400,8 @@ export default function PotassiumIndustryPage() {
                   'Servicio integral incluido',
                   'Escala según demanda'
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-emerald-100">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <div key={i} className="flex items-center gap-3 text-purple-100">
+                    <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
                     {item}
                   </div>
                 ))}
