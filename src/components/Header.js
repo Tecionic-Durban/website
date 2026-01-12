@@ -158,7 +158,7 @@ export default function Header() {
                         {activeServiceTab === 'operaciones' && (
                           <>
                             <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                              <a href="/services/filtration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/filtration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Filter className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -166,9 +166,9 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.filtration.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.filtration.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
 
-                              <a href="/services/organic-treatment" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/organic-treatment" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Chemistry className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -176,9 +176,9 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.organicTreatment.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.organicTreatment.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
 
-                              <a href="/services/concentrate-dehydration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/concentrate-dehydration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Layers className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -186,9 +186,9 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.concentrateDehydration.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.concentrateDehydration.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
 
-                              <a href="/services/fine-solids" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/fine-solids" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <CirclePacking className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -196,9 +196,9 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.fineSolids.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.fineSolids.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
 
-                              <a href="/services/ew-cleaning" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/ew-cleaning" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <BatteryCharging className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -206,7 +206,7 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.ewCleaning.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.ewCleaning.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
                             </div>
                           </>
                         )}
@@ -215,7 +215,7 @@ export default function Header() {
                         {activeServiceTab === 'analitica' && (
                           <>
                             <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                              <a href="/services/turbidity-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/turbidity-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-purple-50 to-purple-100 group-hover/item:from-purple-500 group-hover/item:to-purple-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Analytics className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -223,9 +223,9 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.turbidityMonitoring.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.turbidityMonitoring.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
 
-                              <a href="/services/tsf-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/tsf-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-purple-50 to-purple-100 group-hover/item:from-purple-500 group-hover/item:to-purple-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <ChartLineData className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -233,9 +233,9 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.tsfMonitoring.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.tsfMonitoring.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
 
-                              <a href="/services/tif-measurement" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/tif-measurement" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-purple-50 to-purple-100 group-hover/item:from-purple-500 group-hover/item:to-purple-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Meter className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -243,7 +243,7 @@ export default function Header() {
                                   <div className="font-medium">{t('header.services.tifMeasurement.name')}</div>
                                   <div className="text-xs text-gray-500">{t('header.services.tifMeasurement.description')}</div>
                                 </div>
-                              </a>
+                              </Link>
                             </div>
                           </>
                         )}
@@ -265,7 +265,7 @@ export default function Header() {
                             {t('header.specializedSectors')}
                           </div>
                           <div className="space-y-2">
-                            <a href="/industries/copper" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/copper" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">Cu</span>
                               </div>
@@ -273,9 +273,9 @@ export default function Header() {
                                 <div className="font-medium">{t('header.industries.copper.name')}</div>
                                 <div className="text-xs text-gray-500">{t('header.industries.copper.description')}</div>
                               </div>
-                            </a>
+                            </Link>
 
-                            <a href="/industries/zinc" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/zinc" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">Zn</span>
                               </div>
@@ -283,9 +283,9 @@ export default function Header() {
                                 <div className="font-medium">{t('header.industries.zinc.name')}</div>
                                 <div className="text-xs text-gray-500">{t('header.industries.zinc.description')}</div>
                               </div>
-                            </a>
+                            </Link>
 
-                            <a href="/industries/potassium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/potassium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">K</span>
                               </div>
@@ -293,9 +293,9 @@ export default function Header() {
                                 <div className="font-medium">{t('header.industries.potassium.name')}</div>
                                 <div className="text-xs text-gray-500">{t('header.industries.potassium.description')}</div>
                               </div>
-                            </a>
+                            </Link>
 
-                            <a href="/industries/lithium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/lithium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">Li</span>
                               </div>
@@ -303,9 +303,9 @@ export default function Header() {
                                 <div className="font-medium">{t('header.industries.lithium.name')}</div>
                                 <div className="text-xs text-gray-500">{t('header.industries.lithium.description')}</div>
                               </div>
-                            </a>
+                            </Link>
 
-                            <a href="/industries/crude-oil" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/crude-oil" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <RainDrop className="w-5 h-5 text-white" />
                               </div>
@@ -313,7 +313,7 @@ export default function Header() {
                                 <div className="font-medium">{t('header.industries.crudeOil.name')}</div>
                                 <div className="text-xs text-gray-500">{t('header.industries.crudeOil.description')}</div>
                               </div>
-                            </a>
+                            </Link>
                           </div>
                         </div>
 
@@ -358,12 +358,12 @@ export default function Header() {
                               </div>
                             </div>
 
-                            <a href="/case-studies/limpieza-celdas-ew" className="flex items-center justify-center w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
+                            <Link href="/casos-de-exito/limpieza-celdas-ew" className="flex items-center justify-center w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
                               {t('header.viewFullCase')}
                               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
                               </svg>
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -380,7 +380,7 @@ export default function Header() {
                         {t('header.resourceCenter')}
                       </div>
                       <div className="space-y-1">
-                        <a href="/casos-de-exito" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                        <Link href="/casos-de-exito" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                           <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                             <Document className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                           </div>
@@ -388,7 +388,7 @@ export default function Header() {
                             <div className="font-medium">{t('header.resourceLinks.caseStudies.name')}</div>
                             <div className="text-xs text-gray-500">{t('header.resourceLinks.caseStudies.description')}</div>
                           </div>
-                        </a>
+                        </Link>
 
                         <Link href="/tendencias-industria" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
                           <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
