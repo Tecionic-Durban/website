@@ -1,7 +1,8 @@
 'use client'
 
 import { useRouter, usePathname } from 'next/navigation'
-import { Filter as FilterCarbon, Chemistry, Humidity, Layers as LayersCarbon, CheckmarkFilled, ArrowRight, Security, RenewableEnergy } from '@carbon/icons-react'
+import { useTranslations } from 'next-intl'
+import { Filter as FilterCarbon, Chemistry, Humidity, Layers as LayersCarbon, ArrowRight, Security } from '@carbon/icons-react'
 import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { handleContactClick } from '@/utils/navigation'
@@ -15,34 +16,35 @@ if (typeof window !== 'undefined') {
 export default function PotassiumIndustryPage() {
   const router = useRouter()
   const pathname = usePathname()
+  const t = useTranslations('potassiumIndustry')
 
   const useCases = [
     {
       icon: Chemistry,
-      title: 'Filtración en Etapas de Extracción',
-      description: 'Remoción continua de sólidos en E1, E2, y etapas de extracción sin detener el flujo de kerosene. Bomba S30 succiona solución, filtra sólidos, retorna limpia a la etapa.',
-      result: 'Cero paradas por acumulación de material particulado.',
+      titleKey: 'applications.useCases.extraction.title',
+      descriptionKey: 'applications.useCases.extraction.description',
+      resultKey: 'applications.useCases.extraction.result',
       color: 'purple'
     },
     {
       icon: LayersCarbon,
-      title: 'Limpieza en Separación y Coalescencia',
-      description: 'En etapas S1 y coalescedores (C), donde kerosene y yoduro se separan, removemos sólidos arrastrados que afectan la recuperación de micro-gotas de kerosene.',
-      result: 'Máxima recuperación de kerosene, menor pérdida de solvente.',
+      titleKey: 'applications.useCases.separation.title',
+      descriptionKey: 'applications.useCases.separation.description',
+      resultKey: 'applications.useCases.separation.result',
       color: 'blue'
     },
     {
       icon: Humidity,
-      title: 'Diálisis de Estanques y Piscinas',
-      description: 'Limpieza programada de estanques gemelos, settlers, y piscinas de acumulación. Remoción de sedimentos sin vaciar ni detener operación del circuito.',
-      result: 'Capacidad de almacenamiento íntegra, sin paradas mayores.',
+      titleKey: 'applications.useCases.dialysis.title',
+      descriptionKey: 'applications.useCases.dialysis.description',
+      resultKey: 'applications.useCases.dialysis.result',
       color: 'amber'
     },
     {
       icon: FilterCarbon,
-      title: 'Limpieza de Lozas por Acumulación',
-      description: 'Retiro de soluciones acumuladas en lozas de proceso. Prevención de derrames y contaminación cruzada entre etapas del circuito SX.',
-      result: 'Proceso limpio, riesgo de contaminación eliminado.',
+      titleKey: 'applications.useCases.floors.title',
+      descriptionKey: 'applications.useCases.floors.description',
+      resultKey: 'applications.useCases.floors.result',
       color: 'violet'
     }
   ]
@@ -97,11 +99,11 @@ export default function PotassiumIndustryPage() {
             {/* Left - Content */}
             <div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-[1.1]">
-                100% continuidad operacional en tu proceso SX
+                {t('hero.title')}
               </h1>
 
               <p className="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed">
-                Filtración móvil que opera en cada etapa de extracción por solventes—desde E1 hasta coalescencia—sin detener producción.
+                {t('hero.subtitle')}
               </p>
             </div>
 
@@ -109,7 +111,7 @@ export default function PotassiumIndustryPage() {
             <div className="relative lg:h-[450px] h-[300px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/filtro_prensa_movil.png"
-                alt="Infraestructura móvil Tecionic para producción de yodo"
+                alt={t('hero.imageAlt')}
                 fill
                 className="object-cover"
                 priority
@@ -124,10 +126,10 @@ export default function PotassiumIndustryPage() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-              Donde el kerosene se mezcla con salmuera, la limpieza define tu producción
+              {t('opportunity.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              En plantas de yoduro, cada etapa del proceso SX acumula material particulado. Mantener soluciones limpias significa yoduro de mayor calidad y mayor capacidad de filtración corriente abajo.
+              {t('opportunity.description')}
             </p>
           </div>
 
@@ -136,9 +138,9 @@ export default function PotassiumIndustryPage() {
               <div className="w-12 h-12 bg-purple-800 rounded-xl flex items-center justify-center mb-6">
                 <Chemistry size={24} className="text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Etapas de Extracción</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('opportunity.cards.extraction.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                En E1 y E2, el kerosene extrae yodo libre de la cortadura. Sólidos acumulados reducen eficiencia de contacto y contaminan el kerosene cargado.
+                {t('opportunity.cards.extraction.description')}
               </p>
             </div>
 
@@ -146,9 +148,9 @@ export default function PotassiumIndustryPage() {
               <div className="w-12 h-12 bg-purple-800 rounded-xl flex items-center justify-center mb-6">
                 <LayersCarbon size={24} className="text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Separación y Coalescencia</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('opportunity.cards.separation.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                En S1 y coalescedores, kerosene y yoduro se separan. Sólidos arrastrados dificultan la separación y causan pérdida de kerosene valioso.
+                {t('opportunity.cards.separation.description')}
               </p>
             </div>
 
@@ -156,9 +158,9 @@ export default function PotassiumIndustryPage() {
               <div className="w-12 h-12 bg-purple-800 rounded-xl flex items-center justify-center mb-6">
                 <Security size={24} className="text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Yoduro a Filtrado</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('opportunity.cards.filtration.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                El yoduro enviado a filtrado de compañía llega con carga de sólidos. Menos sólidos significa mayor capacidad de filtración y cristalización.
+                {t('opportunity.cards.filtration.description')}
               </p>
             </div>
           </div>
@@ -172,10 +174,10 @@ export default function PotassiumIndustryPage() {
           {/* Header */}
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em] mb-6">
-              Intervención en cada etapa de tu proceso SX
+              {t('applications.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Desde la primera etapa de extracción hasta coalescencia, Tecionic filtra donde tú lo necesites—según las prioridades informadas por el jefe de planta.
+              {t('applications.description')}
             </p>
           </div>
 
@@ -192,13 +194,13 @@ export default function PotassiumIndustryPage() {
                     <div className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-6`}>
                       <useCase.icon size={24} className={colors.text} />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{t(useCase.titleKey)}</h3>
                     <p className="text-gray-600 leading-relaxed mb-4">
-                      {useCase.description}
+                      {t(useCase.descriptionKey)}
                     </p>
                     <div className="flex items-center gap-2">
                       <CheckCircle className={`w-4 h-4 ${colors.text}`} />
-                      <span className="text-sm text-gray-600">{useCase.result}</span>
+                      <span className="text-sm text-gray-600">{t(useCase.resultKey)}</span>
                     </div>
                   </div>
                 </div>
@@ -212,17 +214,12 @@ export default function PotassiumIndustryPage() {
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
             <div className="flex-1">
-              <h4 className="text-xl font-bold text-white mb-2">Control de efectividad diario</h4>
+              <h4 className="text-xl font-bold text-white mb-2">{t('applications.capabilities.title')}</h4>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-purple-200">
-                {[
-                  'Medición turbidez entrada/salida',
-                  'Reporte KPIs a jefe de planta',
-                  'Bomba S30 + filtro móvil',
-                  'Operación 24/7'
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <span key={i} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-purple-300 rounded-full"></span>
-                    {item}
+                    {t(`applications.capabilities.items.${i}`)}
                   </span>
                 ))}
               </div>
@@ -237,36 +234,27 @@ export default function PotassiumIndustryPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-white mb-6">
-                Tu plan B cuando la infraestructura fija falla
+                {t('backup.title')}
               </h2>
               <p className="text-xl text-purple-50 leading-relaxed mb-8">
-                Mantenciones programadas, fallas imprevistas, o peaks de producción—desplegamos capacidad de filtración en 24-48 horas para que tu planta no pare.
+                {t('backup.description')}
               </p>
               <div className="space-y-4">
-                {[
-                  'Movilización de emergencia en 24-48 horas',
-                  'Equipos certificados y operadores capacitados',
-                  'Sin compromiso de largo plazo—usa solo cuando lo necesites'
-                ].map((item, i) => (
+                {[0, 1, 2].map((i) => (
                   <div key={i} className="flex items-center gap-3 text-purple-50">
                     <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                    {item}
+                    {t(`backup.features.${i}`)}
                   </div>
                 ))}
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-6">Escenarios donde Tecionic te respalda</h3>
+              <h3 className="text-xl font-bold text-white mb-6">{t('backup.scenarios.title')}</h3>
               <div className="space-y-4">
-                {[
-                  { title: 'Mantención programada', desc: 'Capacidad temporal mientras tus equipos están en servicio' },
-                  { title: 'Acumulación excesiva', desc: 'Refuerzo rápido cuando la carga de sólidos aumenta' },
-                  { title: 'Aumento de producción', desc: 'Capacidad adicional sin inversión permanente' },
-                  { title: 'Pruebas de proceso', desc: 'Validación antes de invertir en infraestructura fija' }
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <div key={i} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                    <div className="font-semibold text-white">{item.title}</div>
-                    <div className="text-sm text-purple-100">{item.desc}</div>
+                    <div className="font-semibold text-white">{t(`backup.scenarios.items.${i}.title`)}</div>
+                    <div className="text-sm text-purple-100">{t(`backup.scenarios.items.${i}.description`)}</div>
                   </div>
                 ))}
               </div>
@@ -280,63 +268,58 @@ export default function PotassiumIndustryPage() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mb-16">
             <div className="text-purple-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-              Cómo trabajamos
+              {t('howWeWork.badge')}
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              De la evaluación a la operación en semanas
+              {t('howWeWork.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Un proceso simple para integrar capacidad de filtración a tu planta SX, sin la complejidad de un proyecto de capital.
+              {t('howWeWork.description')}
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             <div>
-              <div className="text-6xl font-bold text-purple-600 mb-4">01</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnóstico</h3>
+              <div className="text-6xl font-bold text-purple-600 mb-4">{t('howWeWork.steps.diagnosis.number')}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{t('howWeWork.steps.diagnosis.title')}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Evaluamos tu proceso SX, identificamos etapas críticas con el jefe de planta, y dimensionamos la solución.
+                {t('howWeWork.steps.diagnosis.description')}
               </p>
-              <div className="text-sm text-gray-500">1-2 semanas</div>
+              <div className="text-sm text-gray-500">{t('howWeWork.steps.diagnosis.timeline')}</div>
             </div>
 
             <div>
-              <div className="text-6xl font-bold text-purple-600 mb-4">02</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Movilización</h3>
+              <div className="text-6xl font-bold text-purple-600 mb-4">{t('howWeWork.steps.mobilization.number')}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{t('howWeWork.steps.mobilization.title')}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Trasladamos equipos a tu sitio, conectamos bomba y filtro a las etapas definidas, y validamos operación.
+                {t('howWeWork.steps.mobilization.description')}
               </p>
-              <div className="text-sm text-gray-500">24-48 horas</div>
+              <div className="text-sm text-gray-500">{t('howWeWork.steps.mobilization.timeline')}</div>
             </div>
 
             <div>
-              <div className="text-6xl font-bold text-purple-600 mb-4">03</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Operación</h3>
+              <div className="text-6xl font-bold text-purple-600 mb-4">{t('howWeWork.steps.operation.number')}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{t('howWeWork.steps.operation.title')}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Operamos y mantenemos los equipos. Medición diaria de turbidez, reportes a jefe de planta, ajustes según necesidad.
+                {t('howWeWork.steps.operation.description')}
               </p>
-              <div className="text-sm text-gray-500">Servicio continuo</div>
+              <div className="text-sm text-gray-500">{t('howWeWork.steps.operation.timeline')}</div>
             </div>
           </div>
 
           <div className="mt-12 p-8 bg-gray-50 rounded-2xl">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">La diferencia clave</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{t('howWeWork.keyDifference.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  No vendemos equipos—entregamos continuidad operacional. Nuestro éxito se mide en cero paradas y mayor capacidad de filtración corriente abajo.
+                  {t('howWeWork.keyDifference.description')}
                 </p>
               </div>
               <div className="space-y-3">
-                {[
-                  'Sin licitación de equipos',
-                  'Sin gestión de proyecto',
-                  'Sin contratación de operadores',
-                  'Sin mantención por tu cuenta'
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-gray-700">{t(`howWeWork.keyDifference.benefits.${i}`)}</span>
                   </div>
                 ))}
               </div>
@@ -350,24 +333,19 @@ export default function PotassiumIndustryPage() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black mb-6">
-              Infraestructura sin compromiso de capital
+              {t('model.title')}
             </h2>
             <p className="text-xl text-purple-200 leading-relaxed">
-              El mismo modelo validado en operaciones de cobre y zinc aplica a tu planta de yoduro. Equipos móviles, operación especializada, OPEX predecible.
+              {t('model.description')}
             </p>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              { value: '$0', label: 'CAPEX inicial' },
-              { value: '24-48h', label: 'Movilización' },
-              { value: '100%', label: 'Continuidad operacional' },
-              { value: 'Incluida', label: 'Mantención y operación' }
-            ].map((stat, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
-                <div className="text-3xl lg:text-4xl font-black text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-purple-300">{stat.label}</div>
+            {['capex', 'mobilization', 'continuity', 'maintenance'].map((key) => (
+              <div key={key} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                <div className="text-3xl lg:text-4xl font-black text-white mb-2">{t(`model.stats.${key}.value`)}</div>
+                <div className="text-sm text-purple-300">{t(`model.stats.${key}.label`)}</div>
               </div>
             ))}
           </div>
@@ -375,34 +353,24 @@ export default function PotassiumIndustryPage() {
           {/* Comparison */}
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <div className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-6">Infraestructura Permanente</div>
+              <div className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-6">{t('model.comparison.fixed.label')}</div>
               <div className="space-y-4">
-                {[
-                  '$1M-3M+ inversión inicial',
-                  '12-18 meses implementación',
-                  'Mantención por cuenta propia',
-                  'Capacidad fija no escalable'
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <div key={i} className="flex items-center gap-3 text-purple-200">
                     <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
-                    {item}
+                    {t(`model.comparison.fixed.items.${i}`)}
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-8">
-              <div className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-6">Modelo Tecionic</div>
+              <div className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-6">{t('model.comparison.tecionic.label')}</div>
               <div className="space-y-4">
-                {[
-                  'OPEX mensual predecible',
-                  'Operación en semanas',
-                  'Servicio integral incluido',
-                  'Escala según demanda'
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <div key={i} className="flex items-center gap-3 text-purple-100">
                     <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
-                    {item}
+                    {t(`model.comparison.tecionic.items.${i}`)}
                   </div>
                 ))}
               </div>
@@ -416,25 +384,25 @@ export default function PotassiumIndustryPage() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
-              Evaluemos tu proceso SX
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-gray-400 mb-10 leading-relaxed">
-              Análisis técnico sin costo para identificar dónde la filtración móvil agrega valor en tu planta de yoduro o potasio.
+              {t('cta.description')}
             </p>
 
             <button
               onClick={(e) => handleContactClick(e, router, pathname)}
               className="inline-flex items-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 text-lg"
             >
-              Solicitar evaluación técnica
+              {t('cta.button')}
               <ArrowRight className="w-5 h-5" />
             </button>
 
             <div className="mt-12 pt-8 border-t border-white/10">
               <div className="flex flex-col sm:flex-row justify-center items-center gap-6 text-sm text-gray-400">
-                <span>contacto@tecionic.com</span>
+                <span>{t('cta.contact')}</span>
                 <span className="hidden sm:block">•</span>
-                <span>Operaciones activas en plantas SX</span>
+                <span>{t('cta.subtitle')}</span>
               </div>
             </div>
           </div>

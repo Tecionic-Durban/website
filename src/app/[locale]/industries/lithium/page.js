@@ -3,8 +3,8 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
-import { RainDrop, Chemistry, Industry, CheckmarkFilled, ArrowRight, Time, UserMultiple, Tools, Recycle, Growth, Settings } from '@carbon/icons-react'
+import { useLocale, useTranslations } from 'next-intl'
+import { RainDrop, Chemistry, Industry, ArrowRight, Time, UserMultiple, Recycle, Growth, Settings } from '@carbon/icons-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -14,6 +14,7 @@ if (typeof window !== 'undefined') {
 
 export default function LithiumIndustryPage() {
   const locale = useLocale()
+  const t = useTranslations('lithiumIndustry')
   const stickyScrollRef = useRef(null)
   const scrollContentRef = useRef(null)
 
@@ -50,19 +51,17 @@ export default function LithiumIndustryPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="max-w-xl">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-[1.1]">
-                Tu piloto DLE no puede esperar 18 meses por filtración
+                {t('hero.title')}
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                La carrera del litio se gana con velocidad. Mientras otros esperan obra civil,
-                permisos y comisionamiento, tú podrías estar generando datos de proceso reales.
-                Tecionic llega en semanas con todo lo necesario para operar.
+                {t('hero.subtitle')}
               </p>
             </div>
 
             <div className="relative lg:h-[450px] h-[300px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/filtro_prensa_movil.png"
-                alt="Equipos móviles de filtración Tecionic"
+                alt={t('hero.imageAlt')}
                 fill
                 className="object-cover"
                 priority
@@ -78,43 +77,36 @@ export default function LithiumIndustryPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                DLE va a ganar. Pero DLE exige salmuera impecable.
+                {t('stakes.title')}
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                La extracción directa de litio está reemplazando las pozas de evaporación.
-                Reduce meses a días, consume menos agua, tiene menor huella. Los proyectos que dominen DLE
-                van a liderar el mercado.
+                {t('stakes.description')}
               </p>
               <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                Pero hay un problema: las membranas y adsorbentes DLE son sensibles.
-                Arcillas, sólidos suspendidos, precipitados de magnesio - cualquier contaminante
-                reduce eficiencia y acorta vida útil de equipos que cuestan una fortuna.
+                {t('stakes.subdescription')}
               </p>
               <p className="text-lg text-white font-semibold">
-                La separación sólido-líquido no es opcional. Es el habilitador de tu proceso DLE.
+                {t('stakes.conclusion')}
               </p>
             </div>
 
             <div className="space-y-8">
               <div className="border-l-4 border-cyan-500 pl-6">
-                <div className="text-2xl font-bold text-cyan-400 mb-2">El problema tradicional</div>
+                <div className="text-2xl font-bold text-cyan-400 mb-2">{t('stakes.problems.traditional.title')}</div>
                 <div className="text-gray-300">
-                  Construir infraestructura de filtración fija toma 12-18 meses y varios millones de dólares.
-                  Tu piloto queda en pausa. Tu ventana de oportunidad se cierra.
+                  {t('stakes.problems.traditional.description')}
                 </div>
               </div>
               <div className="border-l-4 border-cyan-500 pl-6">
-                <div className="text-2xl font-bold text-cyan-400 mb-2">El problema de escala</div>
+                <div className="text-2xl font-bold text-cyan-400 mb-2">{t('stakes.problems.scale.title')}</div>
                 <div className="text-gray-300">
-                  Dimensionas para tu capacidad futura y pagas por equipos que no usas.
-                  O dimensionas para hoy y quedas corto cuando escalas.
+                  {t('stakes.problems.scale.description')}
                 </div>
               </div>
               <div className="border-l-4 border-cyan-500 pl-6">
-                <div className="text-2xl font-bold text-cyan-400 mb-2">El problema de capital</div>
+                <div className="text-2xl font-bold text-cyan-400 mb-2">{t('stakes.problems.capital.title')}</div>
                 <div className="text-gray-300">
-                  Cada dólar que inviertes en filtración es un dólar que no va a capacidad extractiva.
-                  Tu directorio quiere ver litio producido, no fierro instalado.
+                  {t('stakes.problems.capital.description')}
                 </div>
               </div>
             </div>
@@ -127,11 +119,10 @@ export default function LithiumIndustryPage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl lg:text-5xl font-black mb-8">
-              Tecionic elimina estos tres problemas de un golpe
+              {t('answer.title')}
             </h2>
             <p className="text-xl text-cyan-100 leading-relaxed">
-              Llegamos con equipos listos, personal que los opera, mantención incluida, y escalamos contigo.
-              Tú pagas una tarifa mensual por capacidad de filtración funcionando. Cero CAPEX. Cero espera. Cero rigidez.
+              {t('answer.description')}
             </p>
           </div>
         </div>
@@ -141,7 +132,7 @@ export default function LithiumIndustryPage() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-16 text-center">
-            Lo que significa trabajar con Tecionic
+            {t('valueProps.title')}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
@@ -151,11 +142,9 @@ export default function LithiumIndustryPage() {
                 <Time size={32} className="text-cyan-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Arrancas en semanas, no en años</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('valueProps.speed.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Tus competidores están esperando permisos de construcción. Tú ya tienes centrífugas clarificando salmuera.
-                  Tu piloto genera datos mientras otros todavía están en ingeniería de detalle.
-                  Esa ventaja de tiempo puede definir quién lidera el mercado.
+                  {t('valueProps.speed.description')}
                 </p>
               </div>
             </div>
@@ -166,11 +155,9 @@ export default function LithiumIndustryPage() {
                 <Growth size={32} className="text-cyan-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Tu capital produce litio, no fierro</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('valueProps.capital.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  En vez de inmovilizar millones en equipos de filtración, ese capital va a expandir tu capacidad extractiva.
-                  La filtración la resuelve Tecionic con OPEX predecible. Tu balance queda limpio,
-                  tu directorio ve inversión en producción.
+                  {t('valueProps.capital.description')}
                 </p>
               </div>
             </div>
@@ -181,11 +168,9 @@ export default function LithiumIndustryPage() {
                 <Settings size={32} className="text-cyan-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Escalas cuando quieres, no cuando puedes</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('valueProps.flexibility.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Tu proyecto crece de piloto a demostración a comercial. ¿Necesitas más capacidad? Agregamos equipos.
-                  ¿Cambió el plan? Ajustamos. No hay fierro sobredimensionado comiendo depreciación,
-                  ni infraestructura insuficiente frenando tu crecimiento.
+                  {t('valueProps.flexibility.description')}
                 </p>
               </div>
             </div>
@@ -196,11 +181,9 @@ export default function LithiumIndustryPage() {
                 <UserMultiple size={32} className="text-cyan-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Te enfocas en litio, nosotros en filtración</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('valueProps.focus.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Nuestro equipo opera los equipos, hace la mantención, resuelve los problemas.
-                  Tu gente se dedica a lo que sabe: optimizar extracción, no a aprender sobre centrífugas.
-                  23 años haciendo esto nos dieron la experiencia que tú no necesitas desarrollar.
+                  {t('valueProps.focus.description')}
                 </p>
               </div>
             </div>
@@ -215,53 +198,47 @@ export default function LithiumIndustryPage() {
 
             <div className="lg:sticky lg:top-32">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                No vendemos equipos. Vendemos capacidad de filtración operando.
+                {t('howWeWork.title')}
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Después de 23 años en minería entendimos algo: los clientes no quieren comprar fierro.
-                Quieren que su proceso funcione. Eso es lo que entregamos.
+                {t('howWeWork.description')}
               </p>
               <p className="text-lg text-gray-500 leading-relaxed">
-                Más del 70% de la minería de cobre en Chile trabaja con nosotros bajo este modelo.
-                La misma lógica aplica a litio: tú produces, nosotros filtramos.
+                {t('howWeWork.subdescription')}
               </p>
             </div>
 
             <div ref={scrollContentRef} className="space-y-12">
 
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                <div className="text-3xl font-bold text-cyan-600 mb-2">01</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Evaluamos tu proceso juntos</h3>
+                <div className="text-3xl font-bold text-cyan-600 mb-2">{t('howWeWork.steps.step1.number')}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('howWeWork.steps.step1.title')}</h3>
                 <p className="text-gray-600">
-                  Entendemos qué necesitas filtrar, qué volúmenes manejas, qué calidad requieres.
-                  Definimos la configuración de equipos que resuelve tu problema específico.
+                  {t('howWeWork.steps.step1.description')}
                 </p>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                <div className="text-3xl font-bold text-cyan-600 mb-2">02</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Movilizamos en semanas</h3>
+                <div className="text-3xl font-bold text-cyan-600 mb-2">{t('howWeWork.steps.step2.number')}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('howWeWork.steps.step2.title')}</h3>
                 <p className="text-gray-600">
-                  Equipos llegan a tu salar listos. Centrífugas, filtros prensa, lo que necesites.
-                  Sin obra civil, sin permisos de construcción, sin esperar meses.
+                  {t('howWeWork.steps.step2.description')}
                 </p>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                <div className="text-3xl font-bold text-cyan-600 mb-2">03</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Operamos con nuestro equipo</h3>
+                <div className="text-3xl font-bold text-cyan-600 mb-2">{t('howWeWork.steps.step3.number')}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('howWeWork.steps.step3.title')}</h3>
                 <p className="text-gray-600">
-                  Personal Tecionic corre los equipos. Conocen las máquinas, entienden los procesos,
-                  resuelven problemas sin que tengas que intervenir. Mantención incluida.
+                  {t('howWeWork.steps.step3.description')}
                 </p>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                <div className="text-3xl font-bold text-cyan-600 mb-2">04</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Escalamos contigo</h3>
+                <div className="text-3xl font-bold text-cyan-600 mb-2">{t('howWeWork.steps.step4.number')}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('howWeWork.steps.step4.title')}</h3>
                 <p className="text-gray-600">
-                  ¿Tu piloto funcionó y necesitas más capacidad? Agregamos equipos.
-                  ¿Cambió la estrategia? Ajustamos o nos retiramos. Flexibilidad total.
+                  {t('howWeWork.steps.step4.description')}
                 </p>
               </div>
 
@@ -275,14 +252,13 @@ export default function LithiumIndustryPage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-4">
             <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-            <span className="text-sm font-semibold text-cyan-400">Dónde entramos</span>
+            <span className="text-sm font-semibold text-cyan-400">{t('applications.badge')}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-black mb-4">
-            Cada paso de tu proceso tiene un punto donde la filtración marca la diferencia
+            {t('applications.title')}
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl">
-            No importa si usas DLE, evaporación tradicional, o un híbrido. La separación sólido-líquido
-            aparece en múltiples etapas. Estos son los puntos donde Tecionic agrega valor.
+            {t('applications.description')}
           </p>
         </div>
 
@@ -300,13 +276,11 @@ export default function LithiumIndustryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
                   <RainDrop size={28} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Antes de DLE</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('applications.items.preDle.title')}</h3>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Tus membranas y adsorbentes cuestan una fortuna y son sensibles a sólidos.
-                  Centrífugas Tecionic entregan salmuera clarificada que protege tu inversión DLE
-                  y maximiza la vida útil de equipos críticos.
+                  {t('applications.items.preDle.description')}
                 </p>
-                <div className="text-cyan-400 font-semibold">→ Protección de inversión DLE</div>
+                <div className="text-cyan-400 font-semibold">→ {t('applications.items.preDle.result')}</div>
               </div>
             </div>
 
@@ -316,13 +290,11 @@ export default function LithiumIndustryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
                   <Chemistry size={28} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Remoción de impurezas</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('applications.items.precipitation.title')}</h3>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Las salmueras de LATAM vienen cargadas de magnesio, calcio, boro.
-                  Su precipitación genera lodos gelatinosos que son una pesadilla.
-                  Filtros prensa Tecionic manejan estos materiales difíciles sin dramas.
+                  {t('applications.items.precipitation.description')}
                 </p>
-                <div className="text-cyan-400 font-semibold">→ Manejo de precipitados complejos</div>
+                <div className="text-cyan-400 font-semibold">→ {t('applications.items.precipitation.result')}</div>
               </div>
             </div>
 
@@ -332,12 +304,11 @@ export default function LithiumIndustryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
                   <Industry size={28} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Carbonato de litio</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('applications.items.carbonate.title')}</h3>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Tu Li₂CO₃ necesita lavado para remover impurezas solubles y filtración para reducir humedad.
-                  Ciclos controlados de lavado y compresión que entregan producto listo para secado.
+                  {t('applications.items.carbonate.description')}
                 </p>
-                <div className="text-cyan-400 font-semibold">→ Producto que cumple especificación</div>
+                <div className="text-cyan-400 font-semibold">→ {t('applications.items.carbonate.result')}</div>
               </div>
             </div>
 
@@ -347,13 +318,11 @@ export default function LithiumIndustryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
                   <Recycle size={28} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Cierre de circuitos</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('applications.items.water.title')}</h3>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  El agua en el salar es oro. Los permisos ambientales exigen minimizar consumo.
-                  Clarificación de aguas de proceso para recirculación. Reduces dependencia de agua fresca
-                  y cumples con regulaciones que cada año son más estrictas.
+                  {t('applications.items.water.description')}
                 </p>
-                <div className="text-cyan-400 font-semibold">→ Cumplimiento ambiental</div>
+                <div className="text-cyan-400 font-semibold">→ {t('applications.items.water.result')}</div>
               </div>
             </div>
 
@@ -363,13 +332,11 @@ export default function LithiumIndustryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
                   <Settings size={28} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Validación de proceso</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('applications.items.pilots.title')}</h3>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Antes de comprometer capital en planta comercial necesitas datos reales.
-                  Equipos móviles que soportan tu piloto, generan la información que necesitas,
-                  y se van cuando terminas. Sin inversión permanente para una fase temporal.
+                  {t('applications.items.pilots.description')}
                 </p>
-                <div className="text-cyan-400 font-semibold">→ Datos reales sin CAPEX</div>
+                <div className="text-cyan-400 font-semibold">→ {t('applications.items.pilots.result')}</div>
               </div>
             </div>
 
@@ -384,56 +351,53 @@ export default function LithiumIndustryPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="text-cyan-600 text-sm font-semibold mb-4 uppercase tracking-wider">
-                Por qué confiar en Tecionic
+                {t('trackRecord.badge')}
               </div>
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                23 años. Más de 70% del cobre chileno. Ahora litio.
+                {t('trackRecord.title')}
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Comenzamos en 2002 resolviendo separación sólido-líquido para procesos SX/EW de cobre.
-                Hoy la mayoría de las grandes mineras de Chile trabajan con nosotros.
+                {t('trackRecord.description')}
               </p>
               <p className="text-lg text-gray-500 leading-relaxed mb-6">
-                En 2020 expandimos a litio y potasio. La física de la separación es la misma.
-                Lo que cambia es la química, y para eso adaptamos configuraciones y materiales.
+                {t('trackRecord.subdescription')}
               </p>
               <p className="text-lg text-gray-700 font-semibold">
-                No estás experimentando con nosotros. Estás trabajando con gente que lleva
-                décadas haciendo exactamente esto.
+                {t('trackRecord.conclusion')}
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-3xl p-8 lg:p-10">
               <div className="space-y-8">
                 <div className="flex items-center gap-6">
-                  <div className="text-5xl font-black text-cyan-600">23</div>
+                  <div className="text-5xl font-black text-cyan-600">{t('trackRecord.stats.years.value')}</div>
                   <div>
-                    <div className="font-bold text-gray-900">Años en minería</div>
-                    <div className="text-gray-600 text-sm">Desde 2002 operando en faenas</div>
+                    <div className="font-bold text-gray-900">{t('trackRecord.stats.years.label')}</div>
+                    <div className="text-gray-600 text-sm">{t('trackRecord.stats.years.sublabel')}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-6">
-                  <div className="text-5xl font-black text-cyan-600">70%</div>
+                  <div className="text-5xl font-black text-cyan-600">{t('trackRecord.stats.copper.value')}</div>
                   <div>
-                    <div className="font-bold text-gray-900">Del cobre chileno</div>
-                    <div className="text-gray-600 text-sm">Trabaja con nuestro modelo</div>
+                    <div className="font-bold text-gray-900">{t('trackRecord.stats.copper.label')}</div>
+                    <div className="text-gray-600 text-sm">{t('trackRecord.stats.copper.sublabel')}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-6">
-                  <div className="text-5xl font-black text-cyan-600">2020</div>
+                  <div className="text-5xl font-black text-cyan-600">{t('trackRecord.stats.lithium.value')}</div>
                   <div>
-                    <div className="font-bold text-gray-900">Expansión a litio</div>
-                    <div className="text-gray-600 text-sm">Misma expertise, nuevo mercado</div>
+                    <div className="font-bold text-gray-900">{t('trackRecord.stats.lithium.label')}</div>
+                    <div className="text-gray-600 text-sm">{t('trackRecord.stats.lithium.sublabel')}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-6">
-                  <div className="text-5xl font-black text-cyan-600">LATAM</div>
+                  <div className="text-5xl font-black text-cyan-600">{t('trackRecord.stats.latam.value')}</div>
                   <div>
-                    <div className="font-bold text-gray-900">Cobertura regional</div>
-                    <div className="text-gray-600 text-sm">Chile, Perú, Argentina y más</div>
+                    <div className="font-bold text-gray-900">{t('trackRecord.stats.latam.label')}</div>
+                    <div className="text-gray-600 text-sm">{t('trackRecord.stats.latam.sublabel')}</div>
                   </div>
                 </div>
               </div>
@@ -448,25 +412,24 @@ export default function LithiumIndustryPage() {
 
         <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Tu competencia está esperando permisos.<br />
-            <span className="text-cyan-400">Tú podrías estar operando.</span>
+            {t('cta.title')}<br />
+            <span className="text-cyan-400">{t('cta.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-300 mb-10">
-            Cuéntanos sobre tu proyecto. Te mostramos cómo Tecionic puede acelerar tu timeline
-            y liberar capital para lo que realmente importa.
+            {t('cta.description')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={`/${locale}/contact`} className="inline-flex items-center px-8 py-4 bg-cyan-500 text-white font-bold rounded-lg hover:bg-cyan-400 transition-colors shadow-xl shadow-cyan-500/20">
-              Conversemos sobre tu proyecto
+            <Link href={`/${locale}/contacto`} className="inline-flex items-center px-8 py-4 bg-cyan-500 text-white font-bold rounded-lg hover:bg-cyan-400 transition-colors shadow-xl shadow-cyan-500/20">
+              {t('cta.button')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-8 text-gray-400 text-sm">
-            <span>Respuesta en 24-48 horas</span>
-            <span>Cobertura en todo el Triángulo del Litio</span>
-            <span>Sin compromiso</span>
+            <span>{t('cta.footer.response')}</span>
+            <span>{t('cta.footer.coverage')}</span>
+            <span>{t('cta.footer.commitment')}</span>
           </div>
         </div>
       </section>
