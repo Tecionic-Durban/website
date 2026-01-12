@@ -958,6 +958,148 @@
       "description": "Less water means more useful product. Meet commercial specifications, reduce transportation costs, and recover value from your concentrates and sludges with high-pressure mobile filter presses.",
       "cta": "Request Evaluation"
     },
+    "keyBenefits": {
+      "title": "Value in every drop we remove",
+      "items": {
+        "transport": {
+          "title": "Reduce transportation costs",
+          "description": "Less water = less weight. Save up to 30% on logistics costs."
+        },
+        "specs": {
+          "title": "Meet specifications",
+          "description": "Achieve the moisture required by smelters. Avoid commercial penalties."
+        },
+        "production": {
+          "title": "Increase your production",
+          "description": "Scale production without expanding the plant. Don't let equipment sizing limit you."
+        },
+        "storage": {
+          "title": "Simplified storage",
+          "description": "Dry concentrate stacks and stores without tailings ponds or containment pools."
+        }
+      }
+    },
+    "costStats": {
+      "items": [
+        {
+          "title": "Moisture reduction up to 95%",
+          "description": "High-pressure filters remove water that adds no value. Each percentage point less is weight you don't transport or pay for."
+        },
+        {
+          "title": "Shipping without delays or demurrage",
+          "description": "Concentrate above TML (9.1%) cannot be legally loaded. With guaranteed moisture below TML, the ship loads immediately. No waiting that costs $15-25K USD/day."
+        },
+        {
+          "title": "Production protected during maintenance",
+          "description": "When your main filter is under maintenance, our mobile equipment maintains production. Avoid million-dollar losses with a service that typically pays for itself in less than a day of operation."
+        },
+        {
+          "title": "Extra capacity without capital investment",
+          "description": "A second fixed filter requires millions in CAPEX, construction, and permits. Our mobile service arrives operational, without civil works. Flexible OPEX instead of permanent investment."
+        }
+      ]
+    },
+    "complianceStats": {
+      "items": [
+        {
+          "title": "Moisture certification per batch",
+          "description": "Each processed batch comes with final moisture records. Documentation that supports compliance with clients, port authorities, and auditors."
+        },
+        {
+          "title": "Smelter specifications met",
+          "description": "Smelters require moisture below 9% to avoid furnace problems. Non-compliance means penalties or batch rejection. Each filtered batch meets specifications, without exceptions."
+        },
+        {
+          "title": "Stable process during maintenance",
+          "description": "Without filtration, pulp accumulates in thickeners. Out-of-range densities, risk of overflows, conditions that complicate restart. A backup filter maintains stable flow."
+        },
+        {
+          "title": "Delivery commitments protected",
+          "description": "Rescheduling deliveries affects contracts and commercial relationships. Backup filtration during maintenance ensures commitments are met and demonstrates risk management to stakeholders."
+        }
+      ]
+    },
+    "capabilities": {
+      "title": "Filtration capacity for any scenario",
+      "description": "A flexible platform that adapts to your operation, not the other way around.",
+      "items": {
+        "continuity": {
+          "title": "Dehydrate without stopping production",
+          "description": "Backup filter operates while the main one is under maintenance. Your concentrate line stays active.",
+          "features": ["75% capacity maintained", "No production stops"]
+        },
+        "scale": {
+          "title": "Scale when demand rises",
+          "description": "Add units in parallel for production peaks. No capital approvals, no construction.",
+          "features": ["1x → 2x → 3x capacity", "Zero additional CAPEX"]
+        },
+        "deployment": {
+          "title": "Deploy in 48 hours, not months",
+          "description": "Regional fleet ready to mobilize. No waiting for fabrication, no engineering project, no construction permits.",
+          "features": ["Immediate OPEX", "No construction permits"]
+        }
+      }
+    },
+    "relief": {
+      "title": "What you no longer have to manage",
+      "description": "Turnkey service. We operate, you produce.",
+      "stats": {
+        "operation": {
+          "value": "24/7",
+          "title": "Operation",
+          "description": "Certified staff operates and maintains equipment at your site"
+        },
+        "capex": {
+          "value": "$0",
+          "title": "CAPEX",
+          "description": "All-inclusive monthly service. Opex, not Capex."
+        },
+        "compliance": {
+          "value": "100%",
+          "title": "Compliance",
+          "description": "Guaranteed target moisture. Documentation per batch included."
+        },
+        "logistics": {
+          "value": "0",
+          "title": "Logistics",
+          "description": "Transport, installation, and removal. Arrives ready, leaves clean."
+        }
+      }
+    },
+    "caseStudy": {
+      "badge": "SUCCESS STORY",
+      "title": "Concentrator plant protected 2.43 MUSD in 30 days of maintenance",
+      "metrics": {
+        "ratio": { "value": "50:1", "label": "Benefit/Cost" },
+        "payback": { "value": "<1 day", "label": "Payback" },
+        "capacity": { "value": "75%", "label": "Capacity maintained" }
+      },
+      "description": "A copper concentrator plant needed major 30-day maintenance on its only filter press. Without a backup filter, the alternative was losing 3.24 MUSD. With our mobile filter F-1200-3 operating 24/7, they preserved 75% of their production at a total cost of only ~49 kUSD.",
+      "industryBadge": "Copper Mining",
+      "plantName": "Concentrator Plant",
+      "cta": "View full case"
+    },
+    "journey": {
+      "title": "Start small, scale based on results",
+      "description": "We don't ask for long-term commitments. Test first, decide later.",
+      "steps": {
+        "pilot": {
+          "title": "Pilot",
+          "description": "Test the service at your site. Validate results with your team before committing.",
+          "benefits": ["No initial investment", "Measurable results", "No continuity commitment"]
+        },
+        "contract": {
+          "title": "Service Contract",
+          "description": "Monthly program with dedicated equipment and operators. Pay for service, not assets.",
+          "benefits": ["24/7 operation included", "Guaranteed KPIs", "Flexibility to adjust capacity"]
+        },
+        "dedicated": {
+          "title": "Dedicated Capacity",
+          "description": "Exclusive fleet for your operation. Long-term contract with preferential conditions.",
+          "benefits": ["Equipment reserved for you", "Deployment priority", "Preferential rates"]
+        }
+      }
+    },
     "equipmentBenefits": {
       "items": {
         "mobile": {

@@ -939,39 +939,39 @@ export default function OrganicTreatmentServicePage() {
                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
                     <Chemistry className="w-5 h-5 text-emerald-600" />
                   </div>
-                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">TIF bajo / Delta TIF alto</span>
+                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">{t('technologies.activatedClay.badge')}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Arcilla Activada</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('technologies.activatedClay.title')}</h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  Restaura tensión interfacial eliminando compuestos tensioactivos formados por degradación oxidativa
+                  {t('technologies.activatedClay.description')}
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">TIF &lt;21 a &gt;23 dinas/cm en 24-48h</span>
+                    <span className="text-sm text-gray-700">{t('technologies.activatedClay.benefits.tif')}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">Dosificación 5-10 kg/m³ según severidad</span>
+                    <span className="text-sm text-gray-700">{t('technologies.activatedClay.benefits.dosage')}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">Adsorción selectiva sin afectar extractante</span>
+                    <span className="text-sm text-gray-700">{t('technologies.activatedClay.benefits.selective')}</span>
                   </div>
                 </div>
                 <div className="text-sm text-gray-500 border-t border-gray-100 pt-4">
-                  <span className="font-semibold text-gray-700">Mecanismo:</span> Montmorillonita activada adsorbe compuestos tensioactivos, restaurando propiedades físico-químicas sin afectar extractante ni diluyente.
+                  <span className="font-semibold text-gray-700">{t('technologies.activatedClay.mechanism')}</span> {t('technologies.activatedClay.mechanismDesc')}
                 </div>
               </div>
               <div className="bg-emerald-50 border-t border-emerald-100 p-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="text-center">
-                    <div className="text-xl font-bold text-emerald-600">+16%</div>
-                    <div className="text-xs text-emerald-600/70">TIF: 20.4 → 23.7</div>
+                    <div className="text-xl font-bold text-emerald-600">{t('technologies.activatedClay.metrics.tifImprovement.value')}</div>
+                    <div className="text-xs text-emerald-600/70">{t('technologies.activatedClay.metrics.tifImprovement.label')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-emerald-600">-50%</div>
-                    <div className="text-xs text-emerald-600/70">Delta TIF: &gt;6 → ~3</div>
+                    <div className="text-xl font-bold text-emerald-600">{t('technologies.activatedClay.metrics.deltaTif.value')}</div>
+                    <div className="text-xs text-emerald-600/70">{t('technologies.activatedClay.metrics.deltaTif.label')}</div>
                   </div>
                 </div>
               </div>
@@ -984,39 +984,39 @@ export default function OrganicTreatmentServicePage() {
                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
                     <Renew className="w-5 h-5 text-blue-600" />
                   </div>
-                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">Alto arrastre / Emulsiones</span>
+                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">{t('technologies.crudRecovery.badge')}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Recuperación de Crud</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('technologies.crudRecovery.title')}</h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  Centrífuga trifásica Tricanter® separa orgánico, acuoso y sólidos de emulsiones estabilizadas
+                  {t('technologies.crudRecovery.description')}
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">95% orgánico recuperado (crud &gt;50% org)</span>
+                    <span className="text-sm text-gray-700">{t('technologies.crudRecovery.benefits.recovery')}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">Hasta 15 m³/hora de capacidad</span>
+                    <span className="text-sm text-gray-700">{t('technologies.crudRecovery.benefits.capacity')}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">Payback típico 4 meses solo en orgánico</span>
+                    <span className="text-sm text-gray-700">{t('technologies.crudRecovery.benefits.payback')}</span>
                   </div>
                 </div>
                 <div className="text-sm text-gray-500 border-t border-gray-100 pt-4">
-                  <span className="font-semibold text-gray-700">Separación 3 fases:</span> Orgánico limpio → retorna al circuito | Acuoso → refinería o descarte | Sólidos → disposición final.
+                  <span className="font-semibold text-gray-700">{t('technologies.crudRecovery.separation')}</span> {t('technologies.crudRecovery.separationDesc')}
                 </div>
               </div>
               <div className="bg-blue-50 border-t border-blue-100 p-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="text-center">
-                    <div className="text-xl font-bold text-blue-600">-52%</div>
-                    <div className="text-xs text-blue-600/70">Arrastre: 6 → 2.9 m³/día</div>
+                    <div className="text-xl font-bold text-blue-600">{t('technologies.crudRecovery.metrics.entrainment.value')}</div>
+                    <div className="text-xs text-blue-600/70">{t('technologies.crudRecovery.metrics.entrainment.label')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-blue-600">$260K</div>
-                    <div className="text-xs text-blue-600/70">Ahorro mensual USD</div>
+                    <div className="text-xl font-bold text-blue-600">{t('technologies.crudRecovery.metrics.savings.value')}</div>
+                    <div className="text-xs text-blue-600/70">{t('technologies.crudRecovery.metrics.savings.label')}</div>
                   </div>
                 </div>
               </div>
@@ -1029,39 +1029,39 @@ export default function OrganicTreatmentServicePage() {
                   <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
                     <Filter className="w-5 h-5 text-orange-600" />
                   </div>
-                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">TSF alto / Viscosidad</span>
+                  <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">{t('technologies.continuousDialysis.badge')}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Diálisis Continua</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('technologies.continuousDialysis.title')}</h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  Filtro prensa en bypass 24/7 remueve sólidos finos que estabilizan emulsiones y cruds
+                  {t('technologies.continuousDialysis.description')}
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">1200-1500L trata 5-10% flujo en bypass</span>
+                    <span className="text-sm text-gray-700">{t('technologies.continuousDialysis.benefits.flow')}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">De 3-4 paradas/año a cero</span>
+                    <span className="text-sm text-gray-700">{t('technologies.continuousDialysis.benefits.stops')}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">Mantiene TIF/TSF en spec sin emergencias</span>
+                    <span className="text-sm text-gray-700">{t('technologies.continuousDialysis.benefits.spec')}</span>
                   </div>
                 </div>
                 <div className="text-sm text-gray-500 border-t border-gray-100 pt-4">
-                  <span className="font-semibold text-gray-700">Modo preventivo:</span> Remoción continua de sólidos finos &lt;10 micrones que estabilizan emulsiones, evitando degradación acumulativa.
+                  <span className="font-semibold text-gray-700">{t('technologies.continuousDialysis.mode')}</span> {t('technologies.continuousDialysis.modeDesc')}
                 </div>
               </div>
               <div className="bg-orange-50 border-t border-orange-100 p-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="text-center">
-                    <div className="text-xl font-bold text-orange-600">-65%</div>
-                    <div className="text-xs text-orange-600/70">TSF: 444s → 153s</div>
+                    <div className="text-xl font-bold text-orange-600">{t('technologies.continuousDialysis.metrics.tsf.value')}</div>
+                    <div className="text-xs text-orange-600/70">{t('technologies.continuousDialysis.metrics.tsf.label')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-orange-600">0</div>
-                    <div className="text-xs text-orange-600/70">Paradas/año</div>
+                    <div className="text-xl font-bold text-orange-600">{t('technologies.continuousDialysis.metrics.stops.value')}</div>
+                    <div className="text-xs text-orange-600/70">{t('technologies.continuousDialysis.metrics.stops.label')}</div>
                   </div>
                 </div>
               </div>
@@ -1095,10 +1095,10 @@ export default function OrganicTreatmentServicePage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Probado en múltiples industrias
+              {t('industries.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Tecnología móvil adaptada a las necesidades específicas de cada sector
+              {t('industries.description')}
             </p>
           </div>
 
@@ -1109,7 +1109,7 @@ export default function OrganicTreatmentServicePage() {
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/copper_mine.jpg"
-                  alt="Mina de cobre"
+                  alt={t('industries.items.copper.name')}
                   fill
                   className="object-cover"
                 />
@@ -1119,16 +1119,16 @@ export default function OrganicTreatmentServicePage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Cu</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.copper.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Tratamiento orgánico, filtración borras, limpieza EW</p>
+                <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
                 <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
-                  Ver detalles
+                  {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -1140,7 +1140,7 @@ export default function OrganicTreatmentServicePage() {
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/potassium_plant.jpg"
-                  alt="Planta de potasio"
+                  alt={t('industries.items.potassium.name')}
                   fill
                   className="object-cover"
                 />
@@ -1150,16 +1150,16 @@ export default function OrganicTreatmentServicePage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">K</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Potasio</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.potassium.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Sales minerales y cumplimiento ambiental</p>
+                <p className="text-sm text-gray-600">{t('industries.items.potassium.description')}</p>
                 <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
-                  Ver detalles
+                  {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/potassium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -1171,7 +1171,7 @@ export default function OrganicTreatmentServicePage() {
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/lithium_mine.jpg?v=2"
-                  alt="Mina de litio"
+                  alt={t('industries.items.lithium.name')}
                   fill
                   className="object-cover"
                 />
@@ -1181,16 +1181,16 @@ export default function OrganicTreatmentServicePage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Li</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Litio</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.lithium.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Tratamiento salmueras y sólidos finos</p>
+                <p className="text-sm text-gray-600">{t('industries.items.lithium.description')}</p>
                 <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
-                  Ver detalles
+                  {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/lithium" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -1206,10 +1206,10 @@ export default function OrganicTreatmentServicePage() {
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
-              CASO DE ÉXITO
+              {t('caseStudy.badge')}
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
-              Planta SX recuperó estabilidad operacional y ahorró $3.1M anuales
+              {t('caseStudy.title')}
             </h2>
           </div>
 
@@ -1220,7 +1220,7 @@ export default function OrganicTreatmentServicePage() {
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300 group-hover:lg:col-span-2">
                 <Image
                   src="/fotos_spence/Imagen10.jpg"
-                  alt="Planta SX Cobre"
+                  alt={t('caseStudy.client')}
                   fill
                   className="object-cover"
                 />
@@ -1231,8 +1231,8 @@ export default function OrganicTreatmentServicePage() {
                       <span className="font-bold text-sm">Cu</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">Planta SX Cobre</div>
-                      <div className="text-white/70 text-xs">50,000 t Cu/año</div>
+                      <div className="font-semibold text-sm">{t('caseStudy.client')}</div>
+                      <div className="text-white/70 text-xs">{t('caseStudy.clientCapacity')}</div>
                     </div>
                   </div>
                 </div>
@@ -1243,27 +1243,27 @@ export default function OrganicTreatmentServicePage() {
                 {/* Metrics row */}
                 <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                   <div>
-                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">-52%</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Arrastre orgánico</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.entrainment.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.entrainment.label')}</div>
                   </div>
                   <div>
-                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">-66%</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Tiempo separación</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.separation.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.separation.label')}</div>
                   </div>
                   <div>
-                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">$260K</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Ahorro mensual</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.savings.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.savings.label')}</div>
                   </div>
                 </div>
 
                 {/* Description */}
                 <p className="text-gray-600 mb-6">
-                  Una planta SX con problemas críticos de orgánico degradado logró recuperar parámetros óptimos en 18 meses con tratamiento integrado de arcilla, centrífuga y filtro prensa.
+                  {t('caseStudy.description')}
                 </p>
 
                 {/* CTA */}
                 <Link href="/casos-de-exito/tratamiento-organico-sx" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
-                  Ver caso completo
+                  {t('caseStudy.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -1278,10 +1278,10 @@ export default function OrganicTreatmentServicePage() {
           <div className="flex items-end justify-between mb-12">
             <div className="max-w-3xl">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Piloto sin riesgo, escala según resultados
+                {t('businessModels.title')}
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Prueba con equipos de flota compartida. Valida ROI. Escala a capacidad dedicada cuando tengas confianza.
+                {t('businessModels.description')}
               </p>
             </div>
 
@@ -1356,29 +1356,29 @@ export default function OrganicTreatmentServicePage() {
                   <Security className="w-5 h-5 text-emerald-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">Mantención Preventiva</h3>
-                  <p className="text-xs text-gray-500">Diálisis 24/7 sin emergencias</p>
+                  <h3 className="text-lg font-bold text-gray-900">{t('businessModels.preventive.title')}</h3>
+                  <p className="text-xs text-gray-500">{t('businessModels.preventive.subtitle')}</p>
                 </div>
               </div>
               <div className="space-y-2 mb-4">
                 <div className="flex items-start gap-2">
                   <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Filtro prensa móvil 24/7</span>
+                  <span className="text-sm text-gray-700">{t('businessModels.preventive.benefits.bypass')}</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Monitoreo semanal TIF/TSF</span>
+                  <span className="text-sm text-gray-700">{t('businessModels.preventive.benefits.monitoring')}</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckmarkFilled className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Operación y consumibles incluidos</span>
+                  <span className="text-sm text-gray-700">{t('businessModels.preventive.benefits.included')}</span>
                 </div>
               </div>
               <div className="bg-emerald-50 rounded-xl p-4">
-                <div className="text-xs font-semibold text-emerald-800 uppercase mb-1">Resultado</div>
+                <div className="text-xs font-semibold text-emerald-800 uppercase mb-1">{t('businessModels.preventive.result')}</div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-emerald-600">0</span>
-                  <span className="text-sm text-gray-600">paradas/año</span>
+                  <span className="text-3xl font-bold text-emerald-600">{t('businessModels.preventive.resultValue')}</span>
+                  <span className="text-sm text-gray-600">{t('businessModels.preventive.resultLabel')}</span>
                 </div>
               </div>
             </div>
@@ -1390,29 +1390,29 @@ export default function OrganicTreatmentServicePage() {
                   <FlashFilled className="w-5 h-5 text-red-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">Respuesta de Emergencia</h3>
-                  <p className="text-xs text-gray-500">Restaura parámetros críticos</p>
+                  <h3 className="text-lg font-bold text-gray-900">{t('businessModels.crisis.title')}</h3>
+                  <p className="text-xs text-gray-500">{t('businessModels.crisis.subtitle')}</p>
                 </div>
               </div>
               <div className="space-y-2 mb-4">
                 <div className="flex items-start gap-2">
                   <CheckmarkFilled className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Movilización en 48-72 horas</span>
+                  <span className="text-sm text-gray-700">{t('businessModels.crisis.benefits.mobilization')}</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckmarkFilled className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Tratamiento intensivo arcilla</span>
+                  <span className="text-sm text-gray-700">{t('businessModels.crisis.benefits.intensive')}</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckmarkFilled className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">Monitoreo diario de parámetros</span>
+                  <span className="text-sm text-gray-700">{t('businessModels.crisis.benefits.daily')}</span>
                 </div>
               </div>
               <div className="bg-red-50 rounded-xl p-4">
-                <div className="text-xs font-semibold text-red-800 uppercase mb-1">Restauración típica</div>
+                <div className="text-xs font-semibold text-red-800 uppercase mb-1">{t('businessModels.crisis.result')}</div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-red-600">2-4</span>
-                  <span className="text-sm text-gray-600">semanas</span>
+                  <span className="text-3xl font-bold text-red-600">{t('businessModels.crisis.resultValue')}</span>
+                  <span className="text-sm text-gray-600">{t('businessModels.crisis.resultLabel')}</span>
                 </div>
               </div>
             </div>
@@ -1424,31 +1424,31 @@ export default function OrganicTreatmentServicePage() {
                   <TrendingUp className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">Escalabilidad Probada</h3>
-                  <p className="text-xs text-gray-500">Inicia pequeño, escala con confianza</p>
+                  <h3 className="text-lg font-bold text-gray-900">{t('businessModels.pilot.title')}</h3>
+                  <p className="text-xs text-gray-500">{t('businessModels.pilot.subtitle')}</p>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
-                    <span className="font-semibold text-gray-900 text-sm">Piloto</span>
+                    <span className="font-semibold text-gray-900 text-sm">{t('businessModels.pilot.steps.pilot.title')}</span>
                   </div>
-                  <p className="text-xs text-gray-600">Prueba 2-3 meses, valida ROI</p>
+                  <p className="text-xs text-gray-600">{t('businessModels.pilot.steps.pilot.features.test')}, {t('businessModels.pilot.steps.pilot.features.validate')}</p>
                 </div>
                 <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-100">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-5 h-5 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
-                    <span className="font-semibold text-gray-900 text-sm">Operación Estándar</span>
+                    <span className="font-semibold text-gray-900 text-sm">{t('businessModels.pilot.steps.standard.title')}</span>
                   </div>
-                  <p className="text-xs text-gray-600">Arriendo mensual, sin CAPEX</p>
+                  <p className="text-xs text-gray-600">{t('businessModels.pilot.steps.standard.features.monthly')}, {t('businessModels.pilot.steps.standard.features.noCapex')}</p>
                 </div>
                 <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
-                    <span className="font-semibold text-gray-900 text-sm">Capacidad Dedicada</span>
+                    <span className="font-semibold text-gray-900 text-sm">{t('businessModels.pilot.steps.dedicated.title')}</span>
                   </div>
-                  <p className="text-xs text-gray-600">Contrato largo plazo</p>
+                  <p className="text-xs text-gray-600">{t('businessModels.pilot.steps.dedicated.features.longTerm')}</p>
                 </div>
               </div>
             </div>
@@ -1497,8 +1497,8 @@ export default function OrganicTreatmentServicePage() {
                       <Security className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Mantención Preventiva</h3>
-                      <p className="text-gray-500">Diálisis 24/7 mantiene calidad sin emergencias</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{t('businessModels.preventive.title')}</h3>
+                      <p className="text-gray-500">{t('businessModels.preventive.subtitle')}</p>
                     </div>
                   </div>
 
@@ -1506,30 +1506,30 @@ export default function OrganicTreatmentServicePage() {
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Filtro prensa móvil en by-pass continuo 24/7</span>
+                        <span className="text-gray-700">{t('businessModels.preventive.benefits.bypass')}</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Monitoreo semanal TIF/TSF/entrainment</span>
+                        <span className="text-gray-700">{t('businessModels.preventive.benefits.monitoring')}</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Arcilla programada por calendario</span>
+                        <span className="text-gray-700">{t('businessModels.preventive.benefits.scheduled')}</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Operación, mantención y consumibles incluidos</span>
+                        <span className="text-gray-700">{t('businessModels.preventive.benefits.included')}</span>
                       </div>
                     </div>
 
                     <div className="bg-emerald-50 rounded-xl p-6">
-                      <div className="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">Resultado</div>
+                      <div className="text-sm font-semibold text-emerald-800 uppercase tracking-wide mb-2">{t('businessModels.preventive.result')}</div>
                       <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-5xl font-bold text-emerald-600">0</span>
-                        <span className="text-lg text-gray-600">paradas/año</span>
+                        <span className="text-5xl font-bold text-emerald-600">{t('businessModels.preventive.resultValue')}</span>
+                        <span className="text-lg text-gray-600">{t('businessModels.preventive.resultLabel')}</span>
                       </div>
                       <p className="text-sm text-gray-600">
-                        Ideal para plantas que buscan estabilidad operacional. ROI inmediato en evitar pérdidas por paradas.
+                        {t('businessModels.preventive.resultDesc')}
                       </p>
                     </div>
                   </div>
@@ -1544,8 +1544,8 @@ export default function OrganicTreatmentServicePage() {
                       <FlashFilled className="w-6 h-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Respuesta de Emergencia</h3>
-                      <p className="text-gray-500">Restaura parámetros críticos en 2-4 semanas</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{t('businessModels.crisis.title')}</h3>
+                      <p className="text-gray-500">{t('businessModels.crisis.subtitle')}</p>
                     </div>
                   </div>
 
@@ -1553,30 +1553,30 @@ export default function OrganicTreatmentServicePage() {
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Movilización de flota en 48-72 horas</span>
+                        <span className="text-gray-700">{t('businessModels.crisis.benefits.mobilization')}</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Tratamiento intensivo con arcilla activada</span>
+                        <span className="text-gray-700">{t('businessModels.crisis.benefits.intensive')}</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Diálisis acelerada hasta recuperación</span>
+                        <span className="text-gray-700">{t('businessModels.crisis.benefits.accelerated')}</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckmarkFilled className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Monitoreo diario de parámetros críticos</span>
+                        <span className="text-gray-700">{t('businessModels.crisis.benefits.daily')}</span>
                       </div>
                     </div>
 
                     <div className="bg-red-50 rounded-xl p-6">
-                      <div className="text-sm font-semibold text-red-800 uppercase tracking-wide mb-2">Restauración típica</div>
+                      <div className="text-sm font-semibold text-red-800 uppercase tracking-wide mb-2">{t('businessModels.crisis.result')}</div>
                       <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-5xl font-bold text-red-600">2-4</span>
-                        <span className="text-lg text-gray-600">semanas</span>
+                        <span className="text-5xl font-bold text-red-600">{t('businessModels.crisis.resultValue')}</span>
+                        <span className="text-lg text-gray-600">{t('businessModels.crisis.resultLabel')}</span>
                       </div>
                       <p className="text-sm text-gray-600">
-                        Para plantas con TIF &lt;18 dinas/cm o TSF &gt;300s. Luego puede continuar con modalidad preventiva.
+                        {t('businessModels.crisis.resultDesc')}
                       </p>
                     </div>
                   </div>
@@ -1591,39 +1591,39 @@ export default function OrganicTreatmentServicePage() {
                       <TrendingUp className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Escalabilidad Probada</h3>
-                      <p className="text-gray-500">Inicia pequeño, valida ROI, escala con confianza</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{t('businessModels.pilot.title')}</h3>
+                      <p className="text-gray-500">{t('businessModels.pilot.subtitle')}</p>
                     </div>
                   </div>
 
                   <div className="grid lg:grid-cols-3 gap-4">
                     <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
                       <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mb-3">1</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Piloto</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('businessModels.pilot.steps.pilot.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• 1 unidad de flota compartida</li>
-                        <li>• Prueba 2-3 meses</li>
-                        <li>• Valida ROI</li>
+                        <li>• {t('businessModels.pilot.steps.pilot.features.unit')}</li>
+                        <li>• {t('businessModels.pilot.steps.pilot.features.test')}</li>
+                        <li>• {t('businessModels.pilot.steps.pilot.features.validate')}</li>
                       </ul>
                     </div>
 
                     <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
                       <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold mb-3">2</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Operación Estándar</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('businessModels.pilot.steps.standard.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Equipos regionales asignados</li>
-                        <li>• Arriendo mensual flexible</li>
-                        <li>• Sin CAPEX</li>
+                        <li>• {t('businessModels.pilot.steps.standard.features.regional')}</li>
+                        <li>• {t('businessModels.pilot.steps.standard.features.monthly')}</li>
+                        <li>• {t('businessModels.pilot.steps.standard.features.noCapex')}</li>
                       </ul>
                     </div>
 
                     <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
                       <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mb-3">3</div>
-                      <h4 className="font-bold text-gray-900 mb-2">Capacidad Dedicada</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('businessModels.pilot.steps.dedicated.title')}</h4>
                       <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• Equipos de alta capacidad</li>
-                        <li>• Contrato largo plazo</li>
-                        <li>• Asociación estratégica</li>
+                        <li>• {t('businessModels.pilot.steps.dedicated.features.highCapacity')}</li>
+                        <li>• {t('businessModels.pilot.steps.dedicated.features.longTerm')}</li>
+                        <li>• {t('businessModels.pilot.steps.dedicated.features.partnership')}</li>
                       </ul>
                     </div>
                   </div>
@@ -1650,18 +1650,18 @@ export default function OrganicTreatmentServicePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Evalúa la solución para tu planta
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-emerald-100 mb-4">
-            Envíanos muestras de tu orgánico (2L suficiente) para análisis completo: TIF, TSF, viscosidad, densidad, contenido acuoso, y evaluación de tratabilidad
+            {t('cta.description')}
           </p>
           <p className="text-lg text-emerald-100 mb-10">
-            En 5 días hábiles recibes diagnóstico técnico completo, recomendación de tratamiento, estimación de resultados, y propuesta económica sin CAPEX
+            {t('cta.timeline')}
           </p>
 
           <div className="flex items-center justify-center">
             <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
-              Solicitar Evaluación Técnica
+              {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </div>

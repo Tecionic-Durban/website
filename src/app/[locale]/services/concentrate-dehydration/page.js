@@ -127,9 +127,9 @@ export default function ConcentrateDehydrationServicePage() {
 
   // Journey steps data
   const journeySteps = [
-    { id: 'piloto', color: 'blue', number: 1, title: 'Piloto', description: 'Prueba el servicio en tu faena. Valida resultados con tu equipo antes de comprometerte.', benefits: ['Sin inversión inicial', 'Resultados medibles', 'Sin compromiso de continuidad'] },
-    { id: 'contrato', color: 'emerald', number: 2, title: 'Contrato de Servicio', description: 'Programa mensual con equipos y operadores dedicados. Pago por servicio, no por activo.', benefits: ['Operación 24/7 incluida', 'KPIs garantizados', 'Flexibilidad para ajustar capacidad'] },
-    { id: 'dedicado', color: 'purple', number: 3, title: 'Capacidad Dedicada', description: 'Flota exclusiva para tu operación. Contrato largo plazo con condiciones preferenciales.', benefits: ['Equipos reservados para ti', 'Prioridad de despliegue', 'Tarifas preferenciales'] }
+    { id: 'piloto', color: 'blue', number: 1, title: t('journey.steps.pilot.title'), description: t('journey.steps.pilot.description'), benefits: t.raw('journey.steps.pilot.benefits') },
+    { id: 'contrato', color: 'emerald', number: 2, title: t('journey.steps.contract.title'), description: t('journey.steps.contract.description'), benefits: t.raw('journey.steps.contract.benefits') },
+    { id: 'dedicado', color: 'purple', number: 3, title: t('journey.steps.dedicated.title'), description: t('journey.steps.dedicated.description'), benefits: t.raw('journey.steps.dedicated.benefits') }
   ]
 
   // Sync journey carousel scroll with active step
@@ -366,7 +366,7 @@ export default function ConcentrateDehydrationServicePage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32 relative">
           <div className="max-w-4xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em]">
-              Valor en cada gota que eliminamos
+              {t('keyBenefits.title')}
             </h2>
           </div>
 
@@ -383,9 +383,9 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <DeliveryTruck className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Reduce costos de transporte</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.transport.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Menos agua = menos peso. Ahorra hasta 30% en costos logísticos.
+                {t('keyBenefits.items.transport.description')}
               </p>
             </div>
 
@@ -401,9 +401,9 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <CertificateCheck className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Cumple especificaciones</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.specs.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Alcanza la humedad requerida por fundiciones. Evita penalizaciones comerciales.
+                {t('keyBenefits.items.specs.description')}
               </p>
             </div>
 
@@ -419,9 +419,9 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Currency className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Incrementa tu producción</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.production.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Sube producción sin ampliar la planta. No dejes que el dimensionamiento de equipos te limite.
+                {t('keyBenefits.items.production.description')}
               </p>
             </div>
 
@@ -437,9 +437,9 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <Enterprise className="w-5 h-5 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Almacenamiento simplificado</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('keyBenefits.items.storage.title')}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Concentrado seco se apila y almacena sin canchas de relaves ni piscinas de contención.
+                {t('keyBenefits.items.storage.description')}
               </p>
             </div>
           </div>
@@ -525,46 +525,28 @@ export default function ConcentrateDehydrationServicePage() {
             {/* Right - All 12 stats scroll */}
             <div className="space-y-0">
               {/* Costos stats (0-3) */}
-              <div ref={el => statRefs.current[0] = el} className="py-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Reducción de humedad hasta 95%</h3>
-                <p className="text-gray-400">Filtros de alta presión eliminan el agua que no agrega valor. Cada punto porcentual menos es peso que no transportas ni pagas.</p>
-              </div>
-
-              <div ref={el => statRefs.current[1] = el} className="py-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Embarque sin demoras ni sobreestadía</h3>
-                <p className="text-gray-400">Concentrado sobre TML (9.1%) no puede cargarse legalmente. Con humedad garantizada bajo TML, el buque carga de inmediato. Sin esperas que cuestan $15-25K USD/día.</p>
-              </div>
-
-              <div ref={el => statRefs.current[2] = el} className="py-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Producción protegida durante mantenciones</h3>
-                <p className="text-gray-400">Cuando tu filtro principal está en mantención, nuestro equipo móvil mantiene la producción. Evita pérdidas millonarias con un servicio que típicamente se paga en menos de un día de operación.</p>
-              </div>
-
-              <div ref={el => statRefs.current[3] = el} className="py-6 pb-12 mb-12 border-b border-gray-700">
-                <h3 className="text-xl font-semibold text-white mb-2">Capacidad extra sin inversión de capital</h3>
-                <p className="text-gray-400">Un segundo filtro fijo requiere millones en CAPEX, construcción y permisos. Nuestro servicio móvil llega operativo, sin obras civiles. OPEX flexible en vez de inversión permanente.</p>
-              </div>
+              {t.raw('costStats.items').map((item, index) => (
+                <div
+                  key={index}
+                  ref={el => statRefs.current[index] = el}
+                  className={`py-6 ${index === 3 ? 'pb-12 mb-12 border-b border-gray-700' : ''}`}
+                >
+                  <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400">{item.description}</p>
+                </div>
+              ))}
 
               {/* Cumplimiento stats (4-7) */}
-              <div ref={el => statRefs.current[4] = el} className="py-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Certificación de humedad por lote</h3>
-                <p className="text-gray-400">Cada batch procesado viene con registro de humedad final. Documentación que respalda cumplimiento ante clientes, autoridades portuarias y auditores.</p>
-              </div>
-
-              <div ref={el => statRefs.current[5] = el} className="py-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Especificaciones de fundición cumplidas</h3>
-                <p className="text-gray-400">Fundiciones exigen humedad bajo 9% para evitar problemas en hornos. Incumplir significa penalizaciones o rechazo de lote. Cada batch filtrado cumple especificaciones, sin excepciones.</p>
-              </div>
-
-              <div ref={el => statRefs.current[6] = el} className="py-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Proceso estable durante mantenciones</h3>
-                <p className="text-gray-400">Sin filtración, la pulpa se acumula en espesadores. Densidades fuera de rango, riesgo de rebases, condiciones que complican el reinicio. Un filtro de respaldo mantiene el flujo estable.</p>
-              </div>
-
-              <div ref={el => statRefs.current[7] = el} className="py-6 pb-32">
-                <h3 className="text-xl font-semibold text-white mb-2">Compromisos de entrega protegidos</h3>
-                <p className="text-gray-400">Reprogramar entregas afecta contratos y relaciones comerciales. Filtración de respaldo durante mantenciones asegura que se cumplen compromisos y se demuestra gestión de riesgo ante stakeholders.</p>
-              </div>
+              {t.raw('complianceStats.items').map((item, index) => (
+                <div
+                  key={index + 4}
+                  ref={el => statRefs.current[index + 4] = el}
+                  className={`py-6 ${index === 3 ? 'pb-32' : ''}`}
+                >
+                  <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400">{item.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -575,10 +557,10 @@ export default function ConcentrateDehydrationServicePage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-[-0.02em] mb-6">
-              Capacidad de filtración para cualquier escenario
+              {t('capabilities.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Una plataforma flexible que se adapta a tu operación, no al revés.
+              {t('capabilities.description')}
             </p>
           </div>
 
@@ -591,19 +573,17 @@ export default function ConcentrateDehydrationServicePage() {
                 <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
                   <WorkflowAutomation className="w-6 h-6 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Deshidrata sin detener producción</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('capabilities.items.continuity.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Filtro de respaldo opera mientras el principal está en mantención. Tu línea de concentrado sigue activa.
+                  {t('capabilities.items.continuity.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>75% capacidad mantenida</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Sin paradas de producción</span>
-                  </li>
+                  {t.raw('capabilities.items.continuity.features').map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -616,19 +596,17 @@ export default function ConcentrateDehydrationServicePage() {
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
                   <ChartLine className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Escala cuando demanda sube</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('capabilities.items.scale.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Agrega unidades en paralelo para picos de producción. Sin aprobaciones de capital, sin construcción.
+                  {t('capabilities.items.scale.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
-                    <span>1x → 2x → 3x capacidad</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
-                    <span>Cero CAPEX adicional</span>
-                  </li>
+                  {t.raw('capabilities.items.scale.features').map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-blue-500" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -641,19 +619,17 @@ export default function ConcentrateDehydrationServicePage() {
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
                   <Clock className="w-6 h-6 text-purple-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Despliega en 48 horas, no en meses</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('capabilities.items.deployment.title')}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Flota regional lista para movilizar. Sin esperar fabricación, sin proyecto de ingeniería, sin permisos de construcción.
+                  {t('capabilities.items.deployment.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
-                    <span>OPEX inmediato</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
-                    <span>Sin permisos de construcción</span>
-                  </li>
+                  {t.raw('capabilities.items.deployment.features').map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-purple-500" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -667,47 +643,47 @@ export default function ConcentrateDehydrationServicePage() {
           <div ref={statsRef} className="pt-0">
             <div className="max-w-3xl mb-12">
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                Lo que ya no tienes que gestionar
+                {t('relief.title')}
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Servicio llave en mano. Nosotros operamos, tú produces.
+                {t('relief.description')}
               </p>
             </div>
 
             <div className="grid lg:grid-cols-4 gap-8 lg:gap-10">
               {/* 24/7 Tecionic specialists */}
               <div className="stat-fade text-center lg:text-left">
-                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">24/7</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Operación</div>
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">{t('relief.stats.operation.value')}</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{t('relief.stats.operation.title')}</div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Personal certificado opera y mantiene los equipos en tu faena
+                  {t('relief.stats.operation.description')}
                 </p>
               </div>
 
               {/* Zero CAPEX */}
               <div className="stat-fade text-center lg:text-left">
-                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">$0</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">CAPEX</div>
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">{t('relief.stats.capex.value')}</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{t('relief.stats.capex.title')}</div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Servicio mensual todo incluido. Opex, no Capex.
+                  {t('relief.stats.capex.description')}
                 </p>
               </div>
 
               {/* Compliance included */}
               <div className="stat-fade text-center lg:text-left">
-                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">100%</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Cumplimiento</div>
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">{t('relief.stats.compliance.value')}</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{t('relief.stats.compliance.title')}</div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Humedad objetivo garantizada. Documentación por lote incluida.
+                  {t('relief.stats.compliance.description')}
                 </p>
               </div>
 
               {/* Logistics included */}
               <div className="stat-fade text-center lg:text-left">
-                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">0</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Logística</div>
+                <div className="text-5xl lg:text-6xl font-bold text-emerald-600 mb-3">{t('relief.stats.logistics.value')}</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{t('relief.stats.logistics.title')}</div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Transporte, instalación y retiro. Llega listo, se va limpio.
+                  {t('relief.stats.logistics.description')}
                 </p>
               </div>
             </div>
@@ -720,7 +696,7 @@ export default function ConcentrateDehydrationServicePage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 leading-tight">
-              Filtración de alta presión, lista para operar
+              {t('equipment.title')}
             </h2>
 
             {/* Equipment Benefits - Expandable with images */}
@@ -730,7 +706,7 @@ export default function ConcentrateDehydrationServicePage() {
           {/* Filter Press Equipment Grid */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Flota de Filtros Prensa
+              {t('equipment.filterPressFleet')}
             </h3>
 
             <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
@@ -738,25 +714,25 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Baja</div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">70 ton/día</div>
-                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.lowCapacity.label')}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{t('equipment.lowCapacity.capacity')}</div>
+                <div className="text-gray-500 text-sm mb-4">{t('equipment.lowCapacity.capacityLabel')}</div>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Pilotos y pruebas</span>
+                    <span>{t('equipment.lowCapacity.features.pilots')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Operaciones de bajo volumen</span>
+                    <span>{t('equipment.lowCapacity.features.lowVolume')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Backup de emergencia</span>
+                    <span>{t('equipment.lowCapacity.features.preventive')}</span>
                   </li>
                 </ul>
                 <Link href="/contacto?equipo=filtro-70ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
-                  Consultar disponibilidad
+                  {t('equipment.lowCapacity.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -765,25 +741,25 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Media</div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">130 ton/día</div>
-                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.mediumCapacity.label')}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{t('equipment.mediumCapacity.capacity')}</div>
+                <div className="text-gray-500 text-sm mb-4">{t('equipment.mediumCapacity.capacityLabel')}</div>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Operaciones estándar</span>
+                    <span>{t('equipment.mediumCapacity.features.standard')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Tratamiento continuo</span>
+                    <span>{t('equipment.mediumCapacity.features.continuous')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Balance costo-capacidad</span>
+                    <span>{t('equipment.mediumCapacity.features.balance')}</span>
                   </li>
                 </ul>
                 <Link href="/contacto?equipo=filtro-130ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
-                  Consultar disponibilidad
+                  {t('equipment.mediumCapacity.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -792,25 +768,25 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-emerald-500 transition-colors flex flex-col overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
                 {/* Hover gradient */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-bl from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="text-sm font-medium text-emerald-600 mb-2 relative">Capacidad Alta</div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">400 ton/día</div>
-                <div className="text-gray-500 text-sm mb-4">Capacidad nominal</div>
+                <div className="text-sm font-medium text-emerald-600 mb-2 relative">{t('equipment.highCapacity.label')}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{t('equipment.highCapacity.capacity')}</div>
+                <div className="text-gray-500 text-sm mb-4">{t('equipment.highCapacity.capacityLabel')}</div>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Alta producción</span>
+                    <span>{t('equipment.highCapacity.features.highProduction')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Operaciones a gran escala</span>
+                    <span>{t('equipment.highCapacity.features.largeScale')}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Flujo continuo 24/7</span>
+                    <span>{t('equipment.highCapacity.features.continuous247')}</span>
                   </li>
                 </ul>
                 <Link href="/contacto?equipo=filtro-400ton" className="mt-auto inline-flex items-center gap-2 text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
-                  Consultar disponibilidad
+                  {t('equipment.highCapacity.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -824,10 +800,10 @@ export default function ConcentrateDehydrationServicePage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Probado en múltiples industrias
+              {t('industries.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Tecnología móvil adaptada a las necesidades específicas de cada sector
+              {t('industries.description')}
             </p>
           </div>
 
@@ -838,7 +814,7 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/copper_mine.jpg"
-                  alt="Mina de cobre"
+                  alt={t('industries.items.copper.name')}
                   fill
                   className="object-cover"
                 />
@@ -848,16 +824,16 @@ export default function ConcentrateDehydrationServicePage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Cu</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Cobre</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.copper.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Deshidratación de concentrados, humedad ≤9%</p>
+                <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
                 <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
-                  Ver detalles
+                  {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -869,7 +845,7 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
                   src="/zinc_factory.jpg"
-                  alt="Planta de procesamiento de zinc"
+                  alt={t('industries.items.zinc.name')}
                   fill
                   className="object-cover"
                 />
@@ -879,16 +855,16 @@ export default function ConcentrateDehydrationServicePage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-sm font-bold">Zn</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Zinc</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t('industries.items.zinc.name')}</h3>
                 </div>
-                <p className="text-sm text-gray-600">Control preciso para fundición</p>
+                <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
                 <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
-                  Ver detalles
+                  {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
                   <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
-                    Ver detalles
+                    {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -904,10 +880,10 @@ export default function ConcentrateDehydrationServicePage() {
           {/* Header */}
           <div className="mb-12">
             <div className="inline-block bg-emerald-100 text-emerald-800 text-sm font-bold px-4 py-2 rounded-full mb-4">
-              CASO DE ÉXITO
+              {t('caseStudy.badge')}
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-2xl">
-              Planta concentradora protegió 2.43 MUSD en 30 días de mantención
+              {t('caseStudy.title')}
             </h2>
           </div>
 
@@ -918,7 +894,7 @@ export default function ConcentrateDehydrationServicePage() {
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem] transition-all duration-300">
                 <Image
                   src="/copper_concentrate_plant.jpg"
-                  alt="Planta concentradora de cobre"
+                  alt={t('caseStudy.plantName')}
                   fill
                   className="object-cover"
                 />
@@ -929,8 +905,8 @@ export default function ConcentrateDehydrationServicePage() {
                       <span className="text-sm font-bold">Cu</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">Planta Concentradora</div>
-                      <div className="text-white/70 text-xs">Minería del Cobre</div>
+                      <div className="font-semibold text-sm">{t('caseStudy.plantName')}</div>
+                      <div className="text-white/70 text-xs">{t('caseStudy.industryBadge')}</div>
                     </div>
                   </div>
                 </div>
@@ -941,27 +917,27 @@ export default function ConcentrateDehydrationServicePage() {
                 {/* Metrics row */}
                 <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                   <div>
-                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">50:1</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Beneficio/Costo</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.ratio.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.ratio.label')}</div>
                   </div>
                   <div>
-                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">&lt;1 día</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Payback</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.payback.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.payback.label')}</div>
                   </div>
                   <div>
-                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">75%</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Capacidad mantenida</div>
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-emerald-600">{t('caseStudy.metrics.capacity.value')}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{t('caseStudy.metrics.capacity.label')}</div>
                   </div>
                 </div>
 
                 {/* Description */}
                 <p className="text-gray-600 mb-6">
-                  Una planta concentradora de cobre debía realizar mantención mayor de 30 días a su único filtro prensa. Sin filtro de respaldo, la alternativa era perder 3.24 MUSD. Con nuestro filtro móvil F-1200-3 operando 24/7, preservaron el 75% de su producción con un costo total de solo ~49 kUSD.
+                  {t('caseStudy.description')}
                 </p>
 
                 {/* CTA */}
                 <Link href="/casos-de-exito" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
-                  Ver caso completo
+                  {t('caseStudy.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -975,10 +951,10 @@ export default function ConcentrateDehydrationServicePage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Empieza pequeño, escala según resultados
+              {t('journey.title')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              No pedimos compromisos a largo plazo. Prueba primero, decide después.
+              {t('journey.description')}
             </p>
           </div>
 
@@ -1038,21 +1014,15 @@ export default function ConcentrateDehydrationServicePage() {
             <div className="relative">
               <div className="bg-gray-50 rounded-2xl p-8 h-full">
                 <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">1</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Piloto</h3>
-                <p className="text-gray-600 mb-6">Prueba el servicio en tu faena. Valida resultados con tu equipo antes de comprometerte.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('journey.steps.pilot.title')}</h3>
+                <p className="text-gray-600 mb-6">{t('journey.steps.pilot.description')}</p>
                 <ul className="space-y-3 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
-                    <span>Sin inversión inicial</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
-                    <span>Resultados medibles</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-blue-500" />
-                    <span>Sin compromiso de continuidad</span>
-                  </li>
+                  {t.raw('journey.steps.pilot.benefits').map((benefit, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-blue-500" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               {/* Arrow connector */}
@@ -1065,21 +1035,15 @@ export default function ConcentrateDehydrationServicePage() {
             <div className="relative">
               <div className="bg-gray-50 rounded-2xl p-8 h-full">
                 <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">2</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Contrato de Servicio</h3>
-                <p className="text-gray-600 mb-6">Programa mensual con equipos y operadores dedicados. Pago por servicio, no por activo.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('journey.steps.contract.title')}</h3>
+                <p className="text-gray-600 mb-6">{t('journey.steps.contract.description')}</p>
                 <ul className="space-y-3 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Operación 24/7 incluida</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>KPIs garantizados</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
-                    <span>Flexibilidad para ajustar capacidad</span>
-                  </li>
+                  {t.raw('journey.steps.contract.benefits').map((benefit, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-emerald-500" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               {/* Arrow connector */}
@@ -1092,21 +1056,15 @@ export default function ConcentrateDehydrationServicePage() {
             <div className="relative">
               <div className="bg-gray-50 rounded-2xl p-8 h-full">
                 <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">3</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Capacidad Dedicada</h3>
-                <p className="text-gray-600 mb-6">Flota exclusiva para tu operación. Contrato largo plazo con condiciones preferenciales.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{t('journey.steps.dedicated.title')}</h3>
+                <p className="text-gray-600 mb-6">{t('journey.steps.dedicated.description')}</p>
                 <ul className="space-y-3 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
-                    <span>Equipos reservados para ti</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
-                    <span>Prioridad de despliegue</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckmarkFilled className="w-4 h-4 text-purple-500" />
-                    <span>Tarifas preferenciales</span>
-                  </li>
+                  {t.raw('journey.steps.dedicated.benefits').map((benefit, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckmarkFilled className="w-4 h-4 text-purple-500" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

@@ -958,6 +958,148 @@
       "description": "Menos agua significa más producto útil. Cumple especificaciones comerciales, reduce costos de transporte y recupera valor de tus concentrados y lodos con filtros prensa móviles de alta presión.",
       "cta": "Solicitar Evaluación"
     },
+    "keyBenefits": {
+      "title": "Valor en cada gota que eliminamos",
+      "items": {
+        "transport": {
+          "title": "Reduce costos de transporte",
+          "description": "Menos agua = menos peso. Ahorra hasta 30% en costos logísticos."
+        },
+        "specs": {
+          "title": "Cumple especificaciones",
+          "description": "Alcanza la humedad requerida por fundiciones. Evita penalizaciones comerciales."
+        },
+        "production": {
+          "title": "Incrementa tu producción",
+          "description": "Sube producción sin ampliar la planta. No dejes que el dimensionamiento de equipos te limite."
+        },
+        "storage": {
+          "title": "Almacenamiento simplificado",
+          "description": "Concentrado seco se apila y almacena sin canchas de relaves ni piscinas de contención."
+        }
+      }
+    },
+    "costStats": {
+      "items": [
+        {
+          "title": "Reducción de humedad hasta 95%",
+          "description": "Filtros de alta presión eliminan el agua que no agrega valor. Cada punto porcentual menos es peso que no transportas ni pagas."
+        },
+        {
+          "title": "Embarque sin demoras ni sobreestadía",
+          "description": "Concentrado sobre TML (9.1%) no puede cargarse legalmente. Con humedad garantizada bajo TML, el buque carga de inmediato. Sin esperas que cuestan $15-25K USD/día."
+        },
+        {
+          "title": "Producción protegida durante mantenciones",
+          "description": "Cuando tu filtro principal está en mantención, nuestro equipo móvil mantiene la producción. Evita pérdidas millonarias con un servicio que típicamente se paga en menos de un día de operación."
+        },
+        {
+          "title": "Capacidad extra sin inversión de capital",
+          "description": "Un segundo filtro fijo requiere millones en CAPEX, construcción y permisos. Nuestro servicio móvil llega operativo, sin obras civiles. OPEX flexible en vez de inversión permanente."
+        }
+      ]
+    },
+    "complianceStats": {
+      "items": [
+        {
+          "title": "Certificación de humedad por lote",
+          "description": "Cada batch procesado viene con registro de humedad final. Documentación que respalda cumplimiento ante clientes, autoridades portuarias y auditores."
+        },
+        {
+          "title": "Especificaciones de fundición cumplidas",
+          "description": "Fundiciones exigen humedad bajo 9% para evitar problemas en hornos. Incumplir significa penalizaciones o rechazo de lote. Cada batch filtrado cumple especificaciones, sin excepciones."
+        },
+        {
+          "title": "Proceso estable durante mantenciones",
+          "description": "Sin filtración, la pulpa se acumula en espesadores. Densidades fuera de rango, riesgo de rebases, condiciones que complican el reinicio. Un filtro de respaldo mantiene el flujo estable."
+        },
+        {
+          "title": "Compromisos de entrega protegidos",
+          "description": "Reprogramar entregas afecta contratos y relaciones comerciales. Filtración de respaldo durante mantenciones asegura que se cumplen compromisos y se demuestra gestión de riesgo ante stakeholders."
+        }
+      ]
+    },
+    "capabilities": {
+      "title": "Capacidad de filtración para cualquier escenario",
+      "description": "Una plataforma flexible que se adapta a tu operación, no al revés.",
+      "items": {
+        "continuity": {
+          "title": "Deshidrata sin detener producción",
+          "description": "Filtro de respaldo opera mientras el principal está en mantención. Tu línea de concentrado sigue activa.",
+          "features": ["75% capacidad mantenida", "Sin paradas de producción"]
+        },
+        "scale": {
+          "title": "Escala cuando demanda sube",
+          "description": "Agrega unidades en paralelo para picos de producción. Sin aprobaciones de capital, sin construcción.",
+          "features": ["1x → 2x → 3x capacidad", "Cero CAPEX adicional"]
+        },
+        "deployment": {
+          "title": "Despliega en 48 horas, no en meses",
+          "description": "Flota regional lista para movilizar. Sin esperar fabricación, sin proyecto de ingeniería, sin permisos de construcción.",
+          "features": ["OPEX inmediato", "Sin permisos de construcción"]
+        }
+      }
+    },
+    "relief": {
+      "title": "Lo que ya no tienes que gestionar",
+      "description": "Servicio llave en mano. Nosotros operamos, tú produces.",
+      "stats": {
+        "operation": {
+          "value": "24/7",
+          "title": "Operación",
+          "description": "Personal certificado opera y mantiene los equipos en tu faena"
+        },
+        "capex": {
+          "value": "$0",
+          "title": "CAPEX",
+          "description": "Servicio mensual todo incluido. Opex, no Capex."
+        },
+        "compliance": {
+          "value": "100%",
+          "title": "Cumplimiento",
+          "description": "Humedad objetivo garantizada. Documentación por lote incluida."
+        },
+        "logistics": {
+          "value": "0",
+          "title": "Logística",
+          "description": "Transporte, instalación y retiro. Llega listo, se va limpio."
+        }
+      }
+    },
+    "caseStudy": {
+      "badge": "CASO DE ÉXITO",
+      "title": "Planta concentradora protegió 2.43 MUSD en 30 días de mantención",
+      "metrics": {
+        "ratio": { "value": "50:1", "label": "Beneficio/Costo" },
+        "payback": { "value": "<1 día", "label": "Payback" },
+        "capacity": { "value": "75%", "label": "Capacidad mantenida" }
+      },
+      "description": "Una planta concentradora de cobre debía realizar mantención mayor de 30 días a su único filtro prensa. Sin filtro de respaldo, la alternativa era perder 3.24 MUSD. Con nuestro filtro móvil F-1200-3 operando 24/7, preservaron el 75% de su producción con un costo total de solo ~49 kUSD.",
+      "industryBadge": "Minería del Cobre",
+      "plantName": "Planta Concentradora",
+      "cta": "Ver caso completo"
+    },
+    "journey": {
+      "title": "Empieza pequeño, escala según resultados",
+      "description": "No pedimos compromisos a largo plazo. Prueba primero, decide después.",
+      "steps": {
+        "pilot": {
+          "title": "Piloto",
+          "description": "Prueba el servicio en tu faena. Valida resultados con tu equipo antes de comprometerte.",
+          "benefits": ["Sin inversión inicial", "Resultados medibles", "Sin compromiso de continuidad"]
+        },
+        "contract": {
+          "title": "Contrato de Servicio",
+          "description": "Programa mensual con equipos y operadores dedicados. Pago por servicio, no por activo.",
+          "benefits": ["Operación 24/7 incluida", "KPIs garantizados", "Flexibilidad para ajustar capacidad"]
+        },
+        "dedicated": {
+          "title": "Capacidad Dedicada",
+          "description": "Flota exclusiva para tu operación. Contrato largo plazo con condiciones preferenciales.",
+          "benefits": ["Equipos reservados para ti", "Prioridad de despliegue", "Tarifas preferenciales"]
+        }
+      }
+    },
     "equipmentBenefits": {
       "items": {
         "mobile": {
