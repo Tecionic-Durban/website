@@ -1,13 +1,49 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Location, Email, Time } from '@carbon/icons-react'
 import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react'
 import posthog from 'posthog-js'
+
+// reCAPTCHA v3 site key
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 export default function ContactPage() {
   const [selectedService, setSelectedService] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
+
+  // Spam protection
+  const [formLoadTime] = useState(() => Date.now())
+  const [honeypot, setHoneypot] = useState('')
+
+  // Load reCAPTCHA v3 script
+  useEffect(() => {
+    if (typeof window !== 'undefined' && RECAPTCHA_SITE_KEY) {
+      const script = document.createElement('script')
+      script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`
+      script.async = true
+      document.head.appendChild(script)
+    }
+  }, [])
+
+  // Get reCAPTCHA token
+  const getRecaptchaToken = useCallback(async () => {
+    if (typeof window !== 'undefined' && window.grecaptcha && RECAPTCHA_SITE_KEY) {
+      try {
+        return new Promise((resolve) => {
+          window.grecaptcha.ready(async () => {
+            const token = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
+            resolve(token)
+          })
+        })
+      } catch (error) {
+        console.error('reCAPTCHA error:', error)
+        return null
+      }
+    }
+    return null
+  }, [])
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -26,11 +62,20 @@ export default function ContactPage() {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    // Get reCAPTCHA token
+    const recaptchaToken = await getRecaptchaToken()
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _honeypot: honeypot,
+          _formLoadTime: formLoadTime,
+          _submitTime: Date.now(),
+          _recaptchaToken: recaptchaToken
+        }),
       })
 
       const result = await response.json()
@@ -131,6 +176,18 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Solicite una Consulta</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot - hidden from humans */}
+                <div className="absolute -left-[9999px]" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 {/* Name Fields */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>

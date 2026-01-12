@@ -5,28 +5,60 @@ import {routing} from './i18n/routing';
 const intlMiddleware = createMiddleware(routing);
 
 // Spam query parameters that don't belong to this site
-const SPAM_PARAMS = ['products', 'product', 'p', 'id', 'item', 'pid', 'sku', 'add-to-cart', 'replytocom', 'action', 'post'];
+const SPAM_PARAMS = [
+  // E-commerce spam (most common attack vector)
+  'products', 'product', 'item', 'items', 'sku', 'pid', 'add-to-cart', 'cart',
+  'shop', 'store', 'buy', 'order', 'checkout', 'purchase',
+  // WordPress spam
+  'replytocom', 'action', 'post', 'attachment_id', 'page_id', 'cat',
+  // Generic spam patterns
+  'redirect', 'url', 'link', 'goto', 'out', 'away',
+  // Pharmacy/casino spam (common SEO spam)
+  'viagra', 'cialis', 'casino', 'poker', 'slots', 'betting',
+];
 
 // Spam patterns in the raw query string (catches ?products/123 format)
 const SPAM_QUERY_PATTERNS = [
-  /^products[\/=]/i,
-  /^product[\/=]/i,
-  /^item[\/=]/i,
-  /^p[\/=]\d/i,
-  /^id[\/=]\d/i,
+  /^products?[\/=]/i,        // ?product= or ?products= or ?products/
+  /^items?[\/=]/i,           // ?item= or ?items=
+  /^p[\/=]\d/i,              // ?p=123
+  /^id[\/=]\d/i,             // ?id=123
+  /^shop[\/=]/i,             // ?shop=
+  /^store[\/=]/i,            // ?store=
+  /^buy[\/=]/i,              // ?buy=
+  /^order[\/=]/i,            // ?order=
+  /^\d+$/,                   // Just numbers like ?12345
+  /^[a-z]{2,3}[\/=]/i,       // Short param hacks like ?en= ?de=
 ];
 
-// Legacy WordPress paths that don't exist on this Next.js site
+// Legacy WordPress paths and common attack vectors that don't exist on this Next.js site
+// Returns 410 Gone to signal permanent removal and speed up de-indexing
 const BLOCKED_PATHS = [
+  // WordPress
   '/wp-login.php',
   '/wp-admin',
   '/wp-content',
   '/wp-includes',
   '/xmlrpc.php',
   '/wp-json',
+  // Server files
   '/.env',
+  '/.git',
   '/phpmyadmin',
   '/administrator',
+  '/admin.php',
+  // E-commerce paths (we don't have a store)
+  '/shop',
+  '/store',
+  '/cart',
+  '/checkout',
+  '/products',
+  '/product',
+  '/add-to-cart',
+  // Common spam injection paths
+  '/feed',
+  '/rss',
+  '/trackback',
 ];
 
 export default function middleware(request: NextRequest) {
@@ -34,17 +66,17 @@ export default function middleware(request: NextRequest) {
   const rawQuery = request.nextUrl.search;
   const pathname = request.nextUrl.pathname;
 
-  // Block legacy WordPress and common attack paths (returns 404)
+  // Block legacy WordPress and common attack paths (returns 410 Gone)
   for (const blockedPath of BLOCKED_PATHS) {
     if (pathname.startsWith(blockedPath)) {
-      return new NextResponse('Not Found', { status: 404 });
+      return new NextResponse('Gone', { status: 410 });
     }
   }
 
-  // Block spam URLs with fake query parameters (returns 404)
+  // Block spam URLs with fake query parameters (returns 410 Gone for faster de-indexing)
   for (const param of SPAM_PARAMS) {
     if (searchParams.has(param)) {
-      return new NextResponse('Not Found', { status: 404 });
+      return new NextResponse('Gone', { status: 410 });
     }
   }
 
@@ -53,7 +85,7 @@ export default function middleware(request: NextRequest) {
     const queryWithoutQuestion = rawQuery.slice(1);
     for (const pattern of SPAM_QUERY_PATTERNS) {
       if (pattern.test(queryWithoutQuestion)) {
-        return new NextResponse('Not Found', { status: 404 });
+        return new NextResponse('Gone', { status: 410 });
       }
     }
   }
