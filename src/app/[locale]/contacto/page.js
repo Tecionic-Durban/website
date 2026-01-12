@@ -121,7 +121,7 @@ export default function ContactPage() {
     'Filtración y deshidratación de borras y sólidos',
     'Tratamiento y recuperación de orgánico en procesos SX',
     'Deshidratación de concentrados de cobre',
-    'Tratamiento de sólidos finos (centrífugas)',
+    'Tratamiento de sólidos finos',
     'Remoción de sólidos de aguas clarificadas',
     'Limpieza de celdas EW',
     'Consulta general'
@@ -144,7 +144,7 @@ export default function ContactPage() {
       'Filtración y deshidratación de borras y sólidos': '¿Cuál es el volumen aproximado de borras que necesita procesar? (ton/día)',
       'Tratamiento y recuperación de orgánico en procesos SX': '¿Qué tipo de contaminación presenta su orgánico?',
       'Deshidratación de concentrados de cobre': '¿Cuál es la capacidad de producción de concentrados? (ton/día)',
-      'Tratamiento de sólidos finos (centrífugas)': '¿Cuál es el caudal de sólidos finos a tratar? (m³/h)',
+      'Tratamiento de sólidos finos': '¿Cuál es el caudal de sólidos finos a tratar? (m³/h)',
       'Remoción de sólidos de aguas clarificadas': '¿Cuál es el caudal de agua a clarificar? (m³/h)',
       'Limpieza de celdas EW': '¿Cuántas celdas EW requieren limpieza?'
     }
