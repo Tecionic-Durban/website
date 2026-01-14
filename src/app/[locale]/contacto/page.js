@@ -2,12 +2,14 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Location, Email, Time } from '@carbon/icons-react'
 import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import posthog from 'posthog-js'
 
 // reCAPTCHA v3 site key
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 export default function ContactPage() {
+  const t = useTranslations('contactPage')
   const [selectedService, setSelectedService] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
@@ -117,19 +119,21 @@ export default function ContactPage() {
     }
   }
 
-  const services = [
-    'Filtración y deshidratación de borras y sólidos',
-    'Tratamiento y recuperación de orgánico en procesos SX',
-    'Deshidratación de concentrados de cobre',
-    'Tratamiento de sólidos finos',
-    'Remoción de sólidos de aguas clarificadas',
-    'Limpieza de celdas EW',
-    'Consulta general'
+  // Service keys for translation lookup
+  const serviceKeys = [
+    'filtration',
+    'organicTreatment',
+    'concentrateDehydration',
+    'fineSolids',
+    'waterClarification',
+    'ewCleaning',
+    'generalInquiry'
   ]
 
-  const handleServiceChange = (service) => {
-    setSelectedService(service)
-    setFormData({...formData, service})
+  const handleServiceChange = (serviceKey) => {
+    setSelectedService(serviceKey)
+    const serviceLabel = t(`form.services.${serviceKey}`)
+    setFormData({...formData, service: serviceLabel})
   }
 
   const getFormProgress = () => {
@@ -140,15 +144,8 @@ export default function ContactPage() {
 
   // Service-specific questions
   const getServiceQuestion = () => {
-    const questions = {
-      'Filtración y deshidratación de borras y sólidos': '¿Cuál es el volumen aproximado de borras que necesita procesar? (ton/día)',
-      'Tratamiento y recuperación de orgánico en procesos SX': '¿Qué tipo de contaminación presenta su orgánico?',
-      'Deshidratación de concentrados de cobre': '¿Cuál es la capacidad de producción de concentrados? (ton/día)',
-      'Tratamiento de sólidos finos': '¿Cuál es el caudal de sólidos finos a tratar? (m³/h)',
-      'Remoción de sólidos de aguas clarificadas': '¿Cuál es el caudal de agua a clarificar? (m³/h)',
-      'Limpieza de celdas EW': '¿Cuántas celdas EW requieren limpieza?'
-    }
-    return questions[selectedService] || null
+    if (!selectedService || selectedService === 'generalInquiry') return null
+    return t(`form.serviceQuestions.${selectedService}`)
   }
 
   return (
@@ -157,11 +154,10 @@ export default function ContactPage() {
       <section className="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6">Contacto</h1>
+            <h1 className="text-5xl font-bold mb-6">{t('hero.title')}</h1>
             <div className="w-24 h-1 bg-emerald-400 mb-6"></div>
             <p className="text-xl text-emerald-100 leading-relaxed">
-              Estamos listos para ayudarle a optimizar sus procesos mineros con soluciones móviles 
-              especializadas en filtración y separación sólido-líquido.
+              {t('hero.description')}
             </p>
           </div>
         </div>
@@ -173,7 +169,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Solicite una Consulta</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('form.title')}</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Honeypot - hidden from humans */}
@@ -192,7 +188,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                      <span>Nombre</span>
+                      <span>{t('form.firstName')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
@@ -200,12 +196,12 @@ export default function ContactPage() {
                       value={formData.firstName}
                       onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Juan"
+                      placeholder={t('form.placeholder.firstName')}
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                      <span>Apellido</span>
+                      <span>{t('form.lastName')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
@@ -213,7 +209,7 @@ export default function ContactPage() {
                       value={formData.lastName}
                       onChange={(e) => setFormData({...formData, lastName: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Pérez"
+                      placeholder={t('form.placeholder.lastName')}
                     />
                   </div>
                 </div>
@@ -222,7 +218,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                      <span>Email de Trabajo</span>
+                      <span>{t('form.workEmail')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
@@ -230,12 +226,12 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="juan.perez@empresa.com"
+                      placeholder={t('form.placeholder.email')}
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                      <span>Empresa</span>
+                      <span>{t('form.company')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
@@ -243,7 +239,7 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={(e) => setFormData({...formData, company: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Nombre de su empresa"
+                      placeholder={t('form.placeholder.company')}
                     />
                   </div>
                 </div>
@@ -251,31 +247,31 @@ export default function ContactPage() {
                 {/* Phone (optional) */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Teléfono <span className="text-gray-400 font-normal">(opcional)</span>
+                    {t('form.phone')} <span className="text-gray-400 font-normal">({t('form.optional')})</span>
                   </label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                    placeholder="+56 9 xxxx xxxx"
+                    placeholder={t('form.placeholder.phone')}
                   />
                 </div>
 
                 {/* Service Selection */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                    <span>Servicio de Interés</span>
+                    <span>{t('form.serviceOfInterest')}</span>
                     <span className="text-red-500 ml-1">*</span>
                   </label>
-                  <select 
+                  <select
                     value={selectedService}
                     onChange={(e) => handleServiceChange(e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                   >
-                    <option value="">Seleccione un servicio</option>
-                    {services.map((service, index) => (
-                      <option key={index} value={service}>{service}</option>
+                    <option value="">{t('form.selectService')}</option>
+                    {serviceKeys.map((key) => (
+                      <option key={key} value={key}>{t(`form.services.${key}`)}</option>
                     ))}
                   </select>
                 </div>
@@ -291,7 +287,7 @@ export default function ContactPage() {
                       value={formData.serviceSpecificAnswer}
                       onChange={(e) => setFormData({...formData, serviceSpecificAnswer: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Ingrese su respuesta"
+                      placeholder={t('form.answerPlaceholder')}
                     />
                   </div>
                 )}
@@ -299,14 +295,14 @@ export default function ContactPage() {
                 {/* Additional Comments */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Comentarios Adicionales
+                    {t('form.additionalComments')}
                   </label>
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent placeholder-gray-500 resize-none transition-all duration-300"
-                    placeholder="Cuéntenos más detalles sobre sus necesidades específicas..."
+                    placeholder={t('form.placeholder.message')}
                   />
                 </div>
 
@@ -316,8 +312,8 @@ export default function ContactPage() {
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-emerald-600 mr-2" />
                       <div>
-                        <p className="font-semibold text-emerald-800">¡Consulta enviada exitosamente!</p>
-                        <p className="text-sm text-emerald-600">Recibirá una confirmación en su correo. Le responderemos dentro de 24 horas hábiles.</p>
+                        <p className="font-semibold text-emerald-800">{t('form.success.title')}</p>
+                        <p className="text-sm text-emerald-600">{t('form.success.message')}</p>
                       </div>
                     </div>
                   </div>
@@ -329,8 +325,8 @@ export default function ContactPage() {
                     <div className="flex items-center">
                       <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
                       <div>
-                        <p className="font-semibold text-red-800">Error al enviar la consulta</p>
-                        <p className="text-sm text-red-600">Por favor intente nuevamente o contáctenos directamente a contacto@tsf.cl</p>
+                        <p className="font-semibold text-red-800">{t('form.error.title')}</p>
+                        <p className="text-sm text-red-600">{t('form.error.message')}</p>
                       </div>
                     </div>
                   </div>
@@ -352,24 +348,24 @@ export default function ContactPage() {
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
                         <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                        Enviando...
+                        {t('form.submit.sending')}
                       </div>
                     ) : getFormProgress() >= 100 ? (
                       <div className="flex items-center justify-center">
                         <CheckCircle className="w-5 h-5 mr-2" />
-                        Enviar Consulta Técnica
+                        {t('form.submit.ready')}
                       </div>
                     ) : (
                       <div className="flex items-center justify-center">
                         <AlertCircle className="w-5 h-5 mr-2" />
-                        Complete campos requeridos
+                        {t('form.submit.incomplete')}
                       </div>
                     )}
                   </button>
 
                   {getFormProgress() >= 100 && !isSubmitting && submitStatus !== 'success' && (
                     <div className="text-emerald-600 text-sm animate-pulse">
-                      ✓ Listo para enviar
+                      {t('form.submit.readyToSend')}
                     </div>
                   )}
                 </div>
@@ -379,7 +375,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Información de Contacto</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('info.title')}</h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
@@ -387,11 +383,11 @@ export default function ContactPage() {
                       <Location className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg text-gray-900">Ubicaciones</h4>
+                      <h4 className="font-semibold text-lg text-gray-900">{t('info.locations')}</h4>
                       <p className="text-gray-600">
-                        <strong>Santiago:</strong> Luis Thayer Ojeda 95, of. 312, Providencia<br />
-                        <strong>Antofagasta:</strong> Miraflores 1260 B, Calama<br />
-                        <span className="text-emerald-600 font-medium">Servicios móviles en toda Latinoamérica</span>
+                        <strong>{t('info.locationsDetail.santiago')}</strong> {t('info.locationsDetail.santiagoAddress')}<br />
+                        <strong>{t('info.locationsDetail.antofagasta')}</strong> {t('info.locationsDetail.antofagastaAddress')}<br />
+                        <span className="text-emerald-600 font-medium">{t('info.locationsDetail.mobileServices')}</span>
                       </p>
                     </div>
                   </div>
@@ -401,7 +397,7 @@ export default function ContactPage() {
                       <Email className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg text-gray-900">Email</h4>
+                      <h4 className="font-semibold text-lg text-gray-900">{t('info.email')}</h4>
                       <a href="mailto:contacto@tsf.cl" className="text-emerald-600 hover:text-emerald-700 transition-colors font-medium">
                         contacto@tsf.cl
                       </a>
@@ -413,10 +409,10 @@ export default function ContactPage() {
                       <Time className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg text-gray-900">Horarios de Atención</h4>
+                      <h4 className="font-semibold text-lg text-gray-900">{t('info.hours')}</h4>
                       <p className="text-gray-600">
-                        Lunes - Viernes: 8:00 - 18:00 CLT<br />
-                        <span className="text-emerald-600 font-medium">Soporte de emergencia 24/7</span>
+                        {t('info.hoursDetail.weekdays')}<br />
+                        <span className="text-emerald-600 font-medium">{t('info.hoursDetail.emergency')}</span>
                       </p>
                     </div>
                   </div>
@@ -427,12 +423,12 @@ export default function ContactPage() {
               <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
                 <div className="flex items-center mb-3">
                   <Time className="w-5 h-5 text-yellow-600 mr-2" />
-                  <h4 className="font-semibold text-yellow-900">Garantía de Respuesta</h4>
+                  <h4 className="font-semibold text-yellow-900">{t('guarantee.title')}</h4>
                 </div>
-                <p className="text-yellow-800 text-sm">
-                  Respondemos todas las consultas técnicas dentro de <strong>24 horas hábiles</strong>.
-                  Para emergencias operacionales, contamos con soporte prioritario.
-                </p>
+                <p
+                  className="text-yellow-800 text-sm"
+                  dangerouslySetInnerHTML={{ __html: t('guarantee.message') }}
+                />
               </div>
             </div>
           </div>

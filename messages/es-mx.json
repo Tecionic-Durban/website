@@ -268,6 +268,85 @@
     },
     "trustLine": "Trabajamos con las principales compañías industriales de Latinoamérica"
   },
+  "contactPage": {
+    "hero": {
+      "title": "Contacto",
+      "description": "Estamos listos para ayudarle a optimizar sus procesos mineros con soluciones móviles especializadas en filtración y separación sólido-líquido."
+    },
+    "form": {
+      "title": "Solicite una Consulta",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "workEmail": "Email de Trabajo",
+      "company": "Empresa",
+      "phone": "Teléfono",
+      "optional": "opcional",
+      "serviceOfInterest": "Servicio de Interés",
+      "selectService": "Seleccione un servicio",
+      "additionalComments": "Comentarios Adicionales",
+      "placeholder": {
+        "firstName": "Juan",
+        "lastName": "Pérez",
+        "email": "juan.perez@empresa.com",
+        "company": "Nombre de su empresa",
+        "phone": "+52 55 xxxx xxxx",
+        "message": "Cuéntenos más detalles sobre sus necesidades específicas..."
+      },
+      "services": {
+        "filtration": "Filtración y deshidratación de borras y sólidos",
+        "organicTreatment": "Tratamiento y recuperación de orgánico en procesos SX",
+        "concentrateDehydration": "Deshidratación de concentrados de cobre",
+        "fineSolids": "Tratamiento de sólidos finos",
+        "waterClarification": "Remoción de sólidos de aguas clarificadas",
+        "ewCleaning": "Limpieza de celdas EW",
+        "generalInquiry": "Consulta general"
+      },
+      "serviceQuestions": {
+        "filtration": "¿Cuál es el volumen aproximado de borras que necesita procesar? (ton/día)",
+        "organicTreatment": "¿Qué tipo de contaminación presenta su orgánico?",
+        "concentrateDehydration": "¿Cuál es la capacidad de producción de concentrados? (ton/día)",
+        "fineSolids": "¿Cuál es el caudal de sólidos finos a tratar? (m³/h)",
+        "waterClarification": "¿Cuál es el caudal de agua a clarificar? (m³/h)",
+        "ewCleaning": "¿Cuántas celdas EW requieren limpieza?"
+      },
+      "answerPlaceholder": "Ingrese su respuesta",
+      "submit": {
+        "sending": "Enviando...",
+        "ready": "Enviar Consulta Técnica",
+        "incomplete": "Complete campos requeridos",
+        "readyToSend": "✓ Listo para enviar"
+      },
+      "success": {
+        "title": "¡Consulta enviada exitosamente!",
+        "message": "Recibirá una confirmación en su correo. Le responderemos dentro de 24 horas hábiles."
+      },
+      "error": {
+        "title": "Error al enviar la consulta",
+        "message": "Por favor intente nuevamente o contáctenos directamente a contacto@tsf.cl"
+      }
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "locations": "Ubicaciones",
+      "locationsDetail": {
+        "santiago": "Santiago:",
+        "santiagoAddress": "Luis Thayer Ojeda 95, of. 312, Providencia",
+        "antofagasta": "Antofagasta:",
+        "antofagastaAddress": "Miraflores 1260 B, Calama",
+        "mobileServices": "Servicios móviles en toda Latinoamérica"
+      },
+      "email": "Email",
+      "hours": "Horarios de Atención",
+      "hoursDetail": {
+        "weekdays": "Lunes - Viernes: 8:00 - 18:00 CLT",
+        "emergency": "Soporte de emergencia 24/7"
+      }
+    },
+    "guarantee": {
+      "title": "Garantía de Respuesta",
+      "message": "Respondemos todas las consultas técnicas dentro de <strong>24 horas hábiles</strong>. Para emergencias operacionales, contamos con soporte prioritario."
+    }
+  },
   "efficiencyComparison": {
     "badge": "Casos de Éxito Interactivos",
     "headline": "Resultados Comprobados:",

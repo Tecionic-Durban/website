@@ -268,6 +268,85 @@
     },
     "trustLine": "We work with leading industrial companies across Latin America"
   },
+  "contactPage": {
+    "hero": {
+      "title": "Contact",
+      "description": "We are ready to help you optimize your mining processes with specialized mobile solutions for filtration and solid-liquid separation."
+    },
+    "form": {
+      "title": "Request a Consultation",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "workEmail": "Work Email",
+      "company": "Company",
+      "phone": "Phone",
+      "optional": "optional",
+      "serviceOfInterest": "Service of Interest",
+      "selectService": "Select a service",
+      "additionalComments": "Additional Comments",
+      "placeholder": {
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": "john.smith@company.com",
+        "company": "Your company name",
+        "phone": "+1 555 xxx xxxx",
+        "message": "Tell us more about your specific needs..."
+      },
+      "services": {
+        "filtration": "Filtration and dehydration of sludge and solids",
+        "organicTreatment": "Treatment and recovery of organic in SX processes",
+        "concentrateDehydration": "Copper concentrate dehydration",
+        "fineSolids": "Fine solids treatment",
+        "waterClarification": "Solids removal from clarified water",
+        "ewCleaning": "EW cell cleaning",
+        "generalInquiry": "General inquiry"
+      },
+      "serviceQuestions": {
+        "filtration": "What is the approximate volume of sludge you need to process? (ton/day)",
+        "organicTreatment": "What type of contamination does your organic have?",
+        "concentrateDehydration": "What is your concentrate production capacity? (ton/day)",
+        "fineSolids": "What is the flow rate of fine solids to treat? (m³/h)",
+        "waterClarification": "What is the flow rate of water to clarify? (m³/h)",
+        "ewCleaning": "How many EW cells require cleaning?"
+      },
+      "answerPlaceholder": "Enter your answer",
+      "submit": {
+        "sending": "Sending...",
+        "ready": "Submit Technical Inquiry",
+        "incomplete": "Complete required fields",
+        "readyToSend": "✓ Ready to send"
+      },
+      "success": {
+        "title": "Inquiry submitted successfully!",
+        "message": "You will receive a confirmation in your email. We will respond within 24 business hours."
+      },
+      "error": {
+        "title": "Error submitting inquiry",
+        "message": "Please try again or contact us directly at contacto@tsf.cl"
+      }
+    },
+    "info": {
+      "title": "Contact Information",
+      "locations": "Locations",
+      "locationsDetail": {
+        "santiago": "Santiago:",
+        "santiagoAddress": "Luis Thayer Ojeda 95, of. 312, Providencia",
+        "antofagasta": "Antofagasta:",
+        "antofagastaAddress": "Miraflores 1260 B, Calama",
+        "mobileServices": "Mobile services throughout Latin America"
+      },
+      "email": "Email",
+      "hours": "Business Hours",
+      "hoursDetail": {
+        "weekdays": "Monday - Friday: 8:00 - 18:00 CLT",
+        "emergency": "24/7 emergency support"
+      }
+    },
+    "guarantee": {
+      "title": "Response Guarantee",
+      "message": "We respond to all technical inquiries within <strong>24 business hours</strong>. For operational emergencies, we have priority support."
+    }
+  },
   "efficiencyComparison": {
     "badge": "Interactive Success Stories",
     "headline": "Proven Results:",
