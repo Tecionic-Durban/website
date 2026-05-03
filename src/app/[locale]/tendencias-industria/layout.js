@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/tendencias-industria`,
         'es-MX': `${baseUrl}/es-mx/tendencias-industria`,
+        'es':    `${baseUrl}/es-mx/tendencias-industria`,
         'pt-BR': `${baseUrl}/pt-br/tendencias-industria`,
         'en': `${baseUrl}/en/tendencias-industria`,
+        'x-default': `${baseUrl}/en/tendencias-industria`,
       },
     },
     openGraph: {

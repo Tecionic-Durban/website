@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import { RainDrop, Industry, DeliveryTruck, Security, CheckmarkFilled, ArrowRight, Time, UserMultiple, Headset, Tools, Recycle, Growth, Settings } from '@carbon/icons-react'
 import gsap from 'gsap'
@@ -529,19 +529,19 @@ export default function CrudeOilIndustryPage() {
 
           {/* Results as big cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100">
+            <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 border border-amber-100">
               <div className="text-6xl font-black text-amber-600 mb-2">84%</div>
               <div className="text-lg font-bold text-gray-900 mb-2">{t('validation.results.phenolic.title')}</div>
               <p className="text-gray-600 text-sm">{t('validation.results.phenolic.description')}</p>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100">
+            <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 border border-amber-100">
               <div className="text-6xl font-black text-amber-600 mb-2">77%</div>
               <div className="text-lg font-bold text-gray-900 mb-2">{t('validation.results.phenol.title')}</div>
               <p className="text-gray-600 text-sm">{t('validation.results.phenol.description')}</p>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100">
+            <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 border border-amber-100">
               <div className="text-6xl font-black text-amber-600 mb-2">33%</div>
               <div className="text-lg font-bold text-gray-900 mb-2">{t('validation.results.process.title')}</div>
               <p className="text-gray-600 text-sm">{t('validation.results.process.description')}</p>

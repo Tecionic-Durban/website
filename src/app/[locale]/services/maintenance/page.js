@@ -431,20 +431,20 @@ export default function MaintenanceServicePage() {
                     </div>
                   </div>
 
-                  <div className="bg-green-50 rounded-xl p-6">
-                    <h3 className="text-xl font-semibold text-green-900 mb-4">Impacto Económico</h3>
+                  <div className="bg-emerald-50 rounded-xl p-6">
+                    <h3 className="text-xl font-semibold text-emerald-900 mb-4">Impacto Económico</h3>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-green-800">Reducción costos mantenimiento</span>
-                        <span className="font-bold text-green-900">25-35%</span>
+                        <span className="text-emerald-800">Reducción costos mantenimiento</span>
+                        <span className="font-bold text-emerald-900">25-35%</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-green-800">Extensión vida útil equipos</span>
-                        <span className="font-bold text-green-900">30-50%</span>
+                        <span className="text-emerald-800">Extensión vida útil equipos</span>
+                        <span className="font-bold text-emerald-900">30-50%</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-green-800">ROI programa mantenimiento</span>
-                        <span className="font-bold text-green-900">200-400%</span>
+                        <span className="text-emerald-800">ROI programa mantenimiento</span>
+                        <span className="font-bold text-emerald-900">200-400%</span>
                       </div>
                     </div>
                   </div>

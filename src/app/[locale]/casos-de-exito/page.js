@@ -1,11 +1,11 @@
-'use client'
-
 import { ArrowRight, Factory, Droplets, FlaskConical, Shield, Clock } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function CasosExitoPage() {
-  const t = useTranslations('caseStudies')
+export default async function CasosExitoPage({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('caseStudies')
 
   // Icons for each case study (order matches JSON array)
   const caseIcons = [Factory, Droplets, Factory, Shield, Clock, FlaskConical]
@@ -234,7 +234,7 @@ export default function CasosExitoPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/servicios"
+              href="/services"
               className="inline-flex items-center gap-2 border border-gray-700 text-gray-300 px-6 py-3 rounded-lg font-semibold hover:border-gray-500 hover:text-white transition-colors"
             >
               {t('cta.servicesButton')}

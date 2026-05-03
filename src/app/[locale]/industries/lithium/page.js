@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { RainDrop, Chemistry, Industry, ArrowRight, Time, UserMultiple, Recycle, Growth, Settings } from '@carbon/icons-react'
 import gsap from 'gsap'

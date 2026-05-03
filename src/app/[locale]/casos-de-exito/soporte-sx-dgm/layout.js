@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/casos-de-exito/soporte-sx-dgm`,
         'es-MX': `${baseUrl}/es-mx/casos-de-exito/soporte-sx-dgm`,
+        'es':    `${baseUrl}/es-mx/casos-de-exito/soporte-sx-dgm`,
         'pt-BR': `${baseUrl}/pt-br/casos-de-exito/soporte-sx-dgm`,
         'en': `${baseUrl}/en/casos-de-exito/soporte-sx-dgm`,
+        'x-default': `${baseUrl}/en/casos-de-exito/soporte-sx-dgm`,
       },
     },
     openGraph: {

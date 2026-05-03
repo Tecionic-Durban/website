@@ -307,14 +307,13 @@ export default function CopperIndustryPage() {
             {/* Service grid - Horizontal carousel on mobile, grid on desktop */}
             <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
 
-              {/* Service 1 - Blue accent */}
+              {/* Service 1 - Organic Treatment */}
               <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
-                {/* Subtle corner decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-50 rounded-bl-full opacity-50"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-500/5 rounded-tr-full"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100 to-orange-50 rounded-bl-full opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-500/5 rounded-tr-full"></div>
 
                 <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:shadow-xl group-hover:shadow-blue-500/30 group-hover:scale-105 transition-all">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:shadow-xl group-hover:shadow-orange-500/30 group-hover:scale-105 transition-all">
                     <Chemistry className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.organicTreatment.title')}</h3>
@@ -324,26 +323,25 @@ export default function CopperIndustryPage() {
                   <div className="space-y-2 text-sm">
                     {t.raw('services.cards.organicTreatment.specs').map((spec, index) => (
                       <div key={index} className="flex items-center gap-2 text-gray-700">
-                        <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+                        <div className="w-1 h-1 bg-orange-500 rounded-full"></div>
                         {spec}
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <div className="text-xs font-semibold text-gray-500">{t('services.cards.organicTreatment.validated')}</div>
-                    <div className="text-sm font-bold text-blue-600">{t('services.cards.organicTreatment.client')}</div>
+                    <div className="text-sm font-bold text-orange-600">{t('services.cards.organicTreatment.client')}</div>
                   </div>
                 </div>
               </div>
 
-              {/* Service 2 - Amber accent */}
+              {/* Service 2 - EW Cleaning */}
               <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start lg:translate-y-4">
-                {/* Subtle corner decoration */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-amber-100 to-orange-50 rounded-br-full opacity-50"></div>
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-amber-500/5 rounded-tl-full"></div>
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-orange-100 to-orange-50 rounded-br-full opacity-50"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-orange-500/5 rounded-tl-full"></div>
 
                 <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20 group-hover:shadow-xl group-hover:shadow-amber-500/30 group-hover:scale-105 transition-all">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:shadow-xl group-hover:shadow-orange-500/30 group-hover:scale-105 transition-all">
                     <Flash className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.ewCleaning.title')}</h3>
@@ -353,26 +351,25 @@ export default function CopperIndustryPage() {
                   <div className="space-y-2 text-sm">
                     {t.raw('services.cards.ewCleaning.specs').map((spec, index) => (
                       <div key={index} className="flex items-center gap-2 text-gray-700">
-                        <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
+                        <div className="w-1 h-1 bg-orange-500 rounded-full"></div>
                         {spec}
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <div className="text-xs font-semibold text-gray-500">{t('services.cards.ewCleaning.validated')}</div>
-                    <div className="text-sm font-bold text-amber-600">{t('services.cards.ewCleaning.client')}</div>
+                    <div className="text-sm font-bold text-orange-600">{t('services.cards.ewCleaning.client')}</div>
                   </div>
                 </div>
               </div>
 
-              {/* Service 3 - Purple accent */}
+              {/* Service 3 - Concentrate Dehydration */}
               <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start">
-                {/* Subtle corner decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-violet-50 rounded-bl-full opacity-50"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-500/5 rounded-tr-full"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100 to-orange-50 rounded-bl-full opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-500/5 rounded-tr-full"></div>
 
                 <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 group-hover:scale-105 transition-all">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:shadow-xl group-hover:shadow-orange-500/30 group-hover:scale-105 transition-all">
                     <FilterCarbon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.concentrateDehydration.title')}</h3>
@@ -382,26 +379,25 @@ export default function CopperIndustryPage() {
                   <div className="space-y-2 text-sm">
                     {t.raw('services.cards.concentrateDehydration.specs').map((spec, index) => (
                       <div key={index} className="flex items-center gap-2 text-gray-700">
-                        <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
+                        <div className="w-1 h-1 bg-orange-500 rounded-full"></div>
                         {spec}
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <div className="text-xs font-semibold text-gray-500">{t('services.cards.concentrateDehydration.validated')}</div>
-                    <div className="text-sm font-bold text-purple-600">{t('services.cards.concentrateDehydration.client')}</div>
+                    <div className="text-sm font-bold text-orange-600">{t('services.cards.concentrateDehydration.client')}</div>
                   </div>
                 </div>
               </div>
 
-              {/* Service 4 - Teal accent */}
+              {/* Service 4 - SX Sludge */}
               <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start lg:translate-y-4">
-                {/* Subtle corner decoration */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-teal-100 to-orange-50 rounded-br-full opacity-50"></div>
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-teal-500/5 rounded-tl-full"></div>
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-orange-100 to-orange-50 rounded-br-full opacity-50"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-orange-500/5 rounded-tl-full"></div>
 
                 <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/20 group-hover:shadow-xl group-hover:shadow-teal-500/30 group-hover:scale-105 transition-all">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:shadow-xl group-hover:shadow-orange-500/30 group-hover:scale-105 transition-all">
                     <Humidity className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.sxSludge.title')}</h3>
@@ -411,7 +407,7 @@ export default function CopperIndustryPage() {
                   <div className="space-y-2 text-sm">
                     {t.raw('services.cards.sxSludge.specs').map((spec, index) => (
                       <div key={index} className="flex items-center gap-2 text-gray-700">
-                        <div className="w-1 h-1 bg-teal-500 rounded-full"></div>
+                        <div className="w-1 h-1 bg-orange-500 rounded-full"></div>
                         {spec}
                       </div>
                     ))}
@@ -419,14 +415,13 @@ export default function CopperIndustryPage() {
                 </div>
               </div>
 
-              {/* Service 5 - Slate accent */}
+              {/* Service 5 - Fine Solids */}
               <div className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0 w-[80vw] md:w-auto snap-start lg:translate-y-4">
-                {/* Subtle corner decoration */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-slate-100 to-gray-50 rounded-br-full opacity-50"></div>
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-slate-500/5 rounded-tl-full"></div>
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-orange-100 to-orange-50 rounded-br-full opacity-50"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-orange-500/5 rounded-tl-full"></div>
 
                 <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-slate-500/20 group-hover:shadow-xl group-hover:shadow-slate-500/30 group-hover:scale-105 transition-all">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:shadow-xl group-hover:shadow-orange-500/30 group-hover:scale-105 transition-all">
                     <SettingsCarbon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{t('services.cards.fineSolids.title')}</h3>
@@ -436,7 +431,7 @@ export default function CopperIndustryPage() {
                   <div className="space-y-2 text-sm">
                     {t.raw('services.cards.fineSolids.specs').map((spec, index) => (
                       <div key={index} className="flex items-center gap-2 text-gray-700">
-                        <div className="w-1 h-1 bg-slate-500 rounded-full"></div>
+                        <div className="w-1 h-1 bg-orange-500 rounded-full"></div>
                         {spec}
                       </div>
                     ))}
@@ -510,7 +505,7 @@ export default function CopperIndustryPage() {
 
               {/* Right - Content */}
               <div>
-                <div className="text-amber-600 text-sm font-semibold mb-4 uppercase tracking-wider">
+                <div className="text-orange-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                   {t('ewSection.badge')}
                 </div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -535,7 +530,7 @@ export default function CopperIndustryPage() {
                 {/* CTA to EW cleaning service page */}
                 <button
                   onClick={() => handleContactClick('/services/ew-cleaning', { router, currentPath: pathname })}
-                  className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:gap-3 shadow-lg shadow-amber-600/20"
+                  className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:gap-3 shadow-lg shadow-orange-600/20"
                 >
                   {t('ewSection.cta')}
                   <ArrowRight className="w-5 h-5" />
@@ -549,7 +544,7 @@ export default function CopperIndustryPage() {
         <section className="py-20 bg-white">
           <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <div className="text-blue-600 text-sm font-semibold mb-4 uppercase tracking-wider">
+              <div className="text-orange-600 text-sm font-semibold mb-4 uppercase tracking-wider">
                 {t('caseStudy.badge')}
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -594,7 +589,7 @@ export default function CopperIndustryPage() {
             </div>
 
             {/* Economic impact */}
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-12 border border-emerald-100">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-12 border border-emerald-100">
               <div className="text-center mb-8">
                 <div className="text-sm font-semibold text-emerald-900 mb-2 uppercase tracking-wider">{t('caseStudy.economicImpact.title')}</div>
               </div>

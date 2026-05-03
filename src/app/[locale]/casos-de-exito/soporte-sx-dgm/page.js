@@ -1,11 +1,11 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function SoporteSXDGMCase() {
-  const tc = useTranslations('caseStudyDetail.common')
-  const ts = useTranslations('caseStudyDetail.soporteSxDgm')
+export default async function SoporteSXDGMCase({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tc = await getTranslations('caseStudyDetail.common')
+  const ts = await getTranslations('caseStudyDetail.soporteSxDgm')
 
   return (
     <div className="min-h-screen bg-gray-50">

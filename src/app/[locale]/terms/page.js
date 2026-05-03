@@ -1,10 +1,10 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 
-export default function TermsPage() {
-  const t = useTranslations('terms')
+export default async function TermsPage({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('terms')
 
   return (
     <div className="min-h-screen bg-gray-50">

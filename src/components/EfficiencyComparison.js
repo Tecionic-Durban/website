@@ -98,7 +98,7 @@ export default function EfficiencyComparison() {
   }
 
   return (
-    <section ref={comparisonRef} className="py-8 lg:py-16 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
+    <section ref={comparisonRef} className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
       {/* Enterprise Background Elements - hidden on mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
         <div className="absolute top-20 left-[10%] w-24 h-24 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
@@ -108,8 +108,8 @@ export default function EfficiencyComparison() {
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative">
         {/* Header */}
-        <div className="mb-4 lg:mb-12 progressive-reveal">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 lg:mb-4 leading-tight">
+        <div className="mb-10 lg:mb-16 progressive-reveal">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6 leading-tight">
             {t('headline')}
             <span className="block text-emerald-600">{t('headlineSub')}</span>
           </h2>

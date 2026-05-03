@@ -57,10 +57,7 @@ export default function LatamPresence() {
         <div className="relative z-10 py-6 px-4">
           {/* Header */}
           <div className="max-w-[75%] mb-5">
-            <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
-              {t('badge')}
-            </span>
-            <h2 className="text-4xl font-bold text-white mb-3">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6">
               {t('headline')}<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('headlineSub')}</span>
             </h2>
@@ -118,9 +115,6 @@ export default function LatamPresence() {
       <div className="hidden lg:block relative max-w-7xl mx-auto px-4 lg:px-8 py-40 min-h-[900px]">
         {/* Header */}
         <div className="text-right ml-auto max-w-xl mb-16">
-          <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-full mb-4">
-            {t('badge')}
-          </span>
           <h2 className="text-5xl font-bold text-white mb-4">
             {t('headline')}<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('headlineSub')}</span>

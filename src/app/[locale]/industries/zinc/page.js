@@ -211,7 +211,7 @@ export default function ZincIndustryPage() {
                 <div className="space-y-2">
                   {[0, 1, 2, 3].map((i) => (
                     <div key={i} className="flex items-center gap-3 text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
                       {t(`cajamarquilla.advantages.items.${i}`)}
                     </div>
                   ))}

@@ -1,11 +1,10 @@
 // src/components/Footer.js
-'use client'
 import { Link } from '@/i18n/navigation'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
-export default function Footer() {
+export default async function Footer() {
   const currentYear = new Date().getFullYear()
-  const t = useTranslations()
+  const t = await getTranslations()
 
   const services = [
     { key: 'filtration', href: '/services/filtration' },
@@ -24,7 +23,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-slate-950 text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -40,7 +39,7 @@ export default function Footer() {
               </div>
             </div>
             
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-slate-300 mb-6 max-w-md">
               {t('footer.description')}
             </p>
 
@@ -51,14 +50,14 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
                 <div>
-                  <p className="text-gray-300">{t('footer.offices')}</p>
+                  <p className="text-slate-300">{t('footer.offices')}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
-                <a href="mailto:contacto@tsf.cl" className="text-gray-300 hover:text-emerald-400 transition-colors">
+                <a href="mailto:contacto@tsf.cl" className="text-slate-300 hover:text-emerald-400 transition-colors">
                   contacto@tsf.cl
                 </a>
               </div>
@@ -78,7 +77,7 @@ export default function Footer() {
                 <li key={service.key}>
                   <Link
                     href={service.href}
-                    className="text-gray-300 hover:text-emerald-400 transition-colors text-sm"
+                    className="text-slate-300 hover:text-emerald-400 transition-colors text-sm"
                   >
                     {t(`services.items.${service.key}.title`)}
                   </Link>
@@ -95,7 +94,7 @@ export default function Footer() {
                 <li key={industry.key}>
                   <Link
                     href={industry.href}
-                    className="text-gray-300 hover:text-emerald-400 transition-colors text-sm"
+                    className="text-slate-300 hover:text-emerald-400 transition-colors text-sm"
                   >
                     {t(`header.industries.${industry.key}.name`)}
                   </Link>
@@ -106,17 +105,17 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 mt-8">{t('footer.resources')}</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/casos-de-exito" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
+                <Link href="/casos-de-exito" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
                   {t('header.resourceLinks.caseStudies.name')}
                 </Link>
               </li>
               <li>
-                <Link href="/tendencias-industria" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
+                <Link href="/tendencias-industria" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
                   {t('header.resourceLinks.industryTrends.name')}
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
+                <Link href="/about" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
                   {t('navigation.about')}
                 </Link>
               </li>
@@ -125,16 +124,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 text-sm mb-4 md:mb-0">
+        <div className="border-t border-slate-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-slate-500 text-sm mb-4 md:mb-0">
             © {currentYear} Tecionic S.A. {t('footer.copyright')}
           </div>
 
           <div className="flex space-x-6 text-sm">
-            <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">
+            <Link href="/privacy" className="text-slate-500 hover:text-emerald-400 transition-colors">
               {t('footer.privacyPolicy')}
             </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors">
+            <Link href="/terms" className="text-slate-500 hover:text-emerald-400 transition-colors">
               {t('footer.termsOfService')}
             </Link>
           </div>

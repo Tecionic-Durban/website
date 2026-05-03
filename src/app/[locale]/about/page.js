@@ -1,12 +1,13 @@
-'use client'
 // src/app/about/page.js
 import Image from 'next/image'
 import { Flash, Security, Renew, Connect, Collaborate, Time, CertificateCheck, CheckmarkFilled, Growth, Building, Partnership, Chemistry, Earth, RainDrop, Calendar } from '@carbon/icons-react'
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function AboutPage() {
-  const t = useTranslations('aboutPage')
+export default async function AboutPage({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('aboutPage')
 
   // Icons for values (order matches JSON array)
   const valueIcons = [Flash, Security, Renew, Connect, Collaborate]
@@ -271,7 +272,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex justify-center">
-              <Link href="/contact" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 precision-click">
+              <Link href="/contacto" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 precision-click">
                 {t('cta.contactButton')}
               </Link>
             </div>

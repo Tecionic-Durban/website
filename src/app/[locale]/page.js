@@ -20,12 +20,12 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Customers />
       <About />
       <Services />
       <EfficiencyComparison />
       <LatamPresence />
       <OperationalIntelligence />
-      <Customers />
       <Contact />
     </>
   )

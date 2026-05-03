@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/casos-de-exito/tratamiento-organico-sx`,
         'es-MX': `${baseUrl}/es-mx/casos-de-exito/tratamiento-organico-sx`,
+        'es':    `${baseUrl}/es-mx/casos-de-exito/tratamiento-organico-sx`,
         'pt-BR': `${baseUrl}/pt-br/casos-de-exito/tratamiento-organico-sx`,
         'en': `${baseUrl}/en/casos-de-exito/tratamiento-organico-sx`,
+        'x-default': `${baseUrl}/en/casos-de-exito/tratamiento-organico-sx`,
       },
     },
     openGraph: {

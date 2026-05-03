@@ -13,23 +13,23 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Medición TIF en Tiempo Real | Monitoreo SX | Tecionic',
-      description: 'Sistema de medición TIF (Total Insoluble Fe) en tiempo real para circuitos de extracción por solventes. Optimiza recuperación de cobre, reduce pérdidas de orgánico y mejora eficiencia operacional.',
+      title: 'Medición TIF en Tiempo Real para Circuitos SX | Tecionic',
+      description: 'Monitoreo en tiempo real de Fe Insoluble Total (TIF) para extracción por solventes. Optimiza recuperación de cobre, reduce pérdidas, mejora eficiencia.',
       keywords: 'medición TIF, Total Insoluble Fe, monitoreo SX, extracción por solventes, analytics minería, optimización cobre, pérdidas orgánico, datos tiempo real',
     },
     'es-mx': {
-      title: 'Medición TIF en Tiempo Real | Monitoreo SX | Tecionic',
-      description: 'Sistema de medición TIF (Total Insoluble Fe) en tiempo real para circuitos de extracción por solventes. Optimiza recuperación de cobre, reduce pérdidas de orgánico y mejora eficiencia operacional.',
+      title: 'Medición TIF en Tiempo Real para Circuitos SX | Tecionic',
+      description: 'Monitoreo en tiempo real de Fe Insoluble Total (TIF) para extracción por solventes. Optimiza recuperación de cobre, reduce pérdidas, mejora eficiencia.',
       keywords: 'medición TIF, Total Insoluble Fe, monitoreo SX, extracción por solventes, analytics minería, optimización cobre, pérdidas orgánico, datos tiempo real',
     },
     'pt-br': {
-      title: 'Medição TIF em Tempo Real | Monitoramento SX | Tecionic',
-      description: 'Sistema de medição TIF (Total Insoluble Fe) em tempo real para circuitos de extração por solventes. Otimiza recuperação de cobre, reduz perdas de orgânico e melhora eficiência operacional.',
+      title: 'Medição TIF em Tempo Real para Circuitos SX | Tecionic',
+      description: 'Monitoramento em tempo real de Fe Insolúvel Total (TIF) para extração por solventes. Otimiza recuperação de cobre, reduz perdas, melhora eficiência.',
       keywords: 'medição TIF, Total Insoluble Fe, monitoramento SX, extração por solventes, analytics mineração, otimização cobre, perdas orgânico, dados tempo real',
     },
     'en': {
-      title: 'Real-Time TIF Measurement | SX Monitoring | Tecionic',
-      description: 'Real-time TIF (Total Insoluble Fe) measurement system for solvent extraction circuits. Optimize copper recovery, reduce organic losses, and improve operational efficiency.',
+      title: 'Real-Time TIF Measurement for SX Circuits | Tecionic',
+      description: 'Real-time Total Insoluble Fe (TIF) monitoring for SX circuits. Optimize copper recovery, cut organic losses, improve plant efficiency.',
       keywords: 'TIF measurement, Total Insoluble Fe, SX monitoring, solvent extraction, mining analytics, copper optimization, organic losses, real-time data',
     },
   };
@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/services/tif-measurement`,
         'es-MX': `${baseUrl}/es-mx/services/tif-measurement`,
+        'es':    `${baseUrl}/es-mx/services/tif-measurement`,
         'pt-BR': `${baseUrl}/pt-br/services/tif-measurement`,
         'en': `${baseUrl}/en/services/tif-measurement`,
+        'x-default': `${baseUrl}/en/services/tif-measurement`,
       },
     },
     openGraph: {

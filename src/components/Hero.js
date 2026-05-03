@@ -4,8 +4,9 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { CheckCircle, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 // Hero background images for cycling carousel - TSF equipment focused
 const heroImages = [
@@ -60,7 +61,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative h-[calc(100vh-112px)] text-white overflow-hidden flex flex-col justify-center">
+    <section id="hero" ref={heroRef} className="relative h-screen -mt-28 text-white overflow-hidden flex flex-col justify-center">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -86,60 +87,35 @@ export default function Hero() {
       </div>
 
       
-      <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-8 lg:py-20 w-full">
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-8 pt-36 lg:pt-40 pb-8 lg:pb-20 w-full">
         {/* Content */}
         <div className="max-w-3xl">
             {/* Eyebrow + Headline Complex */}
             <div className="space-y-3 lg:space-y-6">
               {/* Layered Headline Structure */}
               <div className="space-y-2 lg:space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-[-0.02em] enterprise-slide-up stagger-1">
-                  <span className="gradient-text-animated">{t('optimizeYour')}</span>
-                  <span className="block text-emerald-300 font-black relative enterprise-slide-up stagger-2">
-                    {t('operations')}
-                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full opacity-60 enterprise-scale-in stagger-3"></div>
-                  </span>
-                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-100/80 mt-2 enterprise-slide-up stagger-4">{t('withoutStopping')}</span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-[-0.02em] enterprise-slide-up stagger-1 text-white">
+                  {t('optimizeYour')} {t('operations')} {t('withoutStopping')}
                 </h1>
 
-                <div className="space-y-2 lg:space-y-4 max-w-3xl">
-                  <p className="text-lg lg:text-xl text-white leading-[1.4] font-medium progressive-reveal">
-                    {t('subtitle')}
-                  </p>
-
-                  <div className="inline-flex items-center px-4 py-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 shadow-lg progressive-reveal">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 mr-2" />
-                    <span className="text-white font-semibold text-sm tracking-wide">{t('tagline')}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* KPIs Row */}
-            <div className="mt-4 lg:mt-8 grid grid-cols-3 gap-4 lg:gap-8">
-              <div className="text-left">
-                <div className="text-2xl lg:text-4xl font-black text-white">23+</div>
-                <div className="text-xs lg:text-sm text-white/70">{t('stats.yearsExperience')}</div>
-              </div>
-              <div className="text-left">
-                <div className="text-2xl lg:text-4xl font-black text-white">120+</div>
-                <div className="text-xs lg:text-sm text-white/70">{t('stats.projectsCompleted')}</div>
-              </div>
-              <div className="text-left">
-                <div className="text-2xl lg:text-4xl font-black text-white">24/7</div>
-                <div className="text-xs lg:text-sm text-white/70">{t('stats.operationalSupport')}</div>
+                <p className="text-lg lg:text-2xl text-white/90 leading-[1.35] font-medium max-w-3xl progressive-reveal">
+                  {t('subtitle')}
+                </p>
               </div>
             </div>
 
             {/* CTA Button */}
-            <div className="mt-4 lg:mt-8">
-              <button
-                onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+            <div className="mt-6 lg:mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <Link
+                href="/contacto"
                 className="group bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-base lg:text-lg transition-all duration-300 inline-flex items-center"
               >
                 <span>{t('cta')}</span>
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-              </button>
+              </Link>
+              <p className="text-sm text-white/70 progressive-reveal">
+                <span className="font-bold text-white">23+</span> {t('stats.yearsExperience')}
+              </p>
             </div>
         </div>
       </div>

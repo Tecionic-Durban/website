@@ -13,10 +13,26 @@ export default function Header() {
   const [openMobileSection, setOpenMobileSection] = useState(null)
   const [mobilePanel, setMobilePanel] = useState('main') // 'main', 'services', 'industries', 'resources'
   const [activeServiceTab, setActiveServiceTab] = useState('operaciones')
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations()
+
+  // Switch to solid header once the hero section scrolls out of view
+  useEffect(() => {
+    const hero = document.getElementById('hero')
+    if (!hero) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsScrolled(!entry.isIntersecting),
+      { threshold: 0 }
+    )
+    observer.observe(hero)
+    return () => observer.disconnect()
+  }, [pathname])
+
+  const isHome = pathname === '/'
+  const useGlass = isHome && !isScrolled && !isMenuOpen
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -55,23 +71,30 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50 steel-gradient" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        useGlass
+          ? 'glass-header bg-white/5 backdrop-blur-xl border-b border-white/15 shadow-none'
+          : 'bg-white shadow-lg steel-gradient'
+      }`}
+      style={{ paddingTop: 'env(safe-area-inset-top)' }}
+    >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2.5">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-20 h-20 flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="w-14 h-14 flex items-center justify-center">
               {/* Three balls logo with modern progressive greens */}
-              <div className="flex items-center space-x-1.5">
-                <div className="w-4 h-4 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full shadow-sm"></div>
-                <div className="w-4 h-4 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full shadow-sm"></div>
-                <div className="w-4 h-4 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full shadow-sm"></div>
+              <div className="flex items-center space-x-1">
+                <div className="w-3 h-3 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full shadow-sm"></div>
+                <div className="w-3 h-3 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full shadow-sm"></div>
+                <div className="w-3 h-3 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full shadow-sm"></div>
               </div>
             </div>
             <div>
-              <h1 className="text-3xl font-black text-gray-900">
+              <span className="wordmark text-2xl font-black text-gray-900">
                 Teci<span className="text-emerald-600">o</span>nic
-              </h1>
+              </span>
             </div>
           </Link>
 
@@ -125,7 +148,7 @@ export default function Header() {
                 
                 {/* Services Dropdown - Plaid-style tabbed layout */}
                 {item.key === 'services' && (
-                  <div className="absolute top-full left-0 -translate-x-[10%] mt-1 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+                  <div className="absolute top-full left-0 -translate-x-[10%] mt-6 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="flex">
                       {/* Left Sidebar - Category Tabs */}
@@ -158,7 +181,7 @@ export default function Header() {
                         {activeServiceTab === 'operaciones' && (
                           <>
                             <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                              <Link href="/services/filtration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/filtration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Filter className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -168,7 +191,7 @@ export default function Header() {
                                 </div>
                               </Link>
 
-                              <Link href="/services/organic-treatment" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/organic-treatment" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Chemistry className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -178,7 +201,7 @@ export default function Header() {
                                 </div>
                               </Link>
 
-                              <Link href="/services/concentrate-dehydration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/concentrate-dehydration" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Layers className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -188,7 +211,7 @@ export default function Header() {
                                 </div>
                               </Link>
 
-                              <Link href="/services/fine-solids" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/fine-solids" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <CirclePacking className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -198,7 +221,7 @@ export default function Header() {
                                 </div>
                               </Link>
 
-                              <Link href="/services/ew-cleaning" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/ew-cleaning" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <BatteryCharging className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -215,7 +238,7 @@ export default function Header() {
                         {activeServiceTab === 'analitica' && (
                           <>
                             <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                              <Link href="/services/turbidity-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/turbidity-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-purple-50 to-purple-100 group-hover/item:from-purple-500 group-hover/item:to-purple-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Analytics className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -225,7 +248,7 @@ export default function Header() {
                                 </div>
                               </Link>
 
-                              <Link href="/services/tsf-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/tsf-monitoring" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-purple-50 to-purple-100 group-hover/item:from-purple-500 group-hover/item:to-purple-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <ChartLineData className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -235,7 +258,7 @@ export default function Header() {
                                 </div>
                               </Link>
 
-                              <Link href="/services/tif-measurement" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                              <Link href="/services/tif-measurement" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                                 <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-purple-50 to-purple-100 group-hover/item:from-purple-500 group-hover/item:to-purple-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                                   <Meter className="w-5 h-5 text-purple-600 group-hover/item:text-white transition-colors duration-200" />
                                 </div>
@@ -256,7 +279,7 @@ export default function Header() {
 
                 {/* Professional Industrial Dropdown for Industries */}
                 {item.key === 'industries' && (
-                  <div className="absolute top-full left-0 -translate-x-[10%] mt-1 w-[42rem] bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+                  <div className="absolute top-full left-0 -translate-x-[10%] mt-6 w-[42rem] bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="p-6">
                       <div className="flex gap-8">
@@ -265,7 +288,7 @@ export default function Header() {
                             {t('header.specializedSectors')}
                           </div>
                           <div className="space-y-2">
-                            <Link href="/industries/copper" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/copper" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">Cu</span>
                               </div>
@@ -275,7 +298,7 @@ export default function Header() {
                               </div>
                             </Link>
 
-                            <Link href="/industries/zinc" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/zinc" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">Zn</span>
                               </div>
@@ -285,7 +308,7 @@ export default function Header() {
                               </div>
                             </Link>
 
-                            <Link href="/industries/potassium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/potassium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">K</span>
                               </div>
@@ -295,7 +318,7 @@ export default function Header() {
                               </div>
                             </Link>
 
-                            <Link href="/industries/lithium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/lithium" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <span className="text-white text-sm font-bold">Li</span>
                               </div>
@@ -305,7 +328,7 @@ export default function Header() {
                               </div>
                             </Link>
 
-                            <Link href="/industries/crude-oil" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                            <Link href="/industries/crude-oil" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                               <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-gray-900 rounded-lg flex items-center justify-center mr-3 group-hover/item:scale-110 transition-transform duration-200">
                                 <RainDrop className="w-5 h-5 text-white" />
                               </div>
@@ -373,14 +396,14 @@ export default function Header() {
 
                 {/* Professional Resources Dropdown */}
                 {item.key === 'resources' && (
-                  <div className="absolute top-full left-0 -translate-x-[10%] mt-1 w-80 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+                  <div className="absolute top-full left-0 -translate-x-[10%] mt-6 w-80 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]"
                        style={{boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'}}>
                     <div className="p-4">
                       <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-2">
                         {t('header.resourceCenter')}
                       </div>
                       <div className="space-y-1">
-                        <Link href="/casos-de-exito" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                        <Link href="/casos-de-exito" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                           <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                             <Document className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                           </div>
@@ -390,7 +413,7 @@ export default function Header() {
                           </div>
                         </Link>
 
-                        <Link href="/tendencias-industria" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-200">
+                        <Link href="/tendencias-industria" className="group/item flex items-center px-3 py-3 text-sm text-gray-700 hover:text-emerald-700 rounded-lg transition-all duration-200">
                           <div className="w-10 h-10 min-w-10 min-h-10 flex-shrink-0 bg-gradient-to-br from-emerald-50 to-emerald-100 group-hover/item:from-emerald-500 group-hover/item:to-emerald-600 rounded-lg flex items-center justify-center mr-3 transition-all duration-200">
                             <Growth className="w-5 h-5 text-emerald-600 group-hover/item:text-white transition-colors duration-200" />
                           </div>

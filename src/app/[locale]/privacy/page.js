@@ -1,9 +1,9 @@
-'use client'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 
-import { useTranslations } from 'next-intl'
-
-export default function PrivacyPage() {
-  const t = useTranslations('privacy')
+export default async function PrivacyPage({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('privacy')
 
   return (
     <div className="min-h-screen bg-gray-50">

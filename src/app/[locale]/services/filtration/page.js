@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { Flash, Enterprise, Launch, Apps, Connect, Filter as FilterCarbon, Renew, Currency, ArrowDownRight, Chemistry, RainDrop, Humidity, DeliveryTruck, Pipelines, Power } from '@carbon/icons-react'
 import { CheckCircle, ArrowRight } from 'lucide-react'
-import BorraSeparationAnimation from '@/components/BorraSeparationAnimation'
 import { useTranslations } from 'next-intl'
+import EquipmentBenefits from '@/components/EquipmentBenefits'
+import BorraSeparationAnimation from '@/components/BorraSeparationAnimation'
 
 // Recovery Section - Atlassian KPI Style with Tabs
 function RecoverySection({ t }) {
@@ -122,10 +123,7 @@ function RecoverySection({ t }) {
 }
 
 // Expandable Equipment Benefits Component
-function EquipmentBenefits({ t }) {
-  const [expandedIndex, setExpandedIndex] = useState(0)
-
-  const benefits = [
+const equipmentBenefits = [
     {
       key: 'agile',
       icon: DeliveryTruck,
@@ -142,80 +140,6 @@ function EquipmentBenefits({ t }) {
       image: '/filtro_prensa_1200_drone_view.png'
     }
   ]
-
-  return (
-    <div className="grid lg:grid-cols-2 gap-12">
-      {/* Left: Expandable list */}
-      <div>
-        {benefits.map((benefit, index) => {
-          const isExpanded = expandedIndex === index
-          const Icon = benefit.icon
-
-          return (
-            <div key={index}>
-              {/* Top border line */}
-              <div className="border-t border-gray-200"></div>
-
-              {/* Header - Icon + Title + Plus/Minus */}
-              <button
-                onClick={() => setExpandedIndex(index)}
-                className="w-full flex items-center justify-between py-6 text-left group cursor-pointer"
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-                    isExpanded ? 'bg-emerald-100' : 'bg-gray-100 group-hover:bg-emerald-50'
-                  }`}>
-                    <Icon className={`w-5 h-5 transition-colors ${
-                      isExpanded ? 'text-emerald-600' : 'text-gray-500 group-hover:text-emerald-600'
-                    }`} />
-                  </div>
-                  <span className={`font-semibold text-lg transition-colors ${
-                    isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
-                  }`}>
-                    {t(`equipmentBenefits.items.${benefit.key}.title`)}
-                  </span>
-                </div>
-                <span className={`text-2xl font-light transition-colors ${
-                  isExpanded ? 'text-emerald-600' : 'text-gray-400 group-hover:text-emerald-600'
-                }`}>
-                  {isExpanded ? '−' : '+'}
-                </span>
-              </button>
-
-              {/* Expanded Content */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                <div className="pb-8">
-                  <p className="text-gray-600 leading-relaxed">
-                    {t(`equipmentBenefits.items.${benefit.key}.description`)}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )
-        })}
-        {/* Bottom border line */}
-        <div className="border-t border-gray-200"></div>
-      </div>
-
-      {/* Right: Image - changes based on selected item */}
-      <div className="lg:sticky lg:top-24 lg:self-start">
-        <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
-          <Image
-            src={benefits[expandedIndex].image}
-            alt={t(`equipmentBenefits.items.${benefits[expandedIndex].key}.title`)}
-            width={600}
-            height={450}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </div>
-  )
-}
 
 
 export default function FiltrationPage() {
@@ -234,18 +158,21 @@ export default function FiltrationPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* SECTION 1: HERO - Matching organic-treatment style */}
+      {/* SECTION 1: HERO — Borra separation motif (signature visual for filtration) */}
       <section className="relative overflow-hidden bg-white">
-        {/* Borra Separation Animation - The signature motif (hidden on mobile) */}
+        {/* Borra separation animation — signature filtration visual */}
         <div className="hidden lg:block">
-          <BorraSeparationAnimation variant="hero" cycleDuration={10} className="opacity-60" />
+          <BorraSeparationAnimation variant="hero" className="opacity-40" />
         </div>
+
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-emerald-50/30 to-white pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                {t('hero.title')} <span className="text-gradient">{t('hero.titleHighlight')}</span>
+                {t('hero.title')} {t('hero.titleHighlight')}
               </h1>
 
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
@@ -793,7 +720,7 @@ export default function FiltrationPage() {
             </h2>
 
             {/* Equipment Benefits - Expandable with images */}
-            <EquipmentBenefits t={t} />
+            <EquipmentBenefits t={t} benefits={equipmentBenefits} />
           </div>
 
           {/* Modular Configuration - Clean Minimal Design */}
@@ -888,15 +815,15 @@ export default function FiltrationPage() {
                   <h3 className="text-lg font-bold text-gray-900">{t('industries.items.copper.name')}</h3>
                 </div>
                 <p className="text-sm text-gray-600">{t('industries.items.copper.description')}</p>
-                <a href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                  <a href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                  <Link href="/industries/copper" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -919,15 +846,15 @@ export default function FiltrationPage() {
                   <h3 className="text-lg font-bold text-gray-900">{t('industries.items.zinc.name')}</h3>
                 </div>
                 <p className="text-sm text-gray-600">{t('industries.items.zinc.description')}</p>
-                <a href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                  <a href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                  <Link href="/industries/zinc" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -950,15 +877,15 @@ export default function FiltrationPage() {
                   <h3 className="text-lg font-bold text-gray-900">{t('industries.items.crudeOil.name')}</h3>
                 </div>
                 <p className="text-sm text-gray-600">{t('industries.items.crudeOil.description')}</p>
-                <a href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
+                <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3 md:hidden">
                   {t('industries.viewDetails')}
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <div className="hidden md:block h-0 group-hover:h-8 overflow-hidden transition-all duration-300">
-                  <a href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
+                  <Link href="/industries/crude-oil" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 mt-3">
                     {t('industries.viewDetails')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1063,10 +990,22 @@ export default function FiltrationPage() {
           </p>
 
           <div className="flex items-center justify-center">
-            <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
+            <Link href="/contacto" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
+            </Link>
+          </div>
+
+          {/* Office locations */}
+          <div className="mt-12 pt-8 border-t border-white/15 max-w-3xl mx-auto">
+            <div className="grid sm:grid-cols-3 gap-6">
+              {Object.values(t.raw('cta.locations') || {}).map((office, i) => (
+                <div key={i} className="text-left sm:text-center">
+                  <div className="text-sm font-bold text-white mb-1">{office.name}</div>
+                  <div className="text-xs text-emerald-100/80">{office.address}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

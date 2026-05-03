@@ -187,11 +187,12 @@ export default function ContactPage() {
                 {/* Name Fields */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                    <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
                       <span>{t('form.firstName')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
+                      id="firstName"
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => setFormData({...formData, firstName: e.target.value})}
@@ -200,11 +201,12 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                    <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
                       <span>{t('form.lastName')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
+                      id="lastName"
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => setFormData({...formData, lastName: e.target.value})}
@@ -217,11 +219,12 @@ export default function ContactPage() {
                 {/* Email and Company */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
                       <span>{t('form.workEmail')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
+                      id="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -230,11 +233,12 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
                       <span>{t('form.company')}</span>
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <input
+                      id="company"
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData({...formData, company: e.target.value})}
@@ -246,10 +250,11 @@ export default function ContactPage() {
 
                 {/* Phone (optional) */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                     {t('form.phone')} <span className="text-gray-400 font-normal">({t('form.optional')})</span>
                   </label>
                   <input
+                    id="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
@@ -260,11 +265,12 @@ export default function ContactPage() {
 
                 {/* Service Selection */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
                     <span>{t('form.serviceOfInterest')}</span>
                     <span className="text-red-500 ml-1">*</span>
                   </label>
                   <select
+                    id="service"
                     value={selectedService}
                     onChange={(e) => handleServiceChange(e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
@@ -279,10 +285,11 @@ export default function ContactPage() {
                 {/* Service-Specific Question */}
                 {selectedService && getServiceQuestion() && (
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="serviceSpecificAnswer" className="block text-sm font-semibold text-gray-700 mb-2">
                       {getServiceQuestion()}
                     </label>
                     <input
+                      id="serviceSpecificAnswer"
                       type="text"
                       value={formData.serviceSpecificAnswer}
                       onChange={(e) => setFormData({...formData, serviceSpecificAnswer: e.target.value})}
@@ -294,10 +301,11 @@ export default function ContactPage() {
 
                 {/* Additional Comments */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                     {t('form.additionalComments')}
                   </label>
                   <textarea
+                    id="message"
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     rows={4}
@@ -308,7 +316,7 @@ export default function ContactPage() {
 
                 {/* Success Message */}
                 {submitStatus === 'success' && (
-                  <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                  <div role="status" aria-live="polite" aria-atomic="true" className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-emerald-600 mr-2" />
                       <div>
@@ -321,7 +329,7 @@ export default function ContactPage() {
 
                 {/* Error Message */}
                 {submitStatus === 'error' && (
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                  <div role="alert" aria-atomic="true" className="bg-red-50 border border-red-200 rounded-lg p-4">
                     <div className="flex items-center">
                       <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
                       <div>

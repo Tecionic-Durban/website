@@ -1,7 +1,5 @@
 /* src/app/globals.css */
-
-/* Import Google Fonts - Load before Tailwind for proper cascading */
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+/* Fonts are loaded via next/font/google in src/app/[locale]/layout.js */
 
 @import 'tailwindcss';
 
@@ -29,10 +27,10 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
   
-  /* Typography - Industrial Elegance */
-  --font-family-headings: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-brand: 'Playfair Display', 'Garamond', 'Adobe Garamond Pro', 'EB Garamond', serif;
+  /* Typography - Industrial Elegance (font CSS variables provided by next/font in layout.js) */
+  --font-family-headings: var(--font-titillium-web), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-body: var(--font-open-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-brand: var(--font-playfair-display), 'Garamond', 'Adobe Garamond Pro', 'EB Garamond', serif;
 }
 
 /* Base Styles */
@@ -186,6 +184,23 @@
       linear-gradient(45deg, rgba(0,0,0,0.02) 50%, transparent 50%);
     background-size: 16px 16px, 16px 16px, 16px 16px, 16px 16px, 8px 8px;
   }
+
+  /* Glass header over hero — invert text to white (top-level nav only) */
+  .glass-header .wordmark,
+  .glass-header nav > div > a,
+  .glass-header nav > div > div:not(.absolute),
+  .glass-header nav > div > div:not(.absolute) > span,
+  .glass-header button[aria-label],
+  .glass-header button[aria-expanded] {
+    color: #ffffff !important;
+  }
+  .glass-header nav > div > a:hover,
+  .glass-header nav > div > div:not(.absolute):hover,
+  .glass-header button[aria-expanded]:hover {
+    color: rgba(255,255,255,0.85) !important;
+    background-color: transparent !important;
+  }
+
 
   /* Industrial Steel Gradient - increased opacity for production visibility */
   .steel-gradient {

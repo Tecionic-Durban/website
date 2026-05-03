@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/casos-de-exito/lodos-petroleros`,
         'es-MX': `${baseUrl}/es-mx/casos-de-exito/lodos-petroleros`,
+        'es':    `${baseUrl}/es-mx/casos-de-exito/lodos-petroleros`,
         'pt-BR': `${baseUrl}/pt-br/casos-de-exito/lodos-petroleros`,
         'en': `${baseUrl}/en/casos-de-exito/lodos-petroleros`,
+        'x-default': `${baseUrl}/en/casos-de-exito/lodos-petroleros`,
       },
     },
     openGraph: {

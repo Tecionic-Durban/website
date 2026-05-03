@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/casos-de-exito`,
         'es-MX': `${baseUrl}/es-mx/casos-de-exito`,
+        'es':    `${baseUrl}/es-mx/casos-de-exito`,
         'pt-BR': `${baseUrl}/pt-br/casos-de-exito`,
         'en': `${baseUrl}/en/casos-de-exito`,
+        'x-default': `${baseUrl}/en/casos-de-exito`,
       },
     },
     openGraph: {

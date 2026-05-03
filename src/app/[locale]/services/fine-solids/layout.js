@@ -1,8 +1,34 @@
 // src/app/[locale]/services/fine-solids/layout.js - SEO metadata
 import { routing } from '@/i18n/routing';
+import { serviceSchemaJson } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
+
+const baseUrl = 'https://tecionic.com';
+
+const metadataByLocale = {
+  'es-cl': {
+    title: 'Filtración de Sólidos Finos | Recuperación de Clarificadores | Tecionic',
+    description: 'Filtración móvil de sólidos finos en clarificadores y espesadores. Capacidad 14 TPD, recuperación de rebose, instalación en sitio en 48h.',
+    keywords: 'sólidos finos, filtración partículas finas, clarificación soluciones, hidrometalurgia, recuperación finos, minería procesamiento',
+  },
+  'es-mx': {
+    title: 'Filtración de Sólidos Finos | Recuperación de Clarificadores | Tecionic',
+    description: 'Filtración móvil de sólidos finos en clarificadores y espesadores. Capacidad 14 TPD, recuperación de rebose, instalación en sitio en 48h.',
+    keywords: 'sólidos finos, filtración partículas finas, clarificación soluciones, hidrometalurgia, recuperación finos, minería procesamiento',
+  },
+  'pt-br': {
+    title: 'Filtração de Sólidos Finos | Recuperação de Clarificadores | Tecionic',
+    description: 'Filtração móvel de sólidos finos em clarificadores e espessadores. Capacidade 14 TPD, recuperação de overflow, instalação em 48h.',
+    keywords: 'sólidos finos, filtração partículas finas, clarificação soluções, hidrometalurgia, recuperação finos, mineração processamento',
+  },
+  'en': {
+    title: 'Fine Solids Filtration | Clarifier & Thickener Recovery | Tecionic',
+    description: 'Mobile fine solids filtration from clarifiers and thickeners. 14 TPD capacity, clear overflow recovery, 48-hour on-site installation.',
+    keywords: 'fine solids filtration, clarifier fines recovery, thickener underflow filtration, mining fine particles, mobile clarification service, LATAM hydrometallurgy',
+  },
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -10,32 +36,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-
-  const metadata = {
-    'es-cl': {
-      title: 'Tratamiento de Sólidos Finos - Filtración Especializada | Tecionic',
-      description: 'Servicio especializado de filtración de sólidos finos en procesos hidrometalúrgicos. Recuperación de partículas finas y clarificación de soluciones.',
-      keywords: 'sólidos finos, filtración partículas finas, clarificación soluciones, hidrometalurgia, recuperación finos, minería procesamiento',
-    },
-    'es-mx': {
-      title: 'Tratamiento de Sólidos Finos - Filtración Especializada | Tecionic',
-      description: 'Servicio especializado de filtración de sólidos finos en procesos hidrometalúrgicos. Recuperación de partículas finas y clarificación de soluciones.',
-      keywords: 'sólidos finos, filtración partículas finas, clarificación soluciones, hidrometalurgia, recuperación finos, minería procesamiento',
-    },
-    'pt-br': {
-      title: 'Tratamento de Sólidos Finos - Filtração Especializada | Tecionic',
-      description: 'Serviço especializado de filtração de sólidos finos em processos hidrometalúrgicos. Recuperação de partículas finas e clarificação de soluções.',
-      keywords: 'sólidos finos, filtração partículas finas, clarificação soluções, hidrometalurgia, recuperação finos, mineração processamento',
-    },
-    'en': {
-      title: 'Fine Solids Treatment - Specialized Filtration | Tecionic',
-      description: 'Specialized fine solids filtration service in hydrometallurgical processes. Fine particle recovery and solution clarification.',
-      keywords: 'fine solids, fine particle filtration, solution clarification, hydrometallurgy, fines recovery, mining processing',
-    },
-  };
-
-  const meta = metadata[locale] || metadata['es-cl'];
-  const baseUrl = 'https://tecionic.com';
+  const meta = metadataByLocale[locale] || metadataByLocale['es-cl'];
 
   return {
     title: meta.title,
@@ -46,8 +47,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/services/fine-solids`,
         'es-MX': `${baseUrl}/es-mx/services/fine-solids`,
+        'es':    `${baseUrl}/es-mx/services/fine-solids`,
         'pt-BR': `${baseUrl}/pt-br/services/fine-solids`,
         'en': `${baseUrl}/en/services/fine-solids`,
+        'x-default': `${baseUrl}/en/services/fine-solids`,
       },
     },
     openGraph: {
@@ -66,6 +69,25 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function FineSolidsLayout({ children }) {
-  return children;
+export default async function FineSolidsLayout({ children, params }) {
+  const { locale } = await params;
+  const meta = metadataByLocale[locale] || metadataByLocale['es-cl'];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serviceSchemaJson({
+            locale,
+            pathSegment: 'services/fine-solids',
+            name: meta.title.replace(/\s*\|\s*Tecionic$/, ''),
+            description: meta.description,
+            serviceType: 'Fine Solids Filtration Service',
+          }),
+        }}
+      />
+      {children}
+    </>
+  );
 }

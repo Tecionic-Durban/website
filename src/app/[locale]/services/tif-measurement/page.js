@@ -84,6 +84,7 @@ export default function TifMeasurementPage() {
 
   // Hero image entrance animation
   useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     if (!heroImageRef.current) return
 
     const ctx = gsap.context(() => {
@@ -725,13 +726,11 @@ export default function TifMeasurementPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
         {/* Background pattern */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <img
-            src="/mine_motif_right_corner.svg"
-            alt=""
-            className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
-          />
-        </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.08] bg-no-repeat bg-right-bottom bg-cover"
+          style={{ backgroundImage: 'url(/mine_motif_right_corner.svg)' }}
+        />
 
         <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -752,6 +751,18 @@ export default function TifMeasurementPage() {
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
+          </div>
+
+          {/* Office locations */}
+          <div className="mt-12 pt-8 border-t border-white/15 max-w-3xl mx-auto">
+            <div className="grid sm:grid-cols-3 gap-6">
+              {Object.values(t.raw('cta.locations') || {}).map((office, i) => (
+                <div key={i} className="text-left sm:text-center">
+                  <div className="text-sm font-bold text-white mb-1">{office.name}</div>
+                  <div className="text-xs text-purple-100/80">{office.address}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

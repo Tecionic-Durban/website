@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/casos-de-exito/limpieza-celdas-ew`,
         'es-MX': `${baseUrl}/es-mx/casos-de-exito/limpieza-celdas-ew`,
+        'es':    `${baseUrl}/es-mx/casos-de-exito/limpieza-celdas-ew`,
         'pt-BR': `${baseUrl}/pt-br/casos-de-exito/limpieza-celdas-ew`,
         'en': `${baseUrl}/en/casos-de-exito/limpieza-celdas-ew`,
+        'x-default': `${baseUrl}/en/casos-de-exito/limpieza-celdas-ew`,
       },
     },
     openGraph: {

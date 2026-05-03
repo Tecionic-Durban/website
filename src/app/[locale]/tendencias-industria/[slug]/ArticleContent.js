@@ -10,7 +10,8 @@ const articleColors = {
   'politica-minera-2050': 'from-blue-500 to-blue-600',
   'boom-cobre-chile-peru': 'from-orange-500 to-orange-600',
   'ia-automatizacion-sx-ew': 'from-purple-500 to-purple-600',
-  'minerales-criticos-latam': 'from-red-500 to-red-600'
+  'minerales-criticos-latam': 'from-red-500 to-red-600',
+  'deshidratacion-movil-vs-capex': 'from-violet-500 to-violet-600'
 }
 
 export default function ArticleContent({ slug }) {

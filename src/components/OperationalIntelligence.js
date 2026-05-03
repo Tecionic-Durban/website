@@ -39,24 +39,9 @@ export default function OperationalIntelligence() {
   }, [])
 
   const datapoints = [
-    {
-      key: 'tif',
-      icon: Chemistry,
-      gradientBg: 'from-cyan-600 via-cyan-700 to-cyan-800',
-      borderColor: 'border-cyan-500/30'
-    },
-    {
-      key: 'tsf',
-      icon: ChartLineData,
-      gradientBg: 'from-purple-600 via-purple-700 to-purple-800',
-      borderColor: 'border-purple-500/30'
-    },
-    {
-      key: 'turbidity',
-      icon: Analytics,
-      gradientBg: 'from-amber-600 via-amber-700 to-amber-800',
-      borderColor: 'border-amber-500/30'
-    }
+    { key: 'tif', icon: Chemistry, iconColor: 'text-cyan-400' },
+    { key: 'tsf', icon: ChartLineData, iconColor: 'text-purple-400' },
+    { key: 'turbidity', icon: Analytics, iconColor: 'text-amber-400' }
   ]
 
   return (
@@ -76,12 +61,8 @@ export default function OperationalIntelligence() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header - Stripe style */}
         <div className="max-w-3xl mb-16 lg:mb-20 progressive-reveal">
-          <span className="inline-flex items-center px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-semibold rounded-full mb-6">
-            <Meter className="w-4 h-4 mr-2" />
-            {t('badge')}
-          </span>
 
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight">
             {t('headline')}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400">
               {t('headlineSub')}
@@ -106,28 +87,25 @@ export default function OperationalIntelligence() {
           {datapoints.map((datapoint, index) => (
             <div
               key={datapoint.key}
-              className={`progressive-reveal group relative rounded-2xl p-8 border transition-all duration-500 bg-gradient-to-br ${datapoint.gradientBg} ${datapoint.borderColor} hover:scale-[1.02]`}
+              className="progressive-reveal group relative rounded-2xl p-8 border border-slate-800 bg-slate-900/60 backdrop-blur-sm transition-all duration-500 hover:border-slate-700 hover:bg-slate-900/80 hover:scale-[1.02]"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Icon */}
-              <div className={`w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6`}>
-                <datapoint.icon className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mb-6">
+                <datapoint.icon className={`w-6 h-6 ${datapoint.iconColor}`} />
               </div>
 
-              {/* Title & Description */}
               <h3 className="text-xl font-bold text-white mb-3">
                 {t(`datapoints.${datapoint.key}.title`)}
               </h3>
-              <p className="text-white/80 mb-6 leading-relaxed">
+              <p className="text-slate-400 mb-6 leading-relaxed">
                 {t(`datapoints.${datapoint.key}.description`)}
               </p>
 
-              {/* Benefits list */}
               <ul className="space-y-3">
                 {[0, 1, 2].map((i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mt-2 flex-shrink-0" />
-                    <span className="text-white/70 text-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mt-2 flex-shrink-0" />
+                    <span className="text-slate-400 text-sm">
                       {t(`datapoints.${datapoint.key}.benefits.${i}`)}
                     </span>
                   </li>

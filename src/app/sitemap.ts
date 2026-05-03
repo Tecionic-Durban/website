@@ -44,13 +44,22 @@ const routes = [
 
   // Resources - medium priority
   { path: '/resources', changeFrequency: 'weekly' as const, priority: 0.7 },
-  { path: '/white-papers', changeFrequency: 'monthly' as const, priority: 0.7 },
-    { path: '/tendencias-industria', changeFrequency: 'weekly' as const, priority: 0.7 },
+  { path: '/tendencias-industria', changeFrequency: 'weekly' as const, priority: 0.7 },
+
+  // Tendencias-industria articles - medium priority (long-form content)
+  { path: '/tendencias-industria/perdidas-solvente-sx', changeFrequency: 'monthly' as const, priority: 0.65 },
+  { path: '/tendencias-industria/litio-triangulo-agua', changeFrequency: 'monthly' as const, priority: 0.65 },
+  { path: '/tendencias-industria/politica-minera-2050', changeFrequency: 'monthly' as const, priority: 0.65 },
+  { path: '/tendencias-industria/boom-cobre-chile-peru', changeFrequency: 'monthly' as const, priority: 0.65 },
+  { path: '/tendencias-industria/deshidratacion-movil-vs-capex', changeFrequency: 'monthly' as const, priority: 0.65 },
 
   // Technical pages - medium priority
-  { path: '/especificaciones-tecnicas', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/calculadora', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/cumplimiento', changeFrequency: 'yearly' as const, priority: 0.5 },
+
+  // Legal pages - low priority (but important for completeness)
+  { path: '/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
+  { path: '/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -69,8 +78,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             'es-CL': `${baseUrl}/es-cl${route.path}`,
             'es-MX': `${baseUrl}/es-mx${route.path}`,
+            'es':    `${baseUrl}/es-mx${route.path}`,
             'pt-BR': `${baseUrl}/pt-br${route.path}`,
             'en': `${baseUrl}/en${route.path}`,
+            'x-default': `${baseUrl}/en${route.path}`,
           },
         },
       });

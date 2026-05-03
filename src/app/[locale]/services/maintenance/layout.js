@@ -13,23 +13,23 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Mantenimiento de Equipos de Filtración | Tecionic',
-      description: 'Servicios de mantenimiento preventivo y correctivo para equipos de filtración. Soporte técnico especializado y repuestos para filtros prensa.',
+      title: 'Mantenimiento de Filtros Prensa y Soporte Técnico | Tecionic',
+      description: 'Mantenimiento preventivo y correctivo de filtros prensa industriales. Soporte técnico especializado, repuestos originales, servicio en sitio.',
       keywords: 'mantenimiento filtros prensa, soporte técnico filtración, repuestos filtración, mantenimiento preventivo, servicio técnico minería',
     },
     'es-mx': {
-      title: 'Mantenimiento de Equipos de Filtración | Tecionic',
-      description: 'Servicios de mantenimiento preventivo y correctivo para equipos de filtración. Soporte técnico especializado y repuestos para filtros prensa.',
+      title: 'Mantenimiento de Filtros Prensa y Soporte Técnico | Tecionic',
+      description: 'Mantenimiento preventivo y correctivo de filtros prensa industriales. Soporte técnico especializado, repuestos originales, servicio en sitio.',
       keywords: 'mantenimiento filtros prensa, soporte técnico filtración, repuestos filtración, mantenimiento preventivo, servicio técnico minería',
     },
     'pt-br': {
-      title: 'Manutenção de Equipamentos de Filtração | Tecionic',
-      description: 'Serviços de manutenção preventiva e corretiva para equipamentos de filtração. Suporte técnico especializado e peças de reposição para filtros prensa.',
+      title: 'Manutenção de Filtros Prensa e Suporte Técnico | Tecionic',
+      description: 'Manutenção preventiva e corretiva de filtros prensa industriais. Suporte técnico especializado, peças originais, serviço em campo.',
       keywords: 'manutenção filtros prensa, suporte técnico filtração, peças reposição filtração, manutenção preventiva, serviço técnico mineração',
     },
     'en': {
-      title: 'Filtration Equipment Maintenance | Tecionic',
-      description: 'Preventive and corrective maintenance services for filtration equipment. Specialized technical support and spare parts for filter presses.',
+      title: 'Filter Press Maintenance & Technical Support | Tecionic',
+      description: 'Preventive and corrective maintenance for industrial filter presses. Specialized technical support, original spare parts, on-site service.',
       keywords: 'filter press maintenance, filtration technical support, filtration spare parts, preventive maintenance, mining technical service',
     },
   };
@@ -39,6 +39,10 @@ export async function generateMetadata({ params }) {
 
   return {
     title: meta.title,
+    // Spanish-only content — block indexing on non-Spanish locale URLs
+    robots: locale === 'pt-br' || locale === 'en'
+      ? { index: false, follow: true }
+      : undefined,
     description: meta.description,
     keywords: meta.keywords,
     alternates: {
@@ -46,8 +50,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/services/maintenance`,
         'es-MX': `${baseUrl}/es-mx/services/maintenance`,
+        'es':    `${baseUrl}/es-mx/services/maintenance`,
         'pt-BR': `${baseUrl}/pt-br/services/maintenance`,
         'en': `${baseUrl}/en/services/maintenance`,
+        'x-default': `${baseUrl}/en/services/maintenance`,
       },
     },
     openGraph: {

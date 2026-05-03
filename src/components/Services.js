@@ -2,15 +2,15 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging } from '@carbon/icons-react'
-import { CheckCircle, ArrowRight } from 'lucide-react'
-import { handleContactClick } from '@/utils/navigation'
+import { Filter, Chemistry, Layers, CirclePacking, RainDrop, BatteryCharging, Growth, Currency, Security, Time } from '@carbon/icons-react'
+import { ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 export default function Services() {
   const router = useRouter()
   const servicesRef = useRef(null)
   const t = useTranslations('services')
+  const tStats = useTranslations('customers')
 
   // Progressive disclosure on scroll
   useEffect(() => {
@@ -69,17 +69,17 @@ export default function Services() {
   ]
 
   return (
-    <section ref={servicesRef} className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
+    <section ref={servicesRef} className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
       {/* Advanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-32 left-[10%] w-32 h-32 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
         <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 animate-float-medium blur-sm"></div>
       </div>
 
-      <div className="max-w-8xl mx-auto px-4 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative">
         {/* Enterprise Header */}
-        <div className="mb-6 lg:mb-20 progressive-reveal">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 lg:mb-6 leading-tight enterprise-slide-up">
+        <div className="mb-10 lg:mb-16 progressive-reveal">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6 leading-tight">
             {t('headline')}
             <span className="block text-emerald-600">{t('headlineSub')}</span>
           </h2>
@@ -156,8 +156,8 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Enterprise CTA Section */}
-        <div className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 rounded-3xl p-6 lg:p-16 text-white text-center overflow-hidden progressive-reveal">
+        {/* Proven Results Stats Card */}
+        <div className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 rounded-3xl p-6 lg:p-12 text-white text-center overflow-hidden progressive-reveal">
           {/* Sophisticated background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-8 right-12 w-20 h-20 bg-emerald-600/20 rounded-full animate-float-slow blur-sm"></div>
@@ -165,33 +165,30 @@ export default function Services() {
           </div>
 
           <div className="relative z-10">
-            <h3 className="text-2xl lg:text-5xl font-black mb-4 lg:mb-6 gradient-text-animated">
-              {t('cta.headline')}
+            <h3 className="text-2xl lg:text-3xl font-bold mb-8 lg:mb-12">
+              {tStats('resultsTitle')}
             </h3>
-            <p className="text-base lg:text-xl text-emerald-100 mb-6 lg:mb-10 max-w-4xl mx-auto leading-relaxed">
-              {t('cta.description')} <span className="font-semibold text-emerald-300">{t('cta.flexibility')}</span>
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <button
-                onClick={(e) => handleContactClick(e, router, '/services')}
-                className="group relative bg-white text-emerald-900 px-6 py-3 lg:px-10 lg:py-5 rounded-xl lg:rounded-2xl font-bold text-base lg:text-lg transition-all duration-300 hover:bg-emerald-50 layered-shadow-hover flex items-center justify-center overflow-hidden ripple-effect magnetic-hover cursor-pointer"
-                suppressHydrationWarning
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-emerald-400/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                <span className="relative z-10">{t('cta.requestConsultation')}</span>
-                <ArrowRight className="relative z-10 w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-              </button>
-
-              <button
-                onClick={() => router.push('/casos-de-exito')}
-                className="group border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-6 py-3 lg:px-10 lg:py-5 rounded-xl lg:rounded-2xl font-semibold text-base lg:text-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm relative overflow-hidden sophisticated-hover cursor-pointer"
-                suppressHydrationWarning
-              >
-                <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                <span className="relative z-10">{t('cta.viewCaseStudies')}</span>
-                <CheckCircle className="relative z-10 w-5 h-5 ml-3 enterprise-pulse" />
-              </button>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+              <div className="flex flex-col items-center">
+                <Growth className="w-7 h-7 lg:w-9 lg:h-9 mb-3 text-emerald-200" />
+                <div className="text-3xl lg:text-5xl font-black mb-2">+22%</div>
+                <div className="text-emerald-100 text-sm lg:text-base">{tStats('stats.efficiency')}</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <Time className="w-7 h-7 lg:w-9 lg:h-9 mb-3 text-emerald-200" />
+                <div className="text-3xl lg:text-5xl font-black mb-2">95%</div>
+                <div className="text-emerald-100 text-sm lg:text-base">{tStats('stats.downtime')}</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <Currency className="w-7 h-7 lg:w-9 lg:h-9 mb-3 text-emerald-200" />
+                <div className="text-3xl lg:text-5xl font-black mb-2">$500M+</div>
+                <div className="text-emerald-100 text-sm lg:text-base">{tStats('stats.savings')}</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <Security className="w-7 h-7 lg:w-9 lg:h-9 mb-3 text-emerald-200" />
+                <div className="text-3xl lg:text-5xl font-black mb-2">23+</div>
+                <div className="text-emerald-100 text-sm lg:text-base">{tStats('stats.years')}</div>
+              </div>
             </div>
           </div>
         </div>

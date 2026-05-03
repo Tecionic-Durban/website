@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/casos-de-exito/solidos-finos-yoduro`,
         'es-MX': `${baseUrl}/es-mx/casos-de-exito/solidos-finos-yoduro`,
+        'es':    `${baseUrl}/es-mx/casos-de-exito/solidos-finos-yoduro`,
         'pt-BR': `${baseUrl}/pt-br/casos-de-exito/solidos-finos-yoduro`,
         'en': `${baseUrl}/en/casos-de-exito/solidos-finos-yoduro`,
+        'x-default': `${baseUrl}/en/casos-de-exito/solidos-finos-yoduro`,
       },
     },
     openGraph: {

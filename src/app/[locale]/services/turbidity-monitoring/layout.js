@@ -13,23 +13,23 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Monitoreo de Turbidez en Tiempo Real | Analytics Agua | Tecionic',
-      description: 'Sistema de monitoreo de turbidez para control de calidad de agua en procesos mineros. Sensores IoT, dashboards en tiempo real y cumplimiento normativo ambiental.',
+      title: 'Monitoreo de Turbidez en Tiempo Real para Aguas Mineras | Tecionic',
+      description: 'Sistema de monitoreo de turbidez para calidad de agua en minería y refinerías. Sensores IoT, dashboards en tiempo real, cumplimiento ambiental.',
       keywords: 'monitoreo turbidez, calidad agua minería, sensores IoT, analytics agua, cumplimiento ambiental, control turbidez, datos tiempo real, procesos hidrometalúrgicos',
     },
     'es-mx': {
-      title: 'Monitoreo de Turbidez en Tiempo Real | Analytics Agua | Tecionic',
-      description: 'Sistema de monitoreo de turbidez para control de calidad de agua en procesos mineros. Sensores IoT, dashboards en tiempo real y cumplimiento normativo ambiental.',
+      title: 'Monitoreo de Turbidez en Tiempo Real para Aguas Mineras | Tecionic',
+      description: 'Sistema de monitoreo de turbidez para calidad de agua en minería y refinerías. Sensores IoT, dashboards en tiempo real, cumplimiento ambiental.',
       keywords: 'monitoreo turbidez, calidad agua minería, sensores IoT, analytics agua, cumplimiento ambiental, control turbidez, datos tiempo real, procesos hidrometalúrgicos',
     },
     'pt-br': {
-      title: 'Monitoramento de Turbidez em Tempo Real | Analytics Água | Tecionic',
-      description: 'Sistema de monitoramento de turbidez para controle de qualidade de água em processos de mineração. Sensores IoT, dashboards em tempo real e conformidade ambiental.',
+      title: 'Monitoramento de Turbidez em Tempo Real para Águas | Tecionic',
+      description: 'Sistema de monitoramento de turbidez para qualidade de água em mineração e refino. Sensores IoT, dashboards em tempo real, conformidade ambiental.',
       keywords: 'monitoramento turbidez, qualidade água mineração, sensores IoT, analytics água, conformidade ambiental, controle turbidez, dados tempo real, processos hidrometalúrgicos',
     },
     'en': {
-      title: 'Real-Time Turbidity Monitoring | Water Analytics | Tecionic',
-      description: 'Turbidity monitoring system for water quality control in mining processes. IoT sensors, real-time dashboards, and environmental regulatory compliance.',
+      title: 'Real-Time Turbidity Monitoring for Mining Water | Tecionic',
+      description: 'Turbidity monitoring system for water quality in mining and refining processes. IoT sensors, real-time dashboards, environmental regulatory compliance.',
       keywords: 'turbidity monitoring, mining water quality, IoT sensors, water analytics, environmental compliance, turbidity control, real-time data, hydrometallurgical processes',
     },
   };
@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/services/turbidity-monitoring`,
         'es-MX': `${baseUrl}/es-mx/services/turbidity-monitoring`,
+        'es':    `${baseUrl}/es-mx/services/turbidity-monitoring`,
         'pt-BR': `${baseUrl}/pt-br/services/turbidity-monitoring`,
         'en': `${baseUrl}/en/services/turbidity-monitoring`,
+        'x-default': `${baseUrl}/en/services/turbidity-monitoring`,
       },
     },
     openGraph: {

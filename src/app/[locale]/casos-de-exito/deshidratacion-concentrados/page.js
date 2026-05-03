@@ -1,11 +1,11 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function DeshidratacionConcentradosCase() {
-  const tc = useTranslations('caseStudyDetail.common')
-  const ts = useTranslations('caseStudyDetail.deshidratacionConcentrados')
+export default async function DeshidratacionConcentradosCase({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tc = await getTranslations('caseStudyDetail.common')
+  const ts = await getTranslations('caseStudyDetail.deshidratacionConcentrados')
 
   return (
     <div className="min-h-screen bg-gray-50">

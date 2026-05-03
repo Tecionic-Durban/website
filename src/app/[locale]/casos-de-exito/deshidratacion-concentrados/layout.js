@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/casos-de-exito/deshidratacion-concentrados`,
         'es-MX': `${baseUrl}/es-mx/casos-de-exito/deshidratacion-concentrados`,
+        'es':    `${baseUrl}/es-mx/casos-de-exito/deshidratacion-concentrados`,
         'pt-BR': `${baseUrl}/pt-br/casos-de-exito/deshidratacion-concentrados`,
         'en': `${baseUrl}/en/casos-de-exito/deshidratacion-concentrados`,
+        'x-default': `${baseUrl}/en/casos-de-exito/deshidratacion-concentrados`,
       },
     },
     openGraph: {

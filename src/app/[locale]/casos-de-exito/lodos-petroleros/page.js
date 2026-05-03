@@ -1,11 +1,11 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function LodosPetrolerosCase() {
-  const tc = useTranslations('caseStudyDetail.common')
-  const ts = useTranslations('caseStudyDetail.lodosPetroleros')
+export default async function LodosPetrolerosCase({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tc = await getTranslations('caseStudyDetail.common')
+  const ts = await getTranslations('caseStudyDetail.lodosPetroleros')
 
   return (
     <div className="min-h-screen bg-gray-50">

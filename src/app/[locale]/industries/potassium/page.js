@@ -23,62 +23,27 @@ export default function PotassiumIndustryPage() {
       icon: Chemistry,
       titleKey: 'applications.useCases.extraction.title',
       descriptionKey: 'applications.useCases.extraction.description',
-      resultKey: 'applications.useCases.extraction.result',
-      color: 'purple'
+      resultKey: 'applications.useCases.extraction.result'
     },
     {
       icon: LayersCarbon,
       titleKey: 'applications.useCases.separation.title',
       descriptionKey: 'applications.useCases.separation.description',
-      resultKey: 'applications.useCases.separation.result',
-      color: 'blue'
+      resultKey: 'applications.useCases.separation.result'
     },
     {
       icon: Humidity,
       titleKey: 'applications.useCases.dialysis.title',
       descriptionKey: 'applications.useCases.dialysis.description',
-      resultKey: 'applications.useCases.dialysis.result',
-      color: 'amber'
+      resultKey: 'applications.useCases.dialysis.result'
     },
     {
       icon: FilterCarbon,
       titleKey: 'applications.useCases.floors.title',
       descriptionKey: 'applications.useCases.floors.description',
-      resultKey: 'applications.useCases.floors.result',
-      color: 'violet'
+      resultKey: 'applications.useCases.floors.result'
     }
   ]
-
-  const colorClasses = {
-    purple: {
-      bg: 'bg-purple-50',
-      border: 'border-purple-200',
-      icon: 'from-purple-500 to-purple-600',
-      text: 'text-purple-700',
-      result: 'bg-purple-100 text-purple-800'
-    },
-    blue: {
-      bg: 'bg-blue-50',
-      border: 'border-blue-200',
-      icon: 'from-blue-500 to-blue-600',
-      text: 'text-blue-700',
-      result: 'bg-blue-100 text-blue-800'
-    },
-    amber: {
-      bg: 'bg-amber-50',
-      border: 'border-amber-200',
-      icon: 'from-amber-500 to-amber-600',
-      text: 'text-amber-700',
-      result: 'bg-amber-100 text-amber-800'
-    },
-    violet: {
-      bg: 'bg-violet-50',
-      border: 'border-violet-200',
-      icon: 'from-violet-500 to-violet-600',
-      text: 'text-violet-700',
-      result: 'bg-violet-100 text-violet-800'
-    }
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -183,29 +148,25 @@ export default function PotassiumIndustryPage() {
 
           {/* Use Cases Grid - 2x2 */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {useCases.map((useCase, index) => {
-              const colors = colorClasses[useCase.color]
-              return (
-                <div key={index} className="relative">
-                  {/* Circle outline behind card */}
-                  <div className={`absolute -top-12 -left-12 w-[140px] h-[140px] rounded-full pointer-events-none border-2 ${colors.border}`}></div>
+            {useCases.map((useCase, index) => (
+              <div key={index} className="relative">
+                <div className="absolute -top-12 -left-12 w-[140px] h-[140px] rounded-full pointer-events-none border-2 border-purple-200"></div>
 
-                  <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
-                    <div className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-6`}>
-                      <useCase.icon size={24} className={colors.text} />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{t(useCase.titleKey)}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      {t(useCase.descriptionKey)}
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className={`w-4 h-4 ${colors.text}`} />
-                      <span className="text-sm text-gray-600">{t(useCase.resultKey)}</span>
-                    </div>
+                <div className="bg-gray-50 rounded-2xl p-8 relative z-10">
+                  <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6">
+                    <useCase.icon size={24} className="text-purple-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{t(useCase.titleKey)}</h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {t(useCase.descriptionKey)}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-purple-700" />
+                    <span className="text-sm text-gray-600">{t(useCase.resultKey)}</span>
                   </div>
                 </div>
-              )
-            })}
+              </div>
+            ))}
           </div>
 
           {/* Capabilities callout */}

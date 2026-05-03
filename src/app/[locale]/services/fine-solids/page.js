@@ -3,12 +3,13 @@
 import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { Chemistry, Connect, Filter, CheckmarkFilled, Humidity, DeliveryTruck, ArrowDown, Dashboard, Delivery, Mountain, Certificate, CertificateCheck, Security, Flash, FlashFilled, ChevronLeft, ChevronRight, Loop, Construction, Renew, Time, IncreaseLevel, Exit, ContainerImagePull, RainDrop } from '@carbon/icons-react'
 import { CheckCircle, ArrowRight, Truck, Shield, Settings, Clock, Zap, Award, Target, Users, Globe, Play, Waves, Cog, MapPin, Calendar, ExternalLink, FileText, Phone, Building, Star, TrendingUp, Droplets } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ParticleFiltrationAnimation from '@/components/ParticleFiltrationAnimation'
+import EquipmentBenefits from '@/components/EquipmentBenefits'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,10 +17,7 @@ gsap.registerPlugin(ScrollTrigger)
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 // Expandable Equipment Benefits Component
-function EquipmentBenefits({ t }) {
-  const [expandedIndex, setExpandedIndex] = useState(0)
-
-  const benefits = [
+const equipmentBenefits = [
     {
       key: 'exProof',
       icon: CertificateCheck,
@@ -36,80 +34,6 @@ function EquipmentBenefits({ t }) {
       image: '/filtro_prensa_1200_drone_view.png'
     }
   ]
-
-  return (
-    <div className="grid lg:grid-cols-2 gap-12">
-      {/* Left: Expandable list */}
-      <div>
-        {benefits.map((benefit, index) => {
-          const isExpanded = expandedIndex === index
-          const Icon = benefit.icon
-
-          return (
-            <div key={index}>
-              {/* Top border line */}
-              <div className="border-t border-gray-200"></div>
-
-              {/* Header - Icon + Title + Plus/Minus */}
-              <button
-                onClick={() => setExpandedIndex(index)}
-                className="w-full flex items-center justify-between py-6 text-left group cursor-pointer"
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-                    isExpanded ? 'bg-emerald-100' : 'bg-gray-100 group-hover:bg-emerald-50'
-                  }`}>
-                    <Icon className={`w-5 h-5 transition-colors ${
-                      isExpanded ? 'text-emerald-600' : 'text-gray-500 group-hover:text-emerald-600'
-                    }`} />
-                  </div>
-                  <span className={`font-semibold text-lg transition-colors ${
-                    isExpanded ? 'text-emerald-600' : 'text-gray-900 group-hover:text-emerald-600'
-                  }`}>
-                    {t(`equipmentBenefits.items.${benefit.key}.title`)}
-                  </span>
-                </div>
-                <span className={`text-2xl font-light transition-colors ${
-                  isExpanded ? 'text-emerald-600' : 'text-gray-400 group-hover:text-emerald-600'
-                }`}>
-                  {isExpanded ? '−' : '+'}
-                </span>
-              </button>
-
-              {/* Expanded Content */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                <div className="pb-8">
-                  <p className="text-gray-600 leading-relaxed">
-                    {t(`equipmentBenefits.items.${benefit.key}.description`)}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )
-        })}
-        {/* Bottom border line */}
-        <div className="border-t border-gray-200"></div>
-      </div>
-
-      {/* Right: Image - changes based on selected item */}
-      <div className="lg:sticky lg:top-24 lg:self-start">
-        <div className="rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
-          <Image
-            src={benefits[expandedIndex].image}
-            alt={t(`equipmentBenefits.items.${benefits[expandedIndex].key}.title`)}
-            width={600}
-            height={450}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default function FineSolidsServicePage() {
   const t = useTranslations('fineSolidsService')
@@ -172,6 +96,7 @@ export default function FineSolidsServicePage() {
 
   // Hero image entrance animation
   useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     if (!heroImageRef.current) return
 
     const ctx = gsap.context(() => {
@@ -198,6 +123,7 @@ export default function FineSolidsServicePage() {
 
   // Stats animation on scroll
   useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     if (!statsRef.current) return
 
     const ctx = gsap.context(() => {
@@ -269,6 +195,7 @@ export default function FineSolidsServicePage() {
 
   // GSAP animation for carousel card transitions
   useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     if (carouselKey === 0) return
 
     const ctx = gsap.context(() => {
@@ -1065,7 +992,7 @@ export default function FineSolidsServicePage() {
             {t('equipmentBenefits.title')}
           </h2>
 
-          <EquipmentBenefits t={t} />
+          <EquipmentBenefits t={t} benefits={equipmentBenefits} />
         </div>
       </section>
 
@@ -1656,13 +1583,11 @@ export default function FineSolidsServicePage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
         {/* Mining topographic contour lines - right corner */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <img
-            src="/mine_motif_right_corner.svg"
-            alt=""
-            className="absolute right-0 bottom-0 w-full h-full opacity-[0.08] object-cover object-right-bottom"
-          />
-        </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.08] bg-no-repeat bg-right-bottom bg-cover"
+          style={{ backgroundImage: 'url(/mine_motif_right_corner.svg)' }}
+        />
         <div className="max-w-4xl mx-auto px-4 lg:px-8 py-20 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('cta.title')}
@@ -1675,10 +1600,22 @@ export default function FineSolidsServicePage() {
           </p>
 
           <div className="flex items-center justify-center">
-            <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
+            <Link href="/contacto" className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-lg hover:bg-emerald-50 transition-colors shadow-xl">
               {t('cta.primaryCta')}
               <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
+            </Link>
+          </div>
+
+          {/* Office locations */}
+          <div className="mt-12 pt-8 border-t border-white/15 max-w-3xl mx-auto">
+            <div className="grid sm:grid-cols-3 gap-6">
+              {Object.values(t.raw('cta.locations') || {}).map((office, i) => (
+                <div key={i} className="text-left sm:text-center">
+                  <div className="text-sm font-bold text-white mb-1">{office.name}</div>
+                  <div className="text-xs text-emerald-100/80">{office.address}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

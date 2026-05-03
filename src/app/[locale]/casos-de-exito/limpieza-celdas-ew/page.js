@@ -1,11 +1,11 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function LimpiezaCeldasEWCase() {
-  const tc = useTranslations('caseStudyDetail.common')
-  const ts = useTranslations('caseStudyDetail.limpiezaCeldasEw')
+export default async function LimpiezaCeldasEWCase({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tc = await getTranslations('caseStudyDetail.common')
+  const ts = await getTranslations('caseStudyDetail.limpiezaCeldasEw')
 
   return (
     <div className="min-h-screen bg-gray-50">

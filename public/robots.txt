@@ -13,6 +13,10 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 
+# Note: legacy ?products/XXX URLs are NOT blocked here intentionally.
+# Middleware (src/middleware.ts) returns 410 Gone for them so Google can deindex.
+# Re-add Disallow rules once GSC confirms the zombie URLs are removed from the index.
+
 # Crawl delay for politeness (optional, some crawlers respect this)
 Crawl-delay: 1
 

@@ -1,11 +1,11 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function TratamientoOrganicoCase() {
-  const tc = useTranslations('caseStudyDetail.common')
-  const ts = useTranslations('caseStudyDetail.tratamientoOrganicoSx')
+export default async function TratamientoOrganicoCase({ params }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tc = await getTranslations('caseStudyDetail.common')
+  const ts = await getTranslations('caseStudyDetail.tratamientoOrganicoSx')
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section - Blueprint Style */}

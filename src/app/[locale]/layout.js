@@ -1,6 +1,7 @@
 // src/app/[locale]/layout.js
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, setRequestLocale} from 'next-intl/server';
+import {getMessages, getTranslations, setRequestLocale} from 'next-intl/server';
+import {Open_Sans, Titillium_Web, Playfair_Display} from 'next/font/google';
 import {routing} from '@/i18n/routing';
 import '../../styles/globals.css';
 import Header from '@/components/Header';
@@ -8,6 +9,27 @@ import Footer from '@/components/Footer';
 import PostHogProvider from '@/components/PostHogProvider';
 import CookieConsent from '@/components/CookieConsent';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-open-sans',
+  display: 'swap',
+});
+
+const titilliumWeb = Titillium_Web({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700'],
+  variable: '--font-titillium-web',
+  display: 'swap',
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-playfair-display',
+  display: 'swap',
+});
 // TEMPORARILY DISABLED: AI Chatbot and Dashboard per stakeholder request
 // import FloatingElements from "@/components/FloatingElements"
 
@@ -36,24 +58,24 @@ export async function generateMetadata({params}) {
 
   // Localized metadata for SEO
   const titles = {
-    'es-cl': 'Tecionic - Servicios Móviles de Filtración LIX/SX/EW | Latinoamérica',
-    'es-mx': 'Tecionic - Servicios Móviles de Filtración LIX/SX/EW | Latinoamérica',
-    'pt-br': 'Tecionic - Serviços Móveis de Filtração LIX/SX/EW | América Latina',
-    'en': 'Tecionic - Mobile Filtration Services LIX/SX/EW | Latin America'
+    'es-cl': 'Tecionic - Servicios Móviles de Filtración LIX/SX/EW',
+    'es-mx': 'Tecionic - Servicios Móviles de Filtración LIX/SX/EW',
+    'pt-br': 'Tecionic - Serviços Móveis de Filtração LIX/SX/EW',
+    'en': 'Tecionic - Mobile Filtration Services LIX/SX/EW'
   };
 
   const descriptions = {
-    'es-cl': 'Más de 23 años de experiencia en filtración móvil y tratamiento de borra para minería LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Servicio en Chile, Perú, México y toda Latinoamérica.',
-    'es-mx': 'Más de 23 años de experiencia en filtración móvil y tratamiento de borra para minería LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Servicio en México, Chile, Perú y toda Latinoamérica.',
-    'pt-br': 'Mais de 23 anos de experiência em filtração móvel e tratamento de borra para mineração LIX/SX/EW. Sem CAPEX, mobilização em 48 horas. Serviço no Brasil e toda a América Latina.',
-    'en': 'Over 23 years of experience in mobile filtration and sludge treatment for LIX/SX/EW mining operations. Zero CAPEX, 48-hour mobilization. Service throughout Latin America.'
+    'es-cl': 'Más de 23 años de experiencia en filtración móvil y tratamiento de borra para minería LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Servicio en las Américas y operaciones globales.',
+    'es-mx': 'Más de 23 años de experiencia en filtración móvil y tratamiento de borra para minería LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Servicio en las Américas y operaciones globales.',
+    'pt-br': 'Mais de 23 anos de experiência em filtração móvel e tratamento de borra para mineração LIX/SX/EW. Sem CAPEX, mobilização em 48 horas. Serviço nas Américas e operações globais.',
+    'en': "Over 23 years of experience in mobile filtration and sludge treatment for LIX/SX/EW mining operations. Zero CAPEX, 48-hour mobilization. Service across the Americas and global operations."
   };
 
   const keywords = {
-    'es-cl': 'filtración móvil, tratamiento borra, LIX SX EW, minería cobre, hidrometalurgia, filtro prensa móvil, Chile, Latinoamérica, servicios minería',
-    'es-mx': 'filtración móvil, tratamiento borra, LIX SX EW, minería cobre, hidrometalurgia, filtro prensa móvil, México, Latinoamérica, servicios minería',
-    'pt-br': 'filtração móvel, tratamento borra, LIX SX EW, mineração cobre, hidrometalurgia, filtro prensa móvel, Brasil, América Latina, serviços mineração',
-    'en': 'mobile filtration, sludge treatment, LIX SX EW, copper mining, hydrometallurgy, mobile filter press, Latin America, mining services'
+    'es-cl': 'filtración móvil, tratamiento borra, LIX SX EW, minería cobre, hidrometalurgia, filtro prensa móvil, Chile, las Américas, servicios industriales',
+    'es-mx': 'filtración móvil, tratamiento borra, LIX SX EW, minería cobre, hidrometalurgia, filtro prensa móvil, México, las Américas, servicios industriales',
+    'pt-br': 'filtração móvel, tratamento borra, LIX SX EW, mineração cobre, hidrometalurgia, filtro prensa móvel, Brasil, as Américas, serviços industriais',
+    'en': 'mobile filtration, sludge treatment, LIX SX EW, copper mining, hydrometallurgy, mobile filter press, Americas, industrial services'
   };
 
   const title = titles[locale] || titles['es-cl'];
@@ -91,8 +113,10 @@ export async function generateMetadata({params}) {
       languages: {
         'es-CL': `${baseUrl}/es-cl`,
         'es-MX': `${baseUrl}/es-mx`,
+        'es':    `${baseUrl}/es-mx`,
         'pt-BR': `${baseUrl}/pt-br`,
         'en': `${baseUrl}/en`,
+        'x-default': `${baseUrl}/en`,
       },
     },
     openGraph: {
@@ -141,10 +165,11 @@ function OrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Tecionic',
-    alternateName: 'Tec-Ionic Durban',
+    legalName: 'Inversiones Durban S.A.',
+    alternateName: ['Tec-Ionic Durban', 'TSF'],
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
-    description: 'Empresa líder en servicios móviles de filtración y tratamiento de borra para operaciones mineras LIX/SX/EW en Latinoamérica.',
+    description: 'Empresa líder en servicios móviles de filtración y tratamiento de borra para operaciones mineras LIX/SX/EW en las Américas y operaciones globales.',
     foundingDate: '2001',
     numberOfEmployees: {
       '@type': 'QuantitativeValue',
@@ -161,12 +186,51 @@ function OrganizationSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'CL',
-      addressRegion: 'Antofagasta'
+      streetAddress: 'Luis Thayer Ojeda 95, of. 312',
+      addressLocality: 'Providencia',
+      addressRegion: 'Región Metropolitana',
+      addressCountry: 'CL'
     },
+    location: [
+      {
+        '@type': 'Place',
+        name: 'Tecionic Santiago',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Luis Thayer Ojeda 95, of. 312',
+          addressLocality: 'Providencia',
+          addressRegion: 'Región Metropolitana',
+          addressCountry: 'CL'
+        }
+      },
+      {
+        '@type': 'Place',
+        name: 'Tecionic Antofagasta',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Miraflores 1260 B',
+          addressLocality: 'Calama',
+          addressRegion: 'Antofagasta',
+          addressCountry: 'CL'
+        }
+      },
+      {
+        '@type': 'Place',
+        name: 'Tecionic Lima',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Av. Felipe Pardo y Aliaga 699, Piso 8',
+          addressLocality: 'San Isidro',
+          addressRegion: 'Lima',
+          postalCode: '15073',
+          addressCountry: 'PE'
+        }
+      }
+    ],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'sales',
+      email: 'contacto@tsf.cl',
       availableLanguage: ['Spanish', 'Portuguese', 'English']
     },
     sameAs: [
@@ -221,6 +285,75 @@ function OrganizationSchema() {
   );
 }
 
+// LocalBusiness JSON-LD Schemas — one per office for local-pack visibility
+// (Calama / Santiago / Lima queries during SEO recovery)
+function LocalBusinessSchemas() {
+  const offices = [
+    {
+      name: 'Tecionic Santiago',
+      address: {
+        streetAddress: 'Luis Thayer Ojeda 95, of. 312',
+        addressLocality: 'Providencia',
+        addressRegion: 'Región Metropolitana',
+        addressCountry: 'CL',
+      },
+      country: 'Chile',
+    },
+    {
+      name: 'Tecionic Antofagasta',
+      address: {
+        streetAddress: 'Miraflores 1260 B',
+        addressLocality: 'Calama',
+        addressRegion: 'Antofagasta',
+        addressCountry: 'CL',
+      },
+      country: 'Chile',
+    },
+    {
+      name: 'Tecionic Lima',
+      address: {
+        streetAddress: 'Av. Felipe Pardo y Aliaga 699, Piso 8',
+        addressLocality: 'San Isidro',
+        addressRegion: 'Lima',
+        postalCode: '15073',
+        addressCountry: 'PE',
+      },
+      country: 'Peru',
+    },
+  ];
+
+  return offices.map((office, i) => {
+    const slug = office.name.toLowerCase().replace(/\s+/g, '-');
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': `${baseUrl}#${slug}`,
+      name: office.name,
+      url: baseUrl,
+      image: `${baseUrl}/logo.png`,
+      email: 'contacto@tsf.cl',
+      address: {
+        '@type': 'PostalAddress',
+        ...office.address,
+      },
+      areaServed: { '@type': 'Country', name: office.country },
+      parentOrganization: {
+        '@type': 'Organization',
+        name: 'Tecionic',
+        url: baseUrl,
+      },
+    };
+
+    return (
+      <script
+        key={i}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    );
+  });
+}
+
 export default async function LocaleLayout({children, params}) {
   const {locale} = await params;
 
@@ -229,40 +362,26 @@ export default async function LocaleLayout({children, params}) {
 
   // Providing all messages to the client
   const messages = await getMessages();
+  const tCommon = await getTranslations('common');
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${openSans.variable} ${titilliumWeb.variable} ${playfairDisplay.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <OrganizationSchema />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Suppress hydration warnings for browser extension attributes
-              if (typeof window !== 'undefined') {
-                const originalConsoleError = console.error;
-                console.error = function(message, ...args) {
-                  if (typeof message === 'string' && (
-                    message.includes('hydrated but some attributes') ||
-                    message.includes('fdprocessedid') ||
-                    message.includes('browser extension')
-                  )) {
-                    return;
-                  }
-                  originalConsoleError.apply(console, [message, ...args]);
-                };
-              }
-            `
-          }}
-        />
+        <LocalBusinessSchemas />
       </head>
-      <body className="min-h-screen bg-white overflow-x-hidden" style={{fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'}}>
+      <body className="min-h-screen bg-white overflow-x-hidden">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-emerald-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
+        >
+          {tCommon('skipToContent')}
+        </a>
         <PostHogProvider>
           <NextIntlClientProvider messages={messages}>
             <BreadcrumbSchema />
             <Header />
-            <main>
+            <main id="main">
               {children}
             </main>
             <Footer />

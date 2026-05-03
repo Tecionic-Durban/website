@@ -39,6 +39,10 @@ export async function generateMetadata({ params }) {
 
   return {
     title: meta.title,
+    // Spanish-only content — block indexing on non-Spanish locale URLs
+    robots: locale === 'pt-br' || locale === 'en'
+      ? { index: false, follow: true }
+      : undefined,
     description: meta.description,
     keywords: meta.keywords,
     alternates: {
@@ -46,8 +50,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/resources`,
         'es-MX': `${baseUrl}/es-mx/resources`,
+        'es':    `${baseUrl}/es-mx/resources`,
         'pt-BR': `${baseUrl}/pt-br/resources`,
         'en': `${baseUrl}/en/resources`,
+        'x-default': `${baseUrl}/en/resources`,
       },
     },
     openGraph: {

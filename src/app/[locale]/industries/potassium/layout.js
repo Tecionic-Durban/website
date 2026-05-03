@@ -1,8 +1,34 @@
 // src/app/[locale]/industries/potassium/layout.js - SEO metadata for potassium industry page
 import { routing } from '@/i18n/routing';
+import { serviceSchemaJson } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
+
+const baseUrl = 'https://tecionic.com';
+
+const metadataByLocale = {
+  'es-cl': {
+    title: 'Servicios de Filtración para Minería de Potasio | Tecionic',
+    description: 'Soluciones móviles de filtración para operaciones de potasio y fertilizantes. Equipos para cristalización y procesamiento de sales. Servicio en toda Latinoamérica.',
+    keywords: 'filtración potasio, tratamiento sales potasio, filtro prensa potasio, minería potasio Chile, cloruro de potasio, fertilizantes potasio, procesamiento sales',
+  },
+  'es-mx': {
+    title: 'Servicios de Filtración para Minería de Potasio | Tecionic',
+    description: 'Soluciones móviles de filtración para operaciones de potasio y fertilizantes. Equipos para cristalización y procesamiento de sales. Servicio en toda Latinoamérica.',
+    keywords: 'filtración potasio, tratamiento sales potasio, filtro prensa potasio, minería potasio México, cloruro de potasio, fertilizantes potasio, procesamiento sales',
+  },
+  'pt-br': {
+    title: 'Serviços de Filtração para Mineração de Potássio | Tecionic',
+    description: 'Soluções móveis de filtração para operações de potássio e fertilizantes. Equipamentos para cristalização e processamento de sais. Serviço em toda a América Latina.',
+    keywords: 'filtração potássio, tratamento sais potássio, filtro prensa potássio, mineração potássio Brasil, cloreto de potássio, fertilizantes potássio, processamento sais',
+  },
+  'en': {
+    title: 'Potash Filtration & Crystallization Service | LATAM | Tecionic',
+    description: 'Mobile filtration for potash, KCl, and salt crystallization plants. On-site deployment for fertilizer producers across Latin America. Zero CAPEX.',
+    keywords: 'potash filtration, KCl crystallization filtration, fertilizer plant filtration, potassium mining service LATAM, salt crystallization service, potash Chile',
+  },
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -10,32 +36,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-
-  const metadata = {
-    'es-cl': {
-      title: 'Servicios de Filtración para Minería de Potasio | Tecionic',
-      description: 'Soluciones móviles de filtración para operaciones de potasio y fertilizantes. Equipos para cristalización y procesamiento de sales. Servicio en toda Latinoamérica.',
-      keywords: 'filtración potasio, tratamiento sales potasio, filtro prensa potasio, minería potasio Chile, cloruro de potasio, fertilizantes potasio, procesamiento sales',
-    },
-    'es-mx': {
-      title: 'Servicios de Filtración para Minería de Potasio | Tecionic',
-      description: 'Soluciones móviles de filtración para operaciones de potasio y fertilizantes. Equipos para cristalización y procesamiento de sales. Servicio en toda Latinoamérica.',
-      keywords: 'filtración potasio, tratamiento sales potasio, filtro prensa potasio, minería potasio México, cloruro de potasio, fertilizantes potasio, procesamiento sales',
-    },
-    'pt-br': {
-      title: 'Serviços de Filtração para Mineração de Potássio | Tecionic',
-      description: 'Soluções móveis de filtração para operações de potássio e fertilizantes. Equipamentos para cristalização e processamento de sais. Serviço em toda a América Latina.',
-      keywords: 'filtração potássio, tratamento sais potássio, filtro prensa potássio, mineração potássio Brasil, cloreto de potássio, fertilizantes potássio, processamento sais',
-    },
-    'en': {
-      title: 'Potassium Mining Filtration Services | Tecionic',
-      description: 'Mobile filtration solutions for potassium and fertilizer operations. Equipment for crystallization and salt processing. Service throughout Latin America.',
-      keywords: 'potassium filtration, potassium salt treatment, potassium filter press, potassium mining services, potassium chloride, potash fertilizers, salt processing',
-    },
-  };
-
-  const meta = metadata[locale] || metadata['es-cl'];
-  const baseUrl = 'https://tecionic.com';
+  const meta = metadataByLocale[locale] || metadataByLocale['es-cl'];
 
   return {
     title: meta.title,
@@ -46,8 +47,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/industries/potassium`,
         'es-MX': `${baseUrl}/es-mx/industries/potassium`,
+        'es':    `${baseUrl}/es-mx/industries/potassium`,
         'pt-BR': `${baseUrl}/pt-br/industries/potassium`,
         'en': `${baseUrl}/en/industries/potassium`,
+        'x-default': `${baseUrl}/en/industries/potassium`,
       },
     },
     openGraph: {
@@ -75,6 +78,25 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function PotassiumLayout({ children }) {
-  return children;
+export default async function PotassiumLayout({ children, params }) {
+  const { locale } = await params;
+  const meta = metadataByLocale[locale] || metadataByLocale['es-cl'];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serviceSchemaJson({
+            locale,
+            pathSegment: 'industries/potassium',
+            name: meta.title.replace(/\s*\|\s*Tecionic$/, ''),
+            description: meta.description,
+            serviceType: 'Potash Filtration Service',
+          }),
+        }}
+      />
+      {children}
+    </>
+  );
 }

@@ -1,8 +1,34 @@
 // src/app/[locale]/industries/copper/layout.js - SEO metadata for copper industry page
 import { routing } from '@/i18n/routing';
+import { serviceSchemaJson } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
+
+const baseUrl = 'https://tecionic.com';
+
+const metadataByLocale = {
+  'es-cl': {
+    title: 'Servicios de Filtración para Minería de Cobre | Tecionic',
+    description: 'Soluciones móviles de filtración y tratamiento de borra para operaciones de cobre LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Más de 23 años de experiencia en Latinoamérica.',
+    keywords: 'filtración cobre, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre Chile, servicios hidrometalurgia',
+  },
+  'es-mx': {
+    title: 'Servicios de Filtración para Minería de Cobre | Tecionic',
+    description: 'Soluciones móviles de filtración y tratamiento de borra para operaciones de cobre LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Más de 23 años de experiencia en Latinoamérica.',
+    keywords: 'filtración cobre, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre México, servicios hidrometalurgia',
+  },
+  'pt-br': {
+    title: 'Serviços de Filtração para Mineração de Cobre | Tecionic',
+    description: 'Soluções móveis de filtração e tratamento de borra para operações de cobre LIX/SX/EW. Sem CAPEX, mobilização em 48 horas. Mais de 23 anos de experiência na América Latina.',
+    keywords: 'filtração cobre, tratamento orgânico SX, limpeza células EW, desidratação concentrados, filtro prensa móvel, mineração cobre Brasil, serviços hidrometalurgia',
+  },
+  'en': {
+    title: 'Copper SX/EW Filtration & Crud Removal | Chile, Peru | Tecionic',
+    description: 'Mobile filtration, SX crud treatment, and EW cell desludging for copper refineries. 48-hour deployment, zero CAPEX, proven across Chile, Peru, and Mexico.',
+    keywords: 'copper SX crud treatment, copper EW desludging, copper refinery filtration, copper concentrate dehydration, LATAM copper mining service, Chile copper filtration',
+  },
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -10,32 +36,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-
-  const metadata = {
-    'es-cl': {
-      title: 'Servicios de Filtración para Minería de Cobre | Tecionic',
-      description: 'Soluciones móviles de filtración y tratamiento de borra para operaciones de cobre LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Más de 23 años de experiencia en Latinoamérica.',
-      keywords: 'filtración cobre, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre Chile, servicios hidrometalurgia',
-    },
-    'es-mx': {
-      title: 'Servicios de Filtración para Minería de Cobre | Tecionic',
-      description: 'Soluciones móviles de filtración y tratamiento de borra para operaciones de cobre LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Más de 23 años de experiencia en Latinoamérica.',
-      keywords: 'filtración cobre, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre México, servicios hidrometalurgia',
-    },
-    'pt-br': {
-      title: 'Serviços de Filtração para Mineração de Cobre | Tecionic',
-      description: 'Soluções móveis de filtração e tratamento de borra para operações de cobre LIX/SX/EW. Sem CAPEX, mobilização em 48 horas. Mais de 23 anos de experiência na América Latina.',
-      keywords: 'filtração cobre, tratamento orgânico SX, limpeza células EW, desidratação concentrados, filtro prensa móvel, mineração cobre Brasil, serviços hidrometalurgia',
-    },
-    'en': {
-      title: 'Copper Mining Filtration Services | Tecionic',
-      description: 'Mobile filtration and sludge treatment solutions for copper LIX/SX/EW operations. Zero CAPEX, 48-hour mobilization. Over 23 years of experience in Latin America.',
-      keywords: 'copper filtration, SX organic treatment, EW cell cleaning, concentrate dehydration, mobile filter press, copper mining services, hydrometallurgy services',
-    },
-  };
-
-  const meta = metadata[locale] || metadata['es-cl'];
-  const baseUrl = 'https://tecionic.com';
+  const meta = metadataByLocale[locale] || metadataByLocale['es-cl'];
 
   return {
     title: meta.title,
@@ -46,8 +47,10 @@ export async function generateMetadata({ params }) {
       languages: {
         'es-CL': `${baseUrl}/es-cl/industries/copper`,
         'es-MX': `${baseUrl}/es-mx/industries/copper`,
+        'es':    `${baseUrl}/es-mx/industries/copper`,
         'pt-BR': `${baseUrl}/pt-br/industries/copper`,
         'en': `${baseUrl}/en/industries/copper`,
+        'x-default': `${baseUrl}/en/industries/copper`,
       },
     },
     openGraph: {
@@ -75,6 +78,25 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function CopperLayout({ children }) {
-  return children;
+export default async function CopperLayout({ children, params }) {
+  const { locale } = await params;
+  const meta = metadataByLocale[locale] || metadataByLocale['es-cl'];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serviceSchemaJson({
+            locale,
+            pathSegment: 'industries/copper',
+            name: meta.title.replace(/\s*\|\s*Tecionic$/, ''),
+            description: meta.description,
+            serviceType: 'Copper Mining Filtration Service',
+          }),
+        }}
+      />
+      {children}
+    </>
+  );
 }
