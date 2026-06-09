@@ -125,17 +125,17 @@
     }
   },
   "hero": {
-    "optimizeYour": "Toda planta tem um",
-    "operations": "limite.",
-    "withoutStopping": "Nós te levamos além.",
-    "subtitle": "SX, EW e filtração móvel no seu site em 48 horas. Zero CAPEX, sem modificações.",
+    "optimizeYour": "Supere o limite da sua planta",
+    "operations": "—",
+    "withoutStopping": "sem construir uma nova.",
+    "subtitle": "Separação sólido-líquido móvel que opera e se mede sem parar sua produção.",
     "tagline": "MOBILIZAÇÃO EM 48 HORAS • ZERO CAPEX • SEM MODIFICAÇÕES",
     "stats": {
       "yearsExperience": "Anos de experiência",
       "projectsCompleted": "Tempo de mobilização",
       "operationalSupport": "Suporte operacional"
     },
-    "cta": "Supere o limite"
+    "cta": "Solicite uma avaliação"
   },
   "services": {
     "sectionTitle": "Serviços Especializados em Mineração",
@@ -464,12 +464,7 @@
       "savings": "Economias Acumuladas USD",
       "years": "Anos de Confiança"
     },
-    "testimonial": {
-      "quote": "A Tec-Ionic Durban transformou nossas operações com resultados que superam consistentemente nossas expectativas.",
-      "author": "Gerente de Operações, Mineradora Principal",
-      "disclaimer": "*Nomes específicos são mantidos confidenciais por acordos de privacidade"
-    },
-    "subheader": "As principais operações industriais do mundo confiam em nós"
+    "subheader": "23 anos ao lado das grandes operações de mineração e refino do mundo"
   },
   "miningTerms": {
     "sludge": "lama",
@@ -3164,8 +3159,17 @@
       "titleLine1": "Sobre a",
       "titleLine2": "Tecionic",
       "description": "Com mais de 23 anos de experiência, somos a empresa líder em serviços especializados de filtragem e tratamento de borra para processos de lixiviação, extração por solventes e eletroobtênção.",
+      "eyebrow": "Quem somos",
       "imageAlt": "Equipamentos Industriais TSF",
+      "caption": {
+        "bold": "Filtro prensa móvel F-1200",
+        "detail": "Mina de cobre · 4.000 msnm"
+      },
       "metrics": {
+        "experience": {
+          "value": "23+",
+          "label": "Anos de experiência"
+        },
         "projects": {
           "value": "120+",
           "label": "Projetos bem-sucedidos"
@@ -4565,7 +4569,8 @@
         "title": "Perdas de Solvente em SX: Um Problema de Milhões que Tem Solução",
         "excerpt": "Com mais de 60% dos novos projetos optando por SX-EW, as perdas de orgânico representam custos ocultos de $300-900K USD anuais. Novas tecnologias de tratamento recuperam até 98% do solvente degradado.",
         "date": "Dezembro 2025",
-        "readTime": "10 min"
+        "readTime": "10 min",
+        "sortDate": "2025-12-01"
       },
       {
         "slug": "litio-triangulo-agua",
@@ -4573,7 +4578,8 @@
         "title": "Lítio no Triângulo: O Desafio da Água e a Oportunidade da Filtração",
         "excerpt": "A Argentina poderia se tornar o maior produtor mundial de lítio, mas a indústria deve resolver um problema crítico: o consumo de 21 milhões de litros de água diários ameaça a viabilidade de novos projetos.",
         "date": "Dezembro 2025",
-        "readTime": "12 min"
+        "readTime": "12 min",
+        "sortDate": "2025-12-01"
       },
       {
         "slug": "politica-minera-2050",
@@ -4581,7 +4587,8 @@
         "title": "Política Mineradora 2050: Chile Limita Uso de Água Continental a 10%",
         "excerpt": "A nova regulamentação chilena exige que a mineração não ultrapasse 10% do uso de água continental até 2025 e 5% até 2040. As operações devem alcançar 85-90% de recirculação de água.",
         "date": "Novembro 2025",
-        "readTime": "8 min"
+        "readTime": "8 min",
+        "sortDate": "2025-11-01"
       },
       {
         "slug": "boom-cobre-chile-peru",
@@ -4589,7 +4596,8 @@
         "title": "Boom do Cobre: Chile e Peru Projetam Recordes de Produção",
         "excerpt": "Chile projeta 5.8Mt de cobre para 2025 (+5.8%), com Escondida subindo 22% e Codelco mirando 1.4Mt. A capacidade de filtração será o gargalo durante manutenções.",
         "date": "Novembro 2025",
-        "readTime": "9 min"
+        "readTime": "9 min",
+        "sortDate": "2025-11-01"
       },
       {
         "slug": "deshidratacion-movil-vs-capex",
@@ -4597,7 +4605,8 @@
         "title": "Sistemas Móveis de Desidratação: Gestão Inteligente de Borra Sem CAPEX",
         "excerpt": "A desidratação móvel substitui projetos CAPEX fixos em operações SX, refino, eletro-obtenção e tanques decantadores — com mobilização em 48 horas, zero impacto em quadro funcional, e rigoroso monitoramento em laboratório próprio.",
         "date": "Abril 2026",
-        "readTime": "6 min"
+        "readTime": "6 min",
+        "sortDate": "2026-04-30"
       }
     ],
     "articles": {

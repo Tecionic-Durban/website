@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { ArrowRight, Flash, Earth } from '@carbon/icons-react'
+import HalftoneHero from '@/components/HalftoneHero'
 
 // Animated Counter Component
 function AnimatedCounter({ value, suffix = '', duration = 2000 }) {
@@ -139,14 +140,16 @@ function FilterTabs({ categories, activeCategory, setActiveCategory, allLabel })
   )
 }
 
-// Color mapping for trends
+// Color mapping for trends — keyed by slug so colors stay stable
+// regardless of array order (mirrors ArticleContent.js).
 const trendColors = {
-  0: "from-emerald-500 to-emerald-600",
-  1: "from-cyan-500 to-cyan-600",
-  2: "from-blue-500 to-blue-600",
-  3: "from-orange-500 to-orange-600",
-  4: "from-purple-500 to-purple-600",
-  5: "from-red-500 to-red-600"
+  'perdidas-solvente-sx': 'from-emerald-500 to-emerald-600',
+  'litio-triangulo-agua': 'from-cyan-500 to-cyan-600',
+  'politica-minera-2050': 'from-blue-500 to-blue-600',
+  'boom-cobre-chile-peru': 'from-orange-500 to-orange-600',
+  'ia-automatizacion-sx-ew': 'from-purple-500 to-purple-600',
+  'minerales-criticos-latam': 'from-red-500 to-red-600',
+  'deshidratacion-movil-vs-capex': 'from-violet-500 to-violet-600',
 }
 
 export default function TendenciasIndustriaPage() {
@@ -154,13 +157,16 @@ export default function TendenciasIndustriaPage() {
   const tc = useTranslations('industryTrends.common')
   const tl = useTranslations('industryTrends.listing')
 
-  // Get trends from translations
+  // Get trends from translations, sort by sortDate descending (newest first),
+  // and assign colors by slug so they stay stable across reorders.
   const trendsRaw = useTranslations('industryTrends').raw('trends')
-  const trends = trendsRaw.map((trend, index) => ({
-    ...trend,
-    id: index + 1,
-    color: trendColors[index] || "from-gray-500 to-gray-600"
-  }))
+  const trends = [...trendsRaw]
+    .sort((a, b) => (b.sortDate || '').localeCompare(a.sortDate || ''))
+    .map((trend, index) => ({
+      ...trend,
+      id: index + 1,
+      color: trendColors[trend.slug] || 'from-gray-500 to-gray-600'
+    }))
 
   const categories = [...new Set(trends.map(t => t.category))]
 
@@ -173,32 +179,12 @@ export default function TendenciasIndustriaPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero */}
-      <section className="relative bg-emerald-700 overflow-hidden">
-        {/* Subtle grid texture */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-
-        {/* Large geometric circles */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 border border-white/10 rounded-full" />
-        <div className="absolute -top-16 -right-16 w-64 h-64 border border-white/5 rounded-full" />
-        <div className="absolute -bottom-24 right-1/4 w-72 h-72 border border-white/10 rounded-full" />
-
-        {/* Glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/20 rounded-full blur-3xl" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 lg:px-8 py-24 md:py-32">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-[family-name:var(--font-family-headings)]">
-              {tl('heroTitle')}
-            </h1>
-            <p className="text-lg text-emerald-100 leading-relaxed">
-              {tl('heroDescription')}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero — Halftone (light, banner variant) */}
+      <HalftoneHero
+        compact
+        title={tl('heroTitle')}
+        lead={tl('heroDescription')}
+      />
 
       {/* Market Dashboard Section */}
       <section className="relative py-20 bg-gradient-to-b from-white to-gray-50">

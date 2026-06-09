@@ -2,7 +2,7 @@
 
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { Globe2, ArrowRight, ChevronRight } from 'lucide-react'
+import { Globe2, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
@@ -46,63 +46,68 @@ export default function LatamPresence() {
         <LatamGlobe />
       </div>
 
-      {/* Mobile: Globe on right as background, content on left (Stripe-style) */}
-      <div className="lg:hidden relative min-h-[600px] overflow-hidden">
-        {/* Globe positioned on right edge as ambient background */}
-        <div className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60 pointer-events-none">
+      {/* Mobile: Globe bleeds from left, content on right (Stripe-style) */}
+      <div className="lg:hidden relative min-h-[560px] overflow-hidden">
+        {/* Globe — bleeds off left edge as ambient depth element */}
+        <div className="absolute -left-[80px] top-1/2 -translate-y-1/2 w-[360px] h-[360px] opacity-50 pointer-events-none">
           <LatamGlobe mobile={true} className="w-full h-full" />
         </div>
 
-        {/* Content on left, overlapping globe */}
-        <div className="relative z-10 py-6 px-4">
-          {/* Header */}
-          <div className="max-w-[75%] mb-5">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6">
-              {t('headline')}<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('headlineSub')}</span>
-            </h2>
-            <p className="text-lg text-slate-300">
-              {t('description')}
-            </p>
-          </div>
+        {/* Gradient mask — fades left edge cleanly, then transitions to content zone */}
+        <div
+          className="absolute inset-0 pointer-events-none z-[5]"
+          style={{ background: 'linear-gradient(to right, rgba(2,6,23,0.55) 0%, transparent 12%, transparent 28%, rgba(2,6,23,0.75) 46%, rgba(2,6,23,0.97) 58%)' }}
+        />
 
-          {/* Mobile content - stats style like Stripe */}
-          <div className="space-y-4 max-w-[80%]">
+        {/* Content — anchored to right half */}
+        <div className="relative z-10 flex flex-col justify-center min-h-[560px] py-10 pr-5">
+          <div className="ml-[43%] space-y-5">
+            {/* Headline */}
+            <div>
+              <h2 className="text-[1.35rem] font-bold text-white mb-2 leading-snug">
+                {t('headline')}<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('headlineSub')}</span>
+              </h2>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                {t('description')}
+              </p>
+            </div>
+
             {/* Mobile equipment callout */}
-            <div className="border-l-2 border-emerald-500 pl-4">
-              <p className="text-white text-lg font-bold mb-1">{t('mobileEquipment.title')}</p>
-              <p className="text-slate-400 text-sm">
+            <div className="border-l-2 border-emerald-500 pl-3">
+              <p className="text-white text-sm font-semibold mb-1">{t('mobileEquipment.title')}</p>
+              <p className="text-slate-400 text-xs leading-relaxed">
                 {t('mobileEquipment.description')}
               </p>
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors group mt-2 text-sm"
+                className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium transition-colors group mt-2 text-xs"
               >
                 {t('requestEquipment')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform shrink-0" />
               </Link>
             </div>
 
             {/* Offices */}
-            <div className="border-l-2 border-cyan-500 pl-4">
-              <p className="text-white text-lg font-bold mb-1">{t('operationBases')}</p>
-              <p className="text-slate-400 text-sm">
-                Santiago, Chile · Calama, Chile · Lima, Perú
+            <div className="border-l-2 border-cyan-500 pl-3">
+              <p className="text-white text-sm font-semibold mb-0.5">{t('operationBases')}</p>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Santiago · Calama · Lima
               </p>
             </div>
 
             {/* Industries */}
-            <div className="border-l-2 border-purple-500 pl-4">
-              <p className="text-white text-lg font-bold mb-2">{t('mainIndustries')}</p>
-              <div className="flex flex-wrap gap-2">
+            <div className="border-l-2 border-purple-500 pl-3">
+              <p className="text-white text-sm font-semibold mb-2">{t('mainIndustries')}</p>
+              <div className="flex flex-wrap gap-1.5">
                 {industries.map((industry, index) => (
                   <Link
                     key={index}
                     href={industry.href}
-                    className="flex items-center gap-1 bg-slate-800/50 px-3 py-1.5 rounded-lg group"
+                    className="flex items-center gap-1.5 bg-slate-800/70 backdrop-blur-sm px-2.5 py-1 rounded-md group"
                   >
-                    <span className="text-white text-sm group-hover:text-emerald-400 transition-colors">{t(`industries.${industry.key}`)}</span>
-                    <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition-colors" />
+                    <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${industry.color}`} />
+                    <span className="text-white text-xs group-hover:text-emerald-400 transition-colors">{t(`industries.${industry.key}`)}</span>
                   </Link>
                 ))}
               </div>

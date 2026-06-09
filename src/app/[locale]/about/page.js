@@ -1,8 +1,8 @@
 // src/app/about/page.js
-import Image from 'next/image'
 import { Flash, Security, Renew, Connect, Collaborate, Time, CertificateCheck, CheckmarkFilled, Growth, Building, Partnership, Chemistry, Earth, RainDrop, Calendar } from '@carbon/icons-react'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import HalftoneHero from '@/components/HalftoneHero'
 
 export default async function AboutPage({ params }) {
   const { locale } = await params
@@ -34,55 +34,18 @@ export default async function AboutPage({ params }) {
   return (
     <>
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section - Emerald Gradient */}
-        <section className="bg-gradient-to-br from-emerald-50/50 via-white to-gray-50 py-20 lg:py-28 relative overflow-hidden">
-          {/* Subtle floating elements like organic-treatment */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-20 right-[12%] w-28 h-28 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 blur-sm"></div>
-            <div className="absolute bottom-20 left-[15%] w-32 h-32 bg-gradient-to-br from-emerald-500/15 to-emerald-600/10 rounded-full opacity-25 blur-sm"></div>
-          </div>
-
-          <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left: Content */}
-              <div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-tight">
-                  <span className="text-gray-900">{t('hero.titleLine1')}</span>
-                  <span className="block text-gradient">{t('hero.titleLine2')}</span>
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed mb-10">
-                  {t('hero.description')}
-                </p>
-
-                {/* Metrics display - Latam style */}
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="border-l-2 border-emerald-500 pl-4">
-                    <div className="text-3xl font-bold text-gray-900">{t('hero.metrics.projects.value')}</div>
-                    <div className="text-gray-500 text-sm mt-1">{t('hero.metrics.projects.label')}</div>
-                  </div>
-                  <div className="border-l-2 border-emerald-500 pl-4">
-                    <div className="text-3xl font-bold text-gray-900">{t('hero.metrics.efficiency.value')}</div>
-                    <div className="text-gray-500 text-sm mt-1">{t('hero.metrics.efficiency.label')}</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right: Image */}
-              <div className="relative">
-                <div className="rounded-xl overflow-hidden shadow-xl shadow-gray-200/80 ring-1 ring-gray-200">
-                  <Image
-                    src="/filtro_prensa_1200_drone_view.png"
-                    alt={t('hero.imageAlt')}
-                    width={800}
-                    height={500}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Hero Section — Halftone (light "operational" variant) */}
+        <HalftoneHero
+          title={`${t('hero.titleLine1')} ${t('hero.titleLine2')}`}
+          lead={t('hero.description')}
+          primary={{ label: t('cta.contactButton'), href: '/contacto' }}
+          image={{ src: '/filtro_prensa_1200_drone_view.png', alt: t('hero.imageAlt') }}
+          proof={[
+            { value: t('hero.metrics.experience.value'), label: t('hero.metrics.experience.label') },
+            { value: t('hero.metrics.projects.value'), label: t('hero.metrics.projects.label') },
+            { value: t('hero.metrics.efficiency.value'), label: t('hero.metrics.efficiency.label') },
+          ]}
+        />
 
         {/* Mission & Vision with Phase 2: Micro-animations */}
         <section className="py-16">

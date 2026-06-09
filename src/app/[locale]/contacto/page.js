@@ -4,6 +4,7 @@ import { Location, Email, Time } from '@carbon/icons-react'
 import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import posthog from 'posthog-js'
+import HalftoneHero from '@/components/HalftoneHero'
 
 // reCAPTCHA v3 site key
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
@@ -13,6 +14,7 @@ export default function ContactPage() {
   const [selectedService, setSelectedService] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
+  const [toast, setToast] = useState(null) // { message } | null — transient success toast
 
   // Spam protection
   const [formLoadTime] = useState(() => Date.now())
@@ -27,6 +29,13 @@ export default function ContactPage() {
       document.head.appendChild(script)
     }
   }, [])
+
+  // Auto-dismiss the success toast
+  useEffect(() => {
+    if (!toast) return
+    const id = setTimeout(() => setToast(null), 4500)
+    return () => clearTimeout(id)
+  }, [toast])
 
   // Get reCAPTCHA token
   const getRecaptchaToken = useCallback(async () => {
@@ -84,6 +93,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        setToast({ message: t('form.success.title') })
         // Track successful form submission
         posthog.capture('contact_form_submitted', {
           service: formData.service,
@@ -150,18 +160,12 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6">{t('hero.title')}</h1>
-            <div className="w-24 h-1 bg-emerald-400 mb-6"></div>
-            <p className="text-xl text-emerald-100 leading-relaxed">
-              {t('hero.description')}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section — Halftone (light, banner variant) */}
+      <HalftoneHero
+        compact
+        title={t('hero.title')}
+        lead={t('hero.description')}
+      />
 
       {/* Main Content */}
       <section className="py-16">
@@ -314,19 +318,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Success Message */}
-                {submitStatus === 'success' && (
-                  <div role="status" aria-live="polite" aria-atomic="true" className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                    <div className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-emerald-600 mr-2" />
-                      <div>
-                        <p className="font-semibold text-emerald-800">{t('form.success.title')}</p>
-                        <p className="text-sm text-emerald-600">{t('form.success.message')}</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
                 {/* Error Message */}
                 {submitStatus === 'error' && (
                   <div role="alert" aria-atomic="true" className="bg-red-50 border border-red-200 rounded-lg p-4">
@@ -371,11 +362,6 @@ export default function ContactPage() {
                     )}
                   </button>
 
-                  {getFormProgress() >= 100 && !isSubmitting && submitStatus !== 'success' && (
-                    <div className="text-emerald-600 text-sm animate-pulse">
-                      {t('form.submit.readyToSend')}
-                    </div>
-                  )}
                 </div>
               </form>
             </div>
@@ -435,13 +421,26 @@ export default function ContactPage() {
                 </div>
                 <p
                   className="text-yellow-800 text-sm"
-                  dangerouslySetInnerHTML={{ __html: t('guarantee.message') }}
+                  dangerouslySetInnerHTML={{ __html: t.markup('guarantee.message', { strong: (chunks) => `<strong>${chunks}</strong>` }) }}
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Success toast */}
+      {toast && (
+        <div
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-xl bg-emerald-600 px-5 py-4 text-white shadow-2xl ring-1 ring-emerald-500/40 enterprise-slide-up"
+        >
+          <CheckCircle className="w-5 h-5 shrink-0" />
+          <span className="text-sm font-semibold">{toast.message}</span>
+        </div>
+      )}
     </div>
   )
 }

@@ -125,17 +125,17 @@
     }
   },
   "hero": {
-    "optimizeYour": "Every plant has a",
-    "operations": "ceiling.",
-    "withoutStopping": "We keep you above it.",
-    "subtitle": "Mobile SX, EW and filtration on your site in 48 hours. Zero CAPEX, zero plant modifications.",
+    "optimizeYour": "Push your plant past its limit",
+    "operations": "—",
+    "withoutStopping": "without building a new one.",
+    "subtitle": "Mobile solid-liquid separation that runs and is measured without stopping your production.",
     "tagline": "48-HOUR MOBILIZATION • ZERO CAPEX • NO PLANT MODIFICATIONS",
     "stats": {
       "yearsExperience": "Years of experience",
       "projectsCompleted": "Mobilization time",
       "operationalSupport": "Operational support"
     },
-    "cta": "Break the ceiling"
+    "cta": "Request an assessment"
   },
   "services": {
     "sectionTitle": "Specialized Mining Services",
@@ -464,12 +464,7 @@
       "savings": "Cumulative Savings USD",
       "years": "Years of Trust"
     },
-    "testimonial": {
-      "quote": "Tec-Ionic Durban has transformed our operations with results that consistently exceed our expectations.",
-      "author": "Operations Manager, Major Mining Company",
-      "disclaimer": "*Specific names are kept confidential under privacy agreements"
-    },
-    "subheader": "Trusted by the world's leading industrial operations"
+    "subheader": "23 years alongside the world's leading mining and refining operations"
   },
   "miningTerms": {
     "sludge": "sludge",
@@ -3164,8 +3159,17 @@
       "titleLine1": "About",
       "titleLine2": "Tecionic",
       "description": "With over 23 years of experience, we are the leading company in specialized filtration and sludge treatment services for leaching, solvent extraction, and electrowinning processes.",
+      "eyebrow": "Who we are",
       "imageAlt": "TSF Industrial Equipment",
+      "caption": {
+        "bold": "Mobile filter press F-1200",
+        "detail": "Copper site · 4,000 m"
+      },
       "metrics": {
+        "experience": {
+          "value": "23+",
+          "label": "Years of experience"
+        },
         "projects": {
           "value": "120+",
           "label": "Successful projects"
@@ -4565,7 +4569,8 @@
         "title": "Solvent Losses in SX: A Million-Dollar Problem with a Solution",
         "excerpt": "With over 60% of new projects opting for SX-EW, organic losses represent hidden costs of $300-900K USD annually. New treatment technologies recover up to 98% of degraded solvent.",
         "date": "December 2025",
-        "readTime": "10 min"
+        "readTime": "10 min",
+        "sortDate": "2025-12-01"
       },
       {
         "slug": "litio-triangulo-agua",
@@ -4573,7 +4578,8 @@
         "title": "Lithium in the Triangle: The Water Challenge and Filtration Opportunity",
         "excerpt": "Argentina could become the world's largest lithium producer, but the industry must solve a critical problem: consumption of 21 million liters of water daily threatens the viability of new projects.",
         "date": "December 2025",
-        "readTime": "12 min"
+        "readTime": "12 min",
+        "sortDate": "2025-12-01"
       },
       {
         "slug": "politica-minera-2050",
@@ -4581,7 +4587,8 @@
         "title": "Mining Policy 2050: Chile Limits Continental Water Use to 10%",
         "excerpt": "New Chilean regulation requires mining not to exceed 10% of continental water use by 2025 and 5% by 2040. Operations must achieve 85-90% water recirculation.",
         "date": "November 2025",
-        "readTime": "8 min"
+        "readTime": "8 min",
+        "sortDate": "2025-11-01"
       },
       {
         "slug": "boom-cobre-chile-peru",
@@ -4589,7 +4596,8 @@
         "title": "Copper Boom: Chile and Peru Project Record Production",
         "excerpt": "Chile projects 5.8Mt of copper for 2025 (+5.8%), with Escondida up 22% and Codelco targeting 1.4Mt. Filtration capacity will be the bottleneck during maintenance.",
         "date": "November 2025",
-        "readTime": "9 min"
+        "readTime": "9 min",
+        "sortDate": "2025-11-01"
       },
       {
         "slug": "deshidratacion-movil-vs-capex",
@@ -4597,7 +4605,8 @@
         "title": "Mobile Dehydration Systems: Smarter Sludge Management Without the CAPEX",
         "excerpt": "How mobile dehydration replaces fixed CAPEX projects across SX, refining, electrowinning, and decanter pool operations — with 48-hour deployment, zero headcount impact, and rigorous in-house process monitoring.",
         "date": "April 2026",
-        "readTime": "6 min"
+        "readTime": "6 min",
+        "sortDate": "2026-04-30"
       }
     ],
     "articles": {

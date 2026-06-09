@@ -125,17 +125,17 @@
     }
   },
   "hero": {
-    "optimizeYour": "Toda planta tiene un",
-    "operations": "límite.",
-    "withoutStopping": "Nosotros te llevamos más allá.",
-    "subtitle": "SX, EW y filtración móvil en tu sitio en 48 horas. Cero CAPEX, sin modificaciones.",
+    "optimizeYour": "Supera el límite de tu planta",
+    "operations": "—",
+    "withoutStopping": "sin construir una nueva.",
+    "subtitle": "Separación sólido-líquido móvil que opera y se mide sin detener tu producción.",
     "tagline": "MOVILIZACIÓN EN 48 HORAS • CERO CAPEX • SIN MODIFICACIONES",
     "stats": {
       "yearsExperience": "Años de experiencia",
       "projectsCompleted": "Tiempo de movilización",
       "operationalSupport": "Soporte operacional"
     },
-    "cta": "Supera el límite"
+    "cta": "Solicita una evaluación"
   },
   "services": {
     "sectionTitle": "Servicios Especializados en Minería",
@@ -464,12 +464,7 @@
       "savings": "Ahorros Acumulados USD",
       "years": "Años de Confianza"
     },
-    "testimonial": {
-      "quote": "Tec-Ionic Durban ha transformado nuestras operaciones con resultados que superan consistentemente nuestras expectativas.",
-      "author": "Gerente de Operaciones, Minera Principal",
-      "disclaimer": "*Los nombres específicos se mantienen confidenciales por acuerdos de privacidad"
-    },
-    "subheader": "Las principales faenas industriales del mundo confían en nosotros"
+    "subheader": "23 años junto a las grandes operaciones mineras y de refinación del mundo"
   },
   "miningTerms": {
     "sludge": "lodo",
@@ -3164,8 +3159,17 @@
       "titleLine1": "Acerca de",
       "titleLine2": "Tecionic",
       "description": "Con más de 23 años de experiencia, somos la empresa líder en servicios especializados de filtrado y tratamiento de crud para procesos de lixiviación, extracción por solventes y electroobtención.",
+      "eyebrow": "Quiénes somos",
       "imageAlt": "Equipos Industriales TSF",
+      "caption": {
+        "bold": "Filtro prensa móvil F-1200",
+        "detail": "Faena de cobre · 4.000 msnm"
+      },
       "metrics": {
+        "experience": {
+          "value": "23+",
+          "label": "Años de experiencia"
+        },
         "projects": {
           "value": "120+",
           "label": "Proyectos exitosos"
@@ -4565,7 +4569,8 @@
         "title": "Pérdidas de Solvente en SX: Un Problema de Millones que Tiene Solución",
         "excerpt": "Con más del 60% de nuevos proyectos optando por SX-EW, las pérdidas de orgánico representan costos ocultos de $300-900K USD anuales. Nuevas tecnologías de tratamiento recuperan hasta 98% del solvente degradado.",
         "date": "Diciembre 2025",
-        "readTime": "10 min"
+        "readTime": "10 min",
+        "sortDate": "2025-12-01"
       },
       {
         "slug": "litio-triangulo-agua",
@@ -4573,7 +4578,8 @@
         "title": "Litio en el Triángulo: El Desafío del Agua y la Oportunidad de la Filtración",
         "excerpt": "Argentina podría convertirse en el mayor productor mundial de litio, pero la industria debe resolver un problema crítico: el consumo de 21 millones de litros de agua diarios amenaza la viabilidad de nuevos proyectos.",
         "date": "Diciembre 2025",
-        "readTime": "12 min"
+        "readTime": "12 min",
+        "sortDate": "2025-12-01"
       },
       {
         "slug": "politica-minera-2050",
@@ -4581,7 +4587,8 @@
         "title": "Política Minera 2050: Chile Limita Uso de Agua Continental al 10%",
         "excerpt": "La nueva regulación chilena exige que la minería no supere el 10% de uso de agua continental para 2025 y 5% para 2040. Las operaciones deben alcanzar 85-90% de recirculación de agua.",
         "date": "Noviembre 2025",
-        "readTime": "8 min"
+        "readTime": "8 min",
+        "sortDate": "2025-11-01"
       },
       {
         "slug": "boom-cobre-chile-peru",
@@ -4589,7 +4596,8 @@
         "title": "Boom del Cobre: Chile y Perú Proyectan Récords de Producción",
         "excerpt": "Chile proyecta 5.8Mt de cobre para 2025 (+5.8%), con Escondida subiendo 22% y Codelco apuntando a 1.4Mt. La capacidad de filtración será el cuello de botella durante mantenimientos.",
         "date": "Noviembre 2025",
-        "readTime": "9 min"
+        "readTime": "9 min",
+        "sortDate": "2025-11-01"
       },
       {
         "slug": "deshidratacion-movil-vs-capex",
@@ -4597,7 +4605,8 @@
         "title": "Sistemas Móviles de Deshidratación: Gestión Inteligente de Borra Sin CAPEX",
         "excerpt": "La deshidratación móvil reemplaza los proyectos CAPEX fijos en operaciones SX, refinería, electroobtención y piscinas decantadoras — con despliegue en 48 horas, cero impacto en personal, y monitoreo riguroso en laboratorio propio.",
         "date": "Abril 2026",
-        "readTime": "6 min"
+        "readTime": "6 min",
+        "sortDate": "2026-04-30"
       }
     ],
     "articles": {

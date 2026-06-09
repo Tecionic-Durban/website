@@ -95,7 +95,7 @@ export default function Hero() {
               {/* Layered Headline Structure */}
               <div className="space-y-2 lg:space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-[-0.02em] enterprise-slide-up stagger-1 text-white">
-                  {t('optimizeYour')} {t('operations')} {t('withoutStopping')}
+                  {t('optimizeYour')} {t('withoutStopping')}
                 </h1>
 
                 <p className="text-lg lg:text-2xl text-white/90 leading-[1.35] font-medium max-w-3xl progressive-reveal">
@@ -105,7 +105,7 @@ export default function Hero() {
             </div>
 
             {/* CTA Button */}
-            <div className="mt-6 lg:mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <div className="mt-6 lg:mt-10">
               <Link
                 href="/contacto"
                 className="group bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-base lg:text-lg transition-all duration-300 inline-flex items-center"
@@ -113,9 +113,6 @@ export default function Hero() {
                 <span>{t('cta')}</span>
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
-              <p className="text-sm text-white/70 progressive-reveal">
-                <span className="font-bold text-white">23+</span> {t('stats.yearsExperience')}
-              </p>
             </div>
         </div>
       </div>
