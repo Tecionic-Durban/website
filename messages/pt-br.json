@@ -4524,26 +4524,26 @@
     "listing": {
       "heroTitle": "Tendências da Indústria",
       "heroDescription": "Análise técnica e perspectivas estratégicas sobre as forças que estão transformando a mineração hidrometalúrgica na América Latina.",
-      "marketTitle": "Panorama do Mercado 2025",
+      "marketTitle": "Panorama do Mercado 2026",
       "marketDescription": "Indicadores-chave que definem o cenário competitivo da indústria mineradora latino-americana",
       "analysisTitle": "Análise e Perspectivas",
       "analysisDescription": "Pesquisa técnica sobre as tendências que impactam a operação e competitividade do setor",
       "stats": [
         {
-          "value": "5.8Mt",
-          "label": "Produção Cobre Chile 2025"
+          "value": "5.3Mt",
+          "label": "Produção de cobre Chile 2026"
         },
         {
           "value": "$104B",
-          "label": "Investimento Projetos pré-2030"
+          "label": "Carteira de investimento mineiro 2025-2034"
         },
         {
-          "value": "+24%",
-          "label": "Crescimento Demanda Lítio"
+          "value": "+30%",
+          "label": "Crescimento demanda mundial de lítio"
         },
         {
-          "value": "10%",
-          "label": "Limite Água Continental"
+          "value": "67.6%",
+          "label": "Água do mar na mineração de cobre até 2034"
         }
       ],
       "ctaBadge": "Inteligência Estratégica",

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import { ArrowRight, Flash, Earth } from '@carbon/icons-react'
+import { ArrowRight } from '@carbon/icons-react'
 import HalftoneHero from '@/components/HalftoneHero'
 
 // Animated Counter Component
@@ -238,66 +238,6 @@ export default function TendenciasIndustriaPage() {
             {filteredTrends.map((trend, index) => (
               <TrendCard key={trend.id} trend={trend} readMore={tc('readMore')} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Industrial Design */}
-      <section className="relative py-24 bg-gray-900 overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, #10b981 1px, transparent 1px),
-              linear-gradient(to bottom, #10b981 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px'
-          }}
-        />
-
-        {/* Animated traces */}
-        <div className="grid-trace grid-trace-h grid-trace-cyan" style={{ top: '30%', animationDelay: '0s', animationDuration: '8s' }} />
-        <div className="grid-trace grid-trace-h" style={{ top: '70%', animationDelay: '3s', animationDuration: '7s' }} />
-
-        {/* Glow effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl" />
-
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full mb-6">
-            <Flash className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm font-semibold">{tl('ctaBadge')}</span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-[family-name:var(--font-family-headings)]">
-            {tl('ctaTitle')}
-          </h2>
-
-          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-            {tl('ctaDescription')}
-          </p>
-
-          {/* Email Form */}
-          <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3 mb-10">
-            <input
-              type="email"
-              placeholder={tl('emailPlaceholder')}
-              className="flex-1 px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"
-            />
-            <button
-              type="submit"
-              className="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 flex items-center justify-center gap-2"
-            >
-              {tl('subscribeButton')}
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </form>
-
-          {/* Secondary CTA */}
-          <div className="flex justify-center">
-            <button className="px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-              <Earth className="w-4 h-4" />
-              {tl('consultingButton')}
-            </button>
           </div>
         </div>
       </section>

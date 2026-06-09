@@ -4524,26 +4524,26 @@
     "listing": {
       "heroTitle": "Industry Trends",
       "heroDescription": "Technical analysis and strategic perspectives on the forces transforming hydrometallurgical mining in Latin America.",
-      "marketTitle": "2025 Market Outlook",
+      "marketTitle": "2026 Market Outlook",
       "marketDescription": "Key indicators defining the competitive landscape of the Latin American mining industry",
       "analysisTitle": "Analysis & Perspectives",
       "analysisDescription": "Technical research on trends impacting sector operations and competitiveness",
       "stats": [
         {
-          "value": "5.8Mt",
-          "label": "Chile Copper Production 2025"
+          "value": "5.3Mt",
+          "label": "Chile copper production 2026"
         },
         {
           "value": "$104B",
-          "label": "Pre-2030 Project Investment"
+          "label": "Mining investment pipeline 2025-2034"
         },
         {
-          "value": "+24%",
-          "label": "Lithium Demand Growth"
+          "value": "+30%",
+          "label": "Global lithium demand growth"
         },
         {
-          "value": "10%",
-          "label": "Continental Water Limit"
+          "value": "67.6%",
+          "label": "Seawater in copper mining by 2034"
         }
       ],
       "ctaBadge": "Strategic Intelligence",
