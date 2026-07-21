@@ -50,8 +50,19 @@ export default function middleware(request: NextRequest) {
       locale = 'en';
     }
     // If no country detected, falls through to es-cl (default)
-
+    // Geo-varying target → temporary redirect is semantically correct here.
     return Response.redirect(new URL(`/${locale}`, request.url));
+  }
+
+  // Legacy non-prefixed deep paths (e.g. /services/filtration) still indexed
+  // from before the locale migration. Redirect permanently (308) to the
+  // default-locale URL so Google consolidates signals onto one canonical
+  // instead of keeping the old URL alive (which a 307 tells it to do).
+  if (!hasLocale && pathname !== '/') {
+    return NextResponse.redirect(
+      new URL(`/${routing.defaultLocale}${pathname}`, request.url),
+      308
+    );
   }
 
   return intlMiddleware(request);

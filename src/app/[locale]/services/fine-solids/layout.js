@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Filtración de Sólidos Finos | Recuperación de Clarificadores | Tecionic',
+    title: 'Filtración de Sólidos Finos | Recuperación de Clarificadores',
     description: 'Filtración móvil de sólidos finos en clarificadores y espesadores. Capacidad 14 TPD, recuperación de rebose, instalación en sitio en 48h.',
     keywords: 'sólidos finos, filtración partículas finas, clarificación soluciones, hidrometalurgia, recuperación finos, minería procesamiento',
   },
   'es-mx': {
-    title: 'Filtración de Sólidos Finos | Recuperación de Clarificadores | Tecionic',
+    title: 'Filtración de Sólidos Finos | Recuperación de Clarificadores',
     description: 'Filtración móvil de sólidos finos en clarificadores y espesadores. Capacidad 14 TPD, recuperación de rebose, instalación en sitio en 48h.',
     keywords: 'sólidos finos, filtración partículas finas, clarificación soluciones, hidrometalurgia, recuperación finos, minería procesamiento',
   },
   'pt-br': {
-    title: 'Filtração de Sólidos Finos | Recuperação de Clarificadores | Tecionic',
+    title: 'Filtração de Sólidos Finos | Recuperação de Clarificadores',
     description: 'Filtração móvel de sólidos finos em clarificadores e espessadores. Capacidade 14 TPD, recuperação de overflow, instalação em 48h.',
     keywords: 'sólidos finos, filtração partículas finas, clarificação soluções, hidrometalurgia, recuperação finos, mineração processamento',
   },
   'en': {
-    title: 'Fine Solids Filtration | Clarifier & Thickener Recovery | Tecionic',
+    title: 'Fine Solids Filtration | Clarifier & Thickener Recovery',
     description: 'Mobile fine solids filtration from clarifiers and thickeners. 14 TPD capacity, clear overflow recovery, 48-hour on-site installation.',
     keywords: 'fine solids filtration, clarifier fines recovery, thickener underflow filtration, mining fine particles, mobile clarification service, LATAM hydrometallurgy',
   },

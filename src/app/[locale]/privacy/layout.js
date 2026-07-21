@@ -13,19 +13,19 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Política de Privacidad | Tecionic',
+      title: 'Política de Privacidad',
       description: 'Política de privacidad de Tecionic. Información sobre cómo recopilamos, usamos y protegemos sus datos personales.',
     },
     'es-mx': {
-      title: 'Política de Privacidad | Tecionic',
+      title: 'Política de Privacidad',
       description: 'Política de privacidad de Tecionic. Información sobre cómo recopilamos, usamos y protegemos sus datos personales.',
     },
     'pt-br': {
-      title: 'Política de Privacidade | Tecionic',
+      title: 'Política de Privacidade',
       description: 'Política de privacidade da Tecionic. Informações sobre como coletamos, usamos e protegemos seus dados pessoais.',
     },
     'en': {
-      title: 'Privacy Policy | Tecionic',
+      title: 'Privacy Policy',
       description: 'Tecionic privacy policy. Information about how we collect, use and protect your personal data.',
     },
   };

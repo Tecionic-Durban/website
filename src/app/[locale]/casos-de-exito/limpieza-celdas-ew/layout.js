@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Caso de Éxito: Limpieza Celdas EW | Tecionic',
+      title: 'Caso de Éxito: Limpieza Celdas EW',
       description: 'Caso de éxito en limpieza y desborre de celdas de electrowinning. Mejora de eficiencia y reducción de tiempos de mantenimiento.',
       keywords: 'caso éxito limpieza EW, desborre celdas, electrowinning resultados, proyecto EW minería',
     },
     'es-mx': {
-      title: 'Caso de Éxito: Limpieza Celdas EW | Tecionic',
+      title: 'Caso de Éxito: Limpieza Celdas EW',
       description: 'Caso de éxito en limpieza y desborre de celdas de electrowinning. Mejora de eficiencia y reducción de tiempos de mantenimiento.',
       keywords: 'caso éxito limpieza EW, desborre celdas, electrowinning resultados, proyecto EW minería',
     },
     'pt-br': {
-      title: 'Caso de Sucesso: Limpeza Células EW | Tecionic',
+      title: 'Caso de Sucesso: Limpeza Células EW',
       description: 'Caso de sucesso em limpeza e desborre de células de electrowinning. Melhoria de eficiência e redução de tempos de manutenção.',
       keywords: 'caso sucesso limpeza EW, desborre células, electrowinning resultados, projeto EW mineração',
     },
     'en': {
-      title: 'Success Story: EW Cell Cleaning | Tecionic',
+      title: 'Success Story: EW Cell Cleaning',
       description: 'Success story in electrowinning cell cleaning and sludge removal. Efficiency improvement and maintenance time reduction.',
       keywords: 'EW cleaning success story, cell sludge removal, electrowinning results, EW mining project',
     },

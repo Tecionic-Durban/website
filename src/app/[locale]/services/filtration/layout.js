@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Servicio de Filtro Prensa Móvil | 130 TPD, Despliegue 48h, Sin CAPEX | Tecionic',
+    title: 'Servicio de Filtro Prensa Móvil | 130 TPD, Despliegue 48h, Sin CAPEX',
     description: 'Flota de filtros prensa móviles para minería e industria. 130 TPD de queque seco, despliegue 48h, sin CAPEX. Filtración como servicio en las Américas.',
     keywords: 'filtración industrial, filtro prensa móvil, separación sólido-líquido, servicios filtración minería, equipos móviles filtración',
   },
   'es-mx': {
-    title: 'Servicio de Filtro Prensa Móvil | 130 TPD, Despliegue 48h, Sin CAPEX | Tecionic',
+    title: 'Servicio de Filtro Prensa Móvil | 130 TPD, Despliegue 48h, Sin CAPEX',
     description: 'Flota de filtros prensa móviles para minería e industria. 130 TPD de queque seco, despliegue 48h, sin CAPEX. Filtración como servicio en las Américas.',
     keywords: 'filtración industrial, filtro prensa móvil, separación sólido-líquido, servicios filtración minería, equipos móviles filtración',
   },
   'pt-br': {
-    title: 'Serviço de Filtro Prensa Móvel | 130 TPD, Mobilização 48h, Sem CAPEX | Tecionic',
+    title: 'Serviço de Filtro Prensa Móvel | 130 TPD, Mobilização 48h, Sem CAPEX',
     description: 'Frota de filtros prensa móveis para mineração e indústria. 130 TPD de torta seca, mobilização 48h, sem CAPEX. Filtração como serviço nas Américas.',
     keywords: 'filtração industrial, filtro prensa móvel, separação sólido-líquido, serviços filtração mineração, equipamentos móveis filtração',
   },
   'en': {
-    title: 'Mobile Filter Press Service | 130 TPD, 48h Deploy, Zero CAPEX | Tecionic',
+    title: 'Mobile Filter Press Service | 130 TPD, 48h Deploy, Zero CAPEX',
     description: 'Mobile filter press fleet for mining and industrial ops. 130 TPD dry cake, 48-hour deployment, zero CAPEX. Filtration-as-a-service across the Americas.',
     keywords: 'mobile filter press, mining filtration service, solid-liquid separation, filtration rental mining, copper tailings filtration, LATAM filtration service',
   },

@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Caso de Éxito: Soporte SX DGM | Tecionic',
+      title: 'Caso de Éxito: Soporte SX DGM',
       description: 'Caso de éxito en soporte técnico para operaciones de extracción por solventes. Optimización de procesos y mejora de recuperación.',
       keywords: 'caso éxito soporte SX, extracción solventes, optimización SX, proyecto hidrometalurgia',
     },
     'es-mx': {
-      title: 'Caso de Éxito: Soporte SX DGM | Tecionic',
+      title: 'Caso de Éxito: Soporte SX DGM',
       description: 'Caso de éxito en soporte técnico para operaciones de extracción por solventes. Optimización de procesos y mejora de recuperación.',
       keywords: 'caso éxito soporte SX, extracción solventes, optimización SX, proyecto hidrometalurgia',
     },
     'pt-br': {
-      title: 'Caso de Sucesso: Suporte SX DGM | Tecionic',
+      title: 'Caso de Sucesso: Suporte SX DGM',
       description: 'Caso de sucesso em suporte técnico para operações de extração por solventes. Otimização de processos e melhoria de recuperação.',
       keywords: 'caso sucesso suporte SX, extração solventes, otimização SX, projeto hidrometalurgia',
     },
     'en': {
-      title: 'Success Story: SX DGM Support | Tecionic',
+      title: 'Success Story: SX DGM Support',
       description: 'Success story in technical support for solvent extraction operations. Process optimization and recovery improvement.',
       keywords: 'SX support success story, solvent extraction, SX optimization, hydrometallurgy project',
     },

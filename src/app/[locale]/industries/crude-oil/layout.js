@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Servicios Técnicos de Refinería | Recuperación de Hidrocarburos | Tecionic',
+    title: 'Servicios Técnicos de Refinería | Recuperación de Hidrocarburos',
     description: 'Servicios técnicos para refinerías: tratamiento de lodos con recuperación de hidrocarburos. 60-75% recuperado como combustible. Probado por ENAP.',
     keywords: 'filtración petróleo, tratamiento lodos petroleros, recuperación hidrocarburos, filtro prensa refinería, borra petrolera, servicios petroleros Chile, tratamiento residuos refinería',
   },
   'es-mx': {
-    title: 'Servicios Técnicos de Refinería | Recuperación de Hidrocarburos | Tecionic',
+    title: 'Servicios Técnicos de Refinería | Recuperación de Hidrocarburos',
     description: 'Servicios técnicos para refinerías: tratamiento de lodos con recuperación de hidrocarburos. 60-75% recuperado como combustible. Probado por ENAP.',
     keywords: 'filtración petróleo, tratamiento lodos petroleros, recuperación hidrocarburos, filtro prensa refinería, borra petrolera, servicios petroleros México, tratamiento residuos refinería',
   },
   'pt-br': {
-    title: 'Serviços Técnicos de Refinaria | Recuperação de Hidrocarbonetos | Tecionic',
+    title: 'Serviços Técnicos de Refinaria | Recuperação de Hidrocarbonetos',
     description: 'Serviços técnicos para refinarias: tratamento móvel de borra com recuperação de hidrocarbonetos. 60-75% recuperado como combustível. ENAP-comprovado.',
     keywords: 'filtração petróleo, tratamento lodos petróleo, recuperação hidrocarbonetos, filtro prensa refinaria, borra petrolífera, serviços petrolíferos Brasil, tratamento resíduos refinaria',
   },
   'en': {
-    title: 'Refinery Technical Services | Sludge & Hydrocarbon Recovery | Tecionic',
+    title: 'Refinery Technical Services | Sludge & Hydrocarbon Recovery',
     description: 'Refinery technical services: mobile sludge treatment with hydrocarbon recovery. 60-75% oil content recovered as fuel. ENAP-proven on-site service.',
     keywords: 'refinery technical services, refinery sludge treatment, hydrocarbon recovery service, oil sludge filtration, refinery filter press, refinery maintenance services, ENAP refinery',
   },

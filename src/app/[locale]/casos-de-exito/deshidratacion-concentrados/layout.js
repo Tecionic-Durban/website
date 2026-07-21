@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Caso de Éxito: Deshidratación de Concentrados | Tecionic',
+      title: 'Caso de Éxito: Deshidratación de Concentrados',
       description: 'Caso de éxito en deshidratación de concentrados de cobre con filtro prensa móvil. Resultados, métricas y beneficios obtenidos.',
       keywords: 'caso éxito deshidratación, concentrados cobre, filtro prensa resultados, proyecto minería cobre',
     },
     'es-mx': {
-      title: 'Caso de Éxito: Deshidratación de Concentrados | Tecionic',
+      title: 'Caso de Éxito: Deshidratación de Concentrados',
       description: 'Caso de éxito en deshidratación de concentrados de cobre con filtro prensa móvil. Resultados, métricas y beneficios obtenidos.',
       keywords: 'caso éxito deshidratación, concentrados cobre, filtro prensa resultados, proyecto minería cobre',
     },
     'pt-br': {
-      title: 'Caso de Sucesso: Desidratação de Concentrados | Tecionic',
+      title: 'Caso de Sucesso: Desidratação de Concentrados',
       description: 'Caso de sucesso em desidratação de concentrados de cobre com filtro prensa móvel. Resultados, métricas e benefícios obtidos.',
       keywords: 'caso sucesso desidratação, concentrados cobre, filtro prensa resultados, projeto mineração cobre',
     },
     'en': {
-      title: 'Success Story: Concentrate Dehydration | Tecionic',
+      title: 'Success Story: Concentrate Dehydration',
       description: 'Success story in copper concentrate dehydration with mobile filter press. Results, metrics and benefits achieved.',
       keywords: 'dehydration success story, copper concentrates, filter press results, copper mining project',
     },

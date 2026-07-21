@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Caso de Éxito: Tratamiento Orgánico SX | Tecionic',
+      title: 'Caso de Éxito: Tratamiento Orgánico SX',
       description: 'Caso de éxito en tratamiento de orgánico degradado en circuitos SX. Recuperación de solventes y mejora de calidad de extracción.',
       keywords: 'caso éxito tratamiento orgánico, SX degradados, recuperación solventes, proyecto extracción solventes',
     },
     'es-mx': {
-      title: 'Caso de Éxito: Tratamiento Orgánico SX | Tecionic',
+      title: 'Caso de Éxito: Tratamiento Orgánico SX',
       description: 'Caso de éxito en tratamiento de orgánico degradado en circuitos SX. Recuperación de solventes y mejora de calidad de extracción.',
       keywords: 'caso éxito tratamiento orgánico, SX degradados, recuperación solventes, proyecto extracción solventes',
     },
     'pt-br': {
-      title: 'Caso de Sucesso: Tratamento Orgânico SX | Tecionic',
+      title: 'Caso de Sucesso: Tratamento Orgânico SX',
       description: 'Caso de sucesso em tratamento de orgânico degradado em circuitos SX. Recuperação de solventes e melhoria de qualidade de extração.',
       keywords: 'caso sucesso tratamento orgânico, SX degradados, recuperação solventes, projeto extração solventes',
     },
     'en': {
-      title: 'Success Story: SX Organic Treatment | Tecionic',
+      title: 'Success Story: SX Organic Treatment',
       description: 'Success story in degraded organic treatment in SX circuits. Solvent recovery and extraction quality improvement.',
       keywords: 'organic treatment success story, SX degraded, solvent recovery, solvent extraction project',
     },

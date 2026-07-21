@@ -26,7 +26,6 @@ const routes = [
   { path: '/services/ew-cleaning', changeFrequency: 'monthly' as const, priority: 0.85 },
   { path: '/services/concentrate-dehydration', changeFrequency: 'monthly' as const, priority: 0.85 },
   { path: '/services/fine-solids', changeFrequency: 'monthly' as const, priority: 0.85 },
-  { path: '/services/maintenance', changeFrequency: 'monthly' as const, priority: 0.85 },
 
   // Analytics & Monitoring services - high priority (new data services)
   { path: '/services/tif-measurement', changeFrequency: 'monthly' as const, priority: 0.85 },
@@ -43,7 +42,6 @@ const routes = [
   { path: '/casos-de-exito/tratamiento-organico-sx', changeFrequency: 'monthly' as const, priority: 0.7 },
 
   // Resources - medium priority
-  { path: '/resources', changeFrequency: 'weekly' as const, priority: 0.7 },
   { path: '/tendencias-industria', changeFrequency: 'weekly' as const, priority: 0.7 },
 
   // Tendencias-industria articles - medium priority (long-form content)
@@ -53,13 +51,9 @@ const routes = [
   { path: '/tendencias-industria/boom-cobre-chile-peru', changeFrequency: 'monthly' as const, priority: 0.65 },
   { path: '/tendencias-industria/deshidratacion-movil-vs-capex', changeFrequency: 'monthly' as const, priority: 0.65 },
 
-  // Technical pages - medium priority
-  { path: '/calculadora', changeFrequency: 'monthly' as const, priority: 0.6 },
-  { path: '/cumplimiento', changeFrequency: 'yearly' as const, priority: 0.5 },
-
-  // Legal pages - low priority (but important for completeness)
-  { path: '/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
-  { path: '/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
+  // Note: /calculadora, /privacy, and /terms are noindexed — deliberately NOT
+  // listed here. A sitemap must only contain indexable URLs; mixing signals
+  // (sitemap says index, page says noindex) erodes crawl trust.
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

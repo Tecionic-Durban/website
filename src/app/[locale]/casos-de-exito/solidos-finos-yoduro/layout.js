@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Caso de Éxito: Sólidos Finos en Producción de Yoduro | Tecionic',
+      title: 'Caso de Éxito: Sólidos Finos en Producción de Yoduro',
       description: 'Caso de éxito en filtración de sólidos finos para producción de yoduro. Recuperación de partículas y mejora de pureza del producto.',
       keywords: 'caso éxito sólidos finos, producción yoduro, filtración partículas, proyecto industria química',
     },
     'es-mx': {
-      title: 'Caso de Éxito: Sólidos Finos en Producción de Yoduro | Tecionic',
+      title: 'Caso de Éxito: Sólidos Finos en Producción de Yoduro',
       description: 'Caso de éxito en filtración de sólidos finos para producción de yoduro. Recuperación de partículas y mejora de pureza del producto.',
       keywords: 'caso éxito sólidos finos, producción yoduro, filtración partículas, proyecto industria química',
     },
     'pt-br': {
-      title: 'Caso de Sucesso: Sólidos Finos em Produção de Iodeto | Tecionic',
+      title: 'Caso de Sucesso: Sólidos Finos em Produção de Iodeto',
       description: 'Caso de sucesso em filtração de sólidos finos para produção de iodeto. Recuperação de partículas e melhoria de pureza do produto.',
       keywords: 'caso sucesso sólidos finos, produção iodeto, filtração partículas, projeto indústria química',
     },
     'en': {
-      title: 'Success Story: Fine Solids in Iodide Production | Tecionic',
+      title: 'Success Story: Fine Solids in Iodide Production',
       description: 'Success story in fine solids filtration for iodide production. Particle recovery and product purity improvement.',
       keywords: 'fine solids success story, iodide production, particle filtration, chemical industry project',
     },

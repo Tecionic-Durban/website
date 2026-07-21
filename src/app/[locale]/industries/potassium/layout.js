@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Servicios de Filtración para Minería de Potasio | Tecionic',
+    title: 'Servicios de Filtración para Minería de Potasio',
     description: 'Soluciones móviles de filtración para operaciones de potasio y fertilizantes. Equipos para cristalización y procesamiento de sales. Servicio en toda Latinoamérica.',
     keywords: 'filtración potasio, tratamiento sales potasio, filtro prensa potasio, minería potasio Chile, cloruro de potasio, fertilizantes potasio, procesamiento sales',
   },
   'es-mx': {
-    title: 'Servicios de Filtración para Minería de Potasio | Tecionic',
+    title: 'Servicios de Filtración para Minería de Potasio',
     description: 'Soluciones móviles de filtración para operaciones de potasio y fertilizantes. Equipos para cristalización y procesamiento de sales. Servicio en toda Latinoamérica.',
     keywords: 'filtración potasio, tratamiento sales potasio, filtro prensa potasio, minería potasio México, cloruro de potasio, fertilizantes potasio, procesamiento sales',
   },
   'pt-br': {
-    title: 'Serviços de Filtração para Mineração de Potássio | Tecionic',
+    title: 'Serviços de Filtração para Mineração de Potássio',
     description: 'Soluções móveis de filtração para operações de potássio e fertilizantes. Equipamentos para cristalização e processamento de sais. Serviço em toda a América Latina.',
     keywords: 'filtração potássio, tratamento sais potássio, filtro prensa potássio, mineração potássio Brasil, cloreto de potássio, fertilizantes potássio, processamento sais',
   },
   'en': {
-    title: 'Potash Filtration & Crystallization Service | LATAM | Tecionic',
+    title: 'Potash Filtration & Crystallization Service | LATAM',
     description: 'Mobile filtration for potash, KCl, and salt crystallization plants. On-site deployment for fertilizer producers across Latin America. Zero CAPEX.',
     keywords: 'potash filtration, KCl crystallization filtration, fertilizer plant filtration, potassium mining service LATAM, salt crystallization service, potash Chile',
   },

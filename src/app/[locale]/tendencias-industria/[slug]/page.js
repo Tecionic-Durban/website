@@ -53,7 +53,7 @@ export async function generateMetadata({ params }) {
   const path = `/tendencias-industria/${slug}`
 
   return {
-    title: `${title} | Tecionic`,
+    title, // root layout template appends "| Tecionic"
     description,
     keywords: article?.tags?.join(', '),
     alternates: {

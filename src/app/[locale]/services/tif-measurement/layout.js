@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Medición TIF en Tiempo Real para Circuitos SX | Tecionic',
+      title: 'Medición TIF en Tiempo Real para Circuitos SX',
       description: 'Monitoreo en tiempo real de Fe Insoluble Total (TIF) para extracción por solventes. Optimiza recuperación de cobre, reduce pérdidas, mejora eficiencia.',
       keywords: 'medición TIF, Total Insoluble Fe, monitoreo SX, extracción por solventes, analytics minería, optimización cobre, pérdidas orgánico, datos tiempo real',
     },
     'es-mx': {
-      title: 'Medición TIF en Tiempo Real para Circuitos SX | Tecionic',
+      title: 'Medición TIF en Tiempo Real para Circuitos SX',
       description: 'Monitoreo en tiempo real de Fe Insoluble Total (TIF) para extracción por solventes. Optimiza recuperación de cobre, reduce pérdidas, mejora eficiencia.',
       keywords: 'medición TIF, Total Insoluble Fe, monitoreo SX, extracción por solventes, analytics minería, optimización cobre, pérdidas orgánico, datos tiempo real',
     },
     'pt-br': {
-      title: 'Medição TIF em Tempo Real para Circuitos SX | Tecionic',
+      title: 'Medição TIF em Tempo Real para Circuitos SX',
       description: 'Monitoramento em tempo real de Fe Insolúvel Total (TIF) para extração por solventes. Otimiza recuperação de cobre, reduz perdas, melhora eficiência.',
       keywords: 'medição TIF, Total Insoluble Fe, monitoramento SX, extração por solventes, analytics mineração, otimização cobre, perdas orgânico, dados tempo real',
     },
     'en': {
-      title: 'Real-Time TIF Measurement for SX Circuits | Tecionic',
+      title: 'Real-Time TIF Measurement for SX Circuits',
       description: 'Real-time Total Insoluble Fe (TIF) monitoring for SX circuits. Optimize copper recovery, cut organic losses, improve plant efficiency.',
       keywords: 'TIF measurement, Total Insoluble Fe, SX monitoring, solvent extraction, mining analytics, copper optimization, organic losses, real-time data',
     },

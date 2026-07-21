@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Sobre Nosotros - 23+ Años de Experiencia en Filtración | Tecionic',
+      title: 'Sobre Nosotros - 23+ Años de Experiencia en Filtración',
       description: 'Conozca Tecionic: más de 23 años liderando servicios móviles de filtración para minería LIX/SX/EW en Latinoamérica. Nuestra historia, misión y valores.',
       keywords: 'sobre tecionic, empresa filtración minería, historia tecionic, servicios mineros latinoamérica, filtro prensa móvil empresa',
     },
     'es-mx': {
-      title: 'Sobre Nosotros - 23+ Años de Experiencia en Filtración | Tecionic',
+      title: 'Sobre Nosotros - 23+ Años de Experiencia en Filtración',
       description: 'Conozca Tecionic: más de 23 años liderando servicios móviles de filtración para minería LIX/SX/EW en Latinoamérica. Nuestra historia, misión y valores.',
       keywords: 'sobre tecionic, empresa filtración minería, historia tecionic, servicios mineros latinoamérica, filtro prensa móvil empresa',
     },
     'pt-br': {
-      title: 'Sobre Nós - 23+ Anos de Experiência em Filtração | Tecionic',
+      title: 'Sobre Nós - 23+ Anos de Experiência em Filtração',
       description: 'Conheça a Tecionic: mais de 23 anos liderando serviços móveis de filtração para mineração LIX/SX/EW na América Latina. Nossa história, missão e valores.',
       keywords: 'sobre tecionic, empresa filtração mineração, história tecionic, serviços mineiros américa latina, filtro prensa móvel empresa',
     },
     'en': {
-      title: 'About Us - 23+ Years of Filtration Experience | Tecionic',
+      title: 'About Us - 23+ Years of Filtration Experience',
       description: 'Discover Tecionic: over 23 years leading mobile filtration services for LIX/SX/EW mining in Latin America. Our history, mission and values.',
       keywords: 'about tecionic, mining filtration company, tecionic history, latin america mining services, mobile filter press company',
     },

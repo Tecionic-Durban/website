@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Monitoreo TSF y Analítica de Proceso SX | Tecionic',
+      title: 'Monitoreo TSF y Analítica de Proceso SX',
       description: 'Monitoreo de Fe Suspendido Total (TSF) para circuitos hidrometalúrgicos. Dashboards en tiempo real, alertas predictivas, optimización SX-EW.',
       keywords: 'monitoreo TSF, Total Suspended Ferrous, analytics SX, control calidad, hidrometalurgia, dashboard tiempo real, alertas predictivas, optimización procesos',
     },
     'es-mx': {
-      title: 'Monitoreo TSF y Analítica de Proceso SX | Tecionic',
+      title: 'Monitoreo TSF y Analítica de Proceso SX',
       description: 'Monitoreo de Fe Suspendido Total (TSF) para circuitos hidrometalúrgicos. Dashboards en tiempo real, alertas predictivas, optimización SX-EW.',
       keywords: 'monitoreo TSF, Total Suspended Ferrous, analytics SX, control calidad, hidrometalurgia, dashboard tiempo real, alertas predictivas, optimización procesos',
     },
     'pt-br': {
-      title: 'Monitoramento TSF e Analytics de Processo SX | Tecionic',
+      title: 'Monitoramento TSF e Analytics de Processo SX',
       description: 'Monitoramento de Fe Suspenso Total (TSF) para circuitos hidrometalúrgicos. Dashboards em tempo real, alertas preditivos, otimização SX-EW.',
       keywords: 'monitoramento TSF, Total Suspended Ferrous, analytics SX, controle qualidade, hidrometalurgia, dashboard tempo real, alertas preditivos, otimização processos',
     },
     'en': {
-      title: 'TSF Monitoring & SX Process Analytics | Tecionic',
+      title: 'TSF Monitoring & SX Process Analytics',
       description: 'TSF (Total Suspended Ferrous) monitoring for hydrometallurgy. Real-time dashboards, predictive alerts, SX-EW process optimization.',
       keywords: 'TSF monitoring, Total Suspended Ferrous, SX analytics, quality control, hydrometallurgy, real-time dashboard, predictive alerts, process optimization',
     },

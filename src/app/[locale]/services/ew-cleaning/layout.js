@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Limpieza de Celdas EW y Desborre | 1 Celda/Día, Lista para Altitud | Tecionic',
+    title: 'Limpieza de Celdas EW y Desborre | 1 Celda/Día, Lista para Altitud',
     description: 'Desborre y limpieza de celdas EW en refinerías de cobre. 1 celda por día, sin parada de producción, probado sobre 4,000 msnm.',
     keywords: 'limpieza celdas EW, desborre electrowinning, filtración EW, mantenimiento celdas electrolíticas, minería cobre EW',
   },
   'es-mx': {
-    title: 'Limpieza de Celdas EW y Desborre | 1 Celda/Día, Lista para Altitud | Tecionic',
+    title: 'Limpieza de Celdas EW y Desborre | 1 Celda/Día, Lista para Altitud',
     description: 'Desborre y limpieza de celdas EW en refinerías de cobre. 1 celda por día, sin parada de producción, probado sobre 4,000 msnm.',
     keywords: 'limpieza celdas EW, desborre electrowinning, filtración EW, mantenimiento celdas electrolíticas, minería cobre EW',
   },
   'pt-br': {
-    title: 'Limpeza de Células EW e Desborre | 1 Célula/Dia, Pronto p/ Altitude | Tecionic',
+    title: 'Limpeza de Células EW e Desborre | 1 Célula/Dia, Pronto p/ Altitude',
     description: 'Remoção de borra e limpeza de células EW em refinarias de cobre. 1 célula por dia, sem parada de produção, comprovado acima de 4,000 m.',
     keywords: 'limpeza células EW, desborre electrowinning, filtração EW, manutenção células eletrolíticas, mineração cobre EW',
   },
   'en': {
-    title: 'EW Cell Cleaning & Desludging | 1 Cell/Day, Altitude-Ready | Tecionic',
+    title: 'EW Cell Cleaning & Desludging | 1 Cell/Day, Altitude-Ready',
     description: 'On-site EW cell sludge removal for copper electrowinning refineries. 1 cell per day throughput, no production halt, proven above 4,000 m altitude.',
     keywords: 'EW cell desludging, electrowinning cleaning, EW sludge removal copper, cathode contamination, high altitude EW service, copper refinery maintenance',
   },

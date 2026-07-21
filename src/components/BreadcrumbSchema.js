@@ -18,13 +18,11 @@ const segmentLabels = {
   'services': { 'es-cl': 'Servicios', 'es-mx': 'Servicios', 'pt-br': 'Serviços', 'en': 'Services' },
   'about': { 'es-cl': 'Acerca de', 'es-mx': 'Acerca de', 'pt-br': 'Sobre', 'en': 'About' },
   'contacto': { 'es-cl': 'Contacto', 'es-mx': 'Contacto', 'pt-br': 'Contato', 'en': 'Contact' },
-  'resources': { 'es-cl': 'Recursos', 'es-mx': 'Recursos', 'pt-br': 'Recursos', 'en': 'Resources' },
   'casos-de-exito': { 'es-cl': 'Casos de Éxito', 'es-mx': 'Casos de Éxito', 'pt-br': 'Casos de Sucesso', 'en': 'Case Studies' },
   'white-papers': { 'es-cl': 'White Papers', 'es-mx': 'White Papers', 'pt-br': 'White Papers', 'en': 'White Papers' },
   'tendencias-industria': { 'es-cl': 'Tendencias', 'es-mx': 'Tendencias', 'pt-br': 'Tendências', 'en': 'Industry Trends' },
   'especificaciones-tecnicas': { 'es-cl': 'Especificaciones Técnicas', 'es-mx': 'Especificaciones Técnicas', 'pt-br': 'Especificações Técnicas', 'en': 'Technical Specifications' },
   'calculadora': { 'es-cl': 'Calculadora', 'es-mx': 'Calculadora', 'pt-br': 'Calculadora', 'en': 'Calculator' },
-  'cumplimiento': { 'es-cl': 'Cumplimiento', 'es-mx': 'Cumplimiento', 'pt-br': 'Conformidade', 'en': 'Compliance' },
   'historias-de-clientes': { 'es-cl': 'Historias de Clientes', 'es-mx': 'Historias de Clientes', 'pt-br': 'Histórias de Clientes', 'en': 'Customer Stories' },
 
   // Industries
@@ -40,7 +38,6 @@ const segmentLabels = {
   'ew-cleaning': { 'es-cl': 'Limpieza EW', 'es-mx': 'Limpieza EW', 'pt-br': 'Limpeza EW', 'en': 'EW Cleaning' },
   'concentrate-dehydration': { 'es-cl': 'Deshidratación de Concentrados', 'es-mx': 'Deshidratación de Concentrados', 'pt-br': 'Desidratação de Concentrados', 'en': 'Concentrate Dehydration' },
   'fine-solids': { 'es-cl': 'Sólidos Finos', 'es-mx': 'Sólidos Finos', 'pt-br': 'Sólidos Finos', 'en': 'Fine Solids' },
-  'maintenance': { 'es-cl': 'Mantenimiento', 'es-mx': 'Mantenimiento', 'pt-br': 'Manutenção', 'en': 'Maintenance' },
   'water-clarification': { 'es-cl': 'Clarificación de Agua', 'es-mx': 'Clarificación de Agua', 'pt-br': 'Clarificação de Água', 'en': 'Water Clarification' },
   'tif-measurement': { 'es-cl': 'Medición TIF', 'es-mx': 'Medición TIF', 'pt-br': 'Medição TIF', 'en': 'TIF Measurement' },
   'tsf-monitoring': { 'es-cl': 'Monitoreo TSF', 'es-mx': 'Monitoreo TSF', 'pt-br': 'Monitoramento TSF', 'en': 'TSF Monitoring' },

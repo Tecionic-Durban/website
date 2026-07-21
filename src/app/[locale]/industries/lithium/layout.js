@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Servicios de Filtración para Minería de Litio | Tecionic',
+    title: 'Servicios de Filtración para Minería de Litio',
     description: 'Soluciones móviles de filtración para operaciones de litio en salares. Equipos resistentes a salmueras corrosivas. Servicio en el Triángulo del Litio de Sudamérica.',
     keywords: 'filtración litio, tratamiento salmuera litio, filtro prensa litio, minería litio Chile, salar Atacama, carbonato de litio, triángulo del litio',
   },
   'es-mx': {
-    title: 'Servicios de Filtración para Minería de Litio | Tecionic',
+    title: 'Servicios de Filtración para Minería de Litio',
     description: 'Soluciones móviles de filtración para operaciones de litio en salares. Equipos resistentes a salmueras corrosivas. Servicio en el Triángulo del Litio de Sudamérica.',
     keywords: 'filtración litio, tratamiento salmuera litio, filtro prensa litio, minería litio México, extracción litio, carbonato de litio, procesamiento litio',
   },
   'pt-br': {
-    title: 'Serviços de Filtração para Mineração de Lítio | Tecionic',
+    title: 'Serviços de Filtração para Mineração de Lítio',
     description: 'Soluções móveis de filtração para operações de lítio em salinas. Equipamentos resistentes a salmouras corrosivas. Serviço no Triângulo do Lítio da América do Sul.',
     keywords: 'filtração lítio, tratamento salmoura lítio, filtro prensa lítio, mineração lítio Brasil, carbonato de lítio, processamento lítio',
   },
   'en': {
-    title: 'Lithium Brine Filtration Service | Atacama & DLE | Tecionic',
+    title: 'Lithium Brine Filtration Service | Atacama & DLE',
     description: 'Mobile brine filtration for lithium operations in the Atacama and Lithium Triangle. Corrosion-resistant equipment, DLE-ready, 48-hour on-site deployment.',
     keywords: 'lithium brine filtration, Atacama lithium service, DLE filtration, lithium triangle service, lithium salt flat filtration, lithium carbonate processing',
   },

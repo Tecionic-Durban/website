@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Caso de Éxito: Tratamiento Lodos Petroleros | Tecionic',
+      title: 'Caso de Éxito: Tratamiento Lodos Petroleros',
       description: 'Caso de éxito en tratamiento de lodos petroleros con filtro prensa móvil. Reducción de volumen y recuperación de hidrocarburos.',
       keywords: 'caso éxito lodos petroleros, tratamiento crudo, filtro prensa petróleo, proyecto industria petrolera',
     },
     'es-mx': {
-      title: 'Caso de Éxito: Tratamiento Lodos Petroleros | Tecionic',
+      title: 'Caso de Éxito: Tratamiento Lodos Petroleros',
       description: 'Caso de éxito en tratamiento de lodos petroleros con filtro prensa móvil. Reducción de volumen y recuperación de hidrocarburos.',
       keywords: 'caso éxito lodos petroleros, tratamiento crudo, filtro prensa petróleo, proyecto industria petrolera',
     },
     'pt-br': {
-      title: 'Caso de Sucesso: Tratamento Lodos Petrolíferos | Tecionic',
+      title: 'Caso de Sucesso: Tratamento Lodos Petrolíferos',
       description: 'Caso de sucesso em tratamento de lodos petrolíferos com filtro prensa móvel. Redução de volume e recuperação de hidrocarbonetos.',
       keywords: 'caso sucesso lodos petrolíferos, tratamento crude, filtro prensa petróleo, projeto indústria petrolífera',
     },
     'en': {
-      title: 'Success Story: Oil Sludge Treatment | Tecionic',
+      title: 'Success Story: Oil Sludge Treatment',
       description: 'Success story in oil sludge treatment with mobile filter press. Volume reduction and hydrocarbon recovery.',
       keywords: 'oil sludge success story, crude treatment, oil filter press, oil industry project',
     },

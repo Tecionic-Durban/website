@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Filtración de Zinc | Electrolito y Borra de Jarosita | Tecionic',
+    title: 'Filtración de Zinc | Electrolito y Borra de Jarosita',
     description: 'Servicio móvil de filtración de zinc para refinerías. Filtración de electrolito y borra de jarosita. Movilización 48h, probado en Cajamarquilla.',
     keywords: 'filtración zinc, tratamiento electrolito zinc, purificación zinc, filtro prensa zinc, minería zinc Chile, electrowinning zinc, hidrometalurgia zinc',
   },
   'es-mx': {
-    title: 'Filtración de Zinc | Electrolito y Borra de Jarosita | Tecionic',
+    title: 'Filtración de Zinc | Electrolito y Borra de Jarosita',
     description: 'Servicio móvil de filtración de zinc para refinerías. Filtración de electrolito y borra de jarosita. Movilización 48h, probado en Cajamarquilla.',
     keywords: 'filtración zinc, tratamiento electrolito zinc, purificación zinc, filtro prensa zinc, minería zinc México, electrowinning zinc, hidrometalurgia zinc',
   },
   'pt-br': {
-    title: 'Filtração de Zinco | Eletrólito e Borra de Jarosita | Tecionic',
+    title: 'Filtração de Zinco | Eletrólito e Borra de Jarosita',
     description: 'Serviço móvel de filtração de zinco para refinarias. Filtração de eletrólito e borra de jarosita. Mobilização 48h, comprovado em Cajamarquilla.',
     keywords: 'filtração zinco, tratamento eletrólito zinco, purificação zinco, filtro prensa zinco, mineração zinco Brasil, electrowinning zinco, hidrometalurgia zinco',
   },
   'en': {
-    title: 'Zinc Filtration Service | Electrolyte & Jarosite Sludge Removal | Tecionic',
+    title: 'Zinc Filtration Service | Electrolyte & Jarosite Sludge Removal',
     description: 'Mobile zinc filtration service for refineries. Electrolyte filtration and jarosite sludge removal. 48-hour mobilization, proven at Cajamarquilla.',
     keywords: 'zinc filtration, zinc electrolyte filtration, jarosite sludge removal, goethite treatment zinc, zinc hydrometallurgy service, Cajamarquilla zinc, zinc refinery filtration',
   },

@@ -13,19 +13,19 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Términos y Condiciones | Tecionic',
+      title: 'Términos y Condiciones',
       description: 'Términos y condiciones de uso del sitio web de Tecionic. Condiciones legales para el uso de nuestros servicios.',
     },
     'es-mx': {
-      title: 'Términos y Condiciones | Tecionic',
+      title: 'Términos y Condiciones',
       description: 'Términos y condiciones de uso del sitio web de Tecionic. Condiciones legales para el uso de nuestros servicios.',
     },
     'pt-br': {
-      title: 'Termos e Condições | Tecionic',
+      title: 'Termos e Condições',
       description: 'Termos e condições de uso do site da Tecionic. Condições legais para o uso de nossos serviços.',
     },
     'en': {
-      title: 'Terms and Conditions | Tecionic',
+      title: 'Terms and Conditions',
       description: 'Tecionic website terms and conditions. Legal conditions for the use of our services.',
     },
   };

@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Servicios de Filtración para Minería de Cobre | Tecionic',
+    title: 'Servicios de Filtración para Minería de Cobre',
     description: 'Soluciones móviles de filtración y tratamiento de borra para operaciones de cobre LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Más de 23 años de experiencia en Latinoamérica.',
     keywords: 'filtración cobre, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre Chile, servicios hidrometalurgia',
   },
   'es-mx': {
-    title: 'Servicios de Filtración para Minería de Cobre | Tecionic',
+    title: 'Servicios de Filtración para Minería de Cobre',
     description: 'Soluciones móviles de filtración y tratamiento de borra para operaciones de cobre LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Más de 23 años de experiencia en Latinoamérica.',
     keywords: 'filtración cobre, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre México, servicios hidrometalurgia',
   },
   'pt-br': {
-    title: 'Serviços de Filtração para Mineração de Cobre | Tecionic',
+    title: 'Serviços de Filtração para Mineração de Cobre',
     description: 'Soluções móveis de filtração e tratamento de borra para operações de cobre LIX/SX/EW. Sem CAPEX, mobilização em 48 horas. Mais de 23 anos de experiência na América Latina.',
     keywords: 'filtração cobre, tratamento orgânico SX, limpeza células EW, desidratação concentrados, filtro prensa móvel, mineração cobre Brasil, serviços hidrometalurgia',
   },
   'en': {
-    title: 'Copper SX/EW Filtration & Crud Removal | Chile, Peru | Tecionic',
+    title: 'Copper SX/EW Filtration & Crud Removal | Chile, Peru',
     description: 'Mobile filtration, SX crud treatment, and EW cell desludging for copper refineries. 48-hour deployment, zero CAPEX, proven across Chile, Peru, and Mexico.',
     keywords: 'copper SX crud treatment, copper EW desludging, copper refinery filtration, copper concentrate dehydration, LATAM copper mining service, Chile copper filtration',
   },

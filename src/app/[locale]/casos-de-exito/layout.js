@@ -13,22 +13,22 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     'es-cl': {
-      title: 'Casos de Éxito - Proyectos de Filtración Minera | Tecionic',
+      title: 'Casos de Éxito - Proyectos de Filtración Minera',
       description: 'Conozca nuestros casos de éxito en filtración móvil para minería. Proyectos reales con resultados medibles en operaciones LIX/SX/EW en Latinoamérica.',
       keywords: 'casos éxito minería, proyectos filtración, resultados filtro prensa, casos estudio minería, tecionic proyectos',
     },
     'es-mx': {
-      title: 'Casos de Éxito - Proyectos de Filtración Minera | Tecionic',
+      title: 'Casos de Éxito - Proyectos de Filtración Minera',
       description: 'Conozca nuestros casos de éxito en filtración móvil para minería. Proyectos reales con resultados medibles en operaciones LIX/SX/EW en Latinoamérica.',
       keywords: 'casos éxito minería, proyectos filtración, resultados filtro prensa, casos estudio minería, tecionic proyectos',
     },
     'pt-br': {
-      title: 'Casos de Sucesso - Projetos de Filtração Mineração | Tecionic',
+      title: 'Casos de Sucesso - Projetos de Filtração Mineração',
       description: 'Conheça nossos casos de sucesso em filtração móvel para mineração. Projetos reais com resultados mensuráveis em operações LIX/SX/EW na América Latina.',
       keywords: 'casos sucesso mineração, projetos filtração, resultados filtro prensa, casos estudo mineração, tecionic projetos',
     },
     'en': {
-      title: 'Success Stories - Mining Filtration Projects | Tecionic',
+      title: 'Success Stories - Mining Filtration Projects',
       description: 'Discover our success stories in mobile filtration for mining. Real projects with measurable results in LIX/SX/EW operations across Latin America.',
       keywords: 'mining success stories, filtration projects, filter press results, mining case studies, tecionic projects',
     },
@@ -38,7 +38,9 @@ export async function generateMetadata({ params }) {
   const baseUrl = 'https://tecionic.com';
 
   return {
-    title: meta.title,
+    // Re-declare the template: a plain-string title here would stop child
+    // segments (individual case studies) from inheriting the root template.
+    title: { default: meta.title, template: '%s | Tecionic' },
     description: meta.description,
     keywords: meta.keywords,
     alternates: {

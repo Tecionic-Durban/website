@@ -9,22 +9,22 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Deshidratación en Procesos Minerales | Filtro Prensa Móvil | Tecionic',
+    title: 'Deshidratación en Procesos Minerales | Filtro Prensa Móvil',
     description: 'Deshidratación móvil en procesos minerales. Reducción de humedad en concentrados de cobre, despliegue 48h, sin CAPEX. Minería y refinerías.',
     keywords: 'deshidratación concentrados, filtro prensa móvil, concentrado cobre, reducción humedad, transporte concentrados, minería cobre',
   },
   'es-mx': {
-    title: 'Deshidratación en Procesos Minerales | Filtro Prensa Móvil | Tecionic',
+    title: 'Deshidratación en Procesos Minerales | Filtro Prensa Móvil',
     description: 'Deshidratación móvil en procesos minerales. Reducción de humedad en concentrados de cobre, despliegue 48h, sin CAPEX. Minería y refinerías.',
     keywords: 'deshidratación concentrados, filtro prensa móvil, concentrado cobre, reducción humedad, transporte concentrados, minería cobre',
   },
   'pt-br': {
-    title: 'Desidratação em Processos Minerais | Filtro Prensa Móvel | Tecionic',
+    title: 'Desidratação em Processos Minerais | Filtro Prensa Móvel',
     description: 'Desidratação móvel em processos minerais. Redução de umidade em concentrados de cobre, mobilização 48h, sem CAPEX. Para mineração e refino.',
     keywords: 'desidratação concentrados, filtro prensa móvel, concentrado cobre, redução umidade, transporte concentrados, mineração cobre',
   },
   'en': {
-    title: 'Mineral Processing Dehydration | Mobile Filter Press | Tecionic',
+    title: 'Mineral Processing Dehydration | Mobile Filter Press',
     description: 'Mobile dehydration of mineral processing products. Copper concentrate moisture reduction, 48h deployment, zero CAPEX. For mining and refining ops.',
     keywords: 'concentrate dehydration, mobile filter press, copper concentrate, moisture reduction, concentrate transport, copper mining',
   },
