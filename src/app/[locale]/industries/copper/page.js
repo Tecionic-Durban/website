@@ -7,6 +7,7 @@ import { Chemistry, Flash, Filter as FilterCarbon, Humidity, Settings as Setting
 import { Wrench, ArrowRight, CheckCircle, TrendingUp, Factory } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { handleContactClick } from '@/utils/navigation'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -436,6 +437,10 @@ export default function CopperIndustryPage() {
                       </div>
                     ))}
                   </div>
+                  <Link href="/services/fine-solids" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700 transition-colors">
+                    {t('services.cards.fineSolids.link')}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>

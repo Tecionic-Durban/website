@@ -2170,6 +2170,7 @@
           ]
         },
         "fineSolids": {
+          "link": "View service: Fine solids filtration",
           "title": "Fine Solids",
           "description": "Specialized clarifier treatment. Difficult particles.",
           "specs": [
@@ -2477,6 +2478,7 @@
           "statusLabel": "Multi-industry"
         },
         "fineSolids": {
+          "link": "View service: Fine solids filtration",
           "title": "Fine Solids Removal",
           "description": "Fine solids treatment from clarifiers with zinc abrasiveness control.",
           "specs": [
@@ -3005,6 +3007,7 @@
       }
     },
     "applications": {
+      "fineSolidsLink": "Explore the full service: Fine solids filtration",
       "title": "Intervention at every stage of your SX process",
       "description": "From the first extraction stage to coalescence, Tecionic filters where you need it—according to priorities informed by the plant manager.",
       "useCases": {
@@ -4334,6 +4337,7 @@
       "ctaButton": "Request consultation"
     },
     "solidosFinosYoduro": {
+      "serviceLink": "Explore the fine solids filtration service",
       "tagline": "Real Case Study - Chemical Industry",
       "title": "100% Operational Continuity",
       "headline": "Fine Solids Filtration for Iodide Production",

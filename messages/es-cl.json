@@ -2170,6 +2170,7 @@
           ]
         },
         "fineSolids": {
+          "link": "Ver servicio: Filtración de sólidos finos",
           "title": "Sólidos Finos",
           "description": "Tratamiento especializado de clarificadores. Partículas difíciles.",
           "specs": [
@@ -2477,6 +2478,7 @@
           "statusLabel": "Multiindustria"
         },
         "fineSolids": {
+          "link": "Ver servicio: Filtración de sólidos finos",
           "title": "Remoción Sólidos Finos",
           "description": "Tratamiento sólidos finos de clarificadores con control abrasividad zinc.",
           "specs": [
@@ -3005,6 +3007,7 @@
       }
     },
     "applications": {
+      "fineSolidsLink": "Conoce el servicio completo: Filtración de sólidos finos",
       "title": "Intervención en cada etapa de tu proceso SX",
       "description": "Desde la primera etapa de extracción hasta coalescencia, Tecionic filtra donde tú lo necesites—según las prioridades informadas por el jefe de planta.",
       "useCases": {
@@ -4334,6 +4337,7 @@
       "ctaButton": "Solicitar consulta"
     },
     "solidosFinosYoduro": {
+      "serviceLink": "Conocer el servicio de filtración de sólidos finos",
       "tagline": "Caso de Estudio Real - Industria Química",
       "title": "100% Continuidad Operacional",
       "headline": "Filtración de Sólidos Finos para Producción de Yoduro",

@@ -241,6 +241,9 @@ export default async function SolidosFinosYoduroCase({ params }) {
             <Link href="/casos-de-exito" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan-700 transition-colors">
               {tc('viewMoreCases')}
             </Link>
+            <Link href="/services/fine-solids" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan-700 transition-colors">
+              {ts('serviceLink')}
+            </Link>
           </div>
         </div>
       </section>

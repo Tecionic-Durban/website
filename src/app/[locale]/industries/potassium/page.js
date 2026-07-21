@@ -6,6 +6,7 @@ import { Filter as FilterCarbon, Chemistry, Humidity, Layers as LayersCarbon, Ar
 import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { handleContactClick } from '@/utils/navigation'
+import { Link } from '@/i18n/navigation'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -167,6 +168,13 @@ export default function PotassiumIndustryPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="-mt-8 mb-16">
+            <Link href="/services/fine-solids" className="inline-flex items-center gap-1 text-sm font-semibold text-purple-700 hover:text-purple-900 transition-colors">
+              {t('applications.fineSolidsLink')}
+              <ArrowRight size={16} />
+            </Link>
           </div>
 
           {/* Capabilities callout */}

@@ -2170,6 +2170,7 @@
           ]
         },
         "fineSolids": {
+          "link": "Ver serviço: Filtração de sólidos finos",
           "title": "Sólidos Finos",
           "description": "Tratamento especializado de clarificadores. Partículas difíceis.",
           "specs": [
@@ -2477,6 +2478,7 @@
           "statusLabel": "Multi-indústria"
         },
         "fineSolids": {
+          "link": "Ver serviço: Filtração de sólidos finos",
           "title": "Remoção de Sólidos Finos",
           "description": "Tratamento de sólidos finos de clarificadores com controle de abrasividade zinco.",
           "specs": [
@@ -3005,6 +3007,7 @@
       }
     },
     "applications": {
+      "fineSolidsLink": "Conheça o serviço completo: Filtração de sólidos finos",
       "title": "Intervenção em cada etapa do seu processo SX",
       "description": "Desde a primeira etapa de extração até coalescência.",
       "useCases": {
@@ -4334,6 +4337,7 @@
       "ctaButton": "Solicitar consulta"
     },
     "solidosFinosYoduro": {
+      "serviceLink": "Conheça o serviço de filtração de sólidos finos",
       "tagline": "Caso de Estudo Real - Indústria Química",
       "title": "100% Continuidade Operacional",
       "headline": "Filtração de Sólidos Finos para Produção de Iodeto",

@@ -6,6 +6,7 @@ import { Filter as FilterCarbon, Chemistry, Humidity, Flash, ArrowRight, Securit
 import { CheckCircle, Zap, Droplets, Settings } from 'lucide-react'
 import Image from 'next/image'
 import { handleContactClick } from '@/utils/navigation'
+import { Link } from '@/i18n/navigation'
 
 export default function ZincIndustryPage() {
   const router = useRouter()
@@ -170,6 +171,12 @@ export default function ZincIndustryPage() {
                   ))}
                 </div>
                 <div className="mt-4 text-xs text-slate-500">{t(`services.cards.${key}.statusLabel`)}</div>
+                {key === 'fineSolids' && (
+                  <Link href="/services/fine-solids" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">
+                    {t('services.cards.fineSolids.link')}
+                    <ArrowRight size={16} />
+                  </Link>
+                )}
               </div>
             ))}
           </div>
