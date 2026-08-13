@@ -128,7 +128,7 @@ export async function generateMetadata({params}) {
       type: 'website',
       images: [
         {
-          url: `${baseUrl}/filtro_prensa_1200_drone_view.png`,
+          url: `${baseUrl}/filtro_prensa_1200_drone_view.jpg`,
           width: 1200,
           height: 630,
           alt: 'Tecionic - Filtro Prensa Móvil para Minería',
@@ -139,7 +139,7 @@ export async function generateMetadata({params}) {
       card: 'summary_large_image',
       title: title,
       description: description,
-      images: [`${baseUrl}/filtro_prensa_1200_drone_view.png`],
+      images: [`${baseUrl}/filtro_prensa_1200_drone_view.jpg`],
     },
     robots: {
       index: true,

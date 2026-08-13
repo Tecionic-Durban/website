@@ -21,7 +21,7 @@ const equipmentBenefits = [
     {
       key: 'exProof',
       icon: CertificateCheck,
-      image: '/filtro_prensa_1200_drone_view.png'
+      image: '/filtro_prensa_1200_drone_view.jpg'
     },
     {
       key: 'mobile',
@@ -31,7 +31,7 @@ const equipmentBenefits = [
     {
       key: 'flexibility',
       icon: Filter,
-      image: '/filtro_prensa_1200_drone_view.png'
+      image: '/filtro_prensa_1200_drone_view.jpg'
     }
   ]
 
@@ -488,7 +488,7 @@ export default function FineSolidsServicePage() {
             <div className="lg:col-span-6">
               <div ref={heroImageRef} style={{ opacity: 0 }} className="rounded-xl overflow-hidden shadow-2xl shadow-gray-200/50">
                 <Image
-                  src="/filtro_prensa_1200_drone_view.png"
+                  src="/filtro_prensa_1200_drone_view.jpg"
                   alt="Sistema de filtros prensa móviles para separación de sólidos finos"
                   width={800}
                   height={500}
@@ -640,7 +640,7 @@ export default function FineSolidsServicePage() {
             <div className="relative">
               <div className="rounded-xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/filtro_prensa_1200_drone_view.png"
+                  src="/filtro_prensa_1200_drone_view.jpg"
                   alt="Sistema de extracción de sólidos finos en circuito cerrado"
                   width={600}
                   height={450}
@@ -746,7 +746,7 @@ export default function FineSolidsServicePage() {
             {/* Desktop: Right half - Full bleed image */}
             <div className="absolute inset-y-0 right-0 w-1/2 hidden lg:block">
               <Image
-                src="/filtro_prensa_1200_drone_view.png"
+                src="/filtro_prensa_1200_drone_view.jpg"
                 alt="Torta seca de filtro prensa lista para disposición"
                 fill
                 className="object-cover"
@@ -763,7 +763,7 @@ export default function FineSolidsServicePage() {
             {/* Mobile: Image on top */}
             <div className="relative h-56 lg:hidden">
               <Image
-                src="/filtro_prensa_1200_drone_view.png"
+                src="/filtro_prensa_1200_drone_view.jpg"
                 alt="Torta seca de filtro prensa lista para disposición"
                 fill
                 className="object-cover"
@@ -934,7 +934,7 @@ export default function FineSolidsServicePage() {
               <div className="flex-shrink-0 w-[80vw] md:w-[320px] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden group">
                 <div className="h-40 relative overflow-hidden">
                   <Image
-                    src="/filtro_prensa_1200_drone_view.png"
+                    src="/filtro_prensa_1200_drone_view.jpg"
                     alt={t('waterClarification.applications.sludge.title')}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"

@@ -586,7 +586,7 @@ export default function CrudeOilIndustryPage() {
               {/* Left - Image */}
               <div className="lg:col-span-2 relative h-64 lg:h-auto min-h-[16rem]">
                 <Image
-                  src="/crude_oil.png"
+                  src="/crude_oil.jpg"
                   alt={t('caseStudy.imageAlt')}
                   fill
                   className="object-cover"

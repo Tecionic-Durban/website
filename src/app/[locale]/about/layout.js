@@ -61,7 +61,7 @@ export async function generateMetadata({ params }) {
       type: 'website',
       images: [
         {
-          url: `${baseUrl}/filtro_prensa_1200_drone_view.png`,
+          url: `${baseUrl}/filtro_prensa_1200_drone_view.jpg`,
           width: 1200,
           height: 630,
           alt: 'Tecionic - Empresa de filtración móvil para minería',
@@ -72,7 +72,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: meta.title,
       description: meta.description,
-      images: [`${baseUrl}/filtro_prensa_1200_drone_view.png`],
+      images: [`${baseUrl}/filtro_prensa_1200_drone_view.jpg`],
     },
   };
 }

@@ -18,9 +18,9 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffec
 
 // Expandable Equipment Benefits Component
 const equipmentBenefits = [
-    { key: 'mobile', icon: Delivery, image: '/filtro_prensa_1200_drone_view.png' },
+    { key: 'mobile', icon: Delivery, image: '/filtro_prensa_1200_drone_view.jpg' },
     { key: 'complete', icon: AppConnectivity, image: '/filtro_prensa_movil.png' },
-    { key: 'noPermits', icon: License, image: '/filtros_acoplados.png' }
+    { key: 'noPermits', icon: License, image: '/filtros_acoplados.jpg' }
   ]
 
 export default function ConcentrateDehydrationServicePage() {
@@ -269,7 +269,7 @@ export default function ConcentrateDehydrationServicePage() {
             <div className="lg:col-span-6">
               <div ref={heroImageRef} className="rounded-xl overflow-hidden shadow-2xl shadow-gray-200/50">
                 <Image
-                  src="/filtro_prensa_1200_drone_view.png"
+                  src="/filtro_prensa_1200_drone_view.jpg"
                   alt="Sistema de deshidratación de alta presión Tecionic"
                   width={800}
                   height={400}

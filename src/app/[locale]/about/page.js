@@ -39,7 +39,7 @@ export default async function AboutPage({ params }) {
           title={`${t('hero.titleLine1')} ${t('hero.titleLine2')}`}
           lead={t('hero.description')}
           primary={{ label: t('cta.contactButton'), href: '/contacto' }}
-          image={{ src: '/filtro_prensa_1200_drone_view.png', alt: t('hero.imageAlt') }}
+          image={{ src: '/filtro_prensa_1200_drone_view.jpg', alt: t('hero.imageAlt') }}
           proof={[
             { value: t('hero.metrics.experience.value'), label: t('hero.metrics.experience.label') },
             { value: t('hero.metrics.projects.value'), label: t('hero.metrics.projects.label') },

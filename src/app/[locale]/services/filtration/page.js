@@ -127,17 +127,17 @@ const equipmentBenefits = [
     {
       key: 'agile',
       icon: DeliveryTruck,
-      image: '/filtro_prensa_1200_drone_view.png'
+      image: '/filtro_prensa_1200_drone_view.jpg'
     },
     {
       key: 'longReach',
       icon: Pipelines,
-      image: '/filtros_acoplados.png'
+      image: '/filtros_acoplados.jpg'
     },
     {
       key: 'noInterference',
       icon: Power,
-      image: '/filtro_prensa_1200_drone_view.png'
+      image: '/filtro_prensa_1200_drone_view.jpg'
     }
   ]
 
@@ -188,7 +188,7 @@ export default function FiltrationPage() {
             <div className="lg:col-span-6">
               <div className="rounded-xl overflow-hidden shadow-2xl shadow-gray-200/50">
                 <Image
-                  src="/filtro_prensa_1200_drone_view.png"
+                  src="/filtro_prensa_1200_drone_view.jpg"
                   alt="Sistema de Filtración Móvil - Vista aérea del filtro prensa 1200"
                   width={800}
                   height={480}
@@ -663,7 +663,7 @@ export default function FiltrationPage() {
             {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/filtro_prensa_1200_drone_view.png"
+                src="/filtro_prensa_1200_drone_view.jpg"
                 alt={t('everyMeterCounts.disposal.title')}
                 width={600}
                 height={400}
@@ -677,7 +677,7 @@ export default function FiltrationPage() {
             {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1">
               <Image
-                src="/filtros_acoplados.png"
+                src="/filtros_acoplados.jpg"
                 alt={t('everyMeterCounts.recovery.title')}
                 width={600}
                 height={400}
@@ -731,7 +731,7 @@ export default function FiltrationPage() {
               {/* Left - Large Image */}
               <div>
                 <Image
-                  src="/filtros_acoplados.png"
+                  src="/filtros_acoplados.jpg"
                   alt={t('equipment.modular.title')}
                   width={800}
                   height={600}
@@ -863,7 +863,7 @@ export default function FiltrationPage() {
             <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-amber-400 hover:shadow-lg transition-all flex-shrink-0 w-[80vw] md:w-auto snap-start">
               <div className="h-48 md:h-64 md:group-hover:h-52 relative transition-all duration-300">
                 <Image
-                  src="/crude_oil.png"
+                  src="/crude_oil.jpg"
                   alt={t('industries.items.crudeOil.name')}
                   fill
                   className="object-cover"

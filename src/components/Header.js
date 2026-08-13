@@ -349,7 +349,7 @@ export default function Header() {
                             {/* Real image */}
                             <div className="w-full h-24 rounded-lg mb-4 overflow-hidden relative">
                               <Image
-                                src="/filtro_prensa_1200_drone_view.png"
+                                src="/filtro_prensa_1200_drone_view.jpg"
                                 alt={t('header.copperCaseStudy.imageAlt')}
                                 fill
                                 className="object-cover"

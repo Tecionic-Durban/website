@@ -10,7 +10,7 @@ import { Link } from '@/i18n/navigation'
 
 // Hero background images for cycling carousel - TSF equipment focused
 const heroImages = [
-  { src: '/filtro_prensa_1200_drone_view.png', alt: 'TSF mobile filter press drone view' },
+  { src: '/filtro_prensa_1200_drone_view.jpg', alt: 'TSF mobile filter press drone view' },
   { src: '/mobile_equipment_spence.jpeg', alt: 'TSF mobile filtration equipment at Spence' },
   { src: '/fotos_spence/Imagen2.jpg', alt: 'TSF equipment installation at mining site' },
   { src: '/Fotos_Marccobre/no_permit_modification.jpg', alt: 'TSF filter press on mobile trailer' },
