@@ -1,26 +1,47 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
-import { Globe2, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
+// Module scope: defining this inside the component recreated the dynamic
+// component on every render. The three.js chunk only loads when rendered,
+// which the in-view gate below delays until the section approaches viewport.
+const LatamGlobe = dynamic(() => import('./LatamGlobe'), { ssr: false })
+
 export default function LatamPresence() {
   const t = useTranslations('latamPresence')
+  const sectionRef = useRef(null)
+  const [globeInView, setGlobeInView] = useState(false)
 
-  // Dynamically import the 3D globe to avoid SSR issues
-  const LatamGlobe = dynamic(() => import('./LatamGlobe'), {
-    ssr: false,
-    loading: () => (
-      <div className="w-full h-[500px] bg-slate-900/50 rounded-2xl flex items-center justify-center">
-        <div className="text-emerald-400 animate-pulse flex items-center gap-2">
-          <Globe2 className="w-6 h-6 animate-spin" />
-          <span>{t('loadingMap')}</span>
-        </div>
-      </div>
+  // Mount the WebGL globe only when the section is near the viewport, so
+  // three.js/@react-three don't compete with first paint on the main thread.
+  // The timer is a safety net: whatever happens with the observer, the globe
+  // mounts a few seconds after load — long past first paint and hydration.
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setGlobeInView(true)
+      return
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setGlobeInView(true)
+          obs.disconnect()
+        }
+      },
+      { rootMargin: '600px 0px' }
     )
-  })
+    obs.observe(el)
+    const fallback = setTimeout(() => setGlobeInView(true), 6000)
+    return () => {
+      obs.disconnect()
+      clearTimeout(fallback)
+    }
+  }, [])
 
   // Industries served
   const industries = [
@@ -32,7 +53,7 @@ export default function LatamPresence() {
   ]
 
   return (
-    <section className="relative z-10 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+    <section ref={sectionRef} className="relative z-10 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       {/* Background grid effect */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
@@ -43,14 +64,14 @@ export default function LatamPresence() {
 
       {/* Desktop: Globe positioned left */}
       <div className="absolute -left-[100px] top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none">
-        <LatamGlobe />
+        {globeInView && <LatamGlobe />}
       </div>
 
       {/* Mobile: Globe bleeds from left, content on right (Stripe-style) */}
       <div className="lg:hidden relative min-h-[560px] overflow-hidden">
         {/* Globe — bleeds off left edge as ambient depth element */}
         <div className="absolute -left-[80px] top-1/2 -translate-y-1/2 w-[360px] h-[360px] opacity-50 pointer-events-none">
-          <LatamGlobe mobile={true} className="w-full h-full" />
+          {globeInView && <LatamGlobe mobile={true} className="w-full h-full" />}
         </div>
 
         {/* Gradient mask — fades left edge cleanly, then transitions to content zone */}

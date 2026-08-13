@@ -22,6 +22,7 @@ export default function Hero() {
   const router = useRouter()
   const heroRef = useRef(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [hasCycled, setHasCycled] = useState(false)
   const t = useTranslations('hero')
 
   // Progressive disclosure on scroll/mount
@@ -55,16 +56,27 @@ export default function Hero() {
   // Cycle through hero images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
+      setHasCycled(true)
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
     }, 5000)
     return () => clearInterval(interval)
   }, [])
+
+  // Only the outgoing, active, and (preloading) next slides need to exist in
+  // the DOM. Mounting all six full-viewport images made the browser download
+  // and decode every slide at page load; now it's 2 at load, 3 while cycling.
+  const prevImageIndex = (currentImageIndex + heroImages.length - 1) % heroImages.length
+  const nextImageIndex = (currentImageIndex + 1) % heroImages.length
+  const visibleIndexes = hasCycled
+    ? [prevImageIndex, currentImageIndex, nextImageIndex]
+    : [0, 1]
 
   return (
     <section id="hero" ref={heroRef} className="relative h-screen -mt-28 text-white overflow-hidden flex flex-col justify-center">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
+          visibleIndexes.includes(index) ? (
           <div
             key={image.src}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
@@ -80,6 +92,7 @@ export default function Hero() {
               sizes="100vw"
             />
           </div>
+          ) : null
         ))}
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40"></div>
@@ -108,7 +121,7 @@ export default function Hero() {
             <div className="mt-6 lg:mt-10">
               <Link
                 href="/contacto"
-                className="group bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-base lg:text-lg transition-all duration-300 inline-flex items-center"
+                className="group bg-emerald-700 hover:bg-emerald-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-base lg:text-lg transition-all duration-300 inline-flex items-center"
               >
                 <span>{t('cta')}</span>
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />

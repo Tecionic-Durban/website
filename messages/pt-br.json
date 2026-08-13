@@ -4,6 +4,7 @@
     "description": "Tecionic é infraestrutura móvel de filtração que permite a operações de mineração e refinarias escalar capacidade de separação sólido-líquido sem investimento de capital."
   },
   "navigation": {
+    "menuToggle": "Abrir menu de navegação",
     "services": "Serviços",
     "industries": "Indústrias",
     "resources": "Recursos",

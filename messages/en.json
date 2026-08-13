@@ -4,6 +4,7 @@
     "description": "Tecionic is mobile filtration infrastructure that enables mining operations and refineries to scale solid-liquid separation capacity without capital investment."
   },
   "navigation": {
+    "menuToggle": "Open navigation menu",
     "services": "Services",
     "industries": "Industries",
     "resources": "Resources",

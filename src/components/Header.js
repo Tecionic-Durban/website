@@ -447,6 +447,8 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={t('navigation.menuToggle')}
+            aria-expanded={isMenuOpen}
             className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
           >
             <svg

@@ -110,7 +110,7 @@ export default function About() {
               {cards.map((card, index) => {
                 const isActive = activeIndex === index
                 return (
-                  <li key={card.key} className="contents">
+                  <li key={card.key} className="contents" role="presentation">
                     <button
                       type="button"
                       role="tab"

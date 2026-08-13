@@ -125,15 +125,15 @@ export default async function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-slate-500 text-sm mb-4 md:mb-0">
+          <div className="text-slate-400 text-sm mb-4 md:mb-0">
             © {currentYear} Tecionic S.A. {t('footer.copyright')}
           </div>
 
           <div className="flex space-x-6 text-sm">
-            <Link href="/privacy" className="text-slate-500 hover:text-emerald-400 transition-colors">
+            <Link href="/privacy" className="text-slate-400 hover:text-emerald-400 transition-colors">
               {t('footer.privacyPolicy')}
             </Link>
-            <Link href="/terms" className="text-slate-500 hover:text-emerald-400 transition-colors">
+            <Link href="/terms" className="text-slate-400 hover:text-emerald-400 transition-colors">
               {t('footer.termsOfService')}
             </Link>
           </div>
