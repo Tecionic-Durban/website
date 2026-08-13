@@ -1,0 +1,26 @@
+# Tecionic
+
+> Tecionic (legal name Inversiones Durban S.A., formerly Tec-Ionic Durban) is a Chilean industrial services company with 23+ years of experience providing mobile solid-liquid separation as a service — mobile filter presses and suction systems operated by its own specialists — for mining and industrial process plants. It serves the major SX/EW (solvent extraction / electrowinning, "planta ESDE" in Mexico) copper operations of Chile and Peru, plus zinc refineries, lithium brine operations, potash, iodine, and oil refineries. No client CAPEX; equipment is deployed by campaign or monthly rental.
+
+Languages: Spanish (Chile: es-cl, Latin America/Mexico: es-mx), English (en), Portuguese (pt-br). Operating bases: Santiago and Calama (Chile), Lima (Peru). Expanding availability to Mexico, Argentina, and Brazil.
+
+## Services
+- [Mobile filter press service](https://tecionic.com/en/services/filtration): 130 TPD dewatering capacity, 48h mobilization in Chile/Peru, zero CAPEX
+- [SX crud treatment & organic recovery](https://tecionic.com/en/services/organic-treatment): removes crud (borra), recovers entrained organic, restores phase separation
+- [EW cell cleaning](https://tecionic.com/en/services/ew-cleaning): one cell per day without stopping the tankhouse, altitude-proven
+- [Fine solids filtration](https://tecionic.com/en/services/fine-solids): removes fine solids from clarifiers, thickeners and ponds while the circuit keeps operating
+- [Concentrate dehydration](https://tecionic.com/en/services/concentrate-dehydration): backup dewatering capacity during maintenance or peaks
+- [TIF measurement](https://tecionic.com/en/services/tif-measurement), [TSF monitoring](https://tecionic.com/en/services/tsf-monitoring), [turbidity monitoring](https://tecionic.com/en/services/turbidity-monitoring): in-line process analytics for SX circuits
+
+## Industries
+- [Copper SX/EW](https://tecionic.com/en/industries/copper)
+- [Zinc electrolytic refineries](https://tecionic.com/en/industries/zinc)
+- [Lithium brines](https://tecionic.com/en/industries/lithium)
+- [Potash](https://tecionic.com/en/industries/potassium)
+- [Oil refineries / crude sludge](https://tecionic.com/en/industries/crude-oil)
+
+## Case studies
+- [Case studies index](https://tecionic.com/en/casos-de-exito): documented projects including fine solids control in iodide production (<5 NTU, 100% operational continuity), EW cell cleaning, SX organic treatment, concentrate dehydration backup, and oil sludge treatment
+
+## Contact
+- [Contact](https://tecionic.com/en/contacto)

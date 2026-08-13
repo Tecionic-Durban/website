@@ -619,7 +619,7 @@ export default function CrudeOilIndustryPage() {
                 </p>
 
                 <Link
-                  href={`/${locale}/case-studies/lodos-petroleros`}
+                  href="/casos-de-exito/lodos-petroleros"
                   className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 transition-colors"
                 >
                   {t('caseStudy.cta')}
@@ -644,7 +644,7 @@ export default function CrudeOilIndustryPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={`/${locale}/contact`} className="inline-flex items-center px-8 py-4 bg-white text-amber-700 font-bold rounded-lg hover:bg-amber-50 transition-colors shadow-xl">
+            <Link href="/contacto" className="inline-flex items-center px-8 py-4 bg-white text-amber-700 font-bold rounded-lg hover:bg-amber-50 transition-colors shadow-xl">
               {t('cta.button')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>

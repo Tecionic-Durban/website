@@ -1157,7 +1157,7 @@
         },
         "storage": {
           "title": "Armazenamento simplificado",
-          "description": "Concentrado seco empilha e armazena sem bacias de rejeitos ou piscinas de contenção."
+          "description": "Concentrado seco empilha e armazena sem bacias de rejeitos ou lagoas de contenção."
         }
       }
     },
@@ -5448,175 +5448,175 @@
   },
   "tifMeasurementService": {
     "hero": {
-      "badge": "Analítica de Datos",
-      "title": "Predice la degradación del orgánico",
-      "titleHighlight": "antes de que afecte tu operación",
-      "description": "La Tensión Interfacial (TIF) es el indicador más temprano de problemas en tu circuito SX. Detecta contaminantes y degradación 2-3 semanas antes de que se manifiesten en emulsiones, arrastres y pérdidas.",
+      "badge": "Analytics de Dados",
+      "title": "Preveja a degradação do orgânico",
+      "titleHighlight": "antes que afete sua operação",
+      "description": "A Tensão Interfacial (TIF) é o indicador mais precoce de problemas no seu circuito SX. Detecta contaminantes e degradação 2-3 semanas antes de se manifestarem em emulsões, arrastes e perdas.",
       "benefits": {
-        "predictDegradation": "Predice necesidad de tratamiento con arcillas",
-        "reduceEntrainment": "Reduce arrastre de orgánico hasta 52%",
-        "extendExtractant": "Extiende vida útil del extractante (+$150K/año)",
-        "dataDecisions": "Decisiones basadas en datos, no en reacciones"
+        "predictDegradation": "Prevê a necessidade de tratamento com argilas",
+        "reduceEntrainment": "Reduz o arraste de orgânico em até 52%",
+        "extendExtractant": "Estende a vida útil do extratante (+$150K/ano)",
+        "dataDecisions": "Decisões baseadas em dados, não em reações"
       },
-      "ctaPrimary": "Solicitar Evaluación",
-      "ctaSecondary": "Ver Tratamiento Orgánico",
-      "gaugeLabel": "Tensión Interfacial",
+      "ctaPrimary": "Solicitar Avaliação",
+      "ctaSecondary": "Ver Tratamento de Orgânico",
+      "gaugeLabel": "Tensão Interfacial",
       "gaugeUnit": "dinas/cm",
       "gaugeLow": "Crítico",
-      "gaugeOptimal": "Óptimo >23",
+      "gaugeOptimal": "Ótimo >23",
       "gaugeHigh": "Fresco",
-      "statusHealthy": "Orgánico saludable",
-      "statusAction": "Sin acción requerida"
+      "statusHealthy": "Orgânico saudável",
+      "statusAction": "Sem ação necessária"
     },
     "metrics": {
-      "yearsExperience": "Años de experiencia en SX",
-      "entrainmentReduction": "Reducción arrastre promedio",
-      "accuracy": "Precisión de medición",
-      "annualSavings": "Ahorro anual típico"
+      "yearsExperience": "Anos de experiência em SX",
+      "entrainmentReduction": "Redução média de arraste",
+      "accuracy": "Precisão de medição",
+      "annualSavings": "Economia anual típica"
     },
     "problem": {
-      "badge": "Por Qué Importa el TIF",
-      "title": "La tensión interfacial es tu indicador de salud del orgánico",
-      "description": "El TIF correlaciona directamente con el rendimiento de separación de fases. Monitorearlo te permite optimizar el momento de tratamientos, extender la vida del extractante y mantener operaciones eficientes.",
+      "badge": "Por Que o TIF Importa",
+      "title": "A tensão interfacial é o indicador de saúde do seu orgânico",
+      "description": "O TIF correlaciona diretamente com o desempenho de separação de fases. Monitorá-lo permite otimizar o momento dos tratamentos, estender a vida do extratante e manter operações eficientes.",
       "symptoms": {
         "emulsions": {
-          "title": "Eficiencia de separación",
-          "description": "Un TIF óptimo asegura separación limpia de fases en decantadores, maximizando capacidad de planta."
+          "title": "Eficiência de separação",
+          "description": "Um TIF ótimo garante separação limpa de fases nos decantadores, maximizando a capacidade da planta."
         },
         "losses": {
-          "title": "Preservación de extractante",
-          "description": "Mantener niveles saludables de TIF protege tu inventario de orgánico—valorado en $50K-200K/año."
+          "title": "Preservação do extratante",
+          "description": "Manter níveis saudáveis de TIF protege seu inventário de orgânico—avaliado em $50K-200K/ano."
         },
         "stops": {
-          "title": "Continuidad operacional",
-          "description": "Monitoreo proactivo de TIF te ayuda a planificar tratamientos y evitar intervenciones no programadas."
+          "title": "Continuidade operacional",
+          "description": "O monitoramento proativo de TIF ajuda a planejar tratamentos e evitar intervenções não programadas."
         }
       },
-      "chartTitle": "Escala de Tensión Interfacial",
+      "chartTitle": "Escala de Tensão Interfacial",
       "chart": {
-        "fresh": "Orgánico fresco",
-        "optimal": "Rango óptimo",
+        "fresh": "Orgânico fresco",
+        "optimal": "Faixa ótima",
         "warning": "Zona de alerta",
         "critical": "Zona crítica",
-        "warningTitle": "¿Qué afecta el TIF?",
-        "warningText": "Compuestos tensioactivos de degradación oxidativa, sílice, arcillas y contaminantes orgánicos influyen en los niveles de tensión interfacial."
+        "warningTitle": "O que afeta o TIF?",
+        "warningText": "Compostos tensoativos de degradação oxidativa, sílica, argilas e contaminantes orgânicos influenciam os níveis de tensão interfacial."
       }
     },
     "solution": {
-      "badge": "Nuestro Servicio",
-      "title": "Análisis profesional de TIF para gestión optimizada del orgánico",
-      "description": "Muestreo experto, análisis de laboratorio certificado, y recomendaciones accionables—todo lo que necesitas para optimizar el momento de tratamientos y extender la vida del extractante.",
+      "badge": "Nosso Serviço",
+      "title": "Análise profissional de TIF para gestão otimizada do orgânico",
+      "description": "Amostragem especializada, análise de laboratório certificada e recomendações acionáveis—tudo o que você precisa para otimizar o momento dos tratamentos e estender a vida do extratante.",
       "benefits": {
         "earlyDetection": {
-          "title": "Detección temprana",
-          "description": "Identifica degradación 2-3 semanas antes de que aparezcan síntomas operacionales.",
+          "title": "Detecção precoce",
+          "description": "Identifica degradação 2-3 semanas antes de aparecerem sintomas operacionais.",
           "metric": "2-3 sem",
-          "metricLabel": "anticipación promedio"
+          "metricLabel": "antecipação média"
         },
         "reducedLosses": {
-          "title": "Menores pérdidas",
-          "description": "Optimiza el momento del tratamiento para minimizar arrastres y pérdidas de extractante.",
+          "title": "Menores perdas",
+          "description": "Otimiza o momento do tratamento para minimizar arrastes e perdas de extratante.",
           "metric": "-52%",
-          "metricLabel": "reducción de arrastre"
+          "metricLabel": "redução de arraste"
         },
         "extendedLife": {
-          "title": "Vida extendida",
-          "description": "Mantener TIF óptimo extiende significativamente la vida útil del extractante.",
+          "title": "Vida estendida",
+          "description": "Manter o TIF ótimo estende significativamente a vida útil do extratante.",
           "metric": "$150K+",
-          "metricLabel": "ahorro anual típico"
+          "metricLabel": "economia anual típica"
         }
       }
     },
     "howItWorks": {
-      "badge": "Cómo Funciona",
-      "title": "Proceso de medición y análisis de TIF",
-      "description": "Un servicio integral que combina muestreo profesional, análisis de laboratorio certificado y recomendaciones accionables para tu operación.",
+      "badge": "Como Funciona",
+      "title": "Processo de medição e análise de TIF",
+      "description": "Um serviço integral que combina amostragem profissional, análise de laboratório certificada e recomendações acionáveis para sua operação.",
       "steps": {
         "sampling": {
-          "title": "Muestreo Profesional",
-          "description": "Tomamos muestras representativas de tu orgánico en puntos críticos del circuito SX bajo protocolos estandarizados."
+          "title": "Amostragem Profissional",
+          "description": "Coletamos amostras representativas do seu orgânico em pontos críticos do circuito SX sob protocolos padronizados."
         },
         "measurement": {
-          "title": "Medición Certificada",
-          "description": "Análisis de tensión interfacial mediante método de gota pendiente en laboratorio con equipo calibrado."
+          "title": "Medição Certificada",
+          "description": "Análise de tensão interfacial pelo método da gota pendente em laboratório com equipamento calibrado."
         },
         "analysis": {
-          "title": "Análisis de Tendencias",
-          "description": "Comparamos resultados con históricos para identificar patrones de degradación y predecir comportamiento futuro."
+          "title": "Análise de Tendências",
+          "description": "Comparamos resultados com históricos para identificar padrões de degradação e prever comportamento futuro."
         },
         "action": {
-          "title": "Recomendaciones",
-          "description": "Entregamos recomendaciones específicas: dosis de arcilla, momento óptimo de tratamiento, o acciones preventivas."
+          "title": "Recomendações",
+          "description": "Entregamos recomendações específicas: dose de argila, momento ótimo de tratamento ou ações preventivas."
         }
       },
       "specs": {
         "turnaround": {
           "value": "48h",
-          "label": "Tiempo de respuesta",
-          "detail": "Resultados en 48 horas desde toma de muestra"
+          "label": "Tempo de resposta",
+          "detail": "Resultados em 48 horas desde a coleta da amostra"
         },
         "precision": {
           "value": "±2%",
-          "label": "Precisión",
-          "detail": "Equipo calibrado con estándares internacionales"
+          "label": "Precisão",
+          "detail": "Equipamento calibrado com padrões internacionais"
         },
         "coverage": {
           "value": "LATAM",
           "label": "Cobertura",
-          "detail": "Servicio disponible en toda Latinoamérica"
+          "detail": "Serviço disponível em toda a América Latina"
         }
       }
     },
     "industries": {
-      "title": "Aplicaciones por industria",
-      "description": "El monitoreo de TIF es crítico para cualquier operación que utilice extracción por solventes.",
+      "title": "Aplicações por indústria",
+      "description": "O monitoramento de TIF é crítico para qualquer operação que utilize extração por solventes.",
       "copper": {
         "title": "Cobre SX/EW",
-        "description": "Circuitos de extracción por solventes donde la calidad del orgánico impacta directamente en recuperación y costos.",
-        "benefit": "Reduce crud y arrastres en mezcladores-decantadores"
+        "description": "Circuitos de extração por solventes onde a qualidade do orgânico impacta diretamente a recuperação e os custos.",
+        "benefit": "Reduz crud e arrastes em misturadores-decantadores"
       },
       "zinc": {
-        "title": "Zinc SX",
-        "description": "Procesos de purificación de zinc donde la separación de fases es crítica para calidad de producto.",
-        "benefit": "Optimiza separación en circuitos de purificación"
+        "title": "Zinco SX",
+        "description": "Processos de purificação de zinco onde a separação de fases é crítica para a qualidade do produto.",
+        "benefit": "Otimiza a separação em circuitos de purificação"
       },
       "lithium": {
-        "title": "Litio SX",
-        "description": "Extracción selectiva de litio desde salmueras donde la pureza del orgánico determina eficiencia.",
-        "benefit": "Maximiza selectividad de extracción"
+        "title": "Lítio SX",
+        "description": "Extração seletiva de lítio de salmouras onde a pureza do orgânico determina a eficiência.",
+        "benefit": "Maximiza a seletividade de extração"
       }
     },
     "integration": {
-      "badge": "Ecosistema Integrado",
-      "title": "TIF es parte de tu estrategia de control de orgánico",
-      "description": "El monitoreo de TIF se integra con otros servicios de Tecionic para una gestión completa del orgánico.",
+      "badge": "Ecossistema Integrado",
+      "title": "O TIF é parte da sua estratégia de controle de orgânico",
+      "description": "O monitoramento de TIF se integra aos demais serviços da Tecionic para uma gestão completa do orgânico.",
       "services": {
         "organicTreatment": {
-          "title": "Tratamiento de Orgánico",
-          "description": "Cuando el TIF indica degradación, aplicamos tratamiento con arcilla activada."
+          "title": "Tratamento de Orgânico",
+          "description": "Quando o TIF indica degradação, aplicamos tratamento com argila ativada."
         },
         "tsfMonitoring": {
-          "title": "Monitoreo de TSF",
-          "description": "Complementa TIF con tiempo de separación de fases para visión completa."
+          "title": "Monitoramento de TSF",
+          "description": "Complementa o TIF com o tempo de separação de fases para uma visão completa."
         },
         "filtration": {
-          "title": "Filtración de Borras",
-          "description": "Remueve sólidos que causan degradación y reducen el TIF."
+          "title": "Filtração de Borras",
+          "description": "Remove sólidos que causam degradação e reduzem o TIF."
         }
       },
       "diagram": {
-        "title": "Flujo de Control Integrado",
-        "subtitle": "TIF + TSF = Decisiones informadas",
-        "result": "Orgánico optimizado"
+        "title": "Fluxo de Controle Integrado",
+        "subtitle": "TIF + TSF = Decisões informadas",
+        "result": "Orgânico otimizado"
       }
     },
     "cta": {
-      "title": "Obtén análisis profesional de TIF",
-      "description": "Medición experta e insights accionables para optimizar tu inventario de orgánico y timing de tratamientos.",
-      "timeline": "Resultados en 48 horas. Sin compromiso.",
-      "primaryCta": "Solicitar Medición",
-      "secondaryCta": "Ver Tratamiento Orgánico",
-      "contactTitle": "Contacto directo",
+      "title": "Obtenha análise profissional de TIF",
+      "description": "Medição especializada e insights acionáveis para otimizar seu inventário de orgânico e o timing dos tratamentos.",
+      "timeline": "Resultados em 48 horas. Sem compromisso.",
+      "primaryCta": "Solicitar Medição",
+      "secondaryCta": "Ver Tratamento de Orgânico",
+      "contactTitle": "Contato direto",
       "locations": {
         "santiago": {
           "name": "Santiago, Chile",
@@ -5624,7 +5624,7 @@
         },
         "calama": {
           "name": "Calama, Chile",
-          "address": "Oficina Operaciones Norte"
+          "address": "Escritório de Operações Norte"
         },
         "lima": {
           "name": "Lima, Peru",
@@ -5635,175 +5635,175 @@
   },
   "tsfMonitoringService": {
     "hero": {
-      "badge": "Analítica de Datos",
-      "title": "Optimiza la velocidad de tu circuito SX",
-      "titleHighlight": "con control de separación de fases",
-      "description": "El Tiempo de Separación de Fases (TSF) indica qué tan rápido se separan el orgánico y el acuoso. Un TSF alto significa emulsiones persistentes que reducen capacidad y causan arrastres.",
+      "badge": "Analytics de Dados",
+      "title": "Otimize a velocidade do seu circuito SX",
+      "titleHighlight": "com controle de separação de fases",
+      "description": "O Tempo de Separação de Fases (TSF) indica a rapidez com que o orgânico e o aquoso se separam. Um TSF alto significa emulsões persistentes que reduzem a capacidade e causam arrastes.",
       "benefits": {
-        "detectEarly": "Detecta degradación 2-3 semanas antes",
-        "optimizeSpeed": "Optimiza velocidad de mezcladores-decantadores",
-        "preventStops": "Elimina paradas de emergencia por separación",
-        "qualityControl": "Control de calidad de borra y emulsiones"
+        "detectEarly": "Detecta degradação 2-3 semanas antes",
+        "optimizeSpeed": "Otimiza a velocidade de misturadores-decantadores",
+        "preventStops": "Elimina paradas de emergência por separação",
+        "qualityControl": "Controle de qualidade de borras e emulsões"
       },
-      "ctaPrimary": "Solicitar Evaluación",
-      "ctaSecondary": "Ver Filtración de Borras",
-      "gaugeLabel": "Tiempo de Separación",
+      "ctaPrimary": "Solicitar Avaliação",
+      "ctaSecondary": "Ver Filtração de Borras",
+      "gaugeLabel": "Tempo de Separação",
       "gaugeUnit": "segundos",
-      "organicContinuity": "Continuidad Orgánica",
-      "aqueousContinuity": "Continuidad Acuosa",
+      "organicContinuity": "Continuidade Orgânica",
+      "aqueousContinuity": "Continuidade Aquosa",
       "maxAllowed": "Máximo permitido",
-      "statusNormal": "Dentro de norma",
-      "statusRecommendation": "Monitoreo continuo"
+      "statusNormal": "Dentro da norma",
+      "statusRecommendation": "Monitoramento contínuo"
     },
     "metrics": {
-      "tsfReduction": "Reducción de TSF lograda",
-      "weeksEarly": "Semanas de anticipación",
-      "emergencyStops": "Paradas de emergencia",
-      "monitoring": "Monitoreo disponible"
+      "tsfReduction": "Redução de TSF alcançada",
+      "weeksEarly": "Semanas de antecipação",
+      "emergencyStops": "Paradas de emergência",
+      "monitoring": "Monitoramento disponível"
     },
     "problem": {
-      "badge": "Por Qué Importa el TSF",
-      "title": "La velocidad de separación de fases impulsa la eficiencia del circuito",
-      "description": "El TSF indica directamente qué tan bien se separan tus fases orgánica y acuosa. Monitorearlo te permite optimizar throughput, planificar tratamientos proactivamente y mantener el rendimiento máximo del circuito.",
+      "badge": "Por Que o TSF Importa",
+      "title": "A velocidade de separação de fases impulsiona a eficiência do circuito",
+      "description": "O TSF indica diretamente o quão bem suas fases orgânica e aquosa se separam. Monitorá-lo permite otimizar o throughput, planejar tratamentos proativamente e manter o desempenho máximo do circuito.",
       "symptoms": {
         "slowSeparation": {
-          "title": "Eficiencia de separación",
-          "description": "Un TSF óptimo (<120 segundos) asegura máxima capacidad de decantadores y throughput."
+          "title": "Eficiência de separação",
+          "description": "Um TSF ótimo (<120 segundos) garante máxima capacidade de decantadores e throughput."
         },
         "emulsions": {
-          "title": "Control de emulsiones",
-          "description": "Monitorear TSF te ayuda a gestionar la tendencia a emulsiones y mantener separación limpia."
+          "title": "Controle de emulsões",
+          "description": "Monitorar o TSF ajuda a gerenciar a tendência a emulsões e manter a separação limpa."
         },
         "capacity": {
-          "title": "Optimización de throughput",
-          "description": "Menor TSF significa ciclos más rápidos y mayor capacidad del circuito."
+          "title": "Otimização de throughput",
+          "description": "Menor TSF significa ciclos mais rápidos e maior capacidade do circuito."
         }
       },
-      "chartTitle": "Escala de Tiempo de Separación",
+      "chartTitle": "Escala de Tempo de Separação",
       "chart": {
-        "optimal": "Óptimo",
+        "optimal": "Ótimo",
         "warning": "Alerta",
         "critical": "Crítico",
-        "emergency": "Emergencia",
-        "insight": "TSF es un indicador adelantado",
-        "insightText": "Las tendencias de TSF te dan visibilidad temprana para optimizar el timing de tratamientos."
+        "emergency": "Emergência",
+        "insight": "O TSF é um indicador antecipado",
+        "insightText": "As tendências de TSF dão visibilidade precoce para otimizar o timing dos tratamentos."
       }
     },
     "solution": {
-      "badge": "Nuestro Servicio",
-      "title": "Análisis profesional de TSF para separación optimizada",
-      "description": "Medimos el tiempo de separación en ambas continuidades (orgánica y acuosa) para darte una visión completa del comportamiento de fases.",
+      "badge": "Nosso Serviço",
+      "title": "Análise profissional de TSF para separação otimizada",
+      "description": "Medimos o tempo de separação em ambas as continuidades (orgânica e aquosa) para dar uma visão completa do comportamento das fases.",
       "benefits": {
         "earlyWarning": {
-          "title": "Alerta temprana",
-          "description": "Detecta problemas de separación 2-3 semanas antes de que afecten producción.",
+          "title": "Alerta precoce",
+          "description": "Detecta problemas de separação 2-3 semanas antes de afetarem a produção.",
           "metric": "2-3 sem",
-          "metricLabel": "anticipación típica"
+          "metricLabel": "antecipação típica"
         },
         "optimizedSpeed": {
-          "title": "Velocidad optimizada",
-          "description": "Ajusta parámetros de mezcladores-decantadores para máxima eficiencia.",
+          "title": "Velocidade otimizada",
+          "description": "Ajusta parâmetros de misturadores-decantadores para máxima eficiência.",
           "metric": "-65%",
-          "metricLabel": "reducción TSF lograda"
+          "metricLabel": "redução de TSF alcançada"
         },
         "zeroStops": {
-          "title": "Cero paradas",
-          "description": "Elimina detenciones de emergencia por problemas de separación de fases.",
+          "title": "Zero paradas",
+          "description": "Elimina paradas de emergência por problemas de separação de fases.",
           "metric": "0",
-          "metricLabel": "paradas/año"
+          "metricLabel": "paradas/ano"
         }
       }
     },
     "howItWorks": {
-      "badge": "Cómo Funciona",
-      "title": "Medición estandarizada de tiempo de separación",
-      "description": "Protocolo de medición que entrega resultados comparables y accionables para tu operación.",
+      "badge": "Como Funciona",
+      "title": "Medição padronizada do tempo de separação",
+      "description": "Protocolo de medição que entrega resultados comparáveis e acionáveis para sua operação.",
       "steps": {
         "sampling": {
-          "title": "Muestreo Controlado",
-          "description": "Tomamos muestras de orgánico cargado y descargado en condiciones estandarizadas."
+          "title": "Amostragem Controlada",
+          "description": "Coletamos amostras de orgânico carregado e descarregado em condições padronizadas."
         },
         "measurement": {
-          "title": "Medición Dual",
-          "description": "Medimos TSF en continuidad orgánica y acuosa para visión completa."
+          "title": "Medição Dupla",
+          "description": "Medimos o TSF em continuidade orgânica e aquosa para uma visão completa."
         },
         "analysis": {
-          "title": "Análisis Comparativo",
-          "description": "Comparamos con históricos y benchmarks de la industria para evaluar estado."
+          "title": "Análise Comparativa",
+          "description": "Comparamos com históricos e benchmarks da indústria para avaliar o estado."
         },
         "action": {
-          "title": "Plan de Acción",
-          "description": "Recomendamos acciones específicas: filtración, tratamiento químico o ajustes operacionales."
+          "title": "Plano de Ação",
+          "description": "Recomendamos ações específicas: filtração, tratamento químico ou ajustes operacionais."
         }
       },
       "specs": {
         "dualMeasurement": {
           "value": "2x",
-          "label": "Medición dual",
-          "detail": "Continuidad orgánica + acuosa"
+          "label": "Medição dupla",
+          "detail": "Continuidade orgânica + aquosa"
         },
         "frequency": {
           "value": "Semanal",
-          "label": "Frecuencia sugerida",
-          "detail": "Para control preventivo continuo"
+          "label": "Frequência sugerida",
+          "detail": "Para controle preventivo contínuo"
         },
         "trending": {
           "value": "Histórico",
-          "label": "Análisis de tendencia",
-          "detail": "Seguimiento de evolución en el tiempo"
+          "label": "Análise de tendência",
+          "detail": "Acompanhamento da evolução no tempo"
         }
       }
     },
     "industries": {
-      "title": "Aplicaciones por industria",
-      "description": "El TSF es crítico en cualquier proceso de extracción por solventes donde la separación de fases determina eficiencia.",
+      "title": "Aplicações por indústria",
+      "description": "O TSF é crítico em qualquer processo de extração por solventes onde a separação de fases determina a eficiência.",
       "copper": {
         "title": "Cobre SX/EW",
-        "description": "Circuitos donde la velocidad de separación determina capacidad de producción.",
-        "benefit": "Maximiza throughput de mezcladores-decantadores"
+        "description": "Circuitos onde a velocidade de separação determina a capacidade de produção.",
+        "benefit": "Maximiza o throughput de misturadores-decantadores"
       },
       "zinc": {
-        "title": "Zinc SX",
-        "description": "Procesos de purificación donde emulsiones afectan calidad de producto.",
-        "benefit": "Elimina contaminación por emulsiones"
+        "title": "Zinco SX",
+        "description": "Processos de purificação onde emulsões afetam a qualidade do produto.",
+        "benefit": "Elimina contaminação por emulsões"
       },
       "lithium": {
-        "title": "Litio SX",
-        "description": "Extracción donde la separación limpia es crítica para selectividad.",
-        "benefit": "Mantiene selectividad de extracción"
+        "title": "Lítio SX",
+        "description": "Extração onde a separação limpa é crítica para a seletividade.",
+        "benefit": "Mantém a seletividade de extração"
       }
     },
     "integration": {
-      "badge": "Ecosistema Integrado",
-      "title": "TSF complementa tu estrategia de monitoreo",
-      "description": "El TSF junto con TIF te da visibilidad completa sobre el estado de tu orgánico.",
+      "badge": "Ecossistema Integrado",
+      "title": "O TSF complementa sua estratégia de monitoramento",
+      "description": "O TSF junto com o TIF dá visibilidade completa sobre o estado do seu orgânico.",
       "services": {
         "tifMeasurement": {
-          "title": "Medición de TIF",
-          "description": "Tensión interfacial indica causa química de problemas de separación."
+          "title": "Medição de TIF",
+          "description": "A tensão interfacial indica a causa química dos problemas de separação."
         },
         "organicTreatment": {
-          "title": "Tratamiento de Orgánico",
-          "description": "Cuando TSF indica degradación, aplicamos tratamiento correctivo."
+          "title": "Tratamento de Orgânico",
+          "description": "Quando o TSF indica degradação, aplicamos tratamento corretivo."
         },
         "filtration": {
-          "title": "Filtración de Borras",
-          "description": "Remueve sólidos finos que estabilizan emulsiones y aumentan TSF."
+          "title": "Filtração de Borras",
+          "description": "Remove sólidos finos que estabilizam emulsões e aumentam o TSF."
         }
       },
       "diagram": {
-        "title": "Control Integral de Orgánico",
-        "subtitle": "TIF + TSF = Visibilidad completa",
-        "result": "Separación óptima"
+        "title": "Controle Integral do Orgânico",
+        "subtitle": "TIF + TSF = Visibilidade completa",
+        "result": "Separação ótima"
       }
     },
     "cta": {
-      "title": "Obtén análisis profesional de TSF",
-      "description": "Medición experta e insights para optimizar el rendimiento de separación de tu circuito.",
-      "timeline": "Resultados en 48 horas. Sin compromiso.",
-      "primaryCta": "Solicitar Medición",
-      "secondaryCta": "Ver Tratamiento Orgánico",
-      "contactTitle": "Contacto directo",
+      "title": "Obtenha análise profissional de TSF",
+      "description": "Medição especializada e insights para otimizar o desempenho de separação do seu circuito.",
+      "timeline": "Resultados em 48 horas. Sem compromisso.",
+      "primaryCta": "Solicitar Medição",
+      "secondaryCta": "Ver Tratamento de Orgânico",
+      "contactTitle": "Contato direto",
       "locations": {
         "santiago": {
           "name": "Santiago, Chile",
@@ -5811,7 +5811,7 @@
         },
         "calama": {
           "name": "Calama, Chile",
-          "address": "Oficina Operaciones Norte"
+          "address": "Escritório de Operações Norte"
         },
         "lima": {
           "name": "Lima, Peru",
@@ -5822,169 +5822,169 @@
   },
   "turbidityMonitoringService": {
     "hero": {
-      "badge": "Analítica de Datos",
-      "title": "Análisis de turbidez de precisión",
-      "titleHighlight": "para operaciones optimizadas",
-      "description": "Análisis profesional de laboratorio que te entrega los datos de claridad que necesitas para optimizar dosificación de floculantes, asegurar calidad de producto y tomar decisiones de proceso con confianza.",
+      "badge": "Analytics de Dados",
+      "title": "Análise de turbidez de precisão",
+      "titleHighlight": "para operações otimizadas",
+      "description": "Análise profissional de laboratório que entrega os dados de claridade que você precisa para otimizar a dosagem de floculantes, garantir a qualidade do produto e tomar decisões de processo com confiança.",
       "benefits": {
-        "realTimeControl": "Análisis profesional de laboratorio",
-        "optimizeFlocculant": "Optimiza dosificación con datos reales",
-        "ensureCompliance": "Insights accionables, no solo números",
-        "eliminateLabDelay": "Sin inversión en equipos"
+        "realTimeControl": "Análise profissional de laboratório",
+        "optimizeFlocculant": "Otimiza a dosagem com dados reais",
+        "ensureCompliance": "Insights acionáveis, não apenas números",
+        "eliminateLabDelay": "Sem investimento em equipamentos"
       },
-      "ctaPrimary": "Solicitar Evaluación",
-      "ctaSecondary": "Ver Industria Potasio",
-      "imageAlt": "Equipos de laboratorio de analítica de datos Tecionic"
+      "ctaPrimary": "Solicitar Avaliação",
+      "ctaSecondary": "Ver Indústria Potássio",
+      "imageAlt": "Equipamentos de laboratório de analytics de dados Tecionic"
     },
     "metrics": {
-      "continuousMonitoring": "Años de experiencia",
-      "achievedClarity": "Claridad alcanzada",
-      "flocculantSavings": "Ahorro típico en reactivos",
-      "specViolations": "Reportes entregados"
+      "continuousMonitoring": "Anos de experiência",
+      "achievedClarity": "Claridade alcançada",
+      "flocculantSavings": "Economia típica em reagentes",
+      "specViolations": "Relatórios entregues"
     },
     "problem": {
-      "badge": "El Desafío",
-      "title": "La turbidez impacta la calidad en cada etapa",
-      "description": "Desde dosificación de floculantes hasta claridad del producto final, la carga de partículas afecta todo tu proceso. Tener datos precisos y confiables de turbidez permite optimización proactiva en vez de correcciones reactivas.",
+      "badge": "O Desafio",
+      "title": "A turbidez impacta a qualidade em cada etapa",
+      "description": "Da dosagem de floculantes à claridade do produto final, a carga de partículas afeta todo o seu processo. Ter dados precisos e confiáveis de turbidez permite otimização proativa em vez de correções reativas.",
       "symptoms": {
         "labDelay": {
-          "title": "Optimización de dosificación",
-          "description": "Datos precisos te permiten ajustar dosificación de floculantes a la carga real de partículas."
+          "title": "Otimização de dosagem",
+          "description": "Dados precisos permitem ajustar a dosagem de floculantes à carga real de partículas."
         },
         "variability": {
-          "title": "Visibilidad de proceso",
-          "description": "Monitorea tendencias de turbidez en el tiempo para identificar patrones y optimizar rendimiento."
+          "title": "Visibilidade de processo",
+          "description": "Monitore tendências de turbidez ao longo do tempo para identificar padrões e otimizar o desempenho."
         },
         "quality": {
-          "title": "Aseguramiento de calidad",
-          "description": "Asegura que el producto cumpla especificaciones con mediciones documentadas y trazables."
+          "title": "Garantia de qualidade",
+          "description": "Garanta que o produto cumpra as especificações com medições documentadas e rastreáveis."
         }
       },
       "chartTitle": "Escala de Turbidez",
       "chart": {
         "excellent": "Excelente",
-        "acceptable": "Aceptable",
+        "acceptable": "Aceitável",
         "warning": "Alerta",
-        "outOfSpec": "Fuera de especificación",
-        "insight": "Conoce exactamente dónde opera tu proceso",
-        "insightText": "Datos precisos permiten control preciso y calidad consistente."
+        "outOfSpec": "Fora de especificação",
+        "insight": "Saiba exatamente onde seu processo opera",
+        "insightText": "Dados precisos permitem controle preciso e qualidade consistente."
       }
     },
     "solution": {
-      "badge": "Nuestro Servicio",
-      "title": "Análisis experto entregado a tu correo",
-      "description": "Nos encargamos de la recolección de muestras, análisis profesional de laboratorio, y entregamos reportes claros con recomendaciones accionables—sin inversión en equipos ni capacitación requerida.",
+      "badge": "Nosso Serviço",
+      "title": "Análise especializada entregue no seu e-mail",
+      "description": "Cuidamos da coleta de amostras e da análise profissional de laboratório, e entregamos relatórios claros com recomendações acionáveis—sem investimento em equipamentos nem treinamento necessário.",
       "benefits": {
         "realTime": {
-          "title": "Análisis profesional",
-          "description": "Precisión de laboratorio con interpretación experta de resultados.",
+          "title": "Análise profissional",
+          "description": "Precisão de laboratório com interpretação especializada de resultados.",
           "metric": "±2%",
-          "metricLabel": "precisión de medición"
+          "metricLabel": "precisão de medição"
         },
         "flocculant": {
-          "title": "Insights accionables",
-          "description": "No solo números—recomendaciones específicas para tu proceso.",
+          "title": "Insights acionáveis",
+          "description": "Não apenas números—recomendações específicas para o seu processo.",
           "metric": "48h",
-          "metricLabel": "tiempo de respuesta"
+          "metricLabel": "tempo de resposta"
         },
         "compliance": {
-          "title": "Cero inversión",
-          "description": "Sin equipos que comprar, instalar o mantener. Nosotros manejamos todo.",
+          "title": "Zero investimento",
+          "description": "Sem equipamentos para comprar, instalar ou manter. Nós cuidamos de tudo.",
           "metric": "$0",
-          "metricLabel": "capital requerido"
+          "metricLabel": "capital necessário"
         }
       }
     },
     "howItWorks": {
-      "badge": "Cómo Funciona",
-      "title": "De la muestra al insight",
-      "description": "Un proceso simple diseñado para operaciones que necesitan datos sin la complejidad de manejar su propio laboratorio.",
+      "badge": "Como Funciona",
+      "title": "Da amostra ao insight",
+      "description": "Um processo simples projetado para operações que precisam de dados sem a complexidade de manter seu próprio laboratório.",
       "steps": {
         "installation": {
-          "title": "Recolección de Muestras",
-          "description": "Coordinamos con tu equipo para recolectar muestras en los puntos y momentos correctos."
+          "title": "Coleta de Amostras",
+          "description": "Coordenamos com sua equipe para coletar amostras nos pontos e momentos corretos."
         },
         "monitoring": {
-          "title": "Análisis de Laboratorio",
-          "description": "Pruebas profesionales en nuestro laboratorio equipado con instrumentos calibrados."
+          "title": "Análise de Laboratório",
+          "description": "Testes profissionais em nosso laboratório equipado com instrumentos calibrados."
         },
         "alerts": {
-          "title": "Interpretación Experta",
-          "description": "Nuestros especialistas analizan resultados en contexto de tu proceso y objetivos específicos."
+          "title": "Interpretação Especializada",
+          "description": "Nossos especialistas analisam os resultados no contexto do seu processo e objetivos específicos."
         },
         "optimization": {
-          "title": "Entrega de Reporte",
-          "description": "Reporte claro vía email con datos, tendencias y recomendaciones específicas."
+          "title": "Entrega de Relatório",
+          "description": "Relatório claro por e-mail com dados, tendências e recomendações específicas."
         }
       },
       "specs": {
         "range": {
           "value": "0-1000",
-          "label": "Rango de medición",
-          "detail": "NTU con equipos calibrados"
+          "label": "Faixa de medição",
+          "detail": "NTU com equipamentos calibrados"
         },
         "frequency": {
           "value": "48h",
-          "label": "Tiempo de respuesta",
-          "detail": "De muestra a reporte"
+          "label": "Tempo de resposta",
+          "detail": "Da amostra ao relatório"
         },
         "connectivity": {
           "value": "Email",
-          "label": "Entrega de reporte",
-          "detail": "PDF con análisis completo"
+          "label": "Entrega de relatório",
+          "detail": "PDF com análise completa"
         }
       }
     },
     "industries": {
-      "title": "Aplicaciones por industria",
-      "description": "El análisis de turbidez es crítico donde la claridad de solución afecta calidad del producto o procesos downstream.",
+      "title": "Aplicações por indústria",
+      "description": "A análise de turbidez é crítica onde a claridade da solução afeta a qualidade do produto ou os processos downstream.",
       "potassium": {
-        "title": "Potasio",
-        "description": "La claridad de salmuera impacta directamente la cristalización y pureza del producto final.",
-        "benefit": "Optimiza calidad de cristalización"
+        "title": "Potássio",
+        "description": "A claridade da salmoura impacta diretamente a cristalização e a pureza do produto final.",
+        "benefit": "Otimiza a qualidade de cristalização"
       },
       "lithium": {
-        "title": "Litio",
-        "description": "Membranas DLE requieren soluciones de alimentación ultra-claras para prevenir ensuciamiento.",
-        "benefit": "Protege inversión en membranas"
+        "title": "Lítio",
+        "description": "Membranas DLE exigem soluções de alimentação ultraclaras para prevenir incrustação.",
+        "benefit": "Protege o investimento em membranas"
       },
       "copper": {
         "title": "Cobre",
-        "description": "La claridad de PLS previene formación de crud en circuitos SX.",
-        "benefit": "Reduce costos de tratamiento de crud"
+        "description": "A claridade do PLS previne a formação de crud em circuitos SX.",
+        "benefit": "Reduz custos de tratamento de crud"
       }
     },
     "integration": {
-      "badge": "Visión Completa",
-      "title": "Turbidez es una pieza del rompecabezas",
-      "description": "Combina análisis de turbidez con nuestros otros servicios de datos para visibilidad completa del proceso.",
+      "badge": "Visão Completa",
+      "title": "A turbidez é uma peça do quebra-cabeça",
+      "description": "Combine a análise de turbidez com nossos outros serviços de dados para visibilidade completa do processo.",
       "services": {
         "fineSolids": {
-          "title": "Tratamiento Sólidos Finos",
-          "description": "Cuando el análisis muestra alta turbidez, podemos desplegar filtración para resolver la causa raíz."
+          "title": "Tratamento de Sólidos Finos",
+          "description": "Quando a análise mostra alta turbidez, podemos mobilizar filtração para resolver a causa raiz."
         },
         "tifMeasurement": {
-          "title": "Medición de TIF",
-          "description": "Sólidos finos afectan tensión interfacial. Análisis combinado revela el panorama completo."
+          "title": "Medição de TIF",
+          "description": "Sólidos finos afetam a tensão interfacial. A análise combinada revela o panorama completo."
         },
         "tsfMonitoring": {
-          "title": "Análisis de Separación de Fases",
-          "description": "Partículas estabilizan emulsiones. Entender turbidez ayuda a explicar problemas de separación."
+          "title": "Análise de Separação de Fases",
+          "description": "Partículas estabilizam emulsões. Entender a turbidez ajuda a explicar problemas de separação."
         }
       },
       "diagram": {
-        "title": "Análisis Integrado",
-        "subtitle": "Datos → Insights → Acción",
-        "result": "Operaciones optimizadas"
+        "title": "Análise Integrada",
+        "subtitle": "Dados → Insights → Ação",
+        "result": "Operações otimizadas"
       }
     },
     "cta": {
-      "title": "Obtén datos de turbidez de precisión",
-      "description": "Análisis profesional e insights accionables—nos encargamos de todo, desde recolección de muestras hasta entrega del reporte.",
-      "timeline": "Primer reporte dentro de una semana de contratación.",
-      "primaryCta": "Solicitar Evaluación",
-      "secondaryCta": "Ver Casos en Potasio",
-      "contactTitle": "Contacto directo",
+      "title": "Obtenha dados de turbidez de precisão",
+      "description": "Análise profissional e insights acionáveis—cuidamos de tudo, da coleta de amostras à entrega do relatório.",
+      "timeline": "Primeiro relatório dentro de uma semana da contratação.",
+      "primaryCta": "Solicitar Avaliação",
+      "secondaryCta": "Ver Casos em Potássio",
+      "contactTitle": "Contato direto",
       "locations": {
         "santiago": {
           "name": "Santiago, Chile",
@@ -5992,7 +5992,7 @@
         },
         "calama": {
           "name": "Calama, Chile",
-          "address": "Oficina Operaciones Norte"
+          "address": "Escritório de Operações Norte"
         },
         "lima": {
           "name": "Lima, Peru",

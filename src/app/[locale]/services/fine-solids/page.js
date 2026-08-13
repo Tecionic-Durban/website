@@ -1267,7 +1267,7 @@ export default function FineSolidsServicePage() {
                 </p>
 
                 {/* CTA */}
-                <Link href="/casos-de-exito/filtracion-yoduro" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                <Link href="/casos-de-exito/solidos-finos-yoduro" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
                   {t('caseStudy.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>

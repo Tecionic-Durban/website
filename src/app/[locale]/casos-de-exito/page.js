@@ -234,7 +234,7 @@ export default async function CasosExitoPage({ params }) {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/services"
+              href="/#services"
               className="inline-flex items-center gap-2 border border-gray-700 text-gray-300 px-6 py-3 rounded-lg font-semibold hover:border-gray-500 hover:text-white transition-colors"
             >
               {t('cta.servicesButton')}

@@ -420,7 +420,7 @@ export default function LithiumIndustryPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={`/${locale}/contacto`} className="inline-flex items-center px-8 py-4 bg-cyan-500 text-white font-bold rounded-lg hover:bg-cyan-400 transition-colors shadow-xl shadow-cyan-500/20">
+            <Link href="/contacto" className="inline-flex items-center px-8 py-4 bg-cyan-500 text-white font-bold rounded-lg hover:bg-cyan-400 transition-colors shadow-xl shadow-cyan-500/20">
               {t('cta.button')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>

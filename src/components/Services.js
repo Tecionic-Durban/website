@@ -69,7 +69,7 @@ export default function Services() {
   ]
 
   return (
-    <section ref={servicesRef} className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
+    <section id="services" ref={servicesRef} className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
       {/* Advanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-32 left-[10%] w-32 h-32 bg-gradient-to-br from-emerald-600/10 to-emerald-700/5 rounded-full opacity-30 animate-float-slow blur-sm"></div>
