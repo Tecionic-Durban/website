@@ -14,9 +14,9 @@ const metadataByLocale = {
     keywords: 'filtración zinc, tratamiento electrolito zinc, purificación zinc, filtro prensa zinc, minería zinc Chile, electrowinning zinc, hidrometalurgia zinc',
   },
   'es-mx': {
-    title: 'Filtración de Zinc | Electrolito y Borra de Jarosita',
-    description: 'Servicio móvil de filtración de zinc para refinerías. Filtración de electrolito y borra de jarosita. Movilización 48h, probado en Cajamarquilla.',
-    keywords: 'filtración zinc, tratamiento electrolito zinc, purificación zinc, filtro prensa zinc, minería zinc México, electrowinning zinc, hidrometalurgia zinc',
+    title: 'Filtración de Zinc | Electrolito y Lodos de Jarosita',
+    description: 'Servicio móvil de filtración de zinc para refinerías. Filtración de electrolito y lodos de jarosita. Probado en Cajamarquilla.',
+    keywords: 'filtración zinc, tratamiento electrolito zinc, purificación zinc, filtro prensa zinc, minería zinc México, electrodepósito zinc, hidrometalurgia zinc',
   },
   'pt-br': {
     title: 'Filtração de Zinco | Eletrólito e Borra de Jarosita',

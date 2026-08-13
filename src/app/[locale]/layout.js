@@ -66,14 +66,14 @@ export async function generateMetadata({params}) {
 
   const descriptions = {
     'es-cl': 'Más de 23 años de experiencia en filtración móvil y tratamiento de borra para minería LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Servicio en las Américas y operaciones globales.',
-    'es-mx': 'Más de 23 años de experiencia en filtración móvil y tratamiento de borra para minería LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Servicio en las Américas y operaciones globales.',
+    'es-mx': 'Más de 23 años de experiencia en filtración móvil y tratamiento de crud para minería LIX/SX/EW (plantas ESDE). Sin CAPEX. Servicio en las Américas y operaciones globales.',
     'pt-br': 'Mais de 23 anos de experiência em filtração móvel e tratamento de borra para mineração LIX/SX/EW. Sem CAPEX, mobilização em 48 horas. Serviço nas Américas e operações globais.',
     'en': "Over 23 years of experience in mobile filtration and sludge treatment for LIX/SX/EW mining operations. Zero CAPEX, 48-hour mobilization. Service across the Americas and global operations."
   };
 
   const keywords = {
     'es-cl': 'filtración móvil, tratamiento borra, LIX SX EW, minería cobre, hidrometalurgia, filtro prensa móvil, Chile, las Américas, servicios industriales',
-    'es-mx': 'filtración móvil, tratamiento borra, LIX SX EW, minería cobre, hidrometalurgia, filtro prensa móvil, México, las Américas, servicios industriales',
+    'es-mx': 'filtración móvil, tratamiento de crud, planta ESDE, LIX SX EW, minería cobre, jales mineros, hidrometalurgia, filtro prensa móvil, renta de filtro prensa, México, las Américas, servicios industriales',
     'pt-br': 'filtração móvel, tratamento borra, LIX SX EW, mineração cobre, hidrometalurgia, filtro prensa móvel, Brasil, as Américas, serviços industriais',
     'en': 'mobile filtration, sludge treatment, LIX SX EW, copper mining, hydrometallurgy, mobile filter press, Americas, industrial services'
   };

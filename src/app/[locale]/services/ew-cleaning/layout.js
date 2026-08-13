@@ -14,9 +14,9 @@ const metadataByLocale = {
     keywords: 'limpieza celdas EW, desborre electrowinning, filtración EW, mantenimiento celdas electrolíticas, minería cobre EW',
   },
   'es-mx': {
-    title: 'Limpieza de Celdas EW y Desborre | 1 Celda/Día, Lista para Altitud',
-    description: 'Desborre y limpieza de celdas EW en refinerías de cobre. 1 celda por día, sin parada de producción, probado sobre 4,000 msnm.',
-    keywords: 'limpieza celdas EW, desborre electrowinning, filtración EW, mantenimiento celdas electrolíticas, minería cobre EW',
+    title: 'Limpieza de Celdas EW y Remoción de Crud | 1 Celda/Día, Lista para Altitud',
+    description: 'Remoción de crud y limpieza de celdas de electrodepósito en refinerías de cobre. 1 celda por día, sin parada de producción, probado sobre 4,000 msnm.',
+    keywords: 'limpieza celdas EW, limpieza celdas electrodepósito, remoción de crud, planta ESDE, mantenimiento celdas electrolíticas, minería cobre EW',
   },
   'pt-br': {
     title: 'Limpeza de Células EW e Desborre | 1 Célula/Dia, Pronto p/ Altitude',

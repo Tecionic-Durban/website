@@ -15,8 +15,8 @@ const metadataByLocale = {
   },
   'es-mx': {
     title: 'Servicios de Filtración para Minería de Cobre',
-    description: 'Soluciones móviles de filtración y tratamiento de borra para operaciones de cobre LIX/SX/EW. Sin CAPEX, movilización en 48 horas. Más de 23 años de experiencia en Latinoamérica.',
-    keywords: 'filtración cobre, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre México, servicios hidrometalurgia',
+    description: 'Soluciones móviles de filtración y tratamiento de crud para operaciones de cobre LIX/SX/EW (plantas ESDE). Sin CAPEX. Más de 23 años de experiencia en Latinoamérica.',
+    keywords: 'filtración cobre, tratamiento de crud, planta ESDE, tratamiento orgánico SX, limpieza celdas EW, deshidratación concentrados, filtro prensa móvil, minería cobre México, servicios hidrometalurgia',
   },
   'pt-br': {
     title: 'Serviços de Filtração para Mineração de Cobre',

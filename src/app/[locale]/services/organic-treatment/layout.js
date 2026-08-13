@@ -14,9 +14,9 @@ const metadataByLocale = {
     keywords: 'tratamiento orgánico SX, eliminación degradados, recuperación solventes, extracción por solventes, crud treatment, minería cobre',
   },
   'es-mx': {
-    title: 'Tratamiento de Borra SX y Recuperación de Orgánico | Reduce Pérdidas',
-    description: 'Eliminación de borra SX y recuperación de orgánico para circuitos de cobre. Restablece separación de fases, reduce pérdidas, sin paradas.',
-    keywords: 'tratamiento orgánico SX, eliminación degradados, recuperación solventes, extracción por solventes, crud treatment, minería cobre',
+    title: 'Tratamiento de Crud SX y Recuperación de Orgánico | Reduce Pérdidas',
+    description: 'Eliminación de crud SX y recuperación de orgánico para circuitos de cobre. Restablece separación de fases, reduce pérdidas, sin paradas.',
+    keywords: 'tratamiento de crud SX, tratamiento orgánico SX, eliminación degradados, recuperación solventes, extracción por solventes, planta ESDE, minería cobre',
   },
   'pt-br': {
     title: 'Tratamento de Borra SX e Recuperação de Orgânico | Reduz Perdas',

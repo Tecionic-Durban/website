@@ -19,8 +19,8 @@ export async function generateMetadata({ params }) {
     },
     'es-mx': {
       title: 'Caso de Éxito: Limpieza Celdas EW',
-      description: 'Caso de éxito en limpieza y desborre de celdas de electrowinning. Mejora de eficiencia y reducción de tiempos de mantenimiento.',
-      keywords: 'caso éxito limpieza EW, desborre celdas, electrowinning resultados, proyecto EW minería',
+      description: 'Caso de éxito en limpieza y remoción de crud en celdas de electrodepósito. Mejora de eficiencia y reducción de tiempos de mantenimiento.',
+      keywords: 'caso éxito limpieza EW, remoción de crud celdas, electrodepósito resultados, proyecto EW minería',
     },
     'pt-br': {
       title: 'Caso de Sucesso: Limpeza Células EW',

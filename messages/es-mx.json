@@ -293,7 +293,7 @@
         "message": "Cuéntenos más detalles sobre sus necesidades específicas..."
       },
       "services": {
-        "filtration": "Filtración y deshidratación de borras y sólidos",
+        "filtration": "Filtración y deshidratación de crud, borras y sólidos",
         "organicTreatment": "Tratamiento y recuperación de orgánico en procesos SX",
         "concentrateDehydration": "Deshidratación de concentrados de cobre",
         "fineSolids": "Tratamiento de sólidos finos",
@@ -302,7 +302,7 @@
         "generalInquiry": "Consulta general"
       },
       "serviceQuestions": {
-        "filtration": "¿Cuál es el volumen aproximado de borras que necesita procesar? (ton/día)",
+        "filtration": "¿Cuál es el volumen aproximado de crud o borras que necesita procesar? (ton/día)",
         "organicTreatment": "¿Qué tipo de contaminación presenta su orgánico?",
         "concentrateDehydration": "¿Cuál es la capacidad de producción de concentrados? (ton/día)",
         "fineSolids": "¿Cuál es el caudal de sólidos finos a tratar? (m³/h)",
@@ -597,7 +597,7 @@
     "productQuality": {
       "badge": "CALIDAD DE PRODUCTO",
       "title": "Electrolito puro, cátodos de primera",
-      "description": "Etapas limpias entregan electrolito cargado libre de orgánico hacia EW. Refino limpio retorna a lixiviación sin pérdida de extractante ni keroseno.",
+      "description": "Etapas limpias entregan electrolito cargado libre de orgánico hacia EW. Refinado limpio retorna a lixiviación sin pérdida de extractante ni keroseno.",
       "cleanElectrolyte": {
         "title": "Electrolito cargado limpio",
         "subtitle": "Protección para tu electro-obtención",
@@ -617,7 +617,7 @@
         }
       },
       "cleanRaffinate": {
-        "title": "Refino limpio",
+        "title": "Refinado limpio",
         "subtitle": "Protección para tu lixiviación",
         "items": {
           "concentrated": {
@@ -625,8 +625,8 @@
             "description": "Sin dilución por arrastre acuoso"
           },
           "heaps": {
-            "title": "Pilas de lixiviación limpias",
-            "description": "Refino libre de orgánico"
+            "title": "Patios de lixiviación limpios",
+            "description": "Refinado libre de orgánico"
           },
           "kerosene": {
             "title": "Keroseno conservado",
@@ -1067,13 +1067,13 @@
       "title": "Piloto sin riesgo, escala según resultados",
       "description": "Prueba con equipos de flota compartida. Valida ROI. Escala a capacidad dedicada cuando tengas confianza.",
       "preventive": {
-        "title": "Mantención Preventiva",
+        "title": "Mantenimiento Preventiva",
         "subtitle": "Diálisis 24/7 mantiene calidad sin emergencias",
         "benefits": {
           "bypass": "Filtro prensa móvil en by-pass continuo 24/7",
           "monitoring": "Monitoreo semanal TIF/TSF/entrainment",
           "scheduled": "Arcilla programada por calendario",
-          "included": "Operación, mantención y consumibles incluidos"
+          "included": "Operación, mantenimiento y consumibles incluidos"
         },
         "result": "Resultado",
         "resultValue": "0",
@@ -1156,7 +1156,7 @@
         },
         "storage": {
           "title": "Almacenamiento simplificado",
-          "description": "Concentrado seco se apila y almacena sin canchas de relaves ni piscinas de contención."
+          "description": "Concentrado seco se apila y almacena sin presas de jales ni piletas de contención."
         }
       }
     },
@@ -1172,7 +1172,7 @@
         },
         {
           "title": "Producción protegida durante mantenciones",
-          "description": "Cuando tu filtro principal está en mantención, nuestro equipo móvil mantiene la producción. Evita pérdidas millonarias con un servicio que típicamente se paga en menos de un día de operación."
+          "description": "Cuando tu filtro principal está en mantenimiento, nuestro equipo móvil mantiene la producción. Evita pérdidas millonarias con un servicio que típicamente se paga en menos de un día de operación."
         },
         {
           "title": "Capacidad extra sin inversión de capital",
@@ -1206,7 +1206,7 @@
       "items": {
         "continuity": {
           "title": "Deshidrata sin detener producción",
-          "description": "Filtro de respaldo opera mientras el principal está en mantención. Tu línea de concentrado sigue activa.",
+          "description": "Filtro de respaldo opera mientras el principal está en mantenimiento. Tu línea de concentrado sigue activa.",
           "features": [
             "75% capacidad mantenida",
             "Sin paradas de producción"
@@ -1237,7 +1237,7 @@
         "operation": {
           "value": "24/7",
           "title": "Operación",
-          "description": "Personal certificado opera y mantiene los equipos en tu faena"
+          "description": "Personal certificado opera y mantiene los equipos en tu operación"
         },
         "capex": {
           "value": "$0",
@@ -1258,7 +1258,7 @@
     },
     "caseStudy": {
       "badge": "CASO DE ÉXITO",
-      "title": "Planta concentradora protegió 2.43 MUSD en 30 días de mantención",
+      "title": "Planta concentradora protegió 2.43 MUSD en 30 días de mantenimiento",
       "metrics": {
         "ratio": {
           "value": "50:1",
@@ -1273,7 +1273,7 @@
           "label": "Capacidad mantenida"
         }
       },
-      "description": "Una planta concentradora de cobre debía realizar mantención mayor de 30 días a su único filtro prensa. Sin filtro de respaldo, la alternativa era perder 3.24 MUSD. Con nuestro filtro móvil F-1200-3 operando 24/7, preservaron el 75% de su producción con un costo total de solo ~49 kUSD.",
+      "description": "Una planta concentradora de cobre debía realizar mantenimiento mayor de 30 días a su único filtro prensa. Sin filtro de respaldo, la alternativa era perder 3.24 MUSD. Con nuestro filtro móvil F-1200-3 operando 24/7, preservaron el 75% de su producción con un costo total de solo ~49 kUSD.",
       "industryBadge": "Minería del Cobre",
       "plantName": "Planta Concentradora",
       "cta": "Ver caso completo"
@@ -1284,7 +1284,7 @@
       "steps": {
         "pilot": {
           "title": "Piloto",
-          "description": "Prueba el servicio en tu faena. Valida resultados con tu equipo antes de comprometerte.",
+          "description": "Prueba el servicio en tu operación. Valida resultados con tu equipo antes de comprometerte.",
           "benefits": [
             "Sin inversión inicial",
             "Resultados medibles",
@@ -1657,11 +1657,11 @@
     "waterClarification": {
       "badge": "Clarificación de Aguas",
       "title": "Recupera agua de proceso en horas, no semanas",
-      "description": "Nuestros filtros prensa móviles clarifican agua con alta carga de sólidos y la devuelven lista para recircular. La torta seca sale directo a disposición—sin piscinas, sin esperas, sin obras.",
+      "description": "Nuestros filtros prensa móviles clarifican agua con alta carga de sólidos y la devuelven lista para recircular. La torta seca sale directo a disposición—sin piletas, sin esperas, sin obras.",
       "benefits": {
         "recirculate": {
           "title": "Recircula más agua",
-          "description": "Agua clarificada lista para volver a tu proceso. Sin piscinas de decantación ocupando hectáreas de tu operación."
+          "description": "Agua clarificada lista para volver a tu proceso. Sin piletas de decantación ocupando hectáreas de tu operación."
         },
         "dryCake": {
           "title": "Cero intervención de tu equipo",
@@ -1872,7 +1872,7 @@
     },
     "industries": {
       "title": "Industrias que servimos",
-      "subtitle": "Servicio de limpieza de crud especializado para naves de electroobtención",
+      "subtitle": "Servicio de limpieza de crud especializado para naves de electrodepósito",
       "viewDetails": "Ver detalles",
       "copper": {
         "name": "Cobre",
@@ -1891,7 +1891,7 @@
       "client": "Planta SX/EW de Cobre",
       "location": "4.200 msnm",
       "altitude": "4.200 msnm",
-      "imageAlt": "Nave de electroobtención de cobre",
+      "imageAlt": "Nave de electrodepósito de cobre",
       "metrics": {
         "removal": {
           "value": "100%",
@@ -2386,7 +2386,7 @@
           "tsf": "TSF maneja residuos hierro Goethite"
         },
         {
-          "step": "Electroobtención",
+          "step": "Electrodepósito",
           "number": "03",
           "process": "ZnSO₄ → Zn cátodo (99.99%)",
           "challenge": "Sedimento en celdas afecta pureza",
@@ -2861,7 +2861,7 @@
     },
     "answer": {
       "title": "Tecionic elimina estos tres problemas de un golpe",
-      "description": "Llegamos con equipos listos, personal que los opera, mantención incluida, y escalamos contigo. Tú pagas una tarifa mensual por capacidad de filtración funcionando. Cero CAPEX. Cero espera. Cero rigidez."
+      "description": "Llegamos con equipos listos, personal que los opera, mantenimiento incluida, y escalamos contigo. Tú pagas una tarifa mensual por capacidad de filtración funcionando. Cero CAPEX. Cero espera. Cero rigidez."
     },
     "valueProps": {
       "title": "Lo que significa trabajar con Tecionic",
@@ -2879,7 +2879,7 @@
       },
       "focus": {
         "title": "Te enfocas en litio, nosotros en filtración",
-        "description": "Nuestro equipo opera los equipos, hace la mantención, resuelve los problemas."
+        "description": "Nuestro equipo opera los equipos, hace la mantenimiento, resuelve los problemas."
       }
     },
     "howWeWork": {
@@ -2900,7 +2900,7 @@
         "step3": {
           "number": "03",
           "title": "Operamos con nuestro equipo",
-          "description": "Personal Tecionic corre los equipos. Mantención incluida."
+          "description": "Personal Tecionic corre los equipos. Mantenimiento incluida."
         },
         "step4": {
           "number": "04",
@@ -2951,7 +2951,7 @@
         "years": {
           "value": "23",
           "label": "Años en minería",
-          "sublabel": "Desde 2002 operando en faenas"
+          "sublabel": "Desde 2002 operando en unidades mineras"
         },
         "copper": {
           "value": "70%",
@@ -3022,8 +3022,8 @@
           "result": "Máxima recuperación de kerosene."
         },
         "dialysis": {
-          "title": "Diálisis de Estanques y Piscinas",
-          "description": "Limpieza programada de estanques gemelos, settlers.",
+          "title": "Diálisis de Tanques y Piletas",
+          "description": "Limpieza programada de tanques gemelos, settlers.",
           "result": "Capacidad de almacenamiento íntegra."
         },
         "floors": {
@@ -3054,7 +3054,7 @@
         "title": "Escenarios donde Tecionic te respalda",
         "items": [
           {
-            "title": "Mantención programada",
+            "title": "Mantenimiento programada",
             "description": "Capacidad temporal"
           },
           {
@@ -3103,7 +3103,7 @@
           "Sin licitación de equipos",
           "Sin gestión de proyecto",
           "Sin contratación de operadores",
-          "Sin mantención por tu cuenta"
+          "Sin mantenimiento por tu cuenta"
         ]
       }
     },
@@ -3125,7 +3125,7 @@
         },
         "maintenance": {
           "value": "Incluida",
-          "label": "Mantención y operación"
+          "label": "Mantenimiento y operación"
         }
       },
       "comparison": {
@@ -3134,7 +3134,7 @@
           "items": [
             "$1M-3M+ inversión inicial",
             "12-18 meses implementación",
-            "Mantención por cuenta propia",
+            "Mantenimiento por cuenta propia",
             "Capacidad fija"
           ]
         },
@@ -3161,12 +3161,12 @@
     "hero": {
       "titleLine1": "Acerca de",
       "titleLine2": "Tecionic",
-      "description": "Con más de 23 años de experiencia, somos la empresa líder en servicios especializados de filtrado y tratamiento de crud para procesos de lixiviación, extracción por solventes y electroobtención.",
+      "description": "Con más de 23 años de experiencia, somos la empresa líder en servicios especializados de filtrado y tratamiento de crud para procesos de lixiviación, extracción por solventes y electrodepósito (ESDE).",
       "eyebrow": "Quiénes somos",
       "imageAlt": "Equipos Industriales TSF",
       "caption": {
         "bold": "Filtro prensa móvil F-1200",
-        "detail": "Faena de cobre · 4.000 msnm"
+        "detail": "Operación de cobre · 4.000 msnm"
       },
       "metrics": {
         "experience": {
@@ -3256,7 +3256,7 @@
         {
           "year": "2003",
           "title": "Primer Contrato de Limpieza de Celdas EW",
-          "description": "Exitoso primer contrato de limpieza de celdas EW, estableciendo nuestra especialización en electroobtención.",
+          "description": "Exitoso primer contrato de limpieza de celdas EW, estableciendo nuestra especialización en electrodepósito.",
           "metric": "1er Contrato EW"
         },
         {
@@ -3526,7 +3526,7 @@
         },
         {
           "title": "Arrastre Excesivo",
-          "description": "Pérdidas significativas de cobre en el refino por arrastres de orgánico",
+          "description": "Pérdidas significativas de cobre en el refinado por arrastres de orgánico",
           "metric": "TIF: 20.4 d/cm",
           "status": "Alto"
         },
@@ -4606,8 +4606,8 @@
       {
         "slug": "deshidratacion-movil-vs-capex",
         "category": "Innovación",
-        "title": "Sistemas Móviles de Deshidratación: Gestión Inteligente de Borra Sin CAPEX",
-        "excerpt": "La deshidratación móvil reemplaza los proyectos CAPEX fijos en operaciones SX, refinería, electroobtención y piscinas decantadoras — con despliegue en 48 horas, cero impacto en personal, y monitoreo riguroso en laboratorio propio.",
+        "title": "Sistemas Móviles de Deshidratación: Gestión Inteligente de Lodos Sin CAPEX",
+        "excerpt": "La deshidratación móvil reemplaza los proyectos CAPEX fijos en operaciones SX, refinería, electrodepósito y piletas decantadoras — con despliegue en 48 horas, cero impacto en personal, y monitoreo riguroso en laboratorio propio.",
         "date": "Abril 2026",
         "readTime": "6 min",
         "sortDate": "2026-04-30"
@@ -4635,7 +4635,7 @@
             "title": "El Problema Real",
             "text": "En una planta SX típica, las pérdidas de orgánico provienen de:",
             "list": [
-              "Arrastre acuoso - Gotas de orgánico que escapan con el refino",
+              "Arrastre acuoso - Gotas de orgánico que escapan con el refinado",
               "Degradación química - El extractante se degrada por oxidación y contaminantes",
               "Emulsiones estables - Sólidos finos y crud que atrapan orgánico irrecuperable",
               "Fugas y derrames - Pérdidas mecánicas en el circuito"
@@ -4656,7 +4656,7 @@
             "text": "La industria está respondiendo con innovaciones:",
             "list": [
               "Optimización con IA: Sensores en tiempo real ajustan parámetros para maximizar recuperación",
-              "Celdas de electroobtención modulares: Mayor eficiencia, menor consumo energético",
+              "Celdas de electrodepósito modulares: Mayor eficiencia, menor consumo energético",
               "Tecnología de centrífugas: Separación más efectiva de fases orgánica y acuosa"
             ]
           },
@@ -5003,7 +5003,7 @@
               "Desalinización - Costosa pero independiente de fuentes continentales",
               "Recirculación avanzada - Tratamiento y reutilización de agua de proceso",
               "Clarificación de efluentes - Recuperación de agua de corrientes residuales",
-              "Espesamiento de relaves - Reducción del agua enviada a presas"
+              "Espesamiento de jales - Reducción del agua enviada a presas"
             ]
           },
           {
@@ -5115,8 +5115,8 @@
         ]
       },
       "deshidratacion-movil-vs-capex": {
-        "title": "Sistemas Móviles de Deshidratación: Gestión Inteligente de Borra Sin CAPEX",
-        "subtitle": "Cómo la deshidratación móvil reemplaza los proyectos CAPEX fijos en operaciones SX, refinería, electroobtención y piscinas decantadoras — con despliegue en 48 horas, cero impacto en personal, y monitoreo riguroso en laboratorio propio.",
+        "title": "Sistemas Móviles de Deshidratación: Gestión Inteligente de Lodos Sin CAPEX",
+        "subtitle": "Cómo la deshidratación móvil reemplaza los proyectos CAPEX fijos en operaciones SX, refinería, electrodepósito y piletas decantadoras — con despliegue en 48 horas, cero impacto en personal, y monitoreo riguroso en laboratorio propio.",
         "category": "Innovación",
         "date": "Abril 2026",
         "readTime": "6 min",
@@ -5124,9 +5124,9 @@
         "tags": [
           "Deshidratación móvil",
           "OPEX vs CAPEX",
-          "Gestión de borra",
+          "Gestión de lodos",
           "Dewatering industrial",
-          "Piscina decantadora",
+          "Pileta decantadora",
           "Servicios de deshidratación"
         ],
         "impact": "Alto",
@@ -5134,17 +5134,17 @@
           {
             "type": "section",
             "title": "El Contexto: CAPEX Fijo vs Operación Variable",
-            "text": "Para gerentes de adquisiciones y operaciones que trabajan en extracción por solventes, refinación de petróleo, electroobtención, electrólisis o aplicaciones de piscinas decantadoras, la gestión de borra, crud y sedimentos es un desafío operacional persistente. La respuesta tradicional siempre ha sido inversión de capital: construir más capacidad, contratar más personal, ampliar la planta. Pero en una era donde la agilidad y el control de costos son prioridades estratégicas, esa respuesta es cada vez más difícil de justificar.\n\nLos sistemas móviles de deshidratación de Tecionic ofrecen un modelo fundamentalmente distinto — uno construido alrededor de tu realidad operacional, no alrededor de un supuesto de infraestructura fija."
+            "text": "Para gerentes de adquisiciones y operaciones que trabajan en extracción por solventes, refinación de petróleo, electrodepósito, electrólisis o aplicaciones de piletas decantadoras, la gestión de lodos, crud y sedimentos es un desafío operacional persistente. La respuesta tradicional siempre ha sido inversión de capital: construir más capacidad, contratar más personal, ampliar la planta. Pero en una era donde la agilidad y el control de costos son prioridades estratégicas, esa respuesta es cada vez más difícil de justificar.\n\nLos sistemas móviles de deshidratación de Tecionic ofrecen un modelo fundamentalmente distinto — uno construido alrededor de tu realidad operacional, no alrededor de un supuesto de infraestructura fija."
           },
           {
             "type": "section",
             "title": "Escalabilidad Sin Compromiso de Capital",
-            "text": "Uno de los riesgos financieros más significativos en operaciones industriales es la capacidad mal alineada. Un proyecto CAPEX para una instalación permanente de deshidratación toma meses en especificarse, adquirirse y comisionarse — y para cuando está operativo, los volúmenes de proceso pueden haber cambiado. El resultado es un activo sobredimensionado que queda subutilizado, o uno subdimensionado que crea nuevos cuellos de botella.\n\nLos sistemas móviles de deshidratación eliminan ese riesgo por completo. Las unidades de Tecionic son inherentemente escalables: se puede traer capacidad adicional al sitio cuando crece la demanda, y retirarla cuando no. No hay estudios de ingeniería prolongados, ni obras civiles, ni un activo de largo plazo en tu balance. Ya sea que estés gestionando un alza temporal en generación de borra o probando una nueva configuración de proceso, la capacidad se ajusta a la operación — no al revés."
+            "text": "Uno de los riesgos financieros más significativos en operaciones industriales es la capacidad mal alineada. Un proyecto CAPEX para una instalación permanente de deshidratación toma meses en especificarse, adquirirse y comisionarse — y para cuando está operativo, los volúmenes de proceso pueden haber cambiado. El resultado es un activo sobredimensionado que queda subutilizado, o uno subdimensionado que crea nuevos cuellos de botella.\n\nLos sistemas móviles de deshidratación eliminan ese riesgo por completo. Las unidades de Tecionic son inherentemente escalables: se puede traer capacidad adicional al sitio cuando crece la demanda, y retirarla cuando no. No hay estudios de ingeniería prolongados, ni obras civiles, ni un activo de largo plazo en tu balance. Ya sea que estés gestionando un alza temporal en generación de lodos o probando una nueva configuración de proceso, la capacidad se ajusta a la operación — no al revés."
           },
           {
             "type": "section",
             "title": "Despliegue Rápido Cuando Más Importa",
-            "text": "Las emergencias operacionales y los picos estacionales no esperan ciclos de adquisición. Cuando una piscina decantadora se llena más rápido de lo esperado, o un paro programado de refinería genera volúmenes fuera de los parámetros normales, la ventana de respuesta se mide en horas — no semanas.\n\nLas unidades móviles de Tecionic pueden ser movilizadas y operativas dentro de las 48 horas desde la llamada. Las duraciones de contrato comienzan desde apenas 60 días, lo que significa que no quedas atado a compromisos de largo plazo para resolver un problema de corto plazo. Este modelo de velocidad de despliegue es una ventaja operacional directa: protege el throughput, reduce el riesgo de tiempo muerto, y entrega a los gerentes de adquisiciones una opción de contingencia creíble que se puede activar con poca anticipación."
+            "text": "Las emergencias operacionales y los picos estacionales no esperan ciclos de adquisición. Cuando una pileta decantadora se llena más rápido de lo esperado, o un paro programado de refinería genera volúmenes fuera de los parámetros normales, la ventana de respuesta se mide en horas — no semanas.\n\nLas unidades móviles de Tecionic pueden ser movilizadas y operativas dentro de las 48 horas desde la llamada. Las duraciones de contrato comienzan desde apenas 60 días, lo que significa que no quedas atado a compromisos de largo plazo para resolver un problema de corto plazo. Este modelo de velocidad de despliegue es una ventaja operacional directa: protege el throughput, reduce el riesgo de tiempo muerto, y entrega a los gerentes de adquisiciones una opción de contingencia creíble que se puede activar con poca anticipación."
           },
           {
             "type": "highlight",
@@ -5183,11 +5183,11 @@
           {
             "type": "section",
             "title": "Monitoreo Riguroso de Proceso, Integrado",
-            "text": "La deshidratación efectiva no es una operación de \"configurar y olvidar\". Los parámetros de proceso fluctúan, las características de alimentación cambian, y el desempeño necesita ser validado continuamente para asegurar que la operación se mantenga dentro de spec.\n\nTecionic opera su propio laboratorio dedicado, donde los parámetros de proceso relevantes en sitio son muestreados, analizados y atendidos — en algunos casos varias veces al día. Este nivel de rigor analítico está integrado en cada engagement, no se ofrece como add-on opcional. Significa que tu operación se beneficia de inteligencia de proceso continua sin el costo de mantener esa capacidad analítica internamente.\n\nEl resultado es un servicio que no solo gestiona borra — monitorea y optimiza activamente el proceso de deshidratación en tiempo real, dando a los gerentes de operaciones la confianza de datos que necesitan para mantener los procesos aguas abajo funcionando sin problema."
+            "text": "La deshidratación efectiva no es una operación de \"configurar y olvidar\". Los parámetros de proceso fluctúan, las características de alimentación cambian, y el desempeño necesita ser validado continuamente para asegurar que la operación se mantenga dentro de spec.\n\nTecionic opera su propio laboratorio dedicado, donde los parámetros de proceso relevantes en sitio son muestreados, analizados y atendidos — en algunos casos varias veces al día. Este nivel de rigor analítico está integrado en cada engagement, no se ofrece como add-on opcional. Significa que tu operación se beneficia de inteligencia de proceso continua sin el costo de mantener esa capacidad analítica internamente.\n\nEl resultado es un servicio que no solo gestiona lodos — monitorea y optimiza activamente el proceso de deshidratación en tiempo real, dando a los gerentes de operaciones la confianza de datos que necesitan para mantener los procesos aguas abajo funcionando sin problema."
           },
           {
             "type": "conclusion",
-            "text": "Las operaciones industriales no pueden permitirse tratar la gestión de borra y sedimentos como una preocupación secundaria. Al mismo tiempo, no pueden permitirse sobre-invertir en infraestructura fija para resolver un problema que es, en muchos casos, variable por naturaleza.\n\nLos sistemas móviles de deshidratación de Tecionic ofrecen a los gerentes de adquisiciones y operaciones un tercer camino: capacidad operada por expertos, desplegable rápidamente, analíticamente rigurosa, que escala con tu operación y se mantiene completamente fuera de tu presupuesto de capital. Es un modelo diseñado para la forma en que las operaciones industriales modernas realmente funcionan — y los resultados hablan por sí mismos.\n\nPara discutir cómo los servicios de deshidratación móvil de Tecionic pueden apoyar tu operación, contacta a nuestro equipo para una evaluación inicial."
+            "text": "Las operaciones industriales no pueden permitirse tratar la gestión de lodos y sedimentos como una preocupación secundaria. Al mismo tiempo, no pueden permitirse sobre-invertir en infraestructura fija para resolver un problema que es, en muchos casos, variable por naturaleza.\n\nLos sistemas móviles de deshidratación de Tecionic ofrecen a los gerentes de adquisiciones y operaciones un tercer camino: capacidad operada por expertos, desplegable rápidamente, analíticamente rigurosa, que escala con tu operación y se mantiene completamente fuera de tu presupuesto de capital. Es un modelo diseñado para la forma en que las operaciones industriales modernas realmente funcionan — y los resultados hablan por sí mismos.\n\nPara discutir cómo los servicios de deshidratación móvil de Tecionic pueden apoyar tu operación, contacta a nuestro equipo para una evaluación inicial."
           }
         ],
         "sources": []
@@ -5599,7 +5599,7 @@
           "description": "Complementa TIF con tiempo de separación de fases para visión completa."
         },
         "filtration": {
-          "title": "Filtración de Borras",
+          "title": "Filtración de Crud",
           "description": "Remueve sólidos que causan degradación y reducen el TIF."
         }
       },
@@ -5642,10 +5642,10 @@
         "detectEarly": "Detecta degradación 2-3 semanas antes",
         "optimizeSpeed": "Optimiza velocidad de mezcladores-decantadores",
         "preventStops": "Elimina paradas de emergencia por separación",
-        "qualityControl": "Control de calidad de borra y emulsiones"
+        "qualityControl": "Control de calidad de crud y emulsiones"
       },
       "ctaPrimary": "Solicitar Evaluación",
-      "ctaSecondary": "Ver Filtración de Borras",
+      "ctaSecondary": "Ver Filtración de Crud",
       "gaugeLabel": "Tiempo de Separación",
       "gaugeUnit": "segundos",
       "organicContinuity": "Continuidad Orgánica",
@@ -5786,7 +5786,7 @@
           "description": "Cuando TSF indica degradación, aplicamos tratamiento correctivo."
         },
         "filtration": {
-          "title": "Filtración de Borras",
+          "title": "Filtración de Crud",
           "description": "Remueve sólidos finos que estabilizan emulsiones y aumentan TSF."
         }
       },
