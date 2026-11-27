@@ -28,9 +28,9 @@ export async function generateMetadata({ params }) {
       keywords: 'caso sucesso desidratação, concentrados cobre, filtro prensa resultados, projeto mineração cobre',
     },
     'en': {
-      title: 'Success Story: Concentrate Dehydration',
-      description: 'Success story in copper concentrate dehydration with mobile filter press. Results, metrics and benefits achieved.',
-      keywords: 'dehydration success story, copper concentrates, filter press results, copper mining project',
+      title: 'Success Story: Copper Concentrate Dewatering',
+      description: 'Success story in copper concentrate dewatering with a mobile filter press. Results, metrics and benefits achieved.',
+      keywords: 'concentrate dewatering case study, copper concentrate, filter press results, copper mining project',
     },
   };
 

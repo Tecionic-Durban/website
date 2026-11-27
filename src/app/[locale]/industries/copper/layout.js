@@ -26,7 +26,7 @@ const metadataByLocale = {
   'en': {
     title: 'Copper SX/EW Filtration & Crud Removal | Chile, Peru',
     description: 'Mobile filtration, SX crud treatment, and EW cell desludging for copper refineries. 48-hour deployment, zero CAPEX, proven across Chile, Peru, and Mexico.',
-    keywords: 'copper SX crud treatment, copper EW desludging, copper refinery filtration, copper concentrate dehydration, LATAM copper mining service, Chile copper filtration',
+    keywords: 'copper SX crud treatment, copper EW desludging, copper refinery filtration, copper concentrate dewatering, LATAM copper mining service, Chile copper filtration',
   },
 };
 

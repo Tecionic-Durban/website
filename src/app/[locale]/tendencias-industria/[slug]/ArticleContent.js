@@ -14,9 +14,20 @@ const articleColors = {
   'deshidratacion-movil-vs-capex': 'from-violet-500 to-violet-600'
 }
 
+// Service pages each article links to (contextual internal links).
+// Keys are `services.items.<key>` translation keys.
+const relatedServicesBySlug = {
+  'deshidratacion-movil-vs-capex': [
+    { key: 'filtration', href: '/services/filtration' },
+    { key: 'concentrateDehydration', href: '/services/concentrate-dehydration' },
+  ],
+}
+
 export default function ArticleContent({ slug }) {
   const tc = useTranslations('industryTrends.common')
   const t = useTranslations('industryTrends')
+  const tsvc = useTranslations('services.items')
+  const relatedServices = relatedServicesBySlug[slug] || []
 
   // Get article data from translations
   let article
@@ -188,6 +199,25 @@ export default function ArticleContent({ slug }) {
               }
             })}
           </div>
+
+          {/* Related services */}
+          {relatedServices.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">{tc('relatedServices')}</h3>
+              <ul className="space-y-2">
+                {relatedServices.map(({ key, href }) => (
+                  <li key={key}>
+                    <Link
+                      href={href}
+                      className="text-emerald-700 font-medium hover:text-emerald-800 hover:underline"
+                    >
+                      {tsvc(`${key}.title`)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Sources */}
           {article.sources && article.sources.length > 0 && (
