@@ -21,7 +21,7 @@ const equipmentBenefits = [
     {
       key: 'highAltitude',
       icon: Mountain,
-      image: '/EW_Photos/20251009_141022.jpg'
+      image: '/EW_Photos/20251009_141022.jpg?v=2'
     },
     {
       key: 'mobile',
@@ -31,7 +31,7 @@ const equipmentBenefits = [
     {
       key: 'antistatic',
       icon: Security,
-      image: '/EW_Photos/20251009_141022.jpg'
+      image: '/EW_Photos/20251009_141022.jpg?v=2'
     }
   ]
 
@@ -501,7 +501,7 @@ export default function EWCleaningServicePage() {
             <div className="lg:col-span-4 rounded-3xl border border-gray-700 overflow-hidden bg-gray-800/50 group">
               <div className="relative h-40 lg:h-48 overflow-hidden">
                 <Image
-                  src="/EW_Photos/20251009_141022.jpg"
+                  src="/EW_Photos/20251009_141022.jpg?v=2"
                   alt={t('operationalContinuity.pumpCard.imageAlt')}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"

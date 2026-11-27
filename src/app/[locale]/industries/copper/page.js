@@ -501,7 +501,7 @@ export default function CopperIndustryPage() {
               {/* Left - Image */}
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/EW_Photos/20251009_141022.jpg"
+                  src="/EW_Photos/20251009_141022.jpg?v=2"
                   alt={t('ewSection.imageAlt')}
                   fill
                   className="object-cover"
