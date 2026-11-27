@@ -9,13 +9,13 @@ const baseUrl = 'https://tecionic.com';
 
 const metadataByLocale = {
   'es-cl': {
-    title: 'Deshidratación en Procesos Minerales | Filtro Prensa Móvil',
-    description: 'Deshidratación móvil en procesos minerales. Reducción de humedad en concentrados de cobre, despliegue 48h, sin CAPEX. Minería y refinerías.',
+    title: 'Deshidratación de Concentrados | Filtro Prensa Móvil',
+    description: 'Deshidratación de concentrados de cobre y productos minerales con filtro prensa móvil. Menos humedad, despliegue 48h, sin CAPEX. Minería y refinerías.',
     keywords: 'deshidratación concentrados, filtro prensa móvil, concentrado cobre, reducción humedad, transporte concentrados, minería cobre',
   },
   'es-mx': {
-    title: 'Deshidratación en Procesos Minerales | Filtro Prensa Móvil',
-    description: 'Deshidratación móvil en procesos minerales. Reducción de humedad en concentrados de cobre, despliegue 48h, sin CAPEX. Minería y refinerías.',
+    title: 'Deshidratación de Concentrados | Filtro Prensa Móvil',
+    description: 'Deshidratación de concentrados de cobre y productos minerales con filtro prensa móvil. Menos humedad, despliegue 48h, sin CAPEX. Minería y refinerías.',
     keywords: 'deshidratación concentrados, filtro prensa móvil, concentrado cobre, reducción humedad, transporte concentrados, minería cobre',
   },
   'pt-br': {
@@ -24,9 +24,9 @@ const metadataByLocale = {
     keywords: 'desidratação concentrados, filtro prensa móvel, concentrado cobre, redução umidade, transporte concentrados, mineração cobre',
   },
   'en': {
-    title: 'Mineral Processing Dehydration | Mobile Filter Press',
-    description: 'Mobile dehydration of mineral processing products. Copper concentrate moisture reduction, 48h deployment, zero CAPEX. For mining and refining ops.',
-    keywords: 'concentrate dehydration, mobile filter press, copper concentrate, moisture reduction, concentrate transport, copper mining',
+    title: 'Concentrate Dewatering | Mobile Filter Press',
+    description: 'Mobile dewatering of copper concentrate and mineral process streams. Lower moisture, 48h deployment, zero CAPEX. For mining and refining ops.',
+    keywords: 'concentrate dewatering, mobile filter press, copper concentrate dewatering, moisture reduction, mobile dewatering, concentrate filtration',
   },
 };
 
@@ -83,7 +83,7 @@ export default async function ConcentrateDehydrationLayout({ children, params })
             pathSegment: 'services/concentrate-dehydration',
             name: meta.title.replace(/\s*\|\s*Tecionic$/, ''),
             description: meta.description,
-            serviceType: 'Concentrate Dehydration Service',
+            serviceType: 'Concentrate Dewatering Service',
           }),
         }}
       />

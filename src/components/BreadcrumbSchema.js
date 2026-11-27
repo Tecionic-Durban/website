@@ -36,7 +36,7 @@ const segmentLabels = {
   'filtration': { 'es-cl': 'Filtración', 'es-mx': 'Filtración', 'pt-br': 'Filtração', 'en': 'Filtration' },
   'organic-treatment': { 'es-cl': 'Tratamiento Orgánico', 'es-mx': 'Tratamiento Orgánico', 'pt-br': 'Tratamento Orgânico', 'en': 'Organic Treatment' },
   'ew-cleaning': { 'es-cl': 'Limpieza EW', 'es-mx': 'Limpieza EW', 'pt-br': 'Limpeza EW', 'en': 'EW Cleaning' },
-  'concentrate-dehydration': { 'es-cl': 'Deshidratación de Concentrados', 'es-mx': 'Deshidratación de Concentrados', 'pt-br': 'Desidratação de Concentrados', 'en': 'Concentrate Dehydration' },
+  'concentrate-dehydration': { 'es-cl': 'Deshidratación de Concentrados', 'es-mx': 'Deshidratación de Concentrados', 'pt-br': 'Desidratação de Concentrados', 'en': 'Concentrate Dewatering' },
   'fine-solids': { 'es-cl': 'Sólidos Finos', 'es-mx': 'Sólidos Finos', 'pt-br': 'Sólidos Finos', 'en': 'Fine Solids' },
   'water-clarification': { 'es-cl': 'Clarificación de Agua', 'es-mx': 'Clarificación de Agua', 'pt-br': 'Clarificação de Água', 'en': 'Water Clarification' },
   'tif-measurement': { 'es-cl': 'Medición TIF', 'es-mx': 'Medición TIF', 'pt-br': 'Medição TIF', 'en': 'TIF Measurement' },
@@ -44,7 +44,7 @@ const segmentLabels = {
   'turbidity-monitoring': { 'es-cl': 'Monitoreo de Turbidez', 'es-mx': 'Monitoreo de Turbidez', 'pt-br': 'Monitoramento de Turbidez', 'en': 'Turbidity Monitoring' },
 
   // Case studies
-  'deshidratacion-concentrados': { 'es-cl': 'Deshidratación Concentrados', 'es-mx': 'Deshidratación Concentrados', 'pt-br': 'Desidratação Concentrados', 'en': 'Concentrate Dehydration' },
+  'deshidratacion-concentrados': { 'es-cl': 'Deshidratación Concentrados', 'es-mx': 'Deshidratación Concentrados', 'pt-br': 'Desidratação Concentrados', 'en': 'Concentrate Dewatering' },
   'lodos-petroleros': { 'es-cl': 'Lodos Petroleros', 'es-mx': 'Lodos Petroleros', 'pt-br': 'Lodos Petrolíferos', 'en': 'Petroleum Sludge' },
   'limpieza-celdas-ew': { 'es-cl': 'Limpieza Celdas EW', 'es-mx': 'Limpieza Celdas EW', 'pt-br': 'Limpeza Células EW', 'en': 'EW Cell Cleaning' },
   'solidos-finos-yoduro': { 'es-cl': 'Sólidos Finos Yoduro', 'es-mx': 'Sólidos Finos Yoduro', 'pt-br': 'Sólidos Finos Iodeto', 'en': 'Iodide Fine Solids' },

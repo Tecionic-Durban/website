@@ -6,6 +6,7 @@ export default async function DeshidratacionConcentradosCase({ params }) {
   setRequestLocale(locale)
   const tc = await getTranslations('caseStudyDetail.common')
   const ts = await getTranslations('caseStudyDetail.deshidratacionConcentrados')
+  const tsvc = await getTranslations('services.items')
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -165,6 +166,17 @@ export default async function DeshidratacionConcentradosCase({ params }) {
               ))}
             </div>
           </div>
+
+          {/* Related service — contextual link to the service page */}
+          <p className="mt-8 text-center text-gray-700">
+            {tc('relatedService')}:{' '}
+            <Link
+              href="/services/concentrate-dehydration"
+              className="font-semibold text-orange-700 underline underline-offset-4 hover:text-orange-800"
+            >
+              {tsvc('concentrateDehydration.title')}
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -20,7 +20,7 @@
     "resourceCenter": "Resource Center",
     "services": {
       "filtration": {
-        "name": "Filtration & Dehydration",
+        "name": "Filtration & Dewatering",
         "description": "Crud processing"
       },
       "organicTreatment": {
@@ -28,7 +28,7 @@
         "description": "Extractant purification"
       },
       "concentrateDehydration": {
-        "name": "Dehydration",
+        "name": "Dewatering",
         "description": "Mineral concentrates"
       },
       "fineSolids": {
@@ -142,12 +142,12 @@
     "sectionTitle": "Specialized Mining Services",
     "headline": "Mobile Technology",
     "headlineSub": "That Transforms Operations",
-    "description": "Filtration, solids dehydration, and solid-liquid separation services with scalable mobile equipment. Over two decades of experience in mining operations backing our solutions.",
+    "description": "Filtration, solids dewatering, and solid-liquid separation services with scalable mobile equipment. Over two decades of experience in mining operations backing our solutions.",
     "twoDecades": "Over two decades of experience",
     "moreInfo": "Learn more",
     "items": {
       "filtration": {
-        "title": "Crud and Solids Filtration & Dehydration",
+        "title": "Crud and Solids Filtration & Dewatering",
         "description": "Mobile filtration of crud and solids in refineries and SX plants. Capacity up to 130 tons/day of filter cake using filter presses or centrifuges per client requirements."
       },
       "organicTreatment": {
@@ -155,8 +155,8 @@
         "description": "Specialized treatment for organic recovery in solvent extraction processes. Reduces losses and optimizes plant efficiency."
       },
       "concentrateDehydration": {
-        "title": "Concentrate Dehydration",
-        "description": "Copper concentrate dehydration using mobile filter presses. 60-70% weight reduction for concentrator plant optimization and export cargo preparation."
+        "title": "Concentrate Dewatering",
+        "description": "Copper concentrate dewatering using mobile filter presses. 60-70% weight reduction for concentrator plant optimization and export cargo preparation."
       },
       "fineSolids": {
         "title": "Fine Solids Treatment",
@@ -219,7 +219,7 @@
     }
   },
   "footer": {
-    "description": "Company with over two decades of experience in filtration services, solids dehydration, solid-liquid separation, and organic treatment in solvent extraction (SX) plants.",
+    "description": "Company with over two decades of experience in filtration services, solids dewatering, solid-liquid separation, and organic treatment in solvent extraction (SX) plants.",
     "services": "Services",
     "industries": "Industries",
     "resources": "Resources",
@@ -272,7 +272,7 @@
   "contactPage": {
     "hero": {
       "title": "Contact",
-      "description": "We are ready to help you optimize your mining processes with specialized mobile solutions for filtration and solid-liquid separation."
+      "description": "We are ready to help you optimize your mining and industrial processes with specialized mobile solutions for filtration and solid-liquid separation."
     },
     "form": {
       "title": "Request a Consultation",
@@ -294,9 +294,9 @@
         "message": "Tell us more about your specific needs..."
       },
       "services": {
-        "filtration": "Filtration and dehydration of sludge and solids",
+        "filtration": "Filtration and dewatering of sludge and solids",
         "organicTreatment": "Treatment and recovery of organic in SX processes",
-        "concentrateDehydration": "Copper concentrate dehydration",
+        "concentrateDehydration": "Copper concentrate dewatering",
         "fineSolids": "Fine solids treatment",
         "waterClarification": "Solids removal from clarified water",
         "ewCleaning": "EW cell cleaning",
@@ -324,6 +324,18 @@
       "error": {
         "title": "Error submitting inquiry",
         "message": "Please try again or contact us directly at contacto@tsf.cl"
+      },
+      "heardAbout": "How did you hear about Tecionic?",
+      "selectHeardAbout": "Select an option",
+      "heardAboutOptions": {
+        "referral": "Referral from a colleague",
+        "existingClient": "We already work with Tecionic",
+        "tecionicContact": "Someone from Tecionic reached out",
+        "event": "Trade show, conference or event",
+        "linkedin": "LinkedIn",
+        "search": "Search engine (Google or other)",
+        "press": "Trade press or technical journal",
+        "other": "Other"
       }
     },
     "info": {
@@ -486,7 +498,7 @@
     "tanks": "tanks",
     "filterPress": "filter press",
     "centrifuge": "centrifuge",
-    "dehydration": "dehydration",
+    "dehydration": "dewatering",
     "filtration": "filtration",
     "extractants": "extractants",
     "cathodicContamination": "cathodic contamination",
@@ -1136,7 +1148,7 @@
   "concentrateDehydrationService": {
     "hero": {
       "title": "Recover value with",
-      "titleHighlight": "high-pressure dehydration",
+      "titleHighlight": "high-pressure dewatering",
       "description": "Less water means more useful product. Meet commercial specifications, reduce transportation costs, and recover value from your concentrates and sludges with high-pressure mobile filter presses.",
       "cta": "Request Evaluation"
     },
@@ -1206,7 +1218,7 @@
       "description": "A flexible platform that adapts to your operation, not the other way around.",
       "items": {
         "continuity": {
-          "title": "Dehydrate without stopping production",
+          "title": "Dewater without stopping production",
           "description": "Backup filter operates while the main one is under maintenance. Your concentrate line stays active.",
           "features": [
             "75% capacity maintained",
@@ -1332,7 +1344,7 @@
       "costs": {
         "label": "Costs",
         "title": "More efficient transport, without avoidable losses",
-        "description": "Dehydrated concentrate is lighter concentrate. Less water means less dead weight in every truck and shipment, reducing cost per ton of metal transported."
+        "description": "Dewatered concentrate is lighter concentrate. Less water means less dead weight in every truck and shipment, reducing cost per ton of metal transported."
       },
       "compliance": {
         "label": "Compliance",
@@ -1685,7 +1697,7 @@
         },
         "sludge": {
           "title": "Process Sludge",
-          "description": "Dehydration of treatment, biological, and physico-chemical sludge to 30-45% solids cake."
+          "description": "Dewatering of treatment, biological, and physico-chemical sludge to 30-45% solids cake."
         },
         "reuse": {
           "title": "Water for Reuse",
@@ -3483,7 +3495,8 @@
       "industry": "Industry",
       "objective": "Objective",
       "client": "Client",
-      "technicalValidation": "Technical Validation"
+      "technicalValidation": "Technical Validation",
+      "relatedService": "Related service"
     },
     "tratamientoOrganicoSx": {
       "title": "USD $3.1M",
@@ -4524,7 +4537,8 @@
       "ctaTitle": "Need to optimize your operation?",
       "ctaDescription": "Our technical team can evaluate your current process and propose solutions tailored to your specific needs.",
       "ctaButton": "Contact Technical Team",
-      "viewMoreTrends": "View more industry trends"
+      "viewMoreTrends": "View more industry trends",
+      "relatedServices": "Related services"
     },
     "listing": {
       "heroTitle": "Industry Trends",
@@ -4607,8 +4621,8 @@
       {
         "slug": "deshidratacion-movil-vs-capex",
         "category": "Innovation",
-        "title": "Mobile Dehydration Systems: Smarter Sludge Management Without the CAPEX",
-        "excerpt": "How mobile dehydration replaces fixed CAPEX projects across SX, refining, electrowinning, and decanter pool operations — with 48-hour deployment, zero headcount impact, and rigorous in-house process monitoring.",
+        "title": "Mobile Dewatering Systems: Smarter Sludge Management Without the CAPEX",
+        "excerpt": "How mobile dewatering replaces fixed CAPEX projects across SX, refining, electrowinning, and decanter pool operations — with 48-hour deployment, zero headcount impact, and rigorous in-house process monitoring.",
         "date": "April 2026",
         "readTime": "6 min",
         "sortDate": "2026-04-30"
@@ -5116,14 +5130,14 @@
         ]
       },
       "deshidratacion-movil-vs-capex": {
-        "title": "Mobile Dehydration Systems: Smarter Sludge Management Without the CAPEX",
-        "subtitle": "How mobile dehydration is replacing fixed CAPEX projects across SX, refining, electrowinning, and decanter pool operations — with 48-hour deployment, zero headcount impact, and rigorous in-house process monitoring.",
+        "title": "Mobile Dewatering Systems: Smarter Sludge Management Without the CAPEX",
+        "subtitle": "How mobile dewatering is replacing fixed CAPEX projects across SX, refining, electrowinning, and decanter pool operations — with 48-hour deployment, zero headcount impact, and rigorous in-house process monitoring.",
         "category": "Innovation",
         "date": "April 2026",
         "readTime": "6 min",
         "author": "TSF Technical Team",
         "tags": [
-          "Mobile dehydration",
+          "Mobile dewatering",
           "OPEX vs CAPEX",
           "Sludge management",
           "Industrial dewatering",
@@ -5135,12 +5149,12 @@
           {
             "type": "section",
             "title": "The Context: Fixed CAPEX vs Variable Operations",
-            "text": "For procurement and operations managers working across solvent extraction, oil refining, electrowinning, electrolysis, or decanter pool applications, sludge, crud, and sediment management is a persistent operational challenge. The traditional answer has always been capital investment: build more capacity, hire more people, expand the facility. But in an era where agility and cost control are strategic priorities, that answer is increasingly difficult to justify.\n\nTecionic's mobile dehydration systems offer a fundamentally different model — one built around your operational reality, not around a fixed infrastructure assumption."
+            "text": "For procurement and operations managers working across solvent extraction, oil refining, electrowinning, electrolysis, or decanter pool applications, sludge, crud, and sediment management is a persistent operational challenge. The traditional answer has always been capital investment: build more capacity, hire more people, expand the facility. But in an era where agility and cost control are strategic priorities, that answer is increasingly difficult to justify.\n\nTecionic's mobile dewatering systems offer a fundamentally different model — one built around your operational reality, not around a fixed infrastructure assumption."
           },
           {
             "type": "section",
             "title": "Scalability Without the Capital Commitment",
-            "text": "One of the most significant financial risks in industrial operations is misaligned capacity. A capital expenditure project for a permanent dehydration installation takes months to specify, procure, and commission — and by the time it's operational, process volumes may have shifted. The result is either an over-specified asset that sits underutilized, or an under-specified one that creates new bottlenecks.\n\nMobile dehydration systems eliminate that risk entirely. Tecionic's units are inherently scalable: additional capacity can be brought on site as process demand grows, and stood down when it doesn't. There is no lengthy engineering study, no civil works, and no long-term asset on your balance sheet. Whether you're managing a temporary surge in sludge generation or testing a new process configuration, the capacity adjusts to match the operation — not the other way around."
+            "text": "One of the most significant financial risks in industrial operations is misaligned capacity. A capital expenditure project for a permanent dewatering installation takes months to specify, procure, and commission — and by the time it's operational, process volumes may have shifted. The result is either an over-specified asset that sits underutilized, or an under-specified one that creates new bottlenecks.\n\nMobile dewatering systems eliminate that risk entirely. Tecionic's units are inherently scalable: additional capacity can be brought on site as process demand grows, and stood down when it doesn't. There is no lengthy engineering study, no civil works, and no long-term asset on your balance sheet. Whether you're managing a temporary surge in sludge generation or testing a new process configuration, the capacity adjusts to match the operation — not the other way around."
           },
           {
             "type": "section",
@@ -5184,11 +5198,11 @@
           {
             "type": "section",
             "title": "Rigorous Process Monitoring, Built In",
-            "text": "Effective dehydration is not a set-and-forget operation. Process parameters fluctuate, feed characteristics change, and performance needs to be continuously validated to ensure the operation remains within spec.\n\nTecionic operates its own dedicated laboratory, where relevant on-site process parameters are sampled, analyzed, and acted upon — in some cases multiple times per day. This level of analytical rigor is built into every engagement, not offered as an optional add-on. It means your operation benefits from continuous process intelligence without the cost of maintaining that analytical capability in-house.\n\nThe result is a service that doesn't just manage sludge — it actively monitors and optimizes the dehydration process in real time, giving operations managers the data confidence they need to keep downstream processes running smoothly."
+            "text": "Effective dewatering is not a set-and-forget operation. Process parameters fluctuate, feed characteristics change, and performance needs to be continuously validated to ensure the operation remains within spec.\n\nTecionic operates its own dedicated laboratory, where relevant on-site process parameters are sampled, analyzed, and acted upon — in some cases multiple times per day. This level of analytical rigor is built into every engagement, not offered as an optional add-on. It means your operation benefits from continuous process intelligence without the cost of maintaining that analytical capability in-house.\n\nThe result is a service that doesn't just manage sludge — it actively monitors and optimizes the dewatering process in real time, giving operations managers the data confidence they need to keep downstream processes running smoothly."
           },
           {
             "type": "conclusion",
-            "text": "Industrial operations cannot afford to treat sludge and sediment management as a secondary concern. At the same time, they cannot afford to over-invest in fixed infrastructure to solve a problem that is, in many cases, variable by nature.\n\nTecionic's mobile dehydration systems offer procurement and operations managers a third path: expert-operated, rapidly deployable, analytically rigorous capacity that scales with your operation and sits entirely outside your capital budget. It is a model designed for the way modern industrial operations actually work — and the results speak for themselves.\n\nTo discuss how Tecionic's mobile dehydration services can support your operation, contact our team for an initial assessment."
+            "text": "Industrial operations cannot afford to treat sludge and sediment management as a secondary concern. At the same time, they cannot afford to over-invest in fixed infrastructure to solve a problem that is, in many cases, variable by nature.\n\nTecionic's mobile dewatering systems offer procurement and operations managers a third path: expert-operated, rapidly deployable, analytically rigorous capacity that scales with your operation and sits entirely outside your capital budget. It is a model designed for the way modern industrial operations actually work — and the results speak for themselves.\n\nTo discuss how Tecionic's mobile dewatering services can support your operation, contact our team for an initial assessment."
           }
         ],
         "sources": []

@@ -8,6 +8,7 @@ type ContactPayload = {
   phone?: string;
   service?: string;
   serviceSpecificAnswer?: string;
+  heardAbout?: string;
   message?: string;
   _honeypot?: string;
   _formLoadTime?: number;
@@ -157,6 +158,7 @@ export async function POST(request: NextRequest) {
       phone: escapeHtml(data.phone),
       service: escapeHtml(service),
       serviceSpecificAnswer: escapeHtml(data.serviceSpecificAnswer),
+      heardAbout: escapeHtml(data.heardAbout),
       message: escapeHtml(data.message),
       formattedDate: escapeHtml(formattedDate),
     };
@@ -176,6 +178,7 @@ export async function POST(request: NextRequest) {
           ${safe.phone ? `<p><strong>Telefono:</strong> ${safe.phone}</p>` : ''}
           <p><strong>Servicio:</strong> ${safe.service}</p>
           ${safe.serviceSpecificAnswer ? `<p><strong>Detalle:</strong> ${safe.serviceSpecificAnswer}</p>` : ''}
+          ${safe.heardAbout ? `<p><strong>Como nos conocio:</strong> ${safe.heardAbout}</p>` : ''}
           ${safe.message ? `<p><strong>Mensaje:</strong> ${safe.message}</p>` : ''}
         </div>
       `,

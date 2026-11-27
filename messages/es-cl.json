@@ -272,7 +272,7 @@
   "contactPage": {
     "hero": {
       "title": "Contacto",
-      "description": "Estamos listos para ayudarle a optimizar sus procesos mineros con soluciones móviles especializadas en filtración y separación sólido-líquido."
+      "description": "Estamos listos para ayudarle a optimizar sus procesos mineros e industriales con soluciones móviles especializadas en filtración y separación sólido-líquido."
     },
     "form": {
       "title": "Solicite una Consulta",
@@ -324,6 +324,18 @@
       "error": {
         "title": "Error al enviar la consulta",
         "message": "Por favor intente nuevamente o contáctenos directamente a contacto@tsf.cl"
+      },
+      "heardAbout": "¿Cómo conoció a Tecionic?",
+      "selectHeardAbout": "Seleccione una opción",
+      "heardAboutOptions": {
+        "referral": "Recomendación de un colega",
+        "existingClient": "Ya trabajamos con Tecionic",
+        "tecionicContact": "Me contactó alguien de Tecionic",
+        "event": "Feria, congreso o evento",
+        "linkedin": "LinkedIn",
+        "search": "Buscador (Google u otro)",
+        "press": "Prensa o revista técnica",
+        "other": "Otro"
       }
     },
     "info": {
@@ -3483,7 +3495,8 @@
       "industry": "Industria",
       "objective": "Objetivo",
       "client": "Cliente",
-      "technicalValidation": "Validación Técnica"
+      "technicalValidation": "Validación Técnica",
+      "relatedService": "Servicio relacionado"
     },
     "tratamientoOrganicoSx": {
       "title": "USD $3.1M",
@@ -4524,7 +4537,8 @@
       "ctaTitle": "¿Necesitas optimizar tu operación?",
       "ctaDescription": "Nuestro equipo técnico puede evaluar tu proceso actual y proponer soluciones adaptadas a tus necesidades específicas.",
       "ctaButton": "Contactar Equipo Técnico",
-      "viewMoreTrends": "Ver más tendencias de la industria"
+      "viewMoreTrends": "Ver más tendencias de la industria",
+      "relatedServices": "Servicios relacionados"
     },
     "listing": {
       "heroTitle": "Tendencias de la Industria",

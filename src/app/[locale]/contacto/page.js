@@ -63,8 +63,22 @@ export default function ContactPage() {
     phone: '',
     service: '',
     serviceSpecificAnswer: '',
+    heardAbout: '',
     message: ''
   })
+
+  // "How did you hear about us" — stable keys go to analytics; the
+  // translated label goes to the inquiry email.
+  const heardAboutKeys = [
+    'referral',
+    'existingClient',
+    'tecionicContact',
+    'event',
+    'linkedin',
+    'search',
+    'press',
+    'other'
+  ]
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -82,6 +96,9 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
+          heardAbout: formData.heardAbout
+            ? t(`form.heardAboutOptions.${formData.heardAbout}`)
+            : '',
           _honeypot: honeypot,
           _formLoadTime: formLoadTime,
           _submitTime: Date.now(),
@@ -99,7 +116,8 @@ export default function ContactPage() {
           service: formData.service,
           company: formData.company,
           has_phone: !!formData.phone,
-          has_message: !!formData.message
+          has_message: !!formData.message,
+          heard_about: formData.heardAbout || 'not_answered'
         })
         // Reset form
         setFormData({
@@ -110,6 +128,7 @@ export default function ContactPage() {
           phone: '',
           service: '',
           serviceSpecificAnswer: '',
+          heardAbout: '',
           message: ''
         })
         setSelectedService('')
@@ -302,6 +321,24 @@ export default function ContactPage() {
                     />
                   </div>
                 )}
+
+                {/* How did you hear about us (optional) */}
+                <div>
+                  <label htmlFor="heardAbout" className="block text-sm font-semibold text-gray-700 mb-2">
+                    {t('form.heardAbout')} <span className="text-gray-400 font-normal">({t('form.optional')})</span>
+                  </label>
+                  <select
+                    id="heardAbout"
+                    value={formData.heardAbout}
+                    onChange={(e) => setFormData({...formData, heardAbout: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="">{t('form.selectHeardAbout')}</option>
+                    {heardAboutKeys.map((key) => (
+                      <option key={key} value={key}>{t(`form.heardAboutOptions.${key}`)}</option>
+                    ))}
+                  </select>
+                </div>
 
                 {/* Additional Comments */}
                 <div>

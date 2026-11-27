@@ -9,7 +9,7 @@ Languages: Spanish (Chile: es-cl, Latin America/Mexico: es-mx), English (en), Po
 - [SX crud treatment & organic recovery](https://tecionic.com/en/services/organic-treatment): removes crud (borra), recovers entrained organic, restores phase separation
 - [EW cell cleaning](https://tecionic.com/en/services/ew-cleaning): one cell per day without stopping the tankhouse, altitude-proven
 - [Fine solids filtration](https://tecionic.com/en/services/fine-solids): removes fine solids from clarifiers, thickeners and ponds while the circuit keeps operating
-- [Concentrate dehydration](https://tecionic.com/en/services/concentrate-dehydration): backup dewatering capacity during maintenance or peaks
+- [Concentrate dewatering](https://tecionic.com/en/services/concentrate-dehydration): backup dewatering capacity during maintenance or peaks
 - [TIF measurement](https://tecionic.com/en/services/tif-measurement), [TSF monitoring](https://tecionic.com/en/services/tsf-monitoring), [turbidity monitoring](https://tecionic.com/en/services/turbidity-monitoring): in-line process analytics for SX circuits
 
 ## Industries
